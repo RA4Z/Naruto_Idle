@@ -5,6 +5,7 @@ import type {
   AnimationDef,
   EntityManifest,
 } from "./types";
+import { actorVisualScale, shouldReturnToBattleIdle } from "./visual-rules";
 const requested = new WeakMap<Phaser.Scene, Set<string>>();
 export const actorKey = (id: string, mode: ActorMode, action: string) =>
   `entity:${id}:${mode}:${action}`;
@@ -223,7 +224,7 @@ export class EntityActor extends Phaser.GameObjects.Container {
     this.visual
       .setOrigin(...anim.origin)
       .setScale(
-        45 / Math.max(1, modeDef.referenceHeight) / (anim.rigScale ?? 1),
+        actorVisualScale(this.manifest.id, mode, modeDef.referenceHeight, anim.rigScale),
       );
     if (force || this.visual.anims.currentAnim?.key !== key)
       this.visual.play(key);
@@ -232,7 +233,7 @@ export class EntityActor extends Phaser.GameObjects.Container {
     this.setDepth(this.y);
     if (paused) this.visual.anims.pause();
     else this.visual.anims.resume();
-    if (!paused && this.role === "enemy" && !this.visual.anims.isPlaying)
+    if (!paused && this.role === "enemy" && shouldReturnToBattleIdle(this.visual.anims.currentAnim?.key, this.visual.anims.isPlaying))
       this.play("battle", "C_idle");
   }
   face(left: boolean) {

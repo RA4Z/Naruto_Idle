@@ -578,6 +578,8 @@ class HuntScene extends Phaser.Scene {
           presentation: this.presentation.snapshot(),
           actorCache: this.actorCache.snapshot(),
           enemyId: this.enemy.manifest.id,
+          enemyAnimation: this.enemy.visual.anims.currentAnim?.key,
+          enemyScale: this.enemy.visual.scaleX,
           enemyVisible: this.enemy.visible,
           enemies: this.enemyField.members.map((m) => ({
             id: m.actor.manifest.id,
@@ -711,7 +713,8 @@ class HuntScene extends Phaser.Scene {
     }
     if (event === "loot") journal(`Drop · Fragmento de treino ×${value}`);
     if (event === "victory") {
-      this.enemyField.defeat(this.enemy);
+      const defeatedEnemy = this.enemy;
+      this.enemyField.defeat(defeatedEnemy);
       session.xp += value;
       session.coins += AREAS[save.area].coins;
       session.wins++;
@@ -723,12 +726,13 @@ class HuntScene extends Phaser.Scene {
       );
       journal(`Vitória · +${value} XP · +${AREAS[save.area].coins} moedas`);
       this.time.delayedCall(this.lastStrikeDuration * 0.85, () => {
-        this.enemy.play("battle", "C_dead", true);
+        if (!defeatedEnemy.active || !this.enemyField.members.some((member) => member.actor === defeatedEnemy && !member.alive)) return;
+        defeatedEnemy.play("battle", "C_dead", true);
         this.tweens.add({
-          targets: this.enemy,
+          targets: defeatedEnemy,
           alpha: 0,
-          duration: 200,
-          onComplete: () => this.enemy.setVisible(false).setAlpha(1),
+          duration: 500,
+          onComplete: () => { if (defeatedEnemy.active) defeatedEnemy.setVisible(false).setAlpha(1); },
         });
       });
       commit();
@@ -1215,7 +1219,8 @@ class HuntScene extends Phaser.Scene {
     );
     if (!this.isLobby && this.hunt.phase === "explorando")
       this.enemy = this.enemyField.nearest(this.hero) || this.standbyEnemy;
-    this.enemy.tick(blocked);
+    if (!this.enemyField.members.some((member) => member.actor === this.enemy))
+      this.enemy.tick(blocked);
     if (!blocked && this.hunt.phase === "explorando") {
       let dx = 0,
         dy = 0;
@@ -1281,7 +1286,7 @@ class HuntScene extends Phaser.Scene {
       }
     } else if (
       !blocked &&
-      this.hunt.phase === "combatendo" &&
+      ["iniciando combate", "combatendo", "recompensas"].includes(this.hunt.phase) &&
       !this.hero.anims.isPlaying
     )
       this.play("battle-C_idle");
