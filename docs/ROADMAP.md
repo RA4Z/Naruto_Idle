@@ -15,7 +15,8 @@ Pedido do usuário em 20/10/2026: uma tarefa pesada por vez. Não sobrepor build
 - [x] Recuperar e integrar as máscaras frontais nativas de 10001/10005/10006/10008, preservando alpha e navegação; WebGL reutiliza fundo, Canvas tem fallback.
 - [ ] Recuperar SWFs intermediários, transformações e objetos com ordenação de profundidade própria. A máscara global não encerra esse item.
 - [ ] Integrar os 139 mapas restantes por lotes com viagens, navegação, população, encontros, saves e validação visual.
-- [ ] Integrar artes originais de loading e ampliar os vínculos de jutsus/áudio/conteúdo sem reativar party.
+- [x] Primeiro lote de loading original: 6/14/22, ciclo funcional, integridade dos JPEGs e falha opcional testados.
+- [ ] Integrar as outras 195 artes e ampliar os vínculos de jutsus/áudio/conteúdo sem reativar party. As 71 dicas originais estão em revisão, sem anunciar mecânicas inexistentes.
 
 - [x] Costa Verde 10007 e A Floresta da Morte 10009 com navegação, população móvel, combate, recompensas, save/reload e retorno. Seis mapas integrados; região principal 2 da Costa validada.
 
@@ -53,7 +54,7 @@ Relatórios: original-inventory-summary.json, original-map-audit.json, native-fo
 7. [ ] Admin com itens, equipamentos, quests, salas da arena, diagnósticos e colisões sobrepostas no mapa.
 8. [ ] Expandir mapas e NPCs incrementalmente, com entrada/saída, população e inspeção visual. Não basta trocar o fundo.
 9. [ ] Nitidez: preservar pixels originais e testar densidade de tela, filtros e escala. Não afirmar detalhes ou super-resolução que não existem.
-10. [ ] Trazer do outro computador e integrar as artes originais de loading (`assets/loading/*.jpg`, `config/LoadingTips.xml`). Adiado explicitamente pelo usuário; tela funcional provisória usa a arte da vila disponível.
+10. [ ] Ampliar a integração do loading original: 3/198 artes já funcionam no jogo; 71 dicas catalogadas para revisão. Acervo disponível nesta máquina, com originais preservados.
 11. [x] Integrar os atlas SP_skill1/SP_skill2 do Sasuke azul 11000211 já regenerados do original nesta máquina. A mitigação provisória do outro computador fica histórica; rendererRevision identifica a correção real da namespace externa. Dependências externas ainda não resolvidas permanecem explícitas.
 12. [ ] No computador com o acervo, inventariar todos os arquivos e dependências, recuperar camadas/objetos modulares e integrar os mapas restantes com navegação, profundidade, população, entradas e saídas. Seguir as etapas 1–2 e os critérios visuais do roteiro, sem reativar recortes opacos do chão.
 13. [ ] Extrair, organizar e implementar os demais personagens/modelos, ações, jutsus, efeitos, sons, interface, itens, missões e demais recursos encontrados, com uso real no jogo. Atualizar catálogos, revisões, scripts reproduzíveis e relatórios por ID; testar em lotes e registrar todas as dependências ainda pendentes. Seguir as etapas 3–6 do roteiro.

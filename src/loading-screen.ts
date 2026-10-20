@@ -1,3 +1,4 @@
+import { LOADING_ART_URLS } from "./config/loading-art";
 const overlay = document.getElementById("game-loading")!;
 const title = document.getElementById("loading-title")!;
 const message = document.getElementById("loading-message")!;
@@ -7,6 +8,7 @@ const progress = document.getElementById(
 const retry = document.getElementById("loading-retry") as HTMLButtonElement;
 const cancel = document.getElementById("loading-cancel") as HTMLButtonElement;
 let version = 0;
+let artworkCycle = 0;
 export const loadingScreen = {
   begin(
     label: string,
@@ -14,6 +16,9 @@ export const loadingScreen = {
     onCancel?: () => void,
   ) {
     const request = ++version;
+    if (overlay.hidden) artworkCycle++;
+    const artwork = LOADING_ART_URLS[artworkCycle % LOADING_ART_URLS.length];
+    overlay.style.setProperty("--loading-art", `url("${artwork}")`);
     overlay.hidden = false;
     document.getElementById("app")!.inert = true;
     overlay.setAttribute("aria-busy", "true");

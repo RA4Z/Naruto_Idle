@@ -267,3 +267,9 @@ Validar com Vite: `node tools/native-foreground-check.mjs`; para Canvas, defina 
 Costa Verde (10007) e A Floresta da Morte (10009) estão no menu Viajar: navegação nativa, seis adversários móveis, combate/loot, recarga do save no destino e retorno à Folha. IDs de região do MapInfo variam; Costa Verde usa a região 2. A lista de mapas implementados em src/config/maps.ts acompanha o catálogo para validar saves.
 
 O preparador foi tornado incremental: `python tools/prepare_world.py --source <acervo> --ids 10007,10009 --limit 2`. Recusa reescrever mapas já existentes sem --refresh explícito e faz backups locais. Usa os nomes de SceneCFG.xml, mantém os demais destinos e processa um mapa por vez. As populações/regras idle são próprias. SWFs intermediários e ordenação individual de objetos seguem pendentes.
+
+## Artes originais na tela de carregamento
+
+A tela usa as artes originais 6, 14 e 22, em ciclo, preservando bytes e resolução. O catálogo é public/assets/loading/index.json; predev/prebuild geram a lista curta usada pelo carregador. Falha de imagem opcional mantém a entrada funcional com fundo legível. Novos lotes: `python tools/recover_loading_art.py --source <acervo> --ids <até-três-IDs>`, depois `node tools/prepare-runtime.mjs`.
+
+71 dicas do cliente antigo ficam catalogadas para revisão; não anunciam mecânicas ausentes deste idle. A medição com as artes ficou em 33 requests/~4,38 MB antes do lobby (76% menos bytes que a referência inicial). Restam 195 artes e outras categorias para lotes futuros. Teste visual e de falha: `node tools/loading-art-check.mjs`.

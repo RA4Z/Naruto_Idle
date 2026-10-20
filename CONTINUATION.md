@@ -1,5 +1,15 @@
 # Ponto de continuidade
 
+## Loading original — lote 6/14/22
+
+Três artes JPEG originais (IDs 6,14,22) copiadas sem alterar bytes, dimensões ou hashes e integradas ao ciclo da tela de carregamento. Catálogo canônico: public/assets/loading/index.json; prepare-runtime.mjs gera somente a lista curta de URLs em src/config/loading-art.ts. Não carrega o álbum completo ou o catálogo de entidades no menu. Falha da arte opcional não bloqueia o jogo. A UI é nova e usa artes originais; não afirmar que o cliente Flash inteiro foi recuperado.
+
+LoadingTips.xml contém 71 dicas, catalogadas em source-tips-review.json como review-only. Elas descrevem várias mecânicas ausentes do idle e não são exibidas como funcionalidades prontas. Existem 198 artes no acervo; 3 estão integradas e 195 aguardam outros lotes. No Vite, foi necessário incluir loading no middleware de assets dinâmicos: sem isso, imagens novas recebiam HTML 200 por causa do inventário público em cache. O teste agora exige JPEG decodificável e inspeção visual real.
+
+Entrada medida com as artes: 33 requests de assets, 4.383.612 bytes, redução de 76% sobre a referência de 18.261.524 bytes. Mantidos menu sem Phaser antecipado, loading/retry/cancelamento, áudio sob demanda e entrada mesmo com arte indisponível. Suítes finais: 64 domínio, 17 servidor/assets, 11 Python. Build, ciclo das artes e entrada/vitória em produção passaram; primeira imagem em ~6,8 s sob 800 KiB/s + 60 ms. Ver reports/loading-art-recovery.json. Servidores temporários da 5195 e navegadores de teste encerrados; Vite existente da 5178 preservado.
+
+Continuidade: permanecem pendentes objetos SWF intermediários/profundidade individual, 139 mapas, 195 artes e demais vínculos de personagens/jutsus/áudio/conteúdo. A automação local concluir-esbo-o-naruto-idle-rpg foi encontrada PAUSED; foi enviada pergunta opcional sobre reativar e o estado não foi alterado sem resposta. Preservar a exclusão alheia de DESIGN_DE_PROGRESSAO.md. O Vite da 5178 é do usuário e foi preservado; não encerrar processos só pelo nome/porta.
+
 ## Expansão seguinte — Costa Verde e Floresta da Morte
 
 Dois novos mapas funcionais: 10007 Costa Verde e 10009 A Floresta da Morte, nomes e IDs vinculados a config/world/SceneCFG.xml. Agora são seis destinos. Blocos originais recompostos em PNG sem perda adicional e WebP de runtime; alpha original, navegação, spawn válido, seis adversários patrulhando, encontros/recompensas, save/reload e volta ao lobby foram testados. Roster/loop idle são próprios; não afirmar que são as regras ou encontros exatos do jogo antigo.

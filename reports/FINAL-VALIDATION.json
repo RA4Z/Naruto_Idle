@@ -1,5 +1,5 @@
 {
-  "validatedAt": "2026-10-20T21:35:44.002191+00:00",
+  "validatedAt": "2026-10-20T22:11:51.604524+00:00",
   "catalogue": {
     "discovered": 1466,
     "processed": 1466,
@@ -140,7 +140,7 @@
     "typecheck": "passed",
     "build": "passed",
     "domainTests": 64,
-    "serverAndDeploymentTests": 16,
+    "serverAndDeploymentTests": 17,
     "pythonTests": 11,
     "arenaBrowser": "passed",
     "characterSelectionBrowser": "passed",
@@ -153,7 +153,9 @@
     "nativeForegroundCanvas": "passed",
     "productionLoading": "passed",
     "worldExpansionBrowser": "passed",
-    "worldExpansionProduction": "passed"
+    "worldExpansionProduction": "passed",
+    "loadingOriginalArt": "passed",
+    "loadingArtFailure": "passed"
   },
   "nativeForeground": {
     "maps": [
@@ -178,5 +180,13 @@
     "report": "reports/world-expansion-batch.json",
     "productionBrowser": "passed",
     "sourceRegionAssumptionFixed": true
+  },
+  "loadingOriginalArt": {
+    "integrated": 3,
+    "available": 198,
+    "remaining": 195,
+    "reviewOnlyTips": 71,
+    "report": "reports/loading-art-recovery.json",
+    "state": "tested"
   }
 }

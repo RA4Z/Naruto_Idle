@@ -10,7 +10,7 @@
 body {
   margin: 0;
 }
-.game-loading { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 24px; background: linear-gradient(90deg, #101e18f5, #101e18bd), url('/assets/world.webp') center/cover; }
+.game-loading { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 24px; background: linear-gradient(90deg, #101e18f5, #101e18bd), var(--loading-art, url('/assets/loading/6.jpg')) center/cover; background-color: #101e18; }
 .game-loading[hidden] { display: none; }
 .loading-content { width: min(640px, 100%); }
 .loading-content h1 { font-size: clamp(30px, 5vw, 48px); letter-spacing: -1px; }

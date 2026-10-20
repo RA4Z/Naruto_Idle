@@ -21,7 +21,7 @@ export default defineConfig({
         server.middlewares.use(async (request, response, next) => {
           const url = request.url?.split("?")[0] || "";
           if (
-            !/^\/assets\/(characters|para-revisao|catalog|maps|effects|audio)\//.test(
+            !/^\/assets\/(characters|para-revisao|catalog|maps|effects|audio|loading)\//.test(
               url,
             ) ||
             !["GET", "HEAD"].includes(request.method || "")
@@ -101,6 +101,7 @@ export default defineConfig({
         "**/public/assets/maps/**",
         "**/public/assets/effects/**",
         "**/public/assets/audio/**",
+        "**/public/assets/loading/**",
       ],
     },
     fs: { deny: ["**/assets-extraidos/**"] },

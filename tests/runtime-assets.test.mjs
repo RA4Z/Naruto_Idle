@@ -60,3 +60,14 @@ test("native foreground runtime derives losslessly from the recovered mask and k
   const data=await readFile("public"+derivative.url);assert.equal(data.toString("ascii",8,12),"WEBP");
  }
 });
+
+test("loading artwork keeps original JPEG bytes and matching provenance",async()=>{
+ const catalog=JSON.parse(await readFile("public/assets/loading/index.json","utf8"));
+ assert.ok(catalog.images.length>0);
+ for(const image of catalog.images){
+  const bytes=await readFile("public"+image.url);assert.equal(bytes.subarray(0,3).toString("hex"),"ffd8ff");
+  assert.equal(createHash("sha256").update(bytes).digest("hex"),image.source.sha256);
+ }
+ const tips=JSON.parse(await readFile("public/assets/loading/source-tips-review.json","utf8"));
+ assert.ok(tips.tips.every(t=>t.status==="review-only"));
+});

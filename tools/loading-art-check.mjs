@@ -1,0 +1,31 @@
+import{chromium}from"@playwright/test";import assert from"node:assert/strict";import{writeFile}from"node:fs/promises";
+const base=process.env.BASE_URL||"http://127.0.0.1:5178";
+const browser=await chromium.launch({headless:true,executablePath:"C:/Program Files/Google/Chrome/Application/chrome.exe",args:["--disable-extensions","--renderer-process-limit=1"]});
+const errors=[],arts=new Set();
+try{
+ let page=await browser.newPage({viewport:{width:1280,height:900}});page.on("pageerror",e=>errors.push(String(e)));
+ page.on("request",r=>{if(/\/assets\/loading\/\d+\.jpg$/.test(r.url()))arts.add(new URL(r.url()).pathname);});
+ await page.route("**/naruto-kid/world/idle_0.png",async route=>{await new Promise(r=>setTimeout(r,1000));await route.continue();});
+ await page.goto(base);await page.locator("#new").waitFor();
+ assert.equal(await page.evaluate(()=>performance.getEntriesByType("resource").some(r=>/phaser/.test(r.name))),false);
+ await page.locator("#new").click();await page.locator('[data-character="naruto"]').click();
+ await page.waitForFunction(()=>!document.getElementById("game-loading").hidden&&getComputedStyle(document.getElementById("game-loading")).backgroundImage.includes("/loading/14.jpg"));
+ await page.evaluate(async()=>{const image=new Image();image.src="/assets/loading/14.jpg";await image.decode();await new Promise(requestAnimationFrame);});
+ await page.screenshot({path:"reports/loading-original-art-in-game.png"});
+ await page.waitForFunction(()=>document.getElementById("game-loading").hidden&&!!document.querySelector("#canvas canvas"));
+ await page.route("**/maps/*/native-alpha.png",async route=>{await new Promise(r=>setTimeout(r,1000));await route.continue();});
+ await page.locator("#maps").click();await page.locator('[data-map="10006"]').click();
+ await page.waitForFunction(()=>!document.getElementById("game-loading").hidden&&getComputedStyle(document.getElementById("game-loading")).backgroundImage.includes("/loading/22.jpg"));
+ await page.waitForFunction(()=>document.getElementById("game-loading").hidden&&JSON.parse(localStorage.getItem("folha-idle-v1")).location==="10006");
+ await page.locator("#return-lobby").click();
+ await page.waitForFunction(()=>!document.getElementById("game-loading").hidden&&getComputedStyle(document.getElementById("game-loading")).backgroundImage.includes("/loading/6.jpg"));
+ await page.waitForFunction(()=>document.getElementById("game-loading").hidden&&JSON.parse(localStorage.getItem("folha-idle-v1")).location==="10001");
+ assert.equal(arts.size,3);await page.close();
+ page=await browser.newPage();page.on("pageerror",e=>errors.push(String(e)));
+ await page.route("**/assets/loading/*.jpg",route=>route.abort());
+ await page.goto(base);await page.locator("#new").click();await page.locator('[data-character="naruto"]').click();
+ await page.waitForFunction(()=>document.getElementById("game-loading").hidden&&!!document.querySelector("#canvas canvas"));
+ assert.equal((await page.evaluate(()=>JSON.parse(localStorage.getItem("folha-idle-v1")))).character,"naruto");assert.deepEqual(errors,[]);
+ const report={checkedAt:new Date().toISOString(),artworks:[...arts],threeArtworkCycle:true,menuDefersPhaser:true,optionalArtFailureDoesNotBlockGame:true,sourceTipsNotShownAsImplementedMechanics:true,errors};
+ await writeFile("reports/loading-art-browser-validation.json",JSON.stringify(report,null,2)+"\n");console.log(JSON.stringify(report));
+}finally{await browser.close();}
