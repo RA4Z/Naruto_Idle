@@ -159,6 +159,48 @@ h1 {
 canvas {
   display: block;
 }
+.mini-window {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  width: 520px;
+  height: 420px;
+  min-width: min(300px, calc(100vw - 16px));
+  min-height: 250px;
+  max-width: calc(100vw - 16px);
+  max-height: calc(100dvh - 16px);
+  overflow: hidden;
+  resize: both;
+  border: 1px solid #718167;
+  border-radius: 12px;
+  background: #182b22;
+  box-shadow: 0 12px 40px #0008;
+}
+.mini-window[hidden] { display: none; }
+.mini-help { width: min(560px, 94vw); max-height: 90dvh; overflow: auto; border: 1px solid #718167; border-radius: 12px; background: #182b22; color: #eeeadd; padding: 24px; }
+.mini-help::backdrop { background: #06110bd9; }
+.mini-help h2 { font-size: 23px; }
+.mini-help p { line-height: 1.6; }
+.mini-help-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.mini-window-bar { display: flex; align-items: center; gap: 8px; padding: 6px; }
+.mini-window button { padding: 8px 10px; font-size: 12px; }
+.mini-drag { flex: 1; text-align: left; cursor: grab; touch-action: none; background: transparent; color: #e4ab60; }
+.mini-drag:hover { transform: none; }
+.mini-drag:active { cursor: grabbing; }
+.mini-viewport { flex: 1; min-height: 0; overflow: hidden; }
+.mini-window #canvas { width: 100%; height: 100%; min-height: 0; }
+.mini-summary { font-size: 12px; margin: 8px 10px; }
+.mini-actions { display: flex; gap: 6px; padding: 0 10px; flex-wrap: wrap; }
+.mini-actions button { flex: 1; }
+.mini-note { font-size: 10px; color: #b3c7ac; margin: 6px 10px 10px; }
+.mini-placeholder { height: max(420px, calc(100dvh - 120px)); display: grid; align-content: center; justify-items: center; padding: 20px; text-align: center; }
+.mini-external { position: static; width: 100vw !important; height: 100dvh !important; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; border-radius: 0; resize: none; }
+.mini-external .mini-drag { cursor: default; }
 aside {
   height: max(420px, calc(100dvh - 120px));
   overflow-y: auto;

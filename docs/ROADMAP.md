@@ -10,6 +10,8 @@ Pedido do usuário em 20/10/2026: uma tarefa pesada por vez. Não sobrepor build
 
 ## Entregas verificadas
 
+- [x] Minijanela pelo botão no jogo: Document PiP em contexto seguro com suporte, fallback interno arrastável/redimensionável no HTTP LAN; mesma partida, controles compactos, retorno sem recarga e caçada testada com outra aba aberta.
+
 - [x] Organização de 312 modelos/variantes e 1.154 entradas de revisão com IDs estáveis.
 - [x] 1.330 prévias de corpo inteiro e visualizador de animações no admin.
 - [x] Lobby seguro na Vila da Folha, WASD/setas e clique com busca de caminho.
@@ -34,6 +36,10 @@ Pedido do usuário em 20/10/2026: uma tarefa pesada por vez. Não sobrepor build
 9. [ ] Nitidez: preservar pixels originais e testar densidade de tela, filtros e escala. Não afirmar detalhes ou super-resolução que não existem.
 
 ## Verificação
+
+Correção do acesso por IP no próprio servidor: 53 testes de domínio passaram via Node nativo, incluindo transferência de progresso para localhost e preservação do save antigo em caso de falha. `tools/localhost-transfer-check.mjs` percorreu HTTP por IP → aviso sem fallback silencioso → localhost na mesma porta com save completo e backup → PiP nativo → vitória com outra aba aberta. O modo interno exige escolha explícita. Relatório `reports/localhost-transfer-validation.json`; os modos da minijanela também foram revalidados separadamente.
+
+Minijanela: `tools/mini-window-check.mjs` passou com Document PiP real em localhost no Chrome instalado, fallback sem API e HTTP pelo IP da LAN. Verificou arraste e resize internos, limites em 360×640, câmera/herói visíveis após resize, teclado, cliques com offsets corretos após arraste/scroll do opener, pausa, vitória com outra aba aberta, contexto de áudio ativo no PiP, fechar/restaurar sem recriar o jogo e restauração antes dos painéis. Typecheck/build também validados; relatório `reports/mini-window-validation.json`. O modo externo requer API em contexto seguro; acesso HTTP por IP usa a janela interna.
 
 Progressão individual: 50 testes de domínio (Node nativo; tsx falha em `os.userInfo` antes de executar), 11 testes de servidor, build com `--configLoader runner` e regressões no navegador passaram. `tools/character-progress-check.mjs` migrou um save antigo com Naruto nível 6, treinou Sasuke sem alterar Naruto, evoluiu Sasuke para nível 2 em quatro vitórias, preservou Sakura nível 1/zero XP fora do grupo, recarregou o save e verificou a build individual na arena principal e na rota `/arena`. Relatório `reports/character-progress-validation.json`; atributos dos três iniciais e duelo com dois clientes foram revalidados separadamente. Os campos globais antigos são apenas a projeção do protagonista; não devem servir de build para outro membro.
 

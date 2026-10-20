@@ -1,4 +1,6 @@
 import { installArena } from "./arena/ui";
+import { installMiniWindow } from "./mini-window";
+import { localhostTransferUrl } from "./progression/local-transfer";
 import { installProgression } from "./progression/ui";
 import { recruit, STARTER_COLLECTION } from "./progression/rules";
 import { strikeDuration } from "./progression/combat-stats";
@@ -64,7 +66,8 @@ type AnimSet = Record<
   string,
   { animations: Record<string, Anim>; warnings: unknown[] }
 >;
-const $ = (id: string) => document.getElementById(id)!;
+const canvasHost = document.getElementById("canvas")!;
+const $ = (id: string) => id === "canvas" ? canvasHost : document.getElementById(id)!;
 const store = new LocalProgressStore();
 let save: Save;
 let game: Phaser.Game | undefined;
@@ -84,6 +87,94 @@ let cast: {
   party: EntityManifest[];
 };
 const starterIds = CHARACTER_IDS;
+const miniWindow = installMiniWindow({
+  button: $("mini-window") as HTMLButtonElement,
+  canvas: canvasHost,
+  notify: toast,
+  summary: () => scene?.hunt
+    ? `${CHARACTERS[save.character].name} · Nível ${save.level} · ${save.paused ? "Pausado" : scene.isLobby ? "Vila" : scene.hunt.phase} · Vida ${Math.ceil(scene.hunt.hp)}/${stats(save).maxHp} · Chakra ${Math.floor(scene.hunt.chakra)}`
+    : "Carregando…",
+  onViewport: bindMiniViewport,
+  openOnLocalhost: () => {
+    commit();
+    location.assign(localhostTransferUrl(location.href, store.read()!));
+  },
+});
+function bindMiniViewport(host: Window) {
+  const current = game!;
+  const keyboard = current.input.keyboard!;
+  const originalTarget = keyboard.target;
+  const external = host !== window;
+  const pauseSoundOnBlur = current.sound.pauseOnBlur;
+  const updateBounds = () => {
+    current.scale.updateBounds();
+    if (external && canvasHost.ownerDocument !== document) {
+      // Phaser normally adds the opener's page scroll to these coordinates.
+      const bounds = current.canvas.getBoundingClientRect();
+      current.scale.canvasBounds.x = bounds.left + host.scrollX;
+      current.scale.canvasBounds.y = bounds.top + host.scrollY;
+    }
+  };
+  const resize = () => {
+    const rect = canvasHost.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      current.scale.getParentBounds();
+      current.scale.resize(rect.width, rect.height);
+      scene.cameras.main.centerOn(scene.hero.x, scene.hero.y);
+      updateBounds();
+    }
+  };
+  const resetKeys = () => {
+    scene?.input.keyboard?.resetKeys();
+    current.input.activePointer.reset();
+  };
+  const releaseMouse = (event: MouseEvent) => current.input.mouse?.onMouseUpWindow(event);
+  const observer = new ResizeObserver(resize);
+  observer.observe(canvasHost);
+  host.addEventListener("resize", resize);
+  host.addEventListener("blur", resetKeys);
+  for (const event of ["mousedown", "touchstart"])
+    canvasHost.addEventListener(event, updateBounds, { capture: true });
+  let frame = 0;
+  if (external) {
+    current.events.emit(Phaser.Core.Events.FOCUS);
+    current.sound.pauseOnBlur = false;
+    scene.presentation.unlock();
+    keyboard.stopListeners(); keyboard.target = host; keyboard.startListeners();
+    host.addEventListener("mouseup", releaseMouse);
+    resetKeys();
+    // Let the visible PiP document own the animation clock while the original tab is hidden.
+    current.loop.sleep();
+    const tick = () => {
+      if (game !== current || host.closed) return;
+      current.loop.focus();
+      current.loop.tick();
+      frame = host.requestAnimationFrame(tick);
+    };
+    frame = host.requestAnimationFrame(tick);
+  }
+  resize();
+  return () => {
+    observer.disconnect();
+    host.removeEventListener("resize", resize);
+    host.removeEventListener("blur", resetKeys);
+    for (const event of ["mousedown", "touchstart"])
+      canvasHost.removeEventListener(event, updateBounds, { capture: true });
+    resetKeys();
+    if (external) {
+      current.sound.pauseOnBlur = pauseSoundOnBlur;
+      current.events.emit(document.hasFocus() ? Phaser.Core.Events.FOCUS : Phaser.Core.Events.BLUR);
+      host.removeEventListener("mouseup", releaseMouse);
+      host.cancelAnimationFrame(frame);
+      keyboard.stopListeners(); keyboard.target = originalTarget; keyboard.startListeners();
+      current.loop.resetDelta(); current.loop.wake();
+    }
+    commit();
+    window.requestAnimationFrame(() => { if (game === current) resize(); });
+  };
+}
+for (const id of ["maps", "return-lobby", "progression", "arena", "library"])
+  $(id).addEventListener("click", () => miniWindow.restore(), { capture: true });
 const openLibrary = installLibrary(
   async (id, role) => {
     if (!scene || !game)
@@ -175,6 +266,7 @@ function card(id: CharacterId) {
   return `<button class="character" data-character="${id}"><img src="${c.portrait}" alt="Retrato recuperado de ${c.name}"><span class="character-name">${c.name}</span><em>${c.subtitle}</em><p>${c.description}</p><p>Vitalidade ${c.attributes.vitality} · Força ${c.attributes.strength} · Velocidade ${c.attributes.speed}</p><span class="select-label">Escolher ${c.name} →</span></button>`;
 }
 async function start(s: Save) {
+  miniWindow.restore();
   const request = ++launchVersion;
   presentationData ??= await fetch("/assets/presentation.json").then((r) =>
     r.json(),
@@ -249,6 +341,7 @@ async function start(s: Save) {
     height: $("canvas").clientHeight,
     scale: { mode: Phaser.Scale.RESIZE, autoCenter: Phaser.Scale.CENTER_BOTH },
     scene: HuntScene,
+    autoFocus: false,
     render: { antialias: true, roundPixels: false },
     audio: { noAudio: false },
   });
@@ -289,6 +382,7 @@ $("continue").onclick = () => {
     );
 };
 $("back").onclick = () => {
+  miniWindow.restore();
   launchVersion++;
   if (import.meta.env.DEV)
     delete (window as unknown as { __idle?: unknown }).__idle;
@@ -571,9 +665,16 @@ class HuntScene extends Phaser.Scene {
               /^(world|battle)-/.test(o.texture.key),
           ).length,
           gameLoopRunning: this.game.loop.running,
+          audioState: this.sound instanceof Phaser.Sound.WebAudioSoundManager ? this.sound.context.state : "html",
           origin: [this.hero.originX, this.hero.originY],
           scale: this.hero.scaleX,
           zoom: this.cameras.main.zoom,
+          viewport: {
+            width: this.cameras.main.width, height: this.cameras.main.height,
+            canvasWidth: this.game.canvas.width, canvasHeight: this.game.canvas.height,
+            heroVisible: this.cameras.main.worldView.contains(this.hero.x, this.hero.y),
+          },
+          pointer: { x: this.input.activePointer.x, y: this.input.activePointer.y },
           walkable: this.navigation.walkable(this.hero),
           enemyWalkable: this.navigation.walkable(this.enemy),
           presentation: this.presentation.snapshot(),
@@ -1382,5 +1483,6 @@ class HuntScene extends Phaser.Scene {
     $("status").append(cadence);
     $("session").textContent =
       `${Math.floor((Date.now() - session.start) / 60000)} min · ${session.wins} vitórias · ${session.xp} XP · ${session.coins} moedas`;
+    miniWindow.sync();
   }
 }
