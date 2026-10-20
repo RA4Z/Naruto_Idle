@@ -322,12 +322,14 @@ function characters(entries: Entry[]) {
       button.onclick = async () => {
         try {
           const m = await api("characters/" + entry.id);
-          animationDialog(entry.name, m.modes, m);
+          animationDialog(entry.name, m.modes || {}, m);
         } catch (e) {
           alert(String(e));
         }
       };
       card.append(button);
+      card.style.cursor = "pointer";
+      card.onclick = (event) => { if (event.target !== button) button.click(); };
       grid.append(card);
     }
     pages.replaceChildren();
@@ -386,13 +388,42 @@ function animationDialog(title: string, modes: any, manifest?: any) {
   zoom.setAttribute("aria-label", "Zoom da prévia");
   const actions: any[] = [];
   for (const [mode, data] of Object.entries<any>(modes))
-    for (const [name, anim] of Object.entries<any>(data.animations)) {
+    for (const [name, anim] of Object.entries<any>(data.animations || {})) {
       actions.push({ mode, name, anim, reference: data.referenceHeight });
       const o = node("option", mode + " · " + name);
       o.value = String(actions.length - 1);
       select.append(o);
     }
   dialog.append(select, zoom, canvas, info);
+  if (manifest) {
+    const details = node("details"), summary = node("summary", `Arquivos do modelo (${manifest.assets?.length || 0})`), list = node("ul", undefined, "admin-assets");
+    for (const asset of manifest.assets || []) {
+      const li = node("li"), link = node("a", asset.url.split("/").slice(-2).join("/"));
+      link.href = asset.url; link.target = "_blank"; link.rel = "noopener";
+      li.append(link, document.createTextNode(` ? ${Math.ceil(asset.bytes / 1024)} KB`)); list.append(li);
+    }
+    details.append(summary, list); dialog.append(details);
+    if (manifest.issues?.length) dialog.append(node("p", "Pendências: " + JSON.stringify(manifest.issues)));
+    const form = node("form", undefined, "admin-review"), decision = node("select"), notes = node("textarea"), roles = node("div"), status = node("p"), save = node("button", "Salvar revisão");
+    for (const [value, label] of [["pending", "Pendente"], ["approved", "Aprovado para uso"], ["rejected", "Não utilizável"]]) { const option = node("option", label); option.value = value; decision.append(option); }
+    decision.value = manifest.review?.decision || "pending";
+    notes.placeholder = "Observações da revisão"; notes.maxLength = 1000; notes.value = manifest.review?.notes || "";
+    const checks: Record<string, HTMLInputElement> = {};
+    for (const [role, label] of [["npc", "Morador"], ["companion", "Companheiro recrutável"], ["enemy", "Adversário"]]) {
+      const wrap = node("label"), checkbox = node("input"); checkbox.type = "checkbox"; checkbox.checked = manifest.review?.capabilities?.[role] ?? manifest.capabilities?.[role] ?? false; checks[role] = checkbox;
+      wrap.append(checkbox, document.createTextNode(" " + label)); roles.append(wrap);
+    }
+    form.append(node("h3", "Revisão e uso no jogo"), node("p", "A aprovação libera as funções selecionadas na biblioteca após recarregar o jogo. Não adiciona protagonistas nem reconstrói animações ausentes."), decision, roles, notes, save, status);
+    form.onsubmit = async (event) => {
+      event.preventDefault(); save.disabled = true; status.textContent = "Salvando...";
+      try {
+        const enabled = decision.value === "approved";
+        await api(`characters/${manifest.id}/review`, { decision: decision.value, notes: notes.value, capabilities: Object.fromEntries(Object.entries(checks).map(([role, checkbox]) => [role, enabled && checkbox.checked])) });
+        status.textContent = "Revisão salva. Recarregue o jogo para aplicar.";
+      } catch (error) { status.textContent = String(error); } finally { save.disabled = false; }
+    };
+    dialog.append(form);
+  }
   if (!actions.length) {
     info.textContent = "Este recurso não possui animações convertidas.";
     return;

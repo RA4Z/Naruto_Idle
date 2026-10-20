@@ -1,4 +1,5 @@
 import { createServer } from "node:http";
+import { networkInterfaces } from "node:os";
 import { createReadStream } from "node:fs";
 import { stat } from "node:fs/promises";
 import { resolve, sep, extname } from "node:path";
@@ -62,8 +63,18 @@ const server = createServer(
     }),
 ).listen(
   Number(process.env.PORT) || 5180,
-  process.env.HOST || "127.0.0.1",
-  () => console.log("Naruto Idle server ready."),
+  process.env.HOST || "0.0.0.0",
+  () => {
+    const address = server.address();
+    const port = typeof address === "object" && address ? address.port : 5180;
+    console.log(`Jogo: http://127.0.0.1:${port}/`);
+    if (!process.env.HOST || process.env.HOST === "0.0.0.0") {
+      for (const entries of Object.values(networkInterfaces()))
+        for (const entry of entries || [])
+          if (entry.family === "IPv4" && !entry.internal)
+            console.log(`Rede: http://${entry.address}:${port}/`);
+    }
+  },
 );
 
 server.once("close", () => api.close());

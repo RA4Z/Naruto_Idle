@@ -31,7 +31,14 @@ export class EntityCatalog {
         if (!response.ok) throw new Error("Catálogo indisponível");
         const data = await response.json();
         if (!Array.isArray(data.entities)) throw new Error("Catálogo inválido");
-        return data.entities as EntitySummary[];
+        const reviewResponse = await fetch("/assets/catalog/reviews.json", { cache: "no-store" });
+        if (!reviewResponse.ok) throw new Error("Revis?es indispon?veis");
+        const reviews = await reviewResponse.json();
+        return (data.entities as EntitySummary[]).map((entry): EntitySummary => {
+          const review = reviews[entry.id];
+          if (!review) return entry;
+          return { ...entry, capabilities: review.decision === "approved" ? review.capabilities : { npc: false, companion: false, enemy: false }, collection: review.decision === "approved" ? "playable" : "review" };
+        });
       })
       .catch((error) => {
         this.index = undefined;
@@ -50,7 +57,8 @@ export class EntityCatalog {
         .then(async (response) => {
           if (!response.ok)
             throw new Error("Recursos ainda indisponíveis: " + entry.name);
-          return response.json() as Promise<EntityManifest>;
+          const manifest = await response.json() as EntityManifest;
+          return { ...manifest, capabilities: entry.capabilities, collection: entry.collection };
         })
         .catch((error) => {
           this.manifests.delete(id);
@@ -64,3 +72,4 @@ export class EntityCatalog {
   }
 }
 export const entityCatalog = new EntityCatalog();
+

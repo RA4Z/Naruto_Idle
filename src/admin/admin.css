@@ -254,3 +254,9 @@ body {
     font-size: 10px;
   }
 }
+
+.admin-review { display: grid; gap: 12px; margin-top: 24px; border-top: 1px solid #61755c; padding-top: 16px; }
+.admin-review textarea { min-height: 80px; width: 100%; }
+.admin-review label { display: inline-block; margin: 0 16px 8px 0; }
+.admin-assets { max-height: 240px; overflow: auto; overflow-wrap: anywhere; }
+.admin-assets a { color: #b8d9a6; }

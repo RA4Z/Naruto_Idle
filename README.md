@@ -214,3 +214,15 @@ A interface chama os iniciais de Naruto, Sasuke e Sakura; as pastas `*-kid` pres
 Os atlas revisados agora usam quadros únicos e janelas de preparação compatíveis com os efeitos separados; isso reduz sua memória RGBA estimada de 52–68 MiB para 2–5 MiB por inicial. Não significa que o processo inteiro usa apenas esse volume. Revisões futuras são incrementais, sem refazer o catálogo todo. Consulte reports/COMBAT-REFINEMENT.md.
 
 A publicação em naruto-idle.vercel.app foi adiada por pedido do usuário; diagnóstico em docs/VERCEL.md, sem alteração da configuração ativa de hospedagem.
+
+## Revisão local de personagens
+
+Execute `npm run admin` e abra a seção **Personagens**. Clique em um modelo para examinar suas ações convertidas, arquivos locais e pendências. A revisão salva decisão, observações e funções em `public/assets/catalog/reviews.json`; recarregue o jogo para aplicar as alterações à biblioteca. Aprovar um modelo não cria animações ausentes nem adiciona um novo protagonista. Para usar a versão mais recente, mantenha o servidor Vite em execução. A senha padrão local é `admin`; defina `NARUTO_ADMIN_PASSWORD` para substituí-la.
+
+## Acesso pela rede local
+
+Execute `npm run dev` no computador que hospeda o jogo. O terminal mostra o endereço local e os endereços de rede; nos outros computadores da mesma rede, abra `http://IP-DO-HOST:5178/` com o IPv4 exibido. `npm run admin` usa a mesma porta, portanto execute apenas um dos dois comandos por vez. Se o Windows solicitar permissão de firewall, permita o acesso em redes privadas; se necessário, libere a porta TCP 5178 no firewall.
+
+Para executar a build, use `npm run build` e `npm start`: o terminal mostra os endereços na porta 5180 (ou na porta definida por `PORT`). O servidor escuta em todas as interfaces por padrão; para restringi-lo ao próprio computador, defina `HOST=127.0.0.1`.
+
+A página `/admin` também fica acessível na rede. Antes de compartilhá-la, defina uma senha própria na mesma janela PowerShell com `$env:NARUTO_ADMIN_PASSWORD = "sua-senha"` e então inicie o servidor. Cada navegador mantém seu próprio progresso local; a arena é o modo compartilhado entre jogadores.

@@ -1,7 +1,7 @@
 import { createArenaApi } from "./arena.mjs";
 import { randomBytes, createHash, timingSafeEqual } from "node:crypto";
-import { readFile, readdir, stat } from "node:fs/promises";
-import { resolve, join, relative, sep } from "node:path";
+import { readFile, readdir, stat, writeFile, rename } from "node:fs/promises";
+import { resolve, join, relative, sep, dirname } from "node:path";
 export function createGameApi(
   root,
   { password = process.env.NARUTO_ADMIN_PASSWORD || "admin" } = {},
@@ -59,6 +59,17 @@ export function createGameApi(
     fileTime = Date.now();
     return output;
   }
+  const reviewPath = resolve(publicRoot, "assets/catalog/reviews.json");
+  let reviewWrites = Promise.resolve();
+  const reviews = async () => JSON.parse(await readFile(reviewPath, "utf8"));
+  const characterData = async (id) => {
+    const catalog = await read("public/assets/catalog/entities.json");
+    const entry = catalog.entities.find((e) => e.id === id);
+    if (!entry || !entry.manifestUrl) return null;
+    const path = resolve(publicRoot, entry.manifestUrl.slice(1));
+    if (!path.startsWith(resolve(publicRoot, "assets") + sep)) throw new Error("Invalid path");
+    return { entry, path, manifest: JSON.parse(await readFile(path, "utf8")) };
+  };
   const handler = async (req, res, next) => {
     const url = new URL(req.url, "http://localhost");
     if (!url.pathname.startsWith("/api/admin/")) return arena(req, res, next);
@@ -114,6 +125,30 @@ export function createGameApi(
           );
           return json(res, 200, { authenticated: false });
         }
+        const reviewMatch = url.pathname.match(/^\/api\/admin\/characters\/(\d{6,12})\/review$/);
+        if (reviewMatch) {
+          if (!authorized(req)) return json(res, 401, { error: "Login required." });
+          let body = "";
+          for await (const chunk of req) { body += chunk; if (body.length > 4096) return json(res, 413, { error: "Request too large." }); }
+          let input;
+          try { input = JSON.parse(body); } catch { return json(res, 400, { error: "Invalid data." }); }
+          if (!input || !["pending", "approved", "rejected"].includes(input.decision) || typeof input.notes !== "string" || input.notes.length > 1000 || !input.capabilities || ["npc", "companion", "enemy"].some(role => typeof input.capabilities[role] !== "boolean")) return json(res, 400, { error: "Invalid review." });
+          const data = await characterData(reviewMatch[1]);
+          if (!data) return json(res, 404, { error: "Modelo nao encontrado." });
+          const world = data.manifest.modes?.world?.animations || {}, battle = data.manifest.modes?.battle?.animations || {};
+          if ((input.capabilities.npc && !world.idle_0) || (input.capabilities.companion && (!world.idle_0 || !world.run_0)) || (input.capabilities.enemy && (!battle.C_idle || !battle.A_1hit))) return json(res, 400, { error: "Faltam animacoes basicas para uma das funcoes selecionadas." });
+          if (input.decision !== "approved" && Object.values(input.capabilities).some(Boolean)) return json(res, 400, { error: "Aprove o modelo para habilitar funcoes." });
+          const record = { decision: input.decision, notes: input.notes, capabilities: input.capabilities, updatedAt: new Date().toISOString() };
+          const operation = reviewWrites.then(async () => {
+            const all = await reviews(); all[reviewMatch[1]] = record;
+            const temp = reviewPath + ".tmp";
+            await writeFile(temp, JSON.stringify(all, null, 2) + "\n", "utf8");
+            await rename(temp, reviewPath);
+          });
+          reviewWrites = operation.catch(() => {});
+          await operation;
+          return json(res, 200, record);
+        }
         return json(res, 405, { error: "Operação indisponível." });
       }
       if (req.method !== "GET")
@@ -130,6 +165,7 @@ export function createGameApi(
           200,
           await read("public/assets/catalog/entities.json"),
         );
+      if (url.pathname === "/api/admin/reviews") return json(res, 200, await reviews());
       if (url.pathname === "/api/admin/maps")
         return json(res, 200, await read("public/assets/maps/index.json"));
       if (url.pathname === "/api/admin/presentation")
@@ -186,13 +222,19 @@ export function createGameApi(
         /^\/api\/admin\/characters\/(\d{6,12})$/,
       );
       if (match) {
-        const catalog = await read("public/assets/catalog/entities.json");
-        const entry = catalog.entities.find((e) => e.id === match[1]);
-        if (!entry) return json(res, 404, { error: "Modelo não encontrado." });
-        const path = resolve(publicRoot, entry.manifestUrl.slice(1));
-        if (!path.startsWith(publicRoot + sep))
-          return json(res, 400, { error: "Caminho inválido." });
-        return json(res, 200, JSON.parse(await readFile(path, "utf8")));
+        const data = await characterData(match[1]);
+        if (!data) return json(res, 404, { error: "Modelo n?o encontrado." });
+        const assets = [];
+        async function walkCharacter(folder) {
+          for (const item of await readdir(folder, { withFileTypes: true })) {
+            if (item.isSymbolicLink()) continue;
+            const path = join(folder, item.name);
+            if (item.isDirectory()) await walkCharacter(path);
+            else assets.push({ url: "/" + relative(publicRoot, path).split(sep).join("/"), bytes: (await stat(path)).size });
+          }
+        }
+        await walkCharacter(dirname(data.path));
+        return json(res, 200, { ...data.manifest, assets, review: (await reviews())[match[1]] || null });
       }
       return json(res, 404, { error: "Tela indisponível." });
     } catch (error) {
