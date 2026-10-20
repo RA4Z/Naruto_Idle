@@ -1,6 +1,15 @@
 # Ponto de continuidade
 
-Servidor atual: produção local Node em 127.0.0.1:5178, PID 139736, sessão exec 46597, heap máximo 256 MB. O Vite e os navegadores de teste foram encerrados. Para testes __idle futuros é necessário usar Vite em vez dessa build; não iniciar servidores concorrentes na mesma porta. Build final e smoke de produção passaram, em reports/production-smoke-validation.json.
+## Última extensão da revisão — catálogo
+
+Após d48f6d85, foram reparadas 503 ações adicionais em 389 modelos (reports/catalog-animation-validation.json), incluindo especiais, ataques básicos e derrotas. Todos os PNGs, índices e origens foram validados. A prévia de seis modelos diversos passou no admin de produção, sem Phaser (reports/catalog-admin-browser-validation.json). Os 15 atlas dos iniciais permaneceram byte a byte iguais após otimizar o decoder. Agora read_actions decodifica somente os bitmaps referenciados pelas ações solicitadas; o orçamento usa quadros únicos, não a duração repetida. Há 7 testes Python e 10 de servidor/deploy.
+
+Restam 31 ações em 30 modelos, incluindo 8 A_1hit e 23 especiais, que excederam o orçamento de atlas. Preservados sem forçar alocação: planejar atlas com recortes/offsets ou tratamento de movimento, em vez de aumentar a concorrência ou fazer uma extração completa. O relatório external-symbol-audit.json é a fila atual; o histórico de deferred contém tentativas antigas já resolvidas, então filtrar pelas pendências atuais. Não afirmar que todo o catálogo está impecável.
+
+Admin em produção agora lê os metadados da mesma pasta dist servida ao navegador, evitando misturar atlas antigos com manifestos recém-preparados. Sua prévia também é limitada a 24 FPS. Vercel continua adiada.
+
+
+Servidor atual: produção local Node em 127.0.0.1:5178, sessão exec 54683, heap máximo 256 MB (reiniciado após a revisão ampliada; confirmar PID pela porta). O Vite e os navegadores de teste foram encerrados. Para testes __idle futuros é necessário usar Vite em vez dessa build; não iniciar servidores concorrentes na mesma porta. Build final e smoke de produção passaram, em reports/production-smoke-validation.json.
 
 ## Estado atual — 20/10/2026: build de duelo e animações revisadas
 

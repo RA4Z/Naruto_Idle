@@ -76,3 +76,47 @@ test("admin API requires a server session, rejects bad passwords and cross-origi
     await new Promise((resolve) => server.close(resolve));
   }
 });
+
+test("production admin reads the deployed asset metadata rather than mutable preparation files", async () => {
+  const { mkdtemp, mkdir, writeFile, rm } = await import("node:fs/promises");
+  const { tmpdir } = await import("node:os");
+  const { join, resolve, sep } = await import("node:path");
+  const dir = await mkdtemp(join(tmpdir(), "naruto-deployed-assets-"));
+  assert.ok(resolve(dir).startsWith(resolve(tmpdir()) + sep));
+  await mkdir(join(dir, "assets", "maps"), { recursive: true });
+  await writeFile(
+    join(dir, "assets", "maps", "index.json"),
+    JSON.stringify({ maps: [{ id: "deployed-snapshot" }] }),
+  );
+  const api = createGameApi(fileURLToPath(new URL("../", import.meta.url)), {
+    publicDirectory: dir,
+  });
+  const server = createServer(
+    (req, res) =>
+      void api(req, res, () => {
+        res.writeHead(404);
+        res.end();
+      }),
+  );
+  await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
+  const base = "http://127.0.0.1:" + server.address().port;
+  try {
+    const login = await fetch(base + "/api/admin/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password: "admin" }),
+    });
+    const cookie = login.headers.get("set-cookie").split(";")[0];
+    const response = await fetch(base + "/api/admin/maps", {
+      headers: { Cookie: cookie },
+    });
+    assert.deepEqual((await response.json()).maps, [
+      { id: "deployed-snapshot" },
+    ]);
+  } finally {
+    api.close();
+    server.closeAllConnections();
+    await new Promise((resolve) => server.close(resolve));
+    await rm(dir, { recursive: true, force: true });
+  }
+});

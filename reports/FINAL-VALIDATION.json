@@ -107,7 +107,7 @@
   },
   "arena": {
     "status": "implemented-local-balanced-and-journey",
-    "serverTests": 9,
+    "serverTests": 10,
     "browserReport": "reports/arena-browser-validation.json",
     "pending": [],
     "limitations": [
@@ -122,9 +122,13 @@
     "browserReport": "reports/combat-refinement-browser-validation.json",
     "startersReviewedActions": 15,
     "enemyAttacksReviewed": 4,
-    "pendingCatalogActions": 530,
-    "pendingModels": 403,
-    "pythonTests": 5
+    "pendingCatalogActions": 31,
+    "pendingModels": 30,
+    "pythonTests": 7,
+    "additionalReviewedActions": 503,
+    "additionalReviewedModels": 389,
+    "catalogReport": "reports/catalog-animation-validation.json",
+    "catalogBrowserReport": "reports/catalog-admin-browser-validation.json"
   },
   "vercel": {
     "status": "postponed-by-user",
@@ -135,10 +139,11 @@
     "typecheck": "passed",
     "build": "passed",
     "domainTests": 22,
-    "serverAndDeploymentTests": 9,
-    "pythonTests": 5,
+    "serverAndDeploymentTests": 10,
+    "pythonTests": 7,
     "arenaBrowser": "passed",
     "sequentialPveBrowser": "passed",
-    "gitDiffCheck": "passed"
+    "gitDiffCheck": "passed",
+    "catalogAdminBrowser": "passed"
   }
 }

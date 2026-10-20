@@ -401,7 +401,8 @@ function animationDialog(title: string, modes: any, manifest?: any) {
     image: HTMLImageElement | undefined,
     start = 0,
     raf = 0,
-    token = 0;
+    token = 0,
+    lastDraw = 0;
   const choose = async () => {
     const request = ++token,
       entry = actions[Number(select.value)];
@@ -420,6 +421,11 @@ function animationDialog(title: string, modes: any, manifest?: any) {
   };
   const draw = (time: number) => {
     if (!dialog.open) return;
+    if (document.hidden || time - lastDraw < 1000 / 24) {
+      raf = requestAnimationFrame(draw);
+      return;
+    }
+    lastDraw = time;
     const ctx = canvas.getContext("2d")!;
     ctx.clearRect(0, 0, 560, 400);
     if (image) {

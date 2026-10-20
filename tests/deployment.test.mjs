@@ -2,10 +2,11 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { mkdtemp, mkdir, writeFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { join, resolve, sep } from "node:path";
 import { checkLfsAssets } from "../tools/check-lfs.mjs";
 test("deployment fails before publishing Git LFS pointers masquerading as images", async () => {
   const root = await mkdtemp(join(tmpdir(), "naruto-lfs-"));
+  assert.ok(resolve(root).startsWith(resolve(tmpdir()) + sep));
   try {
     await mkdir(join(root, "character"));
     await writeFile(

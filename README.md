@@ -214,3 +214,6 @@ A interface chama os iniciais de Naruto, Sasuke e Sakura; as pastas `*-kid` pres
 Os atlas revisados agora usam quadros únicos e janelas de preparação compatíveis com os efeitos separados; isso reduz sua memória RGBA estimada de 52–68 MiB para 2–5 MiB por inicial. Não significa que o processo inteiro usa apenas esse volume. Revisões futuras são incrementais, sem refazer o catálogo todo. Consulte reports/COMBAT-REFINEMENT.md.
 
 A publicação em naruto-idle.vercel.app foi adiada por pedido do usuário; diagnóstico em docs/VERCEL.md, sem alteração da configuração ativa de hospedagem.
+
+
+A revisão foi ampliada a 503 ações em 389 modelos do catálogo, com validação de PNGs, quadros e origens. O decoder lê somente os bitmaps das ações pedidas e processa lotes sequenciais. Restam 31 sequências grandes para uma revisão própria de atlas; elas continuam preservadas e sinalizadas nos relatórios. O admin de produção usa os manifestos da mesma build que fornece as imagens.

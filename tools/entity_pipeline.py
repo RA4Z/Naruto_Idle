@@ -44,30 +44,49 @@ def lossless(payload,alpha):
  if alpha:pixels=[(min(255,(r*255+a//2)//a),min(255,(g*255+a//2)//a),min(255,(blue*255+a//2)//a),a) if a else (0,0,0,0) for r,g,blue,a in pixels]
  im=Image.new('RGBA',(w,h));im.putdata(pixels);return ident,im
 
-def read_actions(path):
- images={};symbols={};xml=None;warnings=[]
- for kind,p in tags(path.read_bytes()):
-  if kind in (20,36):
-   ident,im=lossless(p,kind==36);images[ident]=im
-  elif kind in (21,35,90):
-   ident=struct.unpack_from('<H',p)[0]
-   if kind in (35,90):
-    length=struct.unpack_from('<I',p,2)[0];start=8 if kind==90 else 6
-    im=Image.open(io.BytesIO(p[start:start+length])).convert('RGBA');alpha=p[start+length:]
-    if alpha:im.putalpha(Image.frombytes('L',im.size,zlib.decompress(alpha)))
-   else:im=Image.open(io.BytesIO(p[2:])).convert('RGBA')
-   images[ident]=im
-  elif kind==87 and p[6:].lstrip().startswith(b'<actions'):xml=p[6:]
+def read_actions(path,max_image_pixels=None,only_actions=None,frame_limits=None):
+ records=list(tags(path.read_bytes()));images={};symbols={};xml=None;pixel_total=0
+ for kind,p in records:
+  if kind==87 and p[6:].lstrip().startswith(b'<actions'):xml=p[6:]
   elif kind==76:
    count=struct.unpack_from('<H',p)[0];pos=2
    for _ in range(count):
     ident=struct.unpack_from('<H',p,pos)[0];pos+=2;end=p.index(0,pos);symbols[p[pos:end].decode('utf-8')]=ident;pos=end+1
  if not xml:raise ValueError('No bitmap actions XML: timeline/vector reconstruction required')
- root=ET.fromstring(xml);assets={a.get('id'):a.attrib for a in root.findall('asset')}
+ root=ET.fromstring(xml);assets={a.get('id'):a.attrib for a in root.findall('asset')};needed=None
+ if only_actions is not None:
+  needed=set()
+  for action in root.findall('action'):
+   if action.get('name') not in only_actions:continue
+   limit=(frame_limits or {}).get(action.get('name'))
+   for frame in action.iter('frame'):
+    if limit is not None and int(frame.get('index','0'))>=limit:continue
+    for el in frame.findall('element'):
+     if el.get('extname'):continue
+     asset=assets.get(el.get('assetId'))
+     if asset:needed.add(symbols.get(asset.get('className')))
+ def check_size(w,h):
+  nonlocal pixel_total
+  pixel_total+=w*h
+  if max_image_pixels is not None and pixel_total>max_image_pixels:raise ValueError('source-bitmap-pixel-budget-exceeded')
+ for kind,p in records:
+  if kind not in (20,36,21,35,90):continue
+  ident=struct.unpack_from('<H',p)[0]
+  if needed is not None and ident not in needed:continue
+  if kind in (20,36):
+   w,h=struct.unpack_from('<HH',p,3);check_size(w,h);ident,im=lossless(p,kind==36)
+  else:
+   if kind in (35,90):
+    length=struct.unpack_from('<I',p,2)[0];start=8 if kind==90 else 6
+    im=Image.open(io.BytesIO(p[start:start+length]));check_size(*im.size);im=im.convert('RGBA');alpha=p[start+length:]
+    if alpha:im.putalpha(Image.frombytes('L',im.size,zlib.decompress(alpha)))
+   else:
+    im=Image.open(io.BytesIO(p[2:]));check_size(*im.size);im=im.convert('RGBA')
+  images[ident]=im
  return root,assets,images,symbols,xml
 
-def convert(path,folder,url,mode,only=None,frame_limits=None):
- root,assets,images,symbols,xml=read_actions(path);folder.mkdir(parents=True,exist_ok=True);(folder/'actions.xml').write_bytes(xml)
+def convert(path,folder,url,mode,only=None,frame_limits=None,pixel_budget=None,source_pixel_budget=None):
+ root,assets,images,symbols,xml=read_actions(path,max_image_pixels=source_pixel_budget,only_actions=only,frame_limits=frame_limits);folder.mkdir(parents=True,exist_ok=True);(folder/'actions.xml').write_bytes(xml)
  if frame_limits:
   import copy
   root=copy.deepcopy(root)
@@ -108,6 +127,15 @@ def convert(path,folder,url,mode,only=None,frame_limits=None):
   if not elements:issues.append({'action':name,'reason':'no-resolved-bitmaps','missing':sorted(missing)});continue
   left,top=math.floor(bounds[0])-2,math.floor(bounds[1])-2;w=math.ceil(bounds[2])-left+2;h=math.ceil(bounds[3])-top+2
   if w>2048 or h>2048:issues.append({'action':name,'reason':'canvas-too-large','size':[w,h]});continue
+  if pixel_budget is not None:
+   signatures=set()
+   for time in range(end):
+    visible=[]
+    for layer in layers:
+     active=[f for f in layer.findall('frame') if int(f.get('index','0'))<=time<int(f.get('index','0'))+int(f.get('length','1'))]
+     if active:visible.extend(el for el in active[-1].findall('element') if id(el) in elements)
+    signatures.add(tuple(tuple(sorted(el.attrib.items())) for el in visible))
+   if w*h*len(signatures)>pixel_budget:issues.append({'action':name,'reason':'canvas-pixel-budget-exceeded','estimatedPixels':w*h*len(signatures)});continue
   cache={};frames=[];timeline=[];frame_bounds=[]
   for time in range(end):
    visible=[]

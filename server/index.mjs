@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 import { createGameApi } from "./game-api.mjs";
 const root = fileURLToPath(new URL("../", import.meta.url)),
   dist = resolve(root, "dist"),
-  api = createGameApi(root);
+  api = createGameApi(root, { publicDirectory: dist });
 const mime = {
   ".html": "text/html; charset=utf-8",
   ".js": "text/javascript",

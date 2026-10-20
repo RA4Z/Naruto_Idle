@@ -4,14 +4,17 @@ import { readFile, readdir, stat } from "node:fs/promises";
 import { resolve, join, relative, sep } from "node:path";
 export function createGameApi(
   root,
-  { password = process.env.NARUTO_ADMIN_PASSWORD || "admin" } = {},
+  {
+    password = process.env.NARUTO_ADMIN_PASSWORD || "admin",
+    publicDirectory = resolve(root, "public"),
+  } = {},
 ) {
   const arena = createArenaApi();
   const sessions = new Map(),
     attempts = new Map();
   let fileCache = [],
     fileTime = 0;
-  const publicRoot = resolve(root, "public");
+  const publicRoot = resolve(publicDirectory);
   const digest = (value) => createHash("sha256").update(String(value)).digest();
   const cookie = (req) =>
     req.headers.cookie
@@ -27,7 +30,12 @@ export function createGameApi(
     return false;
   };
   const read = async (file) =>
-    JSON.parse(await readFile(resolve(root, file), "utf8"));
+    JSON.parse(
+      await readFile(
+        resolve(publicRoot, file.replace(/^public\//, "")),
+        "utf8",
+      ),
+    );
   const json = (res, status, value) => {
     res.writeHead(status, {
       "Content-Type": "application/json; charset=utf-8",

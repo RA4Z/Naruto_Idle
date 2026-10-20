@@ -39,7 +39,7 @@ Pedido do usuário em 20/10/2026: uma tarefa pesada por vez. Não sobrepor build
 
 ## Limites atuais
 
-145 conjuntos de mapas originais identificados, quatro integrados. Os SWFs animados da camada intermediária permanecem preservados na origem, sem execução. Personagens adicionais ainda não têm todos os jutsus e vozes associados. A seleção inicial tem três protagonistas. A arena local nivelada está implementada; modo Jornada e revisão dos corpos indevidos nos iniciais estão concluídos; 530 ações em 403 modelos do acervo aguardam revisão incremental. A cota deve preservar a reserva solicitada; não reduzir testes para iniciar um bloco que não caiba nesta janela.
+145 conjuntos de mapas originais identificados, quatro integrados. Os SWFs animados da camada intermediária permanecem preservados na origem, sem execução. Personagens adicionais ainda não têm todos os jutsus e vozes associados. A seleção inicial tem três protagonistas. A arena local nivelada está implementada; modo Jornada e revisão dos corpos indevidos nos iniciais estão concluídos; 31 ações em 30 modelos do acervo aguardam revisão incremental. A cota deve preservar a reserva solicitada; não reduzir testes para iniciar um bloco que não caiba nesta janela.
 
 ## Servidor e Git
 
@@ -58,7 +58,10 @@ Validação de arena: `npm run test:server` (6 testes), `node tools/arena-check.
 - [x] Naruto/Sasuke/Sakura exibidos sem Kid; pastas e IDs preservados.
 - [x] Sombras externas não podem reutilizar bitmap local zero como corpo. Quinze ações dos iniciais e quatro ataques dos inimigos de exploração corrigidos.
 - [x] Timelines deduplicadas, origens por ação e janela de preparação sem fuga pelo cenário. Clone original do Rasengan é temporário e intencional.
-- [ ] Continuar revisão explícita em lotes pequenos, a partir de reports/external-symbol-audit.json. Restam 530 ações/403 modelos do acervo, nem todos usados no combate atual.
+- [ ] Continuar revisão explícita em lotes pequenos, a partir de reports/external-symbol-audit.json. Restam 31 ações/30 modelos do acervo, nem todos usados no combate atual.
 - [ ] Publicação Vercel adiada pelo usuário; não solicitar login nem ativar configuração enquanto o assunto não for retomado.
 
-Validações adicionais: 9 testes de servidor/deploy, 5 testes Python de decodificação/namespace/janelas, 22 testes de domínio e navegador combat-refinement-check.mjs, um único personagem/cena por vez. Estimativas de memória dos cinco atlas revisados por inicial caíram de 52–68 MiB para 2–5 MiB; não é uma medição da memória total do processo.
+Validações adicionais: 10 testes de servidor/deploy, 7 testes Python de decodificação/namespace/janelas, 22 testes de domínio e navegador combat-refinement-check.mjs, um único personagem/cena por vez. Estimativas de memória dos cinco atlas revisados por inicial caíram de 52–68 MiB para 2–5 MiB; não é uma medição da memória total do processo.
+
+
+Revisão ampliada: 503 ações adicionais reparadas em 389 modelos, em lotes de quatro e sem paralelismo. Restam 31 sequências grandes (8 ataques básicos e 23 especiais); preservadas para atlas com recortes/offsets ou adaptação de movimento. Ver reports/catalog-animation-validation.json e catalog-admin-browser-validation.json. A compilação final e a prévia de seis modelos diversos passaram. Não aumentar limites de memória nem lançar múltiplos conversores para tratar essas exceções.
