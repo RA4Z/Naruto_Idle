@@ -543,6 +543,9 @@ button:disabled {
   border-radius: 10px;
   background: #20372a;
 }
+.attribute-summary { grid-column: 1 / -1; }
+.attribute-summary label { display: block; }
+.attribute-summary select { max-width: 100%; margin: 8px 0; padding: 10px; }
 .progress-card p {
   font-size: 12px;
   line-height: 1.5;

@@ -1,4 +1,5 @@
 import type { NativeGrid, Point } from "./navigation";
+import { withSceneGeometry } from "./scene-geometry";
 export type WorldMap = {
   id: string;
   name: string;
@@ -28,7 +29,7 @@ export function listMaps() {
 export async function mapNavigation(map: WorldMap) {
   const r = await fetch(map.navigation);
   if (!r.ok) throw new Error("Não foi possível carregar os caminhos do mapa.");
-  return r.json() as Promise<NativeGrid>;
+  return withSceneGeometry(map.id, await r.json() as NativeGrid);
 }
 export function installTravel(
   getCurrent: () => string,

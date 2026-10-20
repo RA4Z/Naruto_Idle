@@ -4,9 +4,10 @@ export const OFFLINE = {
   fraction: 0.35,
 };
 export const COMBAT = {
+  preparationMs: 120,
+  firstAttackMs: 200,
+  firstEnemyAttackMs: 350,
   specialEvery: 3,
-  specialMultiplier: 2,
-  sakuraRecovery: 0.15,
   enemyInterval: 1450,
 };
 export const ENEMY = { name: "Alvo de treino", visual: "authored-placeholder" };

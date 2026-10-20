@@ -32,10 +32,9 @@ export class EnemyField {
     this.members = [];
     this.mapId = mapId;
     if (safe) return;
-    const candidates = nav.points.filter(
+    const candidates = nav.pointsWithin(hero, 320).filter(
       (p) =>
-        Math.hypot(p.x - hero.x, p.y - hero.y) > 85 &&
-        Math.hypot(p.x - hero.x, p.y - hero.y) < 320,
+        Math.hypot(p.x - hero.x, p.y - hero.y) > 85,
     );
     for (let i = 0; i < 6; i++) {
       const sorted = candidates
@@ -131,9 +130,8 @@ export class EnemyField {
         actor.play("world", "idle_" + mob.direction);
         mob.wait -= delta;
         if (mob.wait > 0) continue;
-        const options = nav.points.filter(
+        const options = nav.pointsWithin(mob.home, 65).filter(
           (p) =>
-            Math.hypot(p.x - mob.home.x, p.y - mob.home.y) < 65 &&
             Math.hypot(p.x - actor.x, p.y - actor.y) > 18 &&
             (!engaged || Math.hypot(p.x - hero.x, p.y - hero.y) > 40),
         );

@@ -1,6 +1,8 @@
 import { installArena } from "./arena/ui";
 import { installProgression } from "./progression/ui";
 import { recruit, STARTER_COLLECTION } from "./progression/rules";
+import { strikeDuration } from "./progression/combat-stats";
+import { CHARACTER_IDS, characterProgress, characterLoadout, syncCharacterProgress, trainCharacter } from "./progression/character-progress";
 import Phaser from "phaser";
 import "./style.css";
 import {
@@ -9,6 +11,9 @@ import {
   type PresentationConfig,
 } from "./presentation";
 import { entityCatalog } from "./entities/catalog";
+import { AutoHuntNavigator } from "./world/auto-hunt";
+import { WorldOcclusion } from "./world/occlusion";
+import { deathFadeDelay } from "./entities/visual-rules";
 import {
   EntityActor,
   ActorAssetCache,
@@ -67,7 +72,6 @@ let scene: HuntScene;
 let definitions: AnimSet;
 let presentationData: PresentationConfig;
 let launchVersion = 0;
-const WALK_SPEED = 96;
 let initialMap: WorldMap;
 let initialNavigation: NativeGrid;
 let worldMaps: WorldMap[];
@@ -79,11 +83,7 @@ let cast: {
   npcs: EntityManifest[];
   party: EntityManifest[];
 };
-const starterIds = {
-  naruto: "11000101",
-  sasuke: "11000201",
-  sakura: "11000301",
-};
+const starterIds = CHARACTER_IDS;
 const openLibrary = installLibrary(
   async (id, role) => {
     if (!scene || !game)
@@ -109,11 +109,7 @@ const openProgression = installProgression(() => ({
 $("progression").onclick = () => openProgression();
 const openArena = installArena(
   () => save.character,
-  () => ({
-    level: save.level,
-    upgrades: save.upgrades,
-    equipment: { ...save.equipment },
-  }),
+  (character) => characterLoadout(save, character),
 );
 $("arena").onclick = () => {
   const current = game;
@@ -165,6 +161,7 @@ function commit() {
         y: scene.hero.y,
       };
     save.lastSaved = Date.now();
+    syncCharacterProgress(save);
     store.write(JSON.stringify(save));
   }
 }
@@ -175,7 +172,7 @@ function toast(text: string) {
 }
 function card(id: CharacterId) {
   const c = CHARACTERS[id];
-  return `<button class="character" data-character="${id}"><img src="${c.portrait}" alt="Retrato recuperado de ${c.name}"><span class="character-name">${c.name}</span><em>${c.subtitle}</em><p>${c.description}</p><span class="select-label">Escolher ${c.name} →</span></button>`;
+  return `<button class="character" data-character="${id}"><img src="${c.portrait}" alt="Retrato recuperado de ${c.name}"><span class="character-name">${c.name}</span><em>${c.subtitle}</em><p>${c.description}</p><p>Vitalidade ${c.attributes.vitality} · Força ${c.attributes.strength} · Velocidade ${c.attributes.speed}</p><span class="select-label">Escolher ${c.name} →</span></button>`;
 }
 async function start(s: Save) {
   const request = ++launchVersion;
@@ -306,12 +303,8 @@ $("pause").onclick = () => {
   commit();
 };
 $("upgrade").onclick = () => {
-  if (save.coins < 25) {
-    toast("Você precisa de 25 moedas para treinar.");
-    return;
-  }
-  save.coins -= 25;
-  save.upgrades++;
+  try { trainCharacter(save); }
+  catch (error) { toast((error as Error).message); return; }
   scene.hunt.hp = Math.min(stats(save).maxHp, scene.hunt.hp + 9);
   journal("Treino concluído: força e resistência melhoradas.");
   commit();
@@ -356,6 +349,7 @@ class HuntScene extends Phaser.Scene {
   actorCache!: ActorAssetCache;
   loadingActor = false;
   encounterSequence = 0;
+  private autoNavigator = new AutoHuntNavigator<EntityActor>();
   bars!: Phaser.GameObjects.Graphics;
   groundShadow!: Phaser.GameObjects.Ellipse;
   stepDistance = 0;
@@ -428,6 +422,9 @@ class HuntScene extends Phaser.Scene {
       .image(0, 0, "map-" + this.map.id)
       .setOrigin(0)
       .setDisplaySize(this.map.width, this.map.height);
+    this.occlusion = new WorldOcclusion(this);
+    this.occlusion.setMap(this.map);
+    this.events.once("shutdown", () => this.occlusion.clear());
     this.foreground = this.add
       .image(0, 0, "map-" + this.map.id + "-foreground")
       .setOrigin(0)
@@ -538,7 +535,10 @@ class HuntScene extends Phaser.Scene {
           mapId: this.map.id,
           mode: this.map.kind,
           autoHunt: !!save.autoHunt,
-          speed: WALK_SPEED,
+          speed: stats(save).moveSpeed,
+          attributes: stats(save).attributes,
+          attackInterval: stats(save).interval,
+          attacks: this.hunt.attacks,
           path: this.path.map((p) => ({ ...p })),
           npcs: this.npcs.map((n) => ({
             id: n.manifest.id,
@@ -564,6 +564,7 @@ class HuntScene extends Phaser.Scene {
           kills: save.kills,
           character: save.character,
           animation: this.hero.anims.currentAnim?.key,
+          animationTimeScale: this.hero.anims.timeScale,
           heroSpriteInstances: this.children.list.filter(
             (o) =>
               o instanceof Phaser.GameObjects.Sprite &&
@@ -580,6 +581,8 @@ class HuntScene extends Phaser.Scene {
           enemyId: this.enemy.manifest.id,
           enemyAnimation: this.enemy.visual.anims.currentAnim?.key,
           enemyScale: this.enemy.visual.scaleX,
+          enemyFlipped: this.enemy.visual.flipX,
+          occlusion: this.occlusion.snapshot(),
           enemyVisible: this.enemy.visible,
           enemies: this.enemyField.members.map((m) => ({
             id: m.actor.manifest.id,
@@ -615,7 +618,7 @@ class HuntScene extends Phaser.Scene {
         },
         walkTo: (p: Point) => this.walkTo(p),
         navigation: () => this.navigation,
-        previewSkill: () => this.effect("skill", stats(save).attack * 2),
+        previewSkill: () => this.effect("skill", stats(save).skillDamage),
         setHp: (hp: number) => {
           this.hunt.hp = hp;
         },
@@ -642,10 +645,10 @@ class HuntScene extends Phaser.Scene {
       );
       this.hero.play(key);
       this.hero.anims.timeScale =
-        key === "battle-" + specialAction()
+        key === "battle-" + specialAction() || key === "battle-A_1hit"
           ? this.hero.anims.currentAnim!.duration /
-            Math.min(900, stats(save).interval * 0.8)
-          : 1;
+            strikeDuration(key === "battle-" + specialAction(), stats(save).interval)
+          : key.startsWith("world-run_") ? stats(save).moveSpeed / 96 : 1;
       this.lastAnim = key;
     }
   }
@@ -697,7 +700,7 @@ class HuntScene extends Phaser.Scene {
       });
       this.enemy.play("battle", "C_hurt", true);
       this.lastStrikeDuration =
-        event === "skill" ? Math.min(900, stats(save).interval * 0.8) : 400;
+        strikeDuration(event === "skill", stats(save).interval);
       this.presentation.play(
         event === "skill" ? "SP_skill1" : "A_1hit",
         this.hero,
@@ -725,13 +728,16 @@ class HuntScene extends Phaser.Scene {
         "#c5ffbd",
       );
       journal(`Vitória · +${value} XP · +${AREAS[save.area].coins} moedas`);
+      this.renderParty();
       this.time.delayedCall(this.lastStrikeDuration * 0.85, () => {
         if (!defeatedEnemy.active || !this.enemyField.members.some((member) => member.actor === defeatedEnemy && !member.alive)) return;
         defeatedEnemy.play("battle", "C_dead", true);
+        const death = defeatedEnemy.manifest.modes.battle?.animations.C_dead;
         this.tweens.add({
           targets: defeatedEnemy,
           alpha: 0,
-          duration: 500,
+          delay: deathFadeDelay(death?.timeline?.length || death?.frames || 0, death?.fps || 0),
+          duration: 400,
           onComplete: () => { if (defeatedEnemy.active) defeatedEnemy.setVisible(false).setAlpha(1); },
         });
       });
@@ -790,7 +796,7 @@ class HuntScene extends Phaser.Scene {
       throw new Error("Este personagem já está no grupo.");
     if (role === "companion" && !save.collection?.includes(id)) {
       const manifest = await entityCatalog.get(id);
-      if (!manifest.organization?.eligible)
+      if (manifest.collection !== "playable" || !manifest.capabilities.companion)
         throw new Error("Este modelo ainda está em revisão.");
       recruit(save, id);
       journal(
@@ -817,9 +823,10 @@ class HuntScene extends Phaser.Scene {
         await this.actorCache.load(manifest, "companion");
       if (!this.sys.isActive()) return;
       if (role === "enemy") {
-        this.enemy.use(manifest, role);
+        this.standbyEnemy.use(manifest, role);
         save.enemyId = id;
-        this.enemy.setVisible(true);
+        cast.enemies = [manifest];
+        this.enemyField.mapId = "";
         this.placeEnemy();
       } else if (role === "companion") {
         this.party.add(manifest, this.hero, this.navigation);
@@ -867,6 +874,7 @@ class HuntScene extends Phaser.Scene {
   navigation!: NativeNavigation;
   background!: Phaser.GameObjects.Image;
   foreground!: Phaser.GameObjects.Image;
+  occlusion!: WorldOcclusion;
   portal?: Phaser.GameObjects.Container;
   destination!: Phaser.GameObjects.Ellipse;
   path: Point[] = [];
@@ -963,6 +971,7 @@ class HuntScene extends Phaser.Scene {
     this.residents.reset(this.npcs);
   }
   placeEnemy() {
+    this.autoNavigator.reset();
     this.enemyField ??= new EnemyField(this);
     if (this.enemyField.mapId !== this.map.id)
       this.enemyField.reset(
@@ -1056,6 +1065,7 @@ class HuntScene extends Phaser.Scene {
       this.background
         .setTexture("map-" + map.id)
         .setDisplaySize(map.width, map.height);
+      this.occlusion.setMap(map);
       this.foreground
         .setTexture("map-" + map.id + "-foreground")
         .setDisplaySize(map.width, map.height);
@@ -1185,7 +1195,7 @@ class HuntScene extends Phaser.Scene {
       const row = document.createElement("div");
       row.className = "party-member";
       const name = document.createElement("span");
-      name.textContent = member.manifest.name;
+      name.textContent = `${member.manifest.name} · Nível ${characterProgress(save, member.manifest.id).level}`;
       const button = document.createElement("button");
       button.className = "text-button";
       button.textContent = "Remover";
@@ -1197,6 +1207,7 @@ class HuntScene extends Phaser.Scene {
   }
   update(_time: number, delta: number) {
     if (!this.hero) return;
+    const walkSpeed = stats(save).moveSpeed;
     const blocked =
       save.paused ||
       this.loadingActor ||
@@ -1217,8 +1228,17 @@ class HuntScene extends Phaser.Scene {
       this.hunt.phase !== "explorando" ? this.enemy : undefined,
       blocked,
     );
-    if (!this.isLobby && this.hunt.phase === "explorando")
-      this.enemy = this.enemyField.nearest(this.hero) || this.standbyEnemy;
+    if (!this.isLobby && this.hunt.phase === "explorando") {
+      if (!blocked && save.autoHunt) {
+        const candidates = this.enemyField.members.filter(m => m.alive && m.actor.visible).map(m => m.actor);
+        const hunt = this.autoNavigator.update(this.hero, candidates, delta, this.navigation);
+        this.enemy = hunt.target || this.standbyEnemy;
+        this.path = hunt.path;
+      } else if (!save.autoHunt) {
+        this.autoNavigator.reset();
+        this.enemy = this.enemyField.nearest(this.hero) || this.standbyEnemy;
+      }
+    }
     if (!this.enemyField.members.some((member) => member.actor === this.enemy))
       this.enemy.tick(blocked);
     if (!blocked && this.hunt.phase === "explorando") {
@@ -1243,21 +1263,14 @@ class HuntScene extends Phaser.Scene {
         const norm = Math.hypot(dx, dy);
         next = this.navigation.move(
           this.hero,
-          ((dx / norm) * WALK_SPEED * delta) / 1000,
-          ((dy / norm) * WALK_SPEED * delta) / 1000,
+          ((dx / norm) * walkSpeed * delta) / 1000,
+          ((dy / norm) * walkSpeed * delta) / 1000,
         );
       } else {
-        if (
-          !this.isLobby &&
-          save.autoHunt &&
-          !this.path.length &&
-          this.enemy.visible
-        )
-          this.path = this.navigation.path(this.hero, this.enemy);
         next = advancePath(
           this.hero,
           this.path,
-          (WALK_SPEED * delta) / 1000,
+          (walkSpeed * delta) / 1000,
           this.navigation,
         );
       }
@@ -1268,6 +1281,7 @@ class HuntScene extends Phaser.Scene {
         this.hero.setPosition(next.x, next.y);
         this.lastFacing = facing(mx, my);
         this.play("world-run_" + this.lastFacing);
+        this.hero.anims.timeScale = walkSpeed / 96;
         this.stepDistance += distance;
         if (this.stepDistance >= 10) {
           this.stepDistance %= 10;
@@ -1278,7 +1292,8 @@ class HuntScene extends Phaser.Scene {
       if (
         !this.isLobby &&
         this.enemy.visible &&
-        Math.hypot(this.hero.x - this.enemy.x, this.hero.y - this.enemy.y) < 28
+        Math.hypot(this.hero.x - this.enemy.x, this.hero.y - this.enemy.y) < 28 &&
+        this.navigation.clear(this.hero, this.enemy)
       ) {
         this.path = [];
         this.destination.setVisible(false);
@@ -1290,7 +1305,8 @@ class HuntScene extends Phaser.Scene {
       !this.hero.anims.isPlaying
     )
       this.play("battle-C_idle");
-    this.party.update(this.hero, delta, this.navigation, blocked);
+    this.party.update(this.hero, delta, this.navigation, blocked, walkSpeed,
+      id => stats(save, id).moveSpeed);
     this.groundShadow
       .setPosition(this.hero.x, this.hero.y)
       .setDepth(this.hero.y - 0.5);
@@ -1359,6 +1375,11 @@ class HuntScene extends Phaser.Scene {
         : this.hunt.phase;
     $("status").innerHTML =
       `<div class="level">Nível ${save.level}<span>${phase}</span></div><div class="meter"><i style="width:${(this.hunt.hp / st.maxHp) * 100}%"></i></div><p class="caption">Vida ${Math.ceil(this.hunt.hp)} / ${st.maxHp}</p><div class="meter xp"><i style="width:${pct}%"></i></div><p class="caption">${save.xp} / ${needed(save.level)} XP</p><div class="meter chakra"><i style="width:${(this.hunt.chakra / st.maxChakra) * 100}%"></i></div><p class="caption">Chakra ${Math.floor(this.hunt.chakra)} / ${st.maxChakra}</p><dl><dt>Moedas</dt><dd>${save.coins}</dd><dt>Vitórias</dt><dd>${save.kills}</dd><dt>Derrotas</dt><dd>${save.defeats}</dd><dt>Fragmentos</dt><dd>${save.inventory.fragmento || 0}</dd></dl>`;
+    const cadence = document.createElement("p");
+    cadence.className = "caption";
+    cadence.dataset.cadence = "";
+    cadence.textContent = `Ataque ${st.attack} · ${(1000 / st.interval).toFixed(2)} golpes/s · Movimento ${st.moveSpeed.toFixed(1)}`;
+    $("status").append(cadence);
     $("session").textContent =
       `${Math.floor((Date.now() - session.start) / 60000)} min · ${session.wins} vitórias · ${session.xp} XP · ${session.coins} moedas`;
   }

@@ -272,9 +272,9 @@ test("journey duel derives real gear and level attributes, snapshots the build, 
   const p = a.room.players[0];
   assert.equal(p.maxHp, 234);
   assert.equal(p.attack, 37);
-  assert.equal(p.maxChakra, 125);
-  assert.equal(p.chakraRegen, 10);
-  assert.equal(p.skillDamage, 74);
+  assert.equal(p.maxChakra, 147);
+  assert.equal(p.chakraRegen, 11);
+  assert.equal(p.skillDamage, 67);
   profile.equipment.weapon = "kunai-treino";
   assert.equal(
     arena.session(a.token).room.players[0].loadout.equipment.weapon,
@@ -299,8 +299,8 @@ test("journey duel derives real gear and level attributes, snapshots the build, 
     requestId: randomUUID(),
     damage: 999999,
   });
-  assert.equal(hit.room.players[1].hp, 75);
-  assert.equal(hit.room.players[0].chakra, 90);
+  assert.equal(hit.room.players[1].hp, 78);
+  assert.equal(hit.room.players[0].chakra, 112);
   const balanced = createArena().create(
     "naruto",
     undefined,
@@ -323,4 +323,20 @@ test("journey duel rejects unknown equipment, invalid slots, forged raw stats an
   ])
     rejects(() => a.create("naruto", undefined, "journey", bad), 400);
   rejects(() => a.create("naruto", undefined, "hacked", good), 400);
+});
+
+test("journey Sakura healing uses her derived vitality and ninjutsu", () => {
+  const arena = createArena();
+  const healer = arena.create("sakura", undefined, "journey", {
+    level: 5, upgrades: 2, equipment: { armor: "colete-shinobi", charm: "amuleto-chakra" },
+  });
+  const attacker = arena.join(healer.room.code, "naruto", undefined, {
+    level: 5, upgrades: 30, equipment: { weapon: "kunai-reforcada" },
+  });
+  assert.equal(attacker.room.turn, 1);
+  assert.equal(attacker.room.players[0].skillHeal, 53);
+  arena.act(attacker.token, { action: "attack", turnNumber: 1, requestId: randomUUID() });
+  const healed = arena.act(healer.token, { action: "skill", turnNumber: 2, requestId: randomUUID() });
+  assert.equal(healed.room.log.at(-1).heal, 53);
+  assert.equal(healed.room.players[0].hp, 191);
 });

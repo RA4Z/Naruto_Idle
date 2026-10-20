@@ -15,3 +15,11 @@ export function actorVisualScale(id: string, mode: ActorMode, referenceHeight: n
 export function shouldReturnToBattleIdle(key: string | undefined, playing: boolean) {
   return !playing && !!key && key.includes(":battle:") && !key.endsWith(":C_dead");
 }
+
+export function resetWorldMirror(mode: ActorMode, previousKey: string | undefined) {
+  return mode === "world" && !!previousKey && previousKey.includes(":battle:");
+}
+
+export function deathFadeDelay(frames: number, fps: number) {
+  return fps > 0 && frames > 0 ? Math.max(0, frames * 1000 / fps * 0.75 - 250) : 0;
+}

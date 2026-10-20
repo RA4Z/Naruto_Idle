@@ -194,6 +194,9 @@ export class PresentationPlayer {
   ) {
     const events = this.data.characters[this.character].actions[action] || [];
     const end = Math.max(duration, ...events.map((e) => e.time + 80));
+    // Delayed impact effects must stay at the position of this strike even if
+    // the target resumes moving before the callback runs.
+    const impact = { x: enemy.x, y: enemy.y };
     for (const event of events)
       this.later((event.time * duration) / end, () =>
         this.sound(event.sound, event.volume),
@@ -201,7 +204,7 @@ export class PresentationPlayer {
     const flip = enemy.x < hero.x;
     if (action === "A_1hit")
       this.later(120, () =>
-        this.effect("DaJiTeXiao", enemy.x, enemy.y - 5, 30, 250, flip),
+        this.effect("DaJiTeXiao", impact.x, impact.y - 5, 30, 250, flip),
       );
     if (action !== "SP_skill1") return;
     if (this.character === "sakura") {
@@ -220,13 +223,13 @@ export class PresentationPlayer {
       if (sprite)
         this.scene.tweens.add({
           targets: sprite,
-          x: enemy.x,
-          y: enemy.y - 27,
+          x: impact.x,
+          y: impact.y - 27,
           duration: duration * 0.72,
           ease: "Sine.easeInOut",
         });
       this.later(duration * 0.65, () =>
-        this.effect("DaJiTeXiao", enemy.x, enemy.y - 5, 42, 260, flip),
+        this.effect("DaJiTeXiao", impact.x, impact.y - 5, 42, 260, flip),
       );
     }
   }

@@ -32,7 +32,7 @@ export class EntityCatalog {
         const data = await response.json();
         if (!Array.isArray(data.entities)) throw new Error("Catálogo inválido");
         const reviewResponse = await fetch("/assets/catalog/reviews.json", { cache: "no-store" });
-        if (!reviewResponse.ok) throw new Error("Revis?es indispon?veis");
+        if (!reviewResponse.ok) throw new Error("Revisões indisponíveis");
         const reviews = await reviewResponse.json();
         return (data.entities as EntitySummary[]).map((entry): EntitySummary => {
           const review = reviews[entry.id];

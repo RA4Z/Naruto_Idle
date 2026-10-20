@@ -27,6 +27,9 @@ test('character review requires authorization, validates actions and persists wi
     assert.equal((await post('characters/11000101/review', body, cookie)).status, 200);
     const saved = JSON.parse(await readFile(join(catalogDir, 'reviews.json'), 'utf8'));
     assert.equal(saved['11000101'].notes, 'Revisado'); assert.equal(saved['11000101'].capabilities.companion, true);
+    const publicReviews = await fetch(base.replace('/api/admin/', '/assets/catalog/reviews.json'));
+    assert.equal(publicReviews.headers.get('cache-control'), 'no-store');
+    assert.equal((await publicReviews.json())['11000101'].capabilities.companion, true);
     assert.equal(await readFile(join(catalogDir, 'entities.json'), 'utf8'), catalog);
   } finally { api.close(); server.closeAllConnections(); await new Promise(resolve => server.close(resolve)); await rm(root, { recursive: true, force: true }); }
 });

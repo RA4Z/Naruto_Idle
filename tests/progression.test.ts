@@ -19,7 +19,7 @@ test("shop purchases and equipment change actual combat attributes without dupli
   assert.equal(s.coins, 155);
   buyItem(s, "amuleto-chakra");
   equipItem(s, "amuleto-chakra");
-  assert.equal(stats(s).maxChakra, 125);
+  assert.equal(stats(s).maxChakra, 135);
   assert.equal(stats(s).chakraRegen, 6.5);
   assert.ok(restore({ read: () => JSON.stringify(s), write: () => {} }));
 });

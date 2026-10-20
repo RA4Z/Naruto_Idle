@@ -5,7 +5,7 @@ import type {
   AnimationDef,
   EntityManifest,
 } from "./types";
-import { actorVisualScale, shouldReturnToBattleIdle } from "./visual-rules";
+import { actorVisualScale, resetWorldMirror, shouldReturnToBattleIdle } from "./visual-rules";
 const requested = new WeakMap<Phaser.Scene, Set<string>>();
 export const actorKey = (id: string, mode: ActorMode, action: string) =>
   `entity:${id}:${mode}:${action}`;
@@ -221,13 +221,21 @@ export class EntityActor extends Phaser.GameObjects.Container {
     if (!anim) return;
     const key = actorKey(this.manifest.id, mode, chosen);
     if (!this.scene.anims.exists(key)) return;
+    // Battle sprites face the opponent via flipX; world sprites already have
+    // their own eight directional frames and must not inherit that mirror.
+    if (resetWorldMirror(mode, this.visual.anims.currentAnim?.key))
+      this.visual.setFlipX(false);
     this.visual
       .setOrigin(...anim.origin)
       .setScale(
         actorVisualScale(this.manifest.id, mode, modeDef.referenceHeight, anim.rigScale),
       );
-    if (force || this.visual.anims.currentAnim?.key !== key)
+    if (force || this.visual.anims.currentAnim?.key !== key) {
       this.visual.play(key);
+      this.visual.anims.timeScale = chosen === "A_1hit"
+        ? this.visual.anims.currentAnim!.duration / 450
+        : 1;
+    }
   }
   tick(paused: boolean) {
     this.setDepth(this.y);

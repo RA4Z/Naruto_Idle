@@ -34,9 +34,8 @@ export class Residents {
         resident.wait -= delta;
         actor.play("world", "idle_" + resident.direction);
         if (resident.wait > 0) continue;
-        const candidates = nav.points.filter(
+        const candidates = nav.pointsWithin(home, 90).filter(
           (p) =>
-            Math.hypot(p.x - home.x, p.y - home.y) < 90 &&
             Math.hypot(p.x - actor.x, p.y - actor.y) > 25,
         );
         const target =

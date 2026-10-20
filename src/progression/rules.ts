@@ -1,4 +1,5 @@
 import type { Save } from "../model";
+import { syncCharacterProgress } from "./character-progress.ts";
 export type Slot = "weapon" | "armor" | "charm";
 export const ITEMS = [
   {
@@ -73,6 +74,7 @@ export function equipItem(s: Save, id: string) {
     throw new Error("Você precisa possuir este equipamento.");
   s.equipment ??= {};
   s.equipment[item.slot] = id;
+  syncCharacterProgress(s);
   return item;
 }
 export function recruit(s: Save, id: string) {
@@ -87,6 +89,7 @@ export function recruit(s: Save, id: string) {
   s.coins -= RECRUIT_COST.coins;
   s.inventory.fragmento -= RECRUIT_COST.fragments;
   s.collection.push(id);
+  syncCharacterProgress(s);
 }
 export const QUESTS = [
   {

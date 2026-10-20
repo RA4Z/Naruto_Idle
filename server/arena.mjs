@@ -39,11 +39,11 @@ export function createArena({ now = Date.now, rules: overrides = {} } = {}) {
       skillDamage: derived
         ? character === "sakura"
           ? 0
-          : derived.attack * 2
+          : derived.skillDamage
         : f.damage,
       skillHeal: derived
         ? character === "sakura"
-          ? Math.round(derived.maxHp * 0.12) + derived.attack
+          ? derived.skillHeal
           : 0
         : f.heal,
       maxChakra: derived ? derived.maxChakra : rules.chakra,

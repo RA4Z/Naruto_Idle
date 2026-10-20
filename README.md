@@ -111,6 +111,12 @@ Para adicionar um personagem, identifique sua origem visual primeiro, prepare os
 
 ## Testar e gerar produção
 
+O painel **Atributos · mochila · missões → Atributos** permite selecionar cada personagem da coleção e consultar seu nível, XP, treinos e atributos próprios. Vitalidade define a vida; força alimenta ataques; ninjutsu alimenta jutsus e cura; chakra define a reserva; controle define a regeneração; resistência reduz dano nas caçadas. Velocidade define movimento e frequência dos golpes. Treinar custa 25 moedas e afeta apenas o personagem selecionado. Novos recrutas começam no nível 1; modelos adicionais usam uma base provisória indicada na ficha.
+
+Caçadas online e offline concedem o mesmo XP ao protagonista e aos convidados do grupo ativo; personagens fora do grupo não recebem XP. Missões concedem XP ao protagonista. Moedas e materiais pertencem ao jogador. Cada personagem tem seu registro em `characterProgress`; os campos antigos representam apenas o protagonista, preservando saves existentes sem distribuir sua progressão aos outros. O grupo continua como acompanhamento de exploração, sem atacar nas caçadas. Na arena Jornada, cada ninja usa sua própria progressão e seus equipamentos, tanto no painel do jogo quanto em `/arena`.
+
+A cadência idle usa `110000 / velocidade` milissegundos, limitada a 450–1600 ms. Movimento usa `96 × velocidade / 100`, limitado a 72–180 unidades/s. Os valores base estão em `src/config/characters.ts`; crescimento e efeitos, em `src/progression/combat-stats.ts`. Convidados usam a própria velocidade com margem para acompanhar a formação e recuperação de distância ao ficar para trás. A abertura do encontro é curta (120 ms de preparação e 200 ms até o primeiro ataque), seguida da cadência individual. A arena continua por turnos; no modo Jornada a velocidade determina a iniciativa.
+
 ```powershell
 npm run typecheck
 npm test

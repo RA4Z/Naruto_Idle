@@ -1,5 +1,11 @@
-import { combatStats } from "./progression/combat-stats";
+import { combatStats, damageAfterResistance } from "./progression/combat-stats";
 import { ITEMS, QUESTS, STARTER_COLLECTION } from "./progression/rules";
+import {
+  CHARACTER_IDS, activeCharacterId, characterProgress, newCharacterProgress,
+  syncCharacterProgress, awardPartyXp, addCharacterXp,
+  type CharacterProgress,
+} from "./progression/character-progress";
+export { needed } from "./progression/character-progress";
 import {
   CHARACTERS,
   AREAS,
@@ -11,6 +17,7 @@ import {
 export type Save = {
   version: 1;
   character: CharacterId;
+  characterProgress?: Record<string, CharacterProgress>;
   level: number;
   xp: number;
   coins: number;
@@ -69,23 +76,22 @@ export const fresh = (character: CharacterId, now = Date.now()): Save => ({
   questClaims: [],
   visitedMaps: ["10001"],
   collection: [...STARTER_COLLECTION],
+  characterProgress: Object.fromEntries(STARTER_COLLECTION.map(id => [id, newCharacterProgress()])),
 });
-export const needed = (level: number) => Math.floor(80 * Math.pow(level, 1.35));
 export function addXp(s: Save, xp: number) {
-  s.xp += Math.max(0, Math.floor(xp));
-  while (s.xp >= needed(s.level) && s.level < 100) {
-    s.xp -= needed(s.level);
-    s.level++;
-  }
+  addCharacterXp(s, xp);
 }
-export function stats(s: Save) {
-  return combatStats({ ...s, equipment: s.equipment || {} });
+export function stats(s: Save, id = activeCharacterId(s)) {
+  const character = (Object.keys(CHARACTER_IDS) as CharacterId[]).find(key => CHARACTER_IDS[key] === id);
+  const profile = characterProgress(s, id);
+  return combatStats({ ...profile, character: character || "naruto", inventory: s.inventory },
+    character ? undefined : { vitality: 120, strength: 14, ninjutsu: 14, speed: 100, chakra: 100, control: 10, resistance: 8 });
 }
 export function reward(s: Save, random = Math.random) {
   const a = AREAS[s.area];
   s.kills++;
   s.coins += a.coins;
-  addXp(s, a.xp);
+  awardPartyXp(s, a.xp);
   for (const d of LOOT)
     if (random() < d.chance)
       s.inventory[d.id] =
@@ -131,6 +137,7 @@ export function restore(
   if (
     !Object.hasOwn(CHARACTERS, s.character) ||
     !Number.isSafeInteger(s.level) ||
+    !Number.isSafeInteger(s.xp) || s.upgrades > 10000 ||
     ![s.upgrades, s.kills, s.defeats].every(
       (n) => Number.isSafeInteger(n) && n >= 0,
     ) ||
@@ -216,8 +223,23 @@ export function restore(
   s.questClaims ??= [];
   s.visitedMaps ??= [s.location || "10001"];
   s.collection ??= [...new Set([...STARTER_COLLECTION, ...(s.partyIds || [])])];
+  // Each owned model has a separate record; legacy progress belongs only to the protagonist.
+  if (s.characterProgress !== undefined && (
+    !s.characterProgress || typeof s.characterProgress !== "object" || Array.isArray(s.characterProgress) ||
+    Object.entries(s.characterProgress).some(([id, p]) =>
+      !s.collection!.includes(id) || !p || typeof p !== "object" || Array.isArray(p) ||
+      !Number.isSafeInteger(p.level) || p.level < 1 || p.level > 100 ||
+      !Number.isSafeInteger(p.xp) || p.xp < 0 ||
+      !Number.isSafeInteger(p.upgrades) || p.upgrades < 0 || p.upgrades > 10000 ||
+      !p.equipment || typeof p.equipment !== "object" || Array.isArray(p.equipment) ||
+      Object.entries(p.equipment).some(([slot, item]) =>
+        !ITEMS.some(i => i.id === item && i.slot === slot) || !s.inventory[item])
+    )
+  )) return null;
+  syncCharacterProgress(s);
   s.location ??= "10001";
   s.partyIds ??= [];
+  s.partyIds = s.partyIds.filter(id => s.collection!.includes(id) && id !== activeCharacterId(s));
   s.autoHunt ??= false;
   if (s.location === "10001") s.autoHunt = false;
   const seconds = Math.min(
@@ -231,7 +253,7 @@ export function restore(
   const a = AREAS[s.area];
   const xp = Math.floor(wins * a.xp * OFFLINE.fraction),
     coins = Math.floor(wins * a.coins * OFFLINE.fraction);
-  addXp(s, xp);
+  awardPartyXp(s, xp);
   s.coins += coins;
   s.lastSaved = now;
   // Commit before showing the summary: reloading cannot claim this interval twice.
@@ -277,10 +299,10 @@ export class Hunt {
     this.skillCooldown = 1200;
     this.playerClock = 0;
     const st = stats(this.save),
-      damage = st.attack * COMBAT.specialMultiplier;
+      damage = st.skillDamage;
     this.enemyHp = Math.max(0, this.enemyHp - damage);
     if (this.save.character === "sakura")
-      this.hp = Math.min(st.maxHp, this.hp + st.maxHp * COMBAT.sakuraRecovery);
+      this.hp = Math.min(st.maxHp, this.hp + st.skillHeal);
     this.onEvent("skill", damage);
     return true;
   }
@@ -289,7 +311,8 @@ export class Hunt {
     this.enemyMax = this.enemyHp = AREAS[this.save.area].enemyHp;
     this.phase = "iniciando combate";
     this.timer = 0;
-    this.playerClock = this.enemyClock = 0;
+    this.playerClock = Math.max(0, stats(this.save).interval - COMBAT.firstAttackMs);
+    this.enemyClock = COMBAT.enemyInterval - COMBAT.firstEnemyAttackMs;
     this.attacks = 0;
     this.onEvent("encounter", 0);
     return true;
@@ -304,7 +327,7 @@ export class Hunt {
     );
     this.skillCooldown = Math.max(0, this.skillCooldown - ms);
     this.timer += ms;
-    if (this.phase === "iniciando combate" && this.timer >= 650) {
+    if (this.phase === "iniciando combate" && this.timer >= COMBAT.preparationMs) {
       this.phase = "combatendo";
       this.timer = 0;
     } else if (this.phase === "combatendo") {
@@ -320,12 +343,12 @@ export class Hunt {
           this.chakra -= 35;
           this.skillCooldown = 1200;
         } else this.chakra = Math.min(st.maxChakra, this.chakra + 6);
-        const damage = st.attack * (special ? COMBAT.specialMultiplier : 1);
+        const damage = special ? st.skillDamage : st.attack;
         this.enemyHp = Math.max(0, this.enemyHp - damage);
         if (special && this.save.character === "sakura")
           this.hp = Math.min(
             st.maxHp,
-            this.hp + st.maxHp * COMBAT.sakuraRecovery,
+            this.hp + st.skillHeal,
           );
         this.onEvent(special ? "skill" : "attack", damage);
       }
@@ -341,7 +364,7 @@ export class Hunt {
       }
       if (this.enemyClock >= COMBAT.enemyInterval) {
         this.enemyClock -= COMBAT.enemyInterval;
-        const damage = AREAS[this.save.area].enemyAttack;
+        const damage = damageAfterResistance(AREAS[this.save.area].enemyAttack, st.defense);
         this.hp = Math.max(0, this.hp - damage);
         this.onEvent("hurt", damage);
       }

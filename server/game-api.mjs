@@ -72,6 +72,20 @@ export function createGameApi(
   };
   const handler = async (req, res, next) => {
     const url = new URL(req.url, "http://localhost");
+    // Reviews are editable at runtime. Serve the live source file even when
+    // the rest of the production site comes from a previously built dist/.
+    if (url.pathname === "/assets/catalog/reviews.json" && ["GET", "HEAD"].includes(req.method)) {
+      try {
+        const data = await reviews();
+        if (req.method === "HEAD") {
+          res.writeHead(200, { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" });
+          return res.end();
+        }
+        return json(res, 200, data);
+      } catch {
+        return json(res, 500, { error: "Revisões indisponíveis." });
+      }
+    }
     if (!url.pathname.startsWith("/api/admin/")) return arena(req, res, next);
     try {
       if (req.method === "POST") {

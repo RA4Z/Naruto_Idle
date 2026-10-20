@@ -14,7 +14,7 @@ Pedido do usuário em 20/10/2026: uma tarefa pesada por vez. Não sobrepor build
 - [x] 1.330 prévias de corpo inteiro e visualizador de animações no admin.
 - [x] Lobby seguro na Vila da Folha, WASD/setas e clique com busca de caminho.
 - [x] Navegação por MapInfo.map original: projeção isométrica e componente transitável principal.
-- [x] Caminhada 96 unidades/s (antes 32), zoom 3.1 (antes 2.15).
+- [x] Movimento derivado da velocidade individual (Naruto inicial: 96 unidades/s); zoom 3.1.
 - [x] Folha 10001, Floresta 10005, Treinamento 10006 e País das Ondas 10008, com viagens e retorno.
 - [x] Seis inimigos por mapa de exploração, patrulha e respawn individual de 12 s.
 - [x] Grupo opcional de até três convidados, vazio por padrão; sem duplicar um morador convidado.
@@ -24,10 +24,10 @@ Pedido do usuário em 20/10/2026: uma tarefa pesada por vez. Não sobrepor build
 ## Próximos blocos, nesta ordem
 
 1. [ ] Refinar grupo e formação em repouso, navegação, escolha de alvo e perseguição dos inimigos. Testar longa duração, múltiplas voltas e todos os iniciais.
-2. [x] Chakra (100 base), jutsu de 35 chakra, regeneração, cooldown de 1,2 s e lançamento manual; cura da Sakura preservada.
+2. [x] Chakra individual, jutsu de 35 chakra, regeneração, cooldown de 1,2 s e lançamento manual; cura da Sakura preservada e derivada dos atributos.
 3. [x] Loot e mochila, quatro equipamentos, loja, slots weapon/armor/charm e bônus reais nos atributos; compras/equipamento e migração testados. Próximo: ampliar itens, consumíveis, receitas e raridades.
 4. [x] Cinco missões persistentes de exploração/combate, recompensas únicas em XP/moedas e painel no lobby. Próximo: cadeias de missões e variedade de objetivos.
-5. [x] Coleção separada do grupo, três iniciais disponíveis e recrutamento de modelos elegíveis por 60 moedas + 3 fragmentos. Próximo: progressão individual, afinidades e builds do grupo.
+5. [x] Coleção separada do grupo, três iniciais disponíveis e recrutamento de modelos elegíveis por 60 moedas + 3 fragmentos. Progressão individual implementada: nível/XP/treinos/ficha por modelo, migração do save antigo só para o protagonista, XP do grupo ativo online/offline, banco sem XP e arena usando a build do ninja selecionado. Próximo: afinidades, combate em grupo e balanceamento dos recrutas adicionais.
 6. [x] Arena local de turnos sincronizados: servidor autoritativo, salas por chave, dois clientes independentes, chakra, cooldown, validação de turno, reconexão e expiração. Implementada com SSE e sessões HttpOnly, atributos nivelados e efeitos/vozes originais dos três iniciais. Modo Jornada também implementado: atributos compartilhados com PvE, slots validados e snapshot da build ao entrar; amistoso com save local. Acesso pela internet depende de hospedagem/configuração posterior.
 7. [ ] Admin com itens, equipamentos, quests, salas da arena, diagnósticos e colisões sobrepostas no mapa.
 8. [ ] Expandir mapas e NPCs incrementalmente, com entrada/saída, população e inspeção visual. Não basta trocar o fundo.
@@ -35,9 +35,23 @@ Pedido do usuário em 20/10/2026: uma tarefa pesada por vez. Não sobrepor build
 
 ## Verificação
 
+Progressão individual: 50 testes de domínio (Node nativo; tsx falha em `os.userInfo` antes de executar), 11 testes de servidor, build com `--configLoader runner` e regressões no navegador passaram. `tools/character-progress-check.mjs` migrou um save antigo com Naruto nível 6, treinou Sasuke sem alterar Naruto, evoluiu Sasuke para nível 2 em quatro vitórias, preservou Sakura nível 1/zero XP fora do grupo, recarregou o save e verificou a build individual na arena principal e na rota `/arena`. Relatório `reports/character-progress-validation.json`; atributos dos três iniciais e duelo com dois clientes foram revalidados separadamente. Os campos globais antigos são apenas a projeção do protagonista; não devem servir de build para outro membro.
+
+Atualização de atributos e abertura do combate: sete atributos individuais nos três iniciais (vitalidade, força, ninjutsu, velocidade, chakra, controle e resistência). Nível, treino geral e equipamentos alimentam `src/progression/combat-stats.ts`, sem exigir migração do save. Velocidade define o intervalo (mínimo 450 ms) e o movimento (72–180 u/s); o grupo acompanha a velocidade do líder. Preparação reduzida de 650 para 120 ms e primeira ação antecipada; navegador mediu primeiro ataque em 361–372 ms. Ataques e especiais ajustam sua duração à cadência. A ficha está na aba Atributos do painel de progresso. Resistência reduz dano no PvE; o PvP segue por turnos, com iniciativa pela velocidade no modo Jornada. Valores de jutsu e cura desse modo são derivados no servidor.
+
+Validação desta etapa: 43 testes de domínio executados com o suporte nativo de TypeScript do Node e resolução de imports relativos, 11 testes de servidor, typecheck, `tools/attributes-check.mjs` (movimento, ficha, treino, persistência e vitória dos três iniciais) e `tools/arena-check.mjs` pelo IP da rede. Evidências em `reports/attributes-validation.json` e `reports/arena-browser-validation.json`. O comando padrão com tsx falhou neste ambiente em `os.userInfo` antes de iniciar os testes; a suíte completa foi executada pelo caminho nativo alternativo.
+
 `npm test` (22 testes); `npm run test:server` (autenticação); `npm run build`; `node tools/world-admin-check.mjs` (lobby, velocidade, NPCs, grupo, quatro mapas, inimigos, combate, saves, celular e admin). Relatório: reports/world-admin-validation.json. A ferramenta __idle.advance acelera relógios Phaser e pode produzir uma interrupção de contexto no Chromium após várias viagens; para a regressão final de combate, usar tempo real conforme o script atual.
 
 ## Limites atuais
+
+Profundidade de cenário: os recortes manuais do fundo foram DESATIVADOS após o usuário mostrar personagens escondidos atrás de terra. Polígonos de `background.jpg` incluem chão e não são objetos com transparência. Os quatro mapas seguem com fundo achatado; colisões complementares continuam ativas, inclusive a passagem corrigida do portão. A investigação de camadas modulares depende do acervo original, que o usuário confirmou estar em outro computador e disponibilizará depois. Consulte `docs/MAP_LAYERS.md`. Não reativar oclusão com esses recortes nem interpretar os testes anteriores como prova de profundidade correta.
+
+Validação reproduzível: `node --experimental-transform-types --test --test-concurrency=1 tests/training-scenery.test.ts tests/native-navigation-regression.test.ts`; `node tools/training-scenery-check.mjs` (Vite na porta 5178, ou `IDLE_TEST_URL` configurada). Cobre travessia do portão com acompanhante, posição salva inválida e patrulhas em pontos válidos. Agora exige ausência dos recortes opacos. Evidências atuais em `reports/training-scenery-validation.json`, `training-gate-reviewed.png` e `training-ground-visibility.png`. Capturas antigas com copas sobrepostas estão superadas.
+
+Revisão dos quatro mapas: `tests/all-map-scenery.test.ts` verifica 50 rotas por mapa com os bloqueios aplicados. `node tools/all-map-scenery-check.mjs` verifica caminhadas com companheiro, viagens sequenciais e ausência dos recortes opacos; aceita `BASE_URL`. Relatório `reports/all-map-scenery-validation.json`. Esses testes validam navegação e regressões específicas, não a profundidade de todo o cenário. Os botões iniciais aguardam o carregamento dos módulos antes de aceitar cliques.
+
+PvP pela rede local: corrigida a geração de identificadores de ações em HTTP por IP. `crypto.randomUUID` não existe nesse contexto; `src/arena/request-id.ts` usa `crypto.getRandomValues`, disponível nesse acesso. `tools/arena-check.mjs` passou com dois clientes independentes em `http://10.1.43.80:5194`, incluindo ações, cura, defesa, modo Jornada e reconexão; evidência em `reports/arena-browser-validation.json`.
 
 145 conjuntos de mapas originais identificados, quatro integrados. Os SWFs animados da camada intermediária permanecem preservados na origem, sem execução. Personagens adicionais ainda não têm todos os jutsus e vozes associados. A seleção inicial tem três protagonistas. A arena local nivelada está implementada; modo Jornada e revisão dos corpos indevidos nos iniciais estão concluídos; 530 ações em 403 modelos do acervo aguardam revisão incremental. A cota deve preservar a reserva solicitada; não reduzir testes para iniciar um bloco que não caiba nesta janela.
 
