@@ -9,6 +9,7 @@ Prioridade nova: conectar os mapas por portais/zonas de transição acionados ao
 Implementar carregamento progressivo, bloqueio em combate/carregamento, proteção contra ciclos imediatos e reativação somente após sair da zona. Validar ida/volta por WASD e clique, colisões, spawn, câmera, save/reload e retry em falhas sem perder progresso. Ampliar os vínculos ao integrar novos mapas. Esta solicitação está registrada para desenvolvimento na retomada; os portais ainda não foram implementados.
 
 
+
 ## Loading original — lote 6/14/22
 
 Três artes JPEG originais (IDs 6,14,22) copiadas sem alterar bytes, dimensões ou hashes e integradas ao ciclo da tela de carregamento. Catálogo canônico: public/assets/loading/index.json; prepare-runtime.mjs gera somente a lista curta de URLs em src/config/loading-art.ts. Não carrega o álbum completo ou o catálogo de entidades no menu. Falha da arte opcional não bloqueia o jogo. A UI é nova e usa artes originais; não afirmar que o cliente Flash inteiro foi recuperado.
