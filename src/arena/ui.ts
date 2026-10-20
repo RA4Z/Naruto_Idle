@@ -11,11 +11,12 @@ import {
   type ArenaState,
 } from "./rules";
 import { ArenaView } from "./view";
+import { arenaRequestId } from "./request-id";
 import "./arena.css";
 
 export function installArena(
   character: () => ArenaCharacter,
-  loadout: () => CombatLoadout = () => ({
+  loadout: (character: ArenaCharacter) => CombatLoadout = () => ({
     level: 1,
     upgrades: 0,
     equipment: {},
@@ -45,7 +46,7 @@ export function installArena(
     select.append(option);
   }
   function previewBuild() {
-    const profile = loadout();
+    const profile = loadout(select.value as ArenaCharacter);
     const stats = arenaJourneyStats(select.value as ArenaCharacter, profile);
     const names = Object.values(profile.equipment)
       .map((id) => ITEMS.find((i) => i.id === id)?.name || id)
@@ -228,7 +229,7 @@ export function installArena(
         character: select.value,
         code: codeInput.value.trim().toUpperCase(),
         mode: mode.value,
-        loadout: loadout(),
+        loadout: loadout(select.value as ArenaCharacter),
       });
       if (request !== version || !dialog.open) return;
       update(result);
@@ -259,7 +260,7 @@ export function installArena(
       const data = await api("action", {
         action,
         turnNumber: state.turnNumber,
-        requestId: crypto.randomUUID(),
+        requestId: arenaRequestId(),
       });
       if (request === version) {
         update(data);

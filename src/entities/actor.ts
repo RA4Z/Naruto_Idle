@@ -1,3 +1,4 @@
+import { loadSceneAssets } from "../assets/scene-loader";
 import Phaser from "phaser";
 import type {
   ActorMode,
@@ -5,6 +6,7 @@ import type {
   AnimationDef,
   EntityManifest,
 } from "./types";
+import { actorVisualScale, resetWorldMirror, shouldReturnToBattleIdle } from "./visual-rules";
 const requested = new WeakMap<Phaser.Scene, Set<string>>();
 export const actorKey = (id: string, mode: ActorMode, action: string) =>
   `entity:${id}:${mode}:${action}`;
@@ -105,36 +107,17 @@ export class ActorAssetCache {
             ),
           ),
       );
-      if (missing)
-        await new Promise<void>((resolve, reject) => {
-          let failed = false;
-          const error = (file: Phaser.Loader.File) => {
-            requested.get(this.scene)?.delete(file.key);
-            failed = true;
-          };
-          const cleanup = () => {
-            this.scene.load.off("loaderror", error);
-            this.scene.load.off("complete", complete);
-            this.scene.events.off("shutdown", shutdown);
-            this.scene.events.off("destroy", shutdown);
-          };
-          const complete = () => {
-            cleanup();
-            failed
-              ? reject(new Error("Não foi possível carregar as imagens"))
-              : resolve();
-          };
-          const shutdown = () => {
-            cleanup();
-            reject(new Error("Cena encerrada durante o carregamento"));
-          };
-          this.scene.load.on("loaderror", error);
-          this.scene.load.once("complete", complete);
-          this.scene.events.once("shutdown", shutdown);
-          this.scene.events.once("destroy", shutdown);
-          queueActor(this.scene, manifest, role);
-          this.scene.load.start();
-        });
+      if (missing) {
+        try {
+          await loadSceneAssets(this.scene, () => queueActor(this.scene, manifest, role), () => actorActions(manifest, role).every(([action]) => this.scene.textures.exists(actorKey(manifest.id, role === "enemy" ? "battle" : "world", action))));
+        } catch (error) {
+          for (const [action] of actorActions(manifest, role)) {
+            const key = actorKey(manifest.id, role === "enemy" ? "battle" : "world", action);
+            if (!this.scene.textures.exists(key)) requested.get(this.scene)?.delete(key);
+          }
+          throw error;
+        }
+      }
       if (!this.scene.sys.isActive()) throw new Error("Cena encerrada");
       registerActor(this.scene, manifest, role);
       this.loaded.delete(manifest.id);
@@ -220,19 +203,27 @@ export class EntityActor extends Phaser.GameObjects.Container {
     if (!anim) return;
     const key = actorKey(this.manifest.id, mode, chosen);
     if (!this.scene.anims.exists(key)) return;
+    // Battle sprites face the opponent via flipX; world sprites already have
+    // their own eight directional frames and must not inherit that mirror.
+    if (resetWorldMirror(mode, this.visual.anims.currentAnim?.key))
+      this.visual.setFlipX(false);
     this.visual
       .setOrigin(...anim.origin)
       .setScale(
-        45 / Math.max(1, modeDef.referenceHeight) / (anim.rigScale ?? 1),
+        actorVisualScale(this.manifest.id, mode, modeDef.referenceHeight, anim.rigScale),
       );
-    if (force || this.visual.anims.currentAnim?.key !== key)
+    if (force || this.visual.anims.currentAnim?.key !== key) {
       this.visual.play(key);
+      this.visual.anims.timeScale = chosen === "A_1hit"
+        ? this.visual.anims.currentAnim!.duration / 450
+        : 1;
+    }
   }
   tick(paused: boolean) {
     this.setDepth(this.y);
     if (paused) this.visual.anims.pause();
     else this.visual.anims.resume();
-    if (!paused && this.role === "enemy" && !this.visual.anims.isPlaying)
+    if (!paused && this.role === "enemy" && shouldReturnToBattleIdle(this.visual.anims.currentAnim?.key, this.visual.anims.isPlaying))
       this.play("battle", "C_idle");
   }
   face(left: boolean) {

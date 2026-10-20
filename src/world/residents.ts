@@ -1,4 +1,4 @@
-import { EntityActor } from "../entities/actor";
+import { EntityActor, actorKey } from "../entities/actor";
 import {
   NativeNavigation,
   advancePath,
@@ -29,14 +29,13 @@ export class Residents {
     for (const resident of this.entries) {
       const { actor, home } = resident;
       actor.tick(paused);
-      if (paused || !actor.manifest.capabilities.companion) continue;
+      if (paused || !actor.manifest.capabilities.companion || !actor.scene.anims.exists(actorKey(actor.manifest.id, "world", "run_0"))) continue;
       if (!resident.route.length) {
         resident.wait -= delta;
         actor.play("world", "idle_" + resident.direction);
         if (resident.wait > 0) continue;
-        const candidates = nav.points.filter(
+        const candidates = nav.pointsWithin(home, 90).filter(
           (p) =>
-            Math.hypot(p.x - home.x, p.y - home.y) < 90 &&
             Math.hypot(p.x - actor.x, p.y - actor.y) > 25,
         );
         const target =

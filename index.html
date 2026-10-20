@@ -6,6 +6,9 @@
     <title>Naruto • Caminho da Folha</title>
   </head>
   <body>
+    <div id="game-loading" class="game-loading" role="status" aria-live="polite" aria-busy="true">
+      <div class="loading-content"><p class="eyebrow">CAMINHO DA FOLHA</p><h1 id="loading-title">Preparando sua jornada</h1><p id="loading-message">Carregando…</p><progress id="loading-progress" max="1" aria-label="Progresso do carregamento"></progress><p class="loading-tip">O mundo está sendo preparado. Seu progresso continua salvo.</p><div class="actions"><button id="loading-retry" hidden>Tentar novamente</button><button id="loading-cancel" class="secondary" hidden>Voltar ao início</button></div></div>
+    </div>
     <div id="app">
       <header>
         <span class="brand">木ノ葉 <b>CAMINHO DA FOLHA</b></span
@@ -19,9 +22,10 @@
           encontro.
         </p>
         <div class="actions">
-          <button id="new">Novo jogo</button
-          ><button id="continue" class="secondary">Continuar jornada</button>
+          <button id="new" disabled>Novo jogo</button
+          ><button id="continue" class="secondary" disabled>Continuar jornada</button>
         </div>
+        <p id="menu-loading" role="status">Carregando o jogo…</p>
         <section id="choices" hidden></section>
       </main>
       <div id="play" hidden>
@@ -32,6 +36,7 @@
           <h3 id="world-name"></h3>
           <p id="world-help" class="caption"></p>
           <div id="status"></div>
+          <button id="mini-window" class="secondary">Abrir janela flutuante</button>
           <button id="maps">Viajar · mapas</button>
           <button id="return-lobby" class="secondary" hidden>
             Voltar ao lobby
@@ -40,7 +45,7 @@
             Iniciar caçada automática
           </button>
           <button id="progression" class="secondary">
-            Mochila · missões · loja
+            Atributos · mochila · missões
           </button>
           <button id="cast-skill" class="secondary" hidden>
             Jutsu · 35 chakra
@@ -84,7 +89,7 @@
       </div>
       <div id="toast" role="status"></div>
       <footer>
-        Lobby livre · Mapas de exploração · Grupo opcional · Salvamento local
+        Lobby livre · Mapas de exploração · Coleção de personagens · Salvamento local
       </footer>
     </div>
     <script type="module" src="/src/entry.ts"></script>

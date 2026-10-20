@@ -1,13 +1,13 @@
-Publicação adiada pelo usuário em 20/10/2026. Não solicitar login, habilitar LFS nem refazer deploy até ele retomar o assunto.
-
 # Publicação na Vercel
 
-Diagnóstico verificado em 20/10/2026: `/assets/characters/naruto-kid/portrait.png` devolvia HTTP 200 e Content-Type image/png, mas o corpo era texto `version https://git-lfs.github.com/spec/v1` (129 bytes). Spritesheets também estavam como ponteiros. Isso causa os retratos quebrados e os erros do Phaser; não são centenas de defeitos independentes de animação.
+Status em 20/10/2026: o usuário confirmou que o jogo está funcionando corretamente no navegador. A demanda de publicação/imagens foi encerrada e removida do a fazer. As otimizações de carregamento atuais são locais até um próximo deploy; nenhum deploy foi executado pelo agente nesta etapa.
 
-Correção no projeto existente: Settings → Git → Git Large File Storage (LFS) → Enable. Depois fazer Redeploy. Documentação oficial: https://vercel.com/docs/project-configuration/git-settings . O suporte LFS baixa os objetos reais antes da build. Não remover LFS nem colocar 2,22 GB de binários comuns no Git.
+## Histórico do problema resolvido
 
-`npm run check:assets` oferece uma verificação sequencial dos cabeçalhos das imagens/sons e falha explicitamente se houver ponteiros LFS. Ao retomar a publicação, ligar essa verificação ao prebuild. Evita publicar outra build com imagens falsas. A configuração preparada em `docs/deferred-vercel/vercel.json` fixa build/output e rotas da SPA, mas ainda não foi ativada na raiz.
+As imagens públicas haviam sido entregues como ponteiros de texto Git LFS, embora as respostas fossem HTTP 200 com Content-Type image/png. A correção indicada foi habilitar Git Large File Storage no projeto da Vercel e refazer a publicação. Referência: https://vercel.com/docs/project-configuration/git-settings . Preservar Git LFS para os binários, incluindo os novos WebP.
 
-A Vercel estática não executa `npm start`: /api/admin e /api/arena estavam em 404. O servidor Node local continua responsável por sessões administrativas e partidas em memória. Antes de oferecer arena online nesse domínio, conectar um backend persistente e validar dois clientes externos; não hospedar salas autoritativas apenas na memória de funções efêmeras. Nenhuma infraestrutura paga foi contratada. Corrigir assets torna o PvE estático jogável; não equivale a publicar o multiplayer.
+O comando npm run check:assets verifica imagens/sons e identifica ponteiros LFS não materializados. A build prepara o catálogo compacto de runtime; a conversão de imagens é manual, com artefatos WebP já presentes no repositório. A configuração em docs/deferred-vercel/vercel.json é histórica, sem necessidade de ativação para encerrar a demanda já resolvida pelo usuário.
 
-Verificação remota após deploy: conferir assinatura PNG real, imagem JPEG real, três retratos e carregamento de uma jornada sem erros. Ainda não declarar resolvido no domínio enquanto houver ponteiros ou deploy pendente.
+## Escopo do funcionamento confirmado
+
+A confirmação diz respeito ao jogo no navegador. A hospedagem estática não executa automaticamente server/index.mjs; admin e arena autoritativa continuam dependendo de backend Node e não foram revalidados neste domínio nesta etapa. Isso é uma limitação arquitetural separada, não uma reabertura da pendência de imagens.

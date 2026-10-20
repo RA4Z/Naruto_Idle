@@ -1,5 +1,6 @@
 import { restore } from "../model";
 import { installArena } from "./ui";
+import { characterLoadout } from "../progression/character-progress";
 const root = document.getElementById("app")!;
 document.title = "Arena PvP · Caminho da Folha";
 root.innerHTML =
@@ -13,14 +14,10 @@ const profile = () =>
   })?.save;
 const open = installArena(
   () => profile()?.character || "naruto",
-  () => {
+  (character) => {
     const saved = profile();
     return saved
-      ? {
-          level: saved.level,
-          upgrades: saved.upgrades,
-          equipment: saved.equipment || {},
-        }
+      ? characterLoadout(saved, character)
       : { level: 1, upgrades: 0, equipment: {} };
   },
 );

@@ -105,7 +105,7 @@ try {
       body: JSON.stringify({
         action: "attack",
         turnNumber: 1,
-        requestId: crypto.randomUUID(),
+        requestId: Array.from(crypto.getRandomValues(new Uint8Array(16)), byte => byte.toString(16).padStart(2, "0")).join(""),
       }),
     }).then((r) => r.status),
   );
@@ -216,10 +216,11 @@ try {
   assert.equal(journey.mode, "journey");
   assert.equal(journey.players[0].maxHp, 234);
   assert.equal(journey.players[0].attack, 37);
-  assert.equal(journey.players[0].maxChakra, 125);
-  assert.equal(journey.players[1].maxHp, 259);
-  assert.equal(journey.players[1].hp, 185);
-  assert.equal(journey.log.at(-1).damage, 74);
+  assert.equal(journey.players[0].maxChakra, 147);
+  // The old save belongs to Naruto: Sakura starts at her own level one, without his gear.
+  assert.equal(journey.players[1].maxHp, 165);
+  assert.equal(journey.players[1].hp, 98);
+  assert.equal(journey.log.at(-1).damage, 67);
   assert.equal(
     (await a.locator(".arena-panel").innerText()).includes("Kid"),
     false,
@@ -252,7 +253,7 @@ try {
     base,
     independentClients: 2,
     journeyModeEquipment: true,
-    journeyModeServerDamage: 74,
+    journeyModeServerDamage: 67,
     simpleDisplayNames: true,
     singleBrowserProcess: true,
     noPhaserOnArenaRoute: lightweight,

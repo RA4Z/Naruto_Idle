@@ -1,6 +1,13 @@
+import { loadingScreen } from "./loading-screen";
+import { runtimeIndex } from "./assets/runtime-index";
+import { loadSceneAssets } from "./assets/scene-loader";
 import { installArena } from "./arena/ui";
+import { installMiniWindow } from "./mini-window";
+import { localhostTransferUrl } from "./progression/local-transfer";
 import { installProgression } from "./progression/ui";
 import { recruit, STARTER_COLLECTION } from "./progression/rules";
+import { strikeDuration } from "./progression/combat-stats";
+import { activeCharacterId, starterCharacter, selectCharacter, FUTURE_CHARACTERS, characterLoadout, syncCharacterProgress, trainCharacter } from "./progression/character-progress";
 import Phaser from "phaser";
 import "./style.css";
 import {
@@ -9,6 +16,9 @@ import {
   type PresentationConfig,
 } from "./presentation";
 import { entityCatalog } from "./entities/catalog";
+import { AutoHuntNavigator } from "./world/auto-hunt";
+import { WorldOcclusion } from "./world/occlusion";
+import { deathFadeDelay, actorVisualScale } from "./entities/visual-rules";
 import {
   EntityActor,
   ActorAssetCache,
@@ -34,7 +44,7 @@ import {
 import { ExplorationParty } from "./world/party";
 import { Residents } from "./world/residents";
 import { EnemyField } from "./world/enemies";
-import { CHARACTERS, AREAS, type CharacterId } from "./data";
+import { AREAS, type CharacterId } from "./data";
 import {
   Hunt,
   LocalProgressStore,
@@ -59,46 +69,132 @@ type AnimSet = Record<
   string,
   { animations: Record<string, Anim>; warnings: unknown[] }
 >;
-const $ = (id: string) => document.getElementById(id)!;
+const canvasHost = document.getElementById("canvas")!;
+const $ = (id: string) => id === "canvas" ? canvasHost : document.getElementById(id)!;
 const store = new LocalProgressStore();
 let save: Save;
 let game: Phaser.Game | undefined;
+let worldReady = false;
 let scene: HuntScene;
 let definitions: AnimSet;
 let presentationData: PresentationConfig;
 let launchVersion = 0;
-const WALK_SPEED = 96;
 let initialMap: WorldMap;
 let initialNavigation: NativeGrid;
 let worldMaps: WorldMap[];
 const specialAction = () =>
-  presentationData.characters[save.character].action || "SP_skill1";
+  presentationData.characters[starterCharacter(save) || "recruit"]?.action || "SP_skill1";
+const presentationCharacter = () => starterCharacter(save) || "recruit";
 let cast: {
   hero: EntityManifest;
   enemies: EntityManifest[];
   npcs: EntityManifest[];
   party: EntityManifest[];
 };
-const starterIds = {
-  naruto: "11000101",
-  sasuke: "11000201",
-  sakura: "11000301",
-};
+const miniWindow = installMiniWindow({
+  button: $("mini-window") as HTMLButtonElement,
+  canvas: canvasHost,
+  notify: toast,
+  summary: () => scene?.hunt
+    ? `${cast.hero.name} · Nível ${save.level} · ${save.paused ? "Pausado" : scene.isLobby ? "Vila" : scene.hunt.phase} · Vida ${Math.ceil(scene.hunt.hp)}/${stats(save).maxHp} · Chakra ${Math.floor(scene.hunt.chakra)}`
+    : "Carregando…",
+  onViewport: bindMiniViewport,
+  openOnLocalhost: () => {
+    commit();
+    location.assign(localhostTransferUrl(location.href, store.read()!));
+  },
+});
+function bindMiniViewport(host: Window) {
+  const current = game!;
+  const keyboard = current.input.keyboard!;
+  const originalTarget = keyboard.target;
+  const external = host !== window;
+  const pauseSoundOnBlur = current.sound.pauseOnBlur;
+  const updateBounds = () => {
+    current.scale.updateBounds();
+    if (external && canvasHost.ownerDocument !== document) {
+      // Phaser normally adds the opener's page scroll to these coordinates.
+      const bounds = current.canvas.getBoundingClientRect();
+      current.scale.canvasBounds.x = bounds.left + host.scrollX;
+      current.scale.canvasBounds.y = bounds.top + host.scrollY;
+    }
+  };
+  const resize = () => {
+    const rect = canvasHost.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      current.scale.getParentBounds();
+      // A collapsed/fractional viewport must never create a zero-sized WebGL target.
+      // Keep this in sync with the Scale Manager limits (including automatic resizes).
+      current.scale.resize(Math.max(160, Math.floor(rect.width)), Math.max(90, Math.floor(rect.height)));
+      scene.cameras.main.centerOn(scene.hero.x, scene.hero.y);
+      updateBounds();
+    }
+  };
+  const resetKeys = () => {
+    scene?.input.keyboard?.resetKeys();
+    current.input.activePointer.reset();
+  };
+  const releaseMouse = (event: MouseEvent) => current.input.mouse?.onMouseUpWindow(event);
+  const observer = new ResizeObserver(resize);
+  observer.observe(canvasHost);
+  host.addEventListener("resize", resize);
+  host.addEventListener("blur", resetKeys);
+  for (const event of ["mousedown", "touchstart"])
+    canvasHost.addEventListener(event, updateBounds, { capture: true });
+  let frame = 0;
+  if (external) {
+    current.events.emit(Phaser.Core.Events.FOCUS);
+    current.sound.pauseOnBlur = false;
+    scene.presentation.unlock();
+    keyboard.stopListeners(); keyboard.target = host; keyboard.startListeners();
+    host.addEventListener("mouseup", releaseMouse);
+    resetKeys();
+    // Let the visible PiP document own the animation clock while the original tab is hidden.
+    current.loop.sleep();
+    const tick = () => {
+      if (game !== current || host.closed) return;
+      current.loop.focus();
+      current.loop.tick();
+      frame = host.requestAnimationFrame(tick);
+    };
+    frame = host.requestAnimationFrame(tick);
+  }
+  resize();
+  return () => {
+    observer.disconnect();
+    host.removeEventListener("resize", resize);
+    host.removeEventListener("blur", resetKeys);
+    for (const event of ["mousedown", "touchstart"])
+      canvasHost.removeEventListener(event, updateBounds, { capture: true });
+    resetKeys();
+    if (external) {
+      current.sound.pauseOnBlur = pauseSoundOnBlur;
+      current.events.emit(document.hasFocus() ? Phaser.Core.Events.FOCUS : Phaser.Core.Events.BLUR);
+      host.removeEventListener("mouseup", releaseMouse);
+      host.cancelAnimationFrame(frame);
+      keyboard.stopListeners(); keyboard.target = originalTarget; keyboard.startListeners();
+      current.loop.resetDelta(); current.loop.wake();
+    }
+    commit();
+    window.requestAnimationFrame(() => { if (game === current) resize(); });
+  };
+}
+for (const id of ["maps", "return-lobby", "progression", "arena", "library"])
+  $(id).addEventListener("click", () => miniWindow.restore(), { capture: true });
 const openLibrary = installLibrary(
   async (id, role) => {
     if (!scene || !game)
       throw new Error("Inicie sua jornada para colocar personagens na vila.");
-    await scene.chooseEntity(id, role);
+    if (role === "companion" && save.collection?.includes(id)) await switchHero(id);
+    else await scene.chooseEntity(id, role);
   },
   () => new Set(save?.collection || STARTER_COLLECTION),
 );
 $("library").onclick = () => void openLibrary();
 const openProgression = installProgression(() => ({
   save,
-  heroId: starterIds[save.character],
-  invite: async (id) => {
-    await scene.chooseEntity(id, "companion");
-  },
+  heroId: activeCharacterId(save),
+  switchCharacter: switchHero,
   onChange: () => {
     scene.hunt.hp = Math.min(scene.hunt.hp, stats(save).maxHp);
     scene.hunt.chakra = Math.min(scene.hunt.chakra, stats(save).maxChakra);
@@ -107,13 +203,39 @@ const openProgression = installProgression(() => ({
   },
 }));
 $("progression").onclick = () => openProgression();
+let switchingHero = false;
+async function switchHero(id: string) {
+  if (switchingHero || !worldReady || scene.loadingActor) throw new Error("Aguarde o carregamento atual.");
+  if (id === activeCharacterId(save)) return;
+  if (scene.hunt.phase !== "explorando") throw new Error("Conclua o encontro antes de trocar de personagem.");
+  if (!save.collection?.includes(id) || FUTURE_CHARACTERS.has(id)) throw new Error("Personagem indisponível na sua coleção.");
+  switchingHero = true;
+  const previous = game!;
+  previous.loop.sleep();
+  try {
+    const manifest = await entityCatalog.get(id);
+    if (game !== previous || !worldReady) throw new Error("Jornada encerrada.");
+    if (manifest.collection !== "playable" || !manifest.capabilities.companion ||
+      !manifest.modes.world?.animations.idle_0 || !manifest.modes.world?.animations.run_0 ||
+      !manifest.modes.battle?.animations.C_idle || !manifest.modes.battle?.animations.A_1hit)
+      throw new Error("Este modelo ainda não possui as animações necessárias para jogar.");
+    commit();
+    const next = structuredClone(save);
+    selectCharacter(next, id);
+    next.area = AREAS.reduce((chosen, area, index) => index <= next.area && area.level <= next.level ? index : chosen, 0);
+    next.autoHunt = false;
+    // Close the dialog before the loading overlay is displayed in the top layer.
+    document.querySelectorAll<HTMLDialogElement>("dialog[open]").forEach(dialog => dialog.close());
+    previous.loop.wake();
+    await start(next);
+  } finally {
+    switchingHero = false;
+    if (game === previous) previous.loop.wake();
+  }
+}
 const openArena = installArena(
   () => save.character,
-  () => ({
-    level: save.level,
-    upgrades: save.upgrades,
-    equipment: { ...save.equipment },
-  }),
+  (character) => characterLoadout(save, character),
 );
 $("arena").onclick = () => {
   const current = game;
@@ -157,7 +279,7 @@ function journal(text: string) {
   );
 }
 function commit() {
-  if (save) {
+  if (save && worldReady) {
     if (scene?.hero?.active && scene.map?.id === save.location)
       save.worldPosition = {
         mapId: scene.map.id,
@@ -165,6 +287,7 @@ function commit() {
         y: scene.hero.y,
       };
     save.lastSaved = Date.now();
+    syncCharacterProgress(save);
     store.write(JSON.stringify(save));
   }
 }
@@ -173,131 +296,95 @@ function toast(text: string) {
   $("toast").classList.add("visible");
   setTimeout(() => $("toast").classList.remove("visible"), 6000);
 }
-function card(id: CharacterId) {
-  const c = CHARACTERS[id];
-  return `<button class="character" data-character="${id}"><img src="${c.portrait}" alt="Retrato recuperado de ${c.name}"><span class="character-name">${c.name}</span><em>${c.subtitle}</em><p>${c.description}</p><span class="select-label">Escolher ${c.name} →</span></button>`;
+let startup: { version: number; stage: ReturnType<typeof loadingScreen.begin>; failed: Set<string>; resolve: () => void; reject: (error: Error) => void } | undefined;
+export async function startNewJourney(character: CharacterId) { await start(fresh(character)); }
+export async function continueJourney() {
+  const restored = restore(store);
+  if (!restored) { loadingScreen.hide(); toast("Nenhum progresso válido encontrado. Escolha Novo jogo."); return; }
+  await start(restored.save);
+  if (restored.offline.xp || restored.offline.coins)
+    toast("Enquanto você estava fora: +" + restored.offline.xp + " XP e +" + restored.offline.coins + " moedas.");
 }
 async function start(s: Save) {
+  miniWindow.restore();
+  worldReady = false;
   const request = ++launchVersion;
-  presentationData ??= await fetch("/assets/presentation.json").then((r) =>
-    r.json(),
-  );
-  const entries = await entityCatalog.list();
-  const maps = await listMaps();
-  const startMap =
-    maps.find((m) => m.id === s.location) ||
-    maps.find((m) => m.id === "10001")!;
-  const startNavigation = await mapNavigation(startMap);
-  const load = async (id: string | undefined, role: ActorRole) => {
-    if (!id || !entries.some((e) => e.id === id && e.capabilities[role]))
-      return undefined;
-    return entityCatalog.get(id);
-  };
-  const hero = await entityCatalog.get(starterIds[s.character]);
-  const enemies = (
-    await Promise.all(
-      (s.enemyId && startMap.kind !== "lobby"
-        ? [s.enemyId]
-        : startMap.enemies.length
-          ? startMap.enemies
-          : ["19000301", "19000701", "19000401"]
-      ).map((id) => load(id, "enemy")),
-    )
-  ).filter((e): e is EntityManifest => !!e);
-  if (!enemies.length)
-    throw new Error("Nenhum adversário disponível no catálogo");
-  const npcs = (
-    await Promise.all(
-      (s.npcIds || ["11001601", "11001201"])
-        .slice(0, 3)
-        .map((id) => load(id, "npc")),
-    )
-  ).filter((e): e is EntityManifest => !!e);
-  const party = (
-    await Promise.all(
-      (s.partyIds || []).slice(0, 3).map((id) => load(id, "companion")),
-    )
-  ).filter((m): m is EntityManifest => !!m);
-  if (request !== launchVersion) return;
-  if (import.meta.env.DEV)
-    delete (window as unknown as { __idle?: unknown }).__idle;
-  save = s;
-  initialMap = startMap;
-  initialNavigation = startNavigation;
-  worldMaps = maps;
-  s.location = startMap.id;
-  s.collection ??= [...STARTER_COLLECTION];
-  s.visitedMaps = [...new Set([...(s.visitedMaps || []), startMap.id])];
-  cast = { hero, enemies, npcs, party };
-  definitions = Object.fromEntries(
-    ["world", "battle"].map((mode) => [
-      s.character + "-" + mode,
-      {
-        animations: hero.modes[mode as "world" | "battle"]?.animations || {},
-        warnings: [],
-      },
-    ]),
-  ) as AnimSet;
-  $("menu").hidden = true;
-  $("play").hidden = false;
-  session.start = Date.now();
-  session.xp = session.coins = session.wins = 0;
-  messages.length = 0;
-  game?.destroy(true);
-  game = new Phaser.Game({
-    type: Phaser.AUTO,
-    parent: "canvas",
-    backgroundColor: "#15241e",
-    width: $("canvas").clientWidth,
-    height: $("canvas").clientHeight,
-    scale: { mode: Phaser.Scale.RESIZE, autoCenter: Phaser.Scale.CENTER_BOTH },
-    scene: HuntScene,
-    render: { antialias: true, roundPixels: false },
-    audio: { noAudio: false },
-  });
-  commit();
-}
-$("new").onclick = () => {
-  const choices = $("choices");
-  choices.hidden = false;
-  choices.innerHTML = (Object.keys(CHARACTERS) as CharacterId[])
-    .map(card)
-    .join("");
-  choices.querySelectorAll<HTMLButtonElement>("[data-character]").forEach(
-    (button) =>
-      (button.onclick = () => {
-        if (
-          store.read() &&
-          !confirm(
-            "Começar uma nova jornada substituirá seu progresso local. Continuar?",
-          )
-        )
-          return;
-        void start(fresh(button.dataset.character as CharacterId)).catch(
-          (error) => toast(String(error)),
-        );
-      }),
-  );
-};
-$("continue").onclick = () => {
-  const restored = restore(store);
-  if (!restored) {
-    toast("Nenhum progresso válido encontrado. Escolha Novo jogo.");
-    return;
+  const stage = loadingScreen.begin("Preparando sua jornada", () => void start(s).catch(() => {}), () => $("back").click());
+  stage.update("Preparando os dados do mapa e dos personagens…", 0.05);
+  try {
+    const [presentation, maps, runtime] = await Promise.all([
+      presentationData || fetch("/assets/presentation.json", { signal: AbortSignal.timeout(20000) }).then(r => { if (!r.ok) throw new Error("Recursos de apresentação indisponíveis."); return r.json(); }),
+      listMaps(), runtimeIndex(),
+    ]);
+    if (request !== launchVersion) return;
+    presentationData = presentation;
+    const startMap = maps.find(m => m.id === s.location) || maps.find(m => m.id === "10001")!;
+    const load = async (id: string | undefined, role: ActorRole) => {
+      if (!id || !runtime.entities[id]) return undefined;
+      const manifest = await entityCatalog.get(id);
+      return manifest.capabilities[role] ? manifest : undefined;
+    };
+    const [startNavigation, hero, enemyModels, residentModels, partyModels] = await Promise.all([
+      mapNavigation(startMap), entityCatalog.get(activeCharacterId(s)),
+      Promise.all((startMap.kind === "lobby" ? [] : s.enemyId ? [s.enemyId] : startMap.enemies).map(id => load(id, "enemy"))),
+      Promise.all((s.npcIds || ["11001601", "11001201"]).slice(0, 3).map(id => load(id, "npc"))),
+      Promise.resolve([] as EntityManifest[]),
+    ]);
+    if (request !== launchVersion) return;
+    const enemies = enemyModels.filter((m): m is EntityManifest => !!m);
+    if (startMap.kind !== "lobby" && !enemies.length) throw new Error("Nenhum adversário disponível neste mapa.");
+    const npcs = residentModels.filter((m): m is EntityManifest => !!m);
+    const party = partyModels.filter((m): m is EntityManifest => !!m);
+    if (import.meta.env.DEV) delete (window as unknown as { __idle?: unknown }).__idle;
+    if (game) {
+      const previous = game;
+      await new Promise<void>(resolve => { previous.events.once(Phaser.Core.Events.DESTROY, resolve); previous.destroy(true); });
+      if (request !== launchVersion) return;
+      game = undefined;
+    }
+    save = s; s.partyIds = []; delete s.companionId;
+    initialMap = startMap; initialNavigation = startNavigation; worldMaps = maps;
+    s.location = startMap.id; s.collection ??= [...STARTER_COLLECTION];
+    s.visitedMaps = [...new Set([...(s.visitedMaps || []), startMap.id])];
+    cast = { hero, enemies, npcs, party };
+    definitions = Object.fromEntries(["world", "battle"].map(mode => [s.character + "-" + mode, {
+      animations: hero.modes[mode as "world" | "battle"]?.animations || {}, warnings: [],
+    }])) as AnimSet;
+    $("menu").hidden = true; $("play").hidden = false;
+    session.start = Date.now(); session.xp = session.coins = session.wins = 0; messages.length = 0;
+    await new Promise<void>((resolve, reject) => {
+      startup = { version: request, stage, failed: new Set(), resolve, reject };
+      game = new Phaser.Game({
+        type: Phaser.AUTO, parent: "canvas", backgroundColor: "#15241e",
+        width: $("canvas").clientWidth, height: $("canvas").clientHeight,
+        scale: { mode: Phaser.Scale.RESIZE, autoCenter: Phaser.Scale.CENTER_BOTH, min: { width: 160, height: 90 } },
+        scene: HuntScene, autoFocus: false,
+        loader: { maxParallelDownloads: 4, timeout: 20000 },
+        render: { antialias: true, roundPixels: false }, audio: { noAudio: false },
+      });
+    });
+    if (request !== launchVersion) return;
+    worldReady = true; commit(); stage.finish();
+  } catch (error) {
+    if (request === launchVersion) {
+      game?.destroy(true); game = undefined;
+      $("play").hidden = true; $("menu").hidden = false;
+      stage.fail(error);
+    }
+    throw error;
   }
-  void start(restored.save).catch((error) => toast(String(error)));
-  if (restored.offline.xp || restored.offline.coins)
-    toast(
-      `Enquanto você estava fora: +${restored.offline.xp} XP e +${restored.offline.coins} moedas.`,
-    );
-};
+}
 $("back").onclick = () => {
+  miniWindow.restore();
   launchVersion++;
+  startup?.reject(new Error("Carregamento cancelado."));
+  loadingScreen.hide();
   if (import.meta.env.DEV)
     delete (window as unknown as { __idle?: unknown }).__idle;
   commit();
   game?.destroy(true);
   game = undefined;
+  worldReady = false;
   $("play").hidden = true;
   $("menu").hidden = false;
 };
@@ -306,12 +393,8 @@ $("pause").onclick = () => {
   commit();
 };
 $("upgrade").onclick = () => {
-  if (save.coins < 25) {
-    toast("Você precisa de 25 moedas para treinar.");
-    return;
-  }
-  save.coins -= 25;
-  save.upgrades++;
+  try { trainCharacter(save); }
+  catch (error) { toast((error as Error).message); return; }
   scene.hunt.hp = Math.min(stats(save).maxHp, scene.hunt.hp + 9);
   journal("Treino concluído: força e resistência melhoradas.");
   commit();
@@ -324,12 +407,14 @@ $("sound").onchange = () => {
     save.soundVolume ?? 0.4,
   );
   scene?.presentation.unlock();
+  if (save.sound) void scene.ensureAudio().catch(error => toast((error as Error).message));
   commit();
 };
 $("music").onchange = () => {
   save.music = ($("music") as HTMLInputElement).checked;
   scene.presentation.unlock();
   scene.presentation.settings(save.sound, save.music, save.soundVolume ?? 0.4);
+  if (save.sound) void scene.ensureAudio().catch(error => toast((error as Error).message));
   commit();
 };
 $("volume").oninput = () => {
@@ -349,6 +434,10 @@ function direction(dx: number, dy: number) {
   return (Math.round(Math.atan2(dy, dx) / (Math.PI / 4)) + 14) % 8;
 }
 class HuntScene extends Phaser.Scene {
+  private startup = startup!;
+  private combatReady = false;
+  private audioLoad?: Promise<void>;
+  private audioReady = false;
   hunt!: Hunt;
   hero!: Phaser.GameObjects.Sprite;
   enemy!: EntityActor;
@@ -356,6 +445,7 @@ class HuntScene extends Phaser.Scene {
   actorCache!: ActorAssetCache;
   loadingActor = false;
   encounterSequence = 0;
+  private autoNavigator = new AutoHuntNavigator<EntityActor>();
   bars!: Phaser.GameObjects.Graphics;
   groundShadow!: Phaser.GameObjects.Ellipse;
   stepDistance = 0;
@@ -368,12 +458,14 @@ class HuntScene extends Phaser.Scene {
     super("hunt");
   }
   preload() {
+    this.load.on("progress", (value: number) => this.startup.stage.update(`Carregando recursos essenciais · ${Math.round(value * 100)}% dos arquivos`, 0.2 + value * 0.75));
+    this.load.on("loaderror", (file: Phaser.Loader.File) => this.startup.failed.add(file.key));
     this.load.image("map-" + initialMap.id, initialMap.background);
     this.load.image(
       "map-" + initialMap.id + "-foreground",
       initialMap.foreground,
     );
-    queuePresentation(this, presentationData, save.character);
+    queuePresentation(this, presentationData, presentationCharacter(), { effects: initialMap.kind !== "lobby", audio: false });
     for (const manifest of cast.enemies) {
       queueActor(this, manifest, "enemy");
       if (manifest.capabilities.companion)
@@ -383,15 +475,16 @@ class HuntScene extends Phaser.Scene {
       queueActor(
         this,
         manifest,
-        manifest.capabilities.companion ? "companion" : "npc",
+        "npc",
       );
     for (const manifest of cast.party) queueActor(this, manifest, "companion");
     for (const mode of ["world", "battle"]) {
       const set = definitions[save.character + "-" + mode]?.animations || {};
       for (const [action, anim] of Object.entries(set)) {
         if (
-          mode === "world" ||
+          mode === "world" || (initialMap.kind !== "lobby" &&
           ["C_idle", "A_1hit", specialAction(), "C_dead"].includes(action)
+          )
         )
           this.load.spritesheet(mode + "-" + action, anim.url, {
             frameWidth: anim.frameWidth,
@@ -402,7 +495,12 @@ class HuntScene extends Phaser.Scene {
     }
   }
   create() {
+    if (this.startup.failed.size) {
+      this.startup.reject(new Error("Não foi possível carregar imagens essenciais do jogo. Verifique sua conexão e tente novamente."));
+      this.scene.stop(); return;
+    }
     scene = this;
+    this.combatReady = initialMap.kind !== "lobby";
     this.map = initialMap;
     this.navigation = new NativeNavigation(initialNavigation);
     const savedPosition =
@@ -416,7 +514,7 @@ class HuntScene extends Phaser.Scene {
     this.presentation = new PresentationPlayer(
       this,
       presentationData,
-      save.character,
+      presentationCharacter(),
     );
     this.presentation.settings(
       save.sound,
@@ -428,6 +526,9 @@ class HuntScene extends Phaser.Scene {
       .image(0, 0, "map-" + this.map.id)
       .setOrigin(0)
       .setDisplaySize(this.map.width, this.map.height);
+    this.occlusion = new WorldOcclusion(this);
+    this.occlusion.setMap(this.map);
+    this.events.once("shutdown", () => this.occlusion.clear());
     this.foreground = this.add
       .image(0, 0, "map-" + this.map.id + "-foreground")
       .setOrigin(0)
@@ -476,7 +577,7 @@ class HuntScene extends Phaser.Scene {
       registerActor(
         this,
         manifest,
-        manifest.capabilities.companion ? "companion" : "npc",
+        "npc",
       );
     for (const manifest of cast.party)
       registerActor(this, manifest, "companion");
@@ -484,7 +585,7 @@ class HuntScene extends Phaser.Scene {
       this,
       spawn.x,
       spawn.y,
-      cast.enemies[0],
+      cast.enemies[0] || cast.hero,
       "enemy",
     );
     this.standbyEnemy = this.enemy;
@@ -516,7 +617,7 @@ class HuntScene extends Phaser.Scene {
     this.renderParty();
     this.bars = this.add.graphics().setDepth(2000);
     this.hunt.onEvent = (event, value) => this.effect(event, value);
-    $("hero-name").textContent = CHARACTERS[save.character].name;
+    $("hero-name").textContent = cast.hero.name;
     ($("sound") as HTMLInputElement).checked = save.sound;
     ($("music") as HTMLInputElement).checked = save.music || false;
     ($("volume") as HTMLInputElement).value = String(
@@ -534,11 +635,15 @@ class HuntScene extends Phaser.Scene {
     if (import.meta.env.DEV)
       (window as unknown as { __idle: unknown }).__idle = {
         snapshot: () => ({
+          activeEntityId: activeCharacterId(save),
           phase: this.isLobby ? "lobby" : this.hunt.phase,
           mapId: this.map.id,
           mode: this.map.kind,
           autoHunt: !!save.autoHunt,
-          speed: WALK_SPEED,
+          speed: stats(save).moveSpeed,
+          attributes: stats(save).attributes,
+          attackInterval: stats(save).interval,
+          attacks: this.hunt.attacks,
           path: this.path.map((p) => ({ ...p })),
           npcs: this.npcs.map((n) => ({
             id: n.manifest.id,
@@ -564,20 +669,32 @@ class HuntScene extends Phaser.Scene {
           kills: save.kills,
           character: save.character,
           animation: this.hero.anims.currentAnim?.key,
+          animationTimeScale: this.hero.anims.timeScale,
           heroSpriteInstances: this.children.list.filter(
             (o) =>
               o instanceof Phaser.GameObjects.Sprite &&
               /^(world|battle)-/.test(o.texture.key),
           ).length,
           gameLoopRunning: this.game.loop.running,
+          audioState: this.sound instanceof Phaser.Sound.WebAudioSoundManager ? this.sound.context.state : "html",
           origin: [this.hero.originX, this.hero.originY],
           scale: this.hero.scaleX,
           zoom: this.cameras.main.zoom,
+          viewport: {
+            width: this.cameras.main.width, height: this.cameras.main.height,
+            canvasWidth: this.game.canvas.width, canvasHeight: this.game.canvas.height,
+            heroVisible: this.cameras.main.worldView.contains(this.hero.x, this.hero.y),
+          },
+          pointer: { x: this.input.activePointer.x, y: this.input.activePointer.y },
           walkable: this.navigation.walkable(this.hero),
           enemyWalkable: this.navigation.walkable(this.enemy),
           presentation: this.presentation.snapshot(),
           actorCache: this.actorCache.snapshot(),
           enemyId: this.enemy.manifest.id,
+          enemyAnimation: this.enemy.visual.anims.currentAnim?.key,
+          enemyScale: this.enemy.visual.scaleX,
+          enemyFlipped: this.enemy.visual.flipX,
+          occlusion: this.occlusion.snapshot(),
           enemyVisible: this.enemy.visible,
           enemies: this.enemyField.members.map((m) => ({
             id: m.actor.manifest.id,
@@ -613,12 +730,61 @@ class HuntScene extends Phaser.Scene {
         },
         walkTo: (p: Point) => this.walkTo(p),
         navigation: () => this.navigation,
-        previewSkill: () => this.effect("skill", stats(save).attack * 2),
+        previewSkill: () => this.effect("skill", stats(save).skillDamage),
         setHp: (hp: number) => {
           this.hunt.hp = hp;
         },
       };
     this.renderUI();
+    this.startup.stage.update("Entrando no mundo…", 0.98);
+    this.game.events.once(Phaser.Core.Events.POST_RENDER, () => {
+      if (!this.sys.isActive() || this.startup.version !== launchVersion) return;
+      this.startup.resolve();
+      if (save.sound) void this.ensureAudio().catch(error => toast((error as Error).message));
+      const timer = window.setTimeout(() => {
+        if (!this.sys.isActive()) return;
+        for (const manifest of cast.npcs)
+          if (manifest.capabilities.companion)
+            void this.actorCache.load(manifest, "companion").catch(() => {});
+      }, 300);
+      this.events.once("shutdown", () => clearTimeout(timer));
+    });
+  }
+  private registerHeroBattle() {
+    for (const [action, anim] of Object.entries(definitions[save.character + "-battle"]?.animations || {})) {
+      const key = "battle-" + action;
+      if (!this.textures.exists(key) || this.anims.exists(key)) continue;
+      this.anims.create({ key, frames: (anim.timeline || Array.from({ length: anim.frames }, (_, i) => i)).map(frame => ({ key, frame })),
+        frameRate: anim.fps, repeat: action === "C_idle" ? -1 : 0 });
+    }
+    this.presentation.registerEffects();
+  }
+  async ensureCombat() {
+    if (this.combatReady) return;
+    await loadSceneAssets(this, () => {
+      queuePresentation(this, presentationData, presentationCharacter(), { effects: true, audio: false });
+      for (const action of ["C_idle", "A_1hit", specialAction(), "C_dead"]) {
+        const anim = definitions[save.character + "-battle"]?.animations[action];
+        if (anim && !this.textures.exists("battle-" + action))
+          this.load.spritesheet("battle-" + action, anim.url, { frameWidth: anim.frameWidth, frameHeight: anim.frameHeight, endFrame: anim.frames - 1 });
+      }
+    }, () => this.combatReady);
+    if (!this.sys.isActive()) throw new Error("Cena encerrada.");
+    this.registerHeroBattle(); this.combatReady = true;
+  }
+  ensureAudio() {
+    if (!save.sound || this.audioReady) return Promise.resolve();
+    let queued = false;
+    return this.audioLoad ??= loadSceneAssets(this, () => {
+      queued = true;
+      queuePresentation(this, presentationData, presentationCharacter(), { effects: false, audio: true });
+    }, () => !save.sound || this.audioReady).then(() => {
+      if (!this.sys.isActive()) return;
+      if (queued) this.audioReady = true;
+      this.presentation.settings(save.sound, save.music || false, save.soundVolume ?? 0.4);
+      this.presentation.pause(save.paused);
+      this.presentation.unlock();
+    }).finally(() => { this.audioLoad = undefined; });
   }
   play(key: string, force = false) {
     if (
@@ -630,20 +796,16 @@ class HuntScene extends Phaser.Scene {
       const definition = cast.hero.modes[mode];
       const animation = definition?.animations[action];
       if (animation) this.hero.setOrigin(...animation.origin);
-      this.hero.setScale(
-        45 /
-          Math.max(1, definition?.referenceHeight || 120) /
-          (animation?.rigScale ?? 1),
-      );
+      this.hero.setScale(actorVisualScale(cast.hero.id, mode, definition?.referenceHeight || 120, animation?.rigScale ?? 1));
       this.hero.setFlipX(
         key.startsWith("battle-") && this.enemy.x < this.hero.x,
       );
       this.hero.play(key);
       this.hero.anims.timeScale =
-        key === "battle-" + specialAction()
+        key === "battle-" + specialAction() || key === "battle-A_1hit"
           ? this.hero.anims.currentAnim!.duration /
-            Math.min(900, stats(save).interval * 0.8)
-          : 1;
+            strikeDuration(key === "battle-" + specialAction(), stats(save).interval)
+          : key.startsWith("world-run_") ? stats(save).moveSpeed / 96 : 1;
       this.lastAnim = key;
     }
   }
@@ -695,7 +857,7 @@ class HuntScene extends Phaser.Scene {
       });
       this.enemy.play("battle", "C_hurt", true);
       this.lastStrikeDuration =
-        event === "skill" ? Math.min(900, stats(save).interval * 0.8) : 400;
+        strikeDuration(event === "skill", stats(save).interval);
       this.presentation.play(
         event === "skill" ? "SP_skill1" : "A_1hit",
         this.hero,
@@ -711,7 +873,8 @@ class HuntScene extends Phaser.Scene {
     }
     if (event === "loot") journal(`Drop · Fragmento de treino ×${value}`);
     if (event === "victory") {
-      this.enemyField.defeat(this.enemy);
+      const defeatedEnemy = this.enemy;
+      this.enemyField.defeat(defeatedEnemy);
       session.xp += value;
       session.coins += AREAS[save.area].coins;
       session.wins++;
@@ -722,13 +885,17 @@ class HuntScene extends Phaser.Scene {
         "#c5ffbd",
       );
       journal(`Vitória · +${value} XP · +${AREAS[save.area].coins} moedas`);
+      this.renderParty();
       this.time.delayedCall(this.lastStrikeDuration * 0.85, () => {
-        this.enemy.play("battle", "C_dead", true);
+        if (!defeatedEnemy.active || !this.enemyField.members.some((member) => member.actor === defeatedEnemy && !member.alive)) return;
+        defeatedEnemy.play("battle", "C_dead", true);
+        const death = defeatedEnemy.manifest.modes.battle?.animations.C_dead;
         this.tweens.add({
-          targets: this.enemy,
+          targets: defeatedEnemy,
           alpha: 0,
-          duration: 200,
-          onComplete: () => this.enemy.setVisible(false).setAlpha(1),
+          delay: deathFadeDelay(death?.timeline?.length || death?.frames || 0, death?.fps || 0),
+          duration: 400,
+          onComplete: () => { if (defeatedEnemy.active) defeatedEnemy.setVisible(false).setAlpha(1); },
         });
       });
       commit();
@@ -784,13 +951,15 @@ class HuntScene extends Phaser.Scene {
         this.party.members.some((m) => m.manifest.id === id))
     )
       throw new Error("Este personagem já está no grupo.");
+    if (role === "companion" && FUTURE_CHARACTERS.has(id)) throw new Error("Esta versão do Sasuke será disponibilizada no futuro.");
+    if (role === "companion" && save.collection?.includes(id)) throw new Error("Use a troca de personagem na sua coleção.");
     if (role === "companion" && !save.collection?.includes(id)) {
       const manifest = await entityCatalog.get(id);
-      if (!manifest.organization?.eligible)
+      if (manifest.collection !== "playable" || !manifest.capabilities.companion)
         throw new Error("Este modelo ainda está em revisão.");
       recruit(save, id);
       journal(
-        manifest.name + " entrou na sua coleção. Convide-o quando quiser.",
+        manifest.name + " entrou na sua coleção. Você já pode selecioná-lo para jogar.",
       );
       commit();
       return;
@@ -813,9 +982,10 @@ class HuntScene extends Phaser.Scene {
         await this.actorCache.load(manifest, "companion");
       if (!this.sys.isActive()) return;
       if (role === "enemy") {
-        this.enemy.use(manifest, role);
+        this.standbyEnemy.use(manifest, role);
         save.enemyId = id;
-        this.enemy.setVisible(true);
+        cast.enemies = [manifest];
+        this.enemyField.mapId = "";
         this.placeEnemy();
       } else if (role === "companion") {
         this.party.add(manifest, this.hero, this.navigation);
@@ -863,6 +1033,7 @@ class HuntScene extends Phaser.Scene {
   navigation!: NativeNavigation;
   background!: Phaser.GameObjects.Image;
   foreground!: Phaser.GameObjects.Image;
+  occlusion!: WorldOcclusion;
   portal?: Phaser.GameObjects.Container;
   destination!: Phaser.GameObjects.Ellipse;
   path: Point[] = [];
@@ -937,7 +1108,7 @@ class HuntScene extends Phaser.Scene {
     );
     if (this.isLobby)
       this.npcs = cast.npcs
-        .filter((m) => !partyIds.has(m.id))
+        .filter((m) => m.id !== cast.hero.id && !partyIds.has(m.id))
         .map((manifest, i) => {
           const point = this.navigation.nearest(
             [
@@ -959,6 +1130,7 @@ class HuntScene extends Phaser.Scene {
     this.residents.reset(this.npcs);
   }
   placeEnemy() {
+    this.autoNavigator.reset();
     this.enemyField ??= new EnemyField(this);
     if (this.enemyField.mapId !== this.map.id)
       this.enemyField.reset(
@@ -1028,10 +1200,17 @@ class HuntScene extends Phaser.Scene {
     if (this.hunt.phase !== "explorando")
       throw new Error("Conclua o encontro antes de viajar.");
     this.loadingActor = true;
+    document.querySelector<HTMLDialogElement>(".map-library")?.close();
+    const stage = loadingScreen.begin("Viajando para " + map.name,
+      () => void this.travel(map).catch(() => {}), () => $("back").click());
+    stage.update("Preparando os caminhos…", 0.05);
     const old = this.map;
+    const progress = (value: number) => stage.update(`Carregando recursos da viagem · ${Math.round(value * 100)}% do lote atual`);
+    this.load.on("progress", progress);
     try {
       const grid = await mapNavigation(map);
       if (!this.sys.isActive()) return;
+      if (map.kind !== "lobby") await this.ensureCombat();
       const pool = map.enemies.length
         ? await Promise.all(map.enemies.map((id) => entityCatalog.get(id)))
         : cast.enemies;
@@ -1052,6 +1231,7 @@ class HuntScene extends Phaser.Scene {
       this.background
         .setTexture("map-" + map.id)
         .setDisplaySize(map.width, map.height);
+      this.occlusion.setMap(map);
       this.foreground
         .setTexture("map-" + map.id + "-foreground")
         .setDisplaySize(map.width, map.height);
@@ -1089,48 +1269,21 @@ class HuntScene extends Phaser.Scene {
               map.name +
               ". Explore livremente ou inicie uma caçada.",
       );
+      stage.finish();
+    } catch (error) {
+      if (this.sys.isActive()) stage.fail(error);
+      throw error;
     } finally {
+      this.load.off("progress", progress);
       this.loadingActor = false;
     }
   }
   loadMapImages(map: WorldMap) {
-    return new Promise<void>((resolve, reject) => {
-      const keys = ["map-" + map.id, "map-" + map.id + "-foreground"];
-      if (keys.every((key) => this.textures.exists(key))) {
-        resolve();
-        return;
-      }
-      const cleanup = () => {
-        this.load.off("complete", done);
-        this.load.off("loaderror", failed);
-        this.events.off("shutdown", cancel);
-        this.events.off("destroy", cancel);
-      };
-      const done = () => {
-        cleanup();
-        if (keys.every((key) => this.textures.exists(key))) resolve();
-        else reject(new Error("Camadas do mapa indisponíveis."));
-      };
-      const failed = (file: Phaser.Loader.File) => {
-        if (keys.includes(file.key)) {
-          cleanup();
-          reject(new Error("Não foi possível carregar o mapa."));
-        }
-      };
-      const cancel = () => {
-        cleanup();
-        reject(new Error("Viagem cancelada ao sair do jogo."));
-      };
-      this.load.once("complete", done);
-      this.load.on("loaderror", failed);
-      this.events.once("shutdown", cancel);
-      this.events.once("destroy", cancel);
-      if (!this.textures.exists(keys[0]))
-        this.load.image(keys[0], map.background);
-      if (!this.textures.exists(keys[1]))
-        this.load.image(keys[1], map.foreground);
-      if (!this.load.isLoading()) this.load.start();
-    });
+    const keys = ["map-" + map.id, "map-" + map.id + "-foreground"];
+    return loadSceneAssets(this, () => {
+      if (!this.textures.exists(keys[0])) this.load.image(keys[0], map.background);
+      if (!this.textures.exists(keys[1])) this.load.image(keys[1], map.foreground);
+    }, () => keys.every(key => this.textures.exists(key)));
   }
   toggleHunt() {
     if (this.isLobby) {
@@ -1166,33 +1319,11 @@ class HuntScene extends Phaser.Scene {
   renderParty() {
     const root = $("party");
     root.replaceChildren();
-    const heading = document.createElement("p");
-    heading.className = "caption";
-    heading.textContent = `Grupo de exploração · ${this.party.members.length}/3`;
-    root.append(heading);
-    if (!this.party.members.length) {
-      const text = document.createElement("p");
-      text.className = "caption";
-      text.textContent =
-        "Nenhum convidado. Convide personagens na biblioteca se quiser explorar em grupo.";
-      root.append(text);
-    }
-    for (const member of this.party.members) {
-      const row = document.createElement("div");
-      row.className = "party-member";
-      const name = document.createElement("span");
-      name.textContent = member.manifest.name;
-      const button = document.createElement("button");
-      button.className = "text-button";
-      button.textContent = "Remover";
-      button.dataset.dismiss = member.manifest.id;
-      button.onclick = () => this.removeParty(member.manifest.id);
-      row.append(name, button);
-      root.append(row);
-    }
+    root.hidden = true;
   }
   update(_time: number, delta: number) {
     if (!this.hero) return;
+    const walkSpeed = stats(save).moveSpeed;
     const blocked =
       save.paused ||
       this.loadingActor ||
@@ -1213,9 +1344,19 @@ class HuntScene extends Phaser.Scene {
       this.hunt.phase !== "explorando" ? this.enemy : undefined,
       blocked,
     );
-    if (!this.isLobby && this.hunt.phase === "explorando")
-      this.enemy = this.enemyField.nearest(this.hero) || this.standbyEnemy;
-    this.enemy.tick(blocked);
+    if (!this.isLobby && this.hunt.phase === "explorando") {
+      if (!blocked && save.autoHunt) {
+        const candidates = this.enemyField.members.filter(m => m.alive && m.actor.visible).map(m => m.actor);
+        const hunt = this.autoNavigator.update(this.hero, candidates, delta, this.navigation);
+        this.enemy = hunt.target || this.standbyEnemy;
+        this.path = hunt.path;
+      } else if (!save.autoHunt) {
+        this.autoNavigator.reset();
+        this.enemy = this.enemyField.nearest(this.hero) || this.standbyEnemy;
+      }
+    }
+    if (!this.enemyField.members.some((member) => member.actor === this.enemy))
+      this.enemy.tick(blocked);
     if (!blocked && this.hunt.phase === "explorando") {
       let dx = 0,
         dy = 0;
@@ -1238,21 +1379,14 @@ class HuntScene extends Phaser.Scene {
         const norm = Math.hypot(dx, dy);
         next = this.navigation.move(
           this.hero,
-          ((dx / norm) * WALK_SPEED * delta) / 1000,
-          ((dy / norm) * WALK_SPEED * delta) / 1000,
+          ((dx / norm) * walkSpeed * delta) / 1000,
+          ((dy / norm) * walkSpeed * delta) / 1000,
         );
       } else {
-        if (
-          !this.isLobby &&
-          save.autoHunt &&
-          !this.path.length &&
-          this.enemy.visible
-        )
-          this.path = this.navigation.path(this.hero, this.enemy);
         next = advancePath(
           this.hero,
           this.path,
-          (WALK_SPEED * delta) / 1000,
+          (walkSpeed * delta) / 1000,
           this.navigation,
         );
       }
@@ -1263,6 +1397,7 @@ class HuntScene extends Phaser.Scene {
         this.hero.setPosition(next.x, next.y);
         this.lastFacing = facing(mx, my);
         this.play("world-run_" + this.lastFacing);
+        this.hero.anims.timeScale = walkSpeed / 96;
         this.stepDistance += distance;
         if (this.stepDistance >= 10) {
           this.stepDistance %= 10;
@@ -1273,7 +1408,8 @@ class HuntScene extends Phaser.Scene {
       if (
         !this.isLobby &&
         this.enemy.visible &&
-        Math.hypot(this.hero.x - this.enemy.x, this.hero.y - this.enemy.y) < 28
+        Math.hypot(this.hero.x - this.enemy.x, this.hero.y - this.enemy.y) < 28 &&
+        this.navigation.clear(this.hero, this.enemy)
       ) {
         this.path = [];
         this.destination.setVisible(false);
@@ -1281,11 +1417,12 @@ class HuntScene extends Phaser.Scene {
       }
     } else if (
       !blocked &&
-      this.hunt.phase === "combatendo" &&
+      ["iniciando combate", "combatendo", "recompensas"].includes(this.hunt.phase) &&
       !this.hero.anims.isPlaying
     )
       this.play("battle-C_idle");
-    this.party.update(this.hero, delta, this.navigation, blocked);
+    this.party.update(this.hero, delta, this.navigation, blocked, walkSpeed,
+      id => stats(save, id).moveSpeed);
     this.groundShadow
       .setPosition(this.hero.x, this.hero.y)
       .setDepth(this.hero.y - 0.5);
@@ -1341,7 +1478,7 @@ class HuntScene extends Phaser.Scene {
     $("auto-hunt").textContent = save.autoHunt
       ? "Parar caçada automática"
       : "Iniciar caçada automática";
-    $("cast-skill").hidden = this.isLobby;
+    $("cast-skill").hidden = this.isLobby || !starterCharacter(save);
     ($("cast-skill") as HTMLButtonElement).disabled =
       save.paused ||
       this.hunt.phase !== "combatendo" ||
@@ -1354,7 +1491,13 @@ class HuntScene extends Phaser.Scene {
         : this.hunt.phase;
     $("status").innerHTML =
       `<div class="level">Nível ${save.level}<span>${phase}</span></div><div class="meter"><i style="width:${(this.hunt.hp / st.maxHp) * 100}%"></i></div><p class="caption">Vida ${Math.ceil(this.hunt.hp)} / ${st.maxHp}</p><div class="meter xp"><i style="width:${pct}%"></i></div><p class="caption">${save.xp} / ${needed(save.level)} XP</p><div class="meter chakra"><i style="width:${(this.hunt.chakra / st.maxChakra) * 100}%"></i></div><p class="caption">Chakra ${Math.floor(this.hunt.chakra)} / ${st.maxChakra}</p><dl><dt>Moedas</dt><dd>${save.coins}</dd><dt>Vitórias</dt><dd>${save.kills}</dd><dt>Derrotas</dt><dd>${save.defeats}</dd><dt>Fragmentos</dt><dd>${save.inventory.fragmento || 0}</dd></dl>`;
+    const cadence = document.createElement("p");
+    cadence.className = "caption";
+    cadence.dataset.cadence = "";
+    cadence.textContent = `Ataque ${st.attack} · ${(1000 / st.interval).toFixed(2)} golpes/s · Movimento ${st.moveSpeed.toFixed(1)}`;
+    $("status").append(cadence);
     $("session").textContent =
       `${Math.floor((Date.now() - session.start) / 60000)} min · ${session.wins} vitórias · ${session.xp} XP · ${session.coins} moedas`;
+    miniWindow.sync();
   }
 }

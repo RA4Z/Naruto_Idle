@@ -9,7 +9,7 @@ export async function checkLfsAssets(root) {
       if (entry.isSymbolicLink()) continue;
       const path = join(folder, entry.name);
       if (entry.isDirectory()) await walk(path);
-      else if ([".png", ".jpg", ".mp3"].includes(extname(path))) {
+      else if ([".png", ".jpg", ".webp", ".mp3"].includes(extname(path))) {
         const file = await open(path, "r");
         try {
           const head = Buffer.alloc(64),

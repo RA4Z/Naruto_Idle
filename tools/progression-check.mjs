@@ -76,7 +76,7 @@ try {
   assert.equal(saved.equipment.charm, "amuleto-chakra");
   assert.equal(
     (await p.evaluate(() => window.__idle.snapshot())).maxChakra,
-    125,
+    135,
   );
   await p.locator("#library").click();
   await p

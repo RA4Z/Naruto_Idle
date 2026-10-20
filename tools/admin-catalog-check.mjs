@@ -47,13 +47,8 @@ try {
     const a = manifest.modes.battle.animations.A_1hit;
     const dialog = page.locator(".admin-detail");
     await dialog.waitFor();
-    const value = await dialog
-      .locator("option")
-      .filter({ hasText: "battle · A_1hit" })
-      .getAttribute("value");
-    const asset = page.waitForResponse((r) => r.url().endsWith(a.url));
-    await dialog.locator("select").selectOption(value);
-    await (await asset).finished();
+    await dialog.locator(".animation-card").filter({ has: page.getByText("A_1hit", { exact: true }) }).click();
+    await page.waitForFunction(frames => [...document.querySelectorAll(".admin-detail p")].some(p => p.textContent.includes(frames + " quadros únicos") && p.textContent.includes("A_1hit")), a.frames);
     await page.waitForFunction(() => {
       const canvas = document.querySelector(".admin-detail canvas");
       if (!canvas) return false;

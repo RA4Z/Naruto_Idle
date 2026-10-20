@@ -1,5 +1,5 @@
 {
-  "validatedAt": "2026-10-20T00:21:51.845221+00:00",
+  "validatedAt": "2026-10-20T20:55:49.040233+00:00",
   "catalogue": {
     "discovered": 1466,
     "processed": 1466,
@@ -131,19 +131,23 @@
     "catalogBrowserReport": "reports/catalog-admin-browser-validation.json"
   },
   "vercel": {
-    "status": "postponed-by-user",
-    "diagnosis": "Git LFS pointers served as PNG, APIs 404",
-    "activeConfigurationChanged": false
+    "status": "reported-working-in-remote-history",
+    "sourceCommit": "7ba4d9ba",
+    "activeConfigurationChanged": false,
+    "domainRevalidatedThisMerge": false
   },
   "latestValidation": {
     "typecheck": "passed",
     "build": "passed",
-    "domainTests": 22,
-    "serverAndDeploymentTests": 10,
+    "domainTests": 59,
+    "serverAndDeploymentTests": 15,
     "pythonTests": 7,
     "arenaBrowser": "passed",
-    "sequentialPveBrowser": "passed",
-    "gitDiffCheck": "passed",
-    "catalogAdminBrowser": "passed"
+    "characterSelectionBrowser": "passed",
+    "sasukeSkillsBrowser": "passed",
+    "progressiveLoadingBrowser": "passed",
+    "miniWindowResizeBrowser": "passed",
+    "catalogAdminBrowser": "passed",
+    "mergeReport": "reports/merge-validation.json"
   }
 }

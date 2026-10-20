@@ -11,6 +11,12 @@ export type AnimationDef = {
   status: string;
   externalEffects?: string[];
   rigScale?: number;
+  fallback?: {
+    sourceAction: string;
+    originalUrl: string;
+    reason: string;
+    requiresOriginalSwf: boolean;
+  };
 };
 export type EntitySummary = {
   id: string;

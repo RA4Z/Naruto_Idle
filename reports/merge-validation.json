@@ -1,0 +1,88 @@
+{
+  "validatedAt": "2026-10-20T20:56:44.053070+00:00",
+  "localParent": "e8cf1484f42cfa3226cc578dcb94b4d6ab82f75a",
+  "remoteParent": "7ba4d9ba6b2178571818b8348e35ba4c5adeeb8f",
+  "remoteCommitsIntegrated": [
+    "7ba4d9ba Change sasuke model",
+    "c840b4fb Mini window bugfix",
+    "620dc7f7 Add fast load",
+    "5337c8f5 Add mini window",
+    "7b2368c9 Separate lvl up",
+    "0595eef1 Combat minor optimization",
+    "bf7293db Admin page visual upgrade",
+    "186e0897 Update admin page"
+  ],
+  "conflictsResolved": [
+    "CONTINUATION.md",
+    "README.md",
+    "docs/ROADMAP.md",
+    "src/admin/main.ts",
+    "public/assets/characters/sasuke-11000211/manifest.json"
+  ],
+  "decisions": [
+    "Preserve both histories; merge without force-push, reset or rebase.",
+    "Keep progressive loading, WebP derivatives, mini-window/PiP and resize protection.",
+    "Keep independent character progression, recruitment/selection, attributes, save migration and deferred party.",
+    "Keep blue Sasuke 11000211 as starter; preserve corrected source atlases over historical temporary fallbacks.",
+    "Historical fallback script skips source-regenerated skills; real PNG and timeline regression test added.",
+    "Combine new admin action cards/reviews with 24 FPS drawing, hidden-page pause and single thumbnail loader.",
+    "Production reads immutable asset metadata from dist while editable reviews persist in public across rebuilds.",
+    "Preserve 503 local catalogue repairs; 31 actions in 30 models still pending.",
+    "Preserve unrelated unstaged deletion DESIGN_DE_PROGRESSAO.md outside the merge commit."
+  ],
+  "checks": {
+    "domainTests": {
+      "passed": 59,
+      "failed": 0
+    },
+    "serverAssetsTests": {
+      "passed": 15,
+      "failed": 0
+    },
+    "pythonTests": {
+      "passed": 7,
+      "failed": 0
+    },
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "lfsAssetHeaders": {
+      "checked": 21673,
+      "pointers": 0
+    },
+    "conflictMarkers": "none"
+  },
+  "browserReports": [
+    "sasuke-skill-browser-validation.json",
+    "character-selection-validation.json",
+    "arena-browser-validation.json",
+    "catalog-admin-browser-validation.json",
+    "loading-validation.json",
+    "loading-production-validation.json",
+    "mini-window-resize-validation.json"
+  ],
+  "browserResults": {
+    "singleHeroAndCanvas": true,
+    "selectionRetryPreservesSave": true,
+    "realTwoClientArenaAndReconnect": true,
+    "adminCorrectedAtlases": true,
+    "productionLoadingNetworkKiBps": 800,
+    "productionFirstFrameMs": 6644,
+    "productionTravelAndVictory": true,
+    "miniWindowTinyResizeAndRestore": true,
+    "javascriptErrors": []
+  },
+  "resourcePolicy": "One heavy job at a time, low priority, capped Node heaps; one test browser, closed before next test.",
+  "remainingLimits": [
+    "31 large source animation sequences still pending incremental repair",
+    "Original cinematic movement within some source skill frames still needs per-model adaptation; a single Phaser sprite alone is not full animation-fidelity proof.",
+    "Four flattened map backgrounds; modular depth and additional maps remain future work.",
+    "Arena remains native Node with in-memory rooms; no new hosting or public deployment performed."
+  ],
+  "localService": {
+    "url": "http://127.0.0.1:5178/",
+    "mode": "production",
+    "nodeHeapLimitMB": 256,
+    "execSession": 94875
+  },
+  "gitValidation": "Will verify both parents are ancestors of the resulting merge commit and remote matches HEAD after push."
+}

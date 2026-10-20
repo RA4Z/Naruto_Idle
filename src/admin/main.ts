@@ -322,12 +322,14 @@ function characters(entries: Entry[]) {
       button.onclick = async () => {
         try {
           const m = await api("characters/" + entry.id);
-          animationDialog(entry.name, m.modes, m);
+          animationDialog(entry.name, m.modes || {}, m);
         } catch (e) {
           alert(String(e));
         }
       };
       card.append(button);
+      card.style.cursor = "pointer";
+      card.onclick = (event) => { if (event.target !== button) button.click(); };
       grid.append(card);
     }
     pages.replaceChildren();
@@ -372,7 +374,7 @@ function modal(title: string) {
 }
 function animationDialog(title: string, modes: any, manifest?: any) {
   const dialog = modal(title),
-    select = node("select"),
+    actionGrid = node("div", undefined, "animation-grid"),
     canvas = node("canvas"),
     info = node("p"),
     zoom = node("input");
@@ -386,26 +388,121 @@ function animationDialog(title: string, modes: any, manifest?: any) {
   zoom.setAttribute("aria-label", "Zoom da prévia");
   const actions: any[] = [];
   for (const [mode, data] of Object.entries<any>(modes))
-    for (const [name, anim] of Object.entries<any>(data.animations)) {
+    for (const [name, anim] of Object.entries<any>(data.animations || {})) {
       actions.push({ mode, name, anim, reference: data.referenceHeight });
-      const o = node("option", mode + " · " + name);
-      o.value = String(actions.length - 1);
-      select.append(o);
     }
-  dialog.append(select, zoom, canvas, info);
+  actionGrid.setAttribute("aria-label", "Animações disponíveis");
+  dialog.append(node("p", "Passe o mouse ou use o teclado para ver uma prévia. Clique para ampliar."), actionGrid, zoom, canvas, info);
+  if (manifest) {
+    const details = node("details"), summary = node("summary", `Arquivos do modelo (${manifest.assets?.length || 0})`), list = node("ul", undefined, "admin-assets");
+    for (const asset of manifest.assets || []) {
+      const li = node("li"), link = node("a", asset.url.split("/").slice(-2).join("/"));
+      link.href = asset.url; link.target = "_blank"; link.rel = "noopener";
+      li.append(link, document.createTextNode(` ? ${Math.ceil(asset.bytes / 1024)} KB`)); list.append(li);
+    }
+    details.append(summary, list); dialog.append(details);
+    if (manifest.issues?.length) dialog.append(node("p", "Pendências: " + JSON.stringify(manifest.issues)));
+    const form = node("form", undefined, "admin-review"), decision = node("select"), notes = node("textarea"), roles = node("div"), status = node("p"), save = node("button", "Salvar revisão");
+    for (const [value, label] of [["pending", "Pendente"], ["approved", "Aprovado para uso"], ["rejected", "Não utilizável"]]) { const option = node("option", label); option.value = value; decision.append(option); }
+    decision.value = manifest.review?.decision || "pending";
+    notes.placeholder = "Observações da revisão"; notes.maxLength = 1000; notes.value = manifest.review?.notes || "";
+    const checks: Record<string, HTMLInputElement> = {};
+    for (const [role, label] of [["npc", "Morador"], ["companion", "Companheiro recrutável"], ["enemy", "Adversário"]]) {
+      const wrap = node("label"), checkbox = node("input"); checkbox.type = "checkbox"; checkbox.checked = manifest.review?.capabilities?.[role] ?? manifest.capabilities?.[role] ?? false; checks[role] = checkbox;
+      wrap.append(checkbox, document.createTextNode(" " + label)); roles.append(wrap);
+    }
+    form.append(node("h3", "Revisão e uso no jogo"), node("p", "A aprovação libera as funções selecionadas na biblioteca após recarregar o jogo. Não adiciona protagonistas nem reconstrói animações ausentes."), decision, roles, notes, save, status);
+    form.onsubmit = async (event) => {
+      event.preventDefault(); save.disabled = true; status.textContent = "Salvando...";
+      try {
+        const enabled = decision.value === "approved";
+        await api(`characters/${manifest.id}/review`, { decision: decision.value, notes: notes.value, capabilities: Object.fromEntries(Object.entries(checks).map(([role, checkbox]) => [role, enabled && checkbox.checked])) });
+        status.textContent = "Revisão salva. Recarregue o jogo para aplicar.";
+      } catch (error) { status.textContent = String(error); } finally { save.disabled = false; }
+    };
+    dialog.append(form);
+  }
   if (!actions.length) {
     info.textContent = "Este recurso não possui animações convertidas.";
     return;
   }
-  let frame = 0,
+  let selected = 0, hovered = -1, hoverImage: HTMLImageElement | undefined,
+    hoverStart = 0, hoverToken = 0,
+    frame = 0,
     image: HTMLImageElement | undefined,
     start = 0,
     raf = 0,
-    token = 0,
-    lastDraw = 0;
-  const choose = async () => {
+    token = 0, lastDraw = 0;
+  const buttons: HTMLButtonElement[] = [], thumbnails: HTMLCanvasElement[] = [];
+  const visible = new Set<number>(), pending: number[] = [];
+  let loading = 0;
+  const paintThumb = (index: number, img: HTMLImageElement, time: number, began: number) => {
+    const thumb = thumbnails[index], ctx = thumb.getContext("2d")!, entry = actions[index], anim = entry.anim;
+    const timeline = anim.timeline?.length ? anim.timeline : Array.from({ length: anim.frames }, (_, i) => i);
+    const cols = Math.floor(img.width / anim.frameWidth);
+    if (!timeline.length || !cols || !anim.frameHeight) return;
+    const frame = timeline[Math.floor((time - began) / 1000 * anim.fps) % timeline.length];
+    const scale = Math.min(2, 62 / Math.max(1, entry.reference || anim.frameHeight));
+    const w = anim.frameWidth * scale, h = anim.frameHeight * scale;
+    ctx.clearRect(0, 0, thumb.width, thumb.height);
+    ctx.drawImage(img, frame % cols * anim.frameWidth, Math.floor(frame / cols) * anim.frameHeight,
+      anim.frameWidth, anim.frameHeight, thumb.width / 2 - w * (anim.origin?.[0] ?? 0.5),
+      thumb.height * 0.875 - h * (anim.origin?.[1] ?? 1), w, h);
+  };
+  const load = async (index: number) => {
+    const img = new Image(); img.src = actions[index].anim.url; await img.decode(); return img;
+  };
+  const pump = () => {
+    while (dialog.open && loading < 1 && pending.length) {
+      const index = pending.shift()!;
+      if (!visible.has(index)) continue;
+      loading++;
+      void load(index).then(img => {
+        if (dialog.open && visible.has(index) && hovered !== index) paintThumb(index, img, 0, 0);
+      }).catch(() => { if (dialog.open) buttons[index].title = "Imagem indisponível"; })
+        .finally(() => { loading--; pump(); });
+    }
+  };
+  const observer = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      const index = Number((entry.target as HTMLElement).dataset.index);
+      if (entry.isIntersecting) { visible.add(index); pending.push(index); }
+      else visible.delete(index);
+    }
+    pump();
+  }, { root: actionGrid, rootMargin: "80px" });
+  const preview = async (index: number) => {
+    hovered = index; hoverImage = undefined;
+    const request = ++hoverToken;
+    try {
+      const img = await load(index);
+      if (request !== hoverToken || !dialog.open) return;
+      hoverImage = img; hoverStart = performance.now();
+    } catch { /* The static thumbnail remains available. */ }
+  };
+  const stopPreview = (index: number) => {
+    if (hovered !== index) return;
+    if (hoverImage) paintThumb(index, hoverImage, 0, 0);
+    hovered = -1; hoverImage = undefined; hoverToken++;
+  };
+  actions.forEach((entry, index) => {
+    const button = node("button", undefined, "animation-card"), thumb = node("canvas");
+    button.type = "button"; button.dataset.index = String(index); button.setAttribute("aria-pressed", "false");
+    thumb.width = 160; thumb.height = 112; thumb.setAttribute("aria-hidden", "true");
+    button.append(thumb, node("span", entry.name), node("small", entry.mode));
+    if (entry.anim.fallback) button.append(node("small", "Prévia provisória"));
+    button.onclick = () => void choose(index);
+    button.onpointerenter = () => void preview(index);
+    button.onpointerleave = () => stopPreview(index);
+    button.onfocus = () => void preview(index);
+    button.onblur = () => stopPreview(index);
+    buttons.push(button); thumbnails.push(thumb); actionGrid.append(button); observer.observe(button);
+  });
+  const choose = async (index: number) => {
+    selected = index;
+    buttons.forEach((button, i) => { button.classList.toggle("selected", i === index); button.setAttribute("aria-pressed", String(i === index)); });
     const request = ++token,
-      entry = actions[Number(select.value)];
+      entry = actions[index];
     image = undefined;
     const im = new Image();
     im.src = entry.anim.url;
@@ -414,9 +511,10 @@ function animationDialog(title: string, modes: any, manifest?: any) {
       if (request !== token || !dialog.open) return;
       image = im;
       start = performance.now();
-      info.textContent = `${entry.anim.frames} quadros únicos · ${entry.anim.fps} FPS · ${entry.anim.status}${manifest?.organization ? " · " + manifest.organization.reason : ""}`;
+      info.textContent = `${entry.mode} · ${entry.name} · ${entry.anim.frames} quadros únicos · ${entry.anim.fps} FPS · ${entry.anim.status}${manifest?.organization ? " · " + manifest.organization.reason : ""}`;
+      if (entry.anim.fallback) info.textContent += " · " + entry.anim.fallback.reason;
     } catch {
-      info.textContent = "Imagem indisponível.";
+      if (request === token && dialog.open) info.textContent = "Imagem indisponível.";
     }
   };
   const draw = (time: number) => {
@@ -429,7 +527,7 @@ function animationDialog(title: string, modes: any, manifest?: any) {
     const ctx = canvas.getContext("2d")!;
     ctx.clearRect(0, 0, 560, 400);
     if (image) {
-      const { anim, reference } = actions[Number(select.value)],
+      const { anim, reference } = actions[selected],
         timeline =
           anim.timeline || Array.from({ length: anim.frames }, (_, i) => i);
       frame =
@@ -455,11 +553,11 @@ function animationDialog(title: string, modes: any, manifest?: any) {
         h,
       );
     }
+    if (hoverImage && hovered >= 0) paintThumb(hovered, hoverImage, time, hoverStart);
     raf = requestAnimationFrame(draw);
   };
-  select.onchange = () => void choose();
-  dialog.addEventListener("close", () => cancelAnimationFrame(raf));
-  void choose();
+  dialog.addEventListener("close", () => { token++; hoverToken++; observer.disconnect(); visible.clear(); pending.length = 0; cancelAnimationFrame(raf); });
+  void choose(0);
   raf = requestAnimationFrame(draw);
 }
 async function inspectMap(map: any) {

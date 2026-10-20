@@ -43,6 +43,7 @@ export default defineConfig({
           const mime: Record<string, string> = {
             ".png": "image/png",
             ".jpg": "image/jpeg",
+            ".webp": "image/webp",
             ".json": "application/json; charset=utf-8",
             ".xml": "application/xml",
             ".mp3": "audio/mpeg",

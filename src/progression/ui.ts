@@ -1,10 +1,17 @@
 import { ITEMS, QUESTS, buyItem, equipItem, claimQuest } from "./rules";
-import { addXp, type Save } from "../model";
-import { entityCatalog } from "../entities/catalog";
+import { addXp, stats, needed, type Save } from "../model";
+import { ATTRIBUTE_LABELS } from "./combat-stats";
+import {
+  CHARACTER_IDS,
+  characterProgress,
+  trainCharacter,
+  FUTURE_CHARACTERS,
+} from "./character-progress";
+import { runtimeIndex } from "../assets/runtime-index";
 type Context = {
   save: Save;
   onChange: () => void;
-  invite: (id: string) => Promise<void>;
+  switchCharacter: (id: string) => Promise<void>;
   heroId: string;
 };
 export function installProgression(context: () => Context) {
@@ -16,6 +23,7 @@ export function installProgression(context: () => Context) {
   dialog
     .querySelector("[data-close]")!
     .addEventListener("click", () => dialog.close());
+  let attributeId: string | undefined;
   let selected = "quests",
     version = 0;
   const element = (tag: string, text: string) => {
@@ -26,7 +34,7 @@ export function installProgression(context: () => Context) {
   const feedback = dialog.querySelector('[role="status"]')!;
   async function render() {
     const request = ++version,
-      { save, onChange, invite, heroId } = context();
+      { save, onChange, switchCharacter, heroId } = context();
     dialog.querySelector("[data-balance]")!.textContent =
       `${save.coins} moedas · ${save.inventory.fragmento || 0} fragmentos de treino`;
     const content = dialog.querySelector("[data-content]")!;
@@ -57,6 +65,104 @@ export function installProgression(context: () => Context) {
       };
       return b;
     };
+    if (selected === "attributes") {
+      const runtime = await runtimeIndex();
+      const entries = (save.collection || [])
+        .filter((id) => runtime.entities[id] && !FUTURE_CHARACTERS.has(id))
+        .map((id) => ({ id, ...runtime.entities[id] }));
+      if (request !== version || !dialog.open) return;
+      if (!attributeId || !save.collection?.includes(attributeId))
+        attributeId = heroId;
+      const id = attributeId,
+        p = characterProgress(save, id),
+        st = stats(save, id);
+      const picker = document.createElement("select");
+      picker.setAttribute("aria-label", "Personagem da ficha");
+      for (const ownedId of save.collection || []) {
+        if (FUTURE_CHARACTERS.has(ownedId)) continue;
+        const option = document.createElement("option");
+        const progress = characterProgress(save, ownedId);
+        option.value = ownedId;
+        option.textContent = `${entries.find((e) => e.id === ownedId)?.name || ownedId} · Nível ${progress.level}`;
+        picker.append(option);
+      }
+      picker.value = id;
+      picker.onchange = () => {
+        attributeId = picker.value;
+        void render();
+      };
+      const label = element("label", "Personagem ");
+      label.append(picker);
+      const summary = element("section", "");
+      summary.className = "attribute-summary";
+      summary.append(
+        label,
+        element("h3", entries.find((e) => e.id === id)?.name || id),
+        element(
+          "p",
+          `Nível ${p.level} · ${p.level >= 100 ? "Nível máximo" : `${p.xp}/${needed(p.level)} XP`} · ${p.upgrades} treinos`,
+        ),
+        element(
+          "p",
+          "Cada personagem tem seu próprio nível, XP, treinos e atributos. Somente o personagem que você está controlando recebe XP das caçadas e missões.",
+        ),
+        element(
+          "p",
+          `Ataque ${st.attack} · Jutsu ${st.skillDamage} · Vida ${st.maxHp} · Chakra ${st.maxChakra}`,
+        ),
+        element(
+          "p",
+          `${(1000 / st.interval).toFixed(2)} ataques/s · ${(st.interval / 1000).toFixed(2)} s entre golpes · Movimento ${st.moveSpeed.toFixed(1)} u/s`,
+        ),
+        element(
+          "p",
+          `Regeneração ${st.chakraRegen.toFixed(1)} chakra/s · Redução de dano ${((100 * st.defense) / (100 + st.defense)).toFixed(1)}%`,
+        ),
+        action(
+          "Treinar este personagem · 25 moedas",
+          () => trainCharacter(save, id),
+          save.coins < 25 || p.upgrades >= 10000,
+        ),
+      );
+      if (!Object.values(CHARACTER_IDS).includes(id))
+        summary.append(
+          element(
+            "p",
+            "Atributos-base provisórios de recruta; balanceamento individual pendente.",
+          ),
+        );
+      if (id !== heroId)
+        summary.append(
+          element(
+            "p",
+            "Selecione este personagem na coleção para jogar e ganhar experiência com ele.",
+          ),
+        );
+      content.append(summary);
+      const descriptions = {
+        vitality: "Define a vida máxima.",
+        strength: "Aumenta o dano dos ataques e contribui para os jutsus.",
+        ninjutsu: "Aumenta o dano dos jutsus e a cura da Sakura.",
+        speed: "Acelera os ataques automáticos e o movimento pelo mapa.",
+        chakra: "Define a reserva máxima de chakra.",
+        control: "Aumenta a regeneração de chakra.",
+        resistance: "Reduz o dano recebido nas caçadas.",
+      };
+      for (const key of Object.keys(
+        ATTRIBUTE_LABELS,
+      ) as (keyof typeof ATTRIBUTE_LABELS)[]) {
+        const card = element("article", "");
+        card.className = "progress-card";
+        card.append(
+          element(
+            "h3",
+            `${ATTRIBUTE_LABELS[key]} · ${Number(st.attributes[key].toFixed(1))}`,
+          ),
+          element("p", descriptions[key]),
+        );
+        content.append(card);
+      }
+    }
     if (selected === "quests")
       for (const q of QUESTS) {
         const card = element("article", "");
@@ -138,13 +244,19 @@ export function installProgression(context: () => Context) {
       }
     }
     if (selected === "collection") {
-      const entries = await entityCatalog.list();
+      const runtime = await runtimeIndex();
+      const entries = (save.collection || [])
+        .filter((id) => runtime.entities[id])
+        .map((id) => ({ id, ...runtime.entities[id] }));
       if (request !== version || !dialog.open) return;
       for (const id of save.collection || []) {
+        if (FUTURE_CHARACTERS.has(id)) continue;
         const e = entries.find((e) => e.id === id);
         if (!e) continue;
         const card = element("article", "");
         card.className = "progress-card";
+        card.dataset.characterId = id;
+        const progress = characterProgress(save, id);
         if (e.preview) {
           const img = document.createElement("img");
           img.src = e.preview;
@@ -153,17 +265,20 @@ export function installProgression(context: () => Context) {
         }
         card.append(
           element("h3", e.name + (e.variant ? " [" + e.variant + "]" : "")),
+          element(
+            "p",
+            `Nível ${progress.level} · ${progress.level >= 100 ? "Nível máximo" : `${progress.xp}/${needed(progress.level)} XP`} · ${progress.upgrades} treinos`,
+          ),
+          action("Ver atributos", () => {
+            attributeId = id;
+            selected = "attributes";
+          }),
           action(
-            id === heroId
-              ? "Seu protagonista"
-              : save.partyIds?.includes(id)
-                ? "Já no grupo"
-                : "Convidar para grupo",
+            id === heroId ? "Personagem ativo" : "Jogar com este personagem",
             async () => {
-              await invite(id);
-              dialog.close();
+              await switchCharacter(id);
             },
-            id === heroId || !!save.partyIds?.includes(id),
+            id === heroId || !e.capabilities.companion || !e.capabilities.enemy,
           ),
         );
         content.append(card);
@@ -171,12 +286,13 @@ export function installProgression(context: () => Context) {
       content.append(
         element(
           "p",
-          "Encontre novos personagens na biblioteca. O recrutamento custa 60 moedas e 3 fragmentos; o grupo ativo é opcional.",
+          "Troque de personagem fora de combate. Encontre novos personagens na biblioteca; o recrutamento custa 60 moedas e 3 fragmentos. O sistema de grupo ficará para uma atualização futura.",
         ),
       );
     }
   }
   for (const [id, name] of [
+    ["attributes", "Atributos"],
     ["quests", "Missões"],
     ["inventory", "Mochila"],
     ["shop", "Loja"],

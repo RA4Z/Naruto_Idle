@@ -1,4 +1,5 @@
 import type { Save } from "../model";
+import { syncCharacterProgress } from "./character-progress.ts";
 export type Slot = "weapon" | "armor" | "charm";
 export const ITEMS = [
   {
@@ -46,7 +47,7 @@ export const ITEMS = [
     description: "Mais reserva e regeneração para seus jutsus.",
   },
 ];
-export const STARTER_COLLECTION = ["11000101", "11000201", "11000301"];
+export const STARTER_COLLECTION = ["11000101", "11000211", "11000301"];
 export const RECRUIT_COST = { coins: 60, fragments: 3 };
 export function equipmentBonuses(s: Save) {
   const result = { attack: 0, hp: 0, chakra: 0, regen: 0 };
@@ -73,9 +74,11 @@ export function equipItem(s: Save, id: string) {
     throw new Error("Você precisa possuir este equipamento.");
   s.equipment ??= {};
   s.equipment[item.slot] = id;
+  syncCharacterProgress(s);
   return item;
 }
 export function recruit(s: Save, id: string) {
+  if (id === "11000201") throw new Error("Esta versão do Sasuke será disponibilizada no futuro.");
   if (!/^\d{6,12}$/.test(id)) throw new Error("Identificador inválido.");
   s.collection ??= [...STARTER_COLLECTION];
   if (s.collection.includes(id)) throw new Error("Personagem já recrutado.");
@@ -87,6 +90,7 @@ export function recruit(s: Save, id: string) {
   s.coins -= RECRUIT_COST.coins;
   s.inventory.fragmento -= RECRUIT_COST.fragments;
   s.collection.push(id);
+  syncCharacterProgress(s);
 }
 export const QUESTS = [
   {

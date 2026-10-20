@@ -25,34 +25,42 @@ const effectsFor = (character: string) =>
       ? ["luoxuanwan"]
       : character === "sasuke"
         ? ["qianniao"]
-        : ["zhihuozaishen", "hphuifu"]),
+        : character === "sakura" ? ["zhihuozaishen", "hphuifu"] : []),
   ]);
 const soundKey = (id: string, index: number) => `original:${id}:${index}`;
 export function queuePresentation(
   scene: Phaser.Scene,
   data: PresentationConfig,
   character: string,
+  options = { effects: true, audio: true },
 ) {
-  for (const [name, anim] of Object.entries(data.effects).filter(([name]) =>
-    effectsFor(character).has(name),
+  for (const [name, anim] of Object.entries(data.effects).filter(
+    ([name]) =>
+      options.effects &&
+      effectsFor(character).has(name) &&
+      !scene.textures.exists(effectKey(name)),
   ))
     scene.load.spritesheet(effectKey(name), anim.url, {
       frameWidth: anim.frameWidth,
       frameHeight: anim.frameHeight,
       endFrame: anim.frames - 1,
     });
+  if (!options.audio) return;
   const ids = new Set(
-    Object.values(data.characters[character].actions)
+    Object.values(data.characters[character]?.actions || {})
       .flat()
       .map((e) => e.sound),
   );
   ids.add("196");
   ids.add("197");
   for (const id of ids)
-    data.sounds[id]?.urls.forEach((url, i) =>
-      scene.load.audio(soundKey(id, i), url),
+    data.sounds[id]?.urls.forEach(
+      (url, i) =>
+        !scene.cache.audio.exists(soundKey(id, i)) &&
+        scene.load.audio(soundKey(id, i), url),
     );
-  scene.load.audio("original:village", data.music.url);
+  if (!scene.cache.audio.exists("original:village"))
+    scene.load.audio("original:village", data.music.url);
 }
 export class PresentationPlayer {
   private active = new Set<Phaser.GameObjects.Sprite>();
@@ -68,18 +76,7 @@ export class PresentationPlayer {
     private data: PresentationConfig,
     private character: string,
   ) {
-    for (const [name, anim] of Object.entries(data.effects).filter(([name]) =>
-      effectsFor(character).has(name),
-    ))
-      if (scene.textures.exists(effectKey(name)))
-        scene.anims.create({
-          key: effectKey(name),
-          frames: (
-            anim.timeline || Array.from({ length: anim.frames }, (_, i) => i)
-          ).map((frame) => ({ key: effectKey(name), frame })),
-          frameRate: anim.fps,
-          repeat: 0,
-        });
+    this.registerEffects();
     let disposed = false;
     const dispose = () => {
       if (disposed) return;
@@ -90,6 +87,26 @@ export class PresentationPlayer {
     };
     scene.events.once("shutdown", dispose);
     scene.events.once("destroy", dispose);
+  }
+  registerEffects() {
+    const scene = this.scene,
+      data = this.data,
+      character = this.character;
+    for (const [name, anim] of Object.entries(data.effects).filter(([name]) =>
+      effectsFor(character).has(name),
+    ))
+      if (
+        scene.textures.exists(effectKey(name)) &&
+        !scene.anims.exists(effectKey(name))
+      )
+        scene.anims.create({
+          key: effectKey(name),
+          frames: (
+            anim.timeline || Array.from({ length: anim.frames }, (_, i) => i)
+          ).map((frame) => ({ key: effectKey(name), frame })),
+          frameRate: anim.fps,
+          repeat: 0,
+        });
   }
   settings(enabled: boolean, music: boolean, volume: number) {
     this.enabled = enabled;
@@ -192,8 +209,11 @@ export class PresentationPlayer {
     enemy: { x: number; y: number },
     duration: number,
   ) {
-    const events = this.data.characters[this.character].actions[action] || [];
+    const events = this.data.characters[this.character]?.actions[action] || [];
     const end = Math.max(duration, ...events.map((e) => e.time + 80));
+    // Delayed impact effects must stay at the position of this strike even if
+    // the target resumes moving before the callback runs.
+    const impact = { x: enemy.x, y: enemy.y };
     for (const event of events)
       this.later((event.time * duration) / end, () =>
         this.sound(event.sound, event.volume),
@@ -201,9 +221,9 @@ export class PresentationPlayer {
     const flip = enemy.x < hero.x;
     if (action === "A_1hit")
       this.later(120, () =>
-        this.effect("DaJiTeXiao", enemy.x, enemy.y - 5, 30, 250, flip),
+        this.effect("DaJiTeXiao", impact.x, impact.y - 5, 30, 250, flip),
       );
-    if (action !== "SP_skill1") return;
+    if (action !== "SP_skill1" || !this.data.characters[this.character]) return;
     if (this.character === "sakura") {
       this.effect("zhihuozaishen", hero.x, hero.y - 17, 50, duration);
       this.effect("hphuifu", hero.x, hero.y + 2, 26, duration);
@@ -220,13 +240,13 @@ export class PresentationPlayer {
       if (sprite)
         this.scene.tweens.add({
           targets: sprite,
-          x: enemy.x,
-          y: enemy.y - 27,
+          x: impact.x,
+          y: impact.y - 27,
           duration: duration * 0.72,
           ease: "Sine.easeInOut",
         });
       this.later(duration * 0.65, () =>
-        this.effect("DaJiTeXiao", enemy.x, enemy.y - 5, 42, 260, flip),
+        this.effect("DaJiTeXiao", impact.x, impact.y - 5, 42, 260, flip),
       );
     }
   }
