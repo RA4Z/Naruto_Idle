@@ -1,3 +1,7 @@
+import {
+  validateArenaLoadout,
+  arenaJourneyStats,
+} from "../src/progression/combat-stats.ts";
 import { randomBytes } from "node:crypto";
 import { ARENA_FIGHTERS, ARENA_RULES } from "../src/arena/rules.ts";
 
@@ -15,15 +19,42 @@ export function createArena({ now = Date.now, rules: overrides = {} } = {}) {
   const rules = { ...ARENA_RULES, ...overrides },
     rooms = new Map(),
     sessions = new Map();
-  function player(character) {
+  function player(character, mode = "balanced", input) {
     if (!Object.hasOwn(ARENA_FIGHTERS, character))
       fail(400, "Escolha Naruto, Sasuke ou Sakura.");
     const f = ARENA_FIGHTERS[character];
+    let loadout = null;
+    if (mode === "journey") {
+      try {
+        loadout = validateArenaLoadout(input);
+      } catch (e) {
+        fail(400, e.message);
+      }
+    }
+    const derived = loadout && arenaJourneyStats(character, loadout);
+    const maxHp = derived ? derived.maxHp : f.hp;
     return {
+      loadout,
+      attack: derived ? derived.attack : f.attack,
+      skillDamage: derived
+        ? character === "sakura"
+          ? 0
+          : derived.attack * 2
+        : f.damage,
+      skillHeal: derived
+        ? character === "sakura"
+          ? Math.round(derived.maxHp * 0.12) + derived.attack
+          : 0
+        : f.heal,
+      maxChakra: derived ? derived.maxChakra : rules.chakra,
+      chakraRegen: derived
+        ? Math.round(derived.chakraRegen * 1.6)
+        : rules.regen,
+      interval: derived ? derived.interval : 1000,
       character,
-      hp: f.hp,
-      maxHp: f.hp,
-      chakra: rules.chakra,
+      hp: maxHp,
+      maxHp,
+      chakra: derived ? derived.maxChakra : rules.chakra,
       guarding: false,
       readyAt: 0,
       turns: 0,
@@ -42,10 +73,17 @@ export function createArena({ now = Date.now, rules: overrides = {} } = {}) {
   function snapshot(room) {
     return {
       code: room.code,
+      mode: room.mode,
       revision: room.revision,
       status: room.status,
       players: room.players.map((p) => ({
         character: p.character,
+        attack: p.attack,
+        skillDamage: p.skillDamage,
+        skillHeal: p.skillHeal,
+        maxChakra: p.maxChakra,
+        chakraRegen: p.chakraRegen,
+        loadout: p.loadout,
         hp: p.hp,
         maxHp: p.maxHp,
         chakra: p.chakra,
@@ -124,9 +162,11 @@ export function createArena({ now = Date.now, rules: overrides = {} } = {}) {
   }
   return {
     expire,
-    create(character, token) {
+    create(character, token, mode = "balanced", loadout) {
       available(token);
-      const p = player(character);
+      if (!["balanced", "journey"].includes(mode))
+        fail(400, "Modo de duelo inválido.");
+      const p = player(character, mode, loadout);
       if (rooms.size >= rules.maxRooms)
         fail(503, "Arena ocupada. Tente novamente mais tarde.");
       let code;
@@ -135,6 +175,7 @@ export function createArena({ now = Date.now, rules: overrides = {} } = {}) {
       } while (rooms.has(code));
       const room = {
         code,
+        mode,
         revision: 1,
         players: [p],
         status: "waiting",
@@ -151,16 +192,18 @@ export function createArena({ now = Date.now, rules: overrides = {} } = {}) {
       rooms.set(code, room);
       return attach(room, 0);
     },
-    join(code, character, token) {
+    join(code, character, token, loadout) {
       available(token);
       if (typeof code !== "string" || !/^[A-F0-9]{10}$/.test(code))
         fail(400, "Chave de sala inválida.");
-      const p = player(character),
-        room = rooms.get(code);
+      const room = rooms.get(code);
       if (!room) fail(404, "Sala não encontrada ou expirada.");
       if (room.status !== "waiting" || room.players.length !== 1)
         fail(409, "Esta sala não está disponível.");
+      const p = player(character, room.mode, loadout);
       room.players.push(p);
+      if (room.mode === "journey" && p.interval < room.players[0].interval)
+        room.turn = 1;
       room.status = "active";
       room.startedAt = now();
       room.deadline = now() + rules.turnMs;
@@ -228,12 +271,12 @@ export function createArena({ now = Date.now, rules: overrides = {} } = {}) {
         f = ARENA_FIGHTERS[p.character];
       let damage = 0,
         heal = 0;
-      if (input.action === "attack") damage = f.attack;
+      if (input.action === "attack") damage = p.attack;
       if (input.action === "skill") {
         p.chakra -= rules.skillCost;
         p.readyAt = p.turns + rules.skillCooldown + 1;
-        damage = f.damage;
-        heal = Math.min(f.heal, p.maxHp - p.hp);
+        damage = p.skillDamage;
+        heal = Math.min(p.skillHeal, p.maxHp - p.hp);
         p.hp += heal;
       }
       if (damage && target.guarding) {
@@ -243,7 +286,7 @@ export function createArena({ now = Date.now, rules: overrides = {} } = {}) {
       target.hp = Math.max(0, target.hp - damage);
       if (input.action === "guard") p.guarding = true;
       if (input.action === "charge")
-        p.chakra = Math.min(rules.chakra, p.chakra + rules.charge);
+        p.chakra = Math.min(p.maxChakra, p.chakra + rules.charge);
       const names = {
         attack: "Ataque",
         skill: f.skill,
@@ -272,7 +315,10 @@ export function createArena({ now = Date.now, rules: overrides = {} } = {}) {
       else {
         room.turn = 1 - seat;
         target.guarding = false;
-        target.chakra = Math.min(rules.chakra, target.chakra + rules.regen);
+        target.chakra = Math.min(
+          target.maxChakra,
+          target.chakra + target.chakraRegen,
+        );
         room.deadline = now() + rules.turnMs;
         publish(room);
       }
@@ -289,6 +335,7 @@ export function createArena({ now = Date.now, rules: overrides = {} } = {}) {
       return {
         rooms: [...rooms.values()].map((r) => ({
           code: r.code,
+          mode: r.mode,
           status: r.status,
           turnNumber: r.turnNumber,
           createdAt: r.createdAt,
@@ -381,9 +428,14 @@ export function createArenaApi(options) {
       if (++limit.count > 90) fail(429, "Muitas ações. Aguarde um minuto.");
       let result;
       if (path === "/api/arena/create")
-        result = arena.create(input.character, token);
+        result = arena.create(
+          input.character,
+          token,
+          input.mode,
+          input.loadout,
+        );
       else if (path === "/api/arena/join")
-        result = arena.join(input.code, input.character, token);
+        result = arena.join(input.code, input.character, token, input.loadout);
       else if (path === "/api/arena/action") result = arena.act(token, input);
       else if (path === "/api/arena/leave") result = arena.leave(token);
       else fail(404, "Operação não encontrada.");

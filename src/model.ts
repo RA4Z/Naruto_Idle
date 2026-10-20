@@ -1,9 +1,5 @@
-import {
-  equipmentBonuses,
-  ITEMS,
-  QUESTS,
-  STARTER_COLLECTION,
-} from "./progression/rules";
+import { combatStats } from "./progression/combat-stats";
+import { ITEMS, QUESTS, STARTER_COLLECTION } from "./progression/rules";
 import {
   CHARACTERS,
   AREAS,
@@ -83,15 +79,7 @@ export function addXp(s: Save, xp: number) {
   }
 }
 export function stats(s: Save) {
-  const c = CHARACTERS[s.character];
-  const gear = equipmentBonuses(s);
-  return {
-    maxHp: c.hp + (s.level - 1) * 12 + s.upgrades * 9 + gear.hp,
-    attack: c.attack + (s.level - 1) * 2 + s.upgrades * 3 + gear.attack,
-    maxChakra: 100 + gear.chakra,
-    chakraRegen: 5 + gear.regen,
-    interval: c.interval,
-  };
+  return combatStats({ ...s, equipment: s.equipment || {} });
 }
 export function reward(s: Save, random = Math.random) {
   const a = AREAS[s.area];

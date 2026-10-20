@@ -229,7 +229,7 @@ export class ArenaView {
             this.frame(
               sheet.anim,
               action === "C_idle" ? time : elapsed,
-              action === "C_dead",
+              action !== "C_idle",
             ),
             seat === 1,
           );

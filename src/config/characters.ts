@@ -1,6 +1,6 @@
 export const CHARACTERS = {
   naruto: {
-    name: "Naruto Kid",
+    name: "Naruto",
     assetFolder: "naruto-kid",
     portrait: "/assets/characters/naruto-kid/portrait.png",
     subtitle: "Determinação que nunca se apaga",
@@ -12,7 +12,7 @@ export const CHARACTERS = {
     skill: "Rasengan",
   },
   sasuke: {
-    name: "Sasuke Kid",
+    name: "Sasuke",
     assetFolder: "sasuke-kid",
     portrait: "/assets/characters/sasuke-kid/portrait.png",
     subtitle: "Um passo à frente do adversário",
@@ -24,7 +24,7 @@ export const CHARACTERS = {
     skill: "Chidori",
   },
   sakura: {
-    name: "Sakura Kid",
+    name: "Sakura",
     assetFolder: "sakura-kid",
     portrait: "/assets/characters/sakura-kid/portrait.png",
     subtitle: "Força para continuar",

@@ -54,7 +54,7 @@ test("admin API requires a server session, rejects bad passwords and cross-origi
     r = await fetch(base + "/api/admin/characters/11000101", {
       headers: { Cookie: cookie },
     });
-    assert.equal((await r.json()).name, "Naruto Kid");
+    assert.equal((await r.json()).name, "Naruto");
     r = await fetch(base + "/api/admin/progression", {
       headers: { Cookie: cookie },
     });

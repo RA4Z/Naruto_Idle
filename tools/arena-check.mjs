@@ -23,6 +23,41 @@ try {
       viewport: { width: 1180, height: 960 },
       deviceScaleFactor: 1,
     });
+    await context.addInitScript(() => {
+      localStorage.setItem(
+        "folha-idle-v1",
+        JSON.stringify({
+          version: 1,
+          character: "naruto",
+          level: 5,
+          xp: 0,
+          coins: 200,
+          inventory: {
+            "kunai-reforcada": 1,
+            "colete-shinobi": 1,
+            "amuleto-chakra": 1,
+          },
+          equipment: {
+            weapon: "kunai-reforcada",
+            armor: "colete-shinobi",
+            charm: "amuleto-chakra",
+          },
+          area: 0,
+          upgrades: 2,
+          kills: 0,
+          defeats: 0,
+          lastSaved: Date.now(),
+          sound: false,
+          paused: false,
+          location: "10001",
+          autoHunt: false,
+          partyIds: [],
+          questClaims: [],
+          visitedMaps: ["10001"],
+          collection: ["11000101", "11000201", "11000301"],
+        }),
+      );
+    });
     contexts.push(context);
     const page = await context.newPage();
     pages.push(page);
@@ -82,11 +117,19 @@ try {
   await b.locator('[data-arena-action="skill"]').click();
   await a.locator("[data-phase]").filter({ hasText: "Turno 3" }).waitFor();
   assert.equal((await state(a)).room.players[1].hp, 190);
-  await a.waitForFunction(() => document.querySelector("canvas.arena-stage")?.dataset.effect === "hphuifu");
+  await a.waitForFunction(
+    () =>
+      document.querySelector("canvas.arena-stage")?.dataset.effect ===
+      "hphuifu",
+  );
   await a.locator('[data-arena-action="skill"]').click();
   await b.locator("[data-phase]").filter({ hasText: "Turno 4" }).waitFor();
   assert.equal((await state(b)).room.players[1].hp, 132);
-  await a.waitForFunction(() => document.querySelector("canvas.arena-stage")?.dataset.effect === "luoxuanwan");
+  await a.waitForFunction(
+    () =>
+      document.querySelector("canvas.arena-stage")?.dataset.effect ===
+      "luoxuanwan",
+  );
   await a.screenshot({ path: "reports/arena-two-client.png", fullPage: true });
   await b.reload();
   await b.locator("#open-arena").click();
@@ -126,20 +169,66 @@ try {
   await a.locator("[data-leave]").click();
   await a.getByLabel("Ninja da arena").selectOption("sasuke");
   await a.locator("[data-create]").click();
-  await a.locator("[data-code]").filter({ hasText: /Sala [A-F0-9]{10}/ }).waitFor();
+  await a
+    .locator("[data-code]")
+    .filter({ hasText: /Sala [A-F0-9]{10}/ })
+    .waitFor();
   const secondCode = (await a.locator("[data-code]").innerText()).split(" ")[1];
   await b.getByLabel("Ninja da arena").selectOption("naruto");
   await b.getByLabel("Chave da sala").fill(secondCode);
   await b.locator('[data-entry] button[type="submit"]').click();
-  await a.locator('[data-phase]').filter({ hasText: "Turno 1" }).waitFor();
+  await a.locator("[data-phase]").filter({ hasText: "Turno 1" }).waitFor();
   await a.locator('[data-arena-action="skill"]').click();
-  await b.locator('[data-phase]').filter({ hasText: "Turno 2" }).waitFor();
+  await b.locator("[data-phase]").filter({ hasText: "Turno 2" }).waitFor();
   assert.equal((await state(b)).room.players[1].hp, 118);
-  await a.waitForFunction(() => document.querySelector("canvas.arena-stage")?.dataset.effect === "qianniao");
+  await a.waitForFunction(
+    () =>
+      document.querySelector("canvas.arena-stage")?.dataset.effect ===
+      "qianniao",
+  );
   await a.screenshot({ path: "reports/arena-chidori.png", fullPage: true });
-  const soundRequests = await a.evaluate(() => performance.getEntriesByType("resource").filter(e => /\/assets\/audio\//.test(e.name)).length);
+  const soundRequests = await a.evaluate(
+    () =>
+      performance
+        .getEntriesByType("resource")
+        .filter((e) => /\/assets\/audio\//.test(e.name)).length,
+  );
   assert.ok(soundRequests > 0);
-  await b.locator('[data-leave]').click();
+  await b.locator("[data-leave]").click();
+  await a.locator("[data-leave]").click();
+  await a.getByLabel("Ninja da arena").selectOption("naruto");
+  await a.getByLabel("Modo do duelo").selectOption("journey");
+  assert.ok(
+    (await a.locator("[data-build-preview]").innerText()).includes("234 vida"),
+  );
+  await a.locator("[data-create]").click();
+  await a.locator("[data-code]").filter({ hasText: "Jornada" }).waitFor();
+  const journeyCode = (await a.locator("[data-code]").innerText()).split(
+    " ",
+  )[1];
+  await b.getByLabel("Ninja da arena").selectOption("sakura");
+  await b.getByLabel("Chave da sala").fill(journeyCode);
+  await b.locator('[data-entry] button[type="submit"]').click();
+  await a.locator("[data-phase]").filter({ hasText: "Turno 1" }).waitFor();
+  await a.locator('[data-arena-action="skill"]').click();
+  await b.locator("[data-phase]").filter({ hasText: "Turno 2" }).waitFor();
+  const journey = (await state(b)).room;
+  assert.equal(journey.mode, "journey");
+  assert.equal(journey.players[0].maxHp, 234);
+  assert.equal(journey.players[0].attack, 37);
+  assert.equal(journey.players[0].maxChakra, 125);
+  assert.equal(journey.players[1].maxHp, 259);
+  assert.equal(journey.players[1].hp, 185);
+  assert.equal(journey.log.at(-1).damage, 74);
+  assert.equal(
+    (await a.locator(".arena-panel").innerText()).includes("Kid"),
+    false,
+  );
+  await a.screenshot({
+    path: "reports/arena-journey-build.png",
+    fullPage: true,
+  });
+  await b.locator("[data-leave]").click();
   for (const context of contexts) await context.close();
   // Reuse the same browser, after closing player tabs, for admin visibility.
   const admin = await browser.newPage();
@@ -162,6 +251,9 @@ try {
     checkedAt: new Date().toISOString(),
     base,
     independentClients: 2,
+    journeyModeEquipment: true,
+    journeyModeServerDamage: 74,
+    simpleDisplayNames: true,
     singleBrowserProcess: true,
     noPhaserOnArenaRoute: lightweight,
     authoritativeTurn: true,

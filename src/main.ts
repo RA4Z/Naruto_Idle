@@ -50,6 +50,8 @@ type Anim = {
   frameHeight: number;
   frames: number;
   fps: number;
+  timeline?: number[];
+  rigScale?: number;
   origin: [number, number];
   status: string;
 };
@@ -105,7 +107,14 @@ const openProgression = installProgression(() => ({
   },
 }));
 $("progression").onclick = () => openProgression();
-const openArena = installArena(() => save.character);
+const openArena = installArena(
+  () => save.character,
+  () => ({
+    level: save.level,
+    upgrades: save.upgrades,
+    equipment: { ...save.equipment },
+  }),
+);
 $("arena").onclick = () => {
   const current = game;
   current?.loop.sleep();
@@ -435,16 +444,9 @@ class HuntScene extends Phaser.Scene {
         if (this.textures.exists(key))
           this.anims.create({
             key,
-            frames: this.anims.generateFrameNumbers(key, {
-              start: 0,
-              end:
-                action === specialAction()
-                  ? Math.min(
-                      anim.frames - 1,
-                      { naruto: 29, sasuke: 37, sakura: 34 }[save.character],
-                    )
-                  : anim.frames - 1,
-            }),
+            frames: (
+              anim.timeline || Array.from({ length: anim.frames }, (_, i) => i)
+            ).map((frame) => ({ key, frame })),
             frameRate: anim.fps,
             repeat: mode === "world" || action === "C_idle" ? -1 : 0,
           });
@@ -562,6 +564,13 @@ class HuntScene extends Phaser.Scene {
           kills: save.kills,
           character: save.character,
           animation: this.hero.anims.currentAnim?.key,
+          heroSpriteInstances: this.children.list.filter(
+            (o) =>
+              o instanceof Phaser.GameObjects.Sprite &&
+              /^(world|battle)-/.test(o.texture.key),
+          ).length,
+          gameLoopRunning: this.game.loop.running,
+          origin: [this.hero.originX, this.hero.originY],
           scale: this.hero.scaleX,
           zoom: this.cameras.main.zoom,
           walkable: this.navigation.walkable(this.hero),
@@ -616,11 +625,15 @@ class HuntScene extends Phaser.Scene {
       this.anims.exists(key) &&
       (force || this.hero.anims.currentAnim?.key !== key)
     ) {
+      const mode = key.startsWith("world-") ? "world" : "battle";
+      const action = key.slice(mode.length + 1);
+      const definition = cast.hero.modes[mode];
+      const animation = definition?.animations[action];
+      if (animation) this.hero.setOrigin(...animation.origin);
       this.hero.setScale(
-        actorScale(
-          save.character,
-          key.startsWith("world-") ? "world" : "battle",
-        ),
+        45 /
+          Math.max(1, definition?.referenceHeight || 120) /
+          (animation?.rigScale ?? 1),
       );
       this.hero.setFlipX(
         key.startsWith("battle-") && this.enemy.x < this.hero.x,

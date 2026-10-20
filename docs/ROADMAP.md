@@ -28,7 +28,7 @@ Pedido do usuário em 20/10/2026: uma tarefa pesada por vez. Não sobrepor build
 3. [x] Loot e mochila, quatro equipamentos, loja, slots weapon/armor/charm e bônus reais nos atributos; compras/equipamento e migração testados. Próximo: ampliar itens, consumíveis, receitas e raridades.
 4. [x] Cinco missões persistentes de exploração/combate, recompensas únicas em XP/moedas e painel no lobby. Próximo: cadeias de missões e variedade de objetivos.
 5. [x] Coleção separada do grupo, três iniciais disponíveis e recrutamento de modelos elegíveis por 60 moedas + 3 fragmentos. Próximo: progressão individual, afinidades e builds do grupo.
-6. [x] Arena local de turnos sincronizados: servidor autoritativo, salas por chave, dois clientes independentes, chakra, cooldown, validação de turno, reconexão e expiração. Implementada com SSE e sessões HttpOnly, atributos nivelados e efeitos/vozes originais dos três iniciais. Novo pedido: adicionar modo com atributos/equipamentos da jornada. Acesso pela internet depende de hospedagem/configuração posterior.
+6. [x] Arena local de turnos sincronizados: servidor autoritativo, salas por chave, dois clientes independentes, chakra, cooldown, validação de turno, reconexão e expiração. Implementada com SSE e sessões HttpOnly, atributos nivelados e efeitos/vozes originais dos três iniciais. Modo Jornada também implementado: atributos compartilhados com PvE, slots validados e snapshot da build ao entrar; amistoso com save local. Acesso pela internet depende de hospedagem/configuração posterior.
 7. [ ] Admin com itens, equipamentos, quests, salas da arena, diagnósticos e colisões sobrepostas no mapa.
 8. [ ] Expandir mapas e NPCs incrementalmente, com entrada/saída, população e inspeção visual. Não basta trocar o fundo.
 9. [ ] Nitidez: preservar pixels originais e testar densidade de tela, filtros e escala. Não afirmar detalhes ou super-resolução que não existem.
@@ -39,7 +39,7 @@ Pedido do usuário em 20/10/2026: uma tarefa pesada por vez. Não sobrepor build
 
 ## Limites atuais
 
-145 conjuntos de mapas originais identificados, quatro integrados. Os SWFs animados da camada intermediária permanecem preservados na origem, sem execução. Personagens adicionais ainda não têm todos os jutsus e vozes associados. A seleção inicial tem três protagonistas. A arena local nivelada está implementada; modo com atributos/equipamentos e revisão de corpos duplicados são os próximos pedidos. A cota deve preservar a reserva solicitada; não reduzir testes para iniciar um bloco que não caiba nesta janela.
+145 conjuntos de mapas originais identificados, quatro integrados. Os SWFs animados da camada intermediária permanecem preservados na origem, sem execução. Personagens adicionais ainda não têm todos os jutsus e vozes associados. A seleção inicial tem três protagonistas. A arena local nivelada está implementada; modo Jornada e revisão dos corpos indevidos nos iniciais estão concluídos; 530 ações em 403 modelos do acervo aguardam revisão incremental. A cota deve preservar a reserva solicitada; não reduzir testes para iniciar um bloco que não caiba nesta janela.
 
 ## Servidor e Git
 
@@ -50,3 +50,15 @@ Os assets de runtime somam aproximadamente 2,22 GB. Versionar binários usando G
 Progressão validada também por `node tools/progression-check.mjs` e reports/progression-browser-validation.json: custos de compra/recrutamento, equipamento, chakra máximo, recompensa única, convite com formação visível e persistência após recarga. Admin ganhou a tela Itens e missões.
 
 Validação de arena: `npm run test:server` (6 testes), `node tools/arena-check.mjs` (um Chromium, dois clientes /arena independentes). Relatório reports/arena-browser-validation.json. Admin agora inclui Salas da arena.
+
+
+## Refinamento de combate — 20/10/2026
+
+- [x] Modo Jornada da arena: nível, treinos e equipamentos alteram atributos reais; servidor deriva valores e valida slots/limites.
+- [x] Naruto/Sasuke/Sakura exibidos sem Kid; pastas e IDs preservados.
+- [x] Sombras externas não podem reutilizar bitmap local zero como corpo. Quinze ações dos iniciais e quatro ataques dos inimigos de exploração corrigidos.
+- [x] Timelines deduplicadas, origens por ação e janela de preparação sem fuga pelo cenário. Clone original do Rasengan é temporário e intencional.
+- [ ] Continuar revisão explícita em lotes pequenos, a partir de reports/external-symbol-audit.json. Restam 530 ações/403 modelos do acervo, nem todos usados no combate atual.
+- [ ] Publicação Vercel adiada pelo usuário; não solicitar login nem ativar configuração enquanto o assunto não for retomado.
+
+Validações adicionais: 9 testes de servidor/deploy, 5 testes Python de decodificação/namespace/janelas, 22 testes de domínio e navegador combat-refinement-check.mjs, um único personagem/cena por vez. Estimativas de memória dos cinco atlas revisados por inicial caíram de 52–68 MiB para 2–5 MiB; não é uma medição da memória total do processo.

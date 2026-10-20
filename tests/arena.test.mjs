@@ -256,3 +256,71 @@ test("independent HTTP clients receive the same authoritative state over SSE and
     await new Promise((resolve) => server.close(resolve));
   }
 });
+
+test("journey duel derives real gear and level attributes, snapshots the build, and keeps balanced mode separate", () => {
+  const arena = createArena(),
+    profile = {
+      level: 5,
+      upgrades: 2,
+      equipment: {
+        weapon: "kunai-reforcada",
+        armor: "colete-shinobi",
+        charm: "amuleto-chakra",
+      },
+    };
+  const a = arena.create("naruto", undefined, "journey", profile);
+  const p = a.room.players[0];
+  assert.equal(p.maxHp, 234);
+  assert.equal(p.attack, 37);
+  assert.equal(p.maxChakra, 125);
+  assert.equal(p.chakraRegen, 10);
+  assert.equal(p.skillDamage, 74);
+  profile.equipment.weapon = "kunai-treino";
+  assert.equal(
+    arena.session(a.token).room.players[0].loadout.equipment.weapon,
+    "kunai-reforcada",
+  );
+  const b = arena.join(a.room.code, "sasuke", undefined, {
+    level: 1,
+    upgrades: 0,
+    equipment: {},
+  });
+  assert.equal(b.room.mode, "journey");
+  assert.equal(b.room.turn, 1);
+  assert.equal(b.room.players[1].attack, 18);
+  arena.act(b.token, {
+    action: "guard",
+    turnNumber: 1,
+    requestId: randomUUID(),
+  });
+  const hit = arena.act(a.token, {
+    action: "skill",
+    turnNumber: 2,
+    requestId: randomUUID(),
+    damage: 999999,
+  });
+  assert.equal(hit.room.players[1].hp, 75);
+  assert.equal(hit.room.players[0].chakra, 90);
+  const balanced = createArena().create(
+    "naruto",
+    undefined,
+    "balanced",
+    profile,
+  );
+  assert.equal(balanced.room.players[0].attack, 25);
+  assert.equal(balanced.room.players[0].loadout, null);
+});
+test("journey duel rejects unknown equipment, invalid slots, forged raw stats and invalid progression", () => {
+  const a = createArena(),
+    good = { level: 1, upgrades: 0, equipment: {} };
+  for (const bad of [
+    { ...good, attack: 9999 },
+    { ...good, level: -1 },
+    { ...good, level: 101 },
+    { ...good, upgrades: Infinity },
+    { ...good, equipment: { weapon: "colete-shinobi" } },
+    { ...good, equipment: { armor: "hacked" } },
+  ])
+    rejects(() => a.create("naruto", undefined, "journey", bad), 400);
+  rejects(() => a.create("naruto", undefined, "hacked", good), 400);
+});

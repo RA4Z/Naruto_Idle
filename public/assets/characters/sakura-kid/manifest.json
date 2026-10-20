@@ -1,7 +1,7 @@
 {
   "id": "11000301",
   "slug": "sakura-kid",
-  "name": "Sakura Kid",
+  "name": "Sakura",
   "aliases": [
     "Sakura Haruno",
     "Sakura",
@@ -221,15 +221,34 @@
       "animations": {
         "A_1hit": {
           "url": "/assets/characters/sakura-kid/battle/A_1hit.png",
-          "frameWidth": 320,
-          "frameHeight": 256,
-          "frames": 14,
+          "frameWidth": 153,
+          "frameHeight": 144,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            6,
+            7,
+            8,
+            8,
+            8
+          ],
           "fps": 24.0,
           "origin": [
-            0.5,
-            0.8203125
+            0.48366013071895425,
+            0.9583333333333334
           ],
-          "status": "ready"
+          "referenceHeight": 119,
+          "status": "ready",
+          "externalEffects": [],
+          "rendererRevision": "external-symbol-namespace-v1"
         },
         "A_2hit": {
           "url": "/assets/characters/sakura-kid/battle/A_2hit.png",
@@ -269,15 +288,64 @@
         },
         "C_dead": {
           "url": "/assets/characters/sakura-kid/battle/C_dead.png",
-          "frameWidth": 320,
-          "frameHeight": 256,
-          "frames": 44,
+          "frameWidth": 99,
+          "frameHeight": 155,
+          "frames": 7,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
           "fps": 24.0,
           "origin": [
-            0.5,
-            0.8203125
+            0.5353535353535354,
+            0.9290322580645162
           ],
-          "status": "ready"
+          "referenceHeight": 99,
+          "status": "ready",
+          "externalEffects": [],
+          "rendererRevision": "external-symbol-namespace-v1"
         },
         "C_dead1": {
           "url": "/assets/characters/sakura-kid/battle/C_dead1.png",
@@ -305,15 +373,47 @@
         },
         "C_idle": {
           "url": "/assets/characters/sakura-kid/battle/C_idle.png",
-          "frameWidth": 320,
-          "frameHeight": 256,
-          "frames": 27,
+          "frameWidth": 81,
+          "frameHeight": 134,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
           "fps": 24.0,
           "origin": [
-            0.5,
-            0.8203125
+            0.5308641975308642,
+            0.9552238805970149
           ],
-          "status": "ready"
+          "referenceHeight": 128,
+          "status": "ready",
+          "externalEffects": [],
+          "rendererRevision": "external-symbol-namespace-v1"
         },
         "C_land_dead": {
           "url": "/assets/characters/sakura-kid/battle/C_land_dead-b3cfde5f.png",
@@ -745,27 +845,106 @@
         },
         "SP_skill1": {
           "url": "/assets/characters/sakura-kid/battle/SP_skill1.png",
-          "frameWidth": 320,
-          "frameHeight": 256,
-          "frames": 35,
+          "frameWidth": 81,
+          "frameHeight": 142,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            1,
+            1,
+            0,
+            0
+          ],
           "fps": 24.0,
           "origin": [
-            0.5,
-            0.8203125
+            0.5185185185185185,
+            0.9436619718309859
           ],
-          "status": "ready"
+          "referenceHeight": 130,
+          "status": "ready",
+          "externalEffects": [],
+          "rendererRevision": "external-symbol-namespace-v1",
+          "sourceFrameWindow": [
+            0,
+            38
+          ]
         },
         "SP_skill2": {
           "url": "/assets/characters/sakura-kid/battle/SP_skill2.png",
-          "frameWidth": 320,
-          "frameHeight": 256,
-          "frames": 26,
+          "frameWidth": 81,
+          "frameHeight": 142,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            1,
+            1,
+            0,
+            0
+          ],
           "fps": 24.0,
           "origin": [
-            0.5,
-            0.8203125
+            0.5185185185185185,
+            0.9436619718309859
           ],
-          "status": "ready"
+          "referenceHeight": 130,
+          "status": "ready",
+          "externalEffects": [],
+          "rendererRevision": "external-symbol-namespace-v1",
+          "sourceFrameWindow": [
+            0,
+            35
+          ]
         },
         "c_land_dead": {
           "url": "/assets/characters/sakura-kid/battle/c_land_dead-6406b3e1.png",
@@ -788,7 +967,7 @@
           "externalEffects": []
         }
       },
-      "referenceHeight": 130,
+      "referenceHeight": 128,
       "status": "partial",
       "issues": [
         {
@@ -1036,7 +1215,8 @@
           "clipped_bounds": true,
           "frame": 0
         }
-      ]
+      ],
+      "rendererRevision": "external-symbol-namespace-v1"
     }
   },
   "sources": {

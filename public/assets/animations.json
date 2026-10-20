@@ -883,15 +883,34 @@
       },
       "A_1hit": {
         "url": "/assets/characters/naruto-kid/battle/A_1hit.png",
-        "frameWidth": 320,
-        "frameHeight": 256,
-        "frames": 14,
+        "frameWidth": 140,
+        "frameHeight": 140,
+        "frames": 11,
+        "timeline": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          6,
+          6,
+          7,
+          8,
+          9,
+          9,
+          10
+        ],
         "fps": 24.0,
         "origin": [
-          0.5,
-          0.8203125
+          0.4142857142857143,
+          0.9571428571428572
         ],
-        "status": "ready"
+        "referenceHeight": 120,
+        "status": "ready",
+        "externalEffects": [],
+        "rendererRevision": "external-symbol-namespace-v1"
       },
       "A_2hit": {
         "url": "/assets/characters/naruto-kid/battle/A_2hit.png",
@@ -943,15 +962,25 @@
       },
       "C_dead": {
         "url": "/assets/characters/naruto-kid/battle/C_dead.png",
-        "frameWidth": 320,
-        "frameHeight": 256,
-        "frames": 5,
+        "frameWidth": 92,
+        "frameHeight": 124,
+        "frames": 3,
+        "timeline": [
+          0,
+          0,
+          1,
+          1,
+          2
+        ],
         "fps": 24.0,
         "origin": [
-          0.5,
-          0.8203125
+          0.3804347826086957,
+          0.9193548387096774
         ],
-        "status": "ready"
+        "referenceHeight": 106,
+        "status": "ready",
+        "externalEffects": [],
+        "rendererRevision": "external-symbol-namespace-v1"
       },
       "C_defaultAttackPoint": {
         "url": "/assets/characters/naruto-kid/battle/C_defaultAttackPoint.png",
@@ -967,15 +996,46 @@
       },
       "C_idle": {
         "url": "/assets/characters/naruto-kid/battle/C_idle.png",
-        "frameWidth": 320,
-        "frameHeight": 256,
-        "frames": 26,
+        "frameWidth": 98,
+        "frameHeight": 126,
+        "frames": 5,
+        "timeline": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3,
+          3,
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
         "fps": 24.0,
         "origin": [
           0.5,
-          0.8203125
+          0.9523809523809523
         ],
-        "status": "ready"
+        "referenceHeight": 120,
+        "status": "ready",
+        "externalEffects": [],
+        "rendererRevision": "external-symbol-namespace-v1"
       },
       "C_run1_1": {
         "url": "/assets/characters/naruto-kid/battle/C_run1_1.png",
@@ -1363,27 +1423,84 @@
       },
       "SP_skill1": {
         "url": "/assets/characters/naruto-kid/battle/SP_skill1.png",
-        "frameWidth": 320,
-        "frameHeight": 256,
-        "frames": 98,
+        "frameWidth": 217,
+        "frameHeight": 188,
+        "frames": 13,
+        "timeline": [
+          0,
+          1,
+          1,
+          2,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          9,
+          10,
+          10,
+          11,
+          11,
+          8,
+          8,
+          9,
+          9,
+          10,
+          3,
+          12
+        ],
         "fps": 24.0,
         "origin": [
-          0.5,
-          0.8203125
+          0.7004608294930875,
+          0.7446808510638298
         ],
-        "status": "partial"
+        "referenceHeight": 137,
+        "status": "partial",
+        "externalEffects": [
+          "yingzi(1).png"
+        ],
+        "rendererRevision": "external-symbol-namespace-v1",
+        "sourceFrameWindow": [
+          0,
+          24
+        ]
       },
       "SP_skill2": {
         "url": "/assets/characters/naruto-kid/battle/SP_skill2.png",
-        "frameWidth": 320,
-        "frameHeight": 256,
-        "frames": 13,
+        "frameWidth": 90,
+        "frameHeight": 134,
+        "frames": 7,
+        "timeline": [
+          0,
+          0,
+          1,
+          1,
+          2,
+          3,
+          4,
+          4,
+          4,
+          5,
+          5,
+          6,
+          6
+        ],
         "fps": 24.0,
         "origin": [
-          0.5,
-          0.8203125
+          0.4777777777777778,
+          0.9328358208955224
         ],
-        "status": "ready"
+        "referenceHeight": 124,
+        "status": "ready",
+        "externalEffects": [],
+        "rendererRevision": "external-symbol-namespace-v1",
+        "sourceFrameWindow": [
+          0,
+          35
+        ]
       },
       "SP_skill2_1": {
         "url": "/assets/characters/naruto-kid/battle/SP_skill2_1.png",
@@ -2491,1404 +2608,11 @@
       },
       {
         "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
+        "missing": [],
+        "unsupported": [],
+        "externalEffects": [
+          "yingzi(1).png"
         ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 25
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 26
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 27
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 28
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 29
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 30
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 30
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 31
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 31
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 32
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 32
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 33
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 33
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 34
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 34
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 35
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 35
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 36
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 36
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 37
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 37
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 38
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 38
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 39
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 39
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 40
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 40
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 41
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 41
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 42
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 42
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 43
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 43
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 44
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 44
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 45
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 45
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 46
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 46
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 47
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 47
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 48
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 48
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 49
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 49
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 50
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 50
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 51
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 51
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 52
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 52
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 53
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 53
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 54
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 54
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 55
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 55
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 56
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 56
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 57
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 57
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 58
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 58
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 59
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 59
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 60
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 60
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 61
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 61
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 62
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 62
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 63
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 63
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 64
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 64
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 65
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 65
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 66
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 66
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 67
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 67
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 68
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 68
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 69
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 69
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 70
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 70
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 71
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 71
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 72
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 72
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 73
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 73
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 74
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 74
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 75
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 75
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 76
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 76
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 77
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 77
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 78
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 78
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 79
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 79
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 80
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 80
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 81
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 81
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 82
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 82
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 83
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 83
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 84
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 84
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 85
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 85
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 86
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 86
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 87
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 87
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 88
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 88
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 89
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 89
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 90
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 90
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 91
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 91
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 92
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 92
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 93
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 93
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 94
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 94
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 95
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 95
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 96
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 96
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 97
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 97
       }
     ],
     "bitmap_count": 139,
@@ -5685,15 +4409,33 @@
     "animations": {
       "A_1hit": {
         "url": "/assets/characters/sasuke-kid/battle/A_1hit.png",
-        "frameWidth": 320,
-        "frameHeight": 256,
-        "frames": 13,
+        "frameWidth": 150,
+        "frameHeight": 144,
+        "frames": 6,
+        "timeline": [
+          0,
+          1,
+          1,
+          1,
+          2,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          5,
+          5
+        ],
         "fps": 24.0,
         "origin": [
-          0.5,
-          0.8203125
+          0.36666666666666664,
+          0.9583333333333334
         ],
-        "status": "ready"
+        "referenceHeight": 126,
+        "status": "ready",
+        "externalEffects": [],
+        "rendererRevision": "external-symbol-namespace-v1"
       },
       "A_2hit": {
         "url": "/assets/characters/sasuke-kid/battle/A_2hit.png",
@@ -5733,15 +4475,61 @@
       },
       "C_dead": {
         "url": "/assets/characters/sasuke-kid/battle/C_dead.png",
-        "frameWidth": 320,
-        "frameHeight": 256,
-        "frames": 41,
+        "frameWidth": 98,
+        "frameHeight": 134,
+        "frames": 8,
+        "timeline": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7
+        ],
         "fps": 24.0,
         "origin": [
           0.5,
-          0.8203125
+          0.9328358208955224
         ],
-        "status": "ready"
+        "referenceHeight": 102,
+        "status": "ready",
+        "externalEffects": [],
+        "rendererRevision": "external-symbol-namespace-v1"
       },
       "C_defaultAttackPoint": {
         "url": "/assets/characters/sasuke-kid/battle/C_defaultAttackPoint.png",
@@ -5757,15 +4545,37 @@
       },
       "C_idle": {
         "url": "/assets/characters/sasuke-kid/battle/C_idle.png",
-        "frameWidth": 320,
-        "frameHeight": 256,
-        "frames": 17,
+        "frameWidth": 97,
+        "frameHeight": 133,
+        "frames": 3,
+        "timeline": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
         "fps": 24.0,
         "origin": [
-          0.5,
-          0.8203125
+          0.4845360824742268,
+          0.9548872180451128
         ],
-        "status": "ready"
+        "referenceHeight": 128,
+        "status": "ready",
+        "externalEffects": [],
+        "rendererRevision": "external-symbol-namespace-v1"
       },
       "C_run1_1": {
         "url": "/assets/characters/sasuke-kid/battle/C_run1_1.png",
@@ -6141,27 +4951,106 @@
       },
       "SP_skill1": {
         "url": "/assets/characters/sasuke-kid/battle/SP_skill1.png",
-        "frameWidth": 320,
-        "frameHeight": 256,
-        "frames": 100,
+        "frameWidth": 94,
+        "frameHeight": 104,
+        "frames": 3,
+        "timeline": [
+          0,
+          1,
+          1,
+          2,
+          2,
+          1,
+          1,
+          2,
+          2,
+          1,
+          1,
+          2,
+          2,
+          1,
+          1,
+          2,
+          2,
+          1,
+          1,
+          2,
+          2,
+          1,
+          1,
+          2,
+          2,
+          1,
+          1,
+          2,
+          2,
+          1,
+          1,
+          2,
+          2,
+          1,
+          1,
+          2,
+          2,
+          1
+        ],
         "fps": 24.0,
         "origin": [
-          0.5,
-          0.8203125
+          0.5212765957446809,
+          0.9423076923076923
         ],
-        "status": "partial"
+        "referenceHeight": 93,
+        "status": "partial",
+        "externalEffects": [
+          "yingzi(1).png"
+        ],
+        "rendererRevision": "external-symbol-namespace-v1",
+        "sourceFrameWindow": [
+          0,
+          38
+        ]
       },
       "SP_skill2": {
         "url": "/assets/characters/sasuke-kid/battle/SP_skill2.png",
-        "frameWidth": 320,
-        "frameHeight": 256,
-        "frames": 19,
+        "frameWidth": 172,
+        "frameHeight": 348,
+        "frames": 13,
+        "timeline": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          5,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          0,
+          11,
+          12,
+          0,
+          0,
+          0
+        ],
         "fps": 24.0,
         "origin": [
-          0.5,
-          0.8203125
+          0.45930232558139533,
+          0.9655172413793104
         ],
-        "status": "partial"
+        "referenceHeight": 112,
+        "status": "partial",
+        "externalEffects": [
+          "yingzi(1).png"
+        ],
+        "rendererRevision": "external-symbol-namespace-v1",
+        "sourceFrameWindow": [
+          0,
+          35
+        ]
       },
       "SP_skill3": {
         "url": "/assets/characters/sasuke-kid/battle/SP_skill3.png",
@@ -6526,1105 +5415,6 @@
         "action": "D_upair_behit4",
         "clipped_bounds": true,
         "frame": 0
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 67
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 68
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 68
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 69
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 69
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 70
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 70
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 71
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 71
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 72
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 72
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 73
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 73
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 74
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 74
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 75
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 75
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 76
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 76
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 77
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 77
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 78
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 78
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 79
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 79
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 80
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 80
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 81
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 81
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 82
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 82
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 83
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 83
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 84
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 84
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 85
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 85
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 86
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 86
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 87
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 87
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 88
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 88
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 89
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 89
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 90
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 90
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 91
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 91
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 92
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 92
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 93
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 93
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 94
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 94
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 95
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 95
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 96
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 96
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 97
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 97
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 98
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 98
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 99
-      },
-      {
-        "action": "SP_skill1",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill1",
-        "clipped_bounds": true,
-        "frame": 99
-      },
-      {
-        "action": "SP_skill2",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill2",
-        "clipped_bounds": true,
-        "frame": 1
-      },
-      {
-        "action": "SP_skill2",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill2",
-        "clipped_bounds": true,
-        "frame": 2
-      },
-      {
-        "action": "SP_skill2",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill2",
-        "clipped_bounds": true,
-        "frame": 3
-      },
-      {
-        "action": "SP_skill2",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill2",
-        "clipped_bounds": true,
-        "frame": 4
-      },
-      {
-        "action": "SP_skill2",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill2",
-        "clipped_bounds": true,
-        "frame": 5
-      },
-      {
-        "action": "SP_skill2",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill2",
-        "clipped_bounds": true,
-        "frame": 6
-      },
-      {
-        "action": "SP_skill2",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill2",
-        "clipped_bounds": true,
-        "frame": 7
-      },
-      {
-        "action": "SP_skill2",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill2",
-        "clipped_bounds": true,
-        "frame": 8
-      },
-      {
-        "action": "SP_skill2",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill2",
-        "clipped_bounds": true,
-        "frame": 9
-      },
-      {
-        "action": "SP_skill2",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill2",
-        "clipped_bounds": true,
-        "frame": 10
-      },
-      {
-        "action": "SP_skill2",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill2",
-        "clipped_bounds": true,
-        "frame": 11
-      },
-      {
-        "action": "SP_skill2",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill2",
-        "clipped_bounds": true,
-        "frame": 12
-      },
-      {
-        "action": "SP_skill2",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill2",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill2",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill2",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill2",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill2",
-        "unsupported_attributes": [
-          "extname"
-        ]
-      },
-      {
-        "action": "SP_skill2",
-        "unsupported_attributes": [
-          "extname"
-        ]
       },
       {
         "action": "SP_skill3",
@@ -8200,6 +5990,22 @@
         "action": "SP_skill4",
         "unsupported_attributes": [
           "extname"
+        ]
+      },
+      {
+        "action": "SP_skill1",
+        "missing": [],
+        "unsupported": [],
+        "externalEffects": [
+          "yingzi(1).png"
+        ]
+      },
+      {
+        "action": "SP_skill2",
+        "missing": [],
+        "unsupported": [],
+        "externalEffects": [
+          "yingzi(1).png"
         ]
       }
     ],
@@ -9790,15 +7596,34 @@
     "animations": {
       "A_1hit": {
         "url": "/assets/characters/sakura-kid/battle/A_1hit.png",
-        "frameWidth": 320,
-        "frameHeight": 256,
-        "frames": 14,
+        "frameWidth": 153,
+        "frameHeight": 144,
+        "frames": 9,
+        "timeline": [
+          0,
+          0,
+          1,
+          2,
+          3,
+          3,
+          4,
+          4,
+          5,
+          6,
+          7,
+          8,
+          8,
+          8
+        ],
         "fps": 24.0,
         "origin": [
-          0.5,
-          0.8203125
+          0.48366013071895425,
+          0.9583333333333334
         ],
-        "status": "ready"
+        "referenceHeight": 119,
+        "status": "ready",
+        "externalEffects": [],
+        "rendererRevision": "external-symbol-namespace-v1"
       },
       "A_2hit": {
         "url": "/assets/characters/sakura-kid/battle/A_2hit.png",
@@ -9838,15 +7663,64 @@
       },
       "C_dead": {
         "url": "/assets/characters/sakura-kid/battle/C_dead.png",
-        "frameWidth": 320,
-        "frameHeight": 256,
-        "frames": 44,
+        "frameWidth": 99,
+        "frameHeight": 155,
+        "frames": 7,
+        "timeline": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
         "fps": 24.0,
         "origin": [
-          0.5,
-          0.8203125
+          0.5353535353535354,
+          0.9290322580645162
         ],
-        "status": "ready"
+        "referenceHeight": 99,
+        "status": "ready",
+        "externalEffects": [],
+        "rendererRevision": "external-symbol-namespace-v1"
       },
       "C_dead1": {
         "url": "/assets/characters/sakura-kid/battle/C_dead1.png",
@@ -9874,15 +7748,47 @@
       },
       "C_idle": {
         "url": "/assets/characters/sakura-kid/battle/C_idle.png",
-        "frameWidth": 320,
-        "frameHeight": 256,
-        "frames": 27,
+        "frameWidth": 81,
+        "frameHeight": 134,
+        "frames": 4,
+        "timeline": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
         "fps": 24.0,
         "origin": [
-          0.5,
-          0.8203125
+          0.5308641975308642,
+          0.9552238805970149
         ],
-        "status": "ready"
+        "referenceHeight": 128,
+        "status": "ready",
+        "externalEffects": [],
+        "rendererRevision": "external-symbol-namespace-v1"
       },
       "C_land_dead": {
         "url": "/assets/characters/sakura-kid/battle/C_land_dead-b3cfde5f.png",
@@ -10314,27 +8220,106 @@
       },
       "SP_skill1": {
         "url": "/assets/characters/sakura-kid/battle/SP_skill1.png",
-        "frameWidth": 320,
-        "frameHeight": 256,
-        "frames": 35,
+        "frameWidth": 81,
+        "frameHeight": 142,
+        "frames": 4,
+        "timeline": [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
         "fps": 24.0,
         "origin": [
-          0.5,
-          0.8203125
+          0.5185185185185185,
+          0.9436619718309859
         ],
-        "status": "ready"
+        "referenceHeight": 130,
+        "status": "ready",
+        "externalEffects": [],
+        "rendererRevision": "external-symbol-namespace-v1",
+        "sourceFrameWindow": [
+          0,
+          38
+        ]
       },
       "SP_skill2": {
         "url": "/assets/characters/sakura-kid/battle/SP_skill2.png",
-        "frameWidth": 320,
-        "frameHeight": 256,
-        "frames": 26,
+        "frameWidth": 81,
+        "frameHeight": 142,
+        "frames": 4,
+        "timeline": [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
         "fps": 24.0,
         "origin": [
-          0.5,
-          0.8203125
+          0.5185185185185185,
+          0.9436619718309859
         ],
-        "status": "ready"
+        "referenceHeight": 130,
+        "status": "ready",
+        "externalEffects": [],
+        "rendererRevision": "external-symbol-namespace-v1",
+        "sourceFrameWindow": [
+          0,
+          35
+        ]
       },
       "c_land_dead": {
         "url": "/assets/characters/sakura-kid/battle/c_land_dead-6406b3e1.png",

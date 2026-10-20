@@ -1,7 +1,8 @@
+import type { CombatLoadout } from "../progression/combat-stats";
 // Arena stats are independent of editable local saves and PvE equipment.
 export const ARENA_FIGHTERS = {
   naruto: {
-    name: "Naruto Kid",
+    name: "Naruto",
     folder: "naruto-kid",
     hp: 180,
     attack: 25,
@@ -10,7 +11,7 @@ export const ARENA_FIGHTERS = {
     heal: 0,
   },
   sasuke: {
-    name: "Sasuke Kid",
+    name: "Sasuke",
     folder: "sasuke-kid",
     hp: 170,
     attack: 27,
@@ -19,7 +20,7 @@ export const ARENA_FIGHTERS = {
     heal: 0,
   },
   sakura: {
-    name: "Sakura Kid",
+    name: "Sakura",
     folder: "sakura-kid",
     hp: 190,
     attack: 26,
@@ -43,7 +44,14 @@ export const ARENA_RULES = {
 } as const;
 export type ArenaCharacter = keyof typeof ARENA_FIGHTERS;
 export type ArenaAction = "attack" | "skill" | "guard" | "charge";
+export type ArenaMode = "balanced" | "journey";
 export type ArenaPlayer = {
+  attack: number;
+  skillDamage: number;
+  skillHeal: number;
+  maxChakra: number;
+  chakraRegen: number;
+  loadout: CombatLoadout | null;
   character: ArenaCharacter;
   hp: number;
   maxHp: number;
@@ -61,6 +69,7 @@ export type ArenaEvent = {
   text: string;
 };
 export type ArenaState = {
+  mode: ArenaMode;
   code: string;
   revision: number;
   status: "waiting" | "active" | "finished" | "expired";

@@ -233,7 +233,7 @@ async function show(id: string, title: string) {
           node("h3", "Sala " + room.code),
           node(
             "p",
-            `${room.status} · Turno ${room.turnNumber} · ${room.players.length}/2 jogadores`,
+            `${room.status} · ${room.mode === "journey" ? "Jornada" : "Nivelado"} · Turno ${room.turnNumber} · ${room.players.length}/2 jogadores`,
           ),
         );
         for (const p of room.players)

@@ -6,4 +6,6 @@ Validações: cinco testes da arena mais o teste administrativo, serializados. S
 
 Consumo: rota /arena sem Phaser, canvas até 24 FPS e DPR máximo 2, animações/efeitos sob demanda. A jornada suspende seu loop enquanto a arena está aberta. Um navegador de teste por vez; fechar antes de build/extração. Nenhuma extração em massa realizada nesta etapa.
 
-Limites: sem contas, ranking, persistência de partidas após reinício ou recompensas. Atributos nivelados, sem equipamentos da jornada neste primeiro modo. Não houve publicação externa. Próximos pedidos do usuário: modo com equipamento/atributos e correção da resolução de sombras externas como corpos duplicados nas animações recuperadas.
+Limites: sem contas, ranking, persistência de partidas após reinício ou recompensas. Dois modos: Nivelado com atributos fixos e Jornada com nível/treinos/equipamentos. O modo Jornada importa um save local manipulável e não é competitivo/rankeado; slots, limites e cálculos de combate são validados no servidor. Não houve publicação externa. Modo Jornada e correção de sombras nos iniciais implementados e testados. A auditoria do restante do acervo fica incremental em reports/external-symbol-audit.json.
+
+Validação atual: 9 testes de servidor/deploy e teste de navegador com builds reais (234 HP, 37 ataque, 125 chakra, 74 de dano de jutsu), dois clientes independentes.

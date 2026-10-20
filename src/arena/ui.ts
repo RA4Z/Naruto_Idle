@@ -1,4 +1,9 @@
 import {
+  arenaJourneyStats,
+  type CombatLoadout,
+} from "../progression/combat-stats";
+import { ITEMS } from "../progression/rules";
+import {
   ARENA_FIGHTERS,
   type ArenaAction,
   type ArenaCharacter,
@@ -8,13 +13,20 @@ import {
 import { ArenaView } from "./view";
 import "./arena.css";
 
-export function installArena(character: () => ArenaCharacter) {
+export function installArena(
+  character: () => ArenaCharacter,
+  loadout: () => CombatLoadout = () => ({
+    level: 1,
+    upgrades: 0,
+    equipment: {},
+  }),
+) {
   const dialog = document.createElement("dialog");
   dialog.className = "arena-panel";
   dialog.setAttribute("aria-label", "Arena PvP");
   dialog.innerHTML = `<header class="library-heading"><div><p class="eyebrow">DESAFIO SHINOBI</p><h2>Arena PvP</h2></div><button class="secondary" data-close>Fechar</button></header>
-    <p class="arena-intro">Convide outra pessoa pela chave. Dois jogadores conectados ao mesmo servidor disputam por turnos de 30 segundos. Atributos nivelados; equipamentos e progresso da jornada não alteram o duelo.</p>
-    <form data-entry><label>Seu ninja<select aria-label="Ninja da arena" name="character"></select></label><div class="arena-entry-actions"><button type="button" data-create>Criar sala</button><label>Chave da sala<input name="code" aria-label="Chave da sala" maxlength="10" autocomplete="off" placeholder="Ex.: A12B34C56D"></label><button type="submit">Entrar na sala</button></div></form>
+    <p class="arena-intro">Convide outra pessoa pela chave. Dois jogadores conectados ao mesmo servidor disputam por turnos de 30 segundos. Escolha um duelo nivelado ou lute com o nível, os treinos e equipamentos da sua jornada.</p>
+    <form data-entry><label>Seu ninja<select aria-label="Ninja da arena" name="character"></select></label><label>Modo ao criar<select aria-label="Modo do duelo" name="mode"><option value="balanced">Nivelado · atributos fixos</option><option value="journey">Jornada · meus atributos e equipamentos</option></select></label><p data-build-preview></p><div class="arena-entry-actions"><button type="button" data-create>Criar sala</button><label>Chave da sala<input name="code" aria-label="Chave da sala" maxlength="10" autocomplete="off" placeholder="Ex.: A12B34C56D"></label><button type="submit">Entrar na sala</button></div></form>
     <section data-duel hidden><div class="arena-room"><strong data-code></strong><button class="secondary" data-copy>Copiar chave</button><span data-connection></span></div><p data-phase role="status"></p><div class="arena-fighters"></div><canvas class="arena-stage" aria-label="Combate sincronizado da arena"></canvas><div class="arena-actions"></div><p data-rules></p><ol class="arena-log" aria-label="Histórico do duelo"></ol><button data-leave class="secondary">Sair da sala</button></section>
     <label class="arena-sound"><input type="checkbox" data-arena-sound> Sons originais da arena</label><p data-feedback role="status"></p><p class="arena-note">Fechar mantém a sessão para retomar, mas o relógio continua. A ausência por 60 segundos encerra o duelo. Sem ranking ou recompensas nesta versão; salas ficam na memória e se encerram ao reiniciar o servidor.</p>`;
   document.body.append(dialog);
@@ -23,14 +35,27 @@ export function installArena(character: () => ArenaCharacter) {
   const entry = find<HTMLFormElement>("[data-entry]"),
     duel = find<HTMLElement>("[data-duel]"),
     feedback = find<HTMLElement>("[data-feedback]"),
-    select = find<HTMLSelectElement>("select"),
-    codeInput = find<HTMLInputElement>('input[name="code"]');
+    select = find<HTMLSelectElement>('select[name="character"]'),
+    codeInput = find<HTMLInputElement>('input[name="code"]'),
+    mode = find<HTMLSelectElement>('select[name="mode"]');
   for (const [key, f] of Object.entries(ARENA_FIGHTERS)) {
     const option = document.createElement("option");
     option.value = key;
-    option.textContent = `${f.name} · ${f.hp} vida · ${f.skill}`;
+    option.textContent = `${f.name} · ${f.skill}`;
     select.append(option);
   }
+  function previewBuild() {
+    const profile = loadout();
+    const stats = arenaJourneyStats(select.value as ArenaCharacter, profile);
+    const names = Object.values(profile.equipment)
+      .map((id) => ITEMS.find((i) => i.id === id)?.name || id)
+      .join(" · ");
+    find("[data-build-preview]").textContent =
+      mode.value === "journey"
+        ? `Sua build: nível ${profile.level} · ${profile.upgrades} treinos · ${stats.maxHp} vida · ${stats.attack} ataque · ${stats.maxChakra} chakra. ${names || "Sem equipamentos"}. Amistoso com save local, sem ranking; a build é fixada ao entrar.`
+        : "Nivelado: todos usam atributos fixos. Ao entrar por uma chave, vale o modo escolhido pelo criador da sala.";
+  }
+  select.onchange = mode.onchange = previewBuild;
   let state: ArenaState | null = null,
     seat: number | null = null,
     stream: EventSource | undefined,
@@ -140,7 +165,10 @@ export function installArena(character: () => ArenaCharacter) {
     entry.hidden = !!state;
     duel.hidden = !state;
     if (!state || seat === null) return;
-    find("[data-code]").textContent = "Sala " + state.code;
+    find("[data-code]").textContent =
+      "Sala " +
+      state.code +
+      (state.mode === "journey" ? " · Jornada" : " · Nivelado");
     const list = find(".arena-fighters");
     list.replaceChildren();
     state.players.forEach((p, i) => {
@@ -152,7 +180,7 @@ export function installArena(character: () => ArenaCharacter) {
       const title = document.createElement("h3");
       title.textContent = `${ARENA_FIGHTERS[p.character].name} · ${i === seat ? "Você" : "Adversário"}`;
       const text = document.createElement("p");
-      text.textContent = `${p.hp}/${p.maxHp} vida · ${p.chakra}/100 chakra${p.guarding ? " · Defendendo" : ""}${p.connected ? "" : " · Desconectado"}`;
+      text.textContent = `${p.hp}/${p.maxHp} vida · ${p.chakra}/${p.maxChakra} chakra · ${p.attack} ataque${p.guarding ? " · Defendendo" : ""}${p.connected ? "" : " · Desconectado"}`;
       const hp = document.createElement("progress");
       hp.max = p.maxHp;
       hp.value = p.hp;
@@ -161,6 +189,15 @@ export function installArena(character: () => ArenaCharacter) {
         "Vida de " + ARENA_FIGHTERS[p.character].name,
       );
       card.append(title, hp, text);
+      if (p.loadout) {
+        const build = document.createElement("p");
+        build.textContent =
+          `Nível ${p.loadout.level} · ${p.loadout.upgrades} treinos · ` +
+          (Object.values(p.loadout.equipment)
+            .map((id) => ITEMS.find((i) => i.id === id)?.name || id)
+            .join(" · ") || "Sem equipamentos");
+        card.append(build);
+      }
       list.append(card);
     });
     const log = find(".arena-log");
@@ -171,7 +208,7 @@ export function installArena(character: () => ArenaCharacter) {
       log.append(li);
     }
     find("[data-rules]").textContent =
-      "Defender reduz o próximo golpe à metade. Concentrar recupera 30 chakra. +8 chakra por turno; jutsus recarregam por dois turnos próprios.";
+      `Defender reduz o próximo golpe à metade. Concentrar recupera 30 chakra. +${state.players[seat].chakraRegen} chakra por turno; jutsus recarregam por dois turnos próprios.${state.mode === "journey" ? " A agilidade do ninja define quem começa; em empate, o criador inicia." : ""}`;
     find<HTMLButtonElement>("[data-leave]").textContent = [
       "active",
       "waiting",
@@ -190,6 +227,8 @@ export function installArena(character: () => ArenaCharacter) {
       const result = await api(path, {
         character: select.value,
         code: codeInput.value.trim().toUpperCase(),
+        mode: mode.value,
+        loadout: loadout(),
       });
       if (request !== version || !dialog.open) return;
       update(result);
@@ -287,6 +326,7 @@ export function installArena(character: () => ArenaCharacter) {
     busy = true;
     render();
     select.value = character();
+    previewBuild();
     feedback.textContent = "Verificando sessão…";
     dialog.showModal();
     view = new ArenaView(

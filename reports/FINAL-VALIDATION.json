@@ -103,21 +103,42 @@
       "errors": []
     },
     "validatedAt": "2026-10-20T01:38:54.848915+00:00",
-    "arenaStatus": "pending"
+    "arenaStatus": "implemented-local-balanced-and-journey"
   },
   "arena": {
-    "status": "implemented-local-balanced",
-    "serverTests": 6,
+    "status": "implemented-local-balanced-and-journey",
+    "serverTests": 9,
     "browserReport": "reports/arena-browser-validation.json",
-    "pending": [
-      "equipment-attributes-mode",
-      "external-shadow-duplicate-fix"
-    ],
+    "pending": [],
     "limitations": [
       "in-memory rooms",
       "no accounts or rankings",
       "not externally hosted"
     ]
   },
-  "resourcePolicy": "One heavy task at a time; tests serialized; one browser, lightweight arena clients."
+  "resourcePolicy": "One heavy task at a time; tests serialized; one browser, lightweight arena clients.",
+  "combatRefinement": {
+    "rendererReport": "reports/combat-animation-refinement.json",
+    "browserReport": "reports/combat-refinement-browser-validation.json",
+    "startersReviewedActions": 15,
+    "enemyAttacksReviewed": 4,
+    "pendingCatalogActions": 530,
+    "pendingModels": 403,
+    "pythonTests": 5
+  },
+  "vercel": {
+    "status": "postponed-by-user",
+    "diagnosis": "Git LFS pointers served as PNG, APIs 404",
+    "activeConfigurationChanged": false
+  },
+  "latestValidation": {
+    "typecheck": "passed",
+    "build": "passed",
+    "domainTests": 22,
+    "serverAndDeploymentTests": 9,
+    "pythonTests": 5,
+    "arenaBrowser": "passed",
+    "sequentialPveBrowser": "passed",
+    "gitDiffCheck": "passed"
+  }
 }

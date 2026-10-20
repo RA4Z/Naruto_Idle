@@ -31,7 +31,7 @@ O botão **Continuar jornada** recupera a escolha, nível, XP, moedas, inventár
 - Resumo da sessão, histórico de encontros e drops.
 - Salvamento local versionado e recompensa offline limitada a duas horas. O cálculo é gravado antes de mostrar o resumo, para não pagar o mesmo intervalo novamente.
 
-**O progresso é um protótipo local:** relógio e localStorage podem ser manipulados. O PvE e sua progressão ainda usam localStorage. A arena agora possui um servidor autoritativo próprio para duelos; não há contas, ranking ou guildas. Equipamentos da jornada ainda não afetam o modo nivelado da arena.
+**O progresso é um protótipo local:** relógio e localStorage podem ser manipulados. O PvE e sua progressão ainda usam localStorage. A arena agora possui um servidor autoritativo próprio para duelos; não há contas, ranking ou guildas. O modo Nivelado usa atributos fixos; o modo Jornada importa nível, treinos e equipamentos do save local para amistosos.
 
 ## Assets reais e elementos provisórios
 
@@ -202,6 +202,15 @@ O painel Mochila · missões · loja reúne quatro equipamentos com bônus reais
 
 Arena PvP local disponível no botão da jornada ou em `/arena`. Crie uma sala, compartilhe a chave e entre por outro navegador/perfil conectado ao mesmo servidor. A rota dedicada não carrega Phaser nem a vila. Dois perfis independentes representam dois jogadores; duas abas do mesmo perfil compartilham a mesma sessão.
 
-O servidor controla turnos de 30 segundos, vida, dano, chakra, recarga e resultado. Há ataque, jutsu, defesa e concentração de chakra, com Rasengan/Chidori/Cura e áudio original opcional. O modo atual usa atributos nivelados; o modo com equipamento/progressão é a próxima adição. Atualizar a página retoma a sessão, mas o relógio continua; ausência prolongada encerra o duelo. Salas temporárias em memória, sem ranking nem recompensas. Acesso pela internet não foi publicado; dois computadores precisam alcançar o mesmo servidor. O /admin inclui Salas da arena.
+O servidor controla turnos de 30 segundos, vida, dano, chakra, recarga e resultado. Há ataque, jutsu, defesa e concentração de chakra, com Rasengan/Chidori/Cura e áudio original opcional. Escolha Nivelado para atributos fixos ou Jornada para usar nível, treinos e equipamentos. A build é fixada ao entrar e o servidor calcula os valores; a progressão importada ainda vem do save local, portanto esse modo é amistoso e sem ranking. Atualizar a página retoma a sessão, mas o relógio continua; ausência prolongada encerra o duelo. Salas temporárias em memória, sem ranking nem recompensas. Acesso pela internet não foi publicado; dois computadores precisam alcançar o mesmo servidor. O /admin inclui Salas da arena.
 
 Para validar com baixa carga: `npm test`, depois `npm run test:server`, depois `npm run build`, cada comando separadamente. Para navegador, um único `node tools/arena-check.mjs`, com o servidor local ativo. Não sobreponha extrações/builds/navegadores. Mais detalhes em reports/ARENA.md.
+
+
+## Animações e baixo consumo
+
+A interface chama os iniciais de Naruto, Sasuke e Sakura; as pastas `*-kid` preservam a versão. Foram corrigidas cópias indevidas nos especiais: referências externas de sombra reutilizavam erroneamente o bitmap zero do corpo. Quinze ações dos iniciais e quatro ataques de inimigos foram regenerados com timelines e origens próprias. O clone temporário do Rasengan pertence à animação original.
+
+Os atlas revisados agora usam quadros únicos e janelas de preparação compatíveis com os efeitos separados; isso reduz sua memória RGBA estimada de 52–68 MiB para 2–5 MiB por inicial. Não significa que o processo inteiro usa apenas esse volume. Revisões futuras são incrementais, sem refazer o catálogo todo. Consulte reports/COMBAT-REFINEMENT.md.
+
+A publicação em naruto-idle.vercel.app foi adiada por pedido do usuário; diagnóstico em docs/VERCEL.md, sem alteração da configuração ativa de hospedagem.

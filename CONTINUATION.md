@@ -1,5 +1,20 @@
 # Ponto de continuidade
 
+Servidor atual: produção local Node em 127.0.0.1:5178, PID 139736, sessão exec 46597, heap máximo 256 MB. O Vite e os navegadores de teste foram encerrados. Para testes __idle futuros é necessário usar Vite em vez dessa build; não iniciar servidores concorrentes na mesma porta. Build final e smoke de produção passaram, em reports/production-smoke-validation.json.
+
+## Estado atual — 20/10/2026: build de duelo e animações revisadas
+
+Pedidos mais recentes concluídos no código: modo Jornada da arena usa nível, treinos, arma/armadura/amuleto do save local; servidor calcula HP/ataque/chakra/regeneração/jutsu por fórmulas compartilhadas com PvE e fixa a build ao entrar. Modo Nivelado continua separado. É amistoso com progressão local importada, não conta/ranking antitrapaça. Nomes na interface: Naruto, Sasuke e Sakura; `kid` fica em slugs/pastas/aliases de pesquisa.
+
+Corrigido o alias indevido de extname/assetId=0 no conversor, com teste de regressão. Quinze ações dos três iniciais regeneradas sequencialmente, origens e timelines reais respeitadas no Phaser; quatro A_1hit dos inimigos Lobo/Lobo Preto/Anbu/Unidade de Caça da Névoa também corrigidos. Naruto mantém o clone TEMPORÁRIO presente nos pixels do Rasengan original; não confundir com as cópias indevidas removidas. Janelas de preparação sem deslocamento cinematográfico: Naruto 0..23, Sasuke 0..37, Cura 0..25. Todos os outros avisos de ações não revisadas foram preservados.
+
+Relatórios: combat-animation-refinement.json, combat-refinement-browser-validation.json (vitória dos três iniciais, uma instância de herói, origens, suspensão do mundo ao abrir arena), arena-browser-validation.json (dois clientes reais, modos/gear/efeitos/sons/reload/admin). Auditoria metadata-only de 2150 XMLs: 530 ações em 403 modelos ainda precisam revisão incremental; NÃO regenerar tudo. tools/refine_external_actions.py exige IDs e lote explícito (default 4, máximo 10), uma tarefa por vez. tools/refine_starter_animations.py reproduz somente os três iniciais.
+
+Vercel EXPRESSAMENTE ADIADA pelo usuário. Diagnóstico registrado em docs/VERCEL.md: PNGs públicos eram ponteiros Git LFS e APIs eram 404. Não pedir login nem tentar deploy agora. A configuração não ativa está em docs/deferred-vercel/vercel.json; check:assets é manual, sem prebuild automático. Não declarar o domínio corrigido.
+
+Primeira etapa da arena enviada: b33c4432 em origin/main. Preservar a exclusão alheia de DESIGN_DE_PROGRESSAO.md. Manter política de baixo consumo da seção seguinte.
+
+
 ## Atualização prioritária — 20/10/2026: arena e consumo reduzido
 
 O usuário relatou travamento do PC e pediu baixo processamento simultâneo. Preferência obrigatória nas próximas etapas e resets: uma tarefa pesada por vez; testes serializados (`--test-concurrency=1`), um único navegador; nunca build/extração/navegador concorrentes. Usar /arena para os dois clientes leves sem Phaser, fechar os processos de teste que você iniciou e preservar outros aplicativos. Não usar subagentes. Automação existente atualizada com essa preferência.

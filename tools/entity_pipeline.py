@@ -9,7 +9,7 @@ from swf_bytes import decode
 from entity_layout import catalog_path,manifest_path,organize
 
 VERSION=3
-STARTERS={'11000101':('naruto','naruto-kid','Naruto Kid'), '11000201':('sasuke','sasuke-kid','Sasuke Kid'), '11000301':('sakura','sakura-kid','Sakura Kid')}
+STARTERS={'11000101':('naruto','naruto-kid','Naruto'), '11000201':('sasuke','sasuke-kid','Sasuke'), '11000301':('sakura','sakura-kid','Sakura')}
 def write_json(path,value):
  path.parent.mkdir(parents=True,exist_ok=True)
  temp=path.with_suffix(path.suffix+'.tmp');temp.write_text(json.dumps(value,ensure_ascii=False,indent=2),encoding='utf-8');temp.replace(path)
@@ -66,8 +66,19 @@ def read_actions(path):
  root=ET.fromstring(xml);assets={a.get('id'):a.attrib for a in root.findall('asset')}
  return root,assets,images,symbols,xml
 
-def convert(path,folder,url,mode,only=None):
+def convert(path,folder,url,mode,only=None,frame_limits=None):
  root,assets,images,symbols,xml=read_actions(path);folder.mkdir(parents=True,exist_ok=True);(folder/'actions.xml').write_bytes(xml)
+ if frame_limits:
+  import copy
+  root=copy.deepcopy(root)
+  for action in root.findall('action'):
+   limit=frame_limits.get(action.get('name'))
+   if limit:
+    for layer in action.findall('layer'):
+     for frame in list(layer.findall('frame')):
+      index=int(frame.get('index','0'))
+      if index>=limit:layer.remove(frame)
+      else:frame.set('length',str(min(int(frame.get('length','1')),limit-index)))
  animations={};issues=[];fps=float(root.get('frameRate','24'));refs=sorted(set(e.get('extname') for e in root.iter() if e.get('extname')))
  for action in root.findall('action'):
   name=action.get('name','')
@@ -81,6 +92,8 @@ def convert(path,folder,url,mode,only=None):
   # Compute one shared action canvas across the entire animation, retaining the ground origin.
   bounds=[0.,0.,0.,0.];elements={};missing=set();unsupported=set()
   for el in action.iter('element'):
+   # External symbols have their own namespace. assetId=0 is NOT local bitmap 0.
+   if el.get('extname'):continue
    asset=assets.get(el.get('assetId'));image=images.get(symbols.get(asset.get('className'))) if asset else None
    if image is None:
     missing.add(el.get('assetId','unknown'));continue
@@ -162,7 +175,7 @@ def discover(source):
  return entries,names,evidence
 
 def main():
- ap=argparse.ArgumentParser();ap.add_argument('--source',default=r'D:\Naruto Idle\Naruto_Idle');ap.add_argument('--project',default=r'D:\Naruto Idle\Naruto Idle RPG');ap.add_argument('--workers',type=int,default=4);ap.add_argument('--limit',type=int,default=0);ap.add_argument('--retry',action='store_true');args=ap.parse_args()
+ ap=argparse.ArgumentParser();ap.add_argument('--source',default=r'D:\Naruto Idle\Naruto_Idle');ap.add_argument('--project',default=r'D:\Naruto Idle\Naruto Idle RPG');ap.add_argument('--workers',type=int,default=1);ap.add_argument('--limit',type=int,default=0);ap.add_argument('--retry',action='store_true');args=ap.parse_args()
  project=Path(args.project);source=Path(args.source);out=project/'public/assets/para-revisao/novos-recursos';out.mkdir(parents=True,exist_ok=True)
  existing={e['id']:e for e in json.loads(catalog_path(project).read_text(encoding='utf-8'))['entities']} if catalog_path(project).exists() else {}
  entries,names,evidence=discover(source);legacy=json.loads((project/'public/assets/animations.json').read_text(encoding='utf-8'));catalog=[]

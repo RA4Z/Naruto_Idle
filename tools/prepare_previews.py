@@ -22,7 +22,7 @@ def create(entry):
 
 if __name__=='__main__':
     catalog=PUB/'assets/catalog/entities.json';data=json.loads(catalog.read_text(encoding='utf-8'))
-    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool: previews=dict(r for r in pool.map(create,data['entities']) if r)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool: previews=dict(r for r in pool.map(create,data['entities']) if r)
     indexes=[catalog,PUB/'assets/characters/index.json',PUB/'assets/para-revisao/index.json',*(PUB/'assets/para-revisao').glob('*/index.json')]
     for path in indexes:
         d=json.loads(path.read_text(encoding='utf-8'))
