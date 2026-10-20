@@ -727,7 +727,8 @@ class HuntScene extends Phaser.Scene {
   }
   bindNpc(npc: EntityActor) {
     npc.setSize(25, 55).setInteractive({ useHandCursor: true });
-    npc.on("pointerdown", () => {
+    npc.on("pointerdown", (pointer: Phaser.Input.Pointer) => {
+      if (pointer.event?.target !== this.game.canvas) return;
       if (
         document.querySelector("dialog[open]") ||
         this.loadingActor ||
@@ -870,6 +871,7 @@ class HuntScene extends Phaser.Scene {
         objects: Phaser.GameObjects.GameObject[],
       ) => {
         if (
+          pointer.event?.target !== this.game.canvas ||
           objects.length ||
           document.querySelector("dialog[open]") ||
           save.paused ||
@@ -978,7 +980,8 @@ class HuntScene extends Phaser.Scene {
       .setDepth(near.y + 1)
       .setSize(60, 35)
       .setInteractive({ useHandCursor: true });
-    this.portal.on("pointerdown", () => {
+    this.portal.on("pointerdown", (pointer: Phaser.Input.Pointer) => {
+      if (pointer.event?.target !== this.game.canvas) return;
       if (
         document.querySelector("dialog[open]") ||
         this.loadingActor ||
