@@ -1,0 +1,48 @@
+import { chromium } from "@playwright/test";
+import assert from "node:assert/strict";
+import fs from "node:fs/promises";
+const browser = await chromium.launch({headless:true, executablePath:"C:/Program Files/Google/Chrome/Application/chrome.exe", args:["--no-sandbox"]});
+const errors = [], missing = [], requests = [];
+try {
+  const page = await browser.newPage({viewport:{width:1440,height:1000}});
+  page.on("pageerror", e => errors.push(String(e)));
+  page.on("response", r => { if (r.status() >= 400 && new URL(r.url()).pathname.startsWith("/assets/")) missing.push(r.url()); });
+  page.on("request", r => requests.push(r.url()));
+  await page.goto("http://127.0.0.1:5178");
+  await page.locator("#new").click(); await page.locator('[data-character="naruto"]').click();
+  await page.waitForFunction(() => window.__idle?.snapshot()); await page.locator("#pause").click();
+  await page.locator("#library").click();
+  assert.equal(await page.getByLabel("Filtrar coleção").inputValue(), "playable");
+  assert.ok((await page.locator(".entity-card").count()) <= 24);
+  const counts = await page.evaluate(async () => {
+    const files = await Promise.all(["characters/index.json", "para-revisao/index.json", "catalog/entities.json"].map(p => fetch("/assets/"+p).then(r=>r.json())));
+    return files.map(f=>f.entities.length);
+  });
+  assert.deepEqual(counts, [312,1154,1466]);
+  const search = page.getByRole("searchbox", {name:"Buscar personagem"});
+  await search.fill("11900708"); assert.equal(await page.locator(".entity-card").count(),0);
+  await page.getByLabel("Filtrar coleção").selectOption("review");
+  assert.equal(await page.locator('[data-entity="11900708"]').count(),1);
+  await page.locator('[data-entity="11900708"] [data-role="npc"]').click();
+  await page.locator(".entity-library").waitFor({state:"hidden"});
+  await page.locator("#library").click(); await page.getByLabel("Filtrar coleção").selectOption("playable");
+  await search.fill("Anbu"); assert.ok(await page.locator('[data-entity="11001651"]').count());
+  await page.screenshot({path:"reports/organized-character-library.png", fullPage:true});
+  await search.fill("11001651"); await page.locator('[data-entity="11001651"] [data-role="companion"]').click();
+  await page.locator(".entity-library").waitFor({state:"hidden"});
+  const chosen = await page.evaluate(()=>window.__idle.snapshot());
+  assert.equal(chosen.companion.id,"11001651"); assert.ok(chosen.npcIds.includes("11900708"));
+  assert.ok(requests.some(u=>u.includes("/characters/kakashi-anbu-11001651/world/")));
+  assert.ok(requests.some(u=>u.includes("/para-revisao/npcs-inimigos-e-cenario/teuchi-11900708/world/")));
+  await page.reload(); await page.locator("#continue").click(); await page.waitForFunction(()=>window.__idle?.snapshot());
+  const restored = await page.evaluate(()=>window.__idle.snapshot());
+  assert.equal(restored.companion.id,"11001651"); assert.ok(restored.npcIds.includes("11900708"));
+  await page.setViewportSize({width:390,height:844}); await page.locator("#library").click();
+  await search.fill("Kakashi");
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth), false);
+  assert.equal(await page.locator(".entity-library").evaluate(e=>e.scrollWidth>e.clientWidth+2),false);
+  await page.screenshot({path:"reports/organized-character-library-mobile.png",fullPage:true});
+  assert.deepEqual(errors,[]); assert.deepEqual(missing,[]);
+  const result={defaultCollection:"playable",playable:counts[0],review:counts[1],all:counts[2],reviewResourcesSeparated:true,variantSearch:true,namedAssetPaths:true,savedIdsPreserved:true,mobileWithoutHorizontalOverflow:true,errors,missingAssets:missing};
+  await fs.writeFile("reports/character-browser-validation.json",JSON.stringify(result,null,2));console.log(JSON.stringify(result));
+} finally { await browser.close(); }

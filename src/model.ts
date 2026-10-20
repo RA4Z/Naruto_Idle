@@ -1,0 +1,293 @@
+import {
+  CHARACTERS,
+  AREAS,
+  LOOT,
+  OFFLINE,
+  COMBAT,
+  type CharacterId,
+} from "./data";
+export type Save = {
+  version: 1;
+  character: CharacterId;
+  level: number;
+  xp: number;
+  coins: number;
+  inventory: Record<string, number>;
+  area: number;
+  upgrades: number;
+  kills: number;
+  defeats: number;
+  lastSaved: number;
+  sound: boolean;
+  music?: boolean;
+  soundVolume?: number;
+  paused: boolean;
+  companionId?: string;
+  location?: string;
+  autoHunt?: boolean;
+  partyIds?: string[];
+  worldPosition?: { mapId: string; x: number; y: number };
+  enemyId?: string;
+  npcIds?: string[];
+};
+export interface ProgressStore {
+  read(): string | null;
+  write(value: string): void;
+}
+export class LocalProgressStore implements ProgressStore {
+  read() {
+    return localStorage.getItem("folha-idle-v1");
+  }
+  write(value: string) {
+    localStorage.setItem("folha-idle-v1", value);
+  }
+}
+export const fresh = (character: CharacterId, now = Date.now()): Save => ({
+  version: 1,
+  character,
+  level: 1,
+  xp: 0,
+  coins: 0,
+  inventory: {},
+  area: 0,
+  upgrades: 0,
+  kills: 0,
+  defeats: 0,
+  lastSaved: now,
+  sound: false,
+  paused: false,
+  location: "10001",
+  autoHunt: false,
+  partyIds: [],
+});
+export const needed = (level: number) => Math.floor(80 * Math.pow(level, 1.35));
+export function addXp(s: Save, xp: number) {
+  s.xp += Math.max(0, Math.floor(xp));
+  while (s.xp >= needed(s.level) && s.level < 100) {
+    s.xp -= needed(s.level);
+    s.level++;
+  }
+}
+export function stats(s: Save) {
+  const c = CHARACTERS[s.character];
+  return {
+    maxHp: c.hp + (s.level - 1) * 12 + s.upgrades * 9,
+    attack: c.attack + (s.level - 1) * 2 + s.upgrades * 3,
+    interval: c.interval,
+  };
+}
+export function reward(s: Save, random = Math.random) {
+  const a = AREAS[s.area];
+  s.kills++;
+  s.coins += a.coins;
+  addXp(s, a.xp);
+  for (const d of LOOT)
+    if (random() < d.chance)
+      s.inventory[d.id] =
+        (s.inventory[d.id] || 0) +
+        d.min +
+        Math.floor(random() * (d.max - d.min + 1));
+}
+export function restore(
+  store: ProgressStore,
+  now = Date.now(),
+): {
+  save: Save;
+  offline: { xp: number; coins: number; seconds: number };
+} | null {
+  let s: Save;
+  try {
+    s = JSON.parse(store.read() || "null");
+    if (
+      !s ||
+      s.version !== 1 ||
+      !(s.character in CHARACTERS) ||
+      !Number.isFinite(s.lastSaved) ||
+      !Number.isFinite(s.level) ||
+      s.level < 1 ||
+      s.level > 100 ||
+      !Number.isFinite(s.coins) ||
+      s.coins < 0 ||
+      !Number.isFinite(s.xp) ||
+      s.xp < 0 ||
+      !s.inventory ||
+      !Number.isInteger(s.area) ||
+      !AREAS[s.area] ||
+      AREAS[s.area].level > s.level
+    )
+      return null;
+  } catch {
+    return null;
+  }
+  if (
+    !Object.hasOwn(CHARACTERS, s.character) ||
+    !Number.isSafeInteger(s.level) ||
+    ![s.upgrades, s.kills, s.defeats].every(
+      (n) => Number.isSafeInteger(n) && n >= 0,
+    ) ||
+    typeof s.paused !== "boolean" ||
+    typeof s.sound !== "boolean" ||
+    typeof s.inventory !== "object" ||
+    Array.isArray(s.inventory) ||
+    !Object.values(s.inventory).every((n) => Number.isSafeInteger(n) && n >= 0)
+  )
+    return null;
+  if (
+    [s.companionId, s.enemyId].some(
+      (id) =>
+        id !== undefined && (typeof id !== "string" || !/^\d{6,12}$/.test(id)),
+    ) ||
+    (s.npcIds !== undefined &&
+      (!Array.isArray(s.npcIds) ||
+        s.npcIds.length > 3 ||
+        s.npcIds.some(
+          (id) => typeof id !== "string" || !/^\d{6,12}$/.test(id),
+        )))
+  )
+    return null;
+  if (
+    (s.music !== undefined && typeof s.music !== "boolean") ||
+    (s.soundVolume !== undefined &&
+      (!Number.isFinite(s.soundVolume) ||
+        s.soundVolume < 0 ||
+        s.soundVolume > 1))
+  )
+    return null;
+  const locations = ["10001", "10005", "10006", "10008"];
+  if (
+    (s.location !== undefined && !locations.includes(s.location)) ||
+    (s.autoHunt !== undefined && typeof s.autoHunt !== "boolean") ||
+    (s.partyIds !== undefined &&
+      (!Array.isArray(s.partyIds) ||
+        s.partyIds.length > 3 ||
+        new Set(s.partyIds).size !== s.partyIds.length ||
+        s.partyIds.some(
+          (id) => typeof id !== "string" || !/^\d{6,12}$/.test(id),
+        ))) ||
+    (s.worldPosition !== undefined &&
+      (!s.worldPosition ||
+        !locations.includes(s.worldPosition.mapId) ||
+        !Number.isFinite(s.worldPosition.x) ||
+        !Number.isFinite(s.worldPosition.y) ||
+        s.worldPosition.x < 0 ||
+        s.worldPosition.y < 0 ||
+        s.worldPosition.x > 5000 ||
+        s.worldPosition.y > 5000))
+  )
+    return null;
+  s.location ??= "10001";
+  s.partyIds ??= [];
+  s.autoHunt ??= false;
+  if (s.location === "10001") s.autoHunt = false;
+  const seconds = Math.min(
+    OFFLINE.capSeconds,
+    Math.max(0, (now - s.lastSaved) / 1000),
+  );
+  const wins =
+    s.paused || !s.autoHunt || s.location === "10001"
+      ? 0
+      : Math.floor(seconds / OFFLINE.intervalSeconds);
+  const a = AREAS[s.area];
+  const xp = Math.floor(wins * a.xp * OFFLINE.fraction),
+    coins = Math.floor(wins * a.coins * OFFLINE.fraction);
+  addXp(s, xp);
+  s.coins += coins;
+  s.lastSaved = now;
+  // Commit before showing the summary: reloading cannot claim this interval twice.
+  store.write(JSON.stringify(s));
+  return { save: s, offline: { xp, coins, seconds } };
+}
+export type Phase =
+  | "explorando"
+  | "iniciando combate"
+  | "combatendo"
+  | "recompensas"
+  | "retomando exploração"
+  | "derrota";
+export class Hunt {
+  phase: Phase = "explorando";
+  hp: number;
+  enemyHp = 0;
+  enemyMax = 0;
+  timer = 0;
+  playerClock = 0;
+  enemyClock = 0;
+  attacks = 0;
+  onEvent: (type: string, value: number) => void = () => {};
+  constructor(
+    public save: Save,
+    private random = Math.random,
+  ) {
+    this.hp = stats(save).maxHp;
+  }
+  encounter() {
+    if (this.phase !== "explorando" || this.save.paused) return false;
+    this.enemyMax = this.enemyHp = AREAS[this.save.area].enemyHp;
+    this.phase = "iniciando combate";
+    this.timer = 0;
+    this.playerClock = this.enemyClock = 0;
+    this.attacks = 0;
+    this.onEvent("encounter", 0);
+    return true;
+  }
+  tick(ms: number) {
+    if (this.save.paused) return;
+    ms = Math.min(Math.max(ms, 0), 250);
+    const st = stats(this.save);
+    this.timer += ms;
+    if (this.phase === "iniciando combate" && this.timer >= 650) {
+      this.phase = "combatendo";
+      this.timer = 0;
+    } else if (this.phase === "combatendo") {
+      this.playerClock += ms;
+      this.enemyClock += ms;
+      if (this.playerClock >= st.interval) {
+        this.playerClock -= st.interval;
+        const special = ++this.attacks % COMBAT.specialEvery === 0;
+        const damage = st.attack * (special ? COMBAT.specialMultiplier : 1);
+        this.enemyHp = Math.max(0, this.enemyHp - damage);
+        if (special && this.save.character === "sakura")
+          this.hp = Math.min(
+            st.maxHp,
+            this.hp + st.maxHp * COMBAT.sakuraRecovery,
+          );
+        this.onEvent(special ? "skill" : "attack", damage);
+      }
+      if (this.enemyHp <= 0) {
+        const before = this.save.inventory.fragmento || 0;
+        reward(this.save, this.random);
+        const dropped = (this.save.inventory.fragmento || 0) - before;
+        if (dropped > 0) this.onEvent("loot", dropped);
+        this.phase = "recompensas";
+        this.timer = 0;
+        this.onEvent("victory", AREAS[this.save.area].xp);
+        return;
+      }
+      if (this.enemyClock >= COMBAT.enemyInterval) {
+        this.enemyClock -= COMBAT.enemyInterval;
+        const damage = AREAS[this.save.area].enemyAttack;
+        this.hp = Math.max(0, this.hp - damage);
+        this.onEvent("hurt", damage);
+      }
+      if (this.hp <= 0) {
+        this.save.defeats++;
+        this.phase = "derrota";
+        this.timer = 0;
+        this.onEvent("defeat", 0);
+      }
+    } else if (this.phase === "recompensas" && this.timer > 1300) {
+      this.phase = "retomando exploração";
+      this.timer = 0;
+      this.hp = Math.min(st.maxHp, this.hp + st.maxHp * 0.2);
+    } else if (this.phase === "retomando exploração" && this.timer > 400) {
+      this.phase = "explorando";
+      this.timer = 0;
+      this.onEvent("resume", 0);
+    } else if (this.phase === "derrota" && this.timer > 3000) {
+      this.hp = st.maxHp;
+      this.phase = "retomando exploração";
+      this.timer = 0;
+      this.onEvent("recover", 0);
+    }
+  }
+}

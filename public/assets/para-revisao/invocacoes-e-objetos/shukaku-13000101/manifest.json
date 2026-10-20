@@ -1,0 +1,132 @@
+{
+  "id": "13000101",
+  "slug": "shukaku-13000101",
+  "name": "Shukaku",
+  "aliases": [
+    "Shukaku"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "d9970246040af3fcb4e0f15783af7ecd1deea8ada7e94b0b2eb5584b9520dc44",
+  "modes": {
+    "battle": {
+      "animations": {
+        "C_idle": {
+          "url": "/assets/para-revisao/invocacoes-e-objetos/shukaku-13000101/battle/C_idle.png",
+          "frameWidth": 202,
+          "frameHeight": 167,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            1
+          ],
+          "status": "partial",
+          "sourcePixelScale": 1,
+          "originalSpriteId": 362,
+          "sourceAction": "C_idle",
+          "referenceHeight": 167,
+          "coverage": "first native idle pose; full vector timeline pending",
+          "exportZoom": 0.25,
+          "rendering": "static-vector-frames; source scripts not executed",
+          "rigScale": 1.0
+        }
+      },
+      "referenceHeight": 167,
+      "status": "partial",
+      "issues": [
+        {
+          "note": "Only the first original idle pose is available; full vector animation and script-driven behavior remain pending."
+        }
+      ]
+    }
+  },
+  "sources": {
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/13000101.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\13000101.png"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/13000101.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\13000101.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Shukaku",
+      "type": null,
+      "resource": "assets/battle/role/left/13000101.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [
+    {
+      "mode": "battle",
+      "error": "No bitmap actions XML: timeline/vector reconstruction required"
+    }
+  ],
+  "portrait": "/assets/para-revisao/invocacoes-e-objetos/shukaku-13000101/portrait.png",
+  "capabilities": {
+    "npc": false,
+    "companion": false,
+    "enemy": true
+  },
+  "status": "partial",
+  "recoveryPass": "nonstandard-actions-and-static-vectors",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "Invocação, clone ou objeto auxiliar na configuração original.",
+    "missingActions": [
+      "world/idle_0",
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [
+      {
+        "action": "C_idle",
+        "reason": "static-or-incomplete-animation"
+      }
+    ],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "invocacoes-e-objetos",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Shukaku",
+    "title": "",
+    "type": "2",
+    "artisticId": "13000101",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/invocacoes-e-objetos/shukaku-13000101/manifest.json",
+  "preview": "/assets/para-revisao/invocacoes-e-objetos/shukaku-13000101/preview.png"
+}

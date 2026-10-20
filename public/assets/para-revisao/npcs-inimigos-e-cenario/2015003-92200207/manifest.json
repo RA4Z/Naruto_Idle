@@ -1,0 +1,109 @@
+{
+  "id": "92200207",
+  "slug": "2015003-92200207",
+  "name": "木叶南到木叶北2015003",
+  "aliases": [
+    "木叶南到木叶北2015003"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "5"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "1dacc837eeab1ff2f0971a2bb8cfae36914ad10baa5812e17742e1998f23578d",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/2015003-92200207/world/idle_0.png",
+          "frameWidth": 392,
+          "frameHeight": 289,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5153061224489796,
+            0.5916955017301038
+          ],
+          "referenceHeight": 285,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 285,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/92200207_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\92200207_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015002.xml",
+      "name": "木叶南到木叶北2015003",
+      "type": "5",
+      "resource": "assets/role/npc/scene/npcres/92200207_outdoor.swf",
+      "hostile": false,
+      "position": "105, 529"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/2015003-92200207/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/2015003-92200207/preview.png"
+}

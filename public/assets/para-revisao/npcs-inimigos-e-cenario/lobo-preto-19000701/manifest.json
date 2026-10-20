@@ -1,0 +1,1044 @@
+{
+  "id": "19000701",
+  "slug": "lobo-preto-19000701",
+  "name": "Lobo Preto",
+  "aliases": [
+    "Lobo Preto",
+    "Desafio de Fase",
+    "Lobo negro feroz [Nv. 5]"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2"
+  ],
+  "hostile": true,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "78c0ab65f94b7e52702dab7779c550df9bcf902cdb62e1320322ddf28b98c2ab",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/world/idle_0.png",
+          "frameWidth": 53,
+          "frameHeight": 115,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4528301886792453,
+            0.6608695652173913
+          ],
+          "referenceHeight": 99,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/world/idle_2.png",
+          "frameWidth": 165,
+          "frameHeight": 71,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5212121212121212,
+            0.8028169014084507
+          ],
+          "referenceHeight": 65,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/world/idle_3.png",
+          "frameWidth": 118,
+          "frameHeight": 76,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5169491525423728,
+            0.8026315789473685
+          ],
+          "referenceHeight": 67,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/world/idle_4.png",
+          "frameWidth": 53,
+          "frameHeight": 90,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5471698113207547,
+            0.7555555555555555
+          ],
+          "referenceHeight": 77,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/world/run_0.png",
+          "frameWidth": 42,
+          "frameHeight": 143,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.8181818181818182
+          ],
+          "referenceHeight": 103,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/world/run_1.png",
+          "frameWidth": 144,
+          "frameHeight": 123,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3888888888888889,
+            0.8292682926829268
+          ],
+          "referenceHeight": 89,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/world/run_2.png",
+          "frameWidth": 190,
+          "frameHeight": 86,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3526315789473684,
+            0.872093023255814
+          ],
+          "referenceHeight": 67,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/world/run_3.png",
+          "frameWidth": 139,
+          "frameHeight": 111,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3669064748201439,
+            0.7927927927927928
+          ],
+          "referenceHeight": 77,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/world/run_4.png",
+          "frameWidth": 42,
+          "frameHeight": 121,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.7520661157024794
+          ],
+          "referenceHeight": 88,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/world/idle_5.png",
+          "frameWidth": 118,
+          "frameHeight": 76,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4830508474576271,
+            0.8026315789473685
+          ],
+          "referenceHeight": 67,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/world/idle_6.png",
+          "frameWidth": 165,
+          "frameHeight": 71,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.47878787878787876,
+            0.8028169014084507
+          ],
+          "referenceHeight": 65,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/world/idle_7.png",
+          "frameWidth": 129,
+          "frameHeight": 90,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.43410852713178294,
+            0.7333333333333333
+          ],
+          "referenceHeight": 79,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/world/run_5.png",
+          "frameWidth": 139,
+          "frameHeight": 111,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6330935251798561,
+            0.7927927927927928
+          ],
+          "referenceHeight": 77,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/world/run_6.png",
+          "frameWidth": 190,
+          "frameHeight": 86,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6473684210526316,
+            0.872093023255814
+          ],
+          "referenceHeight": 67,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/world/run_7.png",
+          "frameWidth": 144,
+          "frameHeight": 123,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6111111111111112,
+            0.8292682926829268
+          ],
+          "referenceHeight": 89,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/world/idle_1.png",
+          "frameWidth": 129,
+          "frameHeight": 90,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5658914728682171,
+            0.7333333333333333
+          ],
+          "referenceHeight": 79,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 99,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/battle/A_1hit.png",
+          "frameWidth": 231,
+          "frameHeight": 160,
+          "frames": 10,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4588744588744589,
+            0.80625
+          ],
+          "referenceHeight": 83,
+          "status": "partial",
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        "C_dead": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/battle/C_dead.png",
+          "frameWidth": 180,
+          "frameHeight": 100,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5166666666666667,
+            0.81
+          ],
+          "referenceHeight": 61,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/battle/C_idle.png",
+          "frameWidth": 180,
+          "frameHeight": 87,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5833333333333334,
+            0.8390804597701149
+          ],
+          "referenceHeight": 81,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/battle/SP_skill2.png",
+          "frameWidth": 201,
+          "frameHeight": 126,
+          "frames": 7,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5124378109452736,
+            0.9047619047619048
+          ],
+          "referenceHeight": 101,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 81,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "A_1hit",
+          "missing": [],
+          "unsupported": [
+            "extname"
+          ],
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        }
+      ],
+      "externalEffects": [
+        "yingzi(1).png"
+      ]
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/19000701.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\19000701.swf"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\19000701_outdoor.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/19000701.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\19000701.png"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2026001.xml",
+      "name": "Lobo Preto",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": true,
+      "position": "1710, 1054"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2026001.xml",
+      "name": "Lobo Preto",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": true,
+      "position": "1336, 620"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2026001.xml",
+      "name": "Lobo Preto",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": true,
+      "position": "1419, 650"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2994001.xml",
+      "name": "Desafio de Fase",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "985, 564"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2994001.xml",
+      "name": "Desafio de Fase",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "967, 755"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2994001.xml",
+      "name": "Desafio de Fase",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "964, 1472"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2994001.xml",
+      "name": "Desafio de Fase",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "2056, 397"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2994001.xml",
+      "name": "Desafio de Fase",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "2079, 758"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2994001.xml",
+      "name": "Desafio de Fase",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "2077, 930"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2994001.xml",
+      "name": "Desafio de Fase",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "2075, 1132"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2994001.xml",
+      "name": "Desafio de Fase",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "2104, 1317"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2994001.xml",
+      "name": "",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "1960, 1517"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2994001.xml",
+      "name": "",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "2060, 1684"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2994001.xml",
+      "name": "Desafio de Fase",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "3214, 392"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2051001.xml",
+      "name": "Lobo Preto",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": true,
+      "position": "2141, 2646"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2051001.xml",
+      "name": "Lobo Preto",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": true,
+      "position": "1992, 2704"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2993001.xml",
+      "name": "Desafio de Fase",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "981, 557"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2993001.xml",
+      "name": "Desafio de Fase",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "986, 924"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2993001.xml",
+      "name": "Desafio de Fase",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "2077, 556"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2993001.xml",
+      "name": "Desafio de Fase",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "1981, 758"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2993001.xml",
+      "name": "Desafio de Fase",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "1991, 952"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2993001.xml",
+      "name": "Desafio de Fase",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "2016, 1123"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2993001.xml",
+      "name": "Desafio de Fase",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "2026, 1311"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2993001.xml",
+      "name": "Desafio de Fase",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "2033, 1660"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1003001.xml",
+      "name": "Lobo negro feroz [Nv. 5]",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "896, 2701"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1003001.xml",
+      "name": "Lobo negro feroz [Nv. 5]",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "312, 2740"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1003001.xml",
+      "name": "Lobo negro feroz [Nv. 5]",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000701_outdoor.swf",
+      "hostile": false,
+      "position": "581, 2496"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Lobo Preto",
+      "type": null,
+      "resource": "assets/battle/role/left/19000701.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Lobo Preto",
+    "title": "",
+    "type": "0",
+    "artisticId": "19000701",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/lobo-preto-19000701/preview.png"
+}

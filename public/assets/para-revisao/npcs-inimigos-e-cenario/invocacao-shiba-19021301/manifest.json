@@ -1,0 +1,787 @@
+{
+  "id": "19021301",
+  "slug": "invocacao-shiba-19021301",
+  "name": "Invocação: Shiba",
+  "aliases": [
+    "Invocação: Shiba"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "6"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "00211783253229504037cfe3a86dc697925bf6b3ed02f88c12dd37b3ea7be28f",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-shiba-19021301/world/idle_0.png",
+          "frameWidth": 41,
+          "frameHeight": 88,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4634146341463415,
+            0.6931818181818182
+          ],
+          "referenceHeight": 75,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-shiba-19021301/world/idle_2.png",
+          "frameWidth": 122,
+          "frameHeight": 55,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.47540983606557374,
+            0.8181818181818182
+          ],
+          "referenceHeight": 50,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-shiba-19021301/world/idle_3.png",
+          "frameWidth": 88,
+          "frameHeight": 64,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4772727272727273,
+            0.8125
+          ],
+          "referenceHeight": 58,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-shiba-19021301/world/idle_4.png",
+          "frameWidth": 41,
+          "frameHeight": 74,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5365853658536586,
+            0.7702702702702703
+          ],
+          "referenceHeight": 66,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-shiba-19021301/world/run_0.png",
+          "frameWidth": 32,
+          "frameHeight": 106,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.7452830188679245
+          ],
+          "referenceHeight": 77,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-shiba-19021301/world/run_1.png",
+          "frameWidth": 108,
+          "frameHeight": 91,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5185185185185185,
+            0.7802197802197802
+          ],
+          "referenceHeight": 66,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-shiba-19021301/world/run_2.png",
+          "frameWidth": 143,
+          "frameHeight": 72,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4965034965034965,
+            0.8888888888888888
+          ],
+          "referenceHeight": 55,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-shiba-19021301/world/run_3.png",
+          "frameWidth": 104,
+          "frameHeight": 91,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5096153846153846,
+            0.8681318681318682
+          ],
+          "referenceHeight": 66,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-shiba-19021301/world/run_4.png",
+          "frameWidth": 32,
+          "frameHeight": 99,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.8484848484848485
+          ],
+          "referenceHeight": 74,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-shiba-19021301/world/idle_5.png",
+          "frameWidth": 88,
+          "frameHeight": 64,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5227272727272727,
+            0.8125
+          ],
+          "referenceHeight": 58,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-shiba-19021301/world/idle_6.png",
+          "frameWidth": 122,
+          "frameHeight": 55,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5245901639344263,
+            0.8181818181818182
+          ],
+          "referenceHeight": 50,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-shiba-19021301/world/idle_7.png",
+          "frameWidth": 97,
+          "frameHeight": 69,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4742268041237113,
+            0.7681159420289855
+          ],
+          "referenceHeight": 60,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-shiba-19021301/world/run_5.png",
+          "frameWidth": 104,
+          "frameHeight": 91,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49038461538461536,
+            0.8681318681318682
+          ],
+          "referenceHeight": 66,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-shiba-19021301/world/run_6.png",
+          "frameWidth": 143,
+          "frameHeight": 72,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5034965034965035,
+            0.8888888888888888
+          ],
+          "referenceHeight": 55,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-shiba-19021301/world/run_7.png",
+          "frameWidth": 108,
+          "frameHeight": 91,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.48148148148148145,
+            0.7802197802197802
+          ],
+          "referenceHeight": 66,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-shiba-19021301/world/idle_1.png",
+          "frameWidth": 97,
+          "frameHeight": 69,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5257731958762887,
+            0.7681159420289855
+          ],
+          "referenceHeight": 60,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 75,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-shiba-19021301/battle/A_1hit.png",
+          "frameWidth": 214,
+          "frameHeight": 133,
+          "frames": 9,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            7,
+            8,
+            8,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4485981308411215,
+            0.8872180451127819
+          ],
+          "referenceHeight": 74,
+          "status": "partial",
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        "C_dead": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-shiba-19021301/battle/C_dead.png",
+          "frameWidth": 144,
+          "frameHeight": 84,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5902777777777778,
+            0.8214285714285714
+          ],
+          "referenceHeight": 53,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-shiba-19021301/battle/C_idle.png",
+          "frameWidth": 144,
+          "frameHeight": 72,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5208333333333334,
+            0.8611111111111112
+          ],
+          "referenceHeight": 66,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 66,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "A_1hit",
+          "missing": [],
+          "unsupported": [
+            "extname"
+          ],
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        }
+      ],
+      "externalEffects": [
+        "yingzi(1).png"
+      ]
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/19021301.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\19021301.swf"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/19021301_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\19021301_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene1005001.xml",
+      "name": "Invocação: Shiba",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/19021301_outdoor.swf",
+      "hostile": false,
+      "position": "717, 320"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Invocação: Shiba",
+      "type": null,
+      "resource": "assets/battle/role/left/19021301.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Invocação: Shiba",
+    "title": "",
+    "type": "0",
+    "artisticId": "19021301",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-shiba-19021301/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-shiba-19021301/preview.png"
+}

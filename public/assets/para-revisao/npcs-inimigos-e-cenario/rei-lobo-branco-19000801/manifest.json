@@ -1,0 +1,834 @@
+{
+  "id": "19000801",
+  "slug": "rei-lobo-branco-19000801",
+  "name": "Rei Lobo Branco",
+  "aliases": [
+    "Rei Lobo Branco"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2"
+  ],
+  "hostile": true,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "b868f3d85bf90063a498fc45f076fc2e92582981fcab1b663d0d61a2c0cdec2c",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/world/idle_0.png",
+          "frameWidth": 64,
+          "frameHeight": 141,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.453125,
+            0.6595744680851063
+          ],
+          "referenceHeight": 122,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/world/idle_2.png",
+          "frameWidth": 203,
+          "frameHeight": 87,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5221674876847291,
+            0.8045977011494253
+          ],
+          "referenceHeight": 80,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/world/idle_3.png",
+          "frameWidth": 144,
+          "frameHeight": 96,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5208333333333334,
+            0.8229166666666666
+          ],
+          "referenceHeight": 86,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/world/idle_4.png",
+          "frameWidth": 64,
+          "frameHeight": 114,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.546875,
+            0.7631578947368421
+          ],
+          "referenceHeight": 98,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/world/run_0.png",
+          "frameWidth": 51,
+          "frameHeight": 175,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5098039215686274,
+            0.8171428571428572
+          ],
+          "referenceHeight": 126,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/world/run_1.png",
+          "frameWidth": 176,
+          "frameHeight": 152,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.38636363636363635,
+            0.8289473684210527
+          ],
+          "referenceHeight": 111,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/world/run_2.png",
+          "frameWidth": 234,
+          "frameHeight": 106,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3547008547008547,
+            0.8867924528301887
+          ],
+          "referenceHeight": 85,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/world/run_3.png",
+          "frameWidth": 171,
+          "frameHeight": 136,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3684210526315789,
+            0.7941176470588235
+          ],
+          "referenceHeight": 95,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/world/run_4.png",
+          "frameWidth": 51,
+          "frameHeight": 149,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49019607843137253,
+            0.7516778523489933
+          ],
+          "referenceHeight": 108,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/world/idle_5.png",
+          "frameWidth": 144,
+          "frameHeight": 96,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4791666666666667,
+            0.8229166666666666
+          ],
+          "referenceHeight": 86,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/world/idle_6.png",
+          "frameWidth": 203,
+          "frameHeight": 87,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.47783251231527096,
+            0.8045977011494253
+          ],
+          "referenceHeight": 80,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/world/idle_7.png",
+          "frameWidth": 159,
+          "frameHeight": 110,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4339622641509434,
+            0.7363636363636363
+          ],
+          "referenceHeight": 98,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/world/run_5.png",
+          "frameWidth": 171,
+          "frameHeight": 136,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.631578947368421,
+            0.7941176470588235
+          ],
+          "referenceHeight": 95,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/world/run_6.png",
+          "frameWidth": 234,
+          "frameHeight": 106,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6452991452991453,
+            0.8867924528301887
+          ],
+          "referenceHeight": 85,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/world/run_7.png",
+          "frameWidth": 176,
+          "frameHeight": 152,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6136363636363636,
+            0.8289473684210527
+          ],
+          "referenceHeight": 111,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/world/idle_1.png",
+          "frameWidth": 159,
+          "frameHeight": 110,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5660377358490566,
+            0.7363636363636363
+          ],
+          "referenceHeight": 98,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 122,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/battle/A_1hit.png",
+          "frameWidth": 289,
+          "frameHeight": 201,
+          "frames": 10,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4532871972318339,
+            0.835820895522388
+          ],
+          "referenceHeight": 112,
+          "status": "partial",
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        "C_dead": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/battle/C_dead.png",
+          "frameWidth": 227,
+          "frameHeight": 127,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5198237885462555,
+            0.8110236220472441
+          ],
+          "referenceHeight": 78,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/battle/C_idle.png",
+          "frameWidth": 228,
+          "frameHeight": 109,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5570175438596491,
+            0.8440366972477065
+          ],
+          "referenceHeight": 103,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/battle/SP_skill2.png",
+          "frameWidth": 254,
+          "frameHeight": 160,
+          "frames": 7,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49606299212598426,
+            0.90625
+          ],
+          "referenceHeight": 129,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 103,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "A_1hit",
+          "missing": [],
+          "unsupported": [
+            "extname"
+          ],
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        }
+      ],
+      "externalEffects": [
+        "yingzi(1).png"
+      ]
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/19000801_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\19000801_outdoor.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/19000801.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\19000801.png"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/19000801.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\19000801.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2026001.xml",
+      "name": "Rei Lobo Branco",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000801_outdoor.swf",
+      "hostile": true,
+      "position": "609, 733"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Rei Lobo Branco",
+      "type": null,
+      "resource": "assets/battle/role/left/19000801.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Rei Lobo Branco",
+    "title": "",
+    "type": "0",
+    "artisticId": "19000801",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/rei-lobo-branco-19000801/preview.png"
+}

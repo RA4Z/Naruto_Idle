@@ -1,0 +1,919 @@
+{
+  "id": "19001101",
+  "slug": "cla-nara-19001101",
+  "name": "Clã Nara",
+  "aliases": [
+    "Clã Nara",
+    "Ninja da Folha",
+    "Ninja do Clã Nara",
+    "Clã Nara [Nível 2]"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "101",
+    "2"
+  ],
+  "hostile": true,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "417232268289e55cd67017e29302c0fa3b8a8e54eaf895c4d029c7eaa8fb12fa",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/world/idle_0.png",
+          "frameWidth": 57,
+          "frameHeight": 132,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5087719298245614,
+            0.9242424242424242
+          ],
+          "referenceHeight": 128,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/world/idle_1.png",
+          "frameWidth": 43,
+          "frameHeight": 136,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4418604651162791,
+            0.9044117647058824
+          ],
+          "referenceHeight": 132,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/world/idle_2.png",
+          "frameWidth": 36,
+          "frameHeight": 133,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5555555555555556,
+            0.924812030075188
+          ],
+          "referenceHeight": 129,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/world/idle_3.png",
+          "frameWidth": 54,
+          "frameHeight": 131,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.9541984732824428
+          ],
+          "referenceHeight": 127,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/world/idle_4.png",
+          "frameWidth": 57,
+          "frameHeight": 133,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49122807017543857,
+            0.9398496240601504
+          ],
+          "referenceHeight": 129,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/world/run_0.png",
+          "frameWidth": 77,
+          "frameHeight": 114,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5064935064935064,
+            0.8508771929824561
+          ],
+          "referenceHeight": 91,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/world/idle_5.png",
+          "frameWidth": 54,
+          "frameHeight": 131,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.9541984732824428
+          ],
+          "referenceHeight": 127,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/world/idle_6.png",
+          "frameWidth": 36,
+          "frameHeight": 133,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4444444444444444,
+            0.924812030075188
+          ],
+          "referenceHeight": 129,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/world/idle_7.png",
+          "frameWidth": 43,
+          "frameHeight": 136,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5581395348837209,
+            0.9044117647058824
+          ],
+          "referenceHeight": 132,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/world/run_1.png",
+          "frameWidth": 115,
+          "frameHeight": 113,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5565217391304348,
+            0.8849557522123894
+          ],
+          "referenceHeight": 90,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/world/run_2.png",
+          "frameWidth": 149,
+          "frameHeight": 108,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5570469798657718,
+            0.9444444444444444
+          ],
+          "referenceHeight": 94,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/world/run_3.png",
+          "frameWidth": 116,
+          "frameHeight": 131,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5344827586206896,
+            0.8778625954198473
+          ],
+          "referenceHeight": 111,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/world/run_4.png",
+          "frameWidth": 77,
+          "frameHeight": 141,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4935064935064935,
+            0.8581560283687943
+          ],
+          "referenceHeight": 120,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/world/run_5.png",
+          "frameWidth": 116,
+          "frameHeight": 131,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46551724137931033,
+            0.8778625954198473
+          ],
+          "referenceHeight": 111,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/world/run_6.png",
+          "frameWidth": 149,
+          "frameHeight": 108,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4429530201342282,
+            0.9444444444444444
+          ],
+          "referenceHeight": 94,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/world/run_7.png",
+          "frameWidth": 115,
+          "frameHeight": 113,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4434782608695652,
+            0.8849557522123894
+          ],
+          "referenceHeight": 90,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 128,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/battle/A_1hit.png",
+          "frameWidth": 177,
+          "frameHeight": 152,
+          "frames": 6,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4689265536723164,
+            0.9013157894736842
+          ],
+          "referenceHeight": 111,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/battle/C_dead.png",
+          "frameWidth": 90,
+          "frameHeight": 143,
+          "frames": 7,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4444444444444444,
+            0.9230769230769231
+          ],
+          "referenceHeight": 98,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/battle/C_idle.png",
+          "frameWidth": 98,
+          "frameHeight": 156,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46938775510204084,
+            0.9615384615384616
+          ],
+          "referenceHeight": 148,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/battle/SP_skill1.png",
+          "frameWidth": 93,
+          "frameHeight": 179,
+          "frames": 6,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            2,
+            2,
+            1,
+            1,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46236559139784944,
+            0.9385474860335196
+          ],
+          "referenceHeight": 158,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/battle/SP_skill2.png",
+          "frameWidth": 93,
+          "frameHeight": 179,
+          "frames": 6,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            2,
+            2,
+            1,
+            1,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46236559139784944,
+            0.9385474860335196
+          ],
+          "referenceHeight": 158,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 148,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/19001101.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\19001101.swf"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/19001101_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\19001101_outdoor.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/19001101.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\19001101.png"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2351001.xml",
+      "name": "Clã Nara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001101_outdoor.swf",
+      "hostile": true,
+      "position": "1277, 756"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2866001.xml",
+      "name": "Clã Nara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001101_outdoor.swf",
+      "hostile": true,
+      "position": "973, 2329"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2866001.xml",
+      "name": "Clã Nara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001101_outdoor.swf",
+      "hostile": true,
+      "position": "1131, 2212"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2866001.xml",
+      "name": "Clã Nara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001101_outdoor.swf",
+      "hostile": true,
+      "position": "1055, 2272"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2994001.xml",
+      "name": "Clã Nara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001101_outdoor.swf",
+      "hostile": false,
+      "position": "1379, 1324"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2361001.xml",
+      "name": "Clã Nara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001101_outdoor.swf",
+      "hostile": true,
+      "position": "1194, 1179"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2018001.xml",
+      "name": "Ninja da Folha",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001101_outdoor.swf",
+      "hostile": true,
+      "position": "1327, 824"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2115001.xml",
+      "name": "Ninja do Clã Nara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001101_outdoor.swf",
+      "hostile": true,
+      "position": "1328, 591"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2816001.xml",
+      "name": "Ninja do Clã Nara",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/19001101_outdoor.swf",
+      "hostile": false,
+      "position": "1132, 947"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2816001.xml",
+      "name": "Ninja do Clã Nara",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/19001101_outdoor.swf",
+      "hostile": false,
+      "position": "2326, 1986"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2020001.xml",
+      "name": "Clã Nara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001101_outdoor.swf",
+      "hostile": true,
+      "position": "1301, 896"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1004001.xml",
+      "name": "Clã Nara [Nível 2]",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001101_outdoor.swf",
+      "hostile": false,
+      "position": "584, 1205"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1004001.xml",
+      "name": "Clã Nara [Nível 2]",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001101_outdoor.swf",
+      "hostile": false,
+      "position": "1408, 718"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2311001.xml",
+      "name": "Ninja do Clã Nara",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/19001101_outdoor.swf",
+      "hostile": false,
+      "position": "916, 636"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2311001.xml",
+      "name": "Ninja do Clã Nara",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/19001101_outdoor.swf",
+      "hostile": false,
+      "position": "2334, 1897"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Clã Nara",
+      "type": null,
+      "resource": "assets/battle/role/left/19001101.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Clã Nara",
+    "title": "",
+    "type": "0",
+    "artisticId": "19001101",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/cla-nara-19001101/preview.png"
+}

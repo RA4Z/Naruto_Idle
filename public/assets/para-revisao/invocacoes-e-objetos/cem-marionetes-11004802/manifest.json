@@ -1,0 +1,192 @@
+{
+  "id": "11004802",
+  "slug": "cem-marionetes-11004802",
+  "name": "Cem Marionetes",
+  "aliases": [
+    "Cem Marionetes"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "47e4c31012a71023ac9249a22e67d3bce1093852d38d7186c0fcead7a4eca0d8",
+  "modes": {
+    "battle": {
+      "animations": {
+        "C_idle": {
+          "url": "/assets/para-revisao/invocacoes-e-objetos/cem-marionetes-11004802/battle/C_idle.png",
+          "frameWidth": 153,
+          "frameHeight": 219,
+          "frames": 7,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.24183006535947713,
+            0.9908675799086758
+          ],
+          "referenceHeight": 192,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "A_1hit": {
+          "url": "/assets/para-revisao/invocacoes-e-objetos/cem-marionetes-11004802/battle/A_1hit.png",
+          "frameWidth": 402,
+          "frameHeight": 262,
+          "frames": 14,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            13,
+            13,
+            0,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.43034825870646765,
+            0.9923664122137404
+          ],
+          "referenceHeight": 192,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 192,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/11004802.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11004802.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Cem Marionetes",
+      "type": null,
+      "resource": "assets/battle/role/left/11004802.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": false,
+    "companion": false,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "Invocação, clone ou objeto auxiliar na configuração original.",
+    "missingActions": [
+      "world/idle_0",
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "invocacoes-e-objetos",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Cem Marionetes",
+    "title": "",
+    "type": "3",
+    "artisticId": "11004802",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/invocacoes-e-objetos/cem-marionetes-11004802/manifest.json",
+  "preview": "/assets/para-revisao/invocacoes-e-objetos/cem-marionetes-11004802/preview.png"
+}

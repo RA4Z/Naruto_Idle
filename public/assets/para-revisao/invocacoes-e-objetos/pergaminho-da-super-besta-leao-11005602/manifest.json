@@ -1,0 +1,173 @@
+{
+  "id": "11005602",
+  "slug": "pergaminho-da-super-besta-leao-11005602",
+  "name": "Pergaminho da Super Besta: Leão",
+  "aliases": [
+    "Pergaminho da Super Besta: Leão"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "981a746f200cc21b5014a7748f4c2d2d261f3cfddf309fa669c7b74910c8cf46",
+  "modes": {
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/para-revisao/invocacoes-e-objetos/pergaminho-da-super-besta-leao-11005602/battle/A_1hit.png",
+          "frameWidth": 168,
+          "frameHeight": 116,
+          "frames": 9,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5416666666666666,
+            0.8189655172413793
+          ],
+          "referenceHeight": 67,
+          "status": "partial",
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        "C_idle": {
+          "url": "/assets/para-revisao/invocacoes-e-objetos/pergaminho-da-super-besta-leao-11005602/battle/C_idle.png",
+          "frameWidth": 114,
+          "frameHeight": 74,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6578947368421053,
+            0.8108108108108109
+          ],
+          "referenceHeight": 68,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 68,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "A_1hit",
+          "missing": [],
+          "unsupported": [
+            "extname"
+          ],
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        {
+          "action": "C_dead",
+          "reason": "no-resolved-bitmaps",
+          "missing": []
+        }
+      ],
+      "externalEffects": [
+        "yingzi(1).png"
+      ]
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/11005602.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11005602.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Pergaminho da Super Besta: Leão",
+      "type": null,
+      "resource": "assets/battle/role/left/11005602.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": false,
+    "companion": false,
+    "enemy": true
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "Invocação, clone ou objeto auxiliar na configuração original.",
+    "missingActions": [
+      "world/idle_0",
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "invocacoes-e-objetos",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Pergaminho da Super Besta: Leão",
+    "title": "",
+    "type": "1",
+    "artisticId": "11005602",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/invocacoes-e-objetos/pergaminho-da-super-besta-leao-11005602/manifest.json",
+  "preview": "/assets/para-revisao/invocacoes-e-objetos/pergaminho-da-super-besta-leao-11005602/preview.png"
+}

@@ -1,0 +1,126 @@
+{
+  "id": "11900812",
+  "slug": "corpo-do-kazekage-11900812",
+  "name": "Corpo do Kazekage",
+  "aliases": [
+    "Corpo do Kazekage"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "101"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "b9a3eb62f698b69a0090923af06bbb79acd7738f49fee19993fdac0c5c3806b2",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/corpo-do-kazekage-11900812/world/idle_3.png",
+          "frameWidth": 185,
+          "frameHeight": 130,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.41621621621621624,
+            0.36923076923076925
+          ],
+          "referenceHeight": 126,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/corpo-do-kazekage-11900812/world/idle_3.png",
+          "frameWidth": 185,
+          "frameHeight": 130,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.41621621621621624,
+            0.36923076923076925
+          ],
+          "referenceHeight": 126,
+          "status": "ready",
+          "externalEffects": [],
+          "sourceAction": "idle_3"
+        }
+      },
+      "referenceHeight": 126,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11900812_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11900812_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2341001.xml",
+      "name": "Corpo do Kazekage",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900812_outdoor.swf",
+      "hostile": false,
+      "position": "450, 1888"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/corpo-do-kazekage-11900812/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/corpo-do-kazekage-11900812/preview.png"
+}

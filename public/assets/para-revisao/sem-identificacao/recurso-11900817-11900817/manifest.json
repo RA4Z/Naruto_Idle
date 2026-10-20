@@ -1,0 +1,131 @@
+{
+  "id": "11900817",
+  "slug": "recurso-11900817-11900817",
+  "name": "Recurso 11900817",
+  "aliases": [
+    "Recurso 11900817"
+  ],
+  "identity": "unidentified",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "4fb32d0aa571c6b5a21797e99aaccc2f8daba2d773e434734e5db1b15374edc8",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_1": {
+          "url": "/assets/para-revisao/sem-identificacao/recurso-11900817-11900817/world/idle_1.png",
+          "frameWidth": 112,
+          "frameHeight": 62,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5625,
+            0.6129032258064516
+          ],
+          "referenceHeight": 58,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/para-revisao/sem-identificacao/recurso-11900817-11900817/world/idle_2.png",
+          "frameWidth": 131,
+          "frameHeight": 38,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5038167938931297,
+            0.6578947368421053
+          ],
+          "referenceHeight": 34,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/para-revisao/sem-identificacao/recurso-11900817-11900817/world/idle_1.png",
+          "frameWidth": 112,
+          "frameHeight": 62,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5625,
+            0.6129032258064516
+          ],
+          "referenceHeight": 58,
+          "status": "ready",
+          "externalEffects": [],
+          "sourceAction": "idle_1"
+        }
+      },
+      "referenceHeight": 58,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11900817_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11900817_outdoor.swf"
+    }
+  },
+  "evidence": [],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "Identidade ou nome em português ainda requer conferência.",
+    "missingActions": [
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "sem-identificacao",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/sem-identificacao/recurso-11900817-11900817/manifest.json",
+  "preview": "/assets/para-revisao/sem-identificacao/recurso-11900817-11900817/preview.png"
+}

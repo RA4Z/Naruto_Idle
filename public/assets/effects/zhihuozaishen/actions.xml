@@ -1,0 +1,24 @@
+<actions frameRate="24">
+  <action id="0" name="effect">
+    <layer id="0" name="特效上层">
+      <frame index="0" length="1">
+        <element x="27" y="-95" assetId="0" filename="1skr-s3-zhzss_65.png" blendMode="lighten"/>
+      </frame>
+      <frame index="1" length="1">
+        <element x="27" y="-95" assetId="1" filename="1skr-s3-zhzss_66.png" blendMode="lighten"/>
+      </frame>
+      <frame index="2" length="5" tween="true">
+        <element x="27" y="-95" assetId="2" filename="1skr-s3-zhzss_67.png" blendMode="lighten"/>
+      </frame>
+      <frame index="7" length="1">
+        <element x="27" y="-95" assetId="2" filename="1skr-s3-zhzss_67.png" scaleX="0.24" scaleY="0.24" rotation="-214.00" alpha="0.50" blendMode="lighten"/>
+      </frame>
+    </layer>
+    <layer id="0" name="特效下层">
+      <frame index="0" length="8"/>
+    </layer>
+  </action>
+  <asset id="0" assetName="1skr-s3-zhzss_65.png" x="-94" y="-25" className="Asset_0" width="188" height="50"/>
+  <asset id="1" assetName="1skr-s3-zhzss_66.png" x="-100" y="-23" className="Asset_1" width="200" height="48"/>
+  <asset id="2" assetName="1skr-s3-zhzss_67.png" x="-19" y="-19" className="Asset_2" width="38" height="38"/>
+</actions>

@@ -1,0 +1,788 @@
+{
+  "id": "11000611",
+  "slug": "tenten-11000611",
+  "name": "Tenten",
+  "aliases": [
+    "Tenten"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2"
+  ],
+  "hostile": true,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "c51bd626f50573054fb2a23010c8906b88497d6b64043068b2a0ba29d51cc343",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_2": {
+          "url": "/assets/characters/tenten-11000611/world/idle_2.png",
+          "frameWidth": 45,
+          "frameHeight": 125,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.28888888888888886,
+            0.936
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/characters/tenten-11000611/world/idle_0.png",
+          "frameWidth": 52,
+          "frameHeight": 122,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5384615384615384,
+            0.9426229508196722
+          ],
+          "referenceHeight": 118,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/characters/tenten-11000611/world/idle_1.png",
+          "frameWidth": 51,
+          "frameHeight": 123,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3137254901960784,
+            0.943089430894309
+          ],
+          "referenceHeight": 119,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/characters/tenten-11000611/world/idle_3.png",
+          "frameWidth": 49,
+          "frameHeight": 125,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.2857142857142857,
+            0.936
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/characters/tenten-11000611/world/idle_4.png",
+          "frameWidth": 52,
+          "frameHeight": 122,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46153846153846156,
+            0.9426229508196722
+          ],
+          "referenceHeight": 118,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/characters/tenten-11000611/world/run_1.png",
+          "frameWidth": 86,
+          "frameHeight": 117,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4883720930232558,
+            0.9145299145299145
+          ],
+          "referenceHeight": 105,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/characters/tenten-11000611/world/idle_7.png",
+          "frameWidth": 51,
+          "frameHeight": 123,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6862745098039216,
+            0.943089430894309
+          ],
+          "referenceHeight": 119,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/characters/tenten-11000611/world/idle_6.png",
+          "frameWidth": 45,
+          "frameHeight": 125,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.7111111111111111,
+            0.936
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/characters/tenten-11000611/world/idle_5.png",
+          "frameWidth": 49,
+          "frameHeight": 125,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.7142857142857143,
+            0.936
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/characters/tenten-11000611/world/run_0.png",
+          "frameWidth": 85,
+          "frameHeight": 114,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49411764705882355,
+            0.9035087719298246
+          ],
+          "referenceHeight": 102,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/characters/tenten-11000611/world/run_2.png",
+          "frameWidth": 101,
+          "frameHeight": 121,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.48514851485148514,
+            0.9421487603305785
+          ],
+          "referenceHeight": 108,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/characters/tenten-11000611/world/run_3.png",
+          "frameWidth": 87,
+          "frameHeight": 132,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4942528735632184,
+            0.9015151515151515
+          ],
+          "referenceHeight": 115,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/characters/tenten-11000611/world/run_4.png",
+          "frameWidth": 85,
+          "frameHeight": 134,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5058823529411764,
+            0.8880597014925373
+          ],
+          "referenceHeight": 118,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/characters/tenten-11000611/world/run_5.png",
+          "frameWidth": 87,
+          "frameHeight": 132,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5057471264367817,
+            0.9015151515151515
+          ],
+          "referenceHeight": 115,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/characters/tenten-11000611/world/run_6.png",
+          "frameWidth": 101,
+          "frameHeight": 121,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5148514851485149,
+            0.9421487603305785
+          ],
+          "referenceHeight": 108,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/characters/tenten-11000611/world/run_7.png",
+          "frameWidth": 86,
+          "frameHeight": 117,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5116279069767442,
+            0.9145299145299145
+          ],
+          "referenceHeight": 105,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 118,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/characters/tenten-11000611/battle/A_1hit.png",
+          "frameWidth": 171,
+          "frameHeight": 160,
+          "frames": 7,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            4,
+            4,
+            5,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.29239766081871343,
+            0.96875
+          ],
+          "referenceHeight": 133,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/characters/tenten-11000611/battle/C_dead.png",
+          "frameWidth": 115,
+          "frameHeight": 154,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.41739130434782606,
+            0.948051948051948
+          ],
+          "referenceHeight": 111,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/characters/tenten-11000611/battle/C_idle.png",
+          "frameWidth": 104,
+          "frameHeight": 161,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4423076923076923,
+            0.968944099378882
+          ],
+          "referenceHeight": 154,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/characters/tenten-11000611/battle/SP_skill1.png",
+          "frameWidth": 212,
+          "frameHeight": 402,
+          "frames": 31,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            15,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            29,
+            29,
+            29,
+            29,
+            29,
+            30
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.44339622641509435,
+            0.972636815920398
+          ],
+          "referenceHeight": 152,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/characters/tenten-11000611/battle/SP_skill2.png",
+          "frameWidth": 336,
+          "frameHeight": 303,
+          "frames": 32,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            13,
+            13,
+            14,
+            15,
+            16,
+            16,
+            17,
+            17,
+            18,
+            18,
+            19,
+            19,
+            20,
+            20,
+            20,
+            21,
+            21,
+            22,
+            22,
+            23,
+            23,
+            24,
+            24,
+            24,
+            24,
+            24,
+            24,
+            24,
+            24,
+            24,
+            24,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            29,
+            29,
+            29,
+            29,
+            29,
+            29,
+            29,
+            29,
+            30,
+            30,
+            31,
+            31,
+            31,
+            31,
+            31
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.42857142857142855,
+            0.8943894389438944
+          ],
+          "referenceHeight": 132,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 154,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11000611.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\11000611.png"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/11000611.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11000611.swf"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11000611_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11000611_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2526001.xml",
+      "name": "Tenten",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000611_outdoor.swf",
+      "hostile": true,
+      "position": "666, 1831"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene4033001.xml",
+      "name": "Tenten",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000611_outdoor.swf",
+      "hostile": true,
+      "position": "598, 1268"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene4033001.xml",
+      "name": "Tenten",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000611_outdoor.swf",
+      "hostile": true,
+      "position": "1649, 1740"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1004001.xml",
+      "name": "Tenten",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000611_outdoor.swf",
+      "hostile": false,
+      "position": "1108, 1112"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2521001.xml",
+      "name": "Tenten",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000611_outdoor.swf",
+      "hostile": false,
+      "position": "522, 2211"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Tenten",
+      "type": null,
+      "resource": "assets/battle/role/left/11000611.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/characters/tenten-11000611/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": true,
+    "reason": "Caminhada em oito direções, ataque, queda e especial preservados.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "playable",
+  "reviewCategory": null,
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Tenten",
+    "title": "",
+    "type": "0",
+    "artisticId": "11000611",
+    "levelType": "2",
+    "series": "11",
+    "starLevel": "1"
+  },
+  "manifestUrl": "/assets/characters/tenten-11000611/manifest.json",
+  "preview": "/assets/characters/tenten-11000611/preview.png"
+}

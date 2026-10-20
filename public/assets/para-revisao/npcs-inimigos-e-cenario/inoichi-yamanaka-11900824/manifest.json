@@ -1,0 +1,126 @@
+{
+  "id": "11900824",
+  "slug": "inoichi-yamanaka-11900824",
+  "name": "Inoichi Yamanaka",
+  "aliases": [
+    "Inoichi Yamanaka"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "101"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "e73ee84c8796ec0fbdbb437778322e43bb5c22a340439baa22eb24d0be35c20d",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/inoichi-yamanaka-11900824/world/idle_1.png",
+          "frameWidth": 79,
+          "frameHeight": 92,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5443037974683544,
+            0.9782608695652174
+          ],
+          "referenceHeight": 82,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/inoichi-yamanaka-11900824/world/idle_1.png",
+          "frameWidth": 79,
+          "frameHeight": 92,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5443037974683544,
+            0.9782608695652174
+          ],
+          "referenceHeight": 82,
+          "status": "ready",
+          "externalEffects": [],
+          "sourceAction": "idle_1"
+        }
+      },
+      "referenceHeight": 82,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11900824_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11900824_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015022.xml",
+      "name": "Inoichi Yamanaka",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900824_outdoor.swf",
+      "hostile": false,
+      "position": "636, 666"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/inoichi-yamanaka-11900824/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/inoichi-yamanaka-11900824/preview.png"
+}

@@ -1,0 +1,23 @@
+<actions frameRate="24">
+  <action id="0" name="idle_0">
+    <layer id="0">
+      <frame index="0" length="6"/>
+      <frame index="6" length="6" tween="true">
+        <element x="-70" y="-90" assetId="0" alpha="0.20"/>
+      </frame>
+      <frame index="12" length="10" tween="true">
+        <element x="-70" y="-90" assetId="0" alpha="0.50"/>
+      </frame>
+      <frame index="22" length="1">
+        <element x="-70" y="-90" assetId="0" alpha="0.20"/>
+      </frame>
+    </layer>
+    <layer id="0">
+      <frame index="0" length="23">
+        <element x="1" assetId="1"/>
+      </frame>
+    </layer>
+  </action>
+  <asset id="0" assetName="ziyao_100_.png" x="23" y="42" className="Asset_0" width="101" height="92"/>
+  <asset id="1" assetName="紫药水.png" x="-14" y="-24" className="Asset_1" width="28" height="52"/>
+</actions>

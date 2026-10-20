@@ -1,0 +1,145 @@
+{
+  "id": "91100002",
+  "slug": "2020-91100002",
+  "name": "火焰2020",
+  "aliases": [
+    "火焰2020",
+    "火焰2018"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "8"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "9a07bfd8cc87984e83a0dc16b94c936d64a48a36c5fbf17f571c3ee078f7a7c2",
+  "modes": {},
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/91100002_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\91100002_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2003001.xml",
+      "name": "火焰2020",
+      "type": "8",
+      "resource": "assets/role/npc/scene/npcres/91100002_outdoor.swf",
+      "hostile": false,
+      "position": "2020, 1136"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2022001.xml",
+      "name": "火焰2018",
+      "type": "8",
+      "resource": "assets/role/npc/scene/npcres/91100002_outdoor.swf",
+      "hostile": false,
+      "position": "656, 435"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2022001.xml",
+      "name": "火焰2018",
+      "type": "8",
+      "resource": "assets/role/npc/scene/npcres/91100002_outdoor.swf",
+      "hostile": false,
+      "position": "1804, 1030"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2022001.xml",
+      "name": "火焰2018",
+      "type": "8",
+      "resource": "assets/role/npc/scene/npcres/91100002_outdoor.swf",
+      "hostile": false,
+      "position": "382, 1034"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2018001.xml",
+      "name": "火焰2020",
+      "type": "8",
+      "resource": "assets/role/npc/scene/npcres/91100002_outdoor.swf",
+      "hostile": false,
+      "position": "675, 448"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2018001.xml",
+      "name": "火焰2020",
+      "type": "8",
+      "resource": "assets/role/npc/scene/npcres/91100002_outdoor.swf",
+      "hostile": false,
+      "position": "2020, 1136"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2020001.xml",
+      "name": "火焰2018",
+      "type": "8",
+      "resource": "assets/role/npc/scene/npcres/91100002_outdoor.swf",
+      "hostile": false,
+      "position": "1886, 1073"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2020001.xml",
+      "name": "火焰2020",
+      "type": "8",
+      "resource": "assets/role/npc/scene/npcres/91100002_outdoor.swf",
+      "hostile": false,
+      "position": "544, 378"
+    }
+  ],
+  "issues": [
+    {
+      "mode": "world",
+      "error": "No supported actions rendered; [{'action': 'idle_0', 'reason': 'no-resolved-bitmaps', 'missing': []}]"
+    }
+  ],
+  "capabilities": {
+    "npc": false,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "blocked",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_0",
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/2020-91100002/manifest.json"
+}

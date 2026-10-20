@@ -1,0 +1,785 @@
+{
+  "id": "11000511",
+  "slug": "neji-11000511",
+  "name": "Neji",
+  "aliases": [
+    "Neji"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2"
+  ],
+  "hostile": true,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "21f2cbe8ca92c45478a1b04dc235faf3bd9cb50405e967e5e96d1757f1b2a09e",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_2": {
+          "url": "/assets/characters/neji-11000511/world/idle_2.png",
+          "frameWidth": 36,
+          "frameHeight": 132,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4444444444444444,
+            0.9090909090909091
+          ],
+          "referenceHeight": 128,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/characters/neji-11000511/world/idle_0.png",
+          "frameWidth": 57,
+          "frameHeight": 129,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49122807017543857,
+            0.9302325581395349
+          ],
+          "referenceHeight": 125,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/characters/neji-11000511/world/idle_1.png",
+          "frameWidth": 49,
+          "frameHeight": 132,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5102040816326531,
+            0.9090909090909091
+          ],
+          "referenceHeight": 128,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/characters/neji-11000511/world/idle_3.png",
+          "frameWidth": 47,
+          "frameHeight": 130,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5106382978723404,
+            0.9230769230769231
+          ],
+          "referenceHeight": 126,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/characters/neji-11000511/world/idle_4.png",
+          "frameWidth": 57,
+          "frameHeight": 126,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5087719298245614,
+            0.9523809523809523
+          ],
+          "referenceHeight": 122,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/characters/neji-11000511/world/idle_5.png",
+          "frameWidth": 47,
+          "frameHeight": 130,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.48936170212765956,
+            0.9230769230769231
+          ],
+          "referenceHeight": 126,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/characters/neji-11000511/world/idle_6.png",
+          "frameWidth": 36,
+          "frameHeight": 132,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5555555555555556,
+            0.9090909090909091
+          ],
+          "referenceHeight": 128,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/characters/neji-11000511/world/idle_7.png",
+          "frameWidth": 49,
+          "frameHeight": 132,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4897959183673469,
+            0.9090909090909091
+          ],
+          "referenceHeight": 128,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/characters/neji-11000511/world/run_1.png",
+          "frameWidth": 104,
+          "frameHeight": 114,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5096153846153846,
+            0.8859649122807017
+          ],
+          "referenceHeight": 91,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/characters/neji-11000511/world/run_0.png",
+          "frameWidth": 79,
+          "frameHeight": 113,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5316455696202531,
+            0.8584070796460177
+          ],
+          "referenceHeight": 90,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/characters/neji-11000511/world/run_2.png",
+          "frameWidth": 132,
+          "frameHeight": 110,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5075757575757576,
+            0.9363636363636364
+          ],
+          "referenceHeight": 96,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/characters/neji-11000511/world/run_5.png",
+          "frameWidth": 106,
+          "frameHeight": 130,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4716981132075472,
+            0.8769230769230769
+          ],
+          "referenceHeight": 111,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/characters/neji-11000511/world/run_4.png",
+          "frameWidth": 79,
+          "frameHeight": 137,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46835443037974683,
+            0.8686131386861314
+          ],
+          "referenceHeight": 118,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/characters/neji-11000511/world/run_6.png",
+          "frameWidth": 132,
+          "frameHeight": 110,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49242424242424243,
+            0.9363636363636364
+          ],
+          "referenceHeight": 96,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/characters/neji-11000511/world/run_7.png",
+          "frameWidth": 104,
+          "frameHeight": 114,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49038461538461536,
+            0.8859649122807017
+          ],
+          "referenceHeight": 91,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/characters/neji-11000511/world/run_3.png",
+          "frameWidth": 106,
+          "frameHeight": 130,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5283018867924528,
+            0.8769230769230769
+          ],
+          "referenceHeight": 111,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 125,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/characters/neji-11000511/battle/A_1hit.png",
+          "frameWidth": 153,
+          "frameHeight": 146,
+          "frames": 7,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3464052287581699,
+            0.952054794520548
+          ],
+          "referenceHeight": 131,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/characters/neji-11000511/battle/C_dead.png",
+          "frameWidth": 124,
+          "frameHeight": 147,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.41935483870967744,
+            0.891156462585034
+          ],
+          "referenceHeight": 106,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/characters/neji-11000511/battle/C_idle.png",
+          "frameWidth": 121,
+          "frameHeight": 147,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4380165289256198,
+            0.9523809523809523
+          ],
+          "referenceHeight": 140,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/characters/neji-11000511/battle/SP_skill1.png",
+          "frameWidth": 213,
+          "frameHeight": 220,
+          "frames": 12,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            10,
+            10,
+            10,
+            10,
+            11,
+            11
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.43661971830985913,
+            0.8772727272727273
+          ],
+          "referenceHeight": 136,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/characters/neji-11000511/battle/SP_skill2.png",
+          "frameWidth": 372,
+          "frameHeight": 167,
+          "frames": 31,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            13,
+            14,
+            15,
+            22,
+            23,
+            24,
+            25,
+            26,
+            26,
+            26,
+            27,
+            28,
+            28,
+            28,
+            28,
+            28,
+            28,
+            28,
+            28,
+            28,
+            28,
+            28,
+            28,
+            28,
+            28,
+            28,
+            28,
+            28,
+            28,
+            29,
+            29,
+            30
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.20161290322580644,
+            0.9041916167664671
+          ],
+          "referenceHeight": 136,
+          "status": "partial",
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        }
+      },
+      "referenceHeight": 140,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "SP_skill2",
+          "missing": [],
+          "unsupported": [
+            "extname"
+          ],
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        }
+      ],
+      "externalEffects": [
+        "yingzi(1).png"
+      ]
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11000511_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11000511_outdoor.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11000511.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\11000511.png"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/11000511.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11000511.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2526001.xml",
+      "name": "Neji",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000511_outdoor.swf",
+      "hostile": true,
+      "position": "845, 1145"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene4033001.xml",
+      "name": "Neji",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000511_outdoor.swf",
+      "hostile": true,
+      "position": "657, 1265"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene4033001.xml",
+      "name": "Neji",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000511_outdoor.swf",
+      "hostile": true,
+      "position": "1598, 1805"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015001.xml",
+      "name": "Neji",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000511_outdoor.swf",
+      "hostile": false,
+      "position": "877, 1572"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2521001.xml",
+      "name": "Neji",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000511_outdoor.swf",
+      "hostile": false,
+      "position": "706, 2316"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Neji",
+      "type": null,
+      "resource": "assets/battle/role/left/11000511.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/characters/neji-11000511/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": true,
+    "reason": "Caminhada em oito direções, ataque, queda e especial preservados.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "playable",
+  "reviewCategory": null,
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Neji",
+    "title": "",
+    "type": "0",
+    "artisticId": "11000511",
+    "levelType": "2",
+    "series": "10",
+    "starLevel": "1"
+  },
+  "manifestUrl": "/assets/characters/neji-11000511/manifest.json",
+  "preview": "/assets/characters/neji-11000511/preview.png"
+}

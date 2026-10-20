@@ -1,0 +1,755 @@
+<actions frameRate="24">
+  <action id="0" name="C_entry">
+    <layer id="0">
+      <frame index="0" length="15">
+        <element x="-5" y="-42" assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1" sound="284" volume="100"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="1" sound="288" volume="100"/>
+      <frame index="1" length="1"/>
+      <frame index="2" length="1" sound="172" volume="37"/>
+    </layer>
+    <layer id="4">
+      <frame index="0" length="1" sound="286" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="C_dead">
+    <layer id="0">
+      <frame index="0" length="10">
+        <element x="-5" y="-42" assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="D_HPSite">
+    <layer id="1">
+      <frame index="0" length="1">
+        <pointElement x="0" y="-249"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1"/>
+    </layer>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_air_air1">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="3" name="D_air_air2">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="4">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="284" volume="100"/>
+    </layer>
+    <layer id="5">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="288" volume="100"/>
+    </layer>
+    <layer id="6">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="284" volume="100"/>
+    </layer>
+    <layer id="7">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="1034" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_air_behit1">
+    <layer id="2">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="4">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="1033" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_air_behit2">
+    <layer id="2">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="4">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="1033" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_air_behit3">
+    <layer id="1">
+      <frame index="0" length="2" event="playEffect">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+  </action>
+  <action id="0" name="D_air_behit4">
+    <layer id="1">
+      <frame index="0" length="2" event="playEffect">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="4">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="1033" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_air_land">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="5"/>
+      <frame index="5" length="1" sound="170" volume="100"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="5"/>
+      <frame index="5" length="1" sound="169" volume="76"/>
+    </layer>
+  </action>
+  <action id="0" name="D_air_land1">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="2"/>
+      <frame index="2" length="1" sound="169" volume="100"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="2"/>
+      <frame index="2" length="1" sound="170" volume="100"/>
+    </layer>
+    <layer id="4">
+      <frame index="0" length="2"/>
+      <frame index="2" length="1" sound="1034" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_air_stand">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="9"/>
+      <frame index="9" length="1" sound="172" volume="75"/>
+    </layer>
+  </action>
+  <action id="0" name="D_air_upair">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="134" volume="50"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="286" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_air_upair1">
+    <layer id="2">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="D_beatback1">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1" event="playEffect"/>
+    </layer>
+  </action>
+  <action id="0" name="D_beatback2">
+    <layer id="1">
+      <frame index="0" length="3">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+  </action>
+  <action id="0" name="D_beatback3">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="1" name="D_land">
+    <layer id="1">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+  </action>
+  <action id="0" name="D_land_land">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="5"/>
+      <frame index="5" length="1" sound="236" volume="64"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="5"/>
+      <frame index="5" length="1" sound="170" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_land_stand">
+    <layer id="1">
+      <frame index="0" length="2">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+  </action>
+  <action id="0" name="D_land_twitch">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="D_stand_air">
+    <layer id="1">
+      <frame index="0" length="2" event="playEffect">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+  </action>
+  <action id="0" name="D_stand_behit1">
+    <layer id="1">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="3"/>
+    <layer id="4">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="1033" volume="100"/>
+    </layer>
+  </action>
+  <action id="4" name="D_stand_land">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="7"/>
+      <frame index="7" length="1" sound="236" volume="100"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="7"/>
+      <frame index="7" length="1" sound="121" volume="54"/>
+    </layer>
+  </action>
+  <action id="3" name="D_upair_air">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="4"/>
+  </action>
+  <action id="0" name="D_upair_behit1">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="1033" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_beatback4">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="D_beatback5">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="D_stand_ai1">
+    <layer id="1">
+      <frame index="0" length="2" event="playEffect">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+  </action>
+  <action id="0" name="D_stand_behit2">
+    <layer id="1">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="3"/>
+    <layer id="4">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="1033" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_stand_behit3">
+    <layer id="1">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="3"/>
+    <layer id="4">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="1033" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_stand_behit4">
+    <layer id="1">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="3"/>
+    <layer id="4">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="1033" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_stand_behit5">
+    <layer id="1">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="3"/>
+    <layer id="4">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="1033" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_stand_behit6">
+    <layer id="1">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="3"/>
+    <layer id="4">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="1033" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_stand_behit7">
+    <layer id="1">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="3"/>
+    <layer id="4">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="1033" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_stand_behit8">
+    <layer id="1">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="3"/>
+    <layer id="4">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="1033" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_stand_behit9">
+    <layer id="1">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="3"/>
+    <layer id="4">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="1033" volume="100"/>
+    </layer>
+  </action>
+  <action id="3" name="D_upair_air1">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="4"/>
+  </action>
+  <action id="3" name="D_upair_air2">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="4"/>
+  </action>
+  <action id="0" name="D_upair_behit2">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="1033" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_upair_behit3">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="1033" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_upair_behit4">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="1033" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="C_exeunt">
+    <layer id="0">
+      <frame index="0" length="15">
+        <element x="-5" y="-42" assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1" sound="284" volume="100"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="1" sound="288" volume="100"/>
+      <frame index="1" length="1"/>
+      <frame index="2" length="1" sound="172" volume="37"/>
+    </layer>
+    <layer id="4">
+      <frame index="0" length="1" sound="286" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="C_run1_1">
+    <layer id="0">
+      <frame index="0" length="15">
+        <element x="-5" y="-42" assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1" sound="284" volume="100"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="1" sound="288" volume="100"/>
+      <frame index="1" length="1"/>
+      <frame index="2" length="1" sound="172" volume="37"/>
+    </layer>
+    <layer id="4">
+      <frame index="0" length="1" sound="286" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="C_run1_2">
+    <layer id="0">
+      <frame index="0" length="15">
+        <element x="-5" y="-42" assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1" sound="284" volume="100"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="1" sound="288" volume="100"/>
+      <frame index="1" length="1"/>
+      <frame index="2" length="1" sound="172" volume="37"/>
+    </layer>
+    <layer id="4">
+      <frame index="0" length="1" sound="286" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="C_run1_3">
+    <layer id="0">
+      <frame index="0" length="15">
+        <element x="-5" y="-42" assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1" sound="284" volume="100"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="1" sound="288" volume="100"/>
+      <frame index="1" length="1"/>
+      <frame index="2" length="1" sound="172" volume="37"/>
+    </layer>
+    <layer id="4">
+      <frame index="0" length="1" sound="286" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="C_run2_1">
+    <layer id="0">
+      <frame index="0" length="15">
+        <element x="-5" y="-42" assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1" sound="284" volume="100"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="1" sound="288" volume="100"/>
+      <frame index="1" length="1"/>
+      <frame index="2" length="1" sound="172" volume="37"/>
+    </layer>
+    <layer id="4">
+      <frame index="0" length="1" sound="286" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="C_run2_2">
+    <layer id="0">
+      <frame index="0" length="15">
+        <element x="-5" y="-42" assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1" sound="284" volume="100"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="1" sound="288" volume="100"/>
+      <frame index="1" length="1"/>
+      <frame index="2" length="1" sound="172" volume="37"/>
+    </layer>
+    <layer id="4">
+      <frame index="0" length="1" sound="286" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="C_run2_3">
+    <layer id="0">
+      <frame index="0" length="15">
+        <element x="-5" y="-42" assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1" sound="284" volume="100"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="1" sound="288" volume="100"/>
+      <frame index="1" length="1"/>
+      <frame index="2" length="1" sound="172" volume="37"/>
+    </layer>
+    <layer id="4">
+      <frame index="0" length="1" sound="286" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="C_skillIdle_1">
+    <layer id="0">
+      <frame index="0" length="15">
+        <element x="-5" y="-42" assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1" sound="284" volume="100"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="1" sound="288" volume="100"/>
+      <frame index="1" length="1"/>
+      <frame index="2" length="1" sound="172" volume="37"/>
+    </layer>
+    <layer id="4">
+      <frame index="0" length="1" sound="286" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="C_skillIdle_2">
+    <layer id="0">
+      <frame index="0" length="15">
+        <element x="-5" y="-42" assetId="0" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1" sound="284" volume="100"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="1" sound="288" volume="100"/>
+      <frame index="1" length="1"/>
+      <frame index="2" length="1" sound="172" volume="37"/>
+    </layer>
+    <layer id="4">
+      <frame index="0" length="1" sound="286" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="C_defaultAttackPoint">
+    <layer id="1">
+      <frame index="0" length="1">
+        <pointElement x="0" y="0"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1"/>
+    </layer>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="C_defaultDefencePoint">
+    <layer id="1">
+      <frame index="0" length="1">
+        <pointElement x="0" y="0"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1"/>
+    </layer>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="C_idle">
+    <layer id="0">
+      <frame index="0" length="6">
+        <element x="-5" y="-42" assetId="1" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="6" length="4">
+        <element x="-5" y="-42" assetId="2" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="10" length="5">
+        <element x="-5" y="-42" assetId="3" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="15" length="4">
+        <element x="-5" y="-42" assetId="4" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="19" length="5">
+        <element x="-5" y="-42" assetId="5" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="24" length="4">
+        <element x="-5" y="-42" assetId="6" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="28" length="5">
+        <element x="-5" y="-42" assetId="7" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="33" length="5">
+        <element x="-5" y="-42" assetId="8" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="A_1hit">
+    <layer id="0">
+      <frame index="0" length="6">
+        <element x="-5" y="-42" assetId="1" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="6" length="4">
+        <element x="-5" y="-42" assetId="2" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="10" length="5">
+        <element x="-5" y="-42" assetId="3" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="15" length="4">
+        <element x="-5" y="-42" assetId="4" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="19" length="5">
+        <element x="-5" y="-42" assetId="5" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="24" length="4">
+        <element x="-5" y="-42" assetId="6" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="28" length="5">
+        <element x="-5" y="-42" assetId="7" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="33" length="5">
+        <element x="-5" y="-42" assetId="8" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="SP_skill1">
+    <layer id="0">
+      <frame index="0" length="6">
+        <element x="-5" y="-42" assetId="9" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="6" length="4">
+        <element x="-5" y="-42" assetId="10" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="10" length="4">
+        <element x="-5" y="-42" assetId="11" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="14" length="4">
+        <element x="-5" y="-42" assetId="12" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="18" length="4">
+        <element x="-5" y="-42" assetId="13" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="22" length="4">
+        <element x="-5" y="-42" assetId="14" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="26" length="4">
+        <element x="-5" y="-42" assetId="15" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="30" length="3">
+        <element x="-5" y="-42" assetId="16" scaleX="0.65" scaleY="0.65"/>
+      </frame>
+      <frame index="33" length="3">
+        <element y="-42" assetId="17"/>
+      </frame>
+      <frame index="36" length="5" event="hit"/>
+    </layer>
+  </action>
+  <asset id="0" assetName="shouji_0000.png" x="-77" y="-301" className="Asset_0" width="163" height="377"/>
+  <asset id="1" assetName="2ddrnut0_edit_0000.png" x="-77" y="-301" className="Asset_1" width="163" height="377"/>
+  <asset id="2" assetName="2ddrnut0_edit_0007.png" x="-76" y="-301" className="Asset_2" width="163" height="377"/>
+  <asset id="3" assetName="2ddrnut0_edit_0015.png" x="-76" y="-300" className="Asset_3" width="164" height="376"/>
+  <asset id="4" assetName="2ddrnut0_edit_0023.png" x="-76" y="-300" className="Asset_4" width="164" height="376"/>
+  <asset id="5" assetName="2ddrnut0_edit_0031.png" x="-76" y="-299" className="Asset_5" width="163" height="375"/>
+  <asset id="6" assetName="2ddrnut0_edit_0039.png" x="-77" y="-299" className="Asset_6" width="162" height="375"/>
+  <asset id="7" assetName="2ddrnut0_edit_0047.png" x="-77" y="-300" className="Asset_7" width="162" height="376"/>
+  <asset id="8" assetName="2ddrnut0_edit_0055.png" x="-77" y="-300" className="Asset_8" width="162" height="376"/>
+  <asset id="9" assetName="2ddrnut1_edit_0000.png" x="-77" y="-301" className="Asset_9" width="163" height="377"/>
+  <asset id="10" assetName="2ddrnut1_edit_0007.png" x="-93" y="-302" className="Asset_10" width="178" height="378"/>
+  <asset id="11" assetName="2ddrnut1_edit_0015.png" x="-125" y="-306" className="Asset_11" width="227" height="382"/>
+  <asset id="12" assetName="2ddrnut1_edit_0023.png" x="-178" y="-302" className="Asset_12" width="306" height="378"/>
+  <asset id="13" assetName="2ddrnut1_edit_0031.png" x="-189" y="-312" className="Asset_13" width="366" height="389"/>
+  <asset id="14" assetName="2ddrnut1_edit_0039.png" x="-229" y="-344" className="Asset_14" width="423" height="425"/>
+  <asset id="15" assetName="2ddrnut1_edit_0047.png" x="-252" y="-337" className="Asset_15" width="463" height="419"/>
+  <asset id="16" assetName="2ddrnut1_edit_0055.png" x="-293" y="-345" className="Asset_16" width="537" height="427"/>
+  <asset id="17" assetName="2ddrnut1_edit_0057.png" x="-285" y="-317" className="Asset_17" width="510" height="399"/>
+</actions>

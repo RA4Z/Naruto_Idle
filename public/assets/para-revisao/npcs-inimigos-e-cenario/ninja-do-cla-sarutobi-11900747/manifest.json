@@ -1,0 +1,128 @@
+{
+  "id": "11900747",
+  "slug": "ninja-do-cla-sarutobi-11900747",
+  "name": "Ninja do Clã Sarutobi",
+  "aliases": [
+    "Ninja do Clã Sarutobi"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "101"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "8fcd56f26af9f84618c3181aeceef140072d144aefa27c19ae9aafdf3728c8d8",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-do-cla-sarutobi-11900747/world/idle_0.png",
+          "frameWidth": 51,
+          "frameHeight": 135,
+          "frames": 5,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45098039215686275,
+            0.9333333333333333
+          ],
+          "referenceHeight": 131,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 131,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11900747_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11900747_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015003.xml",
+      "name": "Ninja do Clã Sarutobi",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900747_outdoor.swf",
+      "hostile": false,
+      "position": "1362, 2085"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-do-cla-sarutobi-11900747/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-do-cla-sarutobi-11900747/preview.png"
+}

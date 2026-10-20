@@ -1,0 +1,887 @@
+{
+  "id": "11004301",
+  "slug": "baki-11004301",
+  "name": "Baki",
+  "aliases": [
+    "Baki",
+    "Clone de Baki"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2",
+    "6"
+  ],
+  "hostile": true,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "94079cec5afcc7152c52069edb3a1dbe3f6fd7de45f4dc7d34c1dc49cc27282b",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_2": {
+          "url": "/assets/characters/baki-11004301/world/idle_2.png",
+          "frameWidth": 38,
+          "frameHeight": 141,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5789473684210527,
+            0.9219858156028369
+          ],
+          "referenceHeight": 137,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/characters/baki-11004301/world/idle_0.png",
+          "frameWidth": 52,
+          "frameHeight": 140,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5192307692307693,
+            0.9214285714285714
+          ],
+          "referenceHeight": 136,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/characters/baki-11004301/world/idle_1.png",
+          "frameWidth": 41,
+          "frameHeight": 143,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5365853658536586,
+            0.9020979020979021
+          ],
+          "referenceHeight": 139,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/characters/baki-11004301/world/idle_3.png",
+          "frameWidth": 52,
+          "frameHeight": 138,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5384615384615384,
+            0.9492753623188406
+          ],
+          "referenceHeight": 134,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/characters/baki-11004301/world/idle_4.png",
+          "frameWidth": 52,
+          "frameHeight": 139,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4807692307692308,
+            0.9424460431654677
+          ],
+          "referenceHeight": 135,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/characters/baki-11004301/world/idle_5.png",
+          "frameWidth": 52,
+          "frameHeight": 138,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46153846153846156,
+            0.9492753623188406
+          ],
+          "referenceHeight": 134,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/characters/baki-11004301/world/idle_6.png",
+          "frameWidth": 38,
+          "frameHeight": 141,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.42105263157894735,
+            0.9219858156028369
+          ],
+          "referenceHeight": 137,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/characters/baki-11004301/world/idle_7.png",
+          "frameWidth": 41,
+          "frameHeight": 143,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4634146341463415,
+            0.9020979020979021
+          ],
+          "referenceHeight": 139,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/characters/baki-11004301/world/run_0.png",
+          "frameWidth": 85,
+          "frameHeight": 122,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5294117647058824,
+            0.819672131147541
+          ],
+          "referenceHeight": 94,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/characters/baki-11004301/world/run_1.png",
+          "frameWidth": 112,
+          "frameHeight": 120,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.8666666666666667
+          ],
+          "referenceHeight": 93,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/characters/baki-11004301/world/run_2.png",
+          "frameWidth": 144,
+          "frameHeight": 114,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4930555555555556,
+            0.9298245614035088
+          ],
+          "referenceHeight": 97,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/characters/baki-11004301/world/run_3.png",
+          "frameWidth": 111,
+          "frameHeight": 132,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5045045045045045,
+            0.8939393939393939
+          ],
+          "referenceHeight": 113,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/characters/baki-11004301/world/run_4.png",
+          "frameWidth": 85,
+          "frameHeight": 142,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.47058823529411764,
+            0.8732394366197183
+          ],
+          "referenceHeight": 122,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/characters/baki-11004301/world/run_5.png",
+          "frameWidth": 111,
+          "frameHeight": 132,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4954954954954955,
+            0.8939393939393939
+          ],
+          "referenceHeight": 113,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/characters/baki-11004301/world/run_6.png",
+          "frameWidth": 144,
+          "frameHeight": 114,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5069444444444444,
+            0.9298245614035088
+          ],
+          "referenceHeight": 97,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/characters/baki-11004301/world/run_7.png",
+          "frameWidth": 112,
+          "frameHeight": 120,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.8666666666666667
+          ],
+          "referenceHeight": 93,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 136,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/characters/baki-11004301/battle/A_1hit.png",
+          "frameWidth": 85,
+          "frameHeight": 192,
+          "frames": 6,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            3,
+            3,
+            1,
+            1,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4823529411764706,
+            0.9635416666666666
+          ],
+          "referenceHeight": 187,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/characters/baki-11004301/battle/C_dead.png",
+          "frameWidth": 127,
+          "frameHeight": 187,
+          "frames": 7,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.31496062992125984,
+            0.9572192513368984
+          ],
+          "referenceHeight": 151,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/characters/baki-11004301/battle/C_idle.png",
+          "frameWidth": 91,
+          "frameHeight": 191,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.37362637362637363,
+            0.9633507853403142
+          ],
+          "referenceHeight": 187,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/characters/baki-11004301/battle/SP_skill1.png",
+          "frameWidth": 161,
+          "frameHeight": 201,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.2546583850931677,
+            0.9552238805970149
+          ],
+          "referenceHeight": 189,
+          "status": "partial",
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        "SP_skill2": {
+          "url": "/assets/characters/baki-11004301/battle/SP_skill2.png",
+          "frameWidth": 177,
+          "frameHeight": 200,
+          "frames": 20,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            13,
+            13,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            15,
+            16,
+            17,
+            17,
+            17,
+            17,
+            17,
+            17,
+            17,
+            17,
+            17,
+            17,
+            18,
+            18,
+            19,
+            19
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.2937853107344633,
+            0.945
+          ],
+          "referenceHeight": 189,
+          "status": "partial",
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        }
+      },
+      "referenceHeight": 187,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "SP_skill1",
+          "missing": [],
+          "unsupported": [
+            "extname"
+          ],
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        {
+          "action": "SP_skill2",
+          "missing": [],
+          "unsupported": [
+            "extname"
+          ],
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        }
+      ],
+      "externalEffects": [
+        "yingzi(1).png"
+      ]
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11004301_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11004301_outdoor.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11004301.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\11004301.png"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/11004301.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11004301.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2341001.xml",
+      "name": "Baki",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11004301_outdoor.swf",
+      "hostile": true,
+      "position": "1032, 1905"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene4041001.xml",
+      "name": "Baki",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11004301_outdoor.swf",
+      "hostile": true,
+      "position": "1247, 1602"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene4041001.xml",
+      "name": "Baki",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11004301_outdoor.swf",
+      "hostile": true,
+      "position": "2651, 1173"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015008.xml",
+      "name": "Baki",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/11004301_outdoor.swf",
+      "hostile": false,
+      "position": "2162, 2147"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2994001.xml",
+      "name": "Clone de Baki",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11004301_outdoor.swf",
+      "hostile": false,
+      "position": "730, 791"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2994001.xml",
+      "name": "Baki",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11004301_outdoor.swf",
+      "hostile": false,
+      "position": "1857, 965"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2011001.xml",
+      "name": "Baki",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11004301_outdoor.swf",
+      "hostile": false,
+      "position": "2024, 2427"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2011001.xml",
+      "name": "Baki",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/11004301_outdoor.swf",
+      "hostile": false,
+      "position": "839, 616"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1003001.xml",
+      "name": "Baki",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/11004301_outdoor.swf",
+      "hostile": false,
+      "position": "504, 2644"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2311001.xml",
+      "name": "Clone de Baki",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11004301_outdoor.swf",
+      "hostile": true,
+      "position": "1810, 1647"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Baki",
+      "type": null,
+      "resource": "assets/battle/role/left/11004301.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/characters/baki-11004301/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": true,
+    "reason": "Caminhada em oito direções, ataque, queda e especial preservados.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "playable",
+  "reviewCategory": null,
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Baki",
+    "title": "",
+    "type": "0",
+    "artisticId": "11004301",
+    "levelType": "2",
+    "series": "41",
+    "starLevel": "3"
+  },
+  "manifestUrl": "/assets/characters/baki-11004301/manifest.json",
+  "preview": "/assets/characters/baki-11004301/preview.png"
+}

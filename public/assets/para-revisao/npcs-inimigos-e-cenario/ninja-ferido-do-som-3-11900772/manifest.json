@@ -1,0 +1,149 @@
+{
+  "id": "11900772",
+  "slug": "ninja-ferido-do-som-3-11900772",
+  "name": "Ninja ferido do Som 3",
+  "aliases": [
+    "Ninja ferido do Som 3"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "101"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "9eb640bcd5f7767023de47b5ad14efb00ede1688b322e2c68760c0b039ac6b8b",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-ferido-do-som-3-11900772/world/idle_0.png",
+          "frameWidth": 123,
+          "frameHeight": 56,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.44715447154471544,
+            0.6607142857142857
+          ],
+          "referenceHeight": 52,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-ferido-do-som-3-11900772/world/idle_1.png",
+          "frameWidth": 123,
+          "frameHeight": 56,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5528455284552846,
+            0.6607142857142857
+          ],
+          "referenceHeight": 52,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 52,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11900772_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11900772_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene1601003.xml",
+      "name": "Ninja ferido do Som 3",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900772_outdoor.swf",
+      "hostile": false,
+      "position": "1185, 1062"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1601003.xml",
+      "name": "Ninja ferido do Som 3",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900772_outdoor.swf",
+      "hostile": false,
+      "position": "1020, 1271"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2306001.xml",
+      "name": "Ninja ferido do Som 3",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900772_outdoor.swf",
+      "hostile": false,
+      "position": "1069, 614"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2311001.xml",
+      "name": "Ninja ferido do Som 3",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900772_outdoor.swf",
+      "hostile": false,
+      "position": "880, 1338"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-ferido-do-som-3-11900772/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-ferido-do-som-3-11900772/preview.png"
+}

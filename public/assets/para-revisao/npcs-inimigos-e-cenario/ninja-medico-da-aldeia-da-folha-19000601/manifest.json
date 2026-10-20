@@ -1,0 +1,848 @@
+{
+  "id": "19000601",
+  "slug": "ninja-medico-da-aldeia-da-folha-19000601",
+  "name": "Ninja Médico da Aldeia da Folha",
+  "aliases": [
+    "Ninja da Aldeia da Folha",
+    "Kunoichi da Aldeia da Folha",
+    "Membro da Unidade Médica da Folha",
+    "Ninja Médico da Aldeia da Folha"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "101",
+    "2"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "f19618318134426dfd52e5271d3547d3cbc710e7ec840babb6bc9c7598109b46",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/world/idle_0.png",
+          "frameWidth": 51,
+          "frameHeight": 126,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49019607843137253,
+            0.9365079365079365
+          ],
+          "referenceHeight": 122,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/world/idle_1.png",
+          "frameWidth": 38,
+          "frameHeight": 127,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4473684210526316,
+            0.9291338582677166
+          ],
+          "referenceHeight": 123,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/world/idle_2.png",
+          "frameWidth": 32,
+          "frameHeight": 126,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46875,
+            0.9365079365079365
+          ],
+          "referenceHeight": 122,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/world/idle_3.png",
+          "frameWidth": 43,
+          "frameHeight": 125,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46511627906976744,
+            0.952
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/world/idle_4.png",
+          "frameWidth": 51,
+          "frameHeight": 126,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5098039215686274,
+            0.9523809523809523
+          ],
+          "referenceHeight": 122,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/world/run_0.png",
+          "frameWidth": 64,
+          "frameHeight": 110,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.515625,
+            0.7818181818181819
+          ],
+          "referenceHeight": 87,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/world/idle_5.png",
+          "frameWidth": 43,
+          "frameHeight": 125,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5348837209302325,
+            0.952
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/world/idle_6.png",
+          "frameWidth": 32,
+          "frameHeight": 126,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.53125,
+            0.9365079365079365
+          ],
+          "referenceHeight": 122,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/world/idle_7.png",
+          "frameWidth": 38,
+          "frameHeight": 127,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5526315789473685,
+            0.9291338582677166
+          ],
+          "referenceHeight": 123,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/world/run_1.png",
+          "frameWidth": 95,
+          "frameHeight": 106,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5473684210526316,
+            0.839622641509434
+          ],
+          "referenceHeight": 89,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/world/run_2.png",
+          "frameWidth": 119,
+          "frameHeight": 105,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5462184873949579,
+            0.9333333333333333
+          ],
+          "referenceHeight": 96,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/world/run_3.png",
+          "frameWidth": 89,
+          "frameHeight": 128,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.550561797752809,
+            0.875
+          ],
+          "referenceHeight": 110,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/world/run_4.png",
+          "frameWidth": 64,
+          "frameHeight": 139,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.484375,
+            0.8561151079136691
+          ],
+          "referenceHeight": 118,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/world/run_5.png",
+          "frameWidth": 89,
+          "frameHeight": 128,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.449438202247191,
+            0.875
+          ],
+          "referenceHeight": 110,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/world/run_6.png",
+          "frameWidth": 119,
+          "frameHeight": 105,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.453781512605042,
+            0.9333333333333333
+          ],
+          "referenceHeight": 96,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/world/run_7.png",
+          "frameWidth": 95,
+          "frameHeight": 106,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45263157894736844,
+            0.839622641509434
+          ],
+          "referenceHeight": 89,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 122,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "C_dead": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/battle/C_dead.png",
+          "frameWidth": 80,
+          "frameHeight": 178,
+          "frames": 7,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3875,
+            0.9269662921348315
+          ],
+          "referenceHeight": 111,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/battle/C_idle.png",
+          "frameWidth": 92,
+          "frameHeight": 149,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4891304347826087,
+            0.959731543624161
+          ],
+          "referenceHeight": 142,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/battle/SP_skill1.png",
+          "frameWidth": 91,
+          "frameHeight": 159,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            1,
+            1,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5054945054945055,
+            0.9433962264150944
+          ],
+          "referenceHeight": 146,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/battle/SP_skill2.png",
+          "frameWidth": 91,
+          "frameHeight": 159,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            1,
+            1,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5054945054945055,
+            0.9433962264150944
+          ],
+          "referenceHeight": 146,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 142,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/19000601_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\19000601_outdoor.swf"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/19000601.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\19000601.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/19000601.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\19000601.png"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015002.xml",
+      "name": "Ninja da Aldeia da Folha",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/19000601_outdoor.swf",
+      "hostile": false,
+      "position": "2329, 431"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2816001.xml",
+      "name": "Kunoichi da Aldeia da Folha",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/19000601_outdoor.swf",
+      "hostile": false,
+      "position": "957, 645"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2816001.xml",
+      "name": "Kunoichi da Aldeia da Folha",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/19000601_outdoor.swf",
+      "hostile": false,
+      "position": "2398, 1553"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2816001.xml",
+      "name": "Kunoichi da Aldeia da Folha",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/19000601_outdoor.swf",
+      "hostile": false,
+      "position": "1532, 2227"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2816001.xml",
+      "name": "Kunoichi da Aldeia da Folha",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/19000601_outdoor.swf",
+      "hostile": false,
+      "position": "1099, 2437"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2946001.xml",
+      "name": "Membro da Unidade Médica da Folha",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000601_outdoor.swf",
+      "hostile": false,
+      "position": "642, 2150"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2946001.xml",
+      "name": "Membro da Unidade Médica da Folha",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19000601_outdoor.swf",
+      "hostile": false,
+      "position": "538, 2075"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2311001.xml",
+      "name": "Kunoichi da Aldeia da Folha",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/19000601_outdoor.swf",
+      "hostile": false,
+      "position": "1150, 903"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2311001.xml",
+      "name": "Kunoichi da Aldeia da Folha",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/19000601_outdoor.swf",
+      "hostile": false,
+      "position": "831, 1278"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2311001.xml",
+      "name": "Kunoichi da Aldeia da Folha",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/19000601_outdoor.swf",
+      "hostile": false,
+      "position": "1977, 1464"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2311001.xml",
+      "name": "Kunoichi da Aldeia da Folha",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/19000601_outdoor.swf",
+      "hostile": false,
+      "position": "2187, 1930"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2311001.xml",
+      "name": "Kunoichi da Aldeia da Folha",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/19000601_outdoor.swf",
+      "hostile": false,
+      "position": "1750, 1964"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Ninja Médico da Aldeia da Folha",
+      "type": null,
+      "resource": "assets/battle/role/left/19000601.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "battle/A_1hit"
+    ],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Ninja Médico da Aldeia da Folha",
+    "title": "",
+    "type": "0",
+    "artisticId": "19000601",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-da-aldeia-da-folha-19000601/preview.png"
+}

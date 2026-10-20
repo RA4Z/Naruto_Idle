@@ -1,0 +1,126 @@
+{
+  "id": "11900837",
+  "slug": "sasuke-11900837",
+  "name": "Sasuke",
+  "aliases": [
+    "Sasuke"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "60cc45f087db2e514d116690b2a32037dfa2e57b237911a23591f2f577b675fc",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/sasuke-11900837/world/idle_1.png",
+          "frameWidth": 69,
+          "frameHeight": 74,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.7101449275362319,
+            0.7162162162162162
+          ],
+          "referenceHeight": 70,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/sasuke-11900837/world/idle_1.png",
+          "frameWidth": 69,
+          "frameHeight": 74,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.7101449275362319,
+            0.7162162162162162
+          ],
+          "referenceHeight": 70,
+          "status": "ready",
+          "externalEffects": [],
+          "sourceAction": "idle_1"
+        }
+      },
+      "referenceHeight": 70,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11900837_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11900837_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2416002.xml",
+      "name": "Sasuke",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11900837_outdoor.swf",
+      "hostile": false,
+      "position": "1359, 747"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/sasuke-11900837/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/sasuke-11900837/preview.png"
+}

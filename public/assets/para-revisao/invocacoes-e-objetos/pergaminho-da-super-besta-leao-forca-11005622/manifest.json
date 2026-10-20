@@ -1,0 +1,173 @@
+{
+  "id": "11005622",
+  "slug": "pergaminho-da-super-besta-leao-forca-11005622",
+  "name": "Pergaminho da Super Besta: Leão (Força)",
+  "aliases": [
+    "Pergaminho da Super Besta: Leão (Força)"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "abedb33ab245b652c55518d799343a286c0c1f333ede8de87ffd10bbe3d55b67",
+  "modes": {
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/para-revisao/invocacoes-e-objetos/pergaminho-da-super-besta-leao-forca-11005622/battle/A_1hit.png",
+          "frameWidth": 257,
+          "frameHeight": 189,
+          "frames": 9,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5291828793774319,
+            0.8835978835978836
+          ],
+          "referenceHeight": 120,
+          "status": "partial",
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        "C_idle": {
+          "url": "/assets/para-revisao/invocacoes-e-objetos/pergaminho-da-super-besta-leao-forca-11005622/battle/C_idle.png",
+          "frameWidth": 188,
+          "frameHeight": 120,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5851063829787234,
+            0.8333333333333334
+          ],
+          "referenceHeight": 112,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 112,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "A_1hit",
+          "missing": [],
+          "unsupported": [
+            "extname"
+          ],
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        {
+          "action": "C_dead",
+          "reason": "no-resolved-bitmaps",
+          "missing": []
+        }
+      ],
+      "externalEffects": [
+        "yingzi(1).png"
+      ]
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/11005622.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11005622.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Pergaminho da Super Besta: Leão (Força)",
+      "type": null,
+      "resource": "assets/battle/role/left/11005622.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": false,
+    "companion": false,
+    "enemy": true
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "Invocação, clone ou objeto auxiliar na configuração original.",
+    "missingActions": [
+      "world/idle_0",
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "invocacoes-e-objetos",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Pergaminho da Super Besta: Leão (Força)",
+    "title": "",
+    "type": "1",
+    "artisticId": "11005622",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/invocacoes-e-objetos/pergaminho-da-super-besta-leao-forca-11005622/manifest.json",
+  "preview": "/assets/para-revisao/invocacoes-e-objetos/pergaminho-da-super-besta-leao-forca-11005622/preview.png"
+}

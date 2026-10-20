@@ -1,0 +1,150 @@
+{
+  "id": "11900829",
+  "slug": "ninja-ferido-da-areia-11900829",
+  "name": "Ninja ferido da Areia",
+  "aliases": [
+    "Ninja ferido da Areia"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "101"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "b8489c05f60e886b5e5ba5fa4f0c0227721b59cfef1218120748b6dd6e495f81",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-ferido-da-areia-11900829/world/idle_1.png",
+          "frameWidth": 81,
+          "frameHeight": 86,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6049382716049383,
+            0.7790697674418605
+          ],
+          "referenceHeight": 82,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-ferido-da-areia-11900829/world/idle_5.png",
+          "frameWidth": 94,
+          "frameHeight": 57,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.2553191489361702,
+            0.5789473684210527
+          ],
+          "referenceHeight": 53,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-ferido-da-areia-11900829/world/idle_1.png",
+          "frameWidth": 81,
+          "frameHeight": 86,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6049382716049383,
+            0.7790697674418605
+          ],
+          "referenceHeight": 82,
+          "status": "ready",
+          "externalEffects": [],
+          "sourceAction": "idle_1"
+        }
+      },
+      "referenceHeight": 82,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11900829_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11900829_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2011001.xml",
+      "name": "Ninja ferido da Areia",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900829_outdoor.swf",
+      "hostile": false,
+      "position": "746, 575"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2011001.xml",
+      "name": "Ninja ferido da Areia",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900829_outdoor.swf",
+      "hostile": false,
+      "position": "447, 846"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-ferido-da-areia-11900829/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-ferido-da-areia-11900829/preview.png"
+}

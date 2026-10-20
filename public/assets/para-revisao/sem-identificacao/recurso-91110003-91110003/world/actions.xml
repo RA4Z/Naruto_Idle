@@ -1,0 +1,25 @@
+<actions frameRate="24">
+  <action id="0" name="idle_0">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="active_1">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0"/>
+      </frame>
+      <frame index="1" length="2">
+        <element assetId="1"/>
+      </frame>
+      <frame index="3" length="2">
+        <element assetId="2"/>
+      </frame>
+    </layer>
+  </action>
+  <asset id="0" assetName="1.png" x="-52" y="-36" className="Asset_0" width="90" height="108"/>
+  <asset id="1" assetName="2.png" x="-59" y="-49" className="Asset_1" width="96" height="121"/>
+  <asset id="2" assetName="3.png" x="-75" y="-46" className="Asset_2" width="112" height="118"/>
+</actions>

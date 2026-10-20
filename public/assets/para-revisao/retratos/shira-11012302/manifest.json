@@ -1,0 +1,82 @@
+{
+  "id": "11012302",
+  "slug": "shira-11012302",
+  "name": "Shira",
+  "aliases": [
+    "Shira"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "650aadb80b92f8d4891e062d651c7c68750eb8d8c917644e1a082a8c3f833d48",
+  "modes": {},
+  "sources": {
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11012302.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\11012302.png"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Shira",
+      "type": null,
+      "resource": null,
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/para-revisao/retratos/shira-11012302/portrait.png",
+  "capabilities": {
+    "npc": false,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "portrait-only",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "Retrato isolado; animações indisponíveis.",
+    "missingActions": [
+      "world/idle_0",
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "retratos",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Shira",
+    "title": "",
+    "type": "0",
+    "artisticId": "11012301",
+    "levelType": "2",
+    "series": "252",
+    "starLevel": "3"
+  },
+  "manifestUrl": "/assets/para-revisao/retratos/shira-11012302/manifest.json"
+}

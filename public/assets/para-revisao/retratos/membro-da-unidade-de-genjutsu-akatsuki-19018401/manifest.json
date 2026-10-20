@@ -1,0 +1,82 @@
+{
+  "id": "19018401",
+  "slug": "membro-da-unidade-de-genjutsu-akatsuki-19018401",
+  "name": "Membro da Unidade de Genjutsu",
+  "aliases": [
+    "Membro da Unidade de Genjutsu"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "4157c8f6e04c952ba1f8578c00f3cb69ef7257a80f6efe89596e766ada8008da",
+  "modes": {},
+  "sources": {
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/19018401.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\19018401.png"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Membro da Unidade de Genjutsu",
+      "type": null,
+      "resource": null,
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/para-revisao/retratos/membro-da-unidade-de-genjutsu-akatsuki-19018401/portrait.png",
+  "capabilities": {
+    "npc": false,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "portrait-only",
+  "variant": "Akatsuki",
+  "organization": {
+    "eligible": false,
+    "reason": "Retrato isolado; animações indisponíveis.",
+    "missingActions": [
+      "world/idle_0",
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "retratos",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Membro da Unidade de Genjutsu",
+    "title": "Akatsuki",
+    "type": "0",
+    "artisticId": "19018401",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/retratos/membro-da-unidade-de-genjutsu-akatsuki-19018401/manifest.json"
+}

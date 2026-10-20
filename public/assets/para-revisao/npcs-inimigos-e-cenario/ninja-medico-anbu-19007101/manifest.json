@@ -1,0 +1,696 @@
+{
+  "id": "19007101",
+  "slug": "ninja-medico-anbu-19007101",
+  "name": "Ninja Médico Anbu",
+  "aliases": [
+    "Ninja Médico Anbu"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "4441ecc93f8e2e194131d7179bcbb82dfedca11de81c3258c346a17bd8394bf5",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/world/idle_0.png",
+          "frameWidth": 47,
+          "frameHeight": 122,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.48936170212765956,
+            0.9426229508196722
+          ],
+          "referenceHeight": 118,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/world/idle_1.png",
+          "frameWidth": 36,
+          "frameHeight": 123,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4166666666666667,
+            0.9349593495934959
+          ],
+          "referenceHeight": 119,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/world/idle_2.png",
+          "frameWidth": 31,
+          "frameHeight": 121,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45161290322580644,
+            0.9421487603305785
+          ],
+          "referenceHeight": 117,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/world/idle_3.png",
+          "frameWidth": 41,
+          "frameHeight": 120,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.43902439024390244,
+            0.95
+          ],
+          "referenceHeight": 116,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/world/idle_4.png",
+          "frameWidth": 47,
+          "frameHeight": 120,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5106382978723404,
+            0.95
+          ],
+          "referenceHeight": 116,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/world/idle_5.png",
+          "frameWidth": 41,
+          "frameHeight": 120,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5609756097560976,
+            0.95
+          ],
+          "referenceHeight": 116,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/world/idle_6.png",
+          "frameWidth": 31,
+          "frameHeight": 121,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5483870967741935,
+            0.9421487603305785
+          ],
+          "referenceHeight": 117,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/world/idle_7.png",
+          "frameWidth": 36,
+          "frameHeight": 123,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5833333333333334,
+            0.9349593495934959
+          ],
+          "referenceHeight": 119,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/world/run_2.png",
+          "frameWidth": 102,
+          "frameHeight": 103,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5196078431372549,
+            0.941747572815534
+          ],
+          "referenceHeight": 95,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/world/run_0.png",
+          "frameWidth": 61,
+          "frameHeight": 100,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5081967213114754,
+            0.89
+          ],
+          "referenceHeight": 84,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/world/run_3.png",
+          "frameWidth": 82,
+          "frameHeight": 126,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5365853658536586,
+            0.873015873015873
+          ],
+          "referenceHeight": 110,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/world/run_4.png",
+          "frameWidth": 62,
+          "frameHeight": 130,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4838709677419355,
+            0.9307692307692308
+          ],
+          "referenceHeight": 114,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/world/run_5.png",
+          "frameWidth": 81,
+          "frameHeight": 125,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4444444444444444,
+            0.88
+          ],
+          "referenceHeight": 110,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/world/run_6.png",
+          "frameWidth": 104,
+          "frameHeight": 103,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.941747572815534
+          ],
+          "referenceHeight": 95,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/world/run_1.png",
+          "frameWidth": 85,
+          "frameHeight": 96,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5294117647058824,
+            0.8958333333333334
+          ],
+          "referenceHeight": 85,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/world/run_7.png",
+          "frameWidth": 84,
+          "frameHeight": 94,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4880952380952381,
+            0.8936170212765957
+          ],
+          "referenceHeight": 85,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 118,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "C_dead": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/battle/C_dead.png",
+          "frameWidth": 80,
+          "frameHeight": 167,
+          "frames": 7,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4,
+            0.9341317365269461
+          ],
+          "referenceHeight": 106,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/battle/C_idle.png",
+          "frameWidth": 88,
+          "frameHeight": 145,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5113636363636364,
+            0.9655172413793104
+          ],
+          "referenceHeight": 138,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/battle/SP_skill1.png",
+          "frameWidth": 90,
+          "frameHeight": 155,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            1,
+            1,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5111111111111111,
+            0.9483870967741935
+          ],
+          "referenceHeight": 142,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/battle/SP_skill2.png",
+          "frameWidth": 90,
+          "frameHeight": 155,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            1,
+            1,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5111111111111111,
+            0.9483870967741935
+          ],
+          "referenceHeight": 142,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 138,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/19007101.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\19007101.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/19007101.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\19007101.png"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/19007101_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\19007101_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Ninja Médico Anbu",
+      "type": null,
+      "resource": "assets/battle/role/left/19007101.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "battle/A_1hit"
+    ],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Ninja Médico Anbu",
+    "title": "",
+    "type": "0",
+    "artisticId": "19007101",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/ninja-medico-anbu-19007101/preview.png"
+}

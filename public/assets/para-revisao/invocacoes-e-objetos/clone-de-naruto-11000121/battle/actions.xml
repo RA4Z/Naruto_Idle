@@ -1,0 +1,149 @@
+<actions frameRate="24">
+  <action id="0" name="C_idle">
+    <layer id="0">
+      <frame index="0" length="11">
+        <element assetId="0"/>
+      </frame>
+      <frame index="11" length="1">
+        <element assetId="0" scaleX="0.96"/>
+      </frame>
+      <frame index="12" length="18">
+        <element assetId="0"/>
+      </frame>
+      <frame index="30" length="1">
+        <element assetId="0" scaleX="0.96"/>
+      </frame>
+      <frame index="31" length="1">
+        <element assetId="0"/>
+      </frame>
+      <frame index="32" length="1">
+        <element assetId="0" scaleX="0.96"/>
+      </frame>
+      <frame index="33" length="26">
+        <element assetId="0"/>
+      </frame>
+      <frame index="59" length="1">
+        <element assetId="0" scaleY="0.96"/>
+      </frame>
+      <frame index="60" length="2">
+        <element assetId="0"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="1" name="C_land">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="C_entry">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="C_beatback_dead">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="C_defaultAttackPoint">
+    <layer id="0">
+      <frame index="0" length="1">
+        <pointElement x="0" y="0"/>
+      </frame>
+    </layer>
+    <layer id="0">
+      <frame index="0" length="1"/>
+    </layer>
+  </action>
+  <action id="0" name="C_defaultDefencePoint">
+    <layer id="0">
+      <frame index="0" length="1">
+        <pointElement x="0" y="0"/>
+      </frame>
+    </layer>
+    <layer id="0">
+      <frame index="0" length="1"/>
+    </layer>
+  </action>
+  <action id="0" name="D_HPSite">
+    <layer id="0">
+      <frame index="0" length="1">
+        <pointElement x="0" y="-78"/>
+      </frame>
+    </layer>
+    <layer id="0">
+      <frame index="0" length="1"/>
+    </layer>
+  </action>
+  <action id="0" name="C_exeunt">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element assetId="0"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="callupShareEffect1">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element y="-116" assetId="1"/>
+      </frame>
+      <frame index="1" length="1">
+        <element y="-116" assetId="2"/>
+      </frame>
+      <frame index="2" length="1">
+        <element y="-116" assetId="3"/>
+      </frame>
+      <frame index="3" length="1">
+        <element y="-116" assetId="4"/>
+      </frame>
+      <frame index="4" length="1">
+        <element y="-116" assetId="5"/>
+      </frame>
+      <frame index="5" length="1">
+        <element y="-116" assetId="6"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="C_dead">
+    <layer id="0">
+      <frame index="0" length="1">
+        <element y="-116" assetId="1"/>
+      </frame>
+      <frame index="1" length="1">
+        <element y="-116" assetId="2"/>
+      </frame>
+      <frame index="2" length="1">
+        <element y="-116" assetId="3"/>
+      </frame>
+      <frame index="3" length="1">
+        <element y="-116" assetId="4"/>
+      </frame>
+      <frame index="4" length="1">
+        <element y="-116" assetId="5"/>
+      </frame>
+      <frame index="5" length="1">
+        <element y="-116" assetId="6"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="SP_bati">
+    <layer id="0">
+      <frame index="0" length="1" event="hit">
+        <element assetId="0"/>
+      </frame>
+    </layer>
+  </action>
+  <asset id="0" assetName="1211.png" x="-43" y="-30" className="Asset_0" width="125" height="43"/>
+  <asset id="1" assetName="FS__00001.png" x="-65" y="-58" className="Asset_1" width="150" height="134"/>
+  <asset id="2" assetName="FS__00002.png" x="-88" y="-65" className="Asset_2" width="201" height="167"/>
+  <asset id="3" assetName="FS__00003.png" x="-75" y="-65" className="Asset_3" width="139" height="142"/>
+  <asset id="4" assetName="FS__00004.png" x="-85" y="-76" className="Asset_4" width="156" height="162"/>
+  <asset id="5" assetName="FS__00005.png" x="-90" y="-82" className="Asset_5" width="161" height="173"/>
+  <asset id="6" assetName="FS__00007.png" x="-13" y="-16" className="Asset_6" width="35" height="32"/>
+</actions>

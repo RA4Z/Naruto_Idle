@@ -1,0 +1,90 @@
+{
+  "validatedAt": "2026-10-20T00:21:51.845221+00:00",
+  "catalogue": {
+    "discovered": 1466,
+    "processed": 1466,
+    "statuses": {
+      "blocked": 11,
+      "ready": 788,
+      "partial": 544,
+      "portrait-only": 123
+    },
+    "capabilities": {
+      "npc": 1267,
+      "companion": 930,
+      "enemy": 874
+    },
+    "configurationOccurrences": 7229,
+    "identifiedBySourceOrVisualReview": 902,
+    "usableInVillage": 1330,
+    "playableAnimationSets": 312,
+    "reviewCollection": 1154,
+    "globalCatalog": "/assets/catalog/entities.json"
+  },
+  "tests": {
+    "typescriptUnitTests": 12,
+    "losslessDecoderTests": 3,
+    "browserAndAssets": {
+      "entity-assets-validation.json": "passed",
+      "entity-visibility-validation.json": "passed",
+      "entity-presentation-validation.json": "passed",
+      "entity-cache-validation.json": "passed",
+      "entity-lifecycle-validation.json": "passed",
+      "entity-variant-validation.json": "passed",
+      "browser-validation.json": "passed",
+      "browser-edge-validation.json": "passed"
+    }
+  },
+  "knownLimits": {
+    "entriesWithoutUsableRole": 136,
+    "vectorSummonsWithIdlePoseOnly": 5,
+    "sourceIdentityIsNotFullVisualVerification": true
+  },
+  "sourceActions": {
+    "naruto": "SP_skill1",
+    "sasuke": "SP_skill1",
+    "sakura": "SP_skill2"
+  },
+  "audioFiles": 61,
+  "characterOrganization": {
+    "entities": 1466,
+    "playableAnimationSets": 312,
+    "review": 1154,
+    "assetFilesPreserved": 22418,
+    "assetBytesPreserved": 2149497698,
+    "validAssetReferences": 20325,
+    "collectionsDisjoint": true,
+    "classificationRecheckedAgainstOriginalConfigs": true,
+    "errors": [],
+    "browser": "reports/character-browser-validation.json",
+    "build": "passed",
+    "typescriptUnitTests": 12,
+    "starterPresentationRegression": "passed for Naruto, Sasuke and Sakura",
+    "lifecycleRegression": "passed",
+    "mainFolder": "public/assets/characters",
+    "reviewFolder": "public/assets/para-revisao",
+    "notes": "Animation suitability only; protagonist selection remains the three starters. Individual jutsu and voice integration for other variants remains pending."
+  },
+  "characterOrganizationValidatedAt": "2026-10-20T00:49:44.660548+00:00",
+  "worldAndAdmin": {
+    "safeLobby": true,
+    "npcsRoam": true,
+    "speed": 96,
+    "zoom": 3.1,
+    "fullBodyPreviews": true,
+    "optionalParty": true,
+    "noDuplicateResident": true,
+    "fourMapsAndReturn": true,
+    "sixRoamingEnemiesPerMap": true,
+    "combatAndJutsu": true,
+    "saves": true,
+    "mobile": true,
+    "adminLogin": true,
+    "adminTabs": true,
+    "animatedBodyViewer": true,
+    "adminLogout": true,
+    "errors": [],
+    "missingAssets": []
+  },
+  "worldAndAdminValidatedAt": "2026-10-20T01:26:12.049049+00:00"
+}

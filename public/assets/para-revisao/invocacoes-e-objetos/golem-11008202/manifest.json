@@ -1,0 +1,139 @@
+{
+  "id": "11008202",
+  "slug": "golem-11008202",
+  "name": "Golem",
+  "aliases": [
+    "Golem"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "4374b033f4abcc8bf8a36448b80cd8a3b295bacbc6d260ee1cdca9c11ff348e9",
+  "modes": {
+    "battle": {
+      "animations": {
+        "C_idle": {
+          "url": "/assets/para-revisao/invocacoes-e-objetos/golem-11008202/battle/C_idle.png",
+          "frameWidth": 169,
+          "frameHeight": 258,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.47928994082840237,
+            0.9302325581395349
+          ],
+          "referenceHeight": 244,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 244,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "C_dead",
+          "reason": "no-resolved-bitmaps",
+          "missing": []
+        }
+      ],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/11008202.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11008202.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Golem",
+      "type": null,
+      "resource": "assets/battle/role/left/11008202.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": false,
+    "companion": false,
+    "enemy": true
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "Invocação, clone ou objeto auxiliar na configuração original.",
+    "missingActions": [
+      "world/idle_0",
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "invocacoes-e-objetos",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Golem",
+    "title": "",
+    "type": "1",
+    "artisticId": "11008202",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/invocacoes-e-objetos/golem-11008202/manifest.json",
+  "preview": "/assets/para-revisao/invocacoes-e-objetos/golem-11008202/preview.png"
+}

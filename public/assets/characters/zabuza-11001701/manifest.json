@@ -1,0 +1,956 @@
+{
+  "id": "11001701",
+  "slug": "zabuza-11001701",
+  "name": "Zabuza",
+  "aliases": [
+    "Clone de água de Zabuza",
+    "Zabuza",
+    "【波之国大桥】卡卡西与再不斩"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2",
+    "4"
+  ],
+  "hostile": true,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "509761492c9ffc341bfe5c5edd53d13ef63361742f21ae2392cbca8d9160edde",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_1": {
+          "url": "/assets/characters/zabuza-11001701/world/idle_1.png",
+          "frameWidth": 37,
+          "frameHeight": 176,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.43243243243243246,
+            0.9090909090909091
+          ],
+          "referenceHeight": 172,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/characters/zabuza-11001701/world/idle_0.png",
+          "frameWidth": 63,
+          "frameHeight": 174,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.42857142857142855,
+            0.9252873563218391
+          ],
+          "referenceHeight": 170,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/characters/zabuza-11001701/world/idle_2.png",
+          "frameWidth": 51,
+          "frameHeight": 169,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5294117647058824,
+            0.9171597633136095
+          ],
+          "referenceHeight": 165,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/characters/zabuza-11001701/world/idle_3.png",
+          "frameWidth": 62,
+          "frameHeight": 157,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.532258064516129,
+            0.9490445859872612
+          ],
+          "referenceHeight": 153,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/characters/zabuza-11001701/world/idle_4.png",
+          "frameWidth": 63,
+          "frameHeight": 158,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5714285714285714,
+            0.9240506329113924
+          ],
+          "referenceHeight": 154,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/characters/zabuza-11001701/world/idle_5.png",
+          "frameWidth": 37,
+          "frameHeight": 161,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5675675675675675,
+            0.9130434782608695
+          ],
+          "referenceHeight": 157,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/characters/zabuza-11001701/world/idle_6.png",
+          "frameWidth": 50,
+          "frameHeight": 166,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.48,
+            0.9216867469879518
+          ],
+          "referenceHeight": 162,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/characters/zabuza-11001701/world/idle_7.png",
+          "frameWidth": 62,
+          "frameHeight": 166,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46774193548387094,
+            0.9578313253012049
+          ],
+          "referenceHeight": 162,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/characters/zabuza-11001701/world/run_0.png",
+          "frameWidth": 67,
+          "frameHeight": 120,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.417910447761194,
+            0.8916666666666667
+          ],
+          "referenceHeight": 94,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/characters/zabuza-11001701/world/run_1.png",
+          "frameWidth": 145,
+          "frameHeight": 105,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5586206896551724,
+            0.8952380952380953
+          ],
+          "referenceHeight": 82,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/characters/zabuza-11001701/world/run_2.png",
+          "frameWidth": 151,
+          "frameHeight": 117,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5894039735099338,
+            0.9487179487179487
+          ],
+          "referenceHeight": 105,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/characters/zabuza-11001701/world/run_3.png",
+          "frameWidth": 98,
+          "frameHeight": 143,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5306122448979592,
+            0.9230769230769231
+          ],
+          "referenceHeight": 134,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/characters/zabuza-11001701/world/run_4.png",
+          "frameWidth": 67,
+          "frameHeight": 154,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.582089552238806,
+            0.8831168831168831
+          ],
+          "referenceHeight": 141,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/characters/zabuza-11001701/world/run_5.png",
+          "frameWidth": 145,
+          "frameHeight": 132,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4413793103448276,
+            0.9090909090909091
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/characters/zabuza-11001701/world/run_6.png",
+          "frameWidth": 151,
+          "frameHeight": 105,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4105960264900662,
+            0.9333333333333333
+          ],
+          "referenceHeight": 94,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/characters/zabuza-11001701/world/run_7.png",
+          "frameWidth": 98,
+          "frameHeight": 120,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46938775510204084,
+            0.9
+          ],
+          "referenceHeight": 96,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 170,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/characters/zabuza-11001701/battle/A_1hit.png",
+          "frameWidth": 328,
+          "frameHeight": 226,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.2804878048780488,
+            0.9690265486725663
+          ],
+          "referenceHeight": 162,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/characters/zabuza-11001701/battle/C_dead.png",
+          "frameWidth": 125,
+          "frameHeight": 219,
+          "frames": 3,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.264,
+            0.9497716894977168
+          ],
+          "referenceHeight": 175,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/characters/zabuza-11001701/battle/C_idle.png",
+          "frameWidth": 74,
+          "frameHeight": 228,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4594594594594595,
+            0.9736842105263158
+          ],
+          "referenceHeight": 224,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/characters/zabuza-11001701/battle/SP_skill1.png",
+          "frameWidth": 164,
+          "frameHeight": 237,
+          "frames": 22,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            7,
+            8,
+            4,
+            4,
+            5,
+            3,
+            9,
+            8,
+            10,
+            4,
+            4,
+            4,
+            4,
+            11,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            16,
+            17,
+            17,
+            17,
+            17,
+            17,
+            17,
+            17,
+            17,
+            17,
+            17,
+            17,
+            17,
+            17,
+            17,
+            18,
+            18,
+            19,
+            19,
+            20,
+            21,
+            21,
+            21,
+            21,
+            21,
+            21,
+            21
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.43902439024390244,
+            0.9493670886075949
+          ],
+          "referenceHeight": 219,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/characters/zabuza-11001701/battle/SP_skill2.png",
+          "frameWidth": 108,
+          "frameHeight": 230,
+          "frames": 12,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            7,
+            8,
+            4,
+            5,
+            3,
+            9,
+            8,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            10,
+            11
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4722222222222222,
+            0.9652173913043478
+          ],
+          "referenceHeight": 221,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 224,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/11001701.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11001701.swf"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11001701_outdoor.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11001701.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\11001701.png"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene3022001.xml",
+      "name": "Clone de água de Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": true,
+      "position": "779, 1147"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3022001.xml",
+      "name": "Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": true,
+      "position": "1518, 693"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3022001.xml",
+      "name": "Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": true,
+      "position": "2483, 272"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3050001.xml",
+      "name": "Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": true,
+      "position": "762, 1135"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3023001.xml",
+      "name": "Clone de água de Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": true,
+      "position": "779, 1147"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3023001.xml",
+      "name": "Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": true,
+      "position": "1518, 693"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3023001.xml",
+      "name": "Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": true,
+      "position": "2483, 272"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2003001.xml",
+      "name": "Clone de água de Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": true,
+      "position": "900, 971"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2003001.xml",
+      "name": "Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": true,
+      "position": "707, 813"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2003001.xml",
+      "name": "Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": true,
+      "position": "805, 579"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene4022001.xml",
+      "name": "Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": true,
+      "position": "2640, 282"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2222001.xml",
+      "name": "Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": false,
+      "position": "247, 781"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2222001.xml",
+      "name": "Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": false,
+      "position": "369, 781"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2222001.xml",
+      "name": "Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": false,
+      "position": "491, 783"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3021001.xml",
+      "name": "Clone de água de Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": true,
+      "position": "779, 1147"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3021001.xml",
+      "name": "Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": true,
+      "position": "1518, 693"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3021001.xml",
+      "name": "Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": true,
+      "position": "2483, 272"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2856001.xml",
+      "name": "Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": true,
+      "position": "1256, 948"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2005001.xml",
+      "name": "Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": false,
+      "position": "2614, 2548"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3024001.xml",
+      "name": "Clone de água de Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": true,
+      "position": "779, 1147"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3024001.xml",
+      "name": "Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": true,
+      "position": "1518, 693"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3024001.xml",
+      "name": "Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": true,
+      "position": "2483, 272"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3002001.xml",
+      "name": "Clone de água de Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": true,
+      "position": "779, 1147"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3002001.xml",
+      "name": "Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": true,
+      "position": "1518, 693"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3002001.xml",
+      "name": "Zabuza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": true,
+      "position": "2483, 272"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2002001.xml",
+      "name": "【波之国大桥】卡卡西与再不斩",
+      "type": "4",
+      "resource": "assets/role/npc/scene/npcres/11001701_outdoor.swf",
+      "hostile": false,
+      "position": "1307, 692"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Zabuza",
+      "type": null,
+      "resource": "assets/battle/role/left/11001701.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/characters/zabuza-11001701/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": true,
+    "reason": "Caminhada em oito direções, ataque, queda e especial preservados.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "playable",
+  "reviewCategory": null,
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Zabuza",
+    "title": "",
+    "type": "0",
+    "artisticId": "11001701",
+    "levelType": "2",
+    "series": "59",
+    "starLevel": "3"
+  },
+  "manifestUrl": "/assets/characters/zabuza-11001701/manifest.json",
+  "preview": "/assets/characters/zabuza-11001701/preview.png"
+}

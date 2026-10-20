@@ -1,0 +1,715 @@
+{
+  "id": "11000831",
+  "slug": "shikamaru-chuunin-11000831",
+  "name": "Shikamaru",
+  "aliases": [
+    "Shikamaru [Chuunin]",
+    "Shikamaru"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "fee040600bba83c7f712ddcc9da7d12245580189794493ad992975474dd71b94",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/characters/shikamaru-chuunin-11000831/world/idle_0.png",
+          "frameWidth": 45,
+          "frameHeight": 132,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4444444444444444,
+            0.9318181818181818
+          ],
+          "referenceHeight": 128,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/characters/shikamaru-chuunin-11000831/world/idle_1.png",
+          "frameWidth": 38,
+          "frameHeight": 131,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5263157894736842,
+            0.9236641221374046
+          ],
+          "referenceHeight": 127,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/characters/shikamaru-chuunin-11000831/world/idle_2.png",
+          "frameWidth": 35,
+          "frameHeight": 128,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5428571428571428,
+            0.9375
+          ],
+          "referenceHeight": 124,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/characters/shikamaru-chuunin-11000831/world/idle_3.png",
+          "frameWidth": 43,
+          "frameHeight": 126,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4883720930232558,
+            0.9444444444444444
+          ],
+          "referenceHeight": 122,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/characters/shikamaru-chuunin-11000831/world/idle_4.png",
+          "frameWidth": 45,
+          "frameHeight": 125,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5555555555555556,
+            0.96
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/characters/shikamaru-chuunin-11000831/world/idle_5.png",
+          "frameWidth": 43,
+          "frameHeight": 126,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5116279069767442,
+            0.9444444444444444
+          ],
+          "referenceHeight": 122,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/characters/shikamaru-chuunin-11000831/world/idle_6.png",
+          "frameWidth": 35,
+          "frameHeight": 128,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45714285714285713,
+            0.9375
+          ],
+          "referenceHeight": 124,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/characters/shikamaru-chuunin-11000831/world/idle_7.png",
+          "frameWidth": 38,
+          "frameHeight": 131,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.47368421052631576,
+            0.9236641221374046
+          ],
+          "referenceHeight": 127,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/characters/shikamaru-chuunin-11000831/world/run_2.png",
+          "frameWidth": 110,
+          "frameHeight": 117,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.9487179487179487
+          ],
+          "referenceHeight": 104,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/characters/shikamaru-chuunin-11000831/world/run_0.png",
+          "frameWidth": 63,
+          "frameHeight": 121,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49206349206349204,
+            0.8512396694214877
+          ],
+          "referenceHeight": 102,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/characters/shikamaru-chuunin-11000831/world/run_1.png",
+          "frameWidth": 88,
+          "frameHeight": 118,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.8898305084745762
+          ],
+          "referenceHeight": 102,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/characters/shikamaru-chuunin-11000831/world/run_3.png",
+          "frameWidth": 91,
+          "frameHeight": 129,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5054945054945055,
+            0.9147286821705426
+          ],
+          "referenceHeight": 112,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/characters/shikamaru-chuunin-11000831/world/run_4.png",
+          "frameWidth": 63,
+          "frameHeight": 133,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5079365079365079,
+            0.9097744360902256
+          ],
+          "referenceHeight": 118,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/characters/shikamaru-chuunin-11000831/world/run_5.png",
+          "frameWidth": 91,
+          "frameHeight": 129,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4945054945054945,
+            0.9147286821705426
+          ],
+          "referenceHeight": 112,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/characters/shikamaru-chuunin-11000831/world/run_6.png",
+          "frameWidth": 110,
+          "frameHeight": 117,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.9487179487179487
+          ],
+          "referenceHeight": 104,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/characters/shikamaru-chuunin-11000831/world/run_7.png",
+          "frameWidth": 88,
+          "frameHeight": 118,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.8898305084745762
+          ],
+          "referenceHeight": 102,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 128,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/characters/shikamaru-chuunin-11000831/battle/A_1hit.png",
+          "frameWidth": 98,
+          "frameHeight": 169,
+          "frames": 4,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4489795918367347,
+            0.9704142011834319
+          ],
+          "referenceHeight": 158,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/characters/shikamaru-chuunin-11000831/battle/C_dead.png",
+          "frameWidth": 90,
+          "frameHeight": 184,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.43333333333333335,
+            0.9347826086956522
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/characters/shikamaru-chuunin-11000831/battle/SP_skill1.png",
+          "frameWidth": 121,
+          "frameHeight": 183,
+          "frames": 7,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5619834710743802,
+            0.9562841530054644
+          ],
+          "referenceHeight": 149,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/characters/shikamaru-chuunin-11000831/battle/C_idle.png",
+          "frameWidth": 61,
+          "frameHeight": 180,
+          "frames": 5,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            3,
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3114754098360656,
+            0.9666666666666667
+          ],
+          "referenceHeight": 175,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/characters/shikamaru-chuunin-11000831/battle/SP_skill2.png",
+          "frameWidth": 143,
+          "frameHeight": 180,
+          "frames": 12,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            9,
+            9,
+            10,
+            10,
+            10,
+            10,
+            10,
+            11
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6153846153846154,
+            0.9666666666666667
+          ],
+          "referenceHeight": 149,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 175,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11000831_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11000831_outdoor.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11000831.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\11000831.png"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/11000831.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11000831.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene1004001.xml",
+      "name": "Shikamaru [Chuunin]",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000831_outdoor.swf",
+      "hostile": false,
+      "position": "1108, 1112"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Shikamaru",
+      "type": null,
+      "resource": "assets/battle/role/left/11000831.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/characters/shikamaru-chuunin-11000831/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "Chuunin",
+  "organization": {
+    "eligible": true,
+    "reason": "Caminhada em oito direções, ataque, queda e especial preservados.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "playable",
+  "reviewCategory": null,
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Shikamaru",
+    "title": "[Chuunin]",
+    "type": "0",
+    "artisticId": "11000851",
+    "levelType": "2",
+    "series": "123",
+    "starLevel": "2"
+  },
+  "manifestUrl": "/assets/characters/shikamaru-chuunin-11000831/manifest.json",
+  "preview": "/assets/characters/shikamaru-chuunin-11000831/preview.png"
+}

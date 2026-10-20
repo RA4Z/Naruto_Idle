@@ -1,0 +1,82 @@
+{
+  "id": "11002272",
+  "slug": "jiraiya-time-sapo-11002272",
+  "name": "Jiraiya",
+  "aliases": [
+    "Jiraiya"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "704cae676c8b7fdcbefa9d09526daf214c6cce8539bb7d62f431421201dec058",
+  "modes": {},
+  "sources": {
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11002272.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha8.09Build300\\assets\\battle\\role\\head_110_100\\11002272.png"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Jiraiya",
+      "type": null,
+      "resource": null,
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/para-revisao/retratos/jiraiya-time-sapo-11002272/portrait.png",
+  "capabilities": {
+    "npc": false,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "portrait-only",
+  "variant": "Time Sapo",
+  "organization": {
+    "eligible": false,
+    "reason": "Retrato isolado; animações indisponíveis.",
+    "missingActions": [
+      "world/idle_0",
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "retratos",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Jiraiya",
+    "title": "[Time Sapo]",
+    "type": "0",
+    "artisticId": "11002271",
+    "levelType": "2",
+    "series": "354",
+    "starLevel": "2"
+  },
+  "manifestUrl": "/assets/para-revisao/retratos/jiraiya-time-sapo-11002272/manifest.json"
+}

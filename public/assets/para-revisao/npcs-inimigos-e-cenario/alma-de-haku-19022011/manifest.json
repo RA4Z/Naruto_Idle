@@ -1,0 +1,230 @@
+{
+  "id": "19022011",
+  "slug": "alma-de-haku-19022011",
+  "name": "Alma de Haku",
+  "aliases": [
+    "Ovo da Páscoa",
+    "Alma de Haku"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "13"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "0703a23dc61e1ac23170f50537b0a27fbc23080f081379af23ef071358dfcc9a",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/alma-de-haku-19022011/world/idle_2.png",
+          "frameWidth": 37,
+          "frameHeight": 123,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4594594594594595,
+            0.9186991869918699
+          ],
+          "referenceHeight": 119,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/alma-de-haku-19022011/world/idle_0.png",
+          "frameWidth": 47,
+          "frameHeight": 122,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.48936170212765956,
+            0.9262295081967213
+          ],
+          "referenceHeight": 118,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/alma-de-haku-19022011/world/idle_1.png",
+          "frameWidth": 40,
+          "frameHeight": 125,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45,
+            0.912
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/alma-de-haku-19022011/world/idle_3.png",
+          "frameWidth": 44,
+          "frameHeight": 119,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.9327731092436975
+          ],
+          "referenceHeight": 115,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/alma-de-haku-19022011/world/idle_4.png",
+          "frameWidth": 47,
+          "frameHeight": 121,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5106382978723404,
+            0.9173553719008265
+          ],
+          "referenceHeight": 117,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/alma-de-haku-19022011/world/idle_5.png",
+          "frameWidth": 44,
+          "frameHeight": 119,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.9327731092436975
+          ],
+          "referenceHeight": 115,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/alma-de-haku-19022011/world/idle_6.png",
+          "frameWidth": 37,
+          "frameHeight": 123,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5405405405405406,
+            0.9186991869918699
+          ],
+          "referenceHeight": 119,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/alma-de-haku-19022011/world/idle_7.png",
+          "frameWidth": 40,
+          "frameHeight": 125,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.55,
+            0.912
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 118,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/19022011_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\19022011_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015002.xml",
+      "name": "Ovo da Páscoa",
+      "type": "13",
+      "resource": "assets/role/npc/scene/npcres/19022011_outdoor.swf",
+      "hostile": false,
+      "position": "1043, 908"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Alma de Haku",
+      "type": null,
+      "resource": null,
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Alma de Haku",
+    "title": "",
+    "type": "0",
+    "artisticId": "19022011",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/alma-de-haku-19022011/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/alma-de-haku-19022011/preview.png"
+}

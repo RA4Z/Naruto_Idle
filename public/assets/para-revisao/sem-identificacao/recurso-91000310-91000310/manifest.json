@@ -1,0 +1,114 @@
+{
+  "id": "91000310",
+  "slug": "recurso-91000310-91000310",
+  "name": "Recurso 91000310",
+  "aliases": [
+    "Recurso 91000310"
+  ],
+  "identity": "unidentified",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "90d6d2c0df0fc7e171ff94dc35307daa0646dad5dd97cbe68dfb8766bef130bb",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/sem-identificacao/recurso-91000310-91000310/world/idle_0.png",
+          "frameWidth": 289,
+          "frameHeight": 192,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5432525951557093,
+            0.640625
+          ],
+          "referenceHeight": 188,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/para-revisao/sem-identificacao/recurso-91000310-91000310/world/idle_1.png",
+          "frameWidth": 347,
+          "frameHeight": 228,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5129682997118156,
+            0.3991228070175439
+          ],
+          "referenceHeight": 224,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 188,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/91000310_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\91000310_outdoor.swf"
+    }
+  },
+  "evidence": [],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "Identidade ou nome em português ainda requer conferência.",
+    "missingActions": [
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "sem-identificacao",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/sem-identificacao/recurso-91000310-91000310/manifest.json",
+  "preview": "/assets/para-revisao/sem-identificacao/recurso-91000310-91000310/preview.png"
+}

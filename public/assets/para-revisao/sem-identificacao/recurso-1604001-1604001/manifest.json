@@ -1,0 +1,111 @@
+{
+  "id": "1604001",
+  "slug": "recurso-1604001-1604001",
+  "name": "Recurso 1604001",
+  "aliases": [
+    "Recurso 1604001"
+  ],
+  "identity": "unidentified",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "09179dafd5511613569956343da3596f0c95b922a98280e826718c1a5801eede",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/sem-identificacao/recurso-1604001-1604001/world/idle_0.png",
+          "frameWidth": 1404,
+          "frameHeight": 904,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.5
+          ],
+          "referenceHeight": 900,
+          "status": "ready",
+          "externalEffects": [],
+          "sourceAction": "idle_0"
+        }
+      },
+      "referenceHeight": 900,
+      "status": "partial",
+      "issues": [
+        {
+          "presentationBinding": "idle_0",
+          "sourceAction": "idle_0",
+          "note": "Explicit variant of native idle; no invented pixels"
+        }
+      ],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/1604001_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\1604001_outdoor.swf"
+    }
+  },
+  "evidence": [],
+  "issues": [
+    {
+      "mode": "world",
+      "error": "No supported actions rendered; [{'action': 'idle_0', 'reason': 'canvas-too-large', 'size': [1404, 904]}]"
+    }
+  ],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "partial",
+  "recoveryPass": "nonstandard-actions-and-static-vectors",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "Identidade ou nome em português ainda requer conferência.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "sem-identificacao",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/sem-identificacao/recurso-1604001-1604001/manifest.json",
+  "preview": "/assets/para-revisao/sem-identificacao/recurso-1604001-1604001/preview.png"
+}

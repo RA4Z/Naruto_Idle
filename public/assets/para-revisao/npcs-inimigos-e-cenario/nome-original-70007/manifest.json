@@ -1,0 +1,133 @@
+{
+  "id": "70007",
+  "slug": "nome-original-70007",
+  "name": "解除封印",
+  "aliases": [
+    "解除封印"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "10"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "72f8c9d3d9a4df9fb14c3517d353fd7ed7150cbcc250af4f9690561a62194549",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-70007/world/idle_0.png",
+          "frameWidth": 326,
+          "frameHeight": 264,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.48773006134969327,
+            0.5340909090909091
+          ],
+          "referenceHeight": 260,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 260,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/70007_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\70007_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2029001.xml",
+      "name": "解除封印",
+      "type": "10",
+      "resource": "assets/role/npc/scene/npcres/70007_outdoor.swf",
+      "hostile": false,
+      "position": "1662, 1926"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2026001.xml",
+      "name": "解除封印",
+      "type": "10",
+      "resource": "assets/role/npc/scene/npcres/70007_outdoor.swf",
+      "hostile": false,
+      "position": "946, 1379"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2032001.xml",
+      "name": "解除封印",
+      "type": "10",
+      "resource": "assets/role/npc/scene/npcres/70007_outdoor.swf",
+      "hostile": false,
+      "position": "1662, 1926"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2017001.xml",
+      "name": "解除封印",
+      "type": "10",
+      "resource": "assets/role/npc/scene/npcres/70007_outdoor.swf",
+      "hostile": false,
+      "position": "1662, 1926"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-70007/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-70007/preview.png"
+}

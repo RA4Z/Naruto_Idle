@@ -1,0 +1,251 @@
+{
+  "id": "13000301",
+  "slug": "manda-13000301",
+  "name": "Manda",
+  "aliases": [
+    "Manda"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "16",
+    "2"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "37a60b6d55f222ac833325c6723ecdcc928928b808a7d14ba2a26c088d7af378",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/invocacoes-e-objetos/manda-13000301/world/idle_0.png",
+          "frameWidth": 1051,
+          "frameHeight": 678,
+          "frames": 38,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            27,
+            28,
+            28,
+            29,
+            29,
+            30,
+            30,
+            31,
+            31,
+            32,
+            32,
+            33,
+            34,
+            35,
+            35,
+            36,
+            36,
+            37,
+            37
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.8525214081826832,
+            0.9321533923303835
+          ],
+          "referenceHeight": 673,
+          "status": "ready",
+          "externalEffects": [],
+          "sourceAction": "idle_0"
+        }
+      },
+      "referenceHeight": 673,
+      "status": "partial",
+      "issues": [
+        {
+          "presentationBinding": "idle_0",
+          "sourceAction": "idle_0",
+          "note": "Explicit variant of native idle; no invented pixels"
+        }
+      ],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "C_idle": {
+          "url": "/assets/para-revisao/invocacoes-e-objetos/manda-13000301/battle/C_idle.png",
+          "frameWidth": 283,
+          "frameHeight": 209,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            1
+          ],
+          "status": "partial",
+          "sourcePixelScale": 1,
+          "originalSpriteId": 163,
+          "sourceAction": "C_idle",
+          "referenceHeight": 209,
+          "coverage": "first native idle pose; full vector timeline pending",
+          "exportZoom": 0.25,
+          "rendering": "static-vector-frames; source scripts not executed",
+          "rigScale": 1.0
+        }
+      },
+      "referenceHeight": 209,
+      "status": "partial",
+      "issues": [
+        {
+          "note": "Only the first original idle pose is available; full vector animation and script-driven behavior remain pending."
+        }
+      ]
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/13000301_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\13000301_outdoor.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/13000301.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\13000301.png"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/13000301.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\13000301.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene1605002.xml",
+      "name": "Manda",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/13000301_outdoor.swf",
+      "hostile": false,
+      "position": "784, 942"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1605019.xml",
+      "name": "Manda",
+      "type": "16",
+      "resource": "assets/role/npc/scene/npcres/13000301_outdoor.swf",
+      "hostile": false,
+      "position": "785, 941"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1605012.xml",
+      "name": "Manda",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/13000301_outdoor.swf",
+      "hostile": false,
+      "position": "784, 942"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Manda",
+      "type": null,
+      "resource": "assets/battle/role/left/13000301.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [
+    {
+      "mode": "world",
+      "error": "No supported actions rendered; [{'action': 'idle_0', 'reason': 'canvas-too-large', 'size': [1051, 678]}]"
+    },
+    {
+      "mode": "battle",
+      "error": "No bitmap actions XML: timeline/vector reconstruction required"
+    }
+  ],
+  "portrait": "/assets/para-revisao/invocacoes-e-objetos/manda-13000301/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": true
+  },
+  "status": "partial",
+  "recoveryPass": "nonstandard-actions-and-static-vectors",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "Invocação, clone ou objeto auxiliar na configuração original.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [
+      {
+        "action": "C_idle",
+        "reason": "static-or-incomplete-animation"
+      }
+    ],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "invocacoes-e-objetos",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Manda",
+    "title": "",
+    "type": "2",
+    "artisticId": "13000301",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/invocacoes-e-objetos/manda-13000301/manifest.json",
+  "preview": "/assets/para-revisao/invocacoes-e-objetos/manda-13000301/preview.png"
+}

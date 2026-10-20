@@ -1,0 +1,82 @@
+{
+  "id": "11002042",
+  "slug": "kabuto-halloween-11002042",
+  "name": "Kabuto",
+  "aliases": [
+    "Kabuto"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "6e91226a89e4fa4867d83f2092cfb108df771d6fca29c2c1844b05f7a2858093",
+  "modes": {},
+  "sources": {
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11002042.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.19Build300\\assets\\battle\\role\\head_110_100\\11002042.png"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Kabuto",
+      "type": null,
+      "resource": null,
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/para-revisao/retratos/kabuto-halloween-11002042/portrait.png",
+  "capabilities": {
+    "npc": false,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "portrait-only",
+  "variant": "Halloween",
+  "organization": {
+    "eligible": false,
+    "reason": "Retrato isolado; animações indisponíveis.",
+    "missingActions": [
+      "world/idle_0",
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "retratos",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Kabuto",
+    "title": "[Halloween]",
+    "type": "0",
+    "artisticId": "11002041",
+    "levelType": "2",
+    "series": "31",
+    "starLevel": "3"
+  },
+  "manifestUrl": "/assets/para-revisao/retratos/kabuto-halloween-11002042/manifest.json"
+}

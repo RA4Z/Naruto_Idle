@@ -1,0 +1,77 @@
+# Inspeção dos recursos locais
+
+Origem: `D:\Naruto Idle\Naruto_Idle\recovered-web\cdn`. Saída: `D:\Naruto Idle\Naruto Idle RPG\assets-extraidos`. A instalação original não foi alterada e nenhum ActionScript ou executável do jogo foi executado.
+
+## Inventário por extensão
+
+Os números abaixo contam arquivos do manifesto disponível, não todos os arquivos históricos do jogo. A extensão não foi usada como prova exclusiva de formato.
+
+| Extensão | Quantidade |
+| --- | ---: |
+| `.jpg` | 28,183 |
+| `.png` | 13,672 |
+| `.swf` | 10,943 |
+| `.xml` | 2,785 |
+| `.cfg` | 612 |
+| `.bin` | 356 |
+| `.flv` | 260 |
+| `.mp3` | 237 |
+| `.db` | 156 |
+| `.map` | 145 |
+| `.txt` | 24 |
+| `.JPG` | 11 |
+| `.gif` | 8 |
+| `sem extensão` | 8 |
+| `.pkg` | 5 |
+| `.bmp` | 2 |
+| `.mme` | 2 |
+| `.sh` | 2 |
+| `.xls` | 1 |
+| `.html` | 1 |
+| `.fla` | 1 |
+| `.inc` | 1 |
+| `.xlsx` | 1 |
+| `.ini` | 1 |
+| `.bat` | 1 |
+| `.txt_r` | 1 |
+| `.txt_l` | 1 |
+| `.f4v` | 1 |
+
+## Formatos e leitura
+
+- Imagens independentes: PNG, JPEG, GIF e BMP, identificadas também por assinatura/Pillow. Alguns arquivos .jpg/.gif contêm PNG; os nomes de origem foram preservados.
+- Flash: SWF em CWS/zlib, ZWS/LZMA e camada externa observada no carregador. Imagens JPEG/PNG, MP3 e dados XML/binários foram extraídos sem executar o conteúdo.
+- Metadados de personagens: XML de ações e AMF embutidos, símbolos Asset_*, direções, duração de quadros, transformações e offsets. A reconstrução funcional inicial usa seis SWFs, de exploração e combate dos três iniciais.
+- Mapas: blocos de 256×256, camadas XML com offsets, matrizes, alpha e referências a objetos SWF. Fundo 10001 recomposto em 3072×3072 e reduzido a 1000×1000 para o protótipo.
+- Fontes, vetores, máscaras, sprites aninhados e bitmaps Lossless: tags reconhecidas/registradas, sem alegar conversão completa. JPEXS 26.4.0 pode apoiar a continuação; o teste de exportação de sprites sozinho não reconstruiu o formato de animação por XML.
+- Outros dados (.cfg, .bin, .map, .mme, planilhas, pacotes): cópias preservadas, com descompressão zlib quando reconhecida. Não foram inventadas estruturas para os formatos ainda não interpretados.
+
+## Resultados observados
+
+- Originais processados: **57,421**.
+- Imagens embutidas extraídas: **269,962**.
+- MP3 embutidos extraídos: **5,560**.
+- Saídas registradas: **343,719**.
+- Mídias catalogadas: **317,635**, com dimensões/canais quando reconhecidos e SHA-256.
+- Grupos de originais com hash idêntico: **1,795**; nenhuma versão foi descartada.
+- Grupos de mídias com hash idêntico: **18,648**.
+
+## Identificação e uso inicial
+
+Naruto 11000101, Sasuke 11000201 e Sakura 11000301 foram confirmados com folha de contato e inspeção visual. Alguns nomes nos XMLs de NPC são contraditórios; não se usou apenas o nome da configuração para identificar o personagem. Cada inicial tem SWF outdoor e SWF de combate separado. Os três possuem 16 ações de exploração reconstruídas, sem avisos de transformação. Os manifestos preservam IDs e as ações originais.
+
+As ações básicas de combate funcionam no protótipo. Algumas habilidades referenciam efeitos externos; várias ações amplas excedem o canvas atual de 320×256. Esses avisos ficam por ação em `public/assets/animations.json`; não são descritos como fidelidade completa.
+
+## Ausências e limites reais
+
+- Dois JPGs, 214315.jpg e 213065.jpg, estão vazios na origem. Suas cópias foram preservadas e o bloqueio foi registrado.
+- userHead.bmp tem assinatura de SWF; não é uma imagem BMP pronta. A detecção por assinatura corrigiu sua classificação.
+- Há 178.637 ocorrências de tag 36 e 88 de tag 20 (bitmaps Lossless) ainda pendentes de extração. Não são contagens de arquivos únicos.
+- Exportar os bitmaps de um SWF não reconstrói automaticamente animações, blend modes, máscaras, linhas do tempo ou dependências. Os SWFs gerais continuam parciais.
+- A colisão original e todas as camadas superiores do mapa não foram reconstruídas. A rota usada no protótipo foi criada explicitamente para ele.
+- Inimigo de treino, efeito complementar e som sintetizado são provisórios. Os áudios extraídos ainda precisam de seleção por conteúdo.
+- O acervo cobre o manifesto presente, mas não prova completude histórica, presença dos projetos de autoria ou do código de servidor. O jogo novo usa regras próprias e não depende de recuperar esse servidor.
+
+## Evidências e reprodução
+
+Veja README.md para comandos e versões; `library-extraction.jsonl` e `media.jsonl` para rastreabilidade por recurso; `reports/browser-validation.json` e `browser-edge-validation.json` para comportamento observado; e CONTINUATION.md para o trabalho restante e a automação autorizada.

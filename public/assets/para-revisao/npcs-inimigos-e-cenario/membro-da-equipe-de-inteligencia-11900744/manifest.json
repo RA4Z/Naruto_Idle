@@ -1,0 +1,151 @@
+{
+  "id": "11900744",
+  "slug": "membro-da-equipe-de-inteligencia-11900744",
+  "name": "Membro da Equipe de Inteligência",
+  "aliases": [
+    "Membro da Equipe de Inteligência",
+    "Líder Anbu"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "101",
+    "6"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "6b40255e94b2c05a810c2e703f07cf79bb208dbbabfedfc6caed5325935733a0",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/membro-da-equipe-de-inteligencia-11900744/world/idle_0.png",
+          "frameWidth": 73,
+          "frameHeight": 138,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4931506849315068,
+            0.9492753623188406
+          ],
+          "referenceHeight": 134,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 134,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11900744_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11900744_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene1600006.xml",
+      "name": "Membro da Equipe de Inteligência",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/11900744_outdoor.swf",
+      "hostile": false,
+      "position": "2053, 1474"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1605013.xml",
+      "name": "Membro da Equipe de Inteligência",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/11900744_outdoor.swf",
+      "hostile": false,
+      "position": "2428, 2113"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1600005.xml",
+      "name": "Membro da Equipe de Inteligência",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/11900744_outdoor.swf",
+      "hostile": false,
+      "position": "1809, 1469"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1600003.xml",
+      "name": "Membro da Equipe de Inteligência",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/11900744_outdoor.swf",
+      "hostile": false,
+      "position": "1575, 1579"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1605011.xml",
+      "name": "Membro da Equipe de Inteligência",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/11900744_outdoor.swf",
+      "hostile": false,
+      "position": "2427, 2104"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1004001.xml",
+      "name": "Líder Anbu",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900744_outdoor.swf",
+      "hostile": false,
+      "position": "1086, 575"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/membro-da-equipe-de-inteligencia-11900744/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/membro-da-equipe-de-inteligencia-11900744/preview.png"
+}

@@ -1,0 +1,82 @@
+{
+  "id": "12010103",
+  "slug": "gaara-12010103",
+  "name": "Gaara",
+  "aliases": [
+    "Gaara"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "90bf4c7220cb7c757ef1a764765114ab9f446acb20fbf93438854074439ce521",
+  "modes": {},
+  "sources": {
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/12010103.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\12010103.png"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Gaara",
+      "type": null,
+      "resource": null,
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/para-revisao/retratos/gaara-12010103/portrait.png",
+  "capabilities": {
+    "npc": false,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "portrait-only",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "Retrato isolado; animações indisponíveis.",
+    "missingActions": [
+      "world/idle_0",
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "retratos",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Gaara",
+    "title": "",
+    "type": "0",
+    "artisticId": "11001301",
+    "levelType": "2",
+    "series": "",
+    "starLevel": ""
+  },
+  "manifestUrl": "/assets/para-revisao/retratos/gaara-12010103/manifest.json"
+}

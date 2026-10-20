@@ -1,0 +1,189 @@
+{
+  "id": "11000121",
+  "slug": "clone-de-naruto-11000121",
+  "name": "Clone de Naruto",
+  "aliases": [
+    "Clone de Naruto"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "8bad1933a273d41aac79cff65763d10bdf6e6f97df6c47234f57771460b5a86b",
+  "modes": {
+    "battle": {
+      "animations": {
+        "C_idle": {
+          "url": "/assets/para-revisao/invocacoes-e-objetos/clone-de-naruto-11000121/battle/C_idle.png",
+          "frameWidth": 129,
+          "frameHeight": 47,
+          "frames": 3,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3488372093023256,
+            0.6808510638297872
+          ],
+          "referenceHeight": 42,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/para-revisao/invocacoes-e-objetos/clone-de-naruto-11000121/battle/C_dead.png",
+          "frameWidth": 207,
+          "frameHeight": 202,
+          "frames": 6,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4444444444444444,
+            0.9900990099009901
+          ],
+          "referenceHeight": 135,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 42,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/11000121.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11000121.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Clone de Naruto",
+      "type": null,
+      "resource": "assets/battle/role/left/11000121.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": false,
+    "companion": false,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "Invocação, clone ou objeto auxiliar na configuração original.",
+    "missingActions": [
+      "world/idle_0",
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/A_1hit",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "invocacoes-e-objetos",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Clone de Naruto",
+    "title": "",
+    "type": "1",
+    "artisticId": "11000121",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/invocacoes-e-objetos/clone-de-naruto-11000121/manifest.json",
+  "preview": "/assets/para-revisao/invocacoes-e-objetos/clone-de-naruto-11000121/preview.png"
+}

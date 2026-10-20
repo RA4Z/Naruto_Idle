@@ -1,0 +1,2691 @@
+<actions frameRate="24">
+  <action id="0" name="C_dead">
+    <layer id="1">
+      <frame index="0" length="3">
+        <element assetId="0"/>
+      </frame>
+      <frame index="3" length="3">
+        <element assetId="1"/>
+      </frame>
+      <frame index="6" length="1">
+        <element assetId="2"/>
+      </frame>
+      <frame index="7" length="2">
+        <element assetId="3"/>
+      </frame>
+      <frame index="9" length="2">
+        <element assetId="4"/>
+      </frame>
+      <frame index="11" length="2">
+        <element assetId="5"/>
+      </frame>
+      <frame index="13" length="4">
+        <element assetId="6"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="6"/>
+      <frame index="6" length="1" sound="172" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="C_defaultAttackPoint">
+    <layer id="1">
+      <frame index="0" length="1">
+        <pointElement x="0" y="0"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1"/>
+    </layer>
+    <layer id="3"/>
+    <layer id="4"/>
+  </action>
+  <action id="0" name="C_defaultDefencePoint">
+    <layer id="1">
+      <frame index="0" length="1">
+        <pointElement x="0" y="0"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1"/>
+    </layer>
+    <layer id="3"/>
+    <layer id="4"/>
+  </action>
+  <action id="0" name="C_entry">
+    <layer id="1">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1">
+        <element x="-290" y="-406" assetId="7"/>
+      </frame>
+      <frame index="2" length="1">
+        <element x="-142" y="-183" assetId="7"/>
+      </frame>
+      <frame index="3" length="1">
+        <element x="-51" y="-27" assetId="7"/>
+      </frame>
+      <frame index="4" length="1">
+        <element assetId="8"/>
+      </frame>
+      <frame index="5" length="5">
+        <element assetId="9"/>
+      </frame>
+      <frame index="10" length="3">
+        <element assetId="10"/>
+      </frame>
+      <frame index="13" length="2">
+        <element assetId="11"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1">
+        <element x="-339" assetId="0" scaleX="0.40" scaleY="0.40" alpha="0.30" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="2" length="1">
+        <element x="-170" assetId="0" scaleX="0.70" scaleY="0.70" alpha="0.60" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="3" length="1">
+        <element x="-78" assetId="0" scaleX="0.90" scaleY="0.90" alpha="0.90" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="4" length="6">
+        <element assetId="0" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="10" length="3">
+        <element assetId="0" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="13" length="2">
+        <element assetId="0" extname="yingzi(1).png"/>
+      </frame>
+    </layer>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="C_exeunt">
+    <layer id="1">
+      <frame index="0" length="1">
+        <element assetId="12"/>
+      </frame>
+      <frame index="1" length="1">
+        <element x="-1" y="6" assetId="13"/>
+      </frame>
+      <frame index="2" length="3">
+        <element y="6" assetId="14"/>
+      </frame>
+      <frame index="5" length="1">
+        <element x="-19" y="18" assetId="15"/>
+      </frame>
+      <frame index="6" length="1">
+        <element x="-75" y="-124" assetId="15"/>
+      </frame>
+      <frame index="7" length="1">
+        <element x="-137" y="-291" assetId="15"/>
+      </frame>
+      <frame index="8" length="1"/>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="2">
+        <element assetId="0" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="2" length="3">
+        <element assetId="0" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="5" length="1">
+        <element x="-58" assetId="0" scaleX="0.80" scaleY="0.80" alpha="0.80" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="6" length="1">
+        <element x="-105" assetId="0" scaleX="0.70" scaleY="0.70" alpha="0.60" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="7" length="1">
+        <element x="-166" assetId="0" scaleX="0.50" scaleY="0.50" alpha="0.50" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="8" length="1"/>
+    </layer>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="C_run1_1">
+    <layer id="1">
+      <frame index="0" length="1">
+        <element x="-30" assetId="16"/>
+      </frame>
+      <frame index="1" length="1">
+        <element x="27" y="1" assetId="17"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+  </action>
+  <action id="0" name="C_run1_2">
+    <layer id="1">
+      <frame index="0" length="3">
+        <element x="-6" y="-14" assetId="18"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+  </action>
+  <action id="0" name="C_run1_3">
+    <layer id="1">
+      <frame index="0" length="2">
+        <element x="-30" assetId="16"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+  </action>
+  <action id="0" name="C_run2_1">
+    <layer id="1">
+      <frame index="0" length="2">
+        <element x="-30" assetId="16"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+  </action>
+  <action id="0" name="C_run2_2">
+    <layer id="1">
+      <frame index="0" length="1">
+        <element x="-5" y="-14" assetId="19"/>
+      </frame>
+      <frame index="1" length="1">
+        <element x="-5" y="-16" assetId="19"/>
+      </frame>
+      <frame index="2" length="1">
+        <element x="-5" y="-14" assetId="19"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+  </action>
+  <action id="0" name="C_run2_3">
+    <layer id="1">
+      <frame index="0" length="2">
+        <element x="9" y="1" assetId="16"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+  </action>
+  <action id="0" name="D_HPSite">
+    <layer id="1">
+      <frame index="0" length="1">
+        <pointElement x="-4" y="-182"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1"/>
+    </layer>
+    <layer id="3"/>
+    <layer id="4"/>
+  </action>
+  <action id="0" name="D_air_air1">
+    <layer id="1">
+      <frame index="0" length="1" event="playEffect">
+        <element x="4" y="-140" assetId="20"/>
+      </frame>
+      <frame index="1" length="1">
+        <element x="3" y="-212" assetId="20"/>
+      </frame>
+      <frame index="2" length="1">
+        <element x="4" y="-253" assetId="20"/>
+      </frame>
+      <frame index="3" length="1">
+        <element x="7" y="-284" assetId="20"/>
+      </frame>
+      <frame index="4" length="1">
+        <element x="12" y="-324" assetId="21"/>
+      </frame>
+      <frame index="5" length="1">
+        <element x="15" y="-339" assetId="21"/>
+      </frame>
+      <frame index="6" length="1">
+        <element x="17" y="-341" assetId="22"/>
+      </frame>
+      <frame index="7" length="1">
+        <element x="16" y="-348" assetId="22"/>
+      </frame>
+      <frame index="8" length="1">
+        <element x="38" y="-360" assetId="23" rotation="332.00"/>
+      </frame>
+      <frame index="9" length="1">
+        <element x="44" y="-371" assetId="23" rotation="325.00"/>
+      </frame>
+      <frame index="10" length="1">
+        <element x="44" y="-376" assetId="23" rotation="325.00"/>
+      </frame>
+      <frame index="11" length="1">
+        <element x="53" y="-388" assetId="23" rotation="316.00"/>
+      </frame>
+      <frame index="12" length="1">
+        <element x="53" y="-391" assetId="23" rotation="316.00"/>
+      </frame>
+      <frame index="13" length="1">
+        <element x="62" y="-403" assetId="23" rotation="306.00"/>
+      </frame>
+      <frame index="14" length="1">
+        <element x="62" y="-404" assetId="23" rotation="306.00"/>
+      </frame>
+      <frame index="15" length="1">
+        <element x="74" y="-414" assetId="23" rotation="295.00"/>
+      </frame>
+      <frame index="16" length="1">
+        <element x="74" y="-407" assetId="23" rotation="295.00"/>
+      </frame>
+      <frame index="17" length="1">
+        <element x="78" y="-420" assetId="23" rotation="279.00"/>
+      </frame>
+      <frame index="18" length="1">
+        <element x="78" y="-416" assetId="23" rotation="279.00"/>
+      </frame>
+      <frame index="19" length="1">
+        <element x="84" y="-421" assetId="23" rotation="270.00"/>
+      </frame>
+      <frame index="20" length="1">
+        <element x="84" y="-412" assetId="23" rotation="270.00"/>
+      </frame>
+      <frame index="21" length="1">
+        <element x="83" y="-400" assetId="23" rotation="270.00"/>
+      </frame>
+      <frame index="22" length="1">
+        <element x="83" y="-388" assetId="23" rotation="270.00"/>
+      </frame>
+      <frame index="23" length="1">
+        <element x="82" y="-370" assetId="23" rotation="270.00"/>
+      </frame>
+      <frame index="24" length="1">
+        <element x="-13" y="-316" assetId="24" rotation="20.00"/>
+      </frame>
+      <frame index="25" length="1">
+        <element x="-15" y="-287" assetId="24" rotation="20.00"/>
+      </frame>
+      <frame index="26" length="1">
+        <element x="-15" y="-253" assetId="24" rotation="20.00"/>
+      </frame>
+      <frame index="27" length="2">
+        <element y="-232" assetId="24"/>
+      </frame>
+      <frame index="29" length="1">
+        <element y="-180" assetId="24"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="284" volume="100"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="287" volume="100"/>
+    </layer>
+    <layer id="4">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="285" volume="100"/>
+    </layer>
+  </action>
+  <action id="3" name="D_air_air2">
+    <layer id="3">
+      <frame index="0" length="1" event="playEffect">
+        <element x="3" y="-140" assetId="20"/>
+      </frame>
+      <frame index="1" length="1">
+        <element x="2" y="-281" assetId="20"/>
+      </frame>
+      <frame index="2" length="1">
+        <element y="-385" assetId="20"/>
+      </frame>
+      <frame index="3" length="1">
+        <element x="2" y="-456" assetId="20"/>
+      </frame>
+      <frame index="4" length="1">
+        <element x="4" y="-511" assetId="20"/>
+      </frame>
+      <frame index="5" length="1">
+        <element x="4" y="-555" assetId="20"/>
+      </frame>
+      <frame index="6" length="2">
+        <element x="6" y="-589" assetId="20"/>
+      </frame>
+      <frame index="8" length="2">
+        <element x="8" y="-626" assetId="21"/>
+      </frame>
+      <frame index="10" length="2">
+        <element x="8" y="-679" assetId="21"/>
+      </frame>
+      <frame index="12" length="2">
+        <element x="23" y="-705" assetId="23" rotation="340.00"/>
+      </frame>
+      <frame index="14" length="2">
+        <element x="31" y="-715" assetId="23" rotation="330.00"/>
+      </frame>
+      <frame index="16" length="2">
+        <element x="54" y="-729" assetId="23" rotation="305.00"/>
+      </frame>
+      <frame index="18" length="3">
+        <element x="61" y="-745" assetId="23" rotation="295.00"/>
+      </frame>
+      <frame index="21" length="2">
+        <element x="66" y="-757" assetId="23" rotation="285.00"/>
+      </frame>
+      <frame index="23" length="2">
+        <element x="66" y="-736" assetId="23" rotation="285.00"/>
+      </frame>
+      <frame index="25" length="2">
+        <element x="70" y="-747" assetId="23" rotation="260.00"/>
+      </frame>
+      <frame index="27" length="2">
+        <element x="70" y="-734" assetId="23" rotation="260.00"/>
+      </frame>
+      <frame index="29" length="2">
+        <element x="-6" y="-652" assetId="24"/>
+      </frame>
+      <frame index="31" length="2">
+        <element x="-6" y="-621" assetId="24"/>
+      </frame>
+      <frame index="33" length="1">
+        <element x="-6" y="-583" assetId="24"/>
+      </frame>
+      <frame index="34" length="1">
+        <element x="-6" y="-535" assetId="24"/>
+      </frame>
+      <frame index="35" length="1">
+        <element x="-6" y="-481" assetId="24"/>
+      </frame>
+      <frame index="36" length="1">
+        <element x="-6" y="-414" assetId="24"/>
+      </frame>
+      <frame index="37" length="1">
+        <element x="-6" y="-344" assetId="24"/>
+      </frame>
+      <frame index="38" length="1">
+        <element x="-6" y="-268" assetId="24"/>
+      </frame>
+      <frame index="39" length="1">
+        <element x="-6" y="-180" assetId="24"/>
+      </frame>
+    </layer>
+    <layer id="4">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="284" volume="100"/>
+    </layer>
+    <layer id="5">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="288" volume="100"/>
+    </layer>
+    <layer id="6">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="284" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_air_behit1">
+    <layer id="1">
+      <frame index="0" length="1" event="playEffect">
+        <element x="13" y="-145" assetId="25"/>
+      </frame>
+      <frame index="1" length="1">
+        <element x="4" y="-146" assetId="26"/>
+      </frame>
+      <frame index="2" length="3">
+        <element x="10" y="-141" assetId="26"/>
+      </frame>
+      <frame index="5" length="2">
+        <element x="12" y="-141" assetId="23"/>
+      </frame>
+      <frame index="7" length="2">
+        <element x="13" y="-145" assetId="27"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_air_behit2">
+    <layer id="1">
+      <frame index="0" length="1" event="playEffect">
+        <element x="13" y="-134" assetId="28"/>
+      </frame>
+      <frame index="1" length="1">
+        <element x="8" y="-138" assetId="29"/>
+      </frame>
+      <frame index="2" length="3">
+        <element x="13" y="-134" assetId="29"/>
+      </frame>
+      <frame index="5" length="2">
+        <element x="13" y="-134" assetId="30"/>
+      </frame>
+      <frame index="7" length="2">
+        <element x="13" y="-134" assetId="22"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_air_behit3">
+    <layer id="1">
+      <frame index="0" length="2" event="playEffect">
+        <element x="13" y="-134" assetId="22"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_air_behit4">
+    <layer id="1">
+      <frame index="0" length="1" event="playEffect">
+        <element x="12" y="-141" assetId="23"/>
+      </frame>
+      <frame index="1" length="1">
+        <element x="13" y="-145" assetId="27"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_air_land">
+    <layer id="1">
+      <frame index="0" length="1" event="playEffect">
+        <element y="-3" assetId="31"/>
+      </frame>
+      <frame index="1" length="1">
+        <element y="-19" assetId="31"/>
+      </frame>
+      <frame index="2" length="1">
+        <element y="-25" assetId="31"/>
+      </frame>
+      <frame index="3" length="1">
+        <element y="-20" assetId="31"/>
+      </frame>
+      <frame index="4" length="1">
+        <element y="-11" assetId="31"/>
+      </frame>
+      <frame index="5" length="1">
+        <element y="3" assetId="32"/>
+      </frame>
+      <frame index="6" length="1">
+        <element y="-12" assetId="32"/>
+      </frame>
+      <frame index="7" length="1">
+        <element y="-9" assetId="32"/>
+      </frame>
+      <frame index="8" length="1">
+        <element y="-3" assetId="32"/>
+      </frame>
+      <frame index="9" length="1">
+        <element y="2" assetId="32"/>
+      </frame>
+      <frame index="10" length="1">
+        <element y="-4" assetId="32"/>
+      </frame>
+      <frame index="11" length="1">
+        <element y="2" assetId="32"/>
+      </frame>
+      <frame index="12" length="4">
+        <element assetId="32"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="5"/>
+      <frame index="5" length="1" sound="170" volume="100"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="5"/>
+      <frame index="5" length="1" sound="169" volume="76"/>
+    </layer>
+  </action>
+  <action id="0" name="D_air_land1">
+    <layer id="1">
+      <frame index="0" length="2" event="playEffect">
+        <element x="81" y="-196" assetId="26" rotation="-89.00"/>
+      </frame>
+      <frame index="2" length="1">
+        <element x="88" y="3" assetId="33" rotation="-88.00"/>
+      </frame>
+      <frame index="3" length="1">
+        <element y="6" assetId="34"/>
+      </frame>
+      <frame index="4" length="1">
+        <element y="-19" assetId="31"/>
+      </frame>
+      <frame index="5" length="1">
+        <element y="-25" assetId="31"/>
+      </frame>
+      <frame index="6" length="1">
+        <element y="-20" assetId="31"/>
+      </frame>
+      <frame index="7" length="1">
+        <element y="-11" assetId="31"/>
+      </frame>
+      <frame index="8" length="1">
+        <element y="3" assetId="32"/>
+      </frame>
+      <frame index="9" length="1">
+        <element y="-12" assetId="32"/>
+      </frame>
+      <frame index="10" length="1">
+        <element y="-9" assetId="32"/>
+      </frame>
+      <frame index="11" length="1">
+        <element y="-3" assetId="32"/>
+      </frame>
+      <frame index="12" length="1">
+        <element y="2" assetId="32"/>
+      </frame>
+      <frame index="13" length="1">
+        <element y="-4" assetId="32"/>
+      </frame>
+      <frame index="14" length="1">
+        <element y="2" assetId="32"/>
+      </frame>
+      <frame index="15" length="4">
+        <element assetId="32"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="2"/>
+      <frame index="2" length="1" sound="169" volume="100"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="2"/>
+      <frame index="2" length="1" sound="170" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_air_stand">
+    <layer id="1">
+      <frame index="0" length="1">
+        <element x="84" y="-184" assetId="35" rotation="-99.00"/>
+      </frame>
+      <frame index="1" length="2">
+        <element x="-8" y="-268" assetId="36" rotation="170.00"/>
+      </frame>
+      <frame index="3" length="1">
+        <element x="-54" y="-225" assetId="37" rotation="146.00"/>
+      </frame>
+      <frame index="4" length="1">
+        <element x="-94" y="-181" assetId="37" rotation="109.00"/>
+      </frame>
+      <frame index="5" length="1">
+        <element x="-73" y="-56" assetId="37" rotation="51.00"/>
+      </frame>
+      <frame index="6" length="1">
+        <element x="-31" y="-17" assetId="38" rotation="24.00"/>
+      </frame>
+      <frame index="7" length="2">
+        <element x="-2" y="14" assetId="38" rotation="8.00"/>
+      </frame>
+      <frame index="9" length="1">
+        <element x="-4" y="1" assetId="39"/>
+      </frame>
+      <frame index="10" length="1">
+        <element x="-4" y="3" assetId="39"/>
+      </frame>
+      <frame index="11" length="5">
+        <element x="-4" y="1" assetId="39"/>
+      </frame>
+      <frame index="16" length="2">
+        <element assetId="40"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="9"/>
+      <frame index="9" length="1" sound="172" volume="75"/>
+    </layer>
+  </action>
+  <action id="0" name="D_air_upair">
+    <layer id="1">
+      <frame index="0" length="1" event="playEffect">
+        <element x="5" y="-123" assetId="41"/>
+      </frame>
+      <frame index="1" length="1">
+        <element x="7" y="-130" assetId="27"/>
+      </frame>
+      <frame index="2" length="2">
+        <element x="6" y="-169" assetId="42" rotation="17.00"/>
+      </frame>
+      <frame index="4" length="1">
+        <element x="1" y="-166" assetId="23"/>
+      </frame>
+      <frame index="5" length="2">
+        <element x="-1" y="-185" assetId="43"/>
+      </frame>
+      <frame index="7" length="2">
+        <element x="10" y="-187" assetId="44"/>
+      </frame>
+      <frame index="9" length="1">
+        <element x="5" y="-172" assetId="41"/>
+      </frame>
+      <frame index="10" length="1">
+        <element x="5" y="-187" assetId="27"/>
+      </frame>
+      <frame index="11" length="1">
+        <element x="4" y="-225" assetId="45"/>
+      </frame>
+      <frame index="12" length="1">
+        <element x="6" y="-229" assetId="27"/>
+      </frame>
+      <frame index="13" length="1">
+        <element x="6" y="-259" assetId="41"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="134" volume="50"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="286" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_air_upair1">
+    <layer id="1">
+      <frame index="0" length="1" event="playEffect">
+        <element x="4" y="-140" assetId="20"/>
+      </frame>
+      <frame index="1" length="1">
+        <element x="3" y="-191" assetId="20"/>
+      </frame>
+      <frame index="2" length="1">
+        <element x="4" y="-224" assetId="20"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_beatback1">
+    <layer id="1">
+      <frame index="0" length="1" event="playEffect">
+        <element y="-140" assetId="46"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_beatback2">
+    <layer id="1">
+      <frame index="0" length="3">
+        <element y="-140" assetId="47"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_beatback3">
+    <layer id="1">
+      <frame index="0" length="1">
+        <element y="-140" assetId="48"/>
+      </frame>
+      <frame index="1" length="12" event="playShake:2">
+        <element y="-140" assetId="33"/>
+      </frame>
+      <frame index="13" length="1">
+        <element x="-25" y="-140" assetId="49"/>
+      </frame>
+      <frame index="14" length="1">
+        <element x="-36" y="-114" assetId="49" rotation="7.00"/>
+      </frame>
+      <frame index="15" length="1">
+        <element x="-53" y="-91" assetId="49" rotation="20.00"/>
+      </frame>
+      <frame index="16" length="1">
+        <element x="-69" y="-70" assetId="49" rotation="30.00"/>
+      </frame>
+      <frame index="17" length="1">
+        <element x="-9" y="-49" assetId="50" rotation="350.00"/>
+      </frame>
+      <frame index="18" length="1">
+        <element x="-40" y="-38" assetId="50" rotation="25.00"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="170" volume="100"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="236" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_beatback4">
+    <layer id="1">
+      <frame index="0" length="1">
+        <element x="32" y="-42" assetId="51" rotation="280.00"/>
+      </frame>
+      <frame index="1" length="1">
+        <element x="13" y="1" assetId="51"/>
+      </frame>
+      <frame index="2" length="1">
+        <element x="-13" y="2" assetId="51" rotation="45.00"/>
+      </frame>
+      <frame index="3" length="1">
+        <element x="-22" y="-7" assetId="51" rotation="68.00"/>
+      </frame>
+      <frame index="4" length="1">
+        <element x="-31" y="-32" assetId="51" rotation="110.00"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_beatback5">
+    <layer id="1">
+      <frame index="0" length="2">
+        <element x="-4" y="-3" assetId="52"/>
+      </frame>
+      <frame index="2" length="2">
+        <element x="-3" y="-4" assetId="53"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="2"/>
+      <frame index="2" length="1" sound="114" volume="30"/>
+    </layer>
+  </action>
+  <action id="1" name="D_land">
+    <layer id="1">
+      <frame index="0" length="1">
+        <element x="-2" y="5" assetId="32"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_land_land">
+    <layer id="1">
+      <frame index="0" length="1" event="playEffect">
+        <element y="-3" assetId="31"/>
+      </frame>
+      <frame index="1" length="1">
+        <element y="-19" assetId="31"/>
+      </frame>
+      <frame index="2" length="1">
+        <element y="-25" assetId="31"/>
+      </frame>
+      <frame index="3" length="1">
+        <element y="-20" assetId="31"/>
+      </frame>
+      <frame index="4" length="1">
+        <element y="-11" assetId="31"/>
+      </frame>
+      <frame index="5" length="1">
+        <element y="3" assetId="32"/>
+      </frame>
+      <frame index="6" length="1">
+        <element y="-12" assetId="32"/>
+      </frame>
+      <frame index="7" length="1">
+        <element y="-9" assetId="32"/>
+      </frame>
+      <frame index="8" length="1">
+        <element y="-3" assetId="32"/>
+      </frame>
+      <frame index="9" length="1">
+        <element y="2" assetId="32"/>
+      </frame>
+      <frame index="10" length="1">
+        <element y="-4" assetId="32"/>
+      </frame>
+      <frame index="11" length="1">
+        <element y="2" assetId="32"/>
+      </frame>
+      <frame index="12" length="4">
+        <element assetId="32"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="5"/>
+      <frame index="5" length="1" sound="236" volume="64"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="5"/>
+      <frame index="5" length="1" sound="170" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_land_stand">
+    <layer id="1">
+      <frame index="0" length="2">
+        <element assetId="54"/>
+      </frame>
+      <frame index="2" length="2">
+        <element assetId="55"/>
+      </frame>
+      <frame index="4" length="3">
+        <element assetId="56"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_land_twitch">
+    <layer id="1">
+      <frame index="0" length="2" event="playEffect">
+        <element assetId="57"/>
+      </frame>
+      <frame index="2" length="2">
+        <element assetId="34"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_stand_air">
+    <layer id="1">
+      <frame index="0" length="2" event="playEffect">
+        <element y="-77" assetId="58"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_stand_air1">
+    <layer id="1">
+      <frame index="0" length="1" event="playEffect">
+        <element assetId="41"/>
+      </frame>
+      <frame index="1" length="1">
+        <element y="-15" assetId="27"/>
+      </frame>
+      <frame index="2" length="2">
+        <element y="-55" assetId="42" rotation="17.00"/>
+      </frame>
+      <frame index="4" length="1">
+        <element x="-2" y="-49" assetId="23"/>
+      </frame>
+      <frame index="5" length="2">
+        <element x="-7" y="-78" assetId="43"/>
+      </frame>
+      <frame index="7" length="2">
+        <element x="15" y="-91" assetId="44"/>
+      </frame>
+      <frame index="9" length="1">
+        <element y="-86" assetId="41"/>
+      </frame>
+      <frame index="10" length="1">
+        <element y="-94" assetId="27"/>
+      </frame>
+      <frame index="11" length="1">
+        <element x="14" y="-126" assetId="45"/>
+      </frame>
+      <frame index="12" length="1">
+        <element x="7" y="-131" assetId="27"/>
+      </frame>
+      <frame index="13" length="1">
+        <element x="6" y="-134" assetId="41"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="2"/>
+      <frame index="2" length="1" sound="134" volume="50"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="2"/>
+      <frame index="2" length="1" sound="286" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_stand_behit1">
+    <layer id="1">
+      <frame index="0" length="3" event="playEffect">
+        <element assetId="45"/>
+      </frame>
+      <frame index="3" length="2">
+        <element assetId="44"/>
+      </frame>
+      <frame index="5" length="1">
+        <element assetId="59"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_stand_behit2">
+    <layer id="1">
+      <frame index="0" length="3" event="playEffect">
+        <element assetId="60"/>
+      </frame>
+      <frame index="3" length="2">
+        <element assetId="42"/>
+      </frame>
+      <frame index="5" length="1">
+        <element assetId="61"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_stand_behit3">
+    <layer id="1">
+      <frame index="0" length="3" event="playEffect">
+        <element assetId="62"/>
+      </frame>
+      <frame index="3" length="2">
+        <element assetId="63"/>
+      </frame>
+      <frame index="5" length="1">
+        <element assetId="64"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_stand_behit4">
+    <layer id="1">
+      <frame index="0" length="1" event="playEffect">
+        <element assetId="41"/>
+      </frame>
+      <frame index="1" length="1">
+        <element assetId="27"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_stand_behit5">
+    <layer id="1">
+      <frame index="0" length="1" event="playEffect">
+        <element assetId="27"/>
+      </frame>
+      <frame index="1" length="1">
+        <element y="-3" assetId="41"/>
+      </frame>
+      <frame index="2" length="1">
+        <element y="-9" assetId="41"/>
+      </frame>
+      <frame index="3" length="1">
+        <element y="-13" assetId="27"/>
+      </frame>
+      <frame index="4" length="1">
+        <element y="-19" assetId="41"/>
+      </frame>
+      <frame index="5" length="1">
+        <element y="-25" assetId="41"/>
+      </frame>
+      <frame index="6" length="1">
+        <element x="35" y="-53" assetId="23" rotation="-21.00"/>
+      </frame>
+      <frame index="7" length="1">
+        <element x="36" y="-60" assetId="23" rotation="-26.00"/>
+      </frame>
+      <frame index="8" length="1">
+        <element x="30" y="-55" assetId="23" rotation="-26.00"/>
+      </frame>
+      <frame index="9" length="2">
+        <element x="2" y="-42" assetId="65" rotation="3.00"/>
+      </frame>
+      <frame index="11" length="1">
+        <element x="2" y="-30" assetId="65" rotation="3.00"/>
+      </frame>
+      <frame index="12" length="1">
+        <element x="2" y="-5" assetId="65" rotation="3.00"/>
+      </frame>
+      <frame index="13" length="1">
+        <element x="-9" y="4" assetId="66"/>
+      </frame>
+      <frame index="14" length="1">
+        <element x="-9" y="2" assetId="66"/>
+      </frame>
+      <frame index="15" length="1">
+        <element x="-9" y="2" assetId="66"/>
+      </frame>
+      <frame index="16" length="2">
+        <element assetId="56"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="13"/>
+      <frame index="13" length="1" sound="172" volume="53"/>
+    </layer>
+  </action>
+  <action id="0" name="D_stand_behit6">
+    <layer id="1">
+      <frame index="0" length="3" event="playEffect">
+        <element assetId="67"/>
+      </frame>
+      <frame index="3" length="2">
+        <element assetId="68"/>
+      </frame>
+      <frame index="5" length="1">
+        <element assetId="58"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_stand_behit7">
+    <layer id="1">
+      <frame index="0" length="1" event="playEffect">
+        <element x="10" y="-10" assetId="25"/>
+      </frame>
+      <frame index="1" length="1">
+        <element assetId="26"/>
+      </frame>
+      <frame index="2" length="3">
+        <element x="-2" y="-2" assetId="26"/>
+      </frame>
+      <frame index="5" length="2">
+        <element assetId="23"/>
+      </frame>
+      <frame index="7" length="2">
+        <element assetId="27"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_stand_behit8">
+    <layer id="1">
+      <frame index="0" length="1" event="playEffect">
+        <element assetId="28"/>
+      </frame>
+      <frame index="1" length="1">
+        <element assetId="29"/>
+      </frame>
+      <frame index="2" length="3">
+        <element x="-7" y="-2" assetId="29"/>
+      </frame>
+      <frame index="5" length="2">
+        <element assetId="30"/>
+      </frame>
+      <frame index="7" length="2">
+        <element assetId="22"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_stand_behit9">
+    <layer id="1">
+      <frame index="0" length="1" event="playEffect">
+        <element assetId="59"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="4" name="D_stand_land">
+    <layer id="1">
+      <frame index="0" length="1" event="playEffect">
+        <element x="-10" y="3" assetId="69"/>
+      </frame>
+      <frame index="1" length="1">
+        <element x="-10" y="3" assetId="69" rotation="350.00"/>
+      </frame>
+      <frame index="2" length="1">
+        <element x="3" y="1" assetId="69" rotation="330.00"/>
+      </frame>
+      <frame index="3" length="2">
+        <element x="-24" y="-7" assetId="57" rotation="10.00"/>
+      </frame>
+      <frame index="5" length="1">
+        <element x="-15" y="5" assetId="57"/>
+      </frame>
+      <frame index="6" length="1">
+        <element x="-15" y="-2" assetId="57"/>
+      </frame>
+      <frame index="7" length="1">
+        <element x="-15" y="-6" assetId="57"/>
+      </frame>
+      <frame index="8" length="1">
+        <element x="-26" y="-12" assetId="70"/>
+      </frame>
+      <frame index="9" length="1">
+        <element x="-26" y="-6" assetId="70"/>
+      </frame>
+      <frame index="10" length="1">
+        <element x="-17" y="5" assetId="32"/>
+      </frame>
+      <frame index="11" length="1">
+        <element x="-17" y="-7" assetId="32"/>
+      </frame>
+      <frame index="12" length="1">
+        <element x="-17" assetId="32"/>
+      </frame>
+      <frame index="13" length="1">
+        <element x="-17" y="1" assetId="32"/>
+      </frame>
+      <frame index="14" length="1">
+        <element x="-17" assetId="32"/>
+      </frame>
+      <frame index="15" length="1">
+        <element x="-17" y="2" assetId="32"/>
+      </frame>
+      <frame index="16" length="6">
+        <element x="-17" y="1" assetId="32"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="7"/>
+      <frame index="7" length="1" sound="236" volume="100"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="7"/>
+      <frame index="7" length="1" sound="121" volume="54"/>
+    </layer>
+  </action>
+  <action id="3" name="D_upair_air">
+    <layer id="3">
+      <frame index="0" length="2">
+        <element x="38" y="-296" assetId="23" rotation="330.00"/>
+      </frame>
+      <frame index="2" length="2">
+        <element x="68" y="-296" assetId="23" rotation="305.00"/>
+      </frame>
+      <frame index="4" length="2">
+        <element x="76" y="-283" assetId="23" rotation="295.00"/>
+      </frame>
+      <frame index="6" length="1">
+        <element x="82" y="-255" assetId="23" rotation="285.00"/>
+      </frame>
+      <frame index="7" length="1">
+        <element x="-4" y="-152" assetId="24"/>
+      </frame>
+    </layer>
+    <layer id="4"/>
+    <layer id="5"/>
+  </action>
+  <action id="0" name="D_upair_air1">
+    <layer id="1">
+      <frame index="0" length="1" event="playEffect">
+        <element x="9" y="-277" assetId="21"/>
+      </frame>
+      <frame index="1" length="1">
+        <element x="4" y="-279" assetId="20"/>
+      </frame>
+      <frame index="2" length="1">
+        <element x="7" y="-299" assetId="20"/>
+      </frame>
+      <frame index="3" length="1">
+        <element x="12" y="-324" assetId="21"/>
+      </frame>
+      <frame index="4" length="1">
+        <element x="15" y="-339" assetId="21"/>
+      </frame>
+      <frame index="5" length="1">
+        <element x="17" y="-341" assetId="22"/>
+      </frame>
+      <frame index="6" length="1">
+        <element x="16" y="-348" assetId="22"/>
+      </frame>
+      <frame index="7" length="1">
+        <element x="38" y="-360" assetId="23" rotation="332.00"/>
+      </frame>
+      <frame index="8" length="1">
+        <element x="44" y="-371" assetId="23" rotation="325.00"/>
+      </frame>
+      <frame index="9" length="1">
+        <element x="44" y="-376" assetId="23" rotation="325.00"/>
+      </frame>
+      <frame index="10" length="1">
+        <element x="53" y="-388" assetId="23" rotation="316.00"/>
+      </frame>
+      <frame index="11" length="1">
+        <element x="53" y="-391" assetId="23" rotation="316.00"/>
+      </frame>
+      <frame index="12" length="1">
+        <element x="62" y="-403" assetId="23" rotation="306.00"/>
+      </frame>
+      <frame index="13" length="1">
+        <element x="62" y="-404" assetId="23" rotation="306.00"/>
+      </frame>
+      <frame index="14" length="1">
+        <element x="74" y="-414" assetId="23" rotation="295.00"/>
+      </frame>
+      <frame index="15" length="1">
+        <element x="74" y="-407" assetId="23" rotation="295.00"/>
+      </frame>
+      <frame index="16" length="1">
+        <element x="78" y="-420" assetId="23" rotation="279.00"/>
+      </frame>
+      <frame index="17" length="1">
+        <element x="78" y="-416" assetId="23" rotation="279.00"/>
+      </frame>
+      <frame index="18" length="1">
+        <element x="84" y="-421" assetId="23" rotation="270.00"/>
+      </frame>
+      <frame index="19" length="1">
+        <element x="84" y="-412" assetId="23" rotation="270.00"/>
+      </frame>
+      <frame index="20" length="1">
+        <element x="83" y="-400" assetId="23" rotation="270.00"/>
+      </frame>
+      <frame index="21" length="1">
+        <element x="83" y="-388" assetId="23" rotation="270.00"/>
+      </frame>
+      <frame index="22" length="1">
+        <element x="82" y="-370" assetId="23" rotation="270.00"/>
+      </frame>
+      <frame index="23" length="1">
+        <element x="-13" y="-316" assetId="24" rotation="20.00"/>
+      </frame>
+      <frame index="24" length="1">
+        <element x="-15" y="-287" assetId="24" rotation="20.00"/>
+      </frame>
+      <frame index="25" length="1">
+        <element x="-15" y="-253" assetId="24" rotation="20.00"/>
+      </frame>
+      <frame index="26" length="2">
+        <element y="-232" assetId="24"/>
+      </frame>
+      <frame index="28" length="1">
+        <element y="-180" assetId="24"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="284" volume="100"/>
+    </layer>
+    <layer id="3">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="285" volume="100"/>
+    </layer>
+    <layer id="4">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="288" volume="100"/>
+    </layer>
+  </action>
+  <action id="3" name="D_upair_air2">
+    <layer id="3">
+      <frame index="0" length="1" event="playEffect">
+        <element x="12" y="-283" assetId="21"/>
+      </frame>
+      <frame index="1" length="1">
+        <element x="2" y="-375" assetId="20"/>
+      </frame>
+      <frame index="2" length="1">
+        <element x="3" y="-438" assetId="20"/>
+      </frame>
+      <frame index="3" length="1">
+        <element x="3" y="-484" assetId="20"/>
+      </frame>
+      <frame index="4" length="1">
+        <element x="3" y="-539" assetId="20"/>
+      </frame>
+      <frame index="5" length="1">
+        <element x="4" y="-578" assetId="20"/>
+      </frame>
+      <frame index="6" length="2">
+        <element x="5" y="-607" assetId="20"/>
+      </frame>
+      <frame index="8" length="2">
+        <element x="8" y="-626" assetId="21"/>
+      </frame>
+      <frame index="10" length="2">
+        <element x="8" y="-679" assetId="21"/>
+      </frame>
+      <frame index="12" length="2">
+        <element x="23" y="-705" assetId="23" rotation="340.00"/>
+      </frame>
+      <frame index="14" length="2">
+        <element x="31" y="-715" assetId="23" rotation="330.00"/>
+      </frame>
+      <frame index="16" length="2">
+        <element x="54" y="-729" assetId="23" rotation="305.00"/>
+      </frame>
+      <frame index="18" length="3">
+        <element x="61" y="-745" assetId="23" rotation="295.00"/>
+      </frame>
+      <frame index="21" length="2">
+        <element x="66" y="-757" assetId="23" rotation="285.00"/>
+      </frame>
+      <frame index="23" length="2">
+        <element x="66" y="-736" assetId="23" rotation="285.00"/>
+      </frame>
+      <frame index="25" length="2">
+        <element x="70" y="-747" assetId="23" rotation="260.00"/>
+      </frame>
+      <frame index="27" length="2">
+        <element x="70" y="-734" assetId="23" rotation="260.00"/>
+      </frame>
+      <frame index="29" length="2">
+        <element x="-6" y="-652" assetId="24"/>
+      </frame>
+      <frame index="31" length="2">
+        <element x="-6" y="-621" assetId="24"/>
+      </frame>
+      <frame index="33" length="1">
+        <element x="-6" y="-583" assetId="24"/>
+      </frame>
+      <frame index="34" length="1">
+        <element x="-6" y="-535" assetId="24"/>
+      </frame>
+      <frame index="35" length="1">
+        <element x="-6" y="-481" assetId="24"/>
+      </frame>
+      <frame index="36" length="1">
+        <element x="-6" y="-414" assetId="24"/>
+      </frame>
+      <frame index="37" length="1">
+        <element x="-6" y="-344" assetId="24"/>
+      </frame>
+      <frame index="38" length="1">
+        <element x="-6" y="-268" assetId="24"/>
+      </frame>
+      <frame index="39" length="1">
+        <element x="-6" y="-180" assetId="24"/>
+      </frame>
+    </layer>
+    <layer id="4">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="284" volume="100"/>
+    </layer>
+    <layer id="5">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="286" volume="100"/>
+    </layer>
+    <layer id="6">
+      <frame index="0" length="1"/>
+      <frame index="1" length="1" sound="288" volume="100"/>
+    </layer>
+  </action>
+  <action id="0" name="D_upair_behit1">
+    <layer id="1">
+      <frame index="0" length="1" event="playEffect">
+        <element x="9" y="-282" assetId="25"/>
+      </frame>
+      <frame index="1" length="1">
+        <element x="4" y="-287" assetId="26"/>
+      </frame>
+      <frame index="2" length="3">
+        <element x="9" y="-282" assetId="26"/>
+      </frame>
+      <frame index="5" length="2">
+        <element x="9" y="-282" assetId="23"/>
+      </frame>
+      <frame index="7" length="2">
+        <element x="9" y="-282" assetId="27"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_upair_behit2">
+    <layer id="1">
+      <frame index="0" length="1" event="playEffect">
+        <element x="5" y="-277" assetId="28"/>
+      </frame>
+      <frame index="1" length="1">
+        <element x="2" y="-280" assetId="29"/>
+      </frame>
+      <frame index="2" length="3">
+        <element x="5" y="-277" assetId="29"/>
+      </frame>
+      <frame index="5" length="2">
+        <element x="5" y="-277" assetId="30"/>
+      </frame>
+      <frame index="7" length="2">
+        <element x="5" y="-277" assetId="22"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_upair_behit3">
+    <layer id="1">
+      <frame index="0" length="1" event="playEffect">
+        <element x="3" y="-262" assetId="41"/>
+      </frame>
+      <frame index="1" length="1">
+        <element x="6" y="-261" assetId="27"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="D_upair_behit4">
+    <layer id="1">
+      <frame index="0" length="1">
+        <element x="9" y="-282" assetId="27"/>
+      </frame>
+    </layer>
+    <layer id="2"/>
+    <layer id="3"/>
+  </action>
+  <action id="0" name="C_skillIdle_2">
+    <layer id="0">
+      <frame index="0" length="4">
+        <element x="-9" assetId="71"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="C_skillIdle_1">
+    <layer id="0">
+      <frame index="0" length="3">
+        <element x="-9" assetId="72"/>
+      </frame>
+      <frame index="3" length="2">
+        <element x="-9" assetId="73"/>
+      </frame>
+      <frame index="5" length="2">
+        <element x="-9" assetId="74"/>
+      </frame>
+      <frame index="7" length="2">
+        <element x="-9" assetId="75"/>
+      </frame>
+      <frame index="9" length="2">
+        <element x="-9" assetId="76"/>
+      </frame>
+      <frame index="11" length="4">
+        <element x="-9" assetId="71"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="C_idle">
+    <layer id="0">
+      <frame index="0" length="3">
+        <element assetId="77"/>
+      </frame>
+      <frame index="3" length="4">
+        <element assetId="78"/>
+      </frame>
+      <frame index="7" length="4">
+        <element assetId="79"/>
+      </frame>
+      <frame index="11" length="3">
+        <element assetId="80"/>
+      </frame>
+      <frame index="14" length="4">
+        <element assetId="81"/>
+      </frame>
+      <frame index="18" length="3">
+        <element assetId="82"/>
+      </frame>
+      <frame index="21" length="3">
+        <element assetId="83"/>
+      </frame>
+      <frame index="24" length="2">
+        <element assetId="84"/>
+      </frame>
+      <frame index="26" length="3">
+        <element assetId="85"/>
+      </frame>
+      <frame index="29" length="4">
+        <element assetId="12"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="A_1hit">
+    <layer id="0">
+      <frame index="0" length="1" event="playSkillEffect">
+        <element assetId="86"/>
+      </frame>
+      <frame index="1" length="2">
+        <element assetId="87"/>
+      </frame>
+      <frame index="3" length="1">
+        <element assetId="88"/>
+      </frame>
+      <frame index="4" length="1">
+        <element assetId="89"/>
+      </frame>
+      <frame index="5" length="5">
+        <element assetId="90"/>
+      </frame>
+      <frame index="10" length="2">
+        <element x="-5" assetId="91"/>
+      </frame>
+      <frame index="12" length="1">
+        <element x="231" y="3" assetId="92"/>
+      </frame>
+      <frame index="13" length="1">
+        <element x="329" y="3" assetId="92"/>
+      </frame>
+      <frame index="14" length="1" event="hit">
+        <element x="390" y="3" assetId="92"/>
+      </frame>
+      <frame index="15" length="1">
+        <element x="421" y="3" assetId="93"/>
+      </frame>
+      <frame index="16" length="1">
+        <element x="429" y="3" assetId="93"/>
+      </frame>
+      <frame index="17" length="7">
+        <element x="430" y="3" assetId="93"/>
+      </frame>
+      <frame index="24" length="2">
+        <element x="430" y="3" assetId="94"/>
+      </frame>
+      <frame index="26" length="3">
+        <element x="430" y="3" assetId="95"/>
+      </frame>
+      <frame index="29" length="3">
+        <element x="430" y="3" assetId="96"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="A_3hit">
+    <layer id="0">
+      <frame index="0" length="1" event="playSkillEffect">
+        <element assetId="86"/>
+      </frame>
+      <frame index="1" length="2">
+        <element assetId="87"/>
+      </frame>
+      <frame index="3" length="1">
+        <element assetId="88"/>
+      </frame>
+      <frame index="4" length="1">
+        <element assetId="89"/>
+      </frame>
+      <frame index="5" length="5">
+        <element assetId="90"/>
+      </frame>
+      <frame index="10" length="2">
+        <element x="-5" assetId="91"/>
+      </frame>
+      <frame index="12" length="1">
+        <element x="231" y="3" assetId="92"/>
+      </frame>
+      <frame index="13" length="1">
+        <element x="329" y="3" assetId="92"/>
+      </frame>
+      <frame index="14" length="1" event="hit,:2">
+        <element x="390" y="3" assetId="92"/>
+      </frame>
+      <frame index="15" length="1" event="playShake:1">
+        <element x="421" y="3" assetId="93"/>
+      </frame>
+      <frame index="16" length="1">
+        <element x="429" y="3" assetId="93"/>
+      </frame>
+      <frame index="17" length="7">
+        <element x="430" y="3" assetId="93"/>
+      </frame>
+      <frame index="24" length="2">
+        <element x="430" y="3" assetId="94"/>
+      </frame>
+      <frame index="26" length="3">
+        <element x="430" y="3" assetId="95"/>
+      </frame>
+      <frame index="29" length="3">
+        <element x="430" y="3" assetId="96"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="SP_skill1">
+    <layer id="0">
+      <frame index="0" length="1" event="playSkillEffect">
+        <element x="2" assetId="97"/>
+      </frame>
+      <frame index="1" length="1">
+        <element x="2" assetId="98"/>
+      </frame>
+      <frame index="2" length="2">
+        <element x="2" assetId="99"/>
+      </frame>
+      <frame index="4" length="1">
+        <element x="2" y="-23" assetId="100"/>
+      </frame>
+      <frame index="5" length="1">
+        <element x="2" y="-97" assetId="100"/>
+      </frame>
+      <frame index="6" length="1">
+        <element x="2" y="-118" assetId="101"/>
+      </frame>
+      <frame index="7" length="1">
+        <element x="2" y="-141" assetId="102"/>
+      </frame>
+      <frame index="8" length="1">
+        <element x="2" y="-157" assetId="103"/>
+      </frame>
+      <frame index="9" length="3">
+        <element x="2" y="-161" assetId="103"/>
+      </frame>
+      <frame index="12" length="1">
+        <element x="-6" y="-159" assetId="104"/>
+      </frame>
+      <frame index="13" length="2">
+        <element x="-51" y="-189" assetId="104"/>
+      </frame>
+      <frame index="15" length="3">
+        <element x="-74" y="-202" assetId="104"/>
+      </frame>
+      <frame index="18" length="2">
+        <element x="-90" y="-192" assetId="104"/>
+      </frame>
+      <frame index="20" length="1">
+        <element x="-109" y="-166" assetId="104"/>
+      </frame>
+      <frame index="21" length="1" event="hit">
+        <element x="-118" y="-121" assetId="105"/>
+      </frame>
+      <frame index="22" length="1">
+        <element x="-141" y="-66" assetId="105"/>
+      </frame>
+      <frame index="23" length="1">
+        <element x="-148" assetId="106"/>
+      </frame>
+      <frame index="24" length="1">
+        <element x="-148" assetId="107"/>
+      </frame>
+      <frame index="25" length="3" event="hit">
+        <element x="-148" assetId="108"/>
+      </frame>
+      <frame index="28" length="1" event="hit">
+        <element x="-148" assetId="108"/>
+      </frame>
+      <frame index="29" length="3">
+        <element x="-148" assetId="109"/>
+      </frame>
+      <frame index="32" length="2" event="hit">
+        <element x="-148" assetId="110"/>
+      </frame>
+      <frame index="34" length="3">
+        <element x="-148" assetId="111"/>
+      </frame>
+    </layer>
+    <layer id="0">
+      <frame index="0" length="12"/>
+      <frame index="12" length="1">
+        <element x="4" y="-121" assetId="112" rotation="-1.00"/>
+      </frame>
+      <frame index="13" length="1">
+        <element x="33" y="-78" assetId="113" rotation="1.00"/>
+      </frame>
+      <frame index="14" length="6">
+        <element x="29" y="-30" assetId="114"/>
+      </frame>
+    </layer>
+    <layer id="0">
+      <frame index="0" length="4">
+        <element assetId="0" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="4" length="1">
+        <element assetId="0" scaleX="0.90" scaleY="0.90" alpha="0.90" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="5" length="1">
+        <element assetId="0" scaleX="0.70" scaleY="0.70" alpha="0.70" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="6" length="1">
+        <element assetId="0" scaleX="0.60" scaleY="0.60" alpha="0.60" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="7" length="2">
+        <element assetId="0" scaleX="0.50" scaleY="0.50" alpha="0.50" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="9" length="3">
+        <element assetId="0" scaleX="0.45" scaleY="0.45" alpha="0.50" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="12" length="1">
+        <element assetId="0" scaleX="0.45" scaleY="0.45" alpha="0.50" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="13" length="2">
+        <element x="-58" assetId="0" scaleX="0.35" scaleY="0.35" alpha="0.40" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="15" length="3">
+        <element x="-79" assetId="0" scaleX="0.30" scaleY="0.30" alpha="0.30" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="18" length="2">
+        <element x="-104" assetId="0" scaleX="0.40" scaleY="0.40" alpha="0.40" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="20" length="1">
+        <element x="-125" assetId="0" scaleX="0.40" scaleY="0.40" alpha="0.40" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="21" length="1">
+        <element x="-125" assetId="0" scaleX="0.50" scaleY="0.50" alpha="0.50" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="22" length="1">
+        <element x="-140" assetId="0" scaleX="0.70" scaleY="0.70" alpha="0.70" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="23" length="1">
+        <element x="-146" assetId="0" scaleX="0.90" scaleY="0.90" alpha="0.90" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="24" length="13">
+        <element x="-151" assetId="0" extname="yingzi(1).png"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="SP_skill2">
+    <layer id="0">
+      <frame index="0" length="3">
+        <element assetId="72"/>
+      </frame>
+      <frame index="3" length="2">
+        <element assetId="73"/>
+      </frame>
+      <frame index="5" length="2">
+        <element assetId="74"/>
+      </frame>
+      <frame index="7" length="2">
+        <element assetId="75"/>
+      </frame>
+      <frame index="9" length="2" event="hit,playHitEffect,playSkillEffect">
+        <element assetId="76"/>
+      </frame>
+      <frame index="11" length="6">
+        <element assetId="71"/>
+      </frame>
+      <frame index="17" length="2">
+        <element assetId="74"/>
+      </frame>
+      <frame index="19" length="2">
+        <element assetId="73"/>
+      </frame>
+      <frame index="21" length="2">
+        <element assetId="72"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="SP_skill3">
+    <layer id="0">
+      <frame index="0" length="79"/>
+      <frame index="79" length="1">
+        <element x="-9" y="8" assetId="115"/>
+      </frame>
+      <frame index="80" length="1">
+        <element x="72" y="8" assetId="115"/>
+      </frame>
+      <frame index="81" length="1" event="hit">
+        <element x="164" y="8" assetId="115"/>
+      </frame>
+      <frame index="82" length="3"/>
+      <frame index="85" length="1">
+        <element x="-19" y="30" assetId="115"/>
+      </frame>
+      <frame index="86" length="1">
+        <element x="62" y="30" assetId="115"/>
+      </frame>
+      <frame index="87" length="1">
+        <element x="154" y="30" assetId="115"/>
+      </frame>
+      <frame index="88" length="2"/>
+      <frame index="90" length="1">
+        <element x="-30" y="44" assetId="115"/>
+      </frame>
+      <frame index="91" length="1">
+        <element x="51" y="44" assetId="115"/>
+      </frame>
+      <frame index="92" length="1">
+        <element x="143" y="44" assetId="115"/>
+      </frame>
+    </layer>
+    <layer id="0">
+      <frame index="0" length="78"/>
+      <frame index="78" length="1">
+        <element x="-37" y="-12" assetId="116"/>
+      </frame>
+      <frame index="79" length="1">
+        <element x="38" y="-12" assetId="116"/>
+      </frame>
+      <frame index="80" length="1">
+        <element x="130" y="-12" assetId="116"/>
+      </frame>
+      <frame index="81" length="5"/>
+      <frame index="86" length="1">
+        <element x="-37" y="8" assetId="116"/>
+      </frame>
+      <frame index="87" length="1">
+        <element x="38" y="8" assetId="116"/>
+      </frame>
+      <frame index="88" length="1">
+        <element x="130" y="8" assetId="116"/>
+      </frame>
+      <frame index="89" length="2"/>
+      <frame index="91" length="1">
+        <element x="-37" y="-29" assetId="116"/>
+      </frame>
+      <frame index="92" length="1">
+        <element x="38" y="-29" assetId="116"/>
+      </frame>
+      <frame index="93" length="1">
+        <element x="130" y="-29" assetId="116"/>
+      </frame>
+    </layer>
+    <layer id="0">
+      <frame index="0" length="77"/>
+      <frame index="77" length="1">
+        <element x="-3" y="-28" assetId="117"/>
+      </frame>
+      <frame index="78" length="1">
+        <element x="87" y="-28" assetId="117"/>
+      </frame>
+      <frame index="79" length="1">
+        <element x="185" y="-28" assetId="117"/>
+      </frame>
+      <frame index="80" length="3"/>
+      <frame index="83" length="1">
+        <element x="-3" y="-57" assetId="117"/>
+      </frame>
+      <frame index="84" length="1">
+        <element x="87" y="-57" assetId="117"/>
+      </frame>
+      <frame index="85" length="1">
+        <element x="185" y="-57" assetId="117"/>
+      </frame>
+      <frame index="86" length="6"/>
+      <frame index="92" length="1">
+        <element x="-3" y="-11" assetId="117"/>
+      </frame>
+      <frame index="93" length="1">
+        <element x="87" y="-11" assetId="117"/>
+      </frame>
+      <frame index="94" length="1">
+        <element x="185" y="-11" assetId="117"/>
+      </frame>
+    </layer>
+    <layer id="0">
+      <frame index="0" length="50"/>
+      <frame index="50" length="9">
+        <element x="-179" y="14" assetId="118"/>
+      </frame>
+      <frame index="59" length="2">
+        <element x="-179" y="14" assetId="119"/>
+      </frame>
+      <frame index="61" length="2">
+        <element x="-179" y="14" assetId="120"/>
+      </frame>
+      <frame index="63" length="2">
+        <element x="-179" y="14" assetId="121"/>
+      </frame>
+      <frame index="65" length="8">
+        <element x="-179" y="14" assetId="122"/>
+      </frame>
+      <frame index="73" length="2">
+        <element x="-179" y="14" assetId="123"/>
+      </frame>
+      <frame index="75" length="2">
+        <element x="-179" y="14" assetId="124"/>
+      </frame>
+      <frame index="77" length="1">
+        <element x="-179" y="14" assetId="125"/>
+      </frame>
+      <frame index="78" length="1">
+        <element x="-179" y="14" assetId="126"/>
+      </frame>
+      <frame index="79" length="1">
+        <element x="-179" y="14" assetId="127"/>
+      </frame>
+      <frame index="80" length="1">
+        <element x="-179" y="14" assetId="128"/>
+      </frame>
+      <frame index="81" length="1">
+        <element x="-179" y="14" assetId="129"/>
+      </frame>
+      <frame index="82" length="1">
+        <element x="-179" y="14" assetId="130"/>
+      </frame>
+      <frame index="83" length="1">
+        <element x="-179" y="14" assetId="131"/>
+      </frame>
+      <frame index="84" length="1">
+        <element x="-179" y="14" assetId="132"/>
+      </frame>
+      <frame index="85" length="1">
+        <element x="-179" y="14" assetId="133"/>
+      </frame>
+      <frame index="86" length="1">
+        <element x="-179" y="14" assetId="134"/>
+      </frame>
+      <frame index="87" length="1">
+        <element x="-179" y="14" assetId="135"/>
+      </frame>
+      <frame index="88" length="1">
+        <element x="-179" y="14" assetId="136"/>
+      </frame>
+      <frame index="89" length="2">
+        <element x="-179" y="14" assetId="137"/>
+      </frame>
+      <frame index="91" length="2">
+        <element x="-179" y="14" assetId="138"/>
+      </frame>
+      <frame index="93" length="1">
+        <element x="-179" y="14" assetId="139"/>
+      </frame>
+      <frame index="94" length="1">
+        <element x="-179" y="14" assetId="140"/>
+      </frame>
+      <frame index="95" length="4">
+        <element x="-179" y="14" assetId="141"/>
+      </frame>
+      <frame index="99" length="2">
+        <element x="-179" y="14" assetId="142"/>
+      </frame>
+      <frame index="101" length="2">
+        <element x="-179" y="14" assetId="143"/>
+      </frame>
+      <frame index="103" length="1">
+        <element x="-179" y="14" assetId="144"/>
+      </frame>
+      <frame index="104" length="1">
+        <element x="-179" y="14" assetId="145"/>
+      </frame>
+      <frame index="105" length="8">
+        <element x="-179" y="14" assetId="146"/>
+      </frame>
+      <frame index="113" length="2">
+        <element x="-179" y="14" assetId="147"/>
+      </frame>
+      <frame index="115" length="2">
+        <element x="-179" y="14" assetId="148"/>
+      </frame>
+      <frame index="117" length="4">
+        <element x="-179" y="14" assetId="149"/>
+      </frame>
+      <frame index="121" length="2">
+        <element x="-179" y="14" assetId="150"/>
+      </frame>
+      <frame index="123" length="3">
+        <element x="-179" y="14" assetId="151"/>
+      </frame>
+      <frame index="126" length="3">
+        <element x="-179" y="14" assetId="152"/>
+      </frame>
+      <frame index="129" length="2">
+        <element x="-179" y="14" assetId="153"/>
+      </frame>
+      <frame index="131" length="1">
+        <element x="-179" y="14" assetId="154"/>
+      </frame>
+    </layer>
+    <layer id="0">
+      <frame index="0" length="50"/>
+      <frame index="50" length="9">
+        <element x="-96" y="6" assetId="155"/>
+      </frame>
+      <frame index="59" length="2">
+        <element x="-96" y="6" assetId="156"/>
+      </frame>
+      <frame index="61" length="2">
+        <element x="-96" y="6" assetId="157"/>
+      </frame>
+      <frame index="63" length="2">
+        <element x="-96" y="6" assetId="158"/>
+      </frame>
+      <frame index="65" length="8">
+        <element x="-96" y="6" assetId="159"/>
+      </frame>
+      <frame index="73" length="2">
+        <element x="-96" y="6" assetId="160"/>
+      </frame>
+      <frame index="75" length="2">
+        <element x="-96" y="6" assetId="161"/>
+      </frame>
+      <frame index="77" length="1">
+        <element x="-96" y="6" assetId="162"/>
+      </frame>
+      <frame index="78" length="1">
+        <element x="-96" y="6" assetId="163"/>
+      </frame>
+      <frame index="79" length="1">
+        <element x="-96" y="6" assetId="164"/>
+      </frame>
+      <frame index="80" length="1">
+        <element x="-96" y="6" assetId="165"/>
+      </frame>
+      <frame index="81" length="1">
+        <element x="-96" y="6" assetId="161"/>
+      </frame>
+      <frame index="82" length="1">
+        <element x="-96" y="6" assetId="162"/>
+      </frame>
+      <frame index="83" length="1">
+        <element x="-96" y="6" assetId="166"/>
+      </frame>
+      <frame index="84" length="1">
+        <element x="-96" y="6" assetId="167"/>
+      </frame>
+      <frame index="85" length="1">
+        <element x="-96" y="6" assetId="168"/>
+      </frame>
+      <frame index="86" length="2">
+        <element x="-96" y="6" assetId="169"/>
+      </frame>
+      <frame index="88" length="1">
+        <element x="-96" y="6" assetId="161"/>
+      </frame>
+      <frame index="89" length="2">
+        <element x="-96" y="6" assetId="162"/>
+      </frame>
+      <frame index="91" length="2">
+        <element x="-96" y="6" assetId="170"/>
+      </frame>
+      <frame index="93" length="1">
+        <element x="-96" y="6" assetId="171"/>
+      </frame>
+      <frame index="94" length="1">
+        <element x="-96" y="6" assetId="172"/>
+      </frame>
+      <frame index="95" length="4">
+        <element x="-96" y="6" assetId="173"/>
+      </frame>
+      <frame index="99" length="2">
+        <element x="-96" y="6" assetId="174"/>
+      </frame>
+      <frame index="101" length="2">
+        <element x="-96" y="6" assetId="175"/>
+      </frame>
+      <frame index="103" length="1">
+        <element x="-96" y="6" assetId="176"/>
+      </frame>
+      <frame index="104" length="1">
+        <element x="-96" y="6" assetId="177"/>
+      </frame>
+      <frame index="105" length="8">
+        <element x="-96" y="6" assetId="178"/>
+      </frame>
+      <frame index="113" length="2">
+        <element x="-96" y="6" assetId="179"/>
+      </frame>
+      <frame index="115" length="2">
+        <element x="-96" y="6" assetId="180"/>
+      </frame>
+      <frame index="117" length="4">
+        <element x="-96" y="6" assetId="181"/>
+      </frame>
+      <frame index="121" length="2">
+        <element x="-96" y="6" assetId="182"/>
+      </frame>
+      <frame index="123" length="3">
+        <element x="-96" y="6" assetId="183"/>
+      </frame>
+      <frame index="126" length="3">
+        <element x="-96" y="6" assetId="184"/>
+      </frame>
+      <frame index="129" length="2">
+        <element x="-96" y="6" assetId="185"/>
+      </frame>
+      <frame index="131" length="1">
+        <element x="-118" y="6" assetId="186"/>
+      </frame>
+    </layer>
+    <layer id="0">
+      <frame index="0" length="103"/>
+      <frame index="103" length="1">
+        <element x="-150" y="-168" assetId="187" scaleX="0.80" scaleY="0.80"/>
+      </frame>
+      <frame index="104" length="1">
+        <element x="-153" y="-169" assetId="187" scaleX="0.80" scaleY="0.80"/>
+      </frame>
+      <frame index="105" length="8">
+        <element x="-155" y="-171" assetId="187" scaleX="0.80" scaleY="0.80"/>
+      </frame>
+      <frame index="113" length="2">
+        <element x="-155" y="-170" assetId="187" scaleX="0.80" scaleY="0.80"/>
+      </frame>
+      <frame index="115" length="2">
+        <element x="-157" y="-170" assetId="187" scaleX="0.80" scaleY="0.80"/>
+      </frame>
+      <frame index="117" length="2">
+        <element x="-96" y="-229" assetId="187" scaleX="0.80" scaleY="0.80" rotation="-5.00"/>
+      </frame>
+      <frame index="119" length="2">
+        <element x="-4" y="-260" assetId="187" scaleX="0.80" scaleY="0.80" rotation="-10.00"/>
+      </frame>
+      <frame index="121" length="1">
+        <element x="59" y="-254" assetId="187" scaleX="0.80" scaleY="0.80" rotation="-12.00"/>
+      </frame>
+      <frame index="122" length="1">
+        <element x="96" y="-242" assetId="187" scaleX="0.80" scaleY="0.80" rotation="-13.00"/>
+      </frame>
+      <frame index="123" length="1">
+        <element x="137" y="-214" assetId="187" scaleX="0.80" scaleY="0.80" rotation="-14.00"/>
+      </frame>
+      <frame index="124" length="1">
+        <element x="193" y="-149" assetId="187" scaleX="0.80" scaleY="0.80"/>
+      </frame>
+      <frame index="125" length="1">
+        <element x="236" y="-82" assetId="187" scaleX="0.80" scaleY="0.80" rotation="5.00"/>
+      </frame>
+      <frame index="126" length="1">
+        <element x="240" y="-78" assetId="187" scaleX="0.80" scaleY="0.80" rotation="8.00"/>
+      </frame>
+      <frame index="127" length="1">
+        <element x="246" y="-83" assetId="187" scaleX="0.80" scaleY="0.80" rotation="12.00"/>
+      </frame>
+      <frame index="128" length="7">
+        <element x="247" y="-82" assetId="187" scaleX="0.80" scaleY="0.80" rotation="15.00"/>
+      </frame>
+    </layer>
+    <layer id="0">
+      <frame index="0" length="50"/>
+      <frame index="50" length="9">
+        <element x="-142" y="-2" assetId="188"/>
+      </frame>
+      <frame index="59" length="2">
+        <element x="-142" y="-2" assetId="189"/>
+      </frame>
+      <frame index="61" length="2">
+        <element x="-142" y="-2" assetId="190"/>
+      </frame>
+      <frame index="63" length="2">
+        <element x="-142" y="-2" assetId="191"/>
+      </frame>
+      <frame index="65" length="8">
+        <element x="-142" y="-2" assetId="192"/>
+      </frame>
+      <frame index="73" length="2">
+        <element x="-142" y="-2" assetId="193"/>
+      </frame>
+      <frame index="75" length="2">
+        <element x="-142" y="-2" assetId="194"/>
+      </frame>
+      <frame index="77" length="1">
+        <element x="-142" y="-2" assetId="195"/>
+      </frame>
+      <frame index="78" length="1">
+        <element x="-142" y="-2" assetId="196"/>
+      </frame>
+      <frame index="79" length="1">
+        <element x="-142" y="-2" assetId="197"/>
+      </frame>
+      <frame index="80" length="1">
+        <element x="-142" y="-2" assetId="198"/>
+      </frame>
+      <frame index="81" length="1">
+        <element x="-142" y="-2" assetId="199"/>
+      </frame>
+      <frame index="82" length="1">
+        <element x="-142" y="-2" assetId="200"/>
+      </frame>
+      <frame index="83" length="1">
+        <element x="-142" y="-2" assetId="201"/>
+      </frame>
+      <frame index="84" length="1">
+        <element x="-142" y="-2" assetId="202"/>
+      </frame>
+      <frame index="85" length="1">
+        <element x="-142" y="-2" assetId="203"/>
+      </frame>
+      <frame index="86" length="1">
+        <element x="-142" y="-2" assetId="204"/>
+      </frame>
+      <frame index="87" length="1">
+        <element x="-142" y="-2" assetId="205"/>
+      </frame>
+      <frame index="88" length="1">
+        <element x="-142" y="-2" assetId="206"/>
+      </frame>
+      <frame index="89" length="2">
+        <element x="-142" y="-2" assetId="207"/>
+      </frame>
+      <frame index="91" length="2">
+        <element x="-142" y="-2" assetId="208"/>
+      </frame>
+      <frame index="93" length="1">
+        <element x="-142" y="-2" assetId="209"/>
+      </frame>
+      <frame index="94" length="1">
+        <element x="-142" y="-2" assetId="210"/>
+      </frame>
+      <frame index="95" length="4">
+        <element x="-142" y="-2" assetId="211"/>
+      </frame>
+      <frame index="99" length="2">
+        <element x="-142" y="-2" assetId="212"/>
+      </frame>
+      <frame index="101" length="2">
+        <element x="-142" y="-2" assetId="213"/>
+      </frame>
+      <frame index="103" length="1">
+        <element x="-142" y="-2" assetId="214"/>
+      </frame>
+      <frame index="104" length="1">
+        <element x="-142" y="-2" assetId="215"/>
+      </frame>
+      <frame index="105" length="8">
+        <element x="-142" y="-2" assetId="216"/>
+      </frame>
+      <frame index="113" length="2">
+        <element x="-142" y="-2" assetId="217"/>
+      </frame>
+      <frame index="115" length="2">
+        <element x="-142" y="-2" assetId="218"/>
+      </frame>
+      <frame index="117" length="4">
+        <element x="-142" y="-2" assetId="219"/>
+      </frame>
+      <frame index="121" length="2">
+        <element x="-142" y="-2" assetId="220"/>
+      </frame>
+      <frame index="123" length="3">
+        <element x="-142" y="-2" assetId="221"/>
+      </frame>
+      <frame index="126" length="3">
+        <element x="-142" y="-2" assetId="222"/>
+      </frame>
+      <frame index="129" length="2">
+        <element x="-142" y="-2" assetId="223"/>
+      </frame>
+      <frame index="131" length="1">
+        <element x="-142" y="-2" assetId="224"/>
+      </frame>
+    </layer>
+    <layer id="0">
+      <frame index="0" length="2" event="playSkillEffect">
+        <element x="2" y="-1" assetId="225"/>
+      </frame>
+      <frame index="2" length="2">
+        <element x="2" y="-1" assetId="226"/>
+      </frame>
+      <frame index="4" length="2">
+        <element x="2" y="-1" assetId="227"/>
+      </frame>
+      <frame index="6" length="1">
+        <element x="2" y="-1" assetId="228"/>
+      </frame>
+      <frame index="7" length="32">
+        <element x="2" y="-1" assetId="229"/>
+      </frame>
+      <frame index="39" length="2">
+        <element x="2" y="-1" assetId="230"/>
+      </frame>
+      <frame index="41" length="2">
+        <element x="2" y="-1" assetId="231"/>
+      </frame>
+      <frame index="43" length="2">
+        <element x="2" y="-1" assetId="232"/>
+      </frame>
+      <frame index="45" length="5">
+        <element x="2" y="-1" assetId="233"/>
+      </frame>
+      <frame index="50" length="1">
+        <element x="2" y="-1" assetId="234"/>
+      </frame>
+      <frame index="51" length="13">
+        <element x="2" y="-1" assetId="235"/>
+      </frame>
+      <frame index="64" length="1">
+        <element x="2" y="-1" assetId="236"/>
+      </frame>
+      <frame index="65" length="8">
+        <element x="2" y="-1" assetId="237"/>
+      </frame>
+      <frame index="73" length="1">
+        <element x="2" y="-1" assetId="238"/>
+      </frame>
+      <frame index="74" length="1" event="hit">
+        <element x="2" y="-1" assetId="239"/>
+      </frame>
+      <frame index="75" length="1">
+        <element x="2" y="-1" assetId="240"/>
+      </frame>
+      <frame index="76" length="1">
+        <element x="2" y="-1" assetId="241"/>
+      </frame>
+      <frame index="77" length="1">
+        <element x="2" y="-1" assetId="242"/>
+      </frame>
+      <frame index="78" length="1" event="hit">
+        <element x="2" y="-1" assetId="243"/>
+      </frame>
+      <frame index="79" length="2">
+        <element x="2" y="-1" assetId="244"/>
+      </frame>
+      <frame index="81" length="2">
+        <element x="2" y="-1" assetId="245"/>
+      </frame>
+      <frame index="83" length="2" event="hit">
+        <element x="2" y="-1" assetId="244"/>
+      </frame>
+      <frame index="85" length="2">
+        <element x="2" y="-1" assetId="245"/>
+      </frame>
+      <frame index="87" length="2">
+        <element x="2" y="-1" assetId="244"/>
+      </frame>
+      <frame index="89" length="2" event="hit">
+        <element x="2" y="-1" assetId="245"/>
+      </frame>
+      <frame index="91" length="2">
+        <element x="2" y="-1" assetId="244"/>
+      </frame>
+      <frame index="93" length="2">
+        <element x="2" y="-1" assetId="245"/>
+      </frame>
+      <frame index="95" length="2">
+        <element x="2" y="-1" assetId="244"/>
+      </frame>
+      <frame index="97" length="2">
+        <element x="2" y="-1" assetId="245"/>
+      </frame>
+      <frame index="99" length="2">
+        <element x="2" y="-1" assetId="244"/>
+      </frame>
+      <frame index="101" length="2">
+        <element x="2" y="-1" assetId="245"/>
+      </frame>
+      <frame index="103" length="2">
+        <element x="2" y="-1" assetId="244"/>
+      </frame>
+      <frame index="105" length="2">
+        <element x="2" y="-1" assetId="245"/>
+      </frame>
+      <frame index="107" length="2">
+        <element x="2" y="-1" assetId="244"/>
+      </frame>
+      <frame index="109" length="11">
+        <element x="2" y="-1" assetId="245"/>
+      </frame>
+      <frame index="120" length="4">
+        <element x="2" y="-1" assetId="245"/>
+      </frame>
+      <frame index="124" length="2">
+        <element x="2" y="-1" assetId="246"/>
+      </frame>
+      <frame index="126" length="2">
+        <element x="2" y="-1" assetId="247"/>
+      </frame>
+      <frame index="128" length="5" event="hit">
+        <element x="2" y="-1" assetId="248"/>
+      </frame>
+      <frame index="133" length="2">
+        <element x="2" y="-1" assetId="249"/>
+      </frame>
+      <frame index="135" length="3">
+        <element x="2" y="-1" assetId="250"/>
+      </frame>
+      <frame index="138" length="2">
+        <element x="2" y="-1" assetId="251"/>
+      </frame>
+      <frame index="140" length="1" event="hit">
+        <element x="2" y="-1" assetId="251"/>
+      </frame>
+      <frame index="141" length="29">
+        <element x="2" y="-1" assetId="252"/>
+      </frame>
+    </layer>
+    <layer id="0">
+      <frame index="0" length="142">
+        <element x="7" y="-1" assetId="0" extname="yingzi(1).png"/>
+      </frame>
+    </layer>
+    <layer id="0">
+      <frame index="0" length="50"/>
+      <frame index="50" length="82">
+        <element x="-137" y="5" assetId="0" extname="yingzi(1).png"/>
+      </frame>
+    </layer>
+    <layer id="0">
+      <frame index="0" length="1"/>
+    </layer>
+    <layer id="0">
+      <frame index="0" length="1"/>
+    </layer>
+  </action>
+  <action id="0" name="C_entry_1">
+    <layer id="1">
+      <frame index="0" length="7" event="playSkillEffect"/>
+      <frame index="7" length="1">
+        <element x="-290" y="-406" assetId="7"/>
+      </frame>
+      <frame index="8" length="1">
+        <element x="-142" y="-183" assetId="7"/>
+      </frame>
+      <frame index="9" length="1">
+        <element x="-51" y="-27" assetId="7"/>
+      </frame>
+      <frame index="10" length="1">
+        <element assetId="8"/>
+      </frame>
+      <frame index="11" length="5">
+        <element assetId="9"/>
+      </frame>
+      <frame index="16" length="3">
+        <element assetId="10"/>
+      </frame>
+      <frame index="19" length="2">
+        <element assetId="11"/>
+      </frame>
+    </layer>
+    <layer id="2">
+      <frame index="0" length="7"/>
+      <frame index="7" length="1">
+        <element x="-339" assetId="0" scaleX="0.40" scaleY="0.40" alpha="0.30" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="8" length="1">
+        <element x="-170" assetId="0" scaleX="0.70" scaleY="0.70" alpha="0.60" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="9" length="1">
+        <element x="-78" assetId="0" scaleX="0.90" scaleY="0.90" alpha="0.90" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="10" length="6">
+        <element assetId="0" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="16" length="3">
+        <element assetId="0" extname="yingzi(1).png"/>
+      </frame>
+      <frame index="19" length="2">
+        <element assetId="0" extname="yingzi(1).png"/>
+      </frame>
+    </layer>
+    <layer id="3"/>
+  </action>
+  <asset id="0" assetName="0trylos0_0001.png" x="-47" y="-155" className="Asset_0" width="113" height="159"/>
+  <asset id="1" assetName="0trylos0_0002.png" x="-52" y="-154" className="Asset_1" width="118" height="158"/>
+  <asset id="2" assetName="0trylos0_0005.png" x="-44" y="-145" className="Asset_2" width="110" height="150"/>
+  <asset id="3" assetName="0trylos0_0009.png" x="-42" y="-116" className="Asset_3" width="108" height="122"/>
+  <asset id="4" assetName="0trylos0_0012.png" x="-40" y="-91" className="Asset_4" width="119" height="106"/>
+  <asset id="5" assetName="0trylos0_0015.png" x="-39" y="-87" className="Asset_5" width="121" height="104"/>
+  <asset id="6" assetName="0trylos0_0018.png" x="-39" y="-89" className="Asset_6" width="118" height="106"/>
+  <asset id="7" assetName="0ygjent0_0003.png" x="-119" y="-277" className="Asset_7" width="131" height="254"/>
+  <asset id="8" assetName="0ygjent0_0007.png" x="-41" y="-100" className="Asset_8" width="111" height="112"/>
+  <asset id="9" assetName="0ygjent0_0009.png" x="-41" y="-85" className="Asset_9" width="110" height="97"/>
+  <asset id="10" assetName="0ygjent0_0013.png" x="-39" y="-87" className="Asset_10" width="97" height="88"/>
+  <asset id="11" assetName="0ygjent0_0015.png" x="-36" y="-145" className="Asset_11" width="74" height="146"/>
+  <asset id="12" assetName="0ygjnut0_0047.png" x="-45" y="-156" className="Asset_12" width="111" height="160"/>
+  <asset id="13" assetName="0ygjout0_0002.png" x="-31" y="-91" className="Asset_13" width="91" height="100"/>
+  <asset id="14" assetName="0ygjout0_0003.png" x="-30" y="-85" className="Asset_14" width="90" height="94"/>
+  <asset id="15" assetName="0ygjout0_0008.png" x="-84" y="-274" className="Asset_15" width="117" height="223"/>
+  <asset id="16" assetName="2peadsf0_0000.png" x="-44" y="-111" className="Asset_16" width="96" height="114"/>
+  <asset id="17" assetName="2peadsf0_0001.png" x="-35" y="-134" className="Asset_17" width="100" height="134"/>
+  <asset id="18" assetName="2peadsf0_0002.png" x="-116" y="-143" className="Asset_18" width="185" height="139"/>
+  <asset id="19" assetName="2peadsb0_0001.png" x="-28" y="-172" className="Asset_19" width="92" height="176"/>
+  <asset id="20" assetName="1cmndmd0_0005.png" x="-34" y="-191" className="Asset_20" width="55" height="181"/>
+  <asset id="21" assetName="1cmndmd0_0010.png" x="-49" y="-169" className="Asset_21" width="77" height="168"/>
+  <asset id="22" assetName="1cmndga0_0008.png" x="-62" y="-166" className="Asset_22" width="84" height="150"/>
+  <asset id="23" assetName="1cmndga3_0005.png" x="-45" y="-141" className="Asset_23" width="99" height="121"/>
+  <asset id="24" assetName="1cmncol0_0002.png" x="-55" y="-108" className="Asset_24" width="107" height="104"/>
+  <asset id="25" assetName="1cmndga3_0000.png" x="-68" y="-166" className="Asset_25" width="88" height="170"/>
+  <asset id="26" assetName="1cmndga3_0004.png" x="-44" y="-141" className="Asset_26" width="96" height="121"/>
+  <asset id="27" assetName="1cmndga3_0015.png" x="-43" y="-160" className="Asset_27" width="86" height="143"/>
+  <asset id="28" assetName="1cmndga0_0000.png" x="-53" y="-173" className="Asset_28" width="101" height="176"/>
+  <asset id="29" assetName="1cmndga0_0003.png" x="-45" y="-180" className="Asset_29" width="72" height="144"/>
+  <asset id="30" assetName="1cmndga0_0005.png" x="-56" y="-176" className="Asset_30" width="77" height="151"/>
+  <asset id="31" assetName="1cmnddg0_0002.png" x="-73" y="-75" className="Asset_31" width="151" height="64"/>
+  <asset id="32" assetName="1cmnddg0_0000.png" x="-79" y="-42" className="Asset_32" width="174" height="51"/>
+  <asset id="33" assetName="1cmncol2_0008.png" x="-34" y="-181" className="Asset_33" width="64" height="190"/>
+  <asset id="34" assetName="1cmnsdg0_0027.png" x="-73" y="-102" className="Asset_34" width="149" height="105"/>
+  <asset id="35" assetName="1cmnret0_0001.png" x="-31" y="-173" className="Asset_35" width="94" height="160"/>
+  <asset id="36" assetName="1cmnret0_0010.png" x="-70" y="-214" className="Asset_36" width="145" height="84"/>
+  <asset id="37" assetName="1cmnret0_0016.png" x="-47" y="-194" className="Asset_37" width="101" height="140"/>
+  <asset id="38" assetName="1cmnret0_0018.png" x="-36" y="-182" className="Asset_38" width="82" height="145"/>
+  <asset id="39" assetName="1cmndxn1_0018.png" x="-36" y="-111" className="Asset_39" width="91" height="115"/>
+  <asset id="40" assetName="1cmndxn1_0024.png" x="-43" y="-129" className="Asset_40" width="95" height="132"/>
+  <asset id="41" assetName="1cmndga3_0013.png" x="-45" y="-153" className="Asset_41" width="93" height="135"/>
+  <asset id="42" assetName="1cmndmr0_0006.png" x="-80" y="-130" className="Asset_42" width="122" height="132"/>
+  <asset id="43" assetName="1cmnsdg0_0000.png" x="-27" y="-143" className="Asset_43" width="99" height="151"/>
+  <asset id="44" assetName="1cmndml0_0010.png" x="-66" y="-147" className="Asset_44" width="112" height="148"/>
+  <asset id="45" assetName="1cmndml0_0002.png" x="-58" y="-148" className="Asset_45" width="114" height="149"/>
+  <asset id="46" assetName="1cmndga3_0003.png" x="-41" y="-148" className="Asset_46" width="80" height="129"/>
+  <asset id="47" assetName="1cmnsdg0fe_0003.png" x="-63" y="-130" className="Asset_47" width="112" height="117"/>
+  <asset id="48" assetName="1cmncol2_0001.png" x="-21" y="-167" className="Asset_48" width="96" height="159"/>
+  <asset id="49" assetName="1cmncol2_0018.png" x="-17" y="-163" className="Asset_49" width="74" height="165"/>
+  <asset id="50" assetName="1cmncol2_0022.png" x="-59" y="-139" className="Asset_50" width="125" height="127"/>
+  <asset id="51" assetName="1cmndxn1_0010.png" x="-54" y="-111" className="Asset_51" width="64" height="107"/>
+  <asset id="52" assetName="1cmndxn1_0014.png" x="-33" y="-89" className="Asset_52" width="98" height="95"/>
+  <asset id="53" assetName="1cmndxn1_0025.png" x="-44" y="-132" className="Asset_53" width="95" height="135"/>
+  <asset id="54" assetName="1cmnresd_e_0006.png" x="-94" y="-80" className="Asset_54" width="143" height="86"/>
+  <asset id="55" assetName="1cmnresd_e_0012.png" x="-75" y="-109" className="Asset_55" width="124" height="113"/>
+  <asset id="56" assetName="1cmnresd_e_0022.png" x="-47" y="-128" className="Asset_56" width="95" height="131"/>
+  <asset id="57" assetName="1cmnsdg0_0024.png" x="-79" y="-84" className="Asset_57" width="159" height="78"/>
+  <asset id="58" assetName="1cmndmb1_0009.png" x="-36" y="-156" className="Asset_58" width="84" height="155"/>
+  <asset id="59" assetName="1cmndml0_0015.png" x="-60" y="-147" className="Asset_59" width="99" height="147"/>
+  <asset id="60" assetName="1cmndmr0_0002.png" x="-73" y="-132" className="Asset_60" width="121" height="136"/>
+  <asset id="61" assetName="1cmndmr0_0015.png" x="-74" y="-134" className="Asset_61" width="124" height="137"/>
+  <asset id="62" assetName="1cmndmf0_0002.png" x="-60" y="-127" className="Asset_62" width="103" height="125"/>
+  <asset id="63" assetName="1cmndmf0_0005.png" x="-67" y="-107" className="Asset_63" width="106" height="105"/>
+  <asset id="64" assetName="1cmndmf0_0015.png" x="-73" y="-114" className="Asset_64" width="114" height="114"/>
+  <asset id="65" assetName="1cmndga3_0020.png" x="-70" y="-165" className="Asset_65" width="97" height="149"/>
+  <asset id="66" assetName="1cmndxn1_0016.png" x="-33" y="-104" className="Asset_66" width="91" height="108"/>
+  <asset id="67" assetName="1cmndmb1_0002.png" x="-61" y="-163" className="Asset_67" width="109" height="163"/>
+  <asset id="68" assetName="1cmndmb1_0004.png" x="-56" y="-155" className="Asset_68" width="104" height="155"/>
+  <asset id="69" assetName="1cmnsdg0_0003.png" x="-63" y="-129" className="Asset_69" width="112" height="116"/>
+  <asset id="70" assetName="1cmnsdg0_0036.png" x="-65" y="-84" className="Asset_70" width="150" height="87"/>
+  <asset id="71" assetName="4ssinxi0_0013.png" x="-47" y="-152" className="Asset_71" width="113" height="156"/>
+  <asset id="72" assetName="4ssinxi0_0001.png" x="-48" y="-156" className="Asset_72" width="114" height="160"/>
+  <asset id="73" assetName="4ssinxi0_0003.png" x="-47" y="-156" className="Asset_73" width="113" height="160"/>
+  <asset id="74" assetName="4ssinxi0_0005.png" x="-47" y="-156" className="Asset_74" width="113" height="160"/>
+  <asset id="75" assetName="4ssinxi0_0007.png" x="-47" y="-156" className="Asset_75" width="113" height="160"/>
+  <asset id="76" assetName="4ssinxi0_0011.png" x="-47" y="-154" className="Asset_76" width="113" height="158"/>
+  <asset id="77" assetName="0ygjnut0_0000.png" x="-45" y="-156" className="Asset_77" width="111" height="160"/>
+  <asset id="78" assetName="0ygjnut0_0009.png" x="-45" y="-153" className="Asset_78" width="111" height="157"/>
+  <asset id="79" assetName="0ygjnut0_0013.png" x="-45" y="-151" className="Asset_79" width="111" height="155"/>
+  <asset id="80" assetName="0ygjnut0_0020.png" x="-45" y="-149" className="Asset_80" width="111" height="153"/>
+  <asset id="81" assetName="0ygjnut0_0024.png" x="-45" y="-150" className="Asset_81" width="111" height="154"/>
+  <asset id="82" assetName="0ygjnut0_0027.png" x="-45" y="-150" className="Asset_82" width="111" height="154"/>
+  <asset id="83" assetName="0ygjnut0_0032.png" x="-45" y="-153" className="Asset_83" width="111" height="157"/>
+  <asset id="84" assetName="0ygjnut0_0037.png" x="-45" y="-155" className="Asset_84" width="111" height="159"/>
+  <asset id="85" assetName="0ygjnut0_0042.png" x="-45" y="-156" className="Asset_85" width="111" height="160"/>
+  <asset id="86" assetName="2ebsskla_0001.png" x="-47" y="-161" className="Asset_86" width="113" height="164"/>
+  <asset id="87" assetName="2ebsskla_0002.png" x="-48" y="-165" className="Asset_87" width="113" height="169"/>
+  <asset id="88" assetName="2ebsskla_0004.png" x="-50" y="-154" className="Asset_88" width="115" height="157"/>
+  <asset id="89" assetName="2ebsskla_0005.png" x="-53" y="-133" className="Asset_89" width="117" height="135"/>
+  <asset id="90" assetName="2ebsskla_0006.png" x="-55" y="-119" className="Asset_90" width="119" height="120"/>
+  <asset id="91" assetName="2ebsskla_0007.png" x="-53" y="-131" className="Asset_91" width="116" height="133"/>
+  <asset id="92" assetName="2ebsskla_0009.png" x="-139" y="-148" className="Asset_92" width="233" height="146"/>
+  <asset id="93" assetName="2ebsskla_0011.png" x="-45" y="-116" className="Asset_93" width="145" height="119"/>
+  <asset id="94" assetName="2ebsskla_0044.png" x="-49" y="-118" className="Asset_94" width="114" height="121"/>
+  <asset id="95" assetName="2ebsskla_0046.png" x="-49" y="-118" className="Asset_95" width="106" height="121"/>
+  <asset id="96" assetName="2ebsskla_0047.png" x="-49" y="-122" className="Asset_96" width="106" height="124"/>
+  <asset id="97" assetName="2ebssklb2_0004.png" x="-54" y="-146" className="Asset_97" width="112" height="151"/>
+  <asset id="98" assetName="2ebssklb2_0008.png" x="-54" y="-132" className="Asset_98" width="116" height="137"/>
+  <asset id="99" assetName="2ebssklb2_0009.png" x="-54" y="-129" className="Asset_99" width="116" height="134"/>
+  <asset id="100" assetName="2ebssklb2_0010.png" x="-40" y="-185" className="Asset_100" width="66" height="185"/>
+  <asset id="101" assetName="2ebssklb2_0011.png" x="-53" y="-188" className="Asset_101" width="87" height="175"/>
+  <asset id="102" assetName="2ebssklb2_0013.png" x="-38" y="-177" className="Asset_102" width="80" height="134"/>
+  <asset id="103" assetName="2ebssklb2_0021.png" x="-30" y="-137" className="Asset_103" width="80" height="82"/>
+  <asset id="104" assetName="2ebssklb2_0026.png" x="-67" y="-203" className="Asset_104" width="101" height="150"/>
+  <asset id="105" assetName="2ebssklb2_0037.png" x="-27" y="-191" className="Asset_105" width="64" height="194"/>
+  <asset id="106" assetName="2ebssklb2_0039.png" x="-38" y="-164" className="Asset_106" width="93" height="167"/>
+  <asset id="107" assetName="2ebssklb2_0045.png" x="-52" y="-91" className="Asset_107" width="120" height="97"/>
+  <asset id="108" assetName="2ebssklb2_0047.png" x="-53" y="-97" className="Asset_108" width="120" height="98"/>
+  <asset id="109" assetName="2ebssklb2_0048.png" x="-54" y="-102" className="Asset_109" width="118" height="103"/>
+  <asset id="110" assetName="2ebssklb2_0051.png" x="-56" y="-128" className="Asset_110" width="108" height="130"/>
+  <asset id="111" assetName="2ebssklb2_0052.png" x="-57" y="-138" className="Asset_111" width="109" height="140"/>
+  <asset id="112" assetName="2ebssklb2_02_0024.png" x="39" y="-132" className="Asset_112" width="54" height="70"/>
+  <asset id="113" assetName="2ebssklb2_02_0025.png" x="57" y="-118" className="Asset_113" width="49" height="77"/>
+  <asset id="114" assetName="2ebssklb2_02_0029.png" x="109" y="-22" className="Asset_114" width="123" height="69"/>
+  <asset id="115" assetName="shu.png" x="-7" y="-122" className="Asset_115" width="27" height="26"/>
+  <asset id="116" assetName="fenbi.png" x="-2" y="-76" className="Asset_116" width="22" height="14"/>
+  <asset id="117" assetName="banca.png" x="-7" y="-47" className="Asset_117" width="21" height="10"/>
+  <asset id="118" assetName="WD_0000.png" x="-20" y="-116" className="Asset_118" width="38" height="118"/>
+  <asset id="119" assetName="WD_0010.png" x="-27" y="-102" className="Asset_119" width="56" height="104"/>
+  <asset id="120" assetName="WD_0011.png" x="-34" y="-106" className="Asset_120" width="55" height="109"/>
+  <asset id="121" assetName="WD_0014.png" x="-45" y="-107" className="Asset_121" width="62" height="111"/>
+  <asset id="122" assetName="WD_0016.png" x="-39" y="-110" className="Asset_122" width="82" height="113"/>
+  <asset id="123" assetName="WD_0017.png" x="-39" y="-110" className="Asset_123" width="83" height="112"/>
+  <asset id="124" assetName="WD_0019.png" x="-39" y="-109" className="Asset_124" width="67" height="110"/>
+  <asset id="125" assetName="WD_0020.png" x="-42" y="-110" className="Asset_125" width="69" height="110"/>
+  <asset id="126" assetName="WD_0021.png" x="-42" y="-110" className="Asset_126" width="69" height="110"/>
+  <asset id="127" assetName="WD_0022.png" x="-42" y="-110" className="Asset_127" width="83" height="110"/>
+  <asset id="128" assetName="WD_0023.png" x="-42" y="-110" className="Asset_128" width="69" height="110"/>
+  <asset id="129" assetName="WD_0024.png" x="-42" y="-110" className="Asset_129" width="69" height="110"/>
+  <asset id="130" assetName="WD_0025.png" x="-42" y="-110" className="Asset_130" width="69" height="110"/>
+  <asset id="131" assetName="WD_0026.png" x="-42" y="-110" className="Asset_131" width="76" height="110"/>
+  <asset id="132" assetName="WD_0027.png" x="-42" y="-110" className="Asset_132" width="69" height="110"/>
+  <asset id="133" assetName="WD_0028.png" x="-42" y="-110" className="Asset_133" width="76" height="110"/>
+  <asset id="134" assetName="WD_0029.png" x="-42" y="-110" className="Asset_134" width="83" height="110"/>
+  <asset id="135" assetName="WD_0030.png" x="-42" y="-110" className="Asset_135" width="81" height="110"/>
+  <asset id="136" assetName="WD_0031.png" x="-42" y="-110" className="Asset_136" width="69" height="110"/>
+  <asset id="137" assetName="WD_0032.png" x="-42" y="-109" className="Asset_137" width="79" height="109"/>
+  <asset id="138" assetName="WD_0035.png" x="-15" y="-106" className="Asset_138" width="51" height="106"/>
+  <asset id="139" assetName="WD_0038.png" x="-24" y="-97" className="Asset_139" width="56" height="99"/>
+  <asset id="140" assetName="WD_0040.png" x="-28" y="-57" className="Asset_140" width="57" height="59"/>
+  <asset id="141" assetName="WD_0041.png" x="-28" y="-56" className="Asset_141" width="57" height="58"/>
+  <asset id="142" assetName="WD_0045.png" x="-28" y="-57" className="Asset_142" width="57" height="59"/>
+  <asset id="143" assetName="WD_0047.png" x="-28" y="-79" className="Asset_143" width="71" height="80"/>
+  <asset id="144" assetName="WD_0049.png" x="-35" y="-107" className="Asset_144" width="61" height="107"/>
+  <asset id="145" assetName="WD_0050.png" x="-41" y="-106" className="Asset_145" width="66" height="106"/>
+  <asset id="146" assetName="WD_0051.png" x="-42" y="-105" className="Asset_146" width="67" height="106"/>
+  <asset id="147" assetName="WD_0054.png" x="-41" y="-106" className="Asset_147" width="66" height="106"/>
+  <asset id="148" assetName="WD_0055.png" x="-33" y="-106" className="Asset_148" width="58" height="106"/>
+  <asset id="149" assetName="WD_0057.png" x="-35" y="-86" className="Asset_149" width="86" height="88"/>
+  <asset id="150" assetName="WD_0066.png" x="-25" y="-75" className="Asset_150" width="71" height="77"/>
+  <asset id="151" assetName="WD_0070.png" x="-17" y="-104" className="Asset_151" width="64" height="106"/>
+  <asset id="152" assetName="WD_0072.png" x="-40" y="-99" className="Asset_152" width="70" height="101"/>
+  <asset id="153" assetName="WD_0075.png" x="-46" y="-95" className="Asset_153" width="84" height="95"/>
+  <asset id="154" assetName="WD_0076.png" x="-92" y="-95" className="Asset_154" width="167" height="95"/>
+  <asset id="155" assetName="myw_0000.png" x="-29" y="-108" className="Asset_155" width="94" height="112"/>
+  <asset id="156" assetName="myw_0010.png" x="-29" y="-112" className="Asset_156" width="72" height="114"/>
+  <asset id="157" assetName="myw_0011.png" x="-33" y="-117" className="Asset_157" width="81" height="118"/>
+  <asset id="158" assetName="myw_0014.png" x="-66" y="-111" className="Asset_158" width="131" height="113"/>
+  <asset id="159" assetName="myw_0016.png" x="-74" y="-104" className="Asset_159" width="141" height="106"/>
+  <asset id="160" assetName="myw_0017.png" x="-74" y="-111" className="Asset_160" width="145" height="113"/>
+  <asset id="161" assetName="myw_0019.png" x="-54" y="-107" className="Asset_161" width="87" height="111"/>
+  <asset id="162" assetName="myw_0020.png" x="-88" y="-103" className="Asset_162" width="143" height="107"/>
+  <asset id="163" assetName="myw_0021.png" x="-104" y="-102" className="Asset_163" width="144" height="106"/>
+  <asset id="164" assetName="myw_0022.png" x="-93" y="-103" className="Asset_164" width="149" height="107"/>
+  <asset id="165" assetName="myw_0023.png" x="-80" y="-103" className="Asset_165" width="140" height="107"/>
+  <asset id="166" assetName="myw_0026.png" x="-108" y="-100" className="Asset_166" width="152" height="104"/>
+  <asset id="167" assetName="myw_0027.png" x="-105" y="-101" className="Asset_167" width="143" height="105"/>
+  <asset id="168" assetName="myw_0028.png" x="-53" y="-102" className="Asset_168" width="111" height="106"/>
+  <asset id="169" assetName="myw_0029.png" x="-66" y="-103" className="Asset_169" width="104" height="107"/>
+  <asset id="170" assetName="myw_0035.png" x="-63" y="-103" className="Asset_170" width="116" height="104"/>
+  <asset id="171" assetName="myw_0038.png" x="-44" y="-72" className="Asset_171" width="67" height="75"/>
+  <asset id="172" assetName="myw_0040.png" x="-68" y="-58" className="Asset_172" width="101" height="61"/>
+  <asset id="173" assetName="myw_0041.png" x="-68" y="-59" className="Asset_173" width="98" height="62"/>
+  <asset id="174" assetName="myw_0045.png" x="-49" y="-55" className="Asset_174" width="74" height="59"/>
+  <asset id="175" assetName="myw_0047.png" x="-37" y="-71" className="Asset_175" width="94" height="73"/>
+  <asset id="176" assetName="myw_0049.png" x="-39" y="-115" className="Asset_176" width="71" height="117"/>
+  <asset id="177" assetName="myw_0050.png" x="-38" y="-115" className="Asset_177" width="71" height="117"/>
+  <asset id="178" assetName="myw_0051.png" x="-38" y="-115" className="Asset_178" width="73" height="129"/>
+  <asset id="179" assetName="myw_0057.png" x="-81" y="-115" className="Asset_179" width="108" height="117"/>
+  <asset id="180" assetName="myw_0060.png" x="-52" y="-114" className="Asset_180" width="71" height="125"/>
+  <asset id="181" assetName="myw_0062.png" x="-81" y="-68" className="Asset_181" width="137" height="73"/>
+  <asset id="182" assetName="myw_0066.png" x="-62" y="-129" className="Asset_182" width="118" height="131"/>
+  <asset id="183" assetName="myw_0070.png" x="-18" y="-112" className="Asset_183" width="123" height="115"/>
+  <asset id="184" assetName="myw_0072.png" x="-20" y="-111" className="Asset_184" width="141" height="114"/>
+  <asset id="185" assetName="myw_0075.png" x="-46" y="-100" className="Asset_185" width="144" height="100"/>
+  <asset id="186" assetName="myw_0076.png" x="-67" y="-100" className="Asset_186" width="210" height="100"/>
+  <asset id="187" assetName="tex_wj_cjc13.png" x="-115" y="-119" className="Asset_187" width="233" height="235"/>
+  <asset id="188" assetName="MH_0000.png" x="-22" y="-119" className="Asset_188" width="70" height="121"/>
+  <asset id="189" assetName="MH_0010.png" x="-28" y="-110" className="Asset_189" width="55" height="112"/>
+  <asset id="190" assetName="MH_0011.png" x="-33" y="-114" className="Asset_190" width="51" height="115"/>
+  <asset id="191" assetName="MH_0014.png" x="-58" y="-114" className="Asset_191" width="75" height="115"/>
+  <asset id="192" assetName="MH_0016.png" x="-56" y="-108" className="Asset_192" width="71" height="109"/>
+  <asset id="193" assetName="MH_0017.png" x="-58" y="-103" className="Asset_193" width="77" height="104"/>
+  <asset id="194" assetName="MH_0019.png" x="-44" y="-115" className="Asset_194" width="67" height="116"/>
+  <asset id="195" assetName="MH_0020.png" x="-54" y="-115" className="Asset_195" width="81" height="116"/>
+  <asset id="196" assetName="MH_0021.png" x="-70" y="-115" className="Asset_196" width="84" height="116"/>
+  <asset id="197" assetName="MH_0022.png" x="-68" y="-115" className="Asset_197" width="106" height="116"/>
+  <asset id="198" assetName="MH_0023.png" x="-57" y="-115" className="Asset_198" width="89" height="116"/>
+  <asset id="199" assetName="MH_0024.png" x="-68" y="-115" className="Asset_199" width="99" height="116"/>
+  <asset id="200" assetName="MH_0025.png" x="-73" y="-115" className="Asset_200" width="98" height="116"/>
+  <asset id="201" assetName="MH_0026.png" x="-54" y="-115" className="Asset_201" width="81" height="116"/>
+  <asset id="202" assetName="MH_0027.png" x="-70" y="-115" className="Asset_202" width="86" height="116"/>
+  <asset id="203" assetName="MH_0028.png" x="-68" y="-115" className="Asset_203" width="106" height="116"/>
+  <asset id="204" assetName="MH_0029.png" x="-57" y="-115" className="Asset_204" width="89" height="116"/>
+  <asset id="205" assetName="MH_0030.png" x="-68" y="-115" className="Asset_205" width="99" height="116"/>
+  <asset id="206" assetName="MH_0031.png" x="-73" y="-115" className="Asset_206" width="95" height="116"/>
+  <asset id="207" assetName="MH_0032.png" x="-54" y="-115" className="Asset_207" width="81" height="116"/>
+  <asset id="208" assetName="MH_0035.png" x="-33" y="-103" className="Asset_208" width="70" height="104"/>
+  <asset id="209" assetName="MH_0038.png" x="-35" y="-79" className="Asset_209" width="56" height="82"/>
+  <asset id="210" assetName="MH_0040.png" x="-48" y="-55" className="Asset_210" width="68" height="59"/>
+  <asset id="211" assetName="MH_0041.png" x="-49" y="-54" className="Asset_211" width="69" height="58"/>
+  <asset id="212" assetName="MH_0045.png" x="-48" y="-55" className="Asset_212" width="68" height="59"/>
+  <asset id="213" assetName="MH_0047.png" x="-52" y="-85" className="Asset_213" width="74" height="87"/>
+  <asset id="214" assetName="MH_0049.png" x="-39" y="-111" className="Asset_214" width="65" height="113"/>
+  <asset id="215" assetName="MH_0050.png" x="-35" y="-111" className="Asset_215" width="62" height="113"/>
+  <asset id="216" assetName="MH_0051.png" x="-34" y="-111" className="Asset_216" width="61" height="113"/>
+  <asset id="217" assetName="MH_0057.png" x="-45" y="-111" className="Asset_217" width="74" height="113"/>
+  <asset id="218" assetName="MH_0058.png" x="-46" y="-109" className="Asset_218" width="71" height="111"/>
+  <asset id="219" assetName="MH_0060.png" x="-43" y="-82" className="Asset_219" width="91" height="84"/>
+  <asset id="220" assetName="MH_0066.png" x="-42" y="-79" className="Asset_220" width="95" height="81"/>
+  <asset id="221" assetName="MH_0070.png" x="-15" y="-112" className="Asset_221" width="64" height="115"/>
+  <asset id="222" assetName="MH_0072.png" x="-20" y="-107" className="Asset_222" width="72" height="110"/>
+  <asset id="223" assetName="MH_0075.png" x="-43" y="-100" className="Asset_223" width="82" height="100"/>
+  <asset id="224" assetName="MH_0076.png" x="-89" y="-100" className="Asset_224" width="163" height="100"/>
+  <asset id="225" assetName="2ebssp_0000.png" x="-46" y="-156" className="Asset_225" width="112" height="159"/>
+  <asset id="226" assetName="2ebssp_0003.png" x="-45" y="-159" className="Asset_226" width="99" height="161"/>
+  <asset id="227" assetName="2ebssp_0009.png" x="-36" y="-173" className="Asset_227" width="64" height="177"/>
+  <asset id="228" assetName="2ebssp_0010.png" x="-31" y="-175" className="Asset_228" width="55" height="179"/>
+  <asset id="229" assetName="2ebssp_0011.png" x="-31" y="-175" className="Asset_229" width="55" height="179"/>
+  <asset id="230" assetName="2ebssp_0017.png" x="-42" y="-166" className="Asset_230" width="60" height="169"/>
+  <asset id="231" assetName="2ebssp_0020.png" x="-68" y="-152" className="Asset_231" width="78" height="155"/>
+  <asset id="232" assetName="2ebssp_0022.png" x="-66" y="-182" className="Asset_232" width="76" height="183"/>
+  <asset id="233" assetName="2ebssp_0023.png" x="-42" y="-200" className="Asset_233" width="60" height="201"/>
+  <asset id="234" assetName="2ebssp_0027.png" x="-33" y="-174" className="Asset_234" width="105" height="178"/>
+  <asset id="235" assetName="2ebssp_0030.png" x="-31" y="-174" className="Asset_235" width="97" height="178"/>
+  <asset id="236" assetName="2ebssp_0033.png" x="-43" y="-151" className="Asset_236" width="96" height="153"/>
+  <asset id="237" assetName="2ebssp_0034.png" x="-48" y="-135" className="Asset_237" width="94" height="137"/>
+  <asset id="238" assetName="2ebssp_0036.png" x="-60" y="-151" className="Asset_238" width="105" height="153"/>
+  <asset id="239" assetName="2ebssp_0039.png" x="-43" y="-210" className="Asset_239" width="80" height="208"/>
+  <asset id="240" assetName="2ebssp_0040.png" x="-31" y="-208" className="Asset_240" width="61" height="206"/>
+  <asset id="241" assetName="2ebssp_0042.png" x="-46" y="-177" className="Asset_241" width="74" height="176"/>
+  <asset id="242" assetName="2ebssp_0043.png" x="-65" y="-47" className="Asset_242" width="94" height="55"/>
+  <asset id="243" assetName="2ebssp_0045.png" x="-63" y="-46" className="Asset_243" width="92" height="65"/>
+  <asset id="244" assetName="2ebssp_0047.png" x="-64" y="-47" className="Asset_244" width="93" height="56"/>
+  <asset id="245" assetName="2ebssp_0048.png" x="-65" y="-47" className="Asset_245" width="94" height="58"/>
+  <asset id="246" assetName="2ebssp_0055.png" x="-74" y="-47" className="Asset_246" width="103" height="61"/>
+  <asset id="247" assetName="2ebssp_0057.png" x="-74" y="-67" className="Asset_247" width="103" height="80"/>
+  <asset id="248" assetName="2ebssp_0059.png" x="-74" y="-89" className="Asset_248" width="103" height="102"/>
+  <asset id="249" assetName="2ebssp_0066.png" x="-75" y="-93" className="Asset_249" width="103" height="102"/>
+  <asset id="250" assetName="2ebssp_0070.png" x="-57" y="-109" className="Asset_250" width="94" height="113"/>
+  <asset id="251" assetName="2ebssp_0072.png" x="-52" y="-126" className="Asset_251" width="96" height="131"/>
+  <asset id="252" assetName="2ebssp_0074.png" x="-48" y="-147" className="Asset_252" width="107" height="151"/>
+</actions>

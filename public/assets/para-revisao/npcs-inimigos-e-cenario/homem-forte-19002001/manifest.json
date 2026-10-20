@@ -1,0 +1,765 @@
+{
+  "id": "19002001",
+  "slug": "homem-forte-19002001",
+  "name": "Homem Forte",
+  "aliases": [
+    "Homem Forte",
+    "Homem Forte [Nível 1]"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2"
+  ],
+  "hostile": true,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "8410cfdb88bf0469e1dedfeabbb8851a92d4f65a7111e17a7790b35b519a2f25",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/world/idle_0.png",
+          "frameWidth": 100,
+          "frameHeight": 143,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.48,
+            0.972027972027972
+          ],
+          "referenceHeight": 139,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/world/idle_1.png",
+          "frameWidth": 79,
+          "frameHeight": 147,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4810126582278481,
+            0.9455782312925171
+          ],
+          "referenceHeight": 143,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/world/idle_2.png",
+          "frameWidth": 59,
+          "frameHeight": 145,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5254237288135594,
+            0.9586206896551724
+          ],
+          "referenceHeight": 141,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/world/idle_3.png",
+          "frameWidth": 84,
+          "frameHeight": 143,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.47619047619047616,
+            0.986013986013986
+          ],
+          "referenceHeight": 138,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/world/idle_4.png",
+          "frameWidth": 100,
+          "frameHeight": 145,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.48,
+            0.9862068965517241
+          ],
+          "referenceHeight": 140,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/world/run_0.png",
+          "frameWidth": 136,
+          "frameHeight": 106,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4852941176470588,
+            0.7924528301886793
+          ],
+          "referenceHeight": 91,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/world/run_1.png",
+          "frameWidth": 116,
+          "frameHeight": 117,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5258620689655172,
+            0.7777777777777778
+          ],
+          "referenceHeight": 95,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/world/run_2.png",
+          "frameWidth": 126,
+          "frameHeight": 126,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5793650793650794,
+            0.8333333333333334
+          ],
+          "referenceHeight": 110,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/world/run_3.png",
+          "frameWidth": 114,
+          "frameHeight": 145,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5087719298245614,
+            0.8344827586206897
+          ],
+          "referenceHeight": 126,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/world/run_4.png",
+          "frameWidth": 136,
+          "frameHeight": 153,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4852941176470588,
+            0.8496732026143791
+          ],
+          "referenceHeight": 137,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/world/run_5.png",
+          "frameWidth": 114,
+          "frameHeight": 145,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45614035087719296,
+            0.8344827586206897
+          ],
+          "referenceHeight": 126,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/world/run_6.png",
+          "frameWidth": 126,
+          "frameHeight": 126,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3888888888888889,
+            0.8333333333333334
+          ],
+          "referenceHeight": 110,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/world/run_7.png",
+          "frameWidth": 116,
+          "frameHeight": 117,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4396551724137931,
+            0.7777777777777778
+          ],
+          "referenceHeight": 95,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/world/idle_5.png",
+          "frameWidth": 84,
+          "frameHeight": 143,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.47619047619047616,
+            0.986013986013986
+          ],
+          "referenceHeight": 138,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/world/idle_6.png",
+          "frameWidth": 59,
+          "frameHeight": 145,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4067796610169492,
+            0.9586206896551724
+          ],
+          "referenceHeight": 141,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/world/idle_7.png",
+          "frameWidth": 79,
+          "frameHeight": 147,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46835443037974683,
+            0.9455782312925171
+          ],
+          "referenceHeight": 143,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 139,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/battle/A_1hit.png",
+          "frameWidth": 168,
+          "frameHeight": 202,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6369047619047619,
+            0.9455445544554455
+          ],
+          "referenceHeight": 188,
+          "status": "partial",
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        "C_dead": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/battle/C_dead.png",
+          "frameWidth": 118,
+          "frameHeight": 204,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4322033898305085,
+            0.9068627450980392
+          ],
+          "referenceHeight": 164,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/battle/C_idle.png",
+          "frameWidth": 116,
+          "frameHeight": 180,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.9444444444444444
+          ],
+          "referenceHeight": 173,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/battle/SP_skill1.png",
+          "frameWidth": 463,
+          "frameHeight": 435,
+          "frames": 28,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            21,
+            23,
+            23,
+            23,
+            24,
+            24,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            26,
+            26,
+            27,
+            27,
+            27,
+            27
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.1490280777537797,
+            0.9632183908045977
+          ],
+          "referenceHeight": 291,
+          "status": "partial",
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        }
+      },
+      "referenceHeight": 173,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "A_1hit",
+          "missing": [],
+          "unsupported": [
+            "extname"
+          ],
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        {
+          "action": "SP_skill1",
+          "missing": [],
+          "unsupported": [
+            "extname"
+          ],
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        }
+      ],
+      "externalEffects": [
+        "yingzi(1).png"
+      ]
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/19002001.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\19002001.swf"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/19002001_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\19002001_outdoor.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/19002001.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\19002001.png"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015002.xml",
+      "name": "Homem Forte",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19002001_outdoor.swf",
+      "hostile": false,
+      "position": "1843, 2977"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2010001.xml",
+      "name": "Homem Forte [Nível 1]",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19002001_outdoor.swf",
+      "hostile": false,
+      "position": "1527, 632"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2010001.xml",
+      "name": "Homem Forte [Nível 1]",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19002001_outdoor.swf",
+      "hostile": false,
+      "position": "2316, 887"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2010001.xml",
+      "name": "Homem Forte [Nível 1]",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19002001_outdoor.swf",
+      "hostile": false,
+      "position": "2656, 1907"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2052001.xml",
+      "name": "Homem Forte",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19002001_outdoor.swf",
+      "hostile": true,
+      "position": "1331, 1501"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2052001.xml",
+      "name": "Homem Forte",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19002001_outdoor.swf",
+      "hostile": true,
+      "position": "2645, 1637"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2052001.xml",
+      "name": "Homem Forte",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19002001_outdoor.swf",
+      "hostile": true,
+      "position": "2423, 754"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2052001.xml",
+      "name": "Homem Forte",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19002001_outdoor.swf",
+      "hostile": true,
+      "position": "2334, 886"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2052001.xml",
+      "name": "Homem Forte",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19002001_outdoor.swf",
+      "hostile": true,
+      "position": "2675, 1461"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Homem Forte",
+      "type": null,
+      "resource": "assets/battle/role/left/19002001.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Homem Forte",
+    "title": "",
+    "type": "0",
+    "artisticId": "19002001",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/homem-forte-19002001/preview.png"
+}

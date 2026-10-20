@@ -1,0 +1,744 @@
+{
+  "id": "11006541",
+  "slug": "yahiko-time-sapo-11006541",
+  "name": "Yahiko",
+  "aliases": [
+    "Yahiko"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "36d1ebd4011fec9096f224e787ebfe6f76544244bf79ff8659d0dcc2ea0f3ef2",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/characters/yahiko-time-sapo-11006541/world/idle_0.png",
+          "frameWidth": 51,
+          "frameHeight": 126,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.29411764705882354,
+            0.9206349206349206
+          ],
+          "referenceHeight": 122,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/characters/yahiko-time-sapo-11006541/world/idle_1.png",
+          "frameWidth": 43,
+          "frameHeight": 127,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.27906976744186046,
+            0.905511811023622
+          ],
+          "referenceHeight": 123,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/characters/yahiko-time-sapo-11006541/world/idle_2.png",
+          "frameWidth": 42,
+          "frameHeight": 125,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.47619047619047616,
+            0.912
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/characters/yahiko-time-sapo-11006541/world/idle_3.png",
+          "frameWidth": 50,
+          "frameHeight": 122,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.64,
+            0.9344262295081968
+          ],
+          "referenceHeight": 118,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/characters/yahiko-time-sapo-11006541/world/idle_4.png",
+          "frameWidth": 51,
+          "frameHeight": 124,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.7058823529411765,
+            0.9354838709677419
+          ],
+          "referenceHeight": 120,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/characters/yahiko-time-sapo-11006541/world/idle_5.png",
+          "frameWidth": 43,
+          "frameHeight": 132,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.7209302325581395,
+            0.9318181818181818
+          ],
+          "referenceHeight": 128,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/characters/yahiko-time-sapo-11006541/world/idle_6.png",
+          "frameWidth": 42,
+          "frameHeight": 132,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5238095238095238,
+            0.9393939393939394
+          ],
+          "referenceHeight": 128,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/characters/yahiko-time-sapo-11006541/world/idle_7.png",
+          "frameWidth": 50,
+          "frameHeight": 125,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.36,
+            0.96
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/characters/yahiko-time-sapo-11006541/world/run_2.png",
+          "frameWidth": 115,
+          "frameHeight": 91,
+          "frames": 8,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6173913043478261,
+            0.9340659340659341
+          ],
+          "referenceHeight": 84,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/characters/yahiko-time-sapo-11006541/world/run_0.png",
+          "frameWidth": 61,
+          "frameHeight": 85,
+          "frames": 8,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5245901639344263,
+            0.8
+          ],
+          "referenceHeight": 69,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/characters/yahiko-time-sapo-11006541/world/run_1.png",
+          "frameWidth": 95,
+          "frameHeight": 86,
+          "frames": 8,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6105263157894737,
+            0.8488372093023255
+          ],
+          "referenceHeight": 73,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/characters/yahiko-time-sapo-11006541/world/run_3.png",
+          "frameWidth": 92,
+          "frameHeight": 116,
+          "frames": 8,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6413043478260869,
+            0.8879310344827587
+          ],
+          "referenceHeight": 103,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/characters/yahiko-time-sapo-11006541/world/run_4.png",
+          "frameWidth": 61,
+          "frameHeight": 125,
+          "frames": 8,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.47540983606557374,
+            0.864
+          ],
+          "referenceHeight": 110,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/characters/yahiko-time-sapo-11006541/world/run_5.png",
+          "frameWidth": 95,
+          "frameHeight": 117,
+          "frames": 8,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3894736842105263,
+            0.8803418803418803
+          ],
+          "referenceHeight": 103,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/characters/yahiko-time-sapo-11006541/world/run_6.png",
+          "frameWidth": 115,
+          "frameHeight": 92,
+          "frames": 8,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3826086956521739,
+            0.9347826086956522
+          ],
+          "referenceHeight": 84,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/characters/yahiko-time-sapo-11006541/world/run_7.png",
+          "frameWidth": 92,
+          "frameHeight": 87,
+          "frames": 8,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.358695652173913,
+            0.8505747126436781
+          ],
+          "referenceHeight": 73,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 122,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/characters/yahiko-time-sapo-11006541/battle/A_1hit.png",
+          "frameWidth": 183,
+          "frameHeight": 265,
+          "frames": 16,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            8,
+            9,
+            9,
+            10,
+            10,
+            11,
+            12,
+            13,
+            13,
+            14,
+            14,
+            14,
+            14,
+            14,
+            15,
+            15
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5519125683060109,
+            0.9509433962264151
+          ],
+          "referenceHeight": 138,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/characters/yahiko-time-sapo-11006541/battle/C_dead.png",
+          "frameWidth": 98,
+          "frameHeight": 186,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            6,
+            6,
+            7,
+            8,
+            8,
+            9,
+            9,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.2755102040816326,
+            0.9247311827956989
+          ],
+          "referenceHeight": 153,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/characters/yahiko-time-sapo-11006541/battle/C_idle.png",
+          "frameWidth": 58,
+          "frameHeight": 170,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.43103448275862066,
+            0.9764705882352941
+          ],
+          "referenceHeight": 166,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/characters/yahiko-time-sapo-11006541/battle/SP_skill1.png",
+          "frameWidth": 127,
+          "frameHeight": 157,
+          "frames": 15,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            8,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            12,
+            12,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            14,
+            14,
+            14,
+            14,
+            14,
+            14,
+            14,
+            14,
+            14,
+            14,
+            14,
+            14,
+            14
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3937007874015748,
+            0.9872611464968153
+          ],
+          "referenceHeight": 141,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/characters/yahiko-time-sapo-11006541/battle/SP_skill2.png",
+          "frameWidth": 381,
+          "frameHeight": 279,
+          "frames": 23,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            7,
+            8,
+            8,
+            9,
+            9,
+            10,
+            11,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            14,
+            15,
+            16,
+            16,
+            17,
+            17,
+            18,
+            18,
+            18,
+            19,
+            19,
+            20,
+            21,
+            21,
+            22,
+            22,
+            22,
+            22,
+            22
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.2152230971128609,
+            0.899641577060932
+          ],
+          "referenceHeight": 163,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 166,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11006541_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha7.22Build301\\assets\\role\\npc\\scene\\npcres\\11006541_outdoor.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11006541.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha7.22Build301\\assets\\battle\\role\\head_110_100\\11006541.png"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/11006541.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha7.22Build301\\assets\\battle\\role\\left\\11006541.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Yahiko",
+      "type": null,
+      "resource": "assets/battle/role/left/11006541.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/characters/yahiko-time-sapo-11006541/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "Time Sapo",
+  "organization": {
+    "eligible": true,
+    "reason": "Caminhada em oito direções, ataque, queda e especial preservados.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "playable",
+  "reviewCategory": null,
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Yahiko",
+    "title": "[Time Sapo]",
+    "type": "0",
+    "artisticId": "11006541",
+    "levelType": "2",
+    "series": "334",
+    "starLevel": "2"
+  },
+  "manifestUrl": "/assets/characters/yahiko-time-sapo-11006541/manifest.json",
+  "preview": "/assets/characters/yahiko-time-sapo-11006541/preview.png"
+}

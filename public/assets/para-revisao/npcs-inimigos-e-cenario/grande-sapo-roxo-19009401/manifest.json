@@ -1,0 +1,382 @@
+{
+  "id": "19009401",
+  "slug": "grande-sapo-roxo-19009401",
+  "name": "Grande Sapo Roxo",
+  "aliases": [
+    "Sapo Eremita: Roxo",
+    "Grande Sapo Roxo"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "dcd518805d42d3d9372dda3b9676993360df2fbaa85d900b8d4ea471426e0e08",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/grande-sapo-roxo-19009401/world/idle_1.png",
+          "frameWidth": 249,
+          "frameHeight": 161,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.40963855421686746,
+            0.6708074534161491
+          ],
+          "referenceHeight": 156,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/grande-sapo-roxo-19009401/world/idle_7.png",
+          "frameWidth": 249,
+          "frameHeight": 161,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5903614457831325,
+            0.6708074534161491
+          ],
+          "referenceHeight": 156,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/grande-sapo-roxo-19009401/world/idle_1.png",
+          "frameWidth": 249,
+          "frameHeight": 161,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.40963855421686746,
+            0.6708074534161491
+          ],
+          "referenceHeight": 156,
+          "status": "ready",
+          "externalEffects": [],
+          "sourceAction": "idle_1"
+        }
+      },
+      "referenceHeight": 156,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/grande-sapo-roxo-19009401/battle/A_1hit.png",
+          "frameWidth": 774,
+          "frameHeight": 640,
+          "frames": 21,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            13,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            19,
+            19,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.2351421188630491,
+            0.9046875
+          ],
+          "referenceHeight": 401,
+          "status": "partial",
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        "C_dead": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/grande-sapo-roxo-19009401/battle/C_dead.png",
+          "frameWidth": 481,
+          "frameHeight": 317,
+          "frames": 25,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5322245322245323,
+            0.8264984227129337
+          ],
+          "referenceHeight": 203,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/grande-sapo-roxo-19009401/battle/C_idle.png",
+          "frameWidth": 350,
+          "frameHeight": 188,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5485714285714286,
+            0.8457446808510638
+          ],
+          "referenceHeight": 182,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 182,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "A_1hit",
+          "missing": [],
+          "unsupported": [
+            "extname"
+          ],
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        }
+      ],
+      "externalEffects": [
+        "yingzi(1).png"
+      ]
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/19009401_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\19009401_outdoor.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/19009401.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\19009401.png"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/19009401.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\19009401.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2766001.xml",
+      "name": "Sapo Eremita: Roxo",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19009401_outdoor.swf",
+      "hostile": false,
+      "position": "686, 2192"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2776001.xml",
+      "name": "Sapo Eremita: Roxo",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19009401_outdoor.swf",
+      "hostile": false,
+      "position": "551, 1113"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Grande Sapo Roxo",
+      "type": null,
+      "resource": "assets/battle/role/left/19009401.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/para-revisao/npcs-inimigos-e-cenario/grande-sapo-roxo-19009401/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": true
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Grande Sapo Roxo",
+    "title": "",
+    "type": "0",
+    "artisticId": "19009401",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/grande-sapo-roxo-19009401/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/grande-sapo-roxo-19009401/preview.png"
+}

@@ -1,0 +1,842 @@
+{
+  "id": "11000711",
+  "slug": "ino-11000711",
+  "name": "Ino",
+  "aliases": [
+    "Ino Yamanaka",
+    "Ino"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "101",
+    "2",
+    "6"
+  ],
+  "hostile": true,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "f634f3be1fdc8fc55134cb2c5bbd13678c55058956ab609cfa1cc26b61636739",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_2": {
+          "url": "/assets/characters/ino-11000711/world/idle_2.png",
+          "frameWidth": 33,
+          "frameHeight": 119,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3939393939393939,
+            0.9411764705882353
+          ],
+          "referenceHeight": 115,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/characters/ino-11000711/world/idle_0.png",
+          "frameWidth": 46,
+          "frameHeight": 120,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5652173913043478,
+            0.95
+          ],
+          "referenceHeight": 116,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/characters/ino-11000711/world/idle_1.png",
+          "frameWidth": 41,
+          "frameHeight": 120,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4878048780487805,
+            0.95
+          ],
+          "referenceHeight": 116,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/characters/ino-11000711/world/idle_3.png",
+          "frameWidth": 35,
+          "frameHeight": 119,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4,
+            0.9411764705882353
+          ],
+          "referenceHeight": 115,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/characters/ino-11000711/world/idle_4.png",
+          "frameWidth": 46,
+          "frameHeight": 119,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.43478260869565216,
+            0.9495798319327731
+          ],
+          "referenceHeight": 115,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/characters/ino-11000711/world/idle_5.png",
+          "frameWidth": 35,
+          "frameHeight": 119,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6,
+            0.9411764705882353
+          ],
+          "referenceHeight": 115,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/characters/ino-11000711/world/idle_6.png",
+          "frameWidth": 33,
+          "frameHeight": 119,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6060606060606061,
+            0.9411764705882353
+          ],
+          "referenceHeight": 115,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/characters/ino-11000711/world/idle_7.png",
+          "frameWidth": 41,
+          "frameHeight": 120,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5121951219512195,
+            0.95
+          ],
+          "referenceHeight": 116,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/characters/ino-11000711/world/run_1.png",
+          "frameWidth": 86,
+          "frameHeight": 113,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5465116279069767,
+            0.8761061946902655
+          ],
+          "referenceHeight": 97,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/characters/ino-11000711/world/run_0.png",
+          "frameWidth": 81,
+          "frameHeight": 115,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49382716049382713,
+            0.8434782608695652
+          ],
+          "referenceHeight": 96,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/characters/ino-11000711/world/run_2.png",
+          "frameWidth": 109,
+          "frameHeight": 112,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5412844036697247,
+            0.9464285714285714
+          ],
+          "referenceHeight": 100,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/characters/ino-11000711/world/run_3.png",
+          "frameWidth": 88,
+          "frameHeight": 127,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5340909090909091,
+            0.905511811023622
+          ],
+          "referenceHeight": 109,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/characters/ino-11000711/world/run_4.png",
+          "frameWidth": 81,
+          "frameHeight": 134,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5061728395061729,
+            0.8880597014925373
+          ],
+          "referenceHeight": 115,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/characters/ino-11000711/world/run_5.png",
+          "frameWidth": 88,
+          "frameHeight": 127,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4659090909090909,
+            0.905511811023622
+          ],
+          "referenceHeight": 109,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/characters/ino-11000711/world/run_6.png",
+          "frameWidth": 109,
+          "frameHeight": 112,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45871559633027525,
+            0.9464285714285714
+          ],
+          "referenceHeight": 100,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/characters/ino-11000711/world/run_7.png",
+          "frameWidth": 86,
+          "frameHeight": 113,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45348837209302323,
+            0.8761061946902655
+          ],
+          "referenceHeight": 97,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 116,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/characters/ino-11000711/battle/A_1hit.png",
+          "frameWidth": 94,
+          "frameHeight": 158,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3617021276595745,
+            0.930379746835443
+          ],
+          "referenceHeight": 144,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/characters/ino-11000711/battle/C_dead.png",
+          "frameWidth": 115,
+          "frameHeight": 156,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4,
+            0.9294871794871795
+          ],
+          "referenceHeight": 120,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/characters/ino-11000711/battle/C_idle.png",
+          "frameWidth": 98,
+          "frameHeight": 143,
+          "frames": 7,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            4,
+            4,
+            3,
+            3,
+            2,
+            2,
+            6,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.42857142857142855,
+            0.965034965034965
+          ],
+          "referenceHeight": 138,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/characters/ino-11000711/battle/SP_skill1.png",
+          "frameWidth": 114,
+          "frameHeight": 156,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.40350877192982454,
+            0.9551282051282052
+          ],
+          "referenceHeight": 142,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/characters/ino-11000711/battle/SP_skill2.png",
+          "frameWidth": 114,
+          "frameHeight": 156,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.40350877192982454,
+            0.9551282051282052
+          ],
+          "referenceHeight": 142,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 138,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11000711_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11000711_outdoor.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11000711.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\11000711.png"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/11000711.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11000711.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015022.xml",
+      "name": "Ino Yamanaka",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/11000711_outdoor.swf",
+      "hostile": false,
+      "position": "573, 551"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2604001.xml",
+      "name": "Ino",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000711_outdoor.swf",
+      "hostile": true,
+      "position": "1258, 1543"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015002.xml",
+      "name": "Ino",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000711_outdoor.swf",
+      "hostile": false,
+      "position": "295, 2357"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015002.xml",
+      "name": "Ino Yamanaka",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/11000711_outdoor.swf",
+      "hostile": false,
+      "position": "910, 2473"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1003001.xml",
+      "name": "Ino Yamanaka",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11000711_outdoor.swf",
+      "hostile": false,
+      "position": "992, 461"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene4032001.xml",
+      "name": "Ino",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000711_outdoor.swf",
+      "hostile": true,
+      "position": "728, 570"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene4032001.xml",
+      "name": "Ino",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000711_outdoor.swf",
+      "hostile": true,
+      "position": "1310, 673"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2033001.xml",
+      "name": "Ino Yamanaka",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11000711_outdoor.swf",
+      "hostile": false,
+      "position": "666, 1711"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2033001.xml",
+      "name": "Ino Yamanaka",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11000711_outdoor.swf",
+      "hostile": false,
+      "position": "1060, 1696"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2033001.xml",
+      "name": "Ino Yamanaka",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11000711_outdoor.swf",
+      "hostile": false,
+      "position": "2386, 687"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Ino",
+      "type": null,
+      "resource": "assets/battle/role/left/11000711.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/characters/ino-11000711/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": true,
+    "reason": "Caminhada em oito direções, ataque, queda e especial preservados.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "playable",
+  "reviewCategory": null,
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Ino",
+    "title": "",
+    "type": "0",
+    "artisticId": "11000711",
+    "levelType": "2",
+    "series": "12",
+    "starLevel": "1"
+  },
+  "manifestUrl": "/assets/characters/ino-11000711/manifest.json",
+  "preview": "/assets/characters/ino-11000711/preview.png"
+}

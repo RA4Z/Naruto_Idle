@@ -1,0 +1,139 @@
+{
+  "id": "91000035",
+  "slug": "pocao-de-recuperacao-91000035",
+  "name": "Poção de Recuperação",
+  "aliases": [
+    "Poção de Recuperação"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "3"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "a98ea665c3c8d8d44b55fea42a4f4279d191469d1a7e482f3a1a61bf2c80c302",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/pocao-de-recuperacao-91000035/world/idle_0.png",
+          "frameWidth": 76,
+          "frameHeight": 75,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4605263157894737,
+            0.44
+          ],
+          "referenceHeight": 54,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 54,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/91000035_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\91000035_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2102001.xml",
+      "name": "Poção de Recuperação",
+      "type": "3",
+      "resource": "assets/role/npc/scene/npcres/91000035_outdoor.swf",
+      "hostile": false,
+      "position": "1754, 1530"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2024001.xml",
+      "name": "Poção de Recuperação",
+      "type": "3",
+      "resource": "assets/role/npc/scene/npcres/91000035_outdoor.swf",
+      "hostile": false,
+      "position": "372, 2009"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/pocao-de-recuperacao-91000035/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/pocao-de-recuperacao-91000035/preview.png"
+}

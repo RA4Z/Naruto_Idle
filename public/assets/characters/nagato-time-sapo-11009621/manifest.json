@@ -1,0 +1,723 @@
+{
+  "id": "11009621",
+  "slug": "nagato-time-sapo-11009621",
+  "name": "Nagato",
+  "aliases": [
+    "Nagato"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "1356ed54e60ef400a1edd7f99849517317b0bd118e1de221552286fa2c742ba9",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/characters/nagato-time-sapo-11009621/world/idle_0.png",
+          "frameWidth": 46,
+          "frameHeight": 136,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5434782608695652,
+            0.9117647058823529
+          ],
+          "referenceHeight": 132,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/characters/nagato-time-sapo-11009621/world/idle_1.png",
+          "frameWidth": 45,
+          "frameHeight": 138,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5777777777777777,
+            0.9057971014492754
+          ],
+          "referenceHeight": 134,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/characters/nagato-time-sapo-11009621/world/idle_2.png",
+          "frameWidth": 43,
+          "frameHeight": 139,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5581395348837209,
+            0.935251798561151
+          ],
+          "referenceHeight": 135,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/characters/nagato-time-sapo-11009621/world/idle_3.png",
+          "frameWidth": 48,
+          "frameHeight": 138,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5416666666666666,
+            0.9492753623188406
+          ],
+          "referenceHeight": 134,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/characters/nagato-time-sapo-11009621/world/idle_4.png",
+          "frameWidth": 46,
+          "frameHeight": 135,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45652173913043476,
+            0.9481481481481482
+          ],
+          "referenceHeight": 131,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/characters/nagato-time-sapo-11009621/world/idle_5.png",
+          "frameWidth": 45,
+          "frameHeight": 139,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4222222222222222,
+            0.935251798561151
+          ],
+          "referenceHeight": 135,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/characters/nagato-time-sapo-11009621/world/idle_6.png",
+          "frameWidth": 43,
+          "frameHeight": 140,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4418604651162791,
+            0.9142857142857143
+          ],
+          "referenceHeight": 136,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/characters/nagato-time-sapo-11009621/world/idle_7.png",
+          "frameWidth": 48,
+          "frameHeight": 135,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4583333333333333,
+            0.9185185185185185
+          ],
+          "referenceHeight": 131,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/characters/nagato-time-sapo-11009621/world/run_2.png",
+          "frameWidth": 129,
+          "frameHeight": 103,
+          "frames": 8,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5736434108527132,
+            0.9320388349514563
+          ],
+          "referenceHeight": 94,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/characters/nagato-time-sapo-11009621/world/run_0.png",
+          "frameWidth": 63,
+          "frameHeight": 95,
+          "frames": 8,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5079365079365079,
+            0.7894736842105263
+          ],
+          "referenceHeight": 81,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/characters/nagato-time-sapo-11009621/world/run_1.png",
+          "frameWidth": 105,
+          "frameHeight": 95,
+          "frames": 8,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.580952380952381,
+            0.8421052631578947
+          ],
+          "referenceHeight": 84,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/characters/nagato-time-sapo-11009621/world/run_3.png",
+          "frameWidth": 102,
+          "frameHeight": 131,
+          "frames": 8,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5980392156862745,
+            0.8702290076335878
+          ],
+          "referenceHeight": 116,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/characters/nagato-time-sapo-11009621/world/run_4.png",
+          "frameWidth": 63,
+          "frameHeight": 141,
+          "frames": 8,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49206349206349204,
+            0.851063829787234
+          ],
+          "referenceHeight": 123,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/characters/nagato-time-sapo-11009621/world/run_5.png",
+          "frameWidth": 105,
+          "frameHeight": 131,
+          "frames": 8,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.41904761904761906,
+            0.8778625954198473
+          ],
+          "referenceHeight": 115,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/characters/nagato-time-sapo-11009621/world/run_6.png",
+          "frameWidth": 129,
+          "frameHeight": 103,
+          "frames": 8,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4263565891472868,
+            0.941747572815534
+          ],
+          "referenceHeight": 95,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/characters/nagato-time-sapo-11009621/world/run_7.png",
+          "frameWidth": 103,
+          "frameHeight": 97,
+          "frames": 8,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.39805825242718446,
+            0.8350515463917526
+          ],
+          "referenceHeight": 85,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 132,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/characters/nagato-time-sapo-11009621/battle/A_1hit.png",
+          "frameWidth": 467,
+          "frameHeight": 255,
+          "frames": 23,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            7,
+            8,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            14,
+            15,
+            16,
+            16,
+            17,
+            17,
+            18,
+            18,
+            18,
+            19,
+            19,
+            20,
+            20,
+            21,
+            21,
+            21,
+            22,
+            22
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.17558886509635974,
+            0.8901960784313725
+          ],
+          "referenceHeight": 151,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/characters/nagato-time-sapo-11009621/battle/C_dead.png",
+          "frameWidth": 89,
+          "frameHeight": 185,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            6,
+            6,
+            7,
+            8,
+            8,
+            9,
+            9,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.30337078651685395,
+            0.9567567567567568
+          ],
+          "referenceHeight": 152,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/characters/nagato-time-sapo-11009621/battle/C_idle.png",
+          "frameWidth": 54,
+          "frameHeight": 172,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4444444444444444,
+            0.9883720930232558
+          ],
+          "referenceHeight": 168,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/characters/nagato-time-sapo-11009621/battle/SP_skill1.png",
+          "frameWidth": 166,
+          "frameHeight": 185,
+          "frames": 24,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            7,
+            8,
+            9,
+            9,
+            9,
+            9,
+            10,
+            10,
+            11,
+            12,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            16,
+            16,
+            17,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            19,
+            20,
+            20,
+            21,
+            21,
+            22,
+            22,
+            23,
+            23,
+            23
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46987951807228917,
+            0.9243243243243243
+          ],
+          "referenceHeight": 96,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/characters/nagato-time-sapo-11009621/battle/SP_skill2.png",
+          "frameWidth": 358,
+          "frameHeight": 309,
+          "frames": 20,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            11,
+            12,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            16,
+            16,
+            17,
+            17,
+            17,
+            18,
+            18,
+            18,
+            19,
+            19,
+            19
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.22905027932960895,
+            0.9093851132686084
+          ],
+          "referenceHeight": 207,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 168,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11009621.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha7.30Build300\\assets\\battle\\role\\head_110_100\\11009621.png"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/11009621.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha7.30Build300\\assets\\battle\\role\\left\\11009621.swf"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11009621_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha7.30Build300\\assets\\role\\npc\\scene\\npcres\\11009621_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Nagato",
+      "type": null,
+      "resource": "assets/battle/role/left/11009621.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/characters/nagato-time-sapo-11009621/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "Time Sapo",
+  "organization": {
+    "eligible": true,
+    "reason": "Caminhada em oito direções, ataque, queda e especial preservados.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "playable",
+  "reviewCategory": null,
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Nagato",
+    "title": "[Time Sapo]",
+    "type": "0",
+    "artisticId": "11009621",
+    "levelType": "2",
+    "series": "329",
+    "starLevel": "2"
+  },
+  "manifestUrl": "/assets/characters/nagato-time-sapo-11009621/manifest.json",
+  "preview": "/assets/characters/nagato-time-sapo-11009621/preview.png"
+}

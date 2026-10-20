@@ -1,0 +1,708 @@
+{
+  "id": "11013501",
+  "slug": "karui-11013501",
+  "name": "Karui",
+  "aliases": [
+    "Karui"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "991ed3506c5915743eba64193e53a5712a958d02dde9ace4ba2f38d25c3402cb",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/characters/karui-11013501/world/idle_0.png",
+          "frameWidth": 67,
+          "frameHeight": 125,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4626865671641791,
+            0.936
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/characters/karui-11013501/world/idle_1.png",
+          "frameWidth": 62,
+          "frameHeight": 126,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3387096774193548,
+            0.9206349206349206
+          ],
+          "referenceHeight": 122,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/characters/karui-11013501/world/idle_2.png",
+          "frameWidth": 42,
+          "frameHeight": 125,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4523809523809524,
+            0.928
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/characters/karui-11013501/world/idle_3.png",
+          "frameWidth": 50,
+          "frameHeight": 122,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.9426229508196722
+          ],
+          "referenceHeight": 118,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/characters/karui-11013501/world/idle_4.png",
+          "frameWidth": 67,
+          "frameHeight": 122,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5373134328358209,
+            0.9426229508196722
+          ],
+          "referenceHeight": 118,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/characters/karui-11013501/world/idle_5.png",
+          "frameWidth": 62,
+          "frameHeight": 122,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6612903225806451,
+            0.9344262295081968
+          ],
+          "referenceHeight": 118,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/characters/karui-11013501/world/idle_6.png",
+          "frameWidth": 42,
+          "frameHeight": 131,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5476190476190477,
+            0.9236641221374046
+          ],
+          "referenceHeight": 127,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/characters/karui-11013501/world/idle_7.png",
+          "frameWidth": 50,
+          "frameHeight": 131,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.9389312977099237
+          ],
+          "referenceHeight": 127,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/characters/karui-11013501/world/run_1.png",
+          "frameWidth": 114,
+          "frameHeight": 114,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.38596491228070173,
+            0.8508771929824561
+          ],
+          "referenceHeight": 96,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/characters/karui-11013501/world/run_0.png",
+          "frameWidth": 83,
+          "frameHeight": 127,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5421686746987951,
+            0.8582677165354331
+          ],
+          "referenceHeight": 109,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/characters/karui-11013501/world/run_2.png",
+          "frameWidth": 155,
+          "frameHeight": 106,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4,
+            0.9433962264150944
+          ],
+          "referenceHeight": 93,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/characters/karui-11013501/world/run_3.png",
+          "frameWidth": 109,
+          "frameHeight": 124,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.41284403669724773,
+            0.8870967741935484
+          ],
+          "referenceHeight": 103,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/characters/karui-11013501/world/run_4.png",
+          "frameWidth": 83,
+          "frameHeight": 134,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4578313253012048,
+            0.8582089552238806
+          ],
+          "referenceHeight": 110,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/characters/karui-11013501/world/run_5.png",
+          "frameWidth": 115,
+          "frameHeight": 126,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6173913043478261,
+            0.8809523809523809
+          ],
+          "referenceHeight": 103,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/characters/karui-11013501/world/run_6.png",
+          "frameWidth": 155,
+          "frameHeight": 106,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6,
+            0.9528301886792453
+          ],
+          "referenceHeight": 93,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/characters/karui-11013501/world/run_7.png",
+          "frameWidth": 111,
+          "frameHeight": 117,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            5,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5675675675675675,
+            0.8632478632478633
+          ],
+          "referenceHeight": 97,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 121,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/characters/karui-11013501/battle/A_1hit.png",
+          "frameWidth": 342,
+          "frameHeight": 176,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3742690058479532,
+            0.8522727272727273
+          ],
+          "referenceHeight": 130,
+          "status": "partial",
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        "C_dead": {
+          "url": "/assets/characters/karui-11013501/battle/C_dead.png",
+          "frameWidth": 141,
+          "frameHeight": 186,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            3
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5035460992907801,
+            0.8602150537634409
+          ],
+          "referenceHeight": 129,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/characters/karui-11013501/battle/C_idle.png",
+          "frameWidth": 122,
+          "frameHeight": 156,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4344262295081967,
+            0.9743589743589743
+          ],
+          "referenceHeight": 151,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/characters/karui-11013501/battle/SP_skill1.png",
+          "frameWidth": 444,
+          "frameHeight": 329,
+          "frames": 14,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            8,
+            8,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            12,
+            13,
+            13,
+            13,
+            13,
+            13
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.13963963963963963,
+            0.9574468085106383
+          ],
+          "referenceHeight": 141,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/characters/karui-11013501/battle/SP_skill2.png",
+          "frameWidth": 284,
+          "frameHeight": 266,
+          "frames": 15,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            6,
+            7,
+            8,
+            8,
+            8,
+            8,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            13,
+            13,
+            13,
+            14,
+            14
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.35563380281690143,
+            0.9398496240601504
+          ],
+          "referenceHeight": 173,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 151,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "A_1hit",
+          "missing": [],
+          "unsupported": [
+            "extname"
+          ],
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        }
+      ],
+      "externalEffects": [
+        "yingzi(1).png"
+      ]
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/11013501.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.26Build300\\assets\\battle\\role\\left\\11013501.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11013501.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.20Build302\\assets\\battle\\role\\head_110_100\\11013501.png"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11013501_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.20Build302\\assets\\role\\npc\\scene\\npcres\\11013501_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Karui",
+      "type": null,
+      "resource": "assets/battle/role/left/11013501.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/characters/karui-11013501/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": true,
+    "reason": "Caminhada em oito direções, ataque, queda e especial preservados.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "playable",
+  "reviewCategory": null,
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Karui",
+    "title": "",
+    "type": "0",
+    "artisticId": "11013501",
+    "levelType": "2",
+    "series": "288",
+    "starLevel": "2"
+  },
+  "manifestUrl": "/assets/characters/karui-11013501/manifest.json",
+  "preview": "/assets/characters/karui-11013501/preview.png"
+}

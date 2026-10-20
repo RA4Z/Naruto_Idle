@@ -1,0 +1,150 @@
+{
+  "id": "91000323",
+  "slug": "nome-original-91000323",
+  "name": "攀爬-大蛇丸基地/左",
+  "aliases": [
+    "攀爬-大蛇丸基地/左",
+    "攀爬-大蛇丸基地/右"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "7"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "12daa5f18aa945866b2377e1a8716544dce0925a552378beefdb0e9f661aa2a2",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-91000323/world/idle_0.png",
+          "frameWidth": 159,
+          "frameHeight": 434,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5283018867924528,
+            0.5
+          ],
+          "referenceHeight": 429,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 429,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/91000323_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\91000323_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2706001.xml",
+      "name": "攀爬-大蛇丸基地/左",
+      "type": "7",
+      "resource": "assets/role/npc/scene/npcres/91000323_outdoor.swf",
+      "hostile": false,
+      "position": "535, 1148"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2706001.xml",
+      "name": "攀爬-大蛇丸基地/右",
+      "type": "7",
+      "resource": "assets/role/npc/scene/npcres/91000323_outdoor.swf",
+      "hostile": false,
+      "position": "1921, 456"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015011.xml",
+      "name": "攀爬-大蛇丸基地/左",
+      "type": "7",
+      "resource": "assets/role/npc/scene/npcres/91000323_outdoor.swf",
+      "hostile": false,
+      "position": "535, 1149"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015011.xml",
+      "name": "攀爬-大蛇丸基地/右",
+      "type": "7",
+      "resource": "assets/role/npc/scene/npcres/91000323_outdoor.swf",
+      "hostile": false,
+      "position": "1921, 454"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2558001.xml",
+      "name": "攀爬-大蛇丸基地/左",
+      "type": "7",
+      "resource": "assets/role/npc/scene/npcres/91000323_outdoor.swf",
+      "hostile": false,
+      "position": "535, 1149"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2558001.xml",
+      "name": "攀爬-大蛇丸基地/右",
+      "type": "7",
+      "resource": "assets/role/npc/scene/npcres/91000323_outdoor.swf",
+      "hostile": false,
+      "position": "1921, 454"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-91000323/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-91000323/preview.png"
+}

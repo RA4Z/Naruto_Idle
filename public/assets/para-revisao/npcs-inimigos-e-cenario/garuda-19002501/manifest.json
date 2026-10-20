@@ -1,0 +1,883 @@
+{
+  "id": "19002501",
+  "slug": "garuda-19002501",
+  "name": "Garuda",
+  "aliases": [
+    "Falcão Cinza",
+    "Garuda"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2"
+  ],
+  "hostile": true,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "1124b0971ee1c81c428f6e53d375972fd50c74cf660a4fae0b57821fcb8cbbef",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/world/idle_1.png",
+          "frameWidth": 135,
+          "frameHeight": 147,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5851851851851851,
+            0.5510204081632653
+          ],
+          "referenceHeight": 77,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/world/idle_2.png",
+          "frameWidth": 68,
+          "frameHeight": 161,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.5838509316770186
+          ],
+          "referenceHeight": 86,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/world/idle_3.png",
+          "frameWidth": 135,
+          "frameHeight": 146,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5851851851851851,
+            0.6643835616438356
+          ],
+          "referenceHeight": 79,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/world/idle_4.png",
+          "frameWidth": 180,
+          "frameHeight": 115,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49444444444444446,
+            0.7652173913043478
+          ],
+          "referenceHeight": 62,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/world/idle_5.png",
+          "frameWidth": 135,
+          "frameHeight": 146,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4,
+            0.6643835616438356
+          ],
+          "referenceHeight": 79,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/world/idle_6.png",
+          "frameWidth": 68,
+          "frameHeight": 161,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.47058823529411764,
+            0.5838509316770186
+          ],
+          "referenceHeight": 86,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/world/idle_7.png",
+          "frameWidth": 135,
+          "frameHeight": 147,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4,
+            0.5510204081632653
+          ],
+          "referenceHeight": 77,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/world/run_0.png",
+          "frameWidth": 180,
+          "frameHeight": 116,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49444444444444446,
+            0.5948275862068966
+          ],
+          "referenceHeight": 59,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/world/run_2.png",
+          "frameWidth": 68,
+          "frameHeight": 162,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.5864197530864198
+          ],
+          "referenceHeight": 86,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/world/run_3.png",
+          "frameWidth": 135,
+          "frameHeight": 146,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5851851851851851,
+            0.6506849315068494
+          ],
+          "referenceHeight": 79,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/world/run_4.png",
+          "frameWidth": 180,
+          "frameHeight": 115,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49444444444444446,
+            0.7652173913043478
+          ],
+          "referenceHeight": 62,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/world/run_5.png",
+          "frameWidth": 135,
+          "frameHeight": 146,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4,
+            0.6643835616438356
+          ],
+          "referenceHeight": 79,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/world/run_6.png",
+          "frameWidth": 68,
+          "frameHeight": 161,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.47058823529411764,
+            0.5838509316770186
+          ],
+          "referenceHeight": 86,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/world/run_7.png",
+          "frameWidth": 135,
+          "frameHeight": 147,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4,
+            0.5510204081632653
+          ],
+          "referenceHeight": 77,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/world/idle_0.png",
+          "frameWidth": 180,
+          "frameHeight": 116,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49444444444444446,
+            0.5948275862068966
+          ],
+          "referenceHeight": 59,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/world/run_1.png",
+          "frameWidth": 135,
+          "frameHeight": 147,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5851851851851851,
+            0.5510204081632653
+          ],
+          "referenceHeight": 77,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 59,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/battle/A_1hit.png",
+          "frameWidth": 329,
+          "frameHeight": 317,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            7,
+            7,
+            8,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4376899696048632,
+            0.9936908517350158
+          ],
+          "referenceHeight": 216,
+          "status": "partial",
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        "C_dead": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/battle/C_dead.png",
+          "frameWidth": 239,
+          "frameHeight": 208,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5732217573221757,
+            0.8076923076923077
+          ],
+          "referenceHeight": 76,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/battle/C_idle.png",
+          "frameWidth": 179,
+          "frameHeight": 232,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.329608938547486,
+            0.9913793103448276
+          ],
+          "referenceHeight": 100,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/battle/SP_skill1.png",
+          "frameWidth": 288,
+          "frameHeight": 220,
+          "frames": 19,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            10,
+            10,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            17,
+            18
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5208333333333334,
+            0.990909090909091
+          ],
+          "referenceHeight": 163,
+          "status": "partial",
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        "SP_skill2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/battle/SP_skill2.png",
+          "frameWidth": 238,
+          "frameHeight": 218,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5588235294117647,
+            0.9678899082568807
+          ],
+          "referenceHeight": 159,
+          "status": "partial",
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        }
+      },
+      "referenceHeight": 100,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "A_1hit",
+          "missing": [],
+          "unsupported": [
+            "extname"
+          ],
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        {
+          "action": "SP_skill1",
+          "missing": [],
+          "unsupported": [
+            "extname"
+          ],
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        {
+          "action": "SP_skill2",
+          "missing": [],
+          "unsupported": [
+            "extname"
+          ],
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        }
+      ],
+      "externalEffects": [
+        "yingzi(1).png"
+      ]
+    }
+  },
+  "sources": {
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/19002501.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\19002501.png"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/19002501_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\19002501_outdoor.swf"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/19002501.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\19002501.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2060001.xml",
+      "name": "Falcão Cinza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19002501_outdoor.swf",
+      "hostile": true,
+      "position": "1253, 1355"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2060001.xml",
+      "name": "Falcão Cinza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19002501_outdoor.swf",
+      "hostile": true,
+      "position": "1125, 1226"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2060001.xml",
+      "name": "Falcão Cinza",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19002501_outdoor.swf",
+      "hostile": true,
+      "position": "905, 2014"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Garuda",
+      "type": null,
+      "resource": "assets/battle/role/left/19002501.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Garuda",
+    "title": "",
+    "type": "0",
+    "artisticId": "19002501",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/garuda-19002501/preview.png"
+}

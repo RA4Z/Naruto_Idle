@@ -1,0 +1,216 @@
+{
+  "id": "26900910",
+  "slug": "central-de-pesquisa-media-26900910",
+  "name": "Central de Pesquisa Média",
+  "aliases": [
+    "Central de Pesquisa Média"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "6"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "41fa534b5dd9bec3931deda1f553a153ba4b8d5dd402057e950a522d3e826e11",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/central-de-pesquisa-media-26900910/world/idle_0.png",
+          "frameWidth": 184,
+          "frameHeight": 223,
+          "frames": 90,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3695652173913043,
+            0.7757847533632287
+          ],
+          "referenceHeight": 219,
+          "status": "partial",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 219,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "idle_0",
+          "missing": [],
+          "unsupported": [
+            "blendMode"
+          ],
+          "externalEffects": []
+        }
+      ],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/26900910_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\26900910_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene1600003.xml",
+      "name": "Central de Pesquisa Média",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/26900910_outdoor.swf",
+      "hostile": false,
+      "position": "2767, 960"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [
+      {
+        "action": "idle_0",
+        "missing": [],
+        "unsupported": [
+          "blendMode"
+        ],
+        "externalEffects": []
+      }
+    ],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/central-de-pesquisa-media-26900910/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/central-de-pesquisa-media-26900910/preview.png"
+}

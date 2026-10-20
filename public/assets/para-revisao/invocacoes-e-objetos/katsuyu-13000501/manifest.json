@@ -1,0 +1,247 @@
+{
+  "id": "13000501",
+  "slug": "katsuyu-13000501",
+  "name": "Katsuyu",
+  "aliases": [
+    "Katsuyu"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "16",
+    "2"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "6cffe8550e00b29b2429cfc04d1072f20ffa351bde1cf8edebbeeb9fe71f91a1",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/invocacoes-e-objetos/katsuyu-13000501/world/idle_0.png",
+          "frameWidth": 1152,
+          "frameHeight": 542,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.8012152777777778,
+            0.996309963099631
+          ],
+          "referenceHeight": 523,
+          "status": "ready",
+          "externalEffects": [],
+          "sourceAction": "idle_0"
+        }
+      },
+      "referenceHeight": 523,
+      "status": "partial",
+      "issues": [
+        {
+          "presentationBinding": "idle_0",
+          "sourceAction": "idle_0",
+          "note": "Explicit variant of native idle; no invented pixels"
+        }
+      ],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "C_idle": {
+          "url": "/assets/para-revisao/invocacoes-e-objetos/katsuyu-13000501/battle/C_idle.png",
+          "frameWidth": 242,
+          "frameHeight": 174,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            1
+          ],
+          "status": "partial",
+          "sourcePixelScale": 1,
+          "originalSpriteId": 200,
+          "sourceAction": "C_idle",
+          "referenceHeight": 174,
+          "coverage": "first native idle pose; full vector timeline pending",
+          "exportZoom": 0.25,
+          "rendering": "static-vector-frames; source scripts not executed",
+          "rigScale": 1.0
+        }
+      },
+      "referenceHeight": 174,
+      "status": "partial",
+      "issues": [
+        {
+          "note": "Only the first original idle pose is available; full vector animation and script-driven behavior remain pending."
+        }
+      ]
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/13000501.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\13000501.swf"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/13000501_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\13000501_outdoor.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/13000501.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\13000501.png"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene1605014.xml",
+      "name": "Katsuyu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/13000501_outdoor.swf",
+      "hostile": false,
+      "position": "838, 979"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1605004.xml",
+      "name": "Katsuyu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/13000501_outdoor.swf",
+      "hostile": false,
+      "position": "838, 979"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1605018.xml",
+      "name": "Katsuyu",
+      "type": "16",
+      "resource": "assets/role/npc/scene/npcres/13000501_outdoor.swf",
+      "hostile": false,
+      "position": "615, 907"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Katsuyu",
+      "type": null,
+      "resource": "assets/battle/role/left/13000501.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [
+    {
+      "mode": "world",
+      "error": "No supported actions rendered; [{'action': 'idle_0', 'reason': 'canvas-too-large', 'size': [1152, 542]}]"
+    },
+    {
+      "mode": "battle",
+      "error": "No bitmap actions XML: timeline/vector reconstruction required"
+    }
+  ],
+  "portrait": "/assets/para-revisao/invocacoes-e-objetos/katsuyu-13000501/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": true
+  },
+  "status": "partial",
+  "recoveryPass": "nonstandard-actions-and-static-vectors",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "Invocação, clone ou objeto auxiliar na configuração original.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [
+      {
+        "action": "C_idle",
+        "reason": "static-or-incomplete-animation"
+      }
+    ],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "invocacoes-e-objetos",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Katsuyu",
+    "title": "",
+    "type": "2",
+    "artisticId": "13000501",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/invocacoes-e-objetos/katsuyu-13000501/manifest.json",
+  "preview": "/assets/para-revisao/invocacoes-e-objetos/katsuyu-13000501/preview.png"
+}

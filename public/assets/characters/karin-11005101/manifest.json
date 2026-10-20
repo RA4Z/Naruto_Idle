@@ -1,0 +1,850 @@
+{
+  "id": "11005101",
+  "slug": "karin-11005101",
+  "name": "Karin",
+  "aliases": [
+    "Karin"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2"
+  ],
+  "hostile": true,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "11f0932398021df26adb8a4ba92fc5bd642097ea61e88388c7c5a5fa05a39bb4",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_2": {
+          "url": "/assets/characters/karin-11005101/world/idle_2.png",
+          "frameWidth": 33,
+          "frameHeight": 123,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6666666666666666,
+            0.9186991869918699
+          ],
+          "referenceHeight": 119,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/characters/karin-11005101/world/idle_0.png",
+          "frameWidth": 46,
+          "frameHeight": 121,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5217391304347826,
+            0.9173553719008265
+          ],
+          "referenceHeight": 117,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/characters/karin-11005101/world/idle_1.png",
+          "frameWidth": 32,
+          "frameHeight": 124,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.625,
+            0.8951612903225806
+          ],
+          "referenceHeight": 120,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/characters/karin-11005101/world/idle_3.png",
+          "frameWidth": 45,
+          "frameHeight": 121,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6,
+            0.9504132231404959
+          ],
+          "referenceHeight": 117,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/characters/karin-11005101/world/idle_4.png",
+          "frameWidth": 46,
+          "frameHeight": 121,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4782608695652174,
+            0.9504132231404959
+          ],
+          "referenceHeight": 117,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/characters/karin-11005101/world/idle_5.png",
+          "frameWidth": 45,
+          "frameHeight": 121,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4,
+            0.9504132231404959
+          ],
+          "referenceHeight": 117,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/characters/karin-11005101/world/idle_6.png",
+          "frameWidth": 33,
+          "frameHeight": 123,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3333333333333333,
+            0.9186991869918699
+          ],
+          "referenceHeight": 119,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/characters/karin-11005101/world/idle_7.png",
+          "frameWidth": 32,
+          "frameHeight": 124,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.375,
+            0.8951612903225806
+          ],
+          "referenceHeight": 120,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/characters/karin-11005101/world/run_0.png",
+          "frameWidth": 82,
+          "frameHeight": 113,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.8407079646017699
+          ],
+          "referenceHeight": 95,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/characters/karin-11005101/world/run_1.png",
+          "frameWidth": 86,
+          "frameHeight": 110,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5465116279069767,
+            0.8727272727272727
+          ],
+          "referenceHeight": 94,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/characters/karin-11005101/world/run_2.png",
+          "frameWidth": 109,
+          "frameHeight": 111,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5412844036697247,
+            0.9459459459459459
+          ],
+          "referenceHeight": 100,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/characters/karin-11005101/world/run_3.png",
+          "frameWidth": 88,
+          "frameHeight": 127,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5340909090909091,
+            0.905511811023622
+          ],
+          "referenceHeight": 110,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/characters/karin-11005101/world/run_4.png",
+          "frameWidth": 81,
+          "frameHeight": 134,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5061728395061729,
+            0.8880597014925373
+          ],
+          "referenceHeight": 116,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/characters/karin-11005101/world/run_6.png",
+          "frameWidth": 109,
+          "frameHeight": 111,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45871559633027525,
+            0.9459459459459459
+          ],
+          "referenceHeight": 100,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/characters/karin-11005101/world/run_7.png",
+          "frameWidth": 86,
+          "frameHeight": 110,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45348837209302323,
+            0.8727272727272727
+          ],
+          "referenceHeight": 94,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/characters/karin-11005101/world/run_5.png",
+          "frameWidth": 88,
+          "frameHeight": 127,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4659090909090909,
+            0.905511811023622
+          ],
+          "referenceHeight": 110,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 117,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/characters/karin-11005101/battle/A_1hit.png",
+          "frameWidth": 151,
+          "frameHeight": 162,
+          "frames": 7,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.44370860927152317,
+            0.9691358024691358
+          ],
+          "referenceHeight": 152,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/characters/karin-11005101/battle/C_dead.png",
+          "frameWidth": 97,
+          "frameHeight": 161,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4639175257731959,
+            0.968944099378882
+          ],
+          "referenceHeight": 139,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/characters/karin-11005101/battle/C_idle.png",
+          "frameWidth": 72,
+          "frameHeight": 164,
+          "frames": 5,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5277777777777778,
+            0.9695121951219512
+          ],
+          "referenceHeight": 160,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/characters/karin-11005101/battle/SP_skill1.png",
+          "frameWidth": 162,
+          "frameHeight": 162,
+          "frames": 13,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            3,
+            4,
+            4,
+            5,
+            5,
+            4,
+            4,
+            5,
+            5,
+            4,
+            4,
+            5,
+            5,
+            4,
+            4,
+            5,
+            5,
+            4,
+            4,
+            5,
+            5,
+            4,
+            4,
+            5,
+            5,
+            4,
+            4,
+            5,
+            5,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            9,
+            10,
+            10,
+            10,
+            10,
+            11,
+            11,
+            11,
+            11,
+            12,
+            12,
+            12
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.38271604938271603,
+            0.9691358024691358
+          ],
+          "referenceHeight": 144,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/characters/karin-11005101/battle/SP_skill2.png",
+          "frameWidth": 162,
+          "frameHeight": 162,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            3,
+            4,
+            4,
+            5,
+            5,
+            4,
+            4,
+            5,
+            5,
+            4,
+            4,
+            5,
+            5,
+            4,
+            4,
+            5,
+            5,
+            4,
+            4,
+            5,
+            5,
+            4,
+            4,
+            5,
+            5,
+            4,
+            4,
+            5,
+            5,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.38271604938271603,
+            0.9691358024691358
+          ],
+          "referenceHeight": 141,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 160,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11005101_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11005101_outdoor.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11005101.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\11005101.png"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/11005101.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11005101.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2926001.xml",
+      "name": "Karin",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11005101_outdoor.swf",
+      "hostile": true,
+      "position": "847, 1619"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2726001.xml",
+      "name": "Karin",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11005101_outdoor.swf",
+      "hostile": false,
+      "position": "1483, 872"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene4042001.xml",
+      "name": "Karin",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11005101_outdoor.swf",
+      "hostile": true,
+      "position": "1112, 946"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene4042001.xml",
+      "name": "Karin",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11005101_outdoor.swf",
+      "hostile": true,
+      "position": "513, 832"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1003001.xml",
+      "name": "Karin",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11005101_outdoor.swf",
+      "hostile": false,
+      "position": "2605, 754"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Karin",
+      "type": null,
+      "resource": "assets/battle/role/left/11005101.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/characters/karin-11005101/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": true,
+    "reason": "Caminhada em oito direções, ataque, queda e especial preservados.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "playable",
+  "reviewCategory": null,
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Karin",
+    "title": "",
+    "type": "0",
+    "artisticId": "11005101",
+    "levelType": "2",
+    "series": "26",
+    "starLevel": "3"
+  },
+  "manifestUrl": "/assets/characters/karin-11005101/manifest.json",
+  "preview": "/assets/characters/karin-11005101/preview.png"
+}

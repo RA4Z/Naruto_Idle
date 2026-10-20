@@ -1,0 +1,803 @@
+{
+  "id": "11001521",
+  "slug": "kankuro-11001521",
+  "name": "Kankuro",
+  "aliases": [
+    "Kankuro"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2"
+  ],
+  "hostile": true,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "0ddb42499bb305e99dddbf88e4f160a402256f5a6ab06f5749e09cb3b1eceeb4",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_2": {
+          "url": "/assets/characters/kankuro-11001521/world/idle_2.png",
+          "frameWidth": 43,
+          "frameHeight": 138,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.37209302325581395,
+            0.9130434782608695
+          ],
+          "referenceHeight": 134,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/characters/kankuro-11001521/world/idle_0.png",
+          "frameWidth": 49,
+          "frameHeight": 131,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5102040816326531,
+            0.9312977099236641
+          ],
+          "referenceHeight": 127,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/characters/kankuro-11001521/world/idle_1.png",
+          "frameWidth": 51,
+          "frameHeight": 136,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.43137254901960786,
+            0.9117647058823529
+          ],
+          "referenceHeight": 132,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/characters/kankuro-11001521/world/idle_3.png",
+          "frameWidth": 52,
+          "frameHeight": 135,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4423076923076923,
+            0.9333333333333333
+          ],
+          "referenceHeight": 131,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/characters/kankuro-11001521/world/idle_4.png",
+          "frameWidth": 49,
+          "frameHeight": 130,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4897959183673469,
+            0.9538461538461539
+          ],
+          "referenceHeight": 126,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/characters/kankuro-11001521/world/idle_5.png",
+          "frameWidth": 52,
+          "frameHeight": 135,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5576923076923077,
+            0.9333333333333333
+          ],
+          "referenceHeight": 131,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/characters/kankuro-11001521/world/idle_6.png",
+          "frameWidth": 43,
+          "frameHeight": 138,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.627906976744186,
+            0.9130434782608695
+          ],
+          "referenceHeight": 134,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/characters/kankuro-11001521/world/idle_7.png",
+          "frameWidth": 51,
+          "frameHeight": 136,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5686274509803921,
+            0.9117647058823529
+          ],
+          "referenceHeight": 132,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/characters/kankuro-11001521/world/run_1.png",
+          "frameWidth": 105,
+          "frameHeight": 115,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5142857142857142,
+            0.8869565217391304
+          ],
+          "referenceHeight": 96,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/characters/kankuro-11001521/world/run_0.png",
+          "frameWidth": 80,
+          "frameHeight": 116,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5375,
+            0.853448275862069
+          ],
+          "referenceHeight": 95,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/characters/kankuro-11001521/world/run_2.png",
+          "frameWidth": 135,
+          "frameHeight": 115,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5185185185185185,
+            0.9391304347826087
+          ],
+          "referenceHeight": 101,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/characters/kankuro-11001521/world/run_3.png",
+          "frameWidth": 108,
+          "frameHeight": 134,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5370370370370371,
+            0.8805970149253731
+          ],
+          "referenceHeight": 115,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/characters/kankuro-11001521/world/run_4.png",
+          "frameWidth": 80,
+          "frameHeight": 141,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4625,
+            0.8652482269503546
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/characters/kankuro-11001521/world/run_6.png",
+          "frameWidth": 135,
+          "frameHeight": 115,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.48148148148148145,
+            0.9391304347826087
+          ],
+          "referenceHeight": 101,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/characters/kankuro-11001521/world/run_7.png",
+          "frameWidth": 105,
+          "frameHeight": 115,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4857142857142857,
+            0.8869565217391304
+          ],
+          "referenceHeight": 96,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/characters/kankuro-11001521/world/run_5.png",
+          "frameWidth": 108,
+          "frameHeight": 134,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46296296296296297,
+            0.8805970149253731
+          ],
+          "referenceHeight": 115,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 127,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/characters/kankuro-11001521/battle/A_1hit.png",
+          "frameWidth": 158,
+          "frameHeight": 170,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5569620253164557,
+            0.9470588235294117
+          ],
+          "referenceHeight": 148,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/characters/kankuro-11001521/battle/C_dead.png",
+          "frameWidth": 117,
+          "frameHeight": 151,
+          "frames": 7,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            5,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.41025641025641024,
+            0.9403973509933775
+          ],
+          "referenceHeight": 112,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/characters/kankuro-11001521/battle/C_idle.png",
+          "frameWidth": 117,
+          "frameHeight": 153,
+          "frames": 7,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            5,
+            5,
+            5,
+            5,
+            5,
+            4,
+            4,
+            4,
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.452991452991453,
+            0.954248366013072
+          ],
+          "referenceHeight": 146,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/characters/kankuro-11001521/battle/SP_skill1.png",
+          "frameWidth": 171,
+          "frameHeight": 194,
+          "frames": 34,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            8,
+            9,
+            9,
+            9,
+            10,
+            10,
+            11,
+            12,
+            13,
+            14,
+            14,
+            15,
+            15,
+            16,
+            17,
+            17,
+            17,
+            17,
+            18,
+            19,
+            19,
+            20,
+            20,
+            21,
+            21,
+            22,
+            22,
+            23,
+            23,
+            24,
+            24,
+            25,
+            25,
+            25,
+            26,
+            26,
+            26,
+            26,
+            27,
+            27,
+            28,
+            28,
+            28,
+            29,
+            29,
+            30,
+            30,
+            30,
+            31,
+            31,
+            31,
+            31,
+            32,
+            33,
+            33,
+            33
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.38596491228070173,
+            0.9587628865979382
+          ],
+          "referenceHeight": 145,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/characters/kankuro-11001521/battle/SP_skill2.png",
+          "frameWidth": 114,
+          "frameHeight": 194,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.47368421052631576,
+            0.9587628865979382
+          ],
+          "referenceHeight": 148,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 146,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11001521.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\11001521.png"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/11001521.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11001521.swf"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11001521_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11001521_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene4041001.xml",
+      "name": "Kankuro",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001521_outdoor.swf",
+      "hostile": true,
+      "position": "1567, 2448"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene4041001.xml",
+      "name": "Kankuro",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001521_outdoor.swf",
+      "hostile": true,
+      "position": "1833, 1426"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene4041001.xml",
+      "name": "Kankuro",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001521_outdoor.swf",
+      "hostile": true,
+      "position": "2521, 1141"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1005001.xml",
+      "name": "Kankuro",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001521_outdoor.swf",
+      "hostile": false,
+      "position": "1002, 2449"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Kankuro",
+      "type": null,
+      "resource": "assets/battle/role/left/11001521.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/characters/kankuro-11001521/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": true,
+    "reason": "Caminhada em oito direções, ataque, queda e especial preservados.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "playable",
+  "reviewCategory": null,
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Kankuro",
+    "title": "",
+    "type": "0",
+    "artisticId": "11001521",
+    "levelType": "2",
+    "series": "36",
+    "starLevel": "2"
+  },
+  "manifestUrl": "/assets/characters/kankuro-11001521/manifest.json",
+  "preview": "/assets/characters/kankuro-11001521/preview.png"
+}

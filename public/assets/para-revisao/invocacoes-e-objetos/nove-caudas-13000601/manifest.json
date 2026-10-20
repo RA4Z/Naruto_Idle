@@ -1,0 +1,206 @@
+{
+  "id": "13000601",
+  "slug": "nove-caudas-13000601",
+  "name": "Nove Caudas",
+  "aliases": [
+    "Nove Caudas"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "b76d3c40e9524d5a2793ba75c2a5f5e8e40b313a19a174efb2299b7aa886a1d1",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/invocacoes-e-objetos/nove-caudas-13000601/world/idle_0.png",
+          "frameWidth": 1258,
+          "frameHeight": 969,
+          "frames": 13,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.724960254372019,
+            0.8792569659442725
+          ],
+          "referenceHeight": 965,
+          "status": "ready",
+          "externalEffects": [],
+          "sourceAction": "idle_0"
+        }
+      },
+      "referenceHeight": 965,
+      "status": "partial",
+      "issues": [
+        {
+          "presentationBinding": "idle_0",
+          "sourceAction": "idle_0",
+          "note": "Explicit variant of native idle; no invented pixels"
+        }
+      ],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "C_idle": {
+          "url": "/assets/para-revisao/invocacoes-e-objetos/nove-caudas-13000601/battle/C_idle.png",
+          "frameWidth": 275,
+          "frameHeight": 213,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            1
+          ],
+          "status": "partial",
+          "sourcePixelScale": 1,
+          "originalSpriteId": 269,
+          "sourceAction": "C_idle",
+          "referenceHeight": 213,
+          "coverage": "first native idle pose; full vector timeline pending",
+          "exportZoom": 0.25,
+          "rendering": "static-vector-frames; source scripts not executed",
+          "rigScale": 1.0
+        }
+      },
+      "referenceHeight": 213,
+      "status": "partial",
+      "issues": [
+        {
+          "note": "Only the first original idle pose is available; full vector animation and script-driven behavior remain pending."
+        }
+      ]
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/13000601.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\13000601.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/13000601.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\13000601.png"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/13000601_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\13000601_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene1602001.xml",
+      "name": "Nove Caudas",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/13000601_outdoor.swf",
+      "hostile": false,
+      "position": "909, 927"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Nove Caudas",
+      "type": null,
+      "resource": "assets/battle/role/left/13000601.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [
+    {
+      "mode": "world",
+      "error": "No supported actions rendered; [{'action': 'idle_0', 'reason': 'canvas-too-large', 'size': [1258, 969]}]"
+    },
+    {
+      "mode": "battle",
+      "error": "No bitmap actions XML: timeline/vector reconstruction required"
+    }
+  ],
+  "portrait": "/assets/para-revisao/invocacoes-e-objetos/nove-caudas-13000601/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": true
+  },
+  "status": "partial",
+  "recoveryPass": "nonstandard-actions-and-static-vectors",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "Invocação, clone ou objeto auxiliar na configuração original.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [
+      {
+        "action": "C_idle",
+        "reason": "static-or-incomplete-animation"
+      }
+    ],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "invocacoes-e-objetos",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Nove Caudas",
+    "title": "",
+    "type": "2",
+    "artisticId": "13000601",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/invocacoes-e-objetos/nove-caudas-13000601/manifest.json",
+  "preview": "/assets/para-revisao/invocacoes-e-objetos/nove-caudas-13000601/preview.png"
+}

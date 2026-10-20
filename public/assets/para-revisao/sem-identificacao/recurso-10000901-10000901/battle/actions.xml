@@ -1,0 +1,14 @@
+<actions frameRate="24">
+  <action id="0" name="heal">
+    <layer id="0">
+      <frame index="0" length="31" event="playFaceEffect"/>
+      <frame index="31" length="3" event="hit,playHitEffect"/>
+    </layer>
+  </action>
+  <action id="0" name="attack">
+    <layer id="0">
+      <frame index="0" length="31" event="playFaceEffect"/>
+      <frame index="31" length="1" event="hit"/>
+    </layer>
+  </action>
+</actions>

@@ -1,0 +1,132 @@
+{
+  "id": "13000401",
+  "slug": "corpo-de-manda-13000401",
+  "name": "Corpo de Manda",
+  "aliases": [
+    "Corpo de Manda"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "ddedac63422db940e9fcfb7c650878295e3f3ab3aa8f0ac8dd9a08bdc1722b83",
+  "modes": {
+    "battle": {
+      "animations": {
+        "C_idle": {
+          "url": "/assets/para-revisao/invocacoes-e-objetos/corpo-de-manda-13000401/battle/C_idle.png",
+          "frameWidth": 150,
+          "frameHeight": 153,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            1
+          ],
+          "status": "partial",
+          "sourcePixelScale": 1,
+          "originalSpriteId": 87,
+          "sourceAction": "C_idle",
+          "referenceHeight": 153,
+          "coverage": "first native idle pose; full vector timeline pending",
+          "exportZoom": 0.25,
+          "rendering": "static-vector-frames; source scripts not executed",
+          "rigScale": 1.0
+        }
+      },
+      "referenceHeight": 153,
+      "status": "partial",
+      "issues": [
+        {
+          "note": "Only the first original idle pose is available; full vector animation and script-driven behavior remain pending."
+        }
+      ]
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/13000401.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\13000401.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/13000401.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\13000401.png"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Corpo de Manda",
+      "type": null,
+      "resource": "assets/battle/role/left/13000401.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [
+    {
+      "mode": "battle",
+      "error": "No bitmap actions XML: timeline/vector reconstruction required"
+    }
+  ],
+  "portrait": "/assets/para-revisao/invocacoes-e-objetos/corpo-de-manda-13000401/portrait.png",
+  "capabilities": {
+    "npc": false,
+    "companion": false,
+    "enemy": true
+  },
+  "status": "partial",
+  "recoveryPass": "nonstandard-actions-and-static-vectors",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "Invocação, clone ou objeto auxiliar na configuração original.",
+    "missingActions": [
+      "world/idle_0",
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [
+      {
+        "action": "C_idle",
+        "reason": "static-or-incomplete-animation"
+      }
+    ],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "invocacoes-e-objetos",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Corpo de Manda",
+    "title": "",
+    "type": "2",
+    "artisticId": "13000401",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/invocacoes-e-objetos/corpo-de-manda-13000401/manifest.json",
+  "preview": "/assets/para-revisao/invocacoes-e-objetos/corpo-de-manda-13000401/preview.png"
+}

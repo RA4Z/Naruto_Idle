@@ -1,0 +1,236 @@
+{
+  "id": "13102003",
+  "slug": "recurso-13102003-13102003",
+  "name": "Recurso 13102003",
+  "aliases": [
+    "Recurso 13102003"
+  ],
+  "identity": "unidentified",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "d92b3e9ae8032a797e9770e39d0378fb7951868654d10b088d02d398c76f3b23",
+  "modes": {
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/para-revisao/sem-identificacao/recurso-13102003-13102003/battle/A_1hit.png",
+          "frameWidth": 323,
+          "frameHeight": 237,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3498452012383901,
+            0.9367088607594937
+          ],
+          "referenceHeight": 187,
+          "status": "partial",
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        "C_dead": {
+          "url": "/assets/para-revisao/sem-identificacao/recurso-13102003-13102003/battle/C_dead.png",
+          "frameWidth": 231,
+          "frameHeight": 223,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46320346320346323,
+            0.7982062780269058
+          ],
+          "referenceHeight": 192,
+          "status": "partial",
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        "C_idle": {
+          "url": "/assets/para-revisao/sem-identificacao/recurso-13102003-13102003/battle/C_idle.png",
+          "frameWidth": 143,
+          "frameHeight": 180,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.7272727272727273,
+            0.9888888888888889
+          ],
+          "referenceHeight": 175,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 175,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "A_1hit",
+          "missing": [],
+          "unsupported": [
+            "extname"
+          ],
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        {
+          "action": "C_dead",
+          "missing": [],
+          "unsupported": [
+            "extname"
+          ],
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        }
+      ],
+      "externalEffects": [
+        "yingzi(1).png"
+      ]
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/13102003.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha8.52Build300\\assets\\battle\\role\\left\\13102003.swf"
+    }
+  },
+  "evidence": [],
+  "issues": [],
+  "capabilities": {
+    "npc": false,
+    "companion": false,
+    "enemy": true
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "Identidade ou nome em português ainda requer conferência.",
+    "missingActions": [
+      "world/idle_0",
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "sem-identificacao",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/sem-identificacao/recurso-13102003-13102003/manifest.json",
+  "preview": "/assets/para-revisao/sem-identificacao/recurso-13102003-13102003/preview.png"
+}

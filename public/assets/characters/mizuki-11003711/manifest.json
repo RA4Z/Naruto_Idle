@@ -1,0 +1,726 @@
+{
+  "id": "11003711",
+  "slug": "mizuki-11003711",
+  "name": "Mizuki",
+  "aliases": [
+    "Mizuki"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "65af2faf71f6b6b9591bbc74efff96a3614e4a7977f0b86b3e873185066812c9",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/characters/mizuki-11003711/world/idle_0.png",
+          "frameWidth": 65,
+          "frameHeight": 135,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.47692307692307695,
+            0.9111111111111111
+          ],
+          "referenceHeight": 131,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/characters/mizuki-11003711/world/idle_1.png",
+          "frameWidth": 48,
+          "frameHeight": 139,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.375,
+            0.8920863309352518
+          ],
+          "referenceHeight": 135,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/characters/mizuki-11003711/world/idle_2.png",
+          "frameWidth": 55,
+          "frameHeight": 137,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.43636363636363634,
+            0.9124087591240876
+          ],
+          "referenceHeight": 133,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/characters/mizuki-11003711/world/idle_3.png",
+          "frameWidth": 67,
+          "frameHeight": 132,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4626865671641791,
+            0.946969696969697
+          ],
+          "referenceHeight": 128,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/characters/mizuki-11003711/world/idle_4.png",
+          "frameWidth": 65,
+          "frameHeight": 134,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5230769230769231,
+            0.9328358208955224
+          ],
+          "referenceHeight": 130,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/characters/mizuki-11003711/world/idle_5.png",
+          "frameWidth": 48,
+          "frameHeight": 134,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.625,
+            0.9253731343283582
+          ],
+          "referenceHeight": 130,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/characters/mizuki-11003711/world/idle_6.png",
+          "frameWidth": 55,
+          "frameHeight": 138,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5636363636363636,
+            0.927536231884058
+          ],
+          "referenceHeight": 134,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/characters/mizuki-11003711/world/idle_7.png",
+          "frameWidth": 67,
+          "frameHeight": 133,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5373134328358209,
+            0.9548872180451128
+          ],
+          "referenceHeight": 129,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/characters/mizuki-11003711/world/run_0.png",
+          "frameWidth": 70,
+          "frameHeight": 116,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.9655172413793104
+          ],
+          "referenceHeight": 93,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/characters/mizuki-11003711/world/run_1.png",
+          "frameWidth": 107,
+          "frameHeight": 112,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45794392523364486,
+            0.9732142857142857
+          ],
+          "referenceHeight": 94,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/characters/mizuki-11003711/world/run_2.png",
+          "frameWidth": 131,
+          "frameHeight": 119,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3816793893129771,
+            0.957983193277311
+          ],
+          "referenceHeight": 102,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/characters/mizuki-11003711/world/run_3.png",
+          "frameWidth": 106,
+          "frameHeight": 134,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4339622641509434,
+            0.9626865671641791
+          ],
+          "referenceHeight": 113,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/characters/mizuki-11003711/world/run_4.png",
+          "frameWidth": 70,
+          "frameHeight": 142,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.971830985915493
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/characters/mizuki-11003711/world/run_5.png",
+          "frameWidth": 107,
+          "frameHeight": 139,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5233644859813084,
+            0.9712230215827338
+          ],
+          "referenceHeight": 115,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/characters/mizuki-11003711/world/run_6.png",
+          "frameWidth": 131,
+          "frameHeight": 123,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5114503816793893,
+            0.975609756097561
+          ],
+          "referenceHeight": 103,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/characters/mizuki-11003711/world/run_7.png",
+          "frameWidth": 105,
+          "frameHeight": 120,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49523809523809526,
+            0.9666666666666667
+          ],
+          "referenceHeight": 98,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 131,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/characters/mizuki-11003711/battle/A_1hit.png",
+          "frameWidth": 179,
+          "frameHeight": 183,
+          "frames": 9,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.2569832402234637,
+            0.9562841530054644
+          ],
+          "referenceHeight": 169,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/characters/mizuki-11003711/battle/C_dead.png",
+          "frameWidth": 224,
+          "frameHeight": 206,
+          "frames": 7,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.32589285714285715,
+            0.8980582524271845
+          ],
+          "referenceHeight": 118,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/characters/mizuki-11003711/battle/C_idle.png",
+          "frameWidth": 81,
+          "frameHeight": 183,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5555555555555556,
+            0.9562841530054644
+          ],
+          "referenceHeight": 179,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/characters/mizuki-11003711/battle/SP_skill1.png",
+          "frameWidth": 140,
+          "frameHeight": 185,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45714285714285713,
+            0.9567567567567568
+          ],
+          "referenceHeight": 163,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/characters/mizuki-11003711/battle/SP_skill2.png",
+          "frameWidth": 366,
+          "frameHeight": 717,
+          "frames": 11,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            8,
+            8,
+            7,
+            7,
+            9,
+            9,
+            10
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.8224043715846995,
+            0.9888423988842399
+          ],
+          "referenceHeight": 171,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 179,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": [
+        "yingzi(1).png"
+      ]
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/11003711.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.20Build302\\assets\\battle\\role\\left\\11003711.swf"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11003711_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.20Build302\\assets\\role\\npc\\scene\\npcres\\11003711_outdoor.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11003711.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.20Build302\\assets\\battle\\role\\head_110_100\\11003711.png"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Mizuki",
+      "type": null,
+      "resource": "assets/battle/role/left/11003711.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/characters/mizuki-11003711/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": true,
+    "reason": "Caminhada em oito direções, ataque, queda e especial preservados.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "playable",
+  "reviewCategory": null,
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Mizuki",
+    "title": "",
+    "type": "0",
+    "artisticId": "11003711",
+    "levelType": "2",
+    "series": "286",
+    "starLevel": "3"
+  },
+  "manifestUrl": "/assets/characters/mizuki-11003711/manifest.json",
+  "preview": "/assets/characters/mizuki-11003711/preview.png"
+}

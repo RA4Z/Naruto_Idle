@@ -1,0 +1,511 @@
+{
+  "id": "19008001",
+  "slug": "cobra-branca-19008001",
+  "name": "Cobra Branca",
+  "aliases": [
+    "Cobra Branca",
+    "【狂暴的鸣人】战斗 vs白蛇",
+    "Invocação: Cobra Branca"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2",
+    "4",
+    "6"
+  ],
+  "hostile": true,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "24951d32fb087fb5520a4ed29a9cd91bbe34bcc32357387c09f2417b3cdba7ec",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cobra-branca-19008001/world/idle_1.png",
+          "frameWidth": 221,
+          "frameHeight": 144,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.43891402714932126,
+            0.5902777777777778
+          ],
+          "referenceHeight": 134,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cobra-branca-19008001/world/idle_3.png",
+          "frameWidth": 220,
+          "frameHeight": 153,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.48366013071895425
+          ],
+          "referenceHeight": 132,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cobra-branca-19008001/world/idle_5.png",
+          "frameWidth": 220,
+          "frameHeight": 153,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5272727272727272,
+            0.48366013071895425
+          ],
+          "referenceHeight": 132,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cobra-branca-19008001/world/idle_7.png",
+          "frameWidth": 221,
+          "frameHeight": 144,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5882352941176471,
+            0.5902777777777778
+          ],
+          "referenceHeight": 134,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cobra-branca-19008001/world/idle_1.png",
+          "frameWidth": 221,
+          "frameHeight": 144,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.43891402714932126,
+            0.5902777777777778
+          ],
+          "referenceHeight": 134,
+          "status": "ready",
+          "externalEffects": [],
+          "sourceAction": "idle_1"
+        }
+      },
+      "referenceHeight": 134,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cobra-branca-19008001/battle/A_1hit.png",
+          "frameWidth": 330,
+          "frameHeight": 181,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5848484848484848,
+            0.8839779005524862
+          ],
+          "referenceHeight": 151,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cobra-branca-19008001/battle/C_dead.png",
+          "frameWidth": 311,
+          "frameHeight": 149,
+          "frames": 5,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5627009646302251,
+            0.9060402684563759
+          ],
+          "referenceHeight": 116,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cobra-branca-19008001/battle/C_idle.png",
+          "frameWidth": 320,
+          "frameHeight": 157,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.571875,
+            0.8726114649681529
+          ],
+          "referenceHeight": 146,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/cobra-branca-19008001/battle/SP_skill1.png",
+          "frameWidth": 441,
+          "frameHeight": 278,
+          "frames": 16,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            6,
+            7,
+            8,
+            8,
+            9,
+            9,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            11,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            15
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.2585034013605442,
+            0.8561151079136691
+          ],
+          "referenceHeight": 135,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 146,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/19008001_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\19008001_outdoor.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/19008001.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\19008001.png"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/19008001.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\19008001.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2637001.xml",
+      "name": "Cobra Branca",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19008001_outdoor.swf",
+      "hostile": false,
+      "position": "855, 1832"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2556001.xml",
+      "name": "【狂暴的鸣人】战斗 vs白蛇",
+      "type": "4",
+      "resource": "assets/role/npc/scene/npcres/19008001_outdoor.swf",
+      "hostile": false,
+      "position": "2090, 531"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2706001.xml",
+      "name": "Cobra Branca",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19008001_outdoor.swf",
+      "hostile": true,
+      "position": "407, 1589"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2009001.xml",
+      "name": "Invocação: Cobra Branca",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/19008001_outdoor.swf",
+      "hostile": false,
+      "position": "1710, 571"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2639001.xml",
+      "name": "Cobra Branca",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19008001_outdoor.swf",
+      "hostile": false,
+      "position": "2698, 1917"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Cobra Branca",
+      "type": null,
+      "resource": "assets/battle/role/left/19008001.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/para-revisao/npcs-inimigos-e-cenario/cobra-branca-19008001/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_2",
+      "world/idle_4",
+      "world/idle_6",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7"
+    ],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Cobra Branca",
+    "title": "",
+    "type": "0",
+    "artisticId": "19008001",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/cobra-branca-19008001/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/cobra-branca-19008001/preview.png"
+}

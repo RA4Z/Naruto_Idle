@@ -1,0 +1,852 @@
+{
+  "id": "11000311",
+  "slug": "sakura-11000311",
+  "name": "Sakura",
+  "aliases": [
+    "Sakura",
+    "【new】木叶分班-打佐助后的剧情，樱",
+    "Sakura Haruno"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "101",
+    "2",
+    "4",
+    "6"
+  ],
+  "hostile": true,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "71e7e646fb169de9d60e69b1aa6fb9a2e6ca0e510c8c73f124d7a446a58597fb",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/characters/sakura-11000311/world/idle_0.png",
+          "frameWidth": 42,
+          "frameHeight": 113,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4523809523809524,
+            0.9292035398230089
+          ],
+          "referenceHeight": 109,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/characters/sakura-11000311/world/idle_1.png",
+          "frameWidth": 33,
+          "frameHeight": 114,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3939393939393939,
+            0.9122807017543859
+          ],
+          "referenceHeight": 110,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/characters/sakura-11000311/world/idle_2.png",
+          "frameWidth": 30,
+          "frameHeight": 111,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4,
+            0.9279279279279279
+          ],
+          "referenceHeight": 107,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/characters/sakura-11000311/world/idle_3.png",
+          "frameWidth": 38,
+          "frameHeight": 111,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.42105263157894735,
+            0.9369369369369369
+          ],
+          "referenceHeight": 107,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/characters/sakura-11000311/world/idle_4.png",
+          "frameWidth": 42,
+          "frameHeight": 111,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.9369369369369369
+          ],
+          "referenceHeight": 107,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/characters/sakura-11000311/world/idle_5.png",
+          "frameWidth": 38,
+          "frameHeight": 111,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5263157894736842,
+            0.9369369369369369
+          ],
+          "referenceHeight": 107,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/characters/sakura-11000311/world/idle_6.png",
+          "frameWidth": 30,
+          "frameHeight": 111,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5333333333333333,
+            0.9279279279279279
+          ],
+          "referenceHeight": 107,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/characters/sakura-11000311/world/idle_7.png",
+          "frameWidth": 33,
+          "frameHeight": 114,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5454545454545454,
+            0.9122807017543859
+          ],
+          "referenceHeight": 110,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/characters/sakura-11000311/world/run_2.png",
+          "frameWidth": 100,
+          "frameHeight": 106,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46,
+            0.9339622641509434
+          ],
+          "referenceHeight": 94,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/characters/sakura-11000311/world/run_0.png",
+          "frameWidth": 73,
+          "frameHeight": 106,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4931506849315068,
+            0.839622641509434
+          ],
+          "referenceHeight": 91,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/characters/sakura-11000311/world/run_4.png",
+          "frameWidth": 73,
+          "frameHeight": 125,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5068493150684932,
+            0.88
+          ],
+          "referenceHeight": 110,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/characters/sakura-11000311/world/run_1.png",
+          "frameWidth": 81,
+          "frameHeight": 106,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49382716049382713,
+            0.8867924528301887
+          ],
+          "referenceHeight": 90,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/characters/sakura-11000311/world/run_3.png",
+          "frameWidth": 82,
+          "frameHeight": 120,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4878048780487805,
+            0.8916666666666667
+          ],
+          "referenceHeight": 102,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/characters/sakura-11000311/world/run_5.png",
+          "frameWidth": 82,
+          "frameHeight": 120,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5121951219512195,
+            0.8916666666666667
+          ],
+          "referenceHeight": 102,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/characters/sakura-11000311/world/run_6.png",
+          "frameWidth": 100,
+          "frameHeight": 106,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.54,
+            0.9339622641509434
+          ],
+          "referenceHeight": 94,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/characters/sakura-11000311/world/run_7.png",
+          "frameWidth": 81,
+          "frameHeight": 106,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5061728395061729,
+            0.8867924528301887
+          ],
+          "referenceHeight": 90,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 109,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/characters/sakura-11000311/battle/A_1hit.png",
+          "frameWidth": 121,
+          "frameHeight": 140,
+          "frames": 9,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4628099173553719,
+            0.9571428571428572
+          ],
+          "referenceHeight": 125,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/characters/sakura-11000311/battle/C_dead.png",
+          "frameWidth": 100,
+          "frameHeight": 155,
+          "frames": 7,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.54,
+            0.9290322580645162
+          ],
+          "referenceHeight": 99,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/characters/sakura-11000311/battle/C_idle.png",
+          "frameWidth": 82,
+          "frameHeight": 135,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.524390243902439,
+            0.9555555555555556
+          ],
+          "referenceHeight": 128,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/characters/sakura-11000311/battle/SP_skill1.png",
+          "frameWidth": 81,
+          "frameHeight": 143,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            1,
+            1,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5185185185185185,
+            0.9440559440559441
+          ],
+          "referenceHeight": 130,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/characters/sakura-11000311/battle/SP_skill2.png",
+          "frameWidth": 81,
+          "frameHeight": 143,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            1,
+            1,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5185185185185185,
+            0.9440559440559441
+          ],
+          "referenceHeight": 130,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 128,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11000311.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\11000311.png"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11000311_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11000311_outdoor.swf"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/11000311.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11000311.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2222001.xml",
+      "name": "Sakura",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000311_outdoor.swf",
+      "hostile": false,
+      "position": "502, 1160"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2222001.xml",
+      "name": "Sakura",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000311_outdoor.swf",
+      "hostile": false,
+      "position": "864, 1157"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2031001.xml",
+      "name": "【new】木叶分班-打佐助后的剧情，樱",
+      "type": "4",
+      "resource": "assets/role/npc/scene/npcres/11000311_outdoor.swf",
+      "hostile": false,
+      "position": "648, 592"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015004.xml",
+      "name": "Sakura",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000311_outdoor.swf",
+      "hostile": false,
+      "position": "2049, 2942"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2010001.xml",
+      "name": "Sakura Haruno",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11000311_outdoor.swf",
+      "hostile": false,
+      "position": "2220, 1870"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1006001.xml",
+      "name": "Sakura Haruno",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11000311_outdoor.swf",
+      "hostile": false,
+      "position": "2095, 1442"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1006001.xml",
+      "name": "Sakura Haruno",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11000311_outdoor.swf",
+      "hostile": false,
+      "position": "1772, 383"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1502001.xml",
+      "name": "Sakura Haruno",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11000311_outdoor.swf",
+      "hostile": false,
+      "position": "453, 440"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1007001.xml",
+      "name": "Sakura Haruno",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/11000311_outdoor.swf",
+      "hostile": false,
+      "position": "1025, 596"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1502002.xml",
+      "name": "Sakura Haruno",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11000311_outdoor.swf",
+      "hostile": false,
+      "position": "367, 443"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2005001.xml",
+      "name": "Sakura Haruno",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11000311_outdoor.swf",
+      "hostile": false,
+      "position": "1748, 704"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1004001.xml",
+      "name": "Sakura Haruno",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/11000311_outdoor.swf",
+      "hostile": false,
+      "position": "1375, 958"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2055001.xml",
+      "name": "Sakura",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000311_outdoor.swf",
+      "hostile": true,
+      "position": "1642, 2233"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2055001.xml",
+      "name": "Sakura",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000311_outdoor.swf",
+      "hostile": true,
+      "position": "2081, 1503"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Sakura",
+      "type": null,
+      "resource": "assets/battle/role/left/11000311.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/characters/sakura-11000311/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": true,
+    "reason": "Caminhada em oito direções, ataque, queda e especial preservados.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "playable",
+  "reviewCategory": null,
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Sakura",
+    "title": "",
+    "type": "0",
+    "artisticId": "11000311",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/characters/sakura-11000311/manifest.json",
+  "preview": "/assets/characters/sakura-11000311/preview.png"
+}

@@ -1,0 +1,162 @@
+{
+  "id": "91000425",
+  "slug": "nome-original-91000425",
+  "name": "喵问答范围",
+  "aliases": [
+    "喵问答范围"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "12"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "7e50224bacb710bd5a65238a5bfdd5bc6cd68e0684d726af61962fba76306f38",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-91000425/world/idle_1.png",
+          "frameWidth": 477,
+          "frameHeight": 245,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4989517819706499,
+            0.49795918367346936
+          ],
+          "referenceHeight": 241,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-91000425/world/idle_1.png",
+          "frameWidth": 477,
+          "frameHeight": 245,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4989517819706499,
+            0.49795918367346936
+          ],
+          "referenceHeight": 241,
+          "status": "ready",
+          "externalEffects": [],
+          "sourceAction": "idle_1"
+        }
+      },
+      "referenceHeight": 241,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "idle_0",
+          "reason": "no-resolved-bitmaps",
+          "missing": []
+        }
+      ],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/91000425_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\91000425_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene1604001.xml",
+      "name": "喵问答范围",
+      "type": "12",
+      "resource": "assets/role/npc/scene/npcres/91000425_outdoor.swf",
+      "hostile": false,
+      "position": "347, 452"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1604001.xml",
+      "name": "喵问答范围",
+      "type": "12",
+      "resource": "assets/role/npc/scene/npcres/91000425_outdoor.swf",
+      "hostile": false,
+      "position": "1072, 452"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1604001.xml",
+      "name": "喵问答范围",
+      "type": "12",
+      "resource": "assets/role/npc/scene/npcres/91000425_outdoor.swf",
+      "hostile": false,
+      "position": "330, 761"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1604001.xml",
+      "name": "喵问答范围",
+      "type": "12",
+      "resource": "assets/role/npc/scene/npcres/91000425_outdoor.swf",
+      "hostile": false,
+      "position": "1082, 758"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [
+      {
+        "action": "idle_0",
+        "reason": "no-resolved-bitmaps",
+        "missing": []
+      }
+    ],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-91000425/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-91000425/preview.png"
+}

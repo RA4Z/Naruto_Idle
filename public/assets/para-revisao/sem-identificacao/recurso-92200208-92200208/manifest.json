@@ -1,0 +1,184 @@
+{
+  "id": "92200208",
+  "slug": "recurso-92200208-92200208",
+  "name": "Recurso 92200208",
+  "aliases": [
+    "Recurso 92200208"
+  ],
+  "identity": "unidentified",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "67bb21eb1781f864578541e433689605eb64ae453806d8869df066c49583cf03",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/sem-identificacao/recurso-92200208-92200208/world/idle_0.png",
+          "frameWidth": 116,
+          "frameHeight": 178,
+          "frames": 23,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            9,
+            9,
+            9,
+            10,
+            10,
+            10,
+            11,
+            11,
+            11,
+            12,
+            12,
+            12,
+            13,
+            13,
+            13,
+            14,
+            14,
+            14,
+            15,
+            15,
+            15,
+            16,
+            16,
+            16,
+            17,
+            17,
+            17,
+            18,
+            18,
+            18,
+            19,
+            19,
+            19,
+            20,
+            20,
+            20,
+            21,
+            21,
+            21,
+            22,
+            22,
+            22
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5258620689655172,
+            0.7247191011235955
+          ],
+          "referenceHeight": 160,
+          "status": "partial",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 160,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "idle_0",
+          "missing": [],
+          "unsupported": [
+            "blendMode"
+          ],
+          "externalEffects": []
+        }
+      ],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/92200208_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\92200208_outdoor.swf"
+    }
+  },
+  "evidence": [],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "Identidade ou nome em português ainda requer conferência.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [
+      {
+        "action": "idle_0",
+        "missing": [],
+        "unsupported": [
+          "blendMode"
+        ],
+        "externalEffects": []
+      }
+    ],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "sem-identificacao",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/sem-identificacao/recurso-92200208-92200208/manifest.json",
+  "preview": "/assets/para-revisao/sem-identificacao/recurso-92200208-92200208/preview.png"
+}

@@ -1,0 +1,906 @@
+{
+  "id": "11001631",
+  "slug": "kakashi-jardim-dos-amassos-11001631",
+  "name": "Kakashi",
+  "aliases": [
+    "Kakashi",
+    "Desafio de Fase",
+    "Clone de Kakashi",
+    "Kakashi Hatake"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2",
+    "6"
+  ],
+  "hostile": true,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "9cfe67247f8ddacd8763bb4248cdcbfd122b1f94a0ed7497b1b82747d1feb3b6",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/characters/kakashi-jardim-dos-amassos-11001631/world/idle_0.png",
+          "frameWidth": 45,
+          "frameHeight": 141,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4666666666666667,
+            0.900709219858156
+          ],
+          "referenceHeight": 137,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/characters/kakashi-jardim-dos-amassos-11001631/world/idle_1.png",
+          "frameWidth": 59,
+          "frameHeight": 145,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6440677966101694,
+            0.8896551724137931
+          ],
+          "referenceHeight": 141,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/characters/kakashi-jardim-dos-amassos-11001631/world/idle_2.png",
+          "frameWidth": 77,
+          "frameHeight": 141,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5844155844155844,
+            0.9148936170212766
+          ],
+          "referenceHeight": 137,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/characters/kakashi-jardim-dos-amassos-11001631/world/idle_3.png",
+          "frameWidth": 63,
+          "frameHeight": 138,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5396825396825397,
+            0.9420289855072463
+          ],
+          "referenceHeight": 134,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/characters/kakashi-jardim-dos-amassos-11001631/world/idle_4.png",
+          "frameWidth": 45,
+          "frameHeight": 144,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5333333333333333,
+            0.9166666666666666
+          ],
+          "referenceHeight": 140,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/characters/kakashi-jardim-dos-amassos-11001631/world/run_0.png",
+          "frameWidth": 81,
+          "frameHeight": 124,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5185185185185185,
+            0.8225806451612904
+          ],
+          "referenceHeight": 93,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/characters/kakashi-jardim-dos-amassos-11001631/world/idle_5.png",
+          "frameWidth": 59,
+          "frameHeight": 144,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3559322033898305,
+            0.9166666666666666
+          ],
+          "referenceHeight": 140,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/characters/kakashi-jardim-dos-amassos-11001631/world/idle_6.png",
+          "frameWidth": 77,
+          "frameHeight": 141,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4155844155844156,
+            0.9219858156028369
+          ],
+          "referenceHeight": 137,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/characters/kakashi-jardim-dos-amassos-11001631/world/idle_7.png",
+          "frameWidth": 63,
+          "frameHeight": 134,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4603174603174603,
+            0.9552238805970149
+          ],
+          "referenceHeight": 130,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/characters/kakashi-jardim-dos-amassos-11001631/world/run_1.png",
+          "frameWidth": 107,
+          "frameHeight": 121,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.48598130841121495,
+            0.8677685950413223
+          ],
+          "referenceHeight": 96,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/characters/kakashi-jardim-dos-amassos-11001631/world/run_2.png",
+          "frameWidth": 140,
+          "frameHeight": 120,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4785714285714286,
+            0.9333333333333333
+          ],
+          "referenceHeight": 104,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/characters/kakashi-jardim-dos-amassos-11001631/world/run_3.png",
+          "frameWidth": 110,
+          "frameHeight": 141,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.8723404255319149
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/characters/kakashi-jardim-dos-amassos-11001631/world/run_4.png",
+          "frameWidth": 81,
+          "frameHeight": 151,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.48148148148148145,
+            0.8609271523178808
+          ],
+          "referenceHeight": 132,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/characters/kakashi-jardim-dos-amassos-11001631/world/run_5.png",
+          "frameWidth": 107,
+          "frameHeight": 143,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.514018691588785,
+            0.8881118881118881
+          ],
+          "referenceHeight": 124,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/characters/kakashi-jardim-dos-amassos-11001631/world/run_6.png",
+          "frameWidth": 140,
+          "frameHeight": 122,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5214285714285715,
+            0.9426229508196722
+          ],
+          "referenceHeight": 107,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/characters/kakashi-jardim-dos-amassos-11001631/world/run_7.png",
+          "frameWidth": 109,
+          "frameHeight": 124,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4954128440366973,
+            0.8467741935483871
+          ],
+          "referenceHeight": 95,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 137,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/characters/kakashi-jardim-dos-amassos-11001631/battle/A_1hit.png",
+          "frameWidth": 195,
+          "frameHeight": 215,
+          "frames": 13,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            9,
+            9,
+            11,
+            12
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4358974358974359,
+            0.9209302325581395
+          ],
+          "referenceHeight": 149,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/characters/kakashi-jardim-dos-amassos-11001631/battle/C_dead.png",
+          "frameWidth": 109,
+          "frameHeight": 146,
+          "frames": 3,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5596330275229358,
+            0.9178082191780822
+          ],
+          "referenceHeight": 120,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/characters/kakashi-jardim-dos-amassos-11001631/battle/C_idle.png",
+          "frameWidth": 72,
+          "frameHeight": 186,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            4,
+            4,
+            4,
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4166666666666667,
+            0.956989247311828
+          ],
+          "referenceHeight": 182,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/characters/kakashi-jardim-dos-amassos-11001631/battle/SP_skill1.png",
+          "frameWidth": 125,
+          "frameHeight": 178,
+          "frames": 11,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            6,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            9,
+            9,
+            10,
+            10
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.36,
+            0.9662921348314607
+          ],
+          "referenceHeight": 152,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/characters/kakashi-jardim-dos-amassos-11001631/battle/SP_skill2.png",
+          "frameWidth": 403,
+          "frameHeight": 191,
+          "frames": 26,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            5,
+            6,
+            7,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            16,
+            17,
+            17,
+            17,
+            17,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.1935483870967742,
+            0.9528795811518325
+          ],
+          "referenceHeight": 166,
+          "status": "partial",
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        }
+      },
+      "referenceHeight": 182,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "SP_skill2",
+          "missing": [],
+          "unsupported": [
+            "extname"
+          ],
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        }
+      ],
+      "externalEffects": [
+        "yingzi(1).png"
+      ]
+    }
+  },
+  "sources": {
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11001631.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\11001631.png"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11001631_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11001631_outdoor.swf"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/11001631.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11001631.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene4013001.xml",
+      "name": "Kakashi",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001631_outdoor.swf",
+      "hostile": true,
+      "position": "1425, 1110"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene4013001.xml",
+      "name": "Kakashi",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001631_outdoor.swf",
+      "hostile": true,
+      "position": "1229, 624"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2222001.xml",
+      "name": "Desafio de Fase",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001631_outdoor.swf",
+      "hostile": false,
+      "position": "997, 1149"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015002.xml",
+      "name": "Kakashi",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/11001631_outdoor.swf",
+      "hostile": false,
+      "position": "1158, 950"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2028001.xml",
+      "name": "Clone de Kakashi",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001631_outdoor.swf",
+      "hostile": true,
+      "position": "1923, 2137"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2028001.xml",
+      "name": "Clone de Kakashi",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001631_outdoor.swf",
+      "hostile": true,
+      "position": "2462, 1876"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2057001.xml",
+      "name": "Kakashi",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001631_outdoor.swf",
+      "hostile": true,
+      "position": "1322, 1159"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2023002.xml",
+      "name": "Kakashi",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001631_outdoor.swf",
+      "hostile": false,
+      "position": "1077, 746"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1004001.xml",
+      "name": "Kakashi Hatake",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/11001631_outdoor.swf",
+      "hostile": false,
+      "position": "900, 845"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Kakashi",
+      "type": null,
+      "resource": "assets/battle/role/left/11001631.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/characters/kakashi-jardim-dos-amassos-11001631/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "partial",
+  "variant": "Jardim dos Amassos",
+  "organization": {
+    "eligible": true,
+    "reason": "Caminhada em oito direções, ataque, queda e especial preservados.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "playable",
+  "reviewCategory": null,
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Kakashi",
+    "title": "[Jardim dos Amassos]",
+    "type": "0",
+    "artisticId": "11001631",
+    "levelType": "2",
+    "series": "42",
+    "starLevel": "2"
+  },
+  "manifestUrl": "/assets/characters/kakashi-jardim-dos-amassos-11001631/manifest.json",
+  "preview": "/assets/characters/kakashi-jardim-dos-amassos-11001631/preview.png"
+}

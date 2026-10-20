@@ -1,0 +1,112 @@
+{
+  "id": "19009101",
+  "slug": "invocacao-panda-gigante-19009101",
+  "name": "Invocação: Panda Gigante",
+  "aliases": [
+    "Invocação: Panda Gigante"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "3045b6ca0aa12e852ef862d915bf127091e0b7a0f657db06d0b4e2d480ffd6e3",
+  "modes": {
+    "battle": {
+      "animations": {
+        "C_idle": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-panda-gigante-19009101/battle/C_idle.png",
+          "frameWidth": 122,
+          "frameHeight": 154,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.48360655737704916,
+            0.961038961038961
+          ],
+          "referenceHeight": 150,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 150,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/19009101.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\19009101.png"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/19009101.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\19009101.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Invocação: Panda Gigante",
+      "type": null,
+      "resource": "assets/battle/role/left/19009101.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-panda-gigante-19009101/portrait.png",
+  "capabilities": {
+    "npc": false,
+    "companion": false,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_0",
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Invocação: Panda Gigante",
+    "title": "",
+    "type": "0",
+    "artisticId": "19009101",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-panda-gigante-19009101/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-panda-gigante-19009101/preview.png"
+}

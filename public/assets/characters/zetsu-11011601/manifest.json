@@ -1,0 +1,736 @@
+{
+  "id": "11011601",
+  "slug": "zetsu-11011601",
+  "name": "Zetsu",
+  "aliases": [
+    "Zetsu"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "31339dd8050f0955090910db8c3c61790a69a7463f37ff931ec431070fe21ed7",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/characters/zetsu-11011601/world/idle_0.png",
+          "frameWidth": 77,
+          "frameHeight": 178,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4805194805194805,
+            0.9382022471910112
+          ],
+          "referenceHeight": 174,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/characters/zetsu-11011601/world/idle_1.png",
+          "frameWidth": 65,
+          "frameHeight": 182,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4307692307692308,
+            0.9120879120879121
+          ],
+          "referenceHeight": 178,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/characters/zetsu-11011601/world/idle_2.png",
+          "frameWidth": 57,
+          "frameHeight": 180,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.38596491228070173,
+            0.9166666666666666
+          ],
+          "referenceHeight": 176,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/characters/zetsu-11011601/world/idle_3.png",
+          "frameWidth": 69,
+          "frameHeight": 174,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.463768115942029,
+            0.9367816091954023
+          ],
+          "referenceHeight": 170,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/characters/zetsu-11011601/world/idle_4.png",
+          "frameWidth": 77,
+          "frameHeight": 169,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5194805194805194,
+            0.9585798816568047
+          ],
+          "referenceHeight": 165,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/characters/zetsu-11011601/world/idle_5.png",
+          "frameWidth": 65,
+          "frameHeight": 178,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5692307692307692,
+            0.9213483146067416
+          ],
+          "referenceHeight": 174,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/characters/zetsu-11011601/world/idle_6.png",
+          "frameWidth": 57,
+          "frameHeight": 184,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6140350877192983,
+            0.9021739130434783
+          ],
+          "referenceHeight": 180,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/characters/zetsu-11011601/world/idle_7.png",
+          "frameWidth": 69,
+          "frameHeight": 181,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5362318840579711,
+            0.9226519337016574
+          ],
+          "referenceHeight": 177,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/characters/zetsu-11011601/world/run_0.png",
+          "frameWidth": 101,
+          "frameHeight": 154,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5544554455445545,
+            0.8441558441558441
+          ],
+          "referenceHeight": 129,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/characters/zetsu-11011601/world/run_1.png",
+          "frameWidth": 132,
+          "frameHeight": 158,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5454545454545454,
+            0.8924050632911392
+          ],
+          "referenceHeight": 136,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/characters/zetsu-11011601/world/run_2.png",
+          "frameWidth": 156,
+          "frameHeight": 166,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5256410256410257,
+            0.927710843373494
+          ],
+          "referenceHeight": 146,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/characters/zetsu-11011601/world/run_3.png",
+          "frameWidth": 139,
+          "frameHeight": 181,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5323741007194245,
+            0.9005524861878453
+          ],
+          "referenceHeight": 160,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/characters/zetsu-11011601/world/run_4.png",
+          "frameWidth": 101,
+          "frameHeight": 187,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.44554455445544555,
+            0.8823529411764706
+          ],
+          "referenceHeight": 166,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/characters/zetsu-11011601/world/run_5.png",
+          "frameWidth": 132,
+          "frameHeight": 175,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45454545454545453,
+            0.9085714285714286
+          ],
+          "referenceHeight": 157,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/characters/zetsu-11011601/world/run_6.png",
+          "frameWidth": 156,
+          "frameHeight": 154,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.47435897435897434,
+            0.948051948051948
+          ],
+          "referenceHeight": 140,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/characters/zetsu-11011601/world/run_7.png",
+          "frameWidth": 139,
+          "frameHeight": 152,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4676258992805755,
+            0.875
+          ],
+          "referenceHeight": 129,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 174,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/characters/zetsu-11011601/battle/A_1hit.png",
+          "frameWidth": 314,
+          "frameHeight": 268,
+          "frames": 14,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            9,
+            10,
+            3,
+            11,
+            12,
+            13
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4840764331210191,
+            0.835820895522388
+          ],
+          "referenceHeight": 133,
+          "status": "partial",
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        "C_dead": {
+          "url": "/assets/characters/zetsu-11011601/battle/C_dead.png",
+          "frameWidth": 173,
+          "frameHeight": 244,
+          "frames": 5,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3583815028901734,
+            0.9180327868852459
+          ],
+          "referenceHeight": 172,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/characters/zetsu-11011601/battle/C_idle.png",
+          "frameWidth": 90,
+          "frameHeight": 241,
+          "frames": 5,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5444444444444444,
+            0.966804979253112
+          ],
+          "referenceHeight": 237,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/characters/zetsu-11011601/battle/SP_skill1.png",
+          "frameWidth": 211,
+          "frameHeight": 251,
+          "frames": 10,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4028436018957346,
+            0.9282868525896414
+          ],
+          "referenceHeight": 189,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/characters/zetsu-11011601/battle/SP_skill2.png",
+          "frameWidth": 132,
+          "frameHeight": 240,
+          "frames": 4,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            2,
+            2,
+            1,
+            1,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4318181818181818,
+            0.9625
+          ],
+          "referenceHeight": 231,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 237,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "A_1hit",
+          "missing": [],
+          "unsupported": [
+            "extname"
+          ],
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        }
+      ],
+      "externalEffects": [
+        "yingzi(1).png"
+      ]
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11011601_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11011601_outdoor.swf"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/11011601.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11011601.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11011601.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\11011601.png"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Zetsu",
+      "type": null,
+      "resource": "assets/battle/role/left/11011601.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/characters/zetsu-11011601/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": true,
+    "reason": "Caminhada em oito direções, ataque, queda e especial preservados.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "playable",
+  "reviewCategory": null,
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Zetsu",
+    "title": "",
+    "type": "0",
+    "artisticId": "11011601",
+    "levelType": "2",
+    "series": "201",
+    "starLevel": "3"
+  },
+  "manifestUrl": "/assets/characters/zetsu-11011601/manifest.json",
+  "preview": "/assets/characters/zetsu-11011601/preview.png"
+}

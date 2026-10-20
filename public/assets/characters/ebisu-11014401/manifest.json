@@ -1,0 +1,735 @@
+{
+  "id": "11014401",
+  "slug": "ebisu-11014401",
+  "name": "Ebisu",
+  "aliases": [
+    "Ebisu"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "dd519edec19806ad47240999df9f4ece7b1f6e671e0897b812f509f0499aafdb",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_1": {
+          "url": "/assets/characters/ebisu-11014401/world/idle_1.png",
+          "frameWidth": 46,
+          "frameHeight": 137,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.32608695652173914,
+            0.9051094890510949
+          ],
+          "referenceHeight": 133,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/characters/ebisu-11014401/world/idle_5.png",
+          "frameWidth": 46,
+          "frameHeight": 134,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6739130434782609,
+            0.9477611940298507
+          ],
+          "referenceHeight": 130,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/characters/ebisu-11014401/world/idle_0.png",
+          "frameWidth": 51,
+          "frameHeight": 139,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.37254901960784315,
+            0.920863309352518
+          ],
+          "referenceHeight": 135,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/characters/ebisu-11014401/world/idle_2.png",
+          "frameWidth": 48,
+          "frameHeight": 133,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.924812030075188
+          ],
+          "referenceHeight": 129,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/characters/ebisu-11014401/world/idle_3.png",
+          "frameWidth": 52,
+          "frameHeight": 129,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5576923076923077,
+            0.9534883720930233
+          ],
+          "referenceHeight": 125,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/characters/ebisu-11014401/world/idle_4.png",
+          "frameWidth": 51,
+          "frameHeight": 133,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6274509803921569,
+            0.9398496240601504
+          ],
+          "referenceHeight": 129,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/characters/ebisu-11014401/world/idle_6.png",
+          "frameWidth": 48,
+          "frameHeight": 134,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.9552238805970149
+          ],
+          "referenceHeight": 130,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/characters/ebisu-11014401/world/idle_7.png",
+          "frameWidth": 52,
+          "frameHeight": 134,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4423076923076923,
+            0.9626865671641791
+          ],
+          "referenceHeight": 130,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/characters/ebisu-11014401/world/run_0.png",
+          "frameWidth": 81,
+          "frameHeight": 119,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5308641975308642,
+            0.8151260504201681
+          ],
+          "referenceHeight": 92,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/characters/ebisu-11014401/world/run_1.png",
+          "frameWidth": 105,
+          "frameHeight": 121,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5047619047619047,
+            0.8512396694214877
+          ],
+          "referenceHeight": 92,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/characters/ebisu-11014401/world/run_2.png",
+          "frameWidth": 139,
+          "frameHeight": 110,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49640287769784175,
+            0.9454545454545454
+          ],
+          "referenceHeight": 96,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/characters/ebisu-11014401/world/run_3.png",
+          "frameWidth": 109,
+          "frameHeight": 128,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5229357798165137,
+            0.90625
+          ],
+          "referenceHeight": 110,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/characters/ebisu-11014401/world/run_4.png",
+          "frameWidth": 81,
+          "frameHeight": 137,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4691358024691358,
+            0.8759124087591241
+          ],
+          "referenceHeight": 118,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/characters/ebisu-11014401/world/run_7.png",
+          "frameWidth": 109,
+          "frameHeight": 116,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.47706422018348627,
+            0.853448275862069
+          ],
+          "referenceHeight": 91,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/characters/ebisu-11014401/world/run_6.png",
+          "frameWidth": 139,
+          "frameHeight": 109,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5035971223021583,
+            0.9541284403669725
+          ],
+          "referenceHeight": 95,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/characters/ebisu-11014401/world/run_5.png",
+          "frameWidth": 106,
+          "frameHeight": 127,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.8976377952755905
+          ],
+          "referenceHeight": 110,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 135,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "C_dead": {
+          "url": "/assets/characters/ebisu-11014401/battle/C_dead.png",
+          "frameWidth": 138,
+          "frameHeight": 176,
+          "frames": 7,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.391304347826087,
+            0.8920454545454546
+          ],
+          "referenceHeight": 129,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/characters/ebisu-11014401/battle/C_idle.png",
+          "frameWidth": 115,
+          "frameHeight": 164,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            8,
+            9,
+            9,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.40869565217391307,
+            0.9634146341463414
+          ],
+          "referenceHeight": 157,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "A_1hit": {
+          "url": "/assets/characters/ebisu-11014401/battle/A_1hit.png",
+          "frameWidth": 592,
+          "frameHeight": 175,
+          "frames": 15,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            12,
+            12,
+            13,
+            13,
+            13,
+            14,
+            14,
+            14
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.10135135135135136,
+            0.9542857142857143
+          ],
+          "referenceHeight": 136,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/characters/ebisu-11014401/battle/SP_skill1.png",
+          "frameWidth": 470,
+          "frameHeight": 426,
+          "frames": 23,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            8,
+            8,
+            9,
+            10,
+            11,
+            12,
+            12,
+            12,
+            13,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            19,
+            19,
+            19,
+            20,
+            20,
+            20,
+            21,
+            21,
+            22,
+            22,
+            22
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.44042553191489364,
+            0.9553990610328639
+          ],
+          "referenceHeight": 266,
+          "status": "partial",
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        "SP_skill2": {
+          "url": "/assets/characters/ebisu-11014401/battle/SP_skill2.png",
+          "frameWidth": 118,
+          "frameHeight": 164,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            2,
+            2,
+            1,
+            1,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.423728813559322,
+            0.9634146341463414
+          ],
+          "referenceHeight": 159,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 157,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "SP_skill1",
+          "missing": [],
+          "unsupported": [
+            "extname"
+          ],
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        }
+      ],
+      "externalEffects": [
+        "yingzi(1).png"
+      ]
+    }
+  },
+  "sources": {
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11014401.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha7.17Build300\\assets\\battle\\role\\head_110_100\\11014401.png"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/11014401.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha7.17Build300\\assets\\battle\\role\\left\\11014401.swf"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11014401_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha7.17Build300\\assets\\role\\npc\\scene\\npcres\\11014401_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Ebisu",
+      "type": null,
+      "resource": "assets/battle/role/left/11014401.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/characters/ebisu-11014401/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": true,
+    "reason": "Caminhada em oito direções, ataque, queda e especial preservados.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "playable",
+  "reviewCategory": null,
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Ebisu",
+    "title": "",
+    "type": "0",
+    "artisticId": "11014401",
+    "levelType": "2",
+    "series": "307",
+    "starLevel": "2"
+  },
+  "manifestUrl": "/assets/characters/ebisu-11014401/manifest.json",
+  "preview": "/assets/characters/ebisu-11014401/preview.png"
+}

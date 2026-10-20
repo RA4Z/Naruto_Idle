@@ -1,0 +1,718 @@
+{
+  "id": "11001401",
+  "slug": "temari-11001401",
+  "name": "Temari",
+  "aliases": [
+    "Temari"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "1bfbbb66239bb3c16a4889e24eb2e49150399b9f9d7edf15bb9f17e3d7de5b0f",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/characters/temari-11001401/world/idle_0.png",
+          "frameWidth": 66,
+          "frameHeight": 137,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.42424242424242425,
+            0.9343065693430657
+          ],
+          "referenceHeight": 133,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/characters/temari-11001401/world/idle_1.png",
+          "frameWidth": 55,
+          "frameHeight": 142,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.36363636363636365,
+            0.9225352112676056
+          ],
+          "referenceHeight": 138,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/characters/temari-11001401/world/idle_2.png",
+          "frameWidth": 36,
+          "frameHeight": 141,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.9361702127659575
+          ],
+          "referenceHeight": 137,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/characters/temari-11001401/world/idle_3.png",
+          "frameWidth": 53,
+          "frameHeight": 135,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4528301886792453,
+            0.9629629629629629
+          ],
+          "referenceHeight": 131,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/characters/temari-11001401/world/idle_4.png",
+          "frameWidth": 67,
+          "frameHeight": 133,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.582089552238806,
+            0.9548872180451128
+          ],
+          "referenceHeight": 129,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/characters/temari-11001401/world/idle_5.png",
+          "frameWidth": 53,
+          "frameHeight": 135,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5471698113207547,
+            0.9629629629629629
+          ],
+          "referenceHeight": 131,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/characters/temari-11001401/world/idle_6.png",
+          "frameWidth": 36,
+          "frameHeight": 141,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.9361702127659575
+          ],
+          "referenceHeight": 137,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/characters/temari-11001401/world/idle_7.png",
+          "frameWidth": 55,
+          "frameHeight": 142,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6363636363636364,
+            0.9225352112676056
+          ],
+          "referenceHeight": 138,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/characters/temari-11001401/world/run_0.png",
+          "frameWidth": 76,
+          "frameHeight": 121,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4342105263157895,
+            0.8512396694214877
+          ],
+          "referenceHeight": 102,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/characters/temari-11001401/world/run_1.png",
+          "frameWidth": 101,
+          "frameHeight": 123,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49504950495049505,
+            0.8861788617886179
+          ],
+          "referenceHeight": 107,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/characters/temari-11001401/world/run_2.png",
+          "frameWidth": 116,
+          "frameHeight": 126,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5517241379310345,
+            0.9523809523809523
+          ],
+          "referenceHeight": 114,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/characters/temari-11001401/world/run_3.png",
+          "frameWidth": 88,
+          "frameHeight": 140,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5227272727272727,
+            0.9142857142857143
+          ],
+          "referenceHeight": 122,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/characters/temari-11001401/world/run_4.png",
+          "frameWidth": 76,
+          "frameHeight": 142,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5657894736842105,
+            0.9084507042253521
+          ],
+          "referenceHeight": 125,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/characters/temari-11001401/world/run_5.png",
+          "frameWidth": 88,
+          "frameHeight": 140,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4772727272727273,
+            0.9142857142857143
+          ],
+          "referenceHeight": 122,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/characters/temari-11001401/world/run_6.png",
+          "frameWidth": 116,
+          "frameHeight": 126,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4482758620689655,
+            0.9523809523809523
+          ],
+          "referenceHeight": 114,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/characters/temari-11001401/world/run_7.png",
+          "frameWidth": 101,
+          "frameHeight": 123,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.504950495049505,
+            0.8861788617886179
+          ],
+          "referenceHeight": 107,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 133,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/characters/temari-11001401/battle/A_1hit.png",
+          "frameWidth": 139,
+          "frameHeight": 149,
+          "frames": 6,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.39568345323741005,
+            0.959731543624161
+          ],
+          "referenceHeight": 139,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/characters/temari-11001401/battle/C_dead.png",
+          "frameWidth": 123,
+          "frameHeight": 165,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.34146341463414637,
+            0.9454545454545454
+          ],
+          "referenceHeight": 138,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/characters/temari-11001401/battle/C_idle.png",
+          "frameWidth": 97,
+          "frameHeight": 145,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4536082474226804,
+            0.9655172413793104
+          ],
+          "referenceHeight": 140,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/characters/temari-11001401/battle/SP_skill1.png",
+          "frameWidth": 282,
+          "frameHeight": 228,
+          "frames": 22,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            10,
+            10,
+            10,
+            11,
+            11,
+            11,
+            12,
+            13,
+            13,
+            14,
+            15,
+            15,
+            15,
+            15,
+            16,
+            16,
+            16,
+            16,
+            16,
+            17,
+            17,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            19,
+            19,
+            19,
+            19,
+            20,
+            20,
+            20,
+            21,
+            21
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4432624113475177,
+            0.9605263157894737
+          ],
+          "referenceHeight": 181,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/characters/temari-11001401/battle/SP_skill2.png",
+          "frameWidth": 289,
+          "frameHeight": 291,
+          "frames": 9,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.532871972318339,
+            0.9347079037800687
+          ],
+          "referenceHeight": 192,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 140,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11001401.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\11001401.png"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/11001401.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11001401.swf"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11001401_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11001401_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Temari",
+      "type": null,
+      "resource": "assets/battle/role/left/11001401.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/characters/temari-11001401/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": true,
+    "reason": "Caminhada em oito direções, ataque, queda e especial preservados.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "playable",
+  "reviewCategory": null,
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Temari",
+    "title": "",
+    "type": "0",
+    "artisticId": "11001401",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/characters/temari-11001401/manifest.json",
+  "preview": "/assets/characters/temari-11001401/preview.png"
+}

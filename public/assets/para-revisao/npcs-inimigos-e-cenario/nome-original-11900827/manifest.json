@@ -1,0 +1,221 @@
+{
+  "id": "11900827",
+  "slug": "nome-original-11900827",
+  "name": "找到自来也",
+  "aliases": [
+    "找到自来也"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "4"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "8624c54f58b42650ce316b54a7dbee9d10aca6162303dede69f12793dff67b12",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-11900827/world/idle_0.png",
+          "frameWidth": 88,
+          "frameHeight": 121,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5227272727272727,
+            0.8677685950413223
+          ],
+          "referenceHeight": 117,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-11900827/world/idle_1.png",
+          "frameWidth": 89,
+          "frameHeight": 131,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5056179775280899,
+            0.8320610687022901
+          ],
+          "referenceHeight": 127,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-11900827/world/idle_2.png",
+          "frameWidth": 91,
+          "frameHeight": 134,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45054945054945056,
+            0.8731343283582089
+          ],
+          "referenceHeight": 130,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-11900827/world/idle_3.png",
+          "frameWidth": 98,
+          "frameHeight": 131,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5306122448979592,
+            0.9541984732824428
+          ],
+          "referenceHeight": 127,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-11900827/world/idle_4.png",
+          "frameWidth": 88,
+          "frameHeight": 138,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4772727272727273,
+            0.9202898550724637
+          ],
+          "referenceHeight": 134,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-11900827/world/idle_5.png",
+          "frameWidth": 89,
+          "frameHeight": 141,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4943820224719101,
+            0.8723404255319149
+          ],
+          "referenceHeight": 137,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-11900827/world/idle_6.png",
+          "frameWidth": 91,
+          "frameHeight": 135,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5494505494505495,
+            0.8518518518518519
+          ],
+          "referenceHeight": 131,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-11900827/world/idle_7.png",
+          "frameWidth": 98,
+          "frameHeight": 119,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46938775510204084,
+            0.907563025210084
+          ],
+          "referenceHeight": 115,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 117,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11900827_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11900827_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015019.xml",
+      "name": "找到自来也",
+      "type": "4",
+      "resource": "assets/role/npc/scene/npcres/11900827_outdoor.swf",
+      "hostile": false,
+      "position": "675, 947"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-11900827/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-11900827/preview.png"
+}

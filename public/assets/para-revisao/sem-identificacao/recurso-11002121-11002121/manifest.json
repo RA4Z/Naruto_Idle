@@ -1,0 +1,184 @@
+{
+  "id": "11002121",
+  "slug": "recurso-11002121-11002121",
+  "name": "Recurso 11002121",
+  "aliases": [
+    "Recurso 11002121"
+  ],
+  "identity": "unidentified",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "7335186d32cf1811f0cdaa3a851a0ef6e083caaab1e82053aedda140996c6549",
+  "modes": {
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/para-revisao/sem-identificacao/recurso-11002121-11002121/battle/A_1hit.png",
+          "frameWidth": 185,
+          "frameHeight": 327,
+          "frames": 9,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.40540540540540543,
+            0.9694189602446484
+          ],
+          "referenceHeight": 210,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/para-revisao/sem-identificacao/recurso-11002121-11002121/battle/C_dead.png",
+          "frameWidth": 135,
+          "frameHeight": 149,
+          "frames": 6,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.42962962962962964,
+            0.9328859060402684
+          ],
+          "referenceHeight": 126,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/para-revisao/sem-identificacao/recurso-11002121-11002121/battle/C_idle.png",
+          "frameWidth": 76,
+          "frameHeight": 177,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4605263157894737,
+            0.9491525423728814
+          ],
+          "referenceHeight": 173,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 173,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": [
+        "yingzi(1).png"
+      ]
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/11002121.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11002121.swf"
+    }
+  },
+  "evidence": [],
+  "issues": [],
+  "capabilities": {
+    "npc": false,
+    "companion": false,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "Identidade ou nome em português ainda requer conferência.",
+    "missingActions": [
+      "world/idle_0",
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "sem-identificacao",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/sem-identificacao/recurso-11002121-11002121/manifest.json",
+  "preview": "/assets/para-revisao/sem-identificacao/recurso-11002121-11002121/preview.png"
+}

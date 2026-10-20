@@ -1,0 +1,28 @@
+<actions frameRate="24">
+  <action id="0" name="idle_0">
+    <layer id="0">
+      <frame index="0" length="6"/>
+      <frame index="6" length="6" tween="true">
+        <element x="5" y="-50" assetId="0" alpha="0.20"/>
+      </frame>
+      <frame index="12" length="10" tween="true">
+        <element x="5" y="-50" assetId="0" alpha="0.50"/>
+      </frame>
+      <frame index="22" length="1">
+        <element x="5" y="-50" assetId="0" alpha="0.20"/>
+      </frame>
+    </layer>
+    <layer id="0">
+      <frame index="0" length="23">
+        <element x="1" assetId="1"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="active_1">
+    <layer id="0">
+      <frame index="0" length="1"/>
+    </layer>
+  </action>
+  <asset id="0" assetName="lvyao_100_.png" x="-53" y="4" className="Asset_0" width="101" height="101"/>
+  <asset id="1" assetName="绿药水2.png" x="-13" y="-21" className="Asset_1" width="25" height="44"/>
+</actions>

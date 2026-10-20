@@ -1,0 +1,1545 @@
+{
+  "id": "19001001",
+  "slug": "lider-anbu-19001001",
+  "name": "Líder Anbu",
+  "aliases": [
+    "Membro da Unidade Corpo-a-corpo Anbu",
+    "Líder Anbu",
+    "Membro da Unidade Física Anbu",
+    "Grandalhão Anbu [Nível 3]",
+    "Oficial responsável pela Grande Guerra Ninja"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2",
+    "6"
+  ],
+  "hostile": true,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "05a77a5cd2b357a9aec042ed196ee375c80e1dca894d5ca0303f9bfbd51f1046",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/world/idle_0.png",
+          "frameWidth": 73,
+          "frameHeight": 169,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5068493150684932,
+            0.9467455621301775
+          ],
+          "referenceHeight": 165,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/world/idle_1.png",
+          "frameWidth": 59,
+          "frameHeight": 175,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4576271186440678,
+            0.92
+          ],
+          "referenceHeight": 171,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/world/idle_2.png",
+          "frameWidth": 50,
+          "frameHeight": 172,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.58,
+            0.9418604651162791
+          ],
+          "referenceHeight": 168,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/world/idle_3.png",
+          "frameWidth": 73,
+          "frameHeight": 169,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5342465753424658,
+            0.9704142011834319
+          ],
+          "referenceHeight": 165,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/world/idle_4.png",
+          "frameWidth": 73,
+          "frameHeight": 171,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4931506849315068,
+            0.9649122807017544
+          ],
+          "referenceHeight": 167,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/world/run_0.png",
+          "frameWidth": 98,
+          "frameHeight": 152,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.8618421052631579
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/world/run_1.png",
+          "frameWidth": 146,
+          "frameHeight": 151,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5547945205479452,
+            0.8940397350993378
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/world/run_2.png",
+          "frameWidth": 192,
+          "frameHeight": 145,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5520833333333334,
+            0.9586206896551724
+          ],
+          "referenceHeight": 125,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/world/run_3.png",
+          "frameWidth": 149,
+          "frameHeight": 169,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5302013422818792,
+            0.893491124260355
+          ],
+          "referenceHeight": 144,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/world/run_4.png",
+          "frameWidth": 98,
+          "frameHeight": 181,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.8729281767955801
+          ],
+          "referenceHeight": 155,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/world/run_5.png",
+          "frameWidth": 149,
+          "frameHeight": 169,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4697986577181208,
+            0.893491124260355
+          ],
+          "referenceHeight": 144,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/world/run_6.png",
+          "frameWidth": 192,
+          "frameHeight": 145,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4479166666666667,
+            0.9586206896551724
+          ],
+          "referenceHeight": 125,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/world/run_7.png",
+          "frameWidth": 146,
+          "frameHeight": 151,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4452054794520548,
+            0.8940397350993378
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/world/idle_5.png",
+          "frameWidth": 73,
+          "frameHeight": 169,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4657534246575342,
+            0.9704142011834319
+          ],
+          "referenceHeight": 165,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/world/idle_6.png",
+          "frameWidth": 50,
+          "frameHeight": 172,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.42,
+            0.9418604651162791
+          ],
+          "referenceHeight": 168,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/world/idle_7.png",
+          "frameWidth": 59,
+          "frameHeight": 175,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5423728813559322,
+            0.92
+          ],
+          "referenceHeight": 171,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 165,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/battle/A_1hit.png",
+          "frameWidth": 202,
+          "frameHeight": 228,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.36633663366336633,
+            0.9385964912280702
+          ],
+          "referenceHeight": 192,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/battle/C_dead.png",
+          "frameWidth": 142,
+          "frameHeight": 220,
+          "frames": 5,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4225352112676056,
+            0.9318181818181818
+          ],
+          "referenceHeight": 180,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/battle/C_idle.png",
+          "frameWidth": 133,
+          "frameHeight": 204,
+          "frames": 5,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45112781954887216,
+            0.9215686274509803
+          ],
+          "referenceHeight": 199,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/battle/SP_skill1.png",
+          "frameWidth": 133,
+          "frameHeight": 214,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45112781954887216,
+            0.9345794392523364
+          ],
+          "referenceHeight": 204,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/battle/SP_skill2.png",
+          "frameWidth": 150,
+          "frameHeight": 211,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3933333333333333,
+            0.9289099526066351
+          ],
+          "referenceHeight": 188,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 199,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/19001001.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\19001001.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/19001001.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\19001001.png"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\19001001_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700009.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1697, 474"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700009.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1002, 888"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700009.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "460, 1136"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700009.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1755, 481"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700009.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1720, 517"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700009.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1059, 883"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700009.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1033, 918"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700009.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "529, 1139"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700009.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "490, 1186"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700009.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "422, 1174"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700009.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "450, 1227"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700009.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "974, 910"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700009.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1001, 932"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700009.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1641, 498"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700009.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1789, 515"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1601003.xml",
+      "name": "Líder Anbu",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2136, 1052"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2601001.xml",
+      "name": "Membro da Unidade Física Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1919, 354"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2601001.xml",
+      "name": "Membro da Unidade Física Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2076, 437"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2901001.xml",
+      "name": "Líder Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": true,
+      "position": "1856, 2490"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2901001.xml",
+      "name": "Líder Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": true,
+      "position": "1955, 2439"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2901001.xml",
+      "name": "Líder Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": true,
+      "position": "2128, 2457"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2901001.xml",
+      "name": "Líder Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": true,
+      "position": "1864, 2590"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1008001.xml",
+      "name": "Grandalhão Anbu [Nível 3]",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1047, 348"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1008001.xml",
+      "name": "Grandalhão Anbu [Nível 3]",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "516, 1184"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1600006.xml",
+      "name": "Oficial responsável pela Grande Guerra Ninja",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2424, 732"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700010.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2547, 2474"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700010.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2658, 1159"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700010.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2729, 1154"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700010.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2685, 1222"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700010.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2615, 2482"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700010.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2564, 2528"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700010.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2490, 2500"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700010.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2648, 2527"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700010.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2611, 1188"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700010.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2631, 1235"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700025.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "556, 725"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700025.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "603, 2217"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700025.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "697, 2168"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700025.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "702, 2247"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700025.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "659, 744"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700025.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "605, 784"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700025.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "633, 2294"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700025.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "810, 2154"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700025.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "528, 799"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700025.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "693, 814"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015004.xml",
+      "name": "Líder Anbu",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "498, 2472"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1600005.xml",
+      "name": "Oficial responsável pela Grande Guerra Ninja",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2664, 1085"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700017.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "483, 839"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700017.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1364, 893"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700017.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2603, 866"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700017.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "442, 886"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700017.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "520, 890"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700017.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1452, 894"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700017.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1402, 932"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700017.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2520, 874"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700017.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2576, 924"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700017.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "394, 932"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700017.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "488, 944"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700017.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1358, 936"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700017.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1476, 950"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700017.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2492, 914"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700017.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2534, 950"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2022001.xml",
+      "name": "Líder Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": true,
+      "position": "1960, 1263"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1600003.xml",
+      "name": "Oficial responsável pela Grande Guerra Ninja",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2501, 955"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700012.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "851, 2076"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700012.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "704, 765"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700012.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2974, 1369"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700012.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "772, 767"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700012.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "735, 817"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700012.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "927, 2071"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700012.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "892, 2124"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700012.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "3060, 1371"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700012.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "3024, 1418"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700012.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "671, 807"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700012.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "803, 815"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700012.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "822, 2107"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700012.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "956, 2114"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700012.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "2946, 1400"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700012.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "3099, 1416"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2024001.xml",
+      "name": "Líder Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": true,
+      "position": "488, 892"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700018.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "775, 621"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700018.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1160, 1349"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700018.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1230, 2357"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700018.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1675, 839"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700018.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1606, 870"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700018.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1698, 896"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700018.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "874, 626"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700018.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "822, 688"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700018.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1246, 1334"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700018.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1236, 1424"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700018.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1270, 2432"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700018.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1346, 2358"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700018.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1446, 2330"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700018.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1390, 2414"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700018.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1104, 1160"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700018.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1322, 1340"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700018.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1522, 854"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700018.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1552, 924"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700018.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "962, 630"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700018.xml",
+      "name": "Membro da Unidade Corpo-a-corpo Anbu",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "920, 684"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1004001.xml",
+      "name": "Líder Anbu",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/19001001_outdoor.swf",
+      "hostile": false,
+      "position": "1358, 605"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Líder Anbu",
+      "type": null,
+      "resource": "assets/battle/role/left/19001001.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Líder Anbu",
+    "title": "",
+    "type": "0",
+    "artisticId": "19001001",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/lider-anbu-19001001/preview.png"
+}

@@ -1,0 +1,221 @@
+{
+  "id": "11900815",
+  "slug": "gaara-11900815",
+  "name": "Gaara",
+  "aliases": [
+    "Gaara"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "101"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "b4dfadfd9d3462b2e08ba59fcc64c4bb98c66365d870d7971a842a98ce964cc1",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/gaara-11900815/world/idle_0.png",
+          "frameWidth": 58,
+          "frameHeight": 81,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4827586206896552,
+            0.6049382716049383
+          ],
+          "referenceHeight": 77,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/gaara-11900815/world/idle_1.png",
+          "frameWidth": 119,
+          "frameHeight": 72,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5378151260504201,
+            0.5833333333333334
+          ],
+          "referenceHeight": 68,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/gaara-11900815/world/idle_2.png",
+          "frameWidth": 138,
+          "frameHeight": 43,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4782608695652174,
+            0.6046511627906976
+          ],
+          "referenceHeight": 39,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/gaara-11900815/world/idle_3.png",
+          "frameWidth": 117,
+          "frameHeight": 65,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5299145299145299,
+            0.6615384615384615
+          ],
+          "referenceHeight": 61,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/gaara-11900815/world/idle_4.png",
+          "frameWidth": 57,
+          "frameHeight": 78,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5087719298245614,
+            0.6153846153846154
+          ],
+          "referenceHeight": 74,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/gaara-11900815/world/idle_5.png",
+          "frameWidth": 118,
+          "frameHeight": 70,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4661016949152542,
+            0.6857142857142857
+          ],
+          "referenceHeight": 66,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/gaara-11900815/world/idle_6.png",
+          "frameWidth": 138,
+          "frameHeight": 47,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5217391304347826,
+            0.6808510638297872
+          ],
+          "referenceHeight": 43,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/gaara-11900815/world/idle_7.png",
+          "frameWidth": 117,
+          "frameHeight": 69,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4700854700854701,
+            0.5942028985507246
+          ],
+          "referenceHeight": 65,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 77,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11900815_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11900815_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2546001.xml",
+      "name": "Gaara",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900815_outdoor.swf",
+      "hostile": false,
+      "position": "714, 620"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/gaara-11900815/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/gaara-11900815/preview.png"
+}

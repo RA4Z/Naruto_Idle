@@ -1,0 +1,28 @@
+{
+  "id": "10005",
+  "name": "Floresta da Folha",
+  "kind": "adventure",
+  "background": "/assets/maps/10005/background.jpg",
+  "foreground": "/assets/maps/10005/foreground.png",
+  "thumbnail": "/assets/maps/10005/thumbnail.jpg",
+  "navigation": "/assets/maps/10005/navigation.json",
+  "width": 1000.0,
+  "height": 1000.0,
+  "spawn": {
+    "x": 300,
+    "y": 850
+  },
+  "enemies": [
+    "19000301",
+    "19000701",
+    "19000401"
+  ],
+  "description": "Trilhas na floresta · lobos e tigres.",
+  "source": "assets/scene/map/10005/",
+  "navigationSha256": "80a47c285f9445a7d6a9e3c03a4b96cb5f4eee14ddadb2dec1d097c256e66bc5",
+  "layers": {
+    "backgroundTiles": 144,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "preserved in originals; not executed"
+  }
+}

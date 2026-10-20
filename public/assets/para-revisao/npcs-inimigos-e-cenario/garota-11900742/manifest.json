@@ -1,0 +1,128 @@
+{
+  "id": "11900742",
+  "slug": "garota-11900742",
+  "name": "Garota",
+  "aliases": [
+    "Garota"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "101"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "2110a610e753fa947bfdaa1f34b3200644c88d86a11e67ff64bfb7460fd65162",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/garota-11900742/world/idle_0.png",
+          "frameWidth": 43,
+          "frameHeight": 77,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.37209302325581395,
+            0.8831168831168831
+          ],
+          "referenceHeight": 72,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 72,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11900742_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11900742_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015004.xml",
+      "name": "Garota",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900742_outdoor.swf",
+      "hostile": false,
+      "position": "1297, 1861"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2005001.xml",
+      "name": "Garota",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900742_outdoor.swf",
+      "hostile": false,
+      "position": "1625, 1389"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/garota-11900742/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/garota-11900742/preview.png"
+}

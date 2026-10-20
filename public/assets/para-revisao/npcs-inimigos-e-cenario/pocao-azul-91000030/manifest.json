@@ -1,0 +1,149 @@
+{
+  "id": "91000030",
+  "slug": "pocao-azul-91000030",
+  "name": "Poção Azul",
+  "aliases": [
+    "Poção Azul"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "3"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "469cf6f416887f1a821fc0a6f95e31657cbf2d483ea7c7802b618f002f50eb74",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/pocao-azul-91000030/world/idle_0.png",
+          "frameWidth": 105,
+          "frameHeight": 105,
+          "frames": 3,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.47619047619047616,
+            0.45714285714285713
+          ],
+          "referenceHeight": 72,
+          "status": "partial",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 72,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "idle_0",
+          "missing": [],
+          "unsupported": [
+            "blendMode"
+          ],
+          "externalEffects": []
+        }
+      ],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/91000030_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\91000030_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2102001.xml",
+      "name": "Poção Azul",
+      "type": "3",
+      "resource": "assets/role/npc/scene/npcres/91000030_outdoor.swf",
+      "hostile": false,
+      "position": "1438, 1452"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [
+      {
+        "action": "idle_0",
+        "missing": [],
+        "unsupported": [
+          "blendMode"
+        ],
+        "externalEffects": []
+      }
+    ],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/pocao-azul-91000030/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/pocao-azul-91000030/preview.png"
+}

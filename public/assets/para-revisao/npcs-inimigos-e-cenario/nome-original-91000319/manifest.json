@@ -1,0 +1,125 @@
+{
+  "id": "91000319",
+  "slug": "nome-original-91000319",
+  "name": "解除幻术 大蛇丸基地",
+  "aliases": [
+    "解除幻术 大蛇丸基地"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "11"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "93edebf4648423dbacc99978a5ceb877ece09f6c6cd295248a775e9396800173",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-91000319/world/idle_1.png",
+          "frameWidth": 173,
+          "frameHeight": 273,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4682080924855491,
+            0.47985347985347987
+          ],
+          "referenceHeight": 269,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-91000319/world/idle_0.png",
+          "frameWidth": 193,
+          "frameHeight": 249,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45077720207253885,
+            0.4779116465863454
+          ],
+          "referenceHeight": 245,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 245,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/91000319_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\91000319_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015007.xml",
+      "name": "解除幻术 大蛇丸基地",
+      "type": "11",
+      "resource": "assets/role/npc/scene/npcres/91000319_outdoor.swf",
+      "hostile": false,
+      "position": "657, 554"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-91000319/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-91000319/preview.png"
+}

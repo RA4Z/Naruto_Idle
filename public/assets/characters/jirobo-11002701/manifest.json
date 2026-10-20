@@ -1,0 +1,828 @@
+{
+  "id": "11002701",
+  "slug": "jirobo-11002701",
+  "name": "Jirobo",
+  "aliases": [
+    "Missão de Captura-Jirobo",
+    "Jirobo"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2"
+  ],
+  "hostile": true,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "347e88ce3ea3e03fd5cd8069cf0c44c1002f0ad622d4ade3b5310580d8ee38d4",
+  "modes": {
+    "world": {
+      "animations": {
+        "run_2": {
+          "url": "/assets/characters/jirobo-11002701/world/run_2.png",
+          "frameWidth": 120,
+          "frameHeight": 136,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4583333333333333,
+            0.8455882352941176
+          ],
+          "referenceHeight": 119,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/characters/jirobo-11002701/world/run_0.png",
+          "frameWidth": 72,
+          "frameHeight": 132,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4444444444444444,
+            0.8181818181818182
+          ],
+          "referenceHeight": 116,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/characters/jirobo-11002701/world/run_1.png",
+          "frameWidth": 112,
+          "frameHeight": 139,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45535714285714285,
+            0.8057553956834532
+          ],
+          "referenceHeight": 116,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/characters/jirobo-11002701/world/run_3.png",
+          "frameWidth": 112,
+          "frameHeight": 142,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45535714285714285,
+            0.8169014084507042
+          ],
+          "referenceHeight": 119,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/characters/jirobo-11002701/world/run_4.png",
+          "frameWidth": 72,
+          "frameHeight": 144,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.8194444444444444
+          ],
+          "referenceHeight": 123,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/characters/jirobo-11002701/world/run_5.png",
+          "frameWidth": 112,
+          "frameHeight": 142,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5446428571428571,
+            0.8169014084507042
+          ],
+          "referenceHeight": 119,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/characters/jirobo-11002701/world/run_6.png",
+          "frameWidth": 120,
+          "frameHeight": 136,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5416666666666666,
+            0.8455882352941176
+          ],
+          "referenceHeight": 119,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/characters/jirobo-11002701/world/run_7.png",
+          "frameWidth": 112,
+          "frameHeight": 139,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5446428571428571,
+            0.8057553956834532
+          ],
+          "referenceHeight": 116,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/characters/jirobo-11002701/world/idle_0.png",
+          "frameWidth": 55,
+          "frameHeight": 131,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.509090909090909,
+            0.9389312977099237
+          ],
+          "referenceHeight": 127,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/characters/jirobo-11002701/world/idle_1.png",
+          "frameWidth": 63,
+          "frameHeight": 135,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3968253968253968,
+            0.9111111111111111
+          ],
+          "referenceHeight": 131,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/characters/jirobo-11002701/world/idle_2.png",
+          "frameWidth": 55,
+          "frameHeight": 137,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.38181818181818183,
+            0.9051094890510949
+          ],
+          "referenceHeight": 133,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/characters/jirobo-11002701/world/idle_3.png",
+          "frameWidth": 59,
+          "frameHeight": 137,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4067796610169492,
+            0.927007299270073
+          ],
+          "referenceHeight": 133,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/characters/jirobo-11002701/world/idle_4.png",
+          "frameWidth": 55,
+          "frameHeight": 135,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4909090909090909,
+            0.9555555555555556
+          ],
+          "referenceHeight": 131,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/characters/jirobo-11002701/world/idle_5.png",
+          "frameWidth": 59,
+          "frameHeight": 137,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5932203389830508,
+            0.927007299270073
+          ],
+          "referenceHeight": 133,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/characters/jirobo-11002701/world/idle_6.png",
+          "frameWidth": 55,
+          "frameHeight": 137,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6181818181818182,
+            0.9051094890510949
+          ],
+          "referenceHeight": 133,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/characters/jirobo-11002701/world/idle_7.png",
+          "frameWidth": 63,
+          "frameHeight": 135,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6031746031746031,
+            0.9111111111111111
+          ],
+          "referenceHeight": 131,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 127,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/characters/jirobo-11002701/battle/A_1hit.png",
+          "frameWidth": 183,
+          "frameHeight": 168,
+          "frames": 7,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.33879781420765026,
+            0.9642857142857143
+          ],
+          "referenceHeight": 151,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/characters/jirobo-11002701/battle/C_dead.png",
+          "frameWidth": 109,
+          "frameHeight": 168,
+          "frames": 3,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3853211009174312,
+            0.9523809523809523
+          ],
+          "referenceHeight": 139,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/characters/jirobo-11002701/battle/C_idle.png",
+          "frameWidth": 97,
+          "frameHeight": 169,
+          "frames": 7,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4329896907216495,
+            0.9526627218934911
+          ],
+          "referenceHeight": 163,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/characters/jirobo-11002701/battle/SP_skill1.png",
+          "frameWidth": 191,
+          "frameHeight": 195,
+          "frames": 20,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            9,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            11,
+            12,
+            12,
+            13,
+            13,
+            14,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            16,
+            16,
+            16,
+            16,
+            17,
+            17,
+            17,
+            18,
+            18,
+            18,
+            18,
+            18,
+            19,
+            19,
+            19,
+            19,
+            19
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4031413612565445,
+            0.9435897435897436
+          ],
+          "referenceHeight": 148,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/characters/jirobo-11002701/battle/SP_skill2.png",
+          "frameWidth": 151,
+          "frameHeight": 169,
+          "frames": 8,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.2781456953642384,
+            0.9289940828402367
+          ],
+          "referenceHeight": 147,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 163,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11002701_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11002701_outdoor.swf"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/11002701.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11002701.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11002701.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\11002701.png"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2013001.xml",
+      "name": "Missão de Captura-Jirobo",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11002701_outdoor.swf",
+      "hostile": false,
+      "position": "738, 1456"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2006001.xml",
+      "name": "Missão de Captura-Jirobo",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11002701_outdoor.swf",
+      "hostile": false,
+      "position": "685, 2297"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene4021001.xml",
+      "name": "Jirobo",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11002701_outdoor.swf",
+      "hostile": true,
+      "position": "1400, 2124"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2008001.xml",
+      "name": "Missão de Captura-Jirobo",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11002701_outdoor.swf",
+      "hostile": false,
+      "position": "1106, 2262"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1008001.xml",
+      "name": "Jirobo",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11002701_outdoor.swf",
+      "hostile": false,
+      "position": "697, 675"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015005.xml",
+      "name": "Missão de Captura-Jirobo",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11002701_outdoor.swf",
+      "hostile": false,
+      "position": "1057, 857"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2011001.xml",
+      "name": "Missão de Captura-Jirobo",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11002701_outdoor.swf",
+      "hostile": false,
+      "position": "790, 1084"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2451001.xml",
+      "name": "Jirobo",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11002701_outdoor.swf",
+      "hostile": false,
+      "position": "390, 902"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1007001.xml",
+      "name": "Missão de Captura-Jirobo",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11002701_outdoor.swf",
+      "hostile": false,
+      "position": "2634, 771"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015007.xml",
+      "name": "Missão de Captura-Jirobo",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11002701_outdoor.swf",
+      "hostile": false,
+      "position": "2258, 1468"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2033001.xml",
+      "name": "Missão de Captura-Jirobo",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11002701_outdoor.swf",
+      "hostile": false,
+      "position": "1144, 313"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Jirobo",
+      "type": null,
+      "resource": "assets/battle/role/left/11002701.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/characters/jirobo-11002701/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": true,
+    "reason": "Caminhada em oito direções, ataque, queda e especial preservados.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "playable",
+  "reviewCategory": null,
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Jirobo",
+    "title": "",
+    "type": "0",
+    "artisticId": "11002701",
+    "levelType": "2",
+    "series": "19",
+    "starLevel": "2"
+  },
+  "manifestUrl": "/assets/characters/jirobo-11002701/manifest.json",
+  "preview": "/assets/characters/jirobo-11002701/preview.png"
+}

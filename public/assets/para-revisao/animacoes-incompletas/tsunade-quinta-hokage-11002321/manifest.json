@@ -1,0 +1,133 @@
+{
+  "id": "11002321",
+  "slug": "tsunade-quinta-hokage-11002321",
+  "name": "Tsunade",
+  "aliases": [
+    "Tsunade"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "6"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "0ccc2d9aa484f8c89883c449d43705a43bb034e2f7a6097af8011a832ec86bb2",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/animacoes-incompletas/tsunade-quinta-hokage-11002321/world/idle_0.png",
+          "frameWidth": 70,
+          "frameHeight": 96,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45714285714285713,
+            0.9791666666666666
+          ],
+          "referenceHeight": 68,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 68,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11002321_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11002321_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene1500001.xml",
+      "name": "Tsunade",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/11002321_outdoor.swf",
+      "hostile": false,
+      "position": "258, 359"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1500001.xml",
+      "name": "Tsunade",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/11002321_outdoor.swf",
+      "hostile": false,
+      "position": "259, 359"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1500001.xml",
+      "name": "Tsunade",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/11002321_outdoor.swf",
+      "hostile": false,
+      "position": "259, 359"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Tsunade",
+      "type": null,
+      "resource": null,
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "Quinta Hokage",
+  "organization": {
+    "eligible": false,
+    "reason": "Faltam ações padrão ou há partes visuais não recuperadas.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "animacoes-incompletas",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Tsunade",
+    "title": "[Quinta Hokage]",
+    "type": "0",
+    "artisticId": "11002321",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/animacoes-incompletas/tsunade-quinta-hokage-11002321/manifest.json",
+  "preview": "/assets/para-revisao/animacoes-incompletas/tsunade-quinta-hokage-11002321/preview.png"
+}

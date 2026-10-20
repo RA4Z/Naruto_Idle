@@ -1,0 +1,197 @@
+{
+  "id": "11900764",
+  "slug": "ferido-da-aldeia-da-folha-5-11900764",
+  "name": "Ferido da Aldeia da Folha 5",
+  "aliases": [
+    "Ferido da Aldeia da Folha 5"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "101"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "34f475ae5a5958c1b86126d391f0836d4d1ca8b56418f75ed5ec9214fc369c26",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ferido-da-aldeia-da-folha-5-11900764/world/idle_0.png",
+          "frameWidth": 100,
+          "frameHeight": 68,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.72,
+            0.6029411764705882
+          ],
+          "referenceHeight": 64,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ferido-da-aldeia-da-folha-5-11900764/world/idle_1.png",
+          "frameWidth": 100,
+          "frameHeight": 68,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.28,
+            0.6029411764705882
+          ],
+          "referenceHeight": 64,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 64,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11900764_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11900764_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2801001.xml",
+      "name": "Ferido da Aldeia da Folha 5",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900764_outdoor.swf",
+      "hostile": false,
+      "position": "569, 638"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2331001.xml",
+      "name": "Ferido da Aldeia da Folha 5",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900764_outdoor.swf",
+      "hostile": false,
+      "position": "2237, 1814"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2831001.xml",
+      "name": "Ferido da Aldeia da Folha 5",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900764_outdoor.swf",
+      "hostile": false,
+      "position": "1457, 2871"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2821001.xml",
+      "name": "Ferido da Aldeia da Folha 5",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900764_outdoor.swf",
+      "hostile": false,
+      "position": "1457, 2871"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2806001.xml",
+      "name": "Ferido da Aldeia da Folha 5",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900764_outdoor.swf",
+      "hostile": false,
+      "position": "2204, 2970"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2806001.xml",
+      "name": "Ferido da Aldeia da Folha 5",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900764_outdoor.swf",
+      "hostile": false,
+      "position": "798, 2266"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2811001.xml",
+      "name": "Ferido da Aldeia da Folha 5",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900764_outdoor.swf",
+      "hostile": false,
+      "position": "2204, 2970"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2811001.xml",
+      "name": "Ferido da Aldeia da Folha 5",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900764_outdoor.swf",
+      "hostile": false,
+      "position": "798, 2266"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2301001.xml",
+      "name": "Ferido da Aldeia da Folha 5",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900764_outdoor.swf",
+      "hostile": false,
+      "position": "1821, 751"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2301001.xml",
+      "name": "Ferido da Aldeia da Folha 5",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11900764_outdoor.swf",
+      "hostile": false,
+      "position": "2738, 1212"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/ferido-da-aldeia-da-folha-5-11900764/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/ferido-da-aldeia-da-folha-5-11900764/preview.png"
+}

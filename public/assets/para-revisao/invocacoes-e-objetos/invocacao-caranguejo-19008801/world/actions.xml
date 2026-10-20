@@ -1,0 +1,46 @@
+<actions frameRate="24">
+  <action id="0" name="idle_1">
+    <layer id="0">
+      <frame index="0" length="10">
+        <element assetId="0"/>
+      </frame>
+      <frame index="10" length="10">
+        <element assetId="1"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="idle_3">
+    <layer id="0">
+      <frame index="0" length="9">
+        <element assetId="2"/>
+      </frame>
+      <frame index="9" length="11">
+        <element assetId="3"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="idle_5">
+    <layer id="0">
+      <frame index="0" length="10">
+        <element assetId="2" scaleX="-1.00"/>
+      </frame>
+      <frame index="10" length="10">
+        <element assetId="3" scaleX="-1.00"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="idle_7">
+    <layer id="0">
+      <frame index="0" length="10">
+        <element assetId="0" scaleX="-1.00"/>
+      </frame>
+      <frame index="10" length="10">
+        <element assetId="1" scaleX="-1.00"/>
+      </frame>
+    </layer>
+  </action>
+  <asset id="0" assetName="2peacmr00_nut_1_0044.png" x="-173" y="-97" className="Asset_0" width="338" height="167"/>
+  <asset id="1" assetName="2peacmr00_nut_1_0045.png" x="-173" y="-97" className="Asset_1" width="338" height="167"/>
+  <asset id="2" assetName="2peacmr00_nut_3_0044.png" x="-172" y="-113" className="Asset_2" width="332" height="184"/>
+  <asset id="3" assetName="2peacmr00_nut_3_0045.png" x="-172" y="-114" className="Asset_3" width="332" height="185"/>
+</actions>

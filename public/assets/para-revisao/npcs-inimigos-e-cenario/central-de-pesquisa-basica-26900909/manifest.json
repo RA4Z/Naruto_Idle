@@ -1,0 +1,88 @@
+{
+  "id": "26900909",
+  "slug": "central-de-pesquisa-basica-26900909",
+  "name": "Central de Pesquisa Básica",
+  "aliases": [
+    "Central de Pesquisa Básica"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "6"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "504d71cbcd2bdc37c2b833c5a7d38076ebc699846aeab729111668cdb5fd069b",
+  "modes": {},
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/26900909_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\26900909_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene1600005.xml",
+      "name": "Central de Pesquisa Básica",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/26900909_outdoor.swf",
+      "hostile": false,
+      "position": "1114, 1304"
+    }
+  ],
+  "issues": [
+    {
+      "mode": "world",
+      "error": "No supported actions rendered; [{'action': 'idle_0', 'reason': 'invalid-frame-count'}]"
+    }
+  ],
+  "capabilities": {
+    "npc": false,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "blocked",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_0",
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/central-de-pesquisa-basica-26900909/manifest.json"
+}

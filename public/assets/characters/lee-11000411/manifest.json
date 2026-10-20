@@ -1,0 +1,757 @@
+{
+  "id": "11000411",
+  "slug": "lee-11000411",
+  "name": "Lee",
+  "aliases": [
+    "Lee"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2"
+  ],
+  "hostile": true,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "be87632a5e99fc49535cb70ee758c3f8712f8ca0b9d2ecba453b9a06b046de4e",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_2": {
+          "url": "/assets/characters/lee-11000411/world/idle_2.png",
+          "frameWidth": 29,
+          "frameHeight": 130,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5172413793103449,
+            0.9153846153846154
+          ],
+          "referenceHeight": 126,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/characters/lee-11000411/world/idle_0.png",
+          "frameWidth": 48,
+          "frameHeight": 125,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.944
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/characters/lee-11000411/world/idle_1.png",
+          "frameWidth": 41,
+          "frameHeight": 130,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5365853658536586,
+            0.9153846153846154
+          ],
+          "referenceHeight": 126,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/characters/lee-11000411/world/idle_3.png",
+          "frameWidth": 41,
+          "frameHeight": 129,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5365853658536586,
+            0.9302325581395349
+          ],
+          "referenceHeight": 125,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/characters/lee-11000411/world/idle_4.png",
+          "frameWidth": 48,
+          "frameHeight": 126,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.9523809523809523
+          ],
+          "referenceHeight": 122,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/characters/lee-11000411/world/idle_5.png",
+          "frameWidth": 41,
+          "frameHeight": 129,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4634146341463415,
+            0.9302325581395349
+          ],
+          "referenceHeight": 125,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/characters/lee-11000411/world/idle_6.png",
+          "frameWidth": 29,
+          "frameHeight": 130,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4827586206896552,
+            0.9153846153846154
+          ],
+          "referenceHeight": 126,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/characters/lee-11000411/world/idle_7.png",
+          "frameWidth": 41,
+          "frameHeight": 130,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4634146341463415,
+            0.9153846153846154
+          ],
+          "referenceHeight": 126,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/characters/lee-11000411/world/run_0.png",
+          "frameWidth": 48,
+          "frameHeight": 102,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.8529411764705882
+          ],
+          "referenceHeight": 86,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/characters/lee-11000411/world/run_1.png",
+          "frameWidth": 94,
+          "frameHeight": 105,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46808510638297873,
+            0.8761904761904762
+          ],
+          "referenceHeight": 89,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/characters/lee-11000411/world/run_2.png",
+          "frameWidth": 122,
+          "frameHeight": 108,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.48360655737704916,
+            0.9351851851851852
+          ],
+          "referenceHeight": 99,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/characters/lee-11000411/world/run_3.png",
+          "frameWidth": 92,
+          "frameHeight": 129,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4891304347826087,
+            0.8682170542635659
+          ],
+          "referenceHeight": 112,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/characters/lee-11000411/world/run_4.png",
+          "frameWidth": 48,
+          "frameHeight": 138,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.8478260869565217
+          ],
+          "referenceHeight": 119,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/characters/lee-11000411/world/run_5.png",
+          "frameWidth": 92,
+          "frameHeight": 129,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5108695652173914,
+            0.8682170542635659
+          ],
+          "referenceHeight": 112,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/characters/lee-11000411/world/run_6.png",
+          "frameWidth": 122,
+          "frameHeight": 108,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5163934426229508,
+            0.9351851851851852
+          ],
+          "referenceHeight": 99,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/characters/lee-11000411/world/run_7.png",
+          "frameWidth": 94,
+          "frameHeight": 105,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5319148936170213,
+            0.8761904761904762
+          ],
+          "referenceHeight": 89,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 121,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/characters/lee-11000411/battle/A_1hit.png",
+          "frameWidth": 172,
+          "frameHeight": 168,
+          "frames": 5,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.2558139534883721,
+            0.9404761904761905
+          ],
+          "referenceHeight": 142,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/characters/lee-11000411/battle/C_dead.png",
+          "frameWidth": 96,
+          "frameHeight": 92,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4479166666666667,
+            0.8804347826086957
+          ],
+          "referenceHeight": 88,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/characters/lee-11000411/battle/C_idle.png",
+          "frameWidth": 123,
+          "frameHeight": 141,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3902439024390244,
+            0.9290780141843972
+          ],
+          "referenceHeight": 135,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/characters/lee-11000411/battle/SP_skill1.png",
+          "frameWidth": 348,
+          "frameHeight": 421,
+          "frames": 25,
+          "timeline": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            22,
+            22,
+            22,
+            22,
+            22,
+            22,
+            22,
+            23,
+            24,
+            24
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.13505747126436782,
+            0.9667458432304038
+          ],
+          "referenceHeight": 134,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/characters/lee-11000411/battle/SP_skill2.png",
+          "frameWidth": 86,
+          "frameHeight": 161,
+          "frames": 4,
+          "timeline": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.32558139534883723,
+            0.937888198757764
+          ],
+          "referenceHeight": 140,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 135,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/11000411.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11000411.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11000411.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\11000411.png"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11000411_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11000411_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2526001.xml",
+      "name": "Lee",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000411_outdoor.swf",
+      "hostile": true,
+      "position": "577, 876"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene4033001.xml",
+      "name": "Lee",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000411_outdoor.swf",
+      "hostile": true,
+      "position": "767, 863"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene4033001.xml",
+      "name": "Lee",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000411_outdoor.swf",
+      "hostile": true,
+      "position": "1610, 1735"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1004001.xml",
+      "name": "Lee",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000411_outdoor.swf",
+      "hostile": false,
+      "position": "1017, 1109"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2521001.xml",
+      "name": "Lee",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11000411_outdoor.swf",
+      "hostile": false,
+      "position": "412, 2299"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Lee",
+      "type": null,
+      "resource": "assets/battle/role/left/11000411.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/characters/lee-11000411/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": true,
+    "reason": "Caminhada em oito direções, ataque, queda e especial preservados.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "playable",
+  "reviewCategory": null,
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Lee",
+    "title": "",
+    "type": "0",
+    "artisticId": "11000411",
+    "levelType": "2",
+    "series": "9",
+    "starLevel": "1"
+  },
+  "manifestUrl": "/assets/characters/lee-11000411/manifest.json",
+  "preview": "/assets/characters/lee-11000411/preview.png"
+}

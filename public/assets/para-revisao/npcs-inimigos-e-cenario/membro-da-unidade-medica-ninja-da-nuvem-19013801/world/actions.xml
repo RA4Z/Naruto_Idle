@@ -1,0 +1,268 @@
+<actions frameRate="24">
+  <action id="0" name="idle_0">
+    <layer id="0">
+      <frame index="0" length="1" event="frameEnd">
+        <element assetId="0"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="idle_1">
+    <layer id="0">
+      <frame index="0" length="1" event="frameEnd">
+        <element assetId="1"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="idle_2">
+    <layer id="0">
+      <frame index="0" length="1" event="frameEnd">
+        <element assetId="2"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="idle_3">
+    <layer id="0">
+      <frame index="0" length="1" event="frameEnd">
+        <element assetId="3"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="idle_4">
+    <layer id="0">
+      <frame index="0" length="1" event="frameEnd">
+        <element assetId="4"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="idle_5">
+    <layer id="0">
+      <frame index="0" length="1" event="frameEnd">
+        <element assetId="3" scaleX="-1.00"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="idle_6">
+    <layer id="0">
+      <frame index="0" length="1" event="frameEnd">
+        <element assetId="2" scaleX="-1.00"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="idle_7">
+    <layer id="0">
+      <frame index="0" length="1" event="frameEnd">
+        <element assetId="1" scaleX="-1.00"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="run_2">
+    <layer id="0">
+      <frame index="0" length="3">
+        <element assetId="5" scaleX="1.07" scaleY="1.07"/>
+      </frame>
+      <frame index="3" length="3" event="touchdown">
+        <element assetId="6"/>
+      </frame>
+      <frame index="6" length="3">
+        <element assetId="7"/>
+      </frame>
+      <frame index="9" length="3">
+        <element x="4" assetId="8"/>
+      </frame>
+      <frame index="12" length="3" event="touchdown">
+        <element assetId="9"/>
+      </frame>
+      <frame index="15" length="3">
+        <element assetId="10" scaleX="1.07" scaleY="1.07"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="run_0">
+    <layer id="0">
+      <frame index="0" length="3" event="touchdown">
+        <element y="-5" assetId="11"/>
+      </frame>
+      <frame index="3" length="3">
+        <element assetId="12"/>
+      </frame>
+      <frame index="6" length="3">
+        <element y="-7" assetId="13"/>
+      </frame>
+      <frame index="9" length="3" event="touchdown">
+        <element y="-6" assetId="14"/>
+      </frame>
+      <frame index="12" length="3">
+        <element assetId="15"/>
+      </frame>
+      <frame index="15" length="3">
+        <element y="-11" assetId="12" scaleX="1.07" scaleY="1.07"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="run_3">
+    <layer id="0">
+      <frame index="0" length="3">
+        <element x="-1" y="-1" assetId="16" scaleX="1.07" scaleY="1.07"/>
+      </frame>
+      <frame index="3" length="3" event="touchdown">
+        <element x="1" assetId="17"/>
+      </frame>
+      <frame index="6" length="3">
+        <element assetId="18"/>
+      </frame>
+      <frame index="9" length="3">
+        <element x="2" y="2" assetId="19"/>
+      </frame>
+      <frame index="12" length="3" event="touchdown">
+        <element assetId="20"/>
+      </frame>
+      <frame index="15" length="3">
+        <element x="-1" assetId="21" scaleX="1.07" scaleY="1.07"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="run_4">
+    <layer id="0">
+      <frame index="0" length="3">
+        <element x="1" y="-3" assetId="22" scaleX="1.07" scaleY="1.07"/>
+      </frame>
+      <frame index="3" length="3" event="touchdown">
+        <element y="-1" assetId="23"/>
+      </frame>
+      <frame index="6" length="3">
+        <element y="-10" assetId="24"/>
+      </frame>
+      <frame index="9" length="3">
+        <element assetId="25"/>
+      </frame>
+      <frame index="12" length="3" event="touchdown">
+        <element x="1" assetId="26"/>
+      </frame>
+      <frame index="15" length="3">
+        <element x="1" y="-11" assetId="27" scaleX="1.07" scaleY="1.07"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="run_5">
+    <layer id="0">
+      <frame index="0" length="3">
+        <element x="3" y="-1" assetId="16" scaleX="-1.07" scaleY="1.07"/>
+      </frame>
+      <frame index="3" length="3" event="touchdown">
+        <element x="-3" y="4" assetId="17" scaleX="-1.00"/>
+      </frame>
+      <frame index="6" length="3">
+        <element x="4" y="-1" assetId="18" scaleX="-1.00"/>
+      </frame>
+      <frame index="9" length="3">
+        <element x="-1" y="2" assetId="19" scaleX="-1.00"/>
+      </frame>
+      <frame index="12" length="3" event="touchdown">
+        <element x="-2" y="5" assetId="20" scaleX="-1.00"/>
+      </frame>
+      <frame index="15" length="3">
+        <element x="4" y="-2" assetId="21" scaleX="-1.07" scaleY="1.07"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="run_6">
+    <layer id="0">
+      <frame index="0" length="3">
+        <element assetId="5" scaleX="-1.07" scaleY="1.07"/>
+      </frame>
+      <frame index="3" length="3" event="touchdown">
+        <element x="-4" assetId="6" scaleX="-1.00"/>
+      </frame>
+      <frame index="6" length="3">
+        <element x="5" assetId="7" scaleX="-1.00"/>
+      </frame>
+      <frame index="9" length="3" event="touchdown">
+        <element x="-7" assetId="8" scaleX="-1.00"/>
+      </frame>
+      <frame index="12" length="3">
+        <element x="-6" assetId="9" scaleX="-1.00"/>
+      </frame>
+      <frame index="15" length="3">
+        <element x="5" assetId="10" scaleX="-1.07" scaleY="1.07"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="run_1">
+    <layer id="0">
+      <frame index="0" length="3">
+        <element assetId="28" scaleX="1.07" scaleY="1.07"/>
+      </frame>
+      <frame index="3" length="3" event="touchdown">
+        <element assetId="29"/>
+      </frame>
+      <frame index="6" length="3">
+        <element assetId="30"/>
+      </frame>
+      <frame index="9" length="3">
+        <element x="5" y="-2" assetId="31"/>
+      </frame>
+      <frame index="12" length="3" event="touchdown">
+        <element assetId="32"/>
+      </frame>
+      <frame index="15" length="3">
+        <element x="-1" y="-1" assetId="33" scaleX="1.07" scaleY="1.07"/>
+      </frame>
+    </layer>
+  </action>
+  <action id="0" name="run_7">
+    <layer id="0">
+      <frame index="0" length="3">
+        <element x="-2" assetId="28" scaleX="-1.07" scaleY="1.07"/>
+      </frame>
+      <frame index="3" length="3" event="touchdown">
+        <element x="-5" assetId="29" scaleX="-1.00"/>
+      </frame>
+      <frame index="6" length="3">
+        <element x="2" y="2" assetId="30" scaleX="-1.00"/>
+      </frame>
+      <frame index="9" length="3">
+        <element x="-6" y="-2" assetId="31" scaleX="-1.00"/>
+      </frame>
+      <frame index="12" length="3" event="touchdown">
+        <element x="-6" y="-1" assetId="32" scaleX="-1.00"/>
+      </frame>
+      <frame index="15" length="3">
+        <element x="3" y="1" assetId="33" scaleX="-1.07" scaleY="1.07"/>
+      </frame>
+    </layer>
+  </action>
+  <asset id="0" assetName="0yuznut1_0_0000.png" x="-22" y="-116" className="Asset_0" width="45" height="122"/>
+  <asset id="1" assetName="0yuznut1_1_0000.png" x="-15" y="-115" className="Asset_1" width="34" height="123"/>
+  <asset id="2" assetName="0yuznut1_2_0000.png" x="-13" y="-115" className="Asset_2" width="28" height="121"/>
+  <asset id="3" assetName="0yuznut1_3_0000.png" x="-18" y="-116" className="Asset_3" width="38" height="121"/>
+  <asset id="4" assetName="0yuznut1_4_0000.png" x="-23" y="-117" className="Asset_4" width="45" height="122"/>
+  <asset id="5" assetName="0yuzrun0_2_0017.png" x="-54" y="-104" className="Asset_5" width="103" height="103"/>
+  <asset id="6" assetName="0yuzrun0_2_0004.png" x="-41" y="-99" className="Asset_6" width="75" height="106"/>
+  <asset id="7" assetName="0yuzrun0_2_0007.png" x="-46" y="-104" className="Asset_7" width="89" height="109"/>
+  <asset id="8" assetName="0yuzrun0_2_0011.png" x="-53" y="-103" className="Asset_8" width="96" height="106"/>
+  <asset id="9" assetName="0yuzrun0_2_0013.png" x="-45" y="-99" className="Asset_9" width="82" height="102"/>
+  <asset id="10" assetName="0yuzrun0_2_0016.png" x="-44" y="-102" className="Asset_10" width="87" height="103"/>
+  <asset id="11" assetName="0yuzrun0_0_0000.png" x="-18" y="-91" className="Asset_11" width="48" height="107"/>
+  <asset id="12" assetName="0yuzrun0_0_0004.png" x="-18" y="-89" className="Asset_12" width="58" height="95"/>
+  <asset id="13" assetName="0yuzrun0_0_0007.png" x="-29" y="-93" className="Asset_13" width="53" height="87"/>
+  <asset id="14" assetName="0yuzrun0_0_0011.png" x="-34" y="-88" className="Asset_14" width="47" height="105"/>
+  <asset id="15" assetName="0yuzrun0_0_0013.png" x="-40" y="-87" className="Asset_15" width="57" height="92"/>
+  <asset id="16" assetName="0yuzrun0_3_0017.png" x="-34" y="-114" className="Asset_16" width="75" height="120"/>
+  <asset id="17" assetName="0yuzrun0_3_0004.png" x="-34" y="-109" className="Asset_17" width="61" height="116"/>
+  <asset id="18" assetName="0yuzrun0_3_0007.png" x="-47" y="-111" className="Asset_18" width="76" height="125"/>
+  <asset id="19" assetName="0yuzrun0_3_0011.png" x="-36" y="-114" className="Asset_19" width="67" height="111"/>
+  <asset id="20" assetName="0yuzrun0_3_0013.png" x="-33" y="-109" className="Asset_20" width="58" height="114"/>
+  <asset id="21" assetName="0yuzrun0_3_0016.png" x="-31" y="-110" className="Asset_21" width="65" height="121"/>
+  <asset id="22" assetName="0yuzrun0_4_0002.png" x="-35" y="-117" className="Asset_22" width="50" height="113"/>
+  <asset id="23" assetName="0yuzrun0_4_0004.png" x="-40" y="-112" className="Asset_23" width="58" height="119"/>
+  <asset id="24" assetName="0yuzrun0_4_0007.png" x="-24" y="-114" className="Asset_24" width="53" height="130"/>
+  <asset id="25" assetName="0yuzrun0_4_0011.png" x="-13" y="-117" className="Asset_25" width="47" height="112"/>
+  <asset id="26" assetName="0yuzrun0_4_0013.png" x="-17" y="-112" className="Asset_26" width="57" height="118"/>
+  <asset id="27" assetName="0yuzrun0_4_0016.png" x="-28" y="-114" className="Asset_27" width="54" height="130"/>
+  <asset id="28" assetName="0yuzrun0_1_0017.png" x="-47" y="-95" className="Asset_28" width="81" height="99"/>
+  <asset id="29" assetName="0yuzrun0_1_0004.png" x="-33" y="-91" className="Asset_29" width="58" height="98"/>
+  <asset id="30" assetName="0yuzrun0_1_0007.png" x="-31" y="-96" className="Asset_30" width="65" height="91"/>
+  <asset id="31" assetName="0yuzrun0_1_0011.png" x="-43" y="-92" className="Asset_31" width="77" height="104"/>
+  <asset id="32" assetName="0yuzrun0_1_0013.png" x="-34" y="-90" className="Asset_32" width="63" height="94"/>
+  <asset id="33" assetName="0yuzrun0_1_0016.png" x="-47" y="-94" className="Asset_33" width="77" height="88"/>
+</actions>

@@ -1,0 +1,225 @@
+{
+  "id": "19020201",
+  "slug": "invocacao-pakkun-19020201",
+  "name": "Invocação: Pakkun",
+  "aliases": [
+    "Invocação: Pakkun"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "124c6b516b8fc618b7b73bb97101bcfbfb2441f65aaa863a2d6044f2fdcb444c",
+  "modes": {
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-pakkun-19020201/battle/A_1hit.png",
+          "frameWidth": 157,
+          "frameHeight": 137,
+          "frames": 20,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            9,
+            9,
+            8,
+            8,
+            10,
+            10,
+            8,
+            8,
+            10,
+            10,
+            8,
+            8,
+            8,
+            8,
+            11,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            19
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.24203821656050956,
+            0.9635036496350365
+          ],
+          "referenceHeight": 106,
+          "status": "partial",
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        "C_dead": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-pakkun-19020201/battle/C_dead.png",
+          "frameWidth": 65,
+          "frameHeight": 46,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5692307692307692,
+            0.7608695652173914
+          ],
+          "referenceHeight": 28,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-pakkun-19020201/battle/C_idle.png",
+          "frameWidth": 62,
+          "frameHeight": 46,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5806451612903226,
+            0.8695652173913043
+          ],
+          "referenceHeight": 41,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 41,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "A_1hit",
+          "missing": [],
+          "unsupported": [
+            "extname"
+          ],
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        }
+      ],
+      "externalEffects": [
+        "yingzi(1).png"
+      ]
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/19020201.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\19020201.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Invocação: Pakkun",
+      "type": null,
+      "resource": "assets/battle/role/left/19020201.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": false,
+    "companion": false,
+    "enemy": true
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_0",
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Invocação: Pakkun",
+    "title": "",
+    "type": "0",
+    "artisticId": "19020201",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-pakkun-19020201/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/invocacao-pakkun-19020201/preview.png"
+}

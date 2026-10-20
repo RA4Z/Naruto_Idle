@@ -1,0 +1,252 @@
+{
+  "id": "28000003",
+  "slug": "ovo-da-pascoa-28000003",
+  "name": "Ovo da Páscoa",
+  "aliases": [
+    "Ovo da Páscoa"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "13"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "b3495bd0e987d66592b5f39c3047a0f044a91afa04264162f37225e99136182d",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ovo-da-pascoa-28000003/world/idle_1.png",
+          "frameWidth": 103,
+          "frameHeight": 84,
+          "frames": 12,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.44660194174757284,
+            0.7857142857142857
+          ],
+          "referenceHeight": 69,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/ovo-da-pascoa-28000003/world/idle_1.png",
+          "frameWidth": 103,
+          "frameHeight": 84,
+          "frames": 12,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.44660194174757284,
+            0.7857142857142857
+          ],
+          "referenceHeight": 69,
+          "status": "ready",
+          "externalEffects": [],
+          "sourceAction": "idle_1"
+        }
+      },
+      "referenceHeight": 69,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/28000003_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\28000003_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2008001.xml",
+      "name": "Ovo da Páscoa",
+      "type": "13",
+      "resource": "assets/role/npc/scene/npcres/28000003_outdoor.swf",
+      "hostile": false,
+      "position": "1435, 1327"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015024.xml",
+      "name": "Ovo da Páscoa",
+      "type": "13",
+      "resource": "assets/role/npc/scene/npcres/28000003_outdoor.swf",
+      "hostile": false,
+      "position": "2630, 740"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015024.xml",
+      "name": "Ovo da Páscoa",
+      "type": "13",
+      "resource": "assets/role/npc/scene/npcres/28000003_outdoor.swf",
+      "hostile": false,
+      "position": "1800, 1190"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015005.xml",
+      "name": "Ovo da Páscoa",
+      "type": "13",
+      "resource": "assets/role/npc/scene/npcres/28000003_outdoor.swf",
+      "hostile": false,
+      "position": "1963, 480"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015005.xml",
+      "name": "Ovo da Páscoa",
+      "type": "13",
+      "resource": "assets/role/npc/scene/npcres/28000003_outdoor.swf",
+      "hostile": false,
+      "position": "1705, 680"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2033001.xml",
+      "name": "Ovo da Páscoa",
+      "type": "13",
+      "resource": "assets/role/npc/scene/npcres/28000003_outdoor.swf",
+      "hostile": false,
+      "position": "420, 180"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2033001.xml",
+      "name": "Ovo da Páscoa",
+      "type": "13",
+      "resource": "assets/role/npc/scene/npcres/28000003_outdoor.swf",
+      "hostile": false,
+      "position": "3170, 600"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/ovo-da-pascoa-28000003/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/ovo-da-pascoa-28000003/preview.png"
+}

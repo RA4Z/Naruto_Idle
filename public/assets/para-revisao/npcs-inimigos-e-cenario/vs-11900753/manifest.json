@@ -1,0 +1,186 @@
+{
+  "id": "11900753",
+  "slug": "vs-11900753",
+  "name": "自来也VS大蛇丸",
+  "aliases": [
+    "自来也VS大蛇丸",
+    "纲手VS大蛇丸",
+    "三忍之间的战斗",
+    "触发自来也大蛇丸战斗",
+    "触发纲手大蛇丸战斗",
+    "触发三个人大蛇丸战斗"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "4"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "a271b87a1ed577774cb01252449b4416a5f5353995173ae8f6561aef55024b62",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/vs-11900753/world/idle_2.png",
+          "frameWidth": 351,
+          "frameHeight": 342,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46153846153846156,
+            0.37719298245614036
+          ],
+          "referenceHeight": 338,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/vs-11900753/world/idle_0.png",
+          "frameWidth": 359,
+          "frameHeight": 301,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5487465181058496,
+            0.5980066445182725
+          ],
+          "referenceHeight": 297,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/vs-11900753/world/idle_1.png",
+          "frameWidth": 232,
+          "frameHeight": 347,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5043103448275862,
+            0.6311239193083573
+          ],
+          "referenceHeight": 343,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 297,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11900753_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11900753_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2441001.xml",
+      "name": "自来也VS大蛇丸",
+      "type": "4",
+      "resource": "assets/role/npc/scene/npcres/11900753_outdoor.swf",
+      "hostile": false,
+      "position": "2307, 619"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2441001.xml",
+      "name": "纲手VS大蛇丸",
+      "type": "4",
+      "resource": "assets/role/npc/scene/npcres/11900753_outdoor.swf",
+      "hostile": false,
+      "position": "1938, 1045"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2441001.xml",
+      "name": "三忍之间的战斗",
+      "type": "4",
+      "resource": "assets/role/npc/scene/npcres/11900753_outdoor.swf",
+      "hostile": false,
+      "position": "1245, 930"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2050001.xml",
+      "name": "触发自来也大蛇丸战斗",
+      "type": "4",
+      "resource": "assets/role/npc/scene/npcres/11900753_outdoor.swf",
+      "hostile": false,
+      "position": "603, 1636"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2050001.xml",
+      "name": "触发纲手大蛇丸战斗",
+      "type": "4",
+      "resource": "assets/role/npc/scene/npcres/11900753_outdoor.swf",
+      "hostile": false,
+      "position": "2693, 1652"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2050001.xml",
+      "name": "触发三个人大蛇丸战斗",
+      "type": "4",
+      "resource": "assets/role/npc/scene/npcres/11900753_outdoor.swf",
+      "hostile": false,
+      "position": "1713, 1095"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/vs-11900753/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/vs-11900753/preview.png"
+}

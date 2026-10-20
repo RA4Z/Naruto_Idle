@@ -1,0 +1,118 @@
+{
+  "id": "11000191",
+  "slug": "naruto-em-coma-11000191",
+  "name": "Naruto em coma",
+  "aliases": [
+    "Naruto em coma",
+    "Naruto Uzumaki"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "101"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "e1bbba851a5a8b40286c346bda0b1d401f539d5244a9c9fd8177d9e261f11894",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/naruto-em-coma-11000191/world/idle_0.png",
+          "frameWidth": 66,
+          "frameHeight": 75,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5909090909090909,
+            0.8
+          ],
+          "referenceHeight": 71,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 71,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11000191_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11000191_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene1007001.xml",
+      "name": "Naruto em coma",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11000191_outdoor.swf",
+      "hostile": false,
+      "position": "1005, 507"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1005001.xml",
+      "name": "Naruto Uzumaki",
+      "type": "101",
+      "resource": "assets/role/npc/scene/npcres/11000191_outdoor.swf",
+      "hostile": false,
+      "position": "1616, 495"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/naruto-em-coma-11000191/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/naruto-em-coma-11000191/preview.png"
+}

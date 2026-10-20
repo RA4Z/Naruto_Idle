@@ -1,0 +1,780 @@
+{
+  "id": "11005301",
+  "slug": "jugo-11005301",
+  "name": "Jugo",
+  "aliases": [
+    "Jugo"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2"
+  ],
+  "hostile": true,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "61e2d12908d3a294f94273db77c23a7d8be4b1d3fa5018cef85365c18533a558",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_2": {
+          "url": "/assets/characters/jugo-11005301/world/idle_2.png",
+          "frameWidth": 34,
+          "frameHeight": 157,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5882352941176471,
+            0.910828025477707
+          ],
+          "referenceHeight": 153,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/characters/jugo-11005301/world/idle_0.png",
+          "frameWidth": 57,
+          "frameHeight": 153,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5087719298245614,
+            0.934640522875817
+          ],
+          "referenceHeight": 149,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/characters/jugo-11005301/world/idle_1.png",
+          "frameWidth": 52,
+          "frameHeight": 156,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5192307692307693,
+            0.9166666666666666
+          ],
+          "referenceHeight": 152,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/characters/jugo-11005301/world/idle_3.png",
+          "frameWidth": 52,
+          "frameHeight": 154,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5384615384615384,
+            0.935064935064935
+          ],
+          "referenceHeight": 150,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/characters/jugo-11005301/world/idle_4.png",
+          "frameWidth": 56,
+          "frameHeight": 151,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.9602649006622517
+          ],
+          "referenceHeight": 147,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/characters/jugo-11005301/world/idle_5.png",
+          "frameWidth": 52,
+          "frameHeight": 154,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46153846153846156,
+            0.935064935064935
+          ],
+          "referenceHeight": 150,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/characters/jugo-11005301/world/idle_6.png",
+          "frameWidth": 34,
+          "frameHeight": 157,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4117647058823529,
+            0.910828025477707
+          ],
+          "referenceHeight": 153,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/characters/jugo-11005301/world/idle_7.png",
+          "frameWidth": 52,
+          "frameHeight": 156,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4807692307692308,
+            0.9166666666666666
+          ],
+          "referenceHeight": 152,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/characters/jugo-11005301/world/run_0.png",
+          "frameWidth": 93,
+          "frameHeight": 133,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5376344086021505,
+            0.8195488721804511
+          ],
+          "referenceHeight": 103,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/characters/jugo-11005301/world/run_1.png",
+          "frameWidth": 124,
+          "frameHeight": 131,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5080645161290323,
+            0.8702290076335878
+          ],
+          "referenceHeight": 102,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/characters/jugo-11005301/world/run_2.png",
+          "frameWidth": 163,
+          "frameHeight": 125,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5030674846625767,
+            0.936
+          ],
+          "referenceHeight": 107,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/characters/jugo-11005301/world/run_3.png",
+          "frameWidth": 125,
+          "frameHeight": 144,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.512,
+            0.9027777777777778
+          ],
+          "referenceHeight": 126,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/characters/jugo-11005301/world/run_4.png",
+          "frameWidth": 93,
+          "frameHeight": 159,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46236559139784944,
+            0.8679245283018868
+          ],
+          "referenceHeight": 137,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/characters/jugo-11005301/world/run_5.png",
+          "frameWidth": 125,
+          "frameHeight": 144,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.488,
+            0.9027777777777778
+          ],
+          "referenceHeight": 126,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/characters/jugo-11005301/world/run_6.png",
+          "frameWidth": 163,
+          "frameHeight": 125,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49693251533742333,
+            0.936
+          ],
+          "referenceHeight": 107,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/characters/jugo-11005301/world/run_7.png",
+          "frameWidth": 124,
+          "frameHeight": 131,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49193548387096775,
+            0.8702290076335878
+          ],
+          "referenceHeight": 102,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 149,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/characters/jugo-11005301/battle/A_1hit.png",
+          "frameWidth": 230,
+          "frameHeight": 181,
+          "frames": 8,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            6,
+            7,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3521739130434783,
+            0.9447513812154696
+          ],
+          "referenceHeight": 148,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/characters/jugo-11005301/battle/C_dead.png",
+          "frameWidth": 120,
+          "frameHeight": 169,
+          "frames": 7,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.44166666666666665,
+            0.9408284023668639
+          ],
+          "referenceHeight": 135,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/characters/jugo-11005301/battle/C_idle.png",
+          "frameWidth": 112,
+          "frameHeight": 166,
+          "frames": 10,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            8,
+            8,
+            6,
+            6,
+            5,
+            5,
+            4,
+            4,
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5357142857142857,
+            0.9518072289156626
+          ],
+          "referenceHeight": 152,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/characters/jugo-11005301/battle/SP_skill1.png",
+          "frameWidth": 263,
+          "frameHeight": 362,
+          "frames": 12,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.41064638783269963,
+            0.9530386740331491
+          ],
+          "referenceHeight": 166,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/characters/jugo-11005301/battle/SP_skill2.png",
+          "frameWidth": 118,
+          "frameHeight": 146,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5084745762711864,
+            0.9452054794520548
+          ],
+          "referenceHeight": 120,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 152,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": [
+        "yingzi(1).png"
+      ]
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11005301_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11005301_outdoor.swf"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/11005301.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11005301.swf"
+    },
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11005301.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\11005301.png"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2926001.xml",
+      "name": "Jugo",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11005301_outdoor.swf",
+      "hostile": true,
+      "position": "1162, 1428"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2726001.xml",
+      "name": "Jugo",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11005301_outdoor.swf",
+      "hostile": false,
+      "position": "1419, 837"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene4042001.xml",
+      "name": "Jugo",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11005301_outdoor.swf",
+      "hostile": true,
+      "position": "171, 668"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene4042001.xml",
+      "name": "Jugo",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11005301_outdoor.swf",
+      "hostile": true,
+      "position": "1018, 1040"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene4042001.xml",
+      "name": "Jugo",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11005301_outdoor.swf",
+      "hostile": true,
+      "position": "568, 666"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1003001.xml",
+      "name": "Jugo",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11005301_outdoor.swf",
+      "hostile": false,
+      "position": "2553, 779"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Jugo",
+      "type": null,
+      "resource": "assets/battle/role/left/11005301.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/characters/jugo-11005301/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": true,
+    "reason": "Caminhada em oito direções, ataque, queda e especial preservados.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "playable",
+  "reviewCategory": null,
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Jugo",
+    "title": "",
+    "type": "0",
+    "artisticId": "11005301",
+    "levelType": "2",
+    "series": "28",
+    "starLevel": "3"
+  },
+  "manifestUrl": "/assets/characters/jugo-11005301/manifest.json",
+  "preview": "/assets/characters/jugo-11005301/preview.png"
+}

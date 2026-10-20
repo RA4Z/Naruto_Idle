@@ -1,0 +1,173 @@
+{
+  "id": "70001",
+  "slug": "nome-original-70001",
+  "name": "攀岩-训练场",
+  "aliases": [
+    "攀岩-训练场"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "7"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "9fb4bf82a11576e4f2a45132ffcaf72b5aacfd7a92e2d9ab33690bd308f9020c",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-70001/world/idle_0.png",
+          "frameWidth": 158,
+          "frameHeight": 296,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.5
+          ],
+          "referenceHeight": 292,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 292,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/70001_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\70001_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2351001.xml",
+      "name": "攀岩-训练场",
+      "type": "7",
+      "resource": "assets/role/npc/scene/npcres/70001_outdoor.swf",
+      "hostile": false,
+      "position": "145, 1002"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700001.xml",
+      "name": "",
+      "type": "7",
+      "resource": "assets/role/npc/scene/npcres/70001_outdoor.swf",
+      "hostile": false,
+      "position": "784, 1199"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene4013001.xml",
+      "name": "攀岩-训练场",
+      "type": "7",
+      "resource": "assets/role/npc/scene/npcres/70001_outdoor.swf",
+      "hostile": false,
+      "position": "143, 1010"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2321001.xml",
+      "name": "攀岩-训练场",
+      "type": "7",
+      "resource": "assets/role/npc/scene/npcres/70001_outdoor.swf",
+      "hostile": false,
+      "position": "143, 1010"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2023002.xml",
+      "name": "攀岩-训练场",
+      "type": "7",
+      "resource": "assets/role/npc/scene/npcres/70001_outdoor.swf",
+      "hostile": false,
+      "position": "129, 995"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700005.xml",
+      "name": "攀岩-训练场",
+      "type": "7",
+      "resource": "assets/role/npc/scene/npcres/70001_outdoor.swf",
+      "hostile": false,
+      "position": "125, 1026"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2112001.xml",
+      "name": "攀岩-训练场",
+      "type": "7",
+      "resource": "assets/role/npc/scene/npcres/70001_outdoor.swf",
+      "hostile": false,
+      "position": "131, 1017"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1004001.xml",
+      "name": "攀岩-训练场",
+      "type": "7",
+      "resource": "assets/role/npc/scene/npcres/70001_outdoor.swf",
+      "hostile": false,
+      "position": "139, 1013"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1700027.xml",
+      "name": "",
+      "type": "7",
+      "resource": "assets/role/npc/scene/npcres/70001_outdoor.swf",
+      "hostile": false,
+      "position": "1689, 2053"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-70001/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-70001/preview.png"
+}

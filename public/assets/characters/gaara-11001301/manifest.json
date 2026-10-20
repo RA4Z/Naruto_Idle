@@ -1,0 +1,1133 @@
+{
+  "id": "11001301",
+  "slug": "gaara-11001301",
+  "name": "Gaara",
+  "aliases": [
+    "Gaara"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2",
+    "6"
+  ],
+  "hostile": true,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "cfaa8d1a97eea448470e7bbb7b8774e808169f4265c5381d528fb7e5b344da9c",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/characters/gaara-11001301/world/idle_0.png",
+          "frameWidth": 64,
+          "frameHeight": 115,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.515625,
+            0.8782608695652174
+          ],
+          "referenceHeight": 111,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/characters/gaara-11001301/world/idle_1.png",
+          "frameWidth": 64,
+          "frameHeight": 116,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.40625,
+            0.8793103448275862
+          ],
+          "referenceHeight": 112,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/characters/gaara-11001301/world/idle_2.png",
+          "frameWidth": 71,
+          "frameHeight": 115,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.39436619718309857,
+            0.9217391304347826
+          ],
+          "referenceHeight": 111,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/characters/gaara-11001301/world/idle_3.png",
+          "frameWidth": 72,
+          "frameHeight": 113,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.375,
+            0.9646017699115044
+          ],
+          "referenceHeight": 109,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/characters/gaara-11001301/world/idle_4.png",
+          "frameWidth": 64,
+          "frameHeight": 114,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.484375,
+            0.956140350877193
+          ],
+          "referenceHeight": 110,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/characters/gaara-11001301/world/run_0.png",
+          "frameWidth": 82,
+          "frameHeight": 124,
+          "frames": 10,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.524390243902439,
+            0.8548387096774194
+          ],
+          "referenceHeight": 105,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/characters/gaara-11001301/world/idle_5.png",
+          "frameWidth": 64,
+          "frameHeight": 118,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.59375,
+            0.9152542372881356
+          ],
+          "referenceHeight": 114,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/characters/gaara-11001301/world/idle_6.png",
+          "frameWidth": 71,
+          "frameHeight": 117,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6056338028169014,
+            0.8888888888888888
+          ],
+          "referenceHeight": 113,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/characters/gaara-11001301/world/idle_7.png",
+          "frameWidth": 71,
+          "frameHeight": 114,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6197183098591549,
+            0.9035087719298246
+          ],
+          "referenceHeight": 110,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/characters/gaara-11001301/world/run_1.png",
+          "frameWidth": 84,
+          "frameHeight": 120,
+          "frames": 10,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.875
+          ],
+          "referenceHeight": 101,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/characters/gaara-11001301/world/run_2.png",
+          "frameWidth": 115,
+          "frameHeight": 109,
+          "frames": 10,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5304347826086957,
+            0.944954128440367
+          ],
+          "referenceHeight": 95,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/characters/gaara-11001301/world/run_3.png",
+          "frameWidth": 101,
+          "frameHeight": 115,
+          "frames": 10,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46534653465346537,
+            0.8782608695652174
+          ],
+          "referenceHeight": 98,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/characters/gaara-11001301/world/run_4.png",
+          "frameWidth": 82,
+          "frameHeight": 122,
+          "frames": 10,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.47560975609756095,
+            0.860655737704918
+          ],
+          "referenceHeight": 107,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/characters/gaara-11001301/world/run_5.png",
+          "frameWidth": 84,
+          "frameHeight": 117,
+          "frames": 10,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.8888888888888888
+          ],
+          "referenceHeight": 102,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/characters/gaara-11001301/world/run_6.png",
+          "frameWidth": 115,
+          "frameHeight": 112,
+          "frames": 10,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46956521739130436,
+            0.9464285714285714
+          ],
+          "referenceHeight": 100,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/characters/gaara-11001301/world/run_7.png",
+          "frameWidth": 101,
+          "frameHeight": 120,
+          "frames": 10,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5346534653465347,
+            0.8833333333333333
+          ],
+          "referenceHeight": 103,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 111,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/characters/gaara-11001301/battle/A_1hit.png",
+          "frameWidth": 128,
+          "frameHeight": 150,
+          "frames": 7,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.578125,
+            0.9533333333333334
+          ],
+          "referenceHeight": 134,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/characters/gaara-11001301/battle/C_dead.png",
+          "frameWidth": 135,
+          "frameHeight": 156,
+          "frames": 7,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6666666666666666,
+            0.9487179487179487
+          ],
+          "referenceHeight": 123,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/characters/gaara-11001301/battle/C_idle.png",
+          "frameWidth": 83,
+          "frameHeight": 155,
+          "frames": 4,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6265060240963856,
+            0.9612903225806452
+          ],
+          "referenceHeight": 151,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/characters/gaara-11001301/battle/SP_skill1.png",
+          "frameWidth": 112,
+          "frameHeight": 158,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            4,
+            5,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            6,
+            6,
+            6,
+            7,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.41964285714285715,
+            0.9556962025316456
+          ],
+          "referenceHeight": 152,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/characters/gaara-11001301/battle/SP_skill2.png",
+          "frameWidth": 133,
+          "frameHeight": 151,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5789473684210527,
+            0.9403973509933775
+          ],
+          "referenceHeight": 127,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 151,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/11001301.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\11001301.png"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11001301_outdoor.swf"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/11001301.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11001301.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene4011001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "1388, 1855"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3051001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "1181, 643"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2003001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "1450, 753"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2003001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "1609, 656"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2003001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "1766, 561"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3001001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "1010, 2690"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3001001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "2015, 2059"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3001001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "1882, 914"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2326001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "2020, 1195"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2326001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "1047, 569"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015004.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": false,
+      "position": "589, 742"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3013001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "1010, 2690"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3013001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "2015, 2059"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3013001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "1882, 914"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2994001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": false,
+      "position": "812, 392"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2994001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": false,
+      "position": "474, 1694"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2994001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": false,
+      "position": "742, 1704"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2994001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": false,
+      "position": "988, 1693"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2016001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "2146, 2079"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2993001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": false,
+      "position": "1813, 385"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1003001.xml",
+      "name": "Gaara",
+      "type": "6",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": false,
+      "position": "657, 2516"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3011001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "1010, 2690"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3011001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "2015, 2059"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3011001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "1882, 914"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3012001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "1010, 2690"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3012001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "2015, 2059"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3012001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "1882, 914"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3015001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "1010, 2690"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3015001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "2015, 2059"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3015001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "1882, 914"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3014001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "1010, 2690"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3014001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "2015, 2059"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene3014001.xml",
+      "name": "Gaara",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11001301_outdoor.swf",
+      "hostile": true,
+      "position": "1882, 914"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Gaara",
+      "type": null,
+      "resource": "assets/battle/role/left/11001301.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/characters/gaara-11001301/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": true,
+    "reason": "Caminhada em oito direções, ataque, queda e especial preservados.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1",
+      "SP_skill2"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "playable",
+  "reviewCategory": null,
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Gaara",
+    "title": "",
+    "type": "0",
+    "artisticId": "11001301",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/characters/gaara-11001301/manifest.json",
+  "preview": "/assets/characters/gaara-11001301/preview.png"
+}

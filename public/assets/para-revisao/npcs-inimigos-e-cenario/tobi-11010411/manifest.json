@@ -1,0 +1,125 @@
+{
+  "id": "11010411",
+  "slug": "tobi-11010411",
+  "name": "Tobi",
+  "aliases": [
+    "Tobi"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "15"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "22a900a089292aba045a12f0c26ec25bc3dddeb2bf43910e34b435ecfe9172fe",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/tobi-11010411/world/idle_0.png",
+          "frameWidth": 342,
+          "frameHeight": 219,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4152046783625731,
+            0.6484018264840182
+          ],
+          "referenceHeight": 215,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/tobi-11010411/world/idle_1.png",
+          "frameWidth": 311,
+          "frameHeight": 136,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3536977491961415,
+            0.6985294117647058
+          ],
+          "referenceHeight": 132,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 215,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11010411_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11010411_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2014002.xml",
+      "name": "Tobi",
+      "type": "15",
+      "resource": "assets/role/npc/scene/npcres/11010411_outdoor.swf",
+      "hostile": false,
+      "position": "1501, 855"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/tobi-11010411/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/tobi-11010411/preview.png"
+}

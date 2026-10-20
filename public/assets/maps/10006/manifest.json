@@ -1,0 +1,27 @@
+{
+  "id": "10006",
+  "name": "Campo de Treinamento da Folha",
+  "kind": "adventure",
+  "background": "/assets/maps/10006/background.jpg",
+  "foreground": "/assets/maps/10006/foreground.png",
+  "thumbnail": "/assets/maps/10006/thumbnail.jpg",
+  "navigation": "/assets/maps/10006/navigation.json",
+  "width": 666.6666666666666,
+  "height": 666.6666666666666,
+  "spawn": {
+    "x": 350,
+    "y": 200
+  },
+  "enemies": [
+    "19000901",
+    "19001001"
+  ],
+  "description": "Treinamento e encontros contra ninjas Anbu.",
+  "source": "assets/scene/map/10006/",
+  "navigationSha256": "c926df5535682e8d3f8940791eb0470df8b73c26675ae0dd797c8107306b0787",
+  "layers": {
+    "backgroundTiles": 64,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "preserved in originals; not executed"
+  }
+}

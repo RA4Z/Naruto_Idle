@@ -1,0 +1,116 @@
+{
+  "id": "91000105",
+  "slug": "recurso-91000105-91000105",
+  "name": "Recurso 91000105",
+  "aliases": [
+    "Recurso 91000105"
+  ],
+  "identity": "unidentified",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "f9317837679cc15234d3e1d9830f7eace2e49d5b7de5ed6c89b80810af78f750",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/sem-identificacao/recurso-91000105-91000105/world/idle_0.png",
+          "frameWidth": 498,
+          "frameHeight": 459,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4979919678714859,
+            0.5119825708061002
+          ],
+          "referenceHeight": 455,
+          "status": "partial",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 455,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "idle_0",
+          "missing": [],
+          "unsupported": [
+            "blendMode"
+          ],
+          "externalEffects": []
+        }
+      ],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/91000105_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\91000105_outdoor.swf"
+    }
+  },
+  "evidence": [],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "Identidade ou nome em português ainda requer conferência.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [
+      {
+        "action": "idle_0",
+        "missing": [],
+        "unsupported": [
+          "blendMode"
+        ],
+        "externalEffects": []
+      }
+    ],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "sem-identificacao",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/sem-identificacao/recurso-91000105-91000105/manifest.json",
+  "preview": "/assets/para-revisao/sem-identificacao/recurso-91000105-91000105/preview.png"
+}

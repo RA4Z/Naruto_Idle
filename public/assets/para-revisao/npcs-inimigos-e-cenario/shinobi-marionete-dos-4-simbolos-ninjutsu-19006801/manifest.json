@@ -1,0 +1,930 @@
+{
+  "id": "19006801",
+  "slug": "shinobi-marionete-dos-4-simbolos-ninjutsu-19006801",
+  "name": "Shinobi Marionete dos 4 Símbolos (Ninjutsu)",
+  "aliases": [
+    "Shinobi Marionete dos 4 Símbolos (Nin) [Nível 6]",
+    "Missão de Captura - Shinobi Marionete dos 4 Símbolos (Nin)",
+    "Homem misterioso",
+    "Shinobi Marionete dos 4 Símbolos (Nin)",
+    "Shinobi Marionete dos 4 Símbolos (Ninjutsu)"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2"
+  ],
+  "hostile": true,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "d1f7f65939de41e9faac4a19a016dbe2d59a034c19b2b33cbe1ade0dc6f9c1a8",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/world/idle_0.png",
+          "frameWidth": 48,
+          "frameHeight": 110,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4166666666666667,
+            0.8454545454545455
+          ],
+          "referenceHeight": 106,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/world/idle_1.png",
+          "frameWidth": 49,
+          "frameHeight": 111,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6326530612244898,
+            0.8378378378378378
+          ],
+          "referenceHeight": 107,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/world/idle_2.png",
+          "frameWidth": 74,
+          "frameHeight": 111,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5405405405405406,
+            0.8918918918918919
+          ],
+          "referenceHeight": 107,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/world/idle_3.png",
+          "frameWidth": 68,
+          "frameHeight": 119,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.8991596638655462
+          ],
+          "referenceHeight": 115,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/world/idle_4.png",
+          "frameWidth": 48,
+          "frameHeight": 131,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5416666666666666,
+            0.8396946564885496
+          ],
+          "referenceHeight": 127,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/world/idle_5.png",
+          "frameWidth": 49,
+          "frameHeight": 129,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.40816326530612246,
+            0.8604651162790697
+          ],
+          "referenceHeight": 125,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/world/idle_6.png",
+          "frameWidth": 74,
+          "frameHeight": 111,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4189189189189189,
+            0.9009009009009009
+          ],
+          "referenceHeight": 107,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/world/idle_7.png",
+          "frameWidth": 49,
+          "frameHeight": 111,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.32653061224489793,
+            0.8198198198198198
+          ],
+          "referenceHeight": 107,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/world/run_0.png",
+          "frameWidth": 76,
+          "frameHeight": 110,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4868421052631579,
+            0.7363636363636363
+          ],
+          "referenceHeight": 82,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/world/run_1.png",
+          "frameWidth": 103,
+          "frameHeight": 111,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5145631067961165,
+            0.8288288288288288
+          ],
+          "referenceHeight": 87,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/world/run_2.png",
+          "frameWidth": 134,
+          "frameHeight": 95,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5074626865671642,
+            0.8631578947368421
+          ],
+          "referenceHeight": 85,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/world/run_3.png",
+          "frameWidth": 104,
+          "frameHeight": 118,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.47115384615384615,
+            0.9067796610169492
+          ],
+          "referenceHeight": 101,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/world/run_4.png",
+          "frameWidth": 77,
+          "frameHeight": 127,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4805194805194805,
+            0.8740157480314961
+          ],
+          "referenceHeight": 111,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/world/run_5.png",
+          "frameWidth": 104,
+          "frameHeight": 118,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4423076923076923,
+            0.864406779661017
+          ],
+          "referenceHeight": 101,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/world/run_6.png",
+          "frameWidth": 134,
+          "frameHeight": 95,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.44029850746268656,
+            0.8315789473684211
+          ],
+          "referenceHeight": 85,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "run_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/world/run_7.png",
+          "frameWidth": 103,
+          "frameHeight": 111,
+          "frames": 9,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.42718446601941745,
+            0.7837837837837838
+          ],
+          "referenceHeight": 87,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 106,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    },
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/battle/A_1hit.png",
+          "frameWidth": 150,
+          "frameHeight": 188,
+          "frames": 11,
+          "timeline": [
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            9,
+            9,
+            10,
+            10
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4866666666666667,
+            0.9680851063829787
+          ],
+          "referenceHeight": 136,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/battle/C_dead.png",
+          "frameWidth": 115,
+          "frameHeight": 175,
+          "frames": 11,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            8,
+            8,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6086956521739131,
+            0.9657142857142857
+          ],
+          "referenceHeight": 148,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/battle/C_idle.png",
+          "frameWidth": 100,
+          "frameHeight": 155,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            2,
+            2,
+            1,
+            1,
+            3,
+            3,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            3,
+            3,
+            3,
+            3,
+            2,
+            2,
+            1,
+            1,
+            0,
+            0,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            0,
+            0,
+            7,
+            7,
+            6,
+            6,
+            6,
+            7,
+            7,
+            6,
+            6,
+            7,
+            7,
+            6,
+            6,
+            7,
+            7,
+            6,
+            6,
+            7,
+            7,
+            6,
+            6,
+            7,
+            7,
+            6,
+            6,
+            7,
+            7,
+            6,
+            6,
+            7,
+            7,
+            6,
+            6,
+            7,
+            7,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49,
+            0.9612903225806452
+          ],
+          "referenceHeight": 147,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/battle/SP_skill1.png",
+          "frameWidth": 104,
+          "frameHeight": 161,
+          "frames": 4,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.47115384615384615,
+            0.9627329192546584
+          ],
+          "referenceHeight": 155,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "SP_skill2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/battle/SP_skill2.png",
+          "frameWidth": 92,
+          "frameHeight": 126,
+          "frames": 1,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5108695652173914,
+            0.9523809523809523
+          ],
+          "referenceHeight": 122,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 147,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "portrait": {
+      "path": "assets/battle/role/head_110_100/19006801.png",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\head_110_100\\19006801.png"
+    },
+    "world": {
+      "path": "assets/role/npc/scene/npcres/19006801_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\19006801_outdoor.swf"
+    },
+    "battle": {
+      "path": "assets/battle/role/left/19006801.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\19006801.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2013001.xml",
+      "name": "Shinobi Marionete dos 4 Símbolos (Nin) [Nível 6]",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19006801_outdoor.swf",
+      "hostile": false,
+      "position": "1776, 503"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2013001.xml",
+      "name": "Shinobi Marionete dos 4 Símbolos (Nin) [Nível 6]",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19006801_outdoor.swf",
+      "hostile": false,
+      "position": "1562, 1352"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2013001.xml",
+      "name": "Shinobi Marionete dos 4 Símbolos (Nin) [Nível 6]",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19006801_outdoor.swf",
+      "hostile": false,
+      "position": "1154, 2446"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2013001.xml",
+      "name": "Missão de Captura - Shinobi Marionete dos 4 Símbolos (Nin)",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19006801_outdoor.swf",
+      "hostile": false,
+      "position": "680, 852"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2006001.xml",
+      "name": "Missão de Captura - Shinobi Marionete dos 4 Símbolos (Nin)",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19006801_outdoor.swf",
+      "hostile": false,
+      "position": "1435, 2545"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2401001.xml",
+      "name": "Homem misterioso",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19006801_outdoor.swf",
+      "hostile": true,
+      "position": "2275, 2542"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2008001.xml",
+      "name": "Missão de Captura - Shinobi Marionete dos 4 Símbolos (Nin)",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19006801_outdoor.swf",
+      "hostile": false,
+      "position": "510, 1656"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2821001.xml",
+      "name": "Shinobi Marionete dos 4 Símbolos (Nin)",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19006801_outdoor.swf",
+      "hostile": true,
+      "position": "1581, 2959"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2821001.xml",
+      "name": "Shinobi Marionete dos 4 Símbolos (Nin)",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19006801_outdoor.swf",
+      "hostile": true,
+      "position": "681, 1996"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2821001.xml",
+      "name": "Shinobi Marionete dos 4 Símbolos (Nin)",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19006801_outdoor.swf",
+      "hostile": true,
+      "position": "624, 2116"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015005.xml",
+      "name": "Missão de Captura - Shinobi Marionete dos 4 Símbolos (Nin)",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19006801_outdoor.swf",
+      "hostile": false,
+      "position": "497, 725"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2011001.xml",
+      "name": "Missão de Captura - Shinobi Marionete dos 4 Símbolos (Nin)",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19006801_outdoor.swf",
+      "hostile": false,
+      "position": "1140, 626"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1007001.xml",
+      "name": "Missão de Captura - Shinobi Marionete dos 4 Símbolos (Nin)",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19006801_outdoor.swf",
+      "hostile": false,
+      "position": "1788, 1462"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2816001.xml",
+      "name": "Shinobi Marionete dos 4 Símbolos (Nin)",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19006801_outdoor.swf",
+      "hostile": true,
+      "position": "1235, 1351"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2521001.xml",
+      "name": "Shinobi Marionete dos 4 Símbolos (Nin)",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19006801_outdoor.swf",
+      "hostile": true,
+      "position": "843, 784"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2521001.xml",
+      "name": "Shinobi Marionete dos 4 Símbolos (Nin)",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19006801_outdoor.swf",
+      "hostile": true,
+      "position": "304, 1137"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2521001.xml",
+      "name": "Shinobi Marionete dos 4 Símbolos (Nin)",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19006801_outdoor.swf",
+      "hostile": true,
+      "position": "264, 1574"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2015007.xml",
+      "name": "Missão de Captura - Shinobi Marionete dos 4 Símbolos (Nin)",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19006801_outdoor.swf",
+      "hostile": false,
+      "position": "1311, 545"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2033001.xml",
+      "name": "Missão de Captura - Shinobi Marionete dos 4 Símbolos (Nin)",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/19006801_outdoor.swf",
+      "hostile": false,
+      "position": "999, 1162"
+    },
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Shinobi Marionete dos 4 Símbolos (Ninjutsu)",
+      "type": null,
+      "resource": "assets/battle/role/left/19006801.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "portrait": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/portrait.png",
+  "capabilities": {
+    "npc": true,
+    "companion": true,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [],
+    "visualProblems": [],
+    "specialActions": [
+      "SP_skill1"
+    ],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Shinobi Marionete dos 4 Símbolos (Ninjutsu)",
+    "title": "",
+    "type": "0",
+    "artisticId": "19006801",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/shinobi-marionete-dos-4-simbolos-ninjutsu-19006801/preview.png"
+}

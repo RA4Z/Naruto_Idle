@@ -1,0 +1,291 @@
+{
+  "id": "92200203",
+  "slug": "202912-92200203",
+  "name": "2029追击天地卷轴1到2",
+  "aliases": [
+    "2029追击天地卷轴1到2",
+    "2204001副本传送2204002"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "5"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "4ecb15f4e65115ffa464654d54220ff9f5db4ff0234224f248e73529e6e54d23",
+  "modes": {
+    "world": {
+      "animations": {
+        "yewan_idle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/202912-92200203/world/yewan_idle_1.png",
+          "frameWidth": 450,
+          "frameHeight": 394,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5911111111111111,
+            0.5177664974619289
+          ],
+          "referenceHeight": 231,
+          "status": "partial",
+          "externalEffects": []
+        },
+        "yewan_idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/202912-92200203/world/yewan_idle_0.png",
+          "frameWidth": 333,
+          "frameHeight": 264,
+          "frames": 25,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            9,
+            9,
+            9,
+            10,
+            10,
+            10,
+            11,
+            11,
+            11,
+            12,
+            12,
+            12,
+            13,
+            13,
+            13,
+            14,
+            14,
+            14,
+            15,
+            15,
+            15,
+            16,
+            16,
+            16,
+            17,
+            17,
+            17,
+            18,
+            18,
+            18,
+            19,
+            19,
+            19,
+            20,
+            20,
+            20,
+            21,
+            21,
+            21,
+            22,
+            22,
+            22,
+            23,
+            23,
+            23,
+            24,
+            24,
+            24
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.7387387387387387,
+            0.6666666666666666
+          ],
+          "referenceHeight": 248,
+          "status": "partial",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/202912-92200203/world/yewan_idle_1.png",
+          "frameWidth": 450,
+          "frameHeight": 394,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5911111111111111,
+            0.5177664974619289
+          ],
+          "referenceHeight": 231,
+          "status": "partial",
+          "externalEffects": [],
+          "sourceAction": "yewan_idle_1"
+        }
+      },
+      "referenceHeight": 231,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "yewan_idle_1",
+          "missing": [],
+          "unsupported": [
+            "blendMode",
+            "color"
+          ],
+          "externalEffects": []
+        },
+        {
+          "action": "yewan_idle_0",
+          "missing": [],
+          "unsupported": [
+            "blendMode",
+            "color"
+          ],
+          "externalEffects": []
+        },
+        {
+          "presentationBinding": "idle_0",
+          "sourceAction": "yewan_idle_1",
+          "note": "Explicit variant of native idle; no invented pixels"
+        }
+      ],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/92200203_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\92200203_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2032001.xml",
+      "name": "2029追击天地卷轴1到2",
+      "type": "5",
+      "resource": "assets/role/npc/scene/npcres/92200203_outdoor.swf",
+      "hostile": false,
+      "position": "2774, 3002"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene2416001.xml",
+      "name": "2204001副本传送2204002",
+      "type": "5",
+      "resource": "assets/role/npc/scene/npcres/92200203_outdoor.swf",
+      "hostile": false,
+      "position": "1947, 767"
+    }
+  ],
+  "issues": [
+    {
+      "mode": "world",
+      "error": "No supported actions rendered; []"
+    }
+  ],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "partial",
+  "recoveryPass": "nonstandard-actions-and-static-vectors",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/202912-92200203/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/202912-92200203/preview.png"
+}

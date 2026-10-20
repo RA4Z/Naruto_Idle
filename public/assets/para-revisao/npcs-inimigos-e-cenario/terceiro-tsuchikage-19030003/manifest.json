@@ -1,0 +1,216 @@
+{
+  "id": "19030003",
+  "slug": "terceiro-tsuchikage-19030003",
+  "name": "Terceiro Tsuchikage",
+  "aliases": [
+    "Terceiro Tsuchikage"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "16"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "dddf118986071c99a8c5d075cff8b487b5f61f6982802784c9c2c6b8508b2e5f",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/terceiro-tsuchikage-19030003/world/idle_7.png",
+          "frameWidth": 87,
+          "frameHeight": 123,
+          "frames": 7,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5632183908045977,
+            0.983739837398374
+          ],
+          "referenceHeight": 100,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/terceiro-tsuchikage-19030003/world/idle_7.png",
+          "frameWidth": 87,
+          "frameHeight": 123,
+          "frames": 7,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5632183908045977,
+            0.983739837398374
+          ],
+          "referenceHeight": 100,
+          "status": "ready",
+          "externalEffects": [],
+          "sourceAction": "idle_7"
+        }
+      },
+      "referenceHeight": 100,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/19030003_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\19030003_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene1606001.xml",
+      "name": "Terceiro Tsuchikage",
+      "type": "16",
+      "resource": "assets/role/npc/scene/npcres/19030003_outdoor.swf",
+      "hostile": false,
+      "position": "940, 530"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1606002.xml",
+      "name": "Terceiro Tsuchikage",
+      "type": "16",
+      "resource": "assets/role/npc/scene/npcres/19030003_outdoor.swf",
+      "hostile": false,
+      "position": "940, 530"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/terceiro-tsuchikage-19030003/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/terceiro-tsuchikage-19030003/preview.png"
+}

@@ -1,0 +1,181 @@
+{
+  "id": "91000332",
+  "slug": "nome-original-91000332",
+  "name": "仙界战场障碍",
+  "aliases": [
+    "仙界战场障碍"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "9"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "8493bfea5b559bb0405a7d2e2a239c10aebbf544968ebbb7ff7b7776ee72795e",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-91000332/world/idle_0.png",
+          "frameWidth": 675,
+          "frameHeight": 374,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.9674074074074074,
+            0.24064171122994651
+          ],
+          "referenceHeight": 370,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-91000332/world/idle_2.png",
+          "frameWidth": 675,
+          "frameHeight": 374,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.522962962962963,
+            0.9090909090909091
+          ],
+          "referenceHeight": 370,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-91000332/world/idle_4.png",
+          "frameWidth": 675,
+          "frameHeight": 374,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.30074074074074075,
+            0.5080213903743316
+          ],
+          "referenceHeight": 370,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 370,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/91000332_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\91000332_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene1603001.xml",
+      "name": "仙界战场障碍",
+      "type": "9",
+      "resource": "assets/role/npc/scene/npcres/91000332_outdoor.swf",
+      "hostile": false,
+      "position": "1493, 2140"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1603001.xml",
+      "name": "仙界战场障碍",
+      "type": "9",
+      "resource": "assets/role/npc/scene/npcres/91000332_outdoor.swf",
+      "hostile": false,
+      "position": "1405, 1398"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1603001.xml",
+      "name": "仙界战场障碍",
+      "type": "9",
+      "resource": "assets/role/npc/scene/npcres/91000332_outdoor.swf",
+      "hostile": false,
+      "position": "1798, 1954"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1603002.xml",
+      "name": "仙界战场障碍",
+      "type": "9",
+      "resource": "assets/role/npc/scene/npcres/91000332_outdoor.swf",
+      "hostile": false,
+      "position": "1493, 2140"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1603002.xml",
+      "name": "仙界战场障碍",
+      "type": "9",
+      "resource": "assets/role/npc/scene/npcres/91000332_outdoor.swf",
+      "hostile": false,
+      "position": "1405, 1398"
+    },
+    {
+      "config": "config/role/npc/scene/npccfg_scene1603002.xml",
+      "name": "仙界战场障碍",
+      "type": "9",
+      "resource": "assets/role/npc/scene/npcres/91000332_outdoor.swf",
+      "hostile": false,
+      "position": "1798, 1954"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_3",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-91000332/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/nome-original-91000332/preview.png"
+}

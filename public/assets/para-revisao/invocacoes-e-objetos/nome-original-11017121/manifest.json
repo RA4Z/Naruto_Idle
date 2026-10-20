@@ -1,0 +1,208 @@
+{
+  "id": "11017121",
+  "slug": "nome-original-11017121",
+  "name": "灰丸",
+  "aliases": [
+    "灰丸"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "717b137e5ac87d63ee92cc1e97c91796547c951702cf6c88126c35f1b4df1065",
+  "modes": {
+    "battle": {
+      "animations": {
+        "A_1hit": {
+          "url": "/assets/para-revisao/invocacoes-e-objetos/nome-original-11017121/battle/A_1hit.png",
+          "frameWidth": 549,
+          "frameHeight": 185,
+          "frames": 18,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            11,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            16,
+            16,
+            17,
+            17,
+            17,
+            17
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.1766848816029144,
+            0.9405405405405406
+          ],
+          "referenceHeight": 101,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_dead": {
+          "url": "/assets/para-revisao/invocacoes-e-objetos/nome-original-11017121/battle/C_dead.png",
+          "frameWidth": 148,
+          "frameHeight": 107,
+          "frames": 1,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6486486486486487,
+            0.9065420560747663
+          ],
+          "referenceHeight": 103,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "C_idle": {
+          "url": "/assets/para-revisao/invocacoes-e-objetos/nome-original-11017121/battle/C_idle.png",
+          "frameWidth": 164,
+          "frameHeight": 107,
+          "frames": 12,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            9,
+            9,
+            9,
+            9,
+            10,
+            10,
+            10,
+            11,
+            11,
+            11,
+            11
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6646341463414634,
+            0.9065420560747663
+          ],
+          "referenceHeight": 99,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 99,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/11017121.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha9.15Build300\\assets\\battle\\role\\left\\11017121.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "灰丸",
+      "type": null,
+      "resource": "assets/battle/role/left/11017121.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": false,
+    "companion": false,
+    "enemy": true
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "Invocação, clone ou objeto auxiliar na configuração original.",
+    "missingActions": [
+      "world/idle_0",
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "invocacoes-e-objetos",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "灰丸",
+    "title": "",
+    "type": "1",
+    "artisticId": "11017121",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/invocacoes-e-objetos/nome-original-11017121/manifest.json",
+  "preview": "/assets/para-revisao/invocacoes-e-objetos/nome-original-11017121/preview.png"
+}

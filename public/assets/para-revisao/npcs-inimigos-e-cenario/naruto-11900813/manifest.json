@@ -1,0 +1,184 @@
+{
+  "id": "11900813",
+  "slug": "naruto-11900813",
+  "name": "Naruto",
+  "aliases": [
+    "Naruto"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [
+    "2"
+  ],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "e8588ebcad067aa6e5bc479dac6ee4996368849db65d5d44920ee0fb42a9ce4f",
+  "modes": {
+    "world": {
+      "animations": {
+        "idle_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/naruto-11900813/world/idle_3.png",
+          "frameWidth": 70,
+          "frameHeight": 99,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            6,
+            6,
+            5,
+            4,
+            3,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4857142857142857,
+            0.9393939393939394
+          ],
+          "referenceHeight": 94,
+          "status": "ready",
+          "externalEffects": []
+        },
+        "idle_0": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/naruto-11900813/world/idle_3.png",
+          "frameWidth": 70,
+          "frameHeight": 99,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            6,
+            6,
+            5,
+            4,
+            3,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4857142857142857,
+            0.9393939393939394
+          ],
+          "referenceHeight": 94,
+          "status": "ready",
+          "externalEffects": [],
+          "sourceAction": "idle_3"
+        }
+      },
+      "referenceHeight": 94,
+      "status": "ready",
+      "issues": [],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "world": {
+      "path": "assets/role/npc/scene/npcres/11900813_outdoor.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\role\\npc\\scene\\npcres\\11900813_outdoor.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/role/npc/scene/npccfg_scene2486001.xml",
+      "name": "Naruto",
+      "type": "2",
+      "resource": "assets/role/npc/scene/npcres/11900813_outdoor.swf",
+      "hostile": false,
+      "position": "1826, 915"
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": true,
+    "companion": false,
+    "enemy": false
+  },
+  "status": "ready",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "NPC, inimigo ou recurso de cenário fora da coleção de ninjas regulares.",
+    "missingActions": [
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/C_idle",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "npcs-inimigos-e-cenario",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": null,
+    "title": null,
+    "type": null,
+    "artisticId": null,
+    "levelType": null,
+    "series": null,
+    "starLevel": null
+  },
+  "manifestUrl": "/assets/para-revisao/npcs-inimigos-e-cenario/naruto-11900813/manifest.json",
+  "preview": "/assets/para-revisao/npcs-inimigos-e-cenario/naruto-11900813/preview.png"
+}

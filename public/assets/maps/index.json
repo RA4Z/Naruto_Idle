@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "maps": [
+    {
+      "id": "10001",
+      "name": "Vila da Folha",
+      "kind": "lobby",
+      "background": "/assets/maps/10001/background.jpg",
+      "foreground": "/assets/maps/10001/foreground.png",
+      "thumbnail": "/assets/maps/10001/thumbnail.jpg",
+      "navigation": "/assets/maps/10001/navigation.json",
+      "width": 1000.0,
+      "height": 1000.0,
+      "spawn": {
+        "x": 385,
+        "y": 260
+      },
+      "enemies": [],
+      "description": "Área segura · encontre moradores e prepare sua jornada.",
+      "source": "assets/scene/map/10001/",
+      "navigationSha256": "7abcc3fb0b476d322068493f7dc291af3d8e3bcedd6c24a1f5ec8f80d55ca0b9",
+      "layers": {
+        "backgroundTiles": 144,
+        "foregroundTiles": 0,
+        "animatedMiddleground": "preserved in originals; not executed"
+      }
+    },
+    {
+      "id": "10005",
+      "name": "Floresta da Folha",
+      "kind": "adventure",
+      "background": "/assets/maps/10005/background.jpg",
+      "foreground": "/assets/maps/10005/foreground.png",
+      "thumbnail": "/assets/maps/10005/thumbnail.jpg",
+      "navigation": "/assets/maps/10005/navigation.json",
+      "width": 1000.0,
+      "height": 1000.0,
+      "spawn": {
+        "x": 300,
+        "y": 850
+      },
+      "enemies": [
+        "19000301",
+        "19000701",
+        "19000401"
+      ],
+      "description": "Trilhas na floresta · lobos e tigres.",
+      "source": "assets/scene/map/10005/",
+      "navigationSha256": "80a47c285f9445a7d6a9e3c03a4b96cb5f4eee14ddadb2dec1d097c256e66bc5",
+      "layers": {
+        "backgroundTiles": 144,
+        "foregroundTiles": 0,
+        "animatedMiddleground": "preserved in originals; not executed"
+      }
+    },
+    {
+      "id": "10006",
+      "name": "Campo de Treinamento da Folha",
+      "kind": "adventure",
+      "background": "/assets/maps/10006/background.jpg",
+      "foreground": "/assets/maps/10006/foreground.png",
+      "thumbnail": "/assets/maps/10006/thumbnail.jpg",
+      "navigation": "/assets/maps/10006/navigation.json",
+      "width": 666.6666666666666,
+      "height": 666.6666666666666,
+      "spawn": {
+        "x": 350,
+        "y": 200
+      },
+      "enemies": [
+        "19000901",
+        "19001001"
+      ],
+      "description": "Treinamento e encontros contra ninjas Anbu.",
+      "source": "assets/scene/map/10006/",
+      "navigationSha256": "c926df5535682e8d3f8940791eb0470df8b73c26675ae0dd797c8107306b0787",
+      "layers": {
+        "backgroundTiles": 64,
+        "foregroundTiles": 0,
+        "animatedMiddleground": "preserved in originals; not executed"
+      }
+    },
+    {
+      "id": "10008",
+      "name": "País das Ondas",
+      "kind": "adventure",
+      "background": "/assets/maps/10008/background.jpg",
+      "foreground": "/assets/maps/10008/foreground.png",
+      "thumbnail": "/assets/maps/10008/thumbnail.jpg",
+      "navigation": "/assets/maps/10008/navigation.json",
+      "width": 1083.3333333333333,
+      "height": 916.6666666666666,
+      "spawn": {
+        "x": 460,
+        "y": 600
+      },
+      "enemies": [
+        "19001701",
+        "19001801"
+      ],
+      "description": "Explore os caminhos do País das Ondas.",
+      "source": "assets/scene/map/10008/",
+      "navigationSha256": "8202449c06fe2e9b39c2a32a615ef20a870af5e620f9fb260f04cd24d11c3c02",
+      "layers": {
+        "backgroundTiles": 143,
+        "foregroundTiles": 0,
+        "animatedMiddleground": "preserved in originals; not executed"
+      }
+    }
+  ]
+}

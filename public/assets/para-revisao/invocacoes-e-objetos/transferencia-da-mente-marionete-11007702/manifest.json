@@ -1,0 +1,113 @@
+{
+  "id": "11007702",
+  "slug": "transferencia-da-mente-marionete-11007702",
+  "name": "Transferência da Mente Marionete",
+  "aliases": [
+    "Transferência da Mente Marionete"
+  ],
+  "identity": "source-config",
+  "sourceRoles": [],
+  "hostile": false,
+  "starter": null,
+  "pipelineVersion": 3,
+  "fingerprint": "77f615b40ce9b67883c2cb3828fd892cf895619c5221772bb3f30e4eac34fa3d",
+  "modes": {
+    "battle": {
+      "animations": {
+        "C_idle": {
+          "url": "/assets/para-revisao/invocacoes-e-objetos/transferencia-da-mente-marionete-11007702/battle/C_idle.png",
+          "frameWidth": 131,
+          "frameHeight": 140,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.48854961832061067,
+            0.85
+          ],
+          "referenceHeight": 136,
+          "status": "ready",
+          "externalEffects": []
+        }
+      },
+      "referenceHeight": 136,
+      "status": "partial",
+      "issues": [
+        {
+          "action": "C_dead",
+          "reason": "no-resolved-bitmaps",
+          "missing": []
+        }
+      ],
+      "externalEffects": []
+    }
+  },
+  "sources": {
+    "battle": {
+      "path": "assets/battle/role/left/11007702.swf",
+      "source": "D:\\Naruto Idle\\Naruto_Idle\\recovered-web\\cdn\\PT_NarutoAlpha6.00Build300\\assets\\battle\\role\\left\\11007702.swf"
+    }
+  },
+  "evidence": [
+    {
+      "config": "config/battle/NinjaInfos.xml",
+      "name": "Transferência da Mente Marionete",
+      "type": null,
+      "resource": "assets/battle/role/left/11007702.swf",
+      "hostile": false,
+      "position": null
+    }
+  ],
+  "issues": [],
+  "capabilities": {
+    "npc": false,
+    "companion": false,
+    "enemy": true
+  },
+  "status": "partial",
+  "variant": "",
+  "organization": {
+    "eligible": false,
+    "reason": "Invocação, clone ou objeto auxiliar na configuração original.",
+    "missingActions": [
+      "world/idle_0",
+      "world/idle_1",
+      "world/idle_2",
+      "world/idle_3",
+      "world/idle_4",
+      "world/idle_5",
+      "world/idle_6",
+      "world/idle_7",
+      "world/run_0",
+      "world/run_1",
+      "world/run_2",
+      "world/run_3",
+      "world/run_4",
+      "world/run_5",
+      "world/run_6",
+      "world/run_7",
+      "battle/A_1hit",
+      "battle/C_dead",
+      "battle/SP_skill (ao menos uma ação preservada)"
+    ],
+    "visualProblems": [],
+    "specialActions": [],
+    "criterionVersion": 1
+  },
+  "collection": "review",
+  "reviewCategory": "invocacoes-e-objetos",
+  "sourceIdentity": {
+    "config": "config/user/NinjaInfoCFG.xml",
+    "name": "Transferência da Mente Marionete",
+    "title": "",
+    "type": "1",
+    "artisticId": "11007702",
+    "levelType": "2",
+    "series": "0",
+    "starLevel": "0"
+  },
+  "manifestUrl": "/assets/para-revisao/invocacoes-e-objetos/transferencia-da-mente-marionete-11007702/manifest.json",
+  "preview": "/assets/para-revisao/invocacoes-e-objetos/transferencia-da-mente-marionete-11007702/preview.png"
+}
