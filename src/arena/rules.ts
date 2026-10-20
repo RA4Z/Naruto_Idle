@@ -12,7 +12,7 @@ export const ARENA_FIGHTERS = {
   },
   sasuke: {
     name: "Sasuke",
-    folder: "sasuke-kid",
+    folder: "sasuke-11000211",
     hp: 170,
     attack: 27,
     skill: "Chidori",

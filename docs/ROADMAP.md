@@ -22,24 +22,34 @@ Pedido do usuário em 20/10/2026: uma tarefa pesada por vez. Não sobrepor build
 - [x] Movimento derivado da velocidade individual (Naruto inicial: 96 unidades/s); zoom 3.1.
 - [x] Folha 10001, Floresta 10005, Treinamento 10006 e País das Ondas 10008, com viagens e retorno.
 - [x] Seis inimigos por mapa de exploração, patrulha e respawn individual de 12 s.
-- [x] Grupo opcional de até três convidados, vazio por padrão; sem duplicar um morador convidado.
+- [x] Troca entre personagens possuídos fora de combate, preservando nível, XP, treinos e equipamento de cada um. Grupo desativado e adiado por pedido do usuário.
+- [x] Sasuke inicial azul/branco (11000211); versão preta (11000201) reservada para o futuro, com migração do progresso antigo.
 - [x] /admin com senha inicial admin validada no servidor, cookie HttpOnly/SameSite e logout.
 - [x] Telas administrativas: visão geral, personagens, mapas, efeitos, sons e todos os arquivos de runtime.
 
 ## Próximos blocos, nesta ordem
 
-1. [ ] Refinar grupo e formação em repouso, navegação, escolha de alvo e perseguição dos inimigos. Testar longa duração, múltiplas voltas e todos os iniciais.
+**Retomada no computador com os originais:** seguir integralmente [Extração e integração dos originais](EXTRACAO_E_INTEGRACAO_ORIGINAIS.md). O pedido abrange modularidade/profundidade dos mapas, todos os demais mapas e o restante de personagens, modelos, efeitos, áudio, interface e conteúdos encontrados. Extração e catálogo não bastam: implementar o suporte, integrar ao jogo, organizar e testar cada lote. Manter acompanhamento de todos os recursos e dependências, preservando grupo adiado e variantes reservadas.
+
+1. [ ] Refinar navegação, escolha de alvo e perseguição dos inimigos. Grupo, formação e combate em equipe foram adiados para o futuro por pedido do usuário.
 2. [x] Chakra individual, jutsu de 35 chakra, regeneração, cooldown de 1,2 s e lançamento manual; cura da Sakura preservada e derivada dos atributos.
 3. [x] Loot e mochila, quatro equipamentos, loja, slots weapon/armor/charm e bônus reais nos atributos; compras/equipamento e migração testados. Próximo: ampliar itens, consumíveis, receitas e raridades.
 4. [x] Cinco missões persistentes de exploração/combate, recompensas únicas em XP/moedas e painel no lobby. Próximo: cadeias de missões e variedade de objetivos.
-5. [x] Coleção separada do grupo, três iniciais disponíveis e recrutamento de modelos elegíveis por 60 moedas + 3 fragmentos. Progressão individual implementada: nível/XP/treinos/ficha por modelo, migração do save antigo só para o protagonista, XP do grupo ativo online/offline, banco sem XP e arena usando a build do ninja selecionado. Próximo: afinidades, combate em grupo e balanceamento dos recrutas adicionais.
+5. [x] Coleção com três iniciais e recrutamento de modelos elegíveis por 60 moedas + 3 fragmentos. É possível jogar com personagens possuídos, com nível/XP/treinos/equipamento próprios. Só o personagem controlado ganha XP online/offline; arena usa a build do ninja selecionado. Próximo: balanceamento e jutsus dos recrutas adicionais. Grupo e afinidades ficam para o futuro.
 6. [x] Arena local de turnos sincronizados: servidor autoritativo, salas por chave, dois clientes independentes, chakra, cooldown, validação de turno, reconexão e expiração. Implementada com SSE e sessões HttpOnly, atributos nivelados e efeitos/vozes originais dos três iniciais. Modo Jornada também implementado: atributos compartilhados com PvE, slots validados e snapshot da build ao entrar; amistoso com save local. Acesso pela internet depende de hospedagem/configuração posterior.
 7. [ ] Admin com itens, equipamentos, quests, salas da arena, diagnósticos e colisões sobrepostas no mapa.
 8. [ ] Expandir mapas e NPCs incrementalmente, com entrada/saída, população e inspeção visual. Não basta trocar o fundo.
 9. [ ] Nitidez: preservar pixels originais e testar densidade de tela, filtros e escala. Não afirmar detalhes ou super-resolução que não existem.
 10. [ ] Trazer do outro computador e integrar as artes originais de loading (`assets/loading/*.jpg`, `config/LoadingTips.xml`). Adiado explicitamente pelo usuário; tela funcional provisória usa a arte da vila disponível.
+11. [ ] Trazer `assets/battle/role/left/11000211.swf` do acervo original para reconstruir fielmente SP_skill1/SP_skill2 do Sasuke azul e retirar a alternativa provisória. A sombra externa foi achatada como corpo local, encobrindo os pixels corretos. Enquanto isso, as skills usam poses limpas deste mesmo modelo e o admin informa “Prévia provisória”; originais preservados.
+12. [ ] No computador com o acervo, inventariar todos os arquivos e dependências, recuperar camadas/objetos modulares e integrar os mapas restantes com navegação, profundidade, população, entradas e saídas. Seguir as etapas 1–2 e os critérios visuais do roteiro, sem reativar recortes opacos do chão.
+13. [ ] Extrair, organizar e implementar os demais personagens/modelos, ações, jutsus, efeitos, sons, interface, itens, missões e demais recursos encontrados, com uso real no jogo. Atualizar catálogos, revisões, scripts reproduzíveis e relatórios por ID; testar em lotes e registrar todas as dependências ainda pendentes. Seguir as etapas 3–6 do roteiro.
 
 ## Verificação
+
+Skills do Sasuke 11000211: cópia indevida evitada com mapeamento provisório para animações limpas do mesmo modelo; reconstrução fiel permanece pendente do SWF. `tools/sasuke-skill-check.mjs` validou ambas as prévias no admin, indicação da substituição, Chidori com efeito e vitória sem carregar os dois atlases defeituosos. `tests/sasuke-skill-assets.test.mjs` verifica mapeamentos, metadados e hashes dos originais preservados. Passaram 14 testes de servidor/assets e typecheck. Evidências em reports/sasuke-skill-browser-validation.json e reports/sasuke-skill-fallback.json.
+
+Seleção de personagem: `tools/character-progress-check.mjs` validou migração, treino individual, troca para o Sasuke 11000211, movimento, jutsu, vitórias sem XP para os inativos, recarga, volta ao Naruto com equipamento e build individual da arena. `tools/character-selection-check.mjs` validou Sasuke no Novo jogo, recrutamento seguido de controle de Hinata, ausência de NPC duplicado, bloqueio durante combate e falha de spritesheet com save preservado e retry. Relatórios em `reports/character-progress-validation.json` e `reports/character-selection-validation.json`. Passaram 59 testes de domínio, 13 de servidor/assets, typecheck e build com configLoader runner. Sem deploy nesta etapa.
 
 Minijanela muito pequena: corrigido o colapso do canvas a zero, que causava `Framebuffer status: Incomplete Attachment` e interrompia o jogo. Renderização tem mínimo seguro, cenário preserva uma faixa visível e os controles podem rolar na janela externa. Teste `tools/mini-window-resize-check.mjs` reproduziu a falha antes da correção; depois validou tamanhos alternados, altura zero/fracionária, progresso com outra aba ativa e combate após restaurar, sem duplicar canvas. Relatório: `reports/mini-window-resize-validation.json`.
 

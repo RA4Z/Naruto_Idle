@@ -1,5 +1,7 @@
 # Camadas dos mapas: investigação pendente
 
+Roteiro completo para o computador com o acervo: [Extração e integração dos originais](EXTRACAO_E_INTEGRACAO_ORIGINAIS.md), especialmente as etapas 1, 2, 5 e 6. O usuário pediu investigar modularidade em todos os mapas, integrar os mapas restantes e implementar os recursos encontrados com organização e testes; não limitar a retomada aos quatro fundos atuais.
+
 Os recortes de `background.jpg` foram desativados em `src/world/occlusion.ts`: o polígono copia chão e vegetação juntos e pode esconder o personagem atrás de terra. Testes de rota e contagem de recortes não validaram a composição visual anterior. As colisões complementares continuam separadas em `scene-geometry.ts` e `map-scenery.ts`.
 
 Os scripts históricos apontam para uma estrutura de camadas:

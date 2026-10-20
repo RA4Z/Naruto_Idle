@@ -1,9 +1,10 @@
 import { entityCatalog, filterEntities } from "./catalog";
 import type { ActorRole, EntitySummary } from "./types";
+import { FUTURE_CHARACTERS } from "../progression/character-progress";
 const roleLabels: Record<ActorRole, string> = {
   npc: "Adicionar à vila",
   enemy: "Enfrentar",
-  companion: "Convidar para grupo",
+  companion: "Jogar com este personagem",
 };
 export function installLibrary(
   onChoose: (id: string, role: ActorRole) => Promise<void>,
@@ -12,7 +13,7 @@ export function installLibrary(
   const dialog = document.createElement("dialog");
   dialog.className = "entity-library";
   dialog.innerHTML =
-    '<div class="library-heading"><div><p class="eyebrow">ARQUIVO DA VILA</p><h2>Personagens</h2></div><button class="secondary" data-close aria-label="Fechar biblioteca">Fechar</button></div><div class="library-controls"><input type="search" placeholder="Buscar nome ou ID" aria-label="Buscar personagem"><select data-collection aria-label="Filtrar coleção"><option value="playable">Personagens com animações padrão</option><option value="review">Acervo para revisão</option><option value="all">Todo o acervo</option></select><select aria-label="Filtrar função"><option value="all">Todos os recursos</option><option value="npc">NPCs na vila</option><option value="companion">Companheiros</option><option value="enemy">Adversários</option></select></div><p class="caption" data-summary></p><div class="entity-grid"></div><div class="library-pages"><button class="secondary" data-prev>Anterior</button><span></span><button class="secondary" data-next>Próxima</button></div><p role="status" data-feedback></p>';
+    '<div class="library-heading"><div><p class="eyebrow">ARQUIVO DA VILA</p><h2>Personagens</h2></div><button class="secondary" data-close aria-label="Fechar biblioteca">Fechar</button></div><div class="library-controls"><input type="search" placeholder="Buscar nome ou ID" aria-label="Buscar personagem"><select data-collection aria-label="Filtrar coleção"><option value="playable">Personagens com animações padrão</option><option value="review">Acervo para revisão</option><option value="all">Todo o acervo</option></select><select aria-label="Filtrar função"><option value="all">Todos os recursos</option><option value="npc">NPCs na vila</option><option value="companion">Jogáveis</option><option value="enemy">Adversários</option></select></div><p class="caption" data-summary></p><div class="entity-grid"></div><div class="library-pages"><button class="secondary" data-prev>Anterior</button><span></span><button class="secondary" data-next>Próxima</button></div><p role="status" data-feedback></p>';
   document.body.append(dialog);
   dialog
     .querySelector("[data-close]")!
@@ -67,8 +68,10 @@ export function installLibrary(
           const button = document.createElement("button");
           button.className = "secondary";
           button.dataset.role = role;
-          button.textContent =
-            role === "companion" && !getCollection().has(e.id)
+          button.disabled = FUTURE_CHARACTERS.has(e.id);
+          button.textContent = FUTURE_CHARACTERS.has(e.id)
+            ? "Disponível no futuro"
+            : role === "companion" && !getCollection().has(e.id)
               ? "Recrutar · 60 moedas + 3 fragmentos"
               : roleLabels[role];
           button.onclick = async () => {
@@ -87,7 +90,13 @@ export function installLibrary(
                   ? error.message
                   : "Não foi possível carregar";
             } finally {
-              buttons.forEach((b) => (b.disabled = false));
+              buttons.forEach(
+                (b) =>
+                  (b.disabled = FUTURE_CHARACTERS.has(
+                    b.closest<HTMLElement>(".entity-card")?.dataset.entity ||
+                      "",
+                  )),
+              );
             }
           };
           card.append(button);

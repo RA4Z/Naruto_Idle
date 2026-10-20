@@ -22,7 +22,7 @@ test("validated transfer preserves individual progression and backs up an existi
   source.level = 8;
   source.upgrades = 4;
   source.xp = 31;
-  source.characterProgress!["11000201"].level = 3;
+  source.characterProgress!["11000211"].level = 3;
   const previous = JSON.stringify(fresh("sakura", 1000));
   let raw = previous,
     backup = "";
@@ -46,7 +46,7 @@ test("validated transfer preserves individual progression and backs up an existi
   assert.equal(save.level, 8);
   assert.equal(save.xp, 31);
   assert.equal(save.upgrades, 4);
-  assert.equal(save.characterProgress["11000201"].level, 3);
+  assert.equal(save.characterProgress["11000211"].level, 3);
 });
 
 test("invalid transfers cannot replace or back up the existing save, and only loopback accepts transfers", () => {

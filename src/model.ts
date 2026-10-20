@@ -2,7 +2,7 @@ import { combatStats, damageAfterResistance } from "./progression/combat-stats";
 import { ITEMS, QUESTS, STARTER_COLLECTION } from "./progression/rules";
 import {
   CHARACTER_IDS, activeCharacterId, characterProgress, newCharacterProgress,
-  syncCharacterProgress, awardPartyXp, addCharacterXp,
+  syncCharacterProgress, addCharacterXp, starterCharacter,
   type CharacterProgress,
 } from "./progression/character-progress";
 export { needed } from "./progression/character-progress";
@@ -17,6 +17,7 @@ import {
 export type Save = {
   version: 1;
   character: CharacterId;
+  activeEntityId?: string;
   characterProgress?: Record<string, CharacterProgress>;
   level: number;
   xp: number;
@@ -58,6 +59,7 @@ export class LocalProgressStore implements ProgressStore {
 export const fresh = (character: CharacterId, now = Date.now()): Save => ({
   version: 1,
   character,
+  activeEntityId: CHARACTER_IDS[character],
   level: 1,
   xp: 0,
   coins: 0,
@@ -91,7 +93,7 @@ export function reward(s: Save, random = Math.random) {
   const a = AREAS[s.area];
   s.kills++;
   s.coins += a.coins;
-  awardPartyXp(s, a.xp);
+  addCharacterXp(s, a.xp);
   for (const d of LOOT)
     if (random() < d.chance)
       s.inventory[d.id] =
@@ -149,7 +151,7 @@ export function restore(
   )
     return null;
   if (
-    [s.companionId, s.enemyId].some(
+    [s.companionId, s.enemyId, s.activeEntityId].some(
       (id) =>
         id !== undefined && (typeof id !== "string" || !/^\d{6,12}$/.test(id)),
     ) ||
@@ -223,6 +225,7 @@ export function restore(
   s.questClaims ??= [];
   s.visitedMaps ??= [s.location || "10001"];
   s.collection ??= [...new Set([...STARTER_COLLECTION, ...(s.partyIds || [])])];
+  if (s.activeEntityId && !s.collection.includes(s.activeEntityId)) return null;
   // Each owned model has a separate record; legacy progress belongs only to the protagonist.
   if (s.characterProgress !== undefined && (
     !s.characterProgress || typeof s.characterProgress !== "object" || Array.isArray(s.characterProgress) ||
@@ -236,10 +239,23 @@ export function restore(
         !ITEMS.some(i => i.id === item && i.slot === slot) || !s.inventory[item])
     )
   )) return null;
+  // Keep the retired outfit's record for a future release, and migrate the
+  // active legacy Sasuke without losing his earned progress.
+  if ((!s.activeEntityId && s.character === "sasuke") || s.activeEntityId === "11000201") {
+    s.characterProgress ??= {};
+    s.characterProgress["11000201"] ??= { level: s.level, xp: s.xp, upgrades: s.upgrades, equipment: { ...s.equipment } };
+    if (!s.collection.includes("11000201")) s.collection.push("11000201");
+    const p = s.characterProgress[CHARACTER_IDS.sasuke] ?? s.characterProgress["11000201"];
+    s.activeEntityId = CHARACTER_IDS.sasuke;
+    s.level = p.level; s.xp = p.xp; s.upgrades = p.upgrades; s.equipment = { ...p.equipment };
+  }
+  // All existing saves receive the replacement starter; the old outfit is hidden.
+  if (s.collection.includes("11000201") && !s.collection.includes(CHARACTER_IDS.sasuke)) s.collection.push(CHARACTER_IDS.sasuke);
   syncCharacterProgress(s);
+  if (AREAS[s.area].level > s.level) s.area = 0;
   s.location ??= "10001";
   s.partyIds ??= [];
-  s.partyIds = s.partyIds.filter(id => s.collection!.includes(id) && id !== activeCharacterId(s));
+  s.partyIds = []; delete s.companionId;
   s.autoHunt ??= false;
   if (s.location === "10001") s.autoHunt = false;
   const seconds = Math.min(
@@ -253,7 +269,7 @@ export function restore(
   const a = AREAS[s.area];
   const xp = Math.floor(wins * a.xp * OFFLINE.fraction),
     coins = Math.floor(wins * a.coins * OFFLINE.fraction);
-  awardPartyXp(s, xp);
+  addCharacterXp(s, xp);
   s.coins += coins;
   s.lastSaved = now;
   // Commit before showing the summary: reloading cannot claim this interval twice.
@@ -288,6 +304,7 @@ export class Hunt {
   }
   castSkill() {
     if (
+      !starterCharacter(this.save) ||
       this.phase !== "combatendo" ||
       this.save.paused ||
       this.enemyHp <= 0 ||
@@ -337,6 +354,7 @@ export class Hunt {
         this.playerClock -= st.interval;
         const special =
           ++this.attacks % COMBAT.specialEvery === 0 &&
+          !!starterCharacter(this.save) &&
           this.chakra >= 35 &&
           this.skillCooldown <= 0;
         if (special) {

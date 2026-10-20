@@ -490,6 +490,7 @@ function animationDialog(title: string, modes: any, manifest?: any) {
     button.type = "button"; button.dataset.index = String(index); button.setAttribute("aria-pressed", "false");
     thumb.width = 160; thumb.height = 112; thumb.setAttribute("aria-hidden", "true");
     button.append(thumb, node("span", entry.name), node("small", entry.mode));
+    if (entry.anim.fallback) button.append(node("small", "Prévia provisória"));
     button.onclick = () => void choose(index);
     button.onpointerenter = () => void preview(index);
     button.onpointerleave = () => stopPreview(index);
@@ -511,6 +512,7 @@ function animationDialog(title: string, modes: any, manifest?: any) {
       image = im;
       start = performance.now();
       info.textContent = `${entry.mode} · ${entry.name} · ${entry.anim.frames} quadros únicos · ${entry.anim.fps} FPS · ${entry.anim.status}${manifest?.organization ? " · " + manifest.organization.reason : ""}`;
+      if (entry.anim.fallback) info.textContent += " · " + entry.anim.fallback.reason;
     } catch {
       if (request === token && dialog.open) info.textContent = "Imagem indisponível.";
     }

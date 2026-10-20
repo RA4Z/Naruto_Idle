@@ -11,8 +11,8 @@ export const CHARACTERS = {
   },
   sasuke: {
     name: "Sasuke",
-    assetFolder: "sasuke-kid",
-    portrait: "/assets/characters/sasuke-kid/portrait.png",
+    assetFolder: "sasuke-11000211",
+    portrait: "/assets/characters/sasuke-11000211/preview.png",
     subtitle: "Um passo à frente do adversário",
     description: "Ataques rápidos e precisos.",
     attributes: { vitality: 112, strength: 18, ninjutsu: 22, speed: 125, chakra: 95, control: 11, resistance: 6 },

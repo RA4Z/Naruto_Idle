@@ -25,7 +25,7 @@ const effectsFor = (character: string) =>
       ? ["luoxuanwan"]
       : character === "sasuke"
         ? ["qianniao"]
-        : ["zhihuozaishen", "hphuifu"]),
+        : character === "sakura" ? ["zhihuozaishen", "hphuifu"] : []),
   ]);
 const soundKey = (id: string, index: number) => `original:${id}:${index}`;
 export function queuePresentation(
@@ -47,7 +47,7 @@ export function queuePresentation(
     });
   if (!options.audio) return;
   const ids = new Set(
-    Object.values(data.characters[character].actions)
+    Object.values(data.characters[character]?.actions || {})
       .flat()
       .map((e) => e.sound),
   );
@@ -209,7 +209,7 @@ export class PresentationPlayer {
     enemy: { x: number; y: number },
     duration: number,
   ) {
-    const events = this.data.characters[this.character].actions[action] || [];
+    const events = this.data.characters[this.character]?.actions[action] || [];
     const end = Math.max(duration, ...events.map((e) => e.time + 80));
     // Delayed impact effects must stay at the position of this strike even if
     // the target resumes moving before the callback runs.
@@ -223,7 +223,7 @@ export class PresentationPlayer {
       this.later(120, () =>
         this.effect("DaJiTeXiao", impact.x, impact.y - 5, 30, 250, flip),
       );
-    if (action !== "SP_skill1") return;
+    if (action !== "SP_skill1" || !this.data.characters[this.character]) return;
     if (this.character === "sakura") {
       this.effect("zhihuozaishen", hero.x, hero.y - 17, 50, duration);
       this.effect("hphuifu", hero.x, hero.y + 2, 26, duration);

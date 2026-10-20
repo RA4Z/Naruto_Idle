@@ -5,12 +5,13 @@ import {
   CHARACTER_IDS,
   characterProgress,
   trainCharacter,
+  FUTURE_CHARACTERS,
 } from "./character-progress";
 import { runtimeIndex } from "../assets/runtime-index";
 type Context = {
   save: Save;
   onChange: () => void;
-  invite: (id: string) => Promise<void>;
+  switchCharacter: (id: string) => Promise<void>;
   heroId: string;
 };
 export function installProgression(context: () => Context) {
@@ -33,7 +34,7 @@ export function installProgression(context: () => Context) {
   const feedback = dialog.querySelector('[role="status"]')!;
   async function render() {
     const request = ++version,
-      { save, onChange, invite, heroId } = context();
+      { save, onChange, switchCharacter, heroId } = context();
     dialog.querySelector("[data-balance]")!.textContent =
       `${save.coins} moedas · ${save.inventory.fragmento || 0} fragmentos de treino`;
     const content = dialog.querySelector("[data-content]")!;
@@ -67,7 +68,7 @@ export function installProgression(context: () => Context) {
     if (selected === "attributes") {
       const runtime = await runtimeIndex();
       const entries = (save.collection || [])
-        .filter((id) => runtime.entities[id])
+        .filter((id) => runtime.entities[id] && !FUTURE_CHARACTERS.has(id))
         .map((id) => ({ id, ...runtime.entities[id] }));
       if (request !== version || !dialog.open) return;
       if (!attributeId || !save.collection?.includes(attributeId))
@@ -78,6 +79,7 @@ export function installProgression(context: () => Context) {
       const picker = document.createElement("select");
       picker.setAttribute("aria-label", "Personagem da ficha");
       for (const ownedId of save.collection || []) {
+        if (FUTURE_CHARACTERS.has(ownedId)) continue;
         const option = document.createElement("option");
         const progress = characterProgress(save, ownedId);
         option.value = ownedId;
@@ -102,7 +104,7 @@ export function installProgression(context: () => Context) {
         ),
         element(
           "p",
-          "Cada personagem tem seu próprio nível, XP, treinos e atributos. Protagonista e grupo ativo recebem o XP das caçadas; quem fica fora do grupo não recebe. Missões dão XP ao protagonista.",
+          "Cada personagem tem seu próprio nível, XP, treinos e atributos. Somente o personagem que você está controlando recebe XP das caçadas e missões.",
         ),
         element(
           "p",
@@ -133,7 +135,7 @@ export function installProgression(context: () => Context) {
         summary.append(
           element(
             "p",
-            "No grupo de exploração este personagem acompanha o protagonista; ainda não ataca nas caçadas.",
+            "Selecione este personagem na coleção para jogar e ganhar experiência com ele.",
           ),
         );
       content.append(summary);
@@ -248,6 +250,7 @@ export function installProgression(context: () => Context) {
         .map((id) => ({ id, ...runtime.entities[id] }));
       if (request !== version || !dialog.open) return;
       for (const id of save.collection || []) {
+        if (FUTURE_CHARACTERS.has(id)) continue;
         const e = entries.find((e) => e.id === id);
         if (!e) continue;
         const card = element("article", "");
@@ -271,16 +274,11 @@ export function installProgression(context: () => Context) {
             selected = "attributes";
           }),
           action(
-            id === heroId
-              ? "Seu protagonista"
-              : save.partyIds?.includes(id)
-                ? "Já no grupo"
-                : "Convidar para grupo",
+            id === heroId ? "Personagem ativo" : "Jogar com este personagem",
             async () => {
-              await invite(id);
-              dialog.close();
+              await switchCharacter(id);
             },
-            id === heroId || !!save.partyIds?.includes(id),
+            id === heroId || !e.capabilities.companion || !e.capabilities.enemy,
           ),
         );
         content.append(card);
@@ -288,7 +286,7 @@ export function installProgression(context: () => Context) {
       content.append(
         element(
           "p",
-          "Encontre novos personagens na biblioteca. O recrutamento custa 60 moedas e 3 fragmentos; o grupo ativo é opcional.",
+          "Troque de personagem fora de combate. Encontre novos personagens na biblioteca; o recrutamento custa 60 moedas e 3 fragmentos. O sistema de grupo ficará para uma atualização futura.",
         ),
       );
     }

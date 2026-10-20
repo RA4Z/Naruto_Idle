@@ -121,7 +121,7 @@ O botão **Abrir janela flutuante** usa a [Document Picture-in-Picture API](http
 
 O painel **Atributos · mochila · missões → Atributos** permite selecionar cada personagem da coleção e consultar seu nível, XP, treinos e atributos próprios. Vitalidade define a vida; força alimenta ataques; ninjutsu alimenta jutsus e cura; chakra define a reserva; controle define a regeneração; resistência reduz dano nas caçadas. Velocidade define movimento e frequência dos golpes. Treinar custa 25 moedas e afeta apenas o personagem selecionado. Novos recrutas começam no nível 1; modelos adicionais usam uma base provisória indicada na ficha.
 
-Caçadas online e offline concedem o mesmo XP ao protagonista e aos convidados do grupo ativo; personagens fora do grupo não recebem XP. Missões concedem XP ao protagonista. Moedas e materiais pertencem ao jogador. Cada personagem tem seu registro em `characterProgress`; os campos antigos representam apenas o protagonista, preservando saves existentes sem distribuir sua progressão aos outros. O grupo continua como acompanhamento de exploração, sem atacar nas caçadas. Na arena Jornada, cada ninja usa sua própria progressão e seus equipamentos, tanto no painel do jogo quanto em `/arena`.
+Caçadas online/offline e missões concedem XP somente ao personagem ativo. Moedas e materiais pertencem ao jogador. Cada personagem tem seu registro em `characterProgress`; `activeEntityId` identifica o modelo controlado e os campos antigos projetam apenas o progresso dele. Trocar de personagem restaura sua ficha individual. O sistema de grupo está desativado para uma atualização futura. Na arena Jornada, cada ninja usa sua própria progressão e seus equipamentos, tanto no painel do jogo quanto em `/arena`.
 
 A cadência idle usa `110000 / velocidade` milissegundos, limitada a 450–1600 ms. Movimento usa `96 × velocidade / 100`, limitado a 72–180 unidades/s. Os valores base estão em `src/config/characters.ts`; crescimento e efeitos, em `src/progression/combat-stats.ts`. Convidados usam a própria velocidade com margem para acompanhar a formação e recuperação de distância ao ficar para trás. A abertura do encontro é curta (120 ms de preparação e 200 ms até o primeiro ataque), seguida da cadência individual. A arena continua por turnos; no modo Jornada a velocidade determina a iniciativa.
 
@@ -172,7 +172,7 @@ Verificações adicionais: `node tools/scene-check.mjs` percorre ida/volta com o
 
 ## Biblioteca de personagens e apresentação
 
-Durante a jornada, **Personagens da vila** abre a biblioteca de 1.466 IDs recuperados. Busque por nome/ID e escolha **Adicionar à vila**, **Acompanhar** ou **Enfrentar**, conforme as animações disponíveis. Os três iniciais continuam sendo as opções jogáveis; a biblioteca amplia NPCs, companheiros de caminhada e adversários. Escolhas são salvas. Recursos incompletos ficam identificados, sem substituir animações ausentes por outro personagem.
+Durante a jornada, a biblioteca de personagens permite buscar por nome/ID, recrutar modelos elegíveis e escolher **Jogar com este personagem** para os que você possui. A coleção também oferece a troca, fora de combate, preservando o nível, XP, treinos e equipamentos individuais. Apenas o personagem ativo recebe XP. Recursos incompletos permanecem identificados; o modelo precisa das animações de movimento e ataque para ser controlado. O sistema de grupo foi adiado para uma atualização futura.
 
 Os iniciais estão em `public/assets/characters/naruto-kid/`, `sakura-kid/` e `sasuke-kid/`, cada um com `portrait.png`, `world/`, `battle/` e `manifest.json`. A pasta `characters/` contém somente modelos identificados com o padrão de caminhada e combate dos iniciais. Cada variante tem nome, traje quando informado na fonte e ID original no nome da pasta. `characters/index.json` lista apenas essa coleção. NPCs, inimigos, objetos, retratos isolados, modelos incompletos e sem identificação ficam em `public/assets/para-revisao/`, separados por categoria. O catálogo global está em `public/assets/catalog/entities.json`; cada entrada aponta para seu `manifestUrl`, sem deduzir caminhos pelo ID. `src/entities/` separa catálogo, carregamento, renderização e interface da biblioteca. Recursos são carregados sob demanda, com paginação e limites de cache; somente os efeitos e áudios do inicial ativo são carregados.
 
@@ -186,7 +186,7 @@ São **312 modelos/variantes** na pasta `public/assets/characters/` e **1.154 re
 
 O critério da coleção principal exige um ninja regular identificado na configuração original, repouso e corrida em oito direções, `C_idle`, `A_1hit`, `C_dead` e ao menos um `SP_skillN` convertido. Partes ausentes, cor e mesclagem não recuperadas nas ações exigidas impedem a entrada. Repouso estático é válido na origem; poses vetoriais parciais não contam como animação completa. Efeitos externos permanecem descritos no manifesto e não representam partes ausentes do corpo.
 
-Essa coleção indica compatibilidade das animações; a seleção de protagonista continua com os três iniciais. A vinculação individual de todos os jutsus e vozes dos demais modelos continua pendente.
+Essa coleção indica compatibilidade das animações; modelos possuídos e elegíveis podem ser selecionados para jogar. A vinculação individual de jutsus e vozes dos recrutas continua pendente; eles usam ataques comuns e atributos provisórios, sem herdar o jutsu de um inicial. O Sasuke inicial é o modelo azul/branco 11000211. A versão preta 11000201 fica reservada para o futuro.
 
 - `public/assets/para-revisao/retratos/`: 123 retratos sem animação utilizável.
 - `public/assets/para-revisao/animacoes-incompletas/`: 134 modelos com ações ou partes visuais pendentes.
@@ -203,7 +203,7 @@ Validação específica: `python tools/check_character_layout.py`. Consulte `rep
 
 ## Lobby, mapas e administração
 
-Vila da Folha agora é um lobby seguro: clique no chão ou use WASD/setas. Caminhada 96 unidades/s e zoom 3.1. Viajar abre os quatro mapas integrados; nos três destinos de exploração existem seis inimigos com patrulha e respawn. A caçada automática é opcional. O grupo comporta três convidados e começa vazio. A biblioteca e o admin mostram personagens inteiros.
+Vila da Folha é um lobby seguro: clique no chão ou use WASD/setas. Movimento depende da velocidade individual, com zoom 3.1. Viajar abre os quatro mapas integrados; nos três destinos de exploração existem seis inimigos com patrulha e respawn. A caçada automática é opcional e é desligada ao trocar de personagem. Grupo está desativado por enquanto. A biblioteca e o admin mostram personagens inteiros.
 
 Abra `/admin` e entre com a senha inicial `admin`. A senha é validada pela API do servidor e a sessão usa cookie HttpOnly; `NARUTO_ADMIN_PASSWORD` permite alterá-la. As telas incluem personagens e suas animações, mapas, efeitos, áudio e todos os arquivos do runtime. `npm run dev` inclui a API; para servir a build, use `npm start` (porta 5180 por padrão). A simples hospedagem estática não fornece autenticação administrativa.
 
@@ -212,7 +212,7 @@ Leia `docs/ROADMAP.md` para as funcionalidades ainda pendentes e a continuidade 
 
 ## Progressão
 
-O painel Mochila · missões · loja reúne quatro equipamentos com bônus reais, compras por moedas, cinco missões de recompensa única e a coleção de personagens. Os três iniciais já pertencem à coleção; recrutar outro modelo elegível custa 60 moedas e 3 fragmentos. Recrutar e convidar para o grupo são ações separadas. O chakra base é 100; jutsus custam 35 e têm cooldown de 1,2 s. Há regeneração contínua e bônus por equipamento. O botão Jutsu permite lançar manualmente durante o combate. Os saves anteriores recebem os novos campos sem apagar o progresso.
+O painel de atributos, mochila e missões reúne equipamentos, compras, recompensas e a coleção. Os três iniciais já pertencem à coleção; recrutar outro modelo elegível custa 60 moedas e 3 fragmentos. Depois de recrutar, selecione o personagem para jogar com ele. Chakra depende dos atributos individuais; jutsus integrados custam 35 e têm cooldown de 1,2 s. Saves anteriores preservam o progresso individual, recebem o novo Sasuke e deixam de carregar acompanhantes.
 
 Arena PvP local disponível no botão da jornada ou em `/arena`. Crie uma sala, compartilhe a chave e entre por outro navegador/perfil conectado ao mesmo servidor. A rota dedicada não carrega Phaser nem a vila. Dois perfis independentes representam dois jogadores; duas abas do mesmo perfil compartilham a mesma sessão.
 
@@ -231,7 +231,7 @@ O usuário confirmou que naruto-idle.vercel.app está funcionando corretamente. 
 
 ## Revisão local de personagens
 
-Execute `npm run admin` e abra a seção **Personagens**. Clique em um modelo para examinar suas ações convertidas, arquivos locais e pendências. A revisão salva decisão, observações e funções em `public/assets/catalog/reviews.json`; recarregue o jogo para aplicar as alterações à biblioteca. Aprovar um modelo não cria animações ausentes nem adiciona um novo protagonista. Para usar a versão mais recente, mantenha o servidor Vite em execução. A senha padrão local é `admin`; defina `NARUTO_ADMIN_PASSWORD` para substituí-la.
+Execute `npm run admin` e abra a seção **Personagens**. Clique em um modelo para examinar suas ações convertidas, arquivos locais e pendências. A revisão salva decisão, observações e funções em `public/assets/catalog/reviews.json`; recarregue o jogo para aplicar as alterações à biblioteca. Aprovar um modelo não cria animações ausentes: recrutamento e seleção exigem recursos compatíveis. Para usar a versão mais recente, mantenha o servidor Vite em execução. A senha padrão local é `admin`; defina `NARUTO_ADMIN_PASSWORD` para substituí-la.
 
 ## Acesso pela rede local
 

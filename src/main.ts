@@ -7,7 +7,7 @@ import { localhostTransferUrl } from "./progression/local-transfer";
 import { installProgression } from "./progression/ui";
 import { recruit, STARTER_COLLECTION } from "./progression/rules";
 import { strikeDuration } from "./progression/combat-stats";
-import { CHARACTER_IDS, characterProgress, characterLoadout, syncCharacterProgress, trainCharacter } from "./progression/character-progress";
+import { activeCharacterId, starterCharacter, selectCharacter, FUTURE_CHARACTERS, characterLoadout, syncCharacterProgress, trainCharacter } from "./progression/character-progress";
 import Phaser from "phaser";
 import "./style.css";
 import {
@@ -18,7 +18,7 @@ import {
 import { entityCatalog } from "./entities/catalog";
 import { AutoHuntNavigator } from "./world/auto-hunt";
 import { WorldOcclusion } from "./world/occlusion";
-import { deathFadeDelay } from "./entities/visual-rules";
+import { deathFadeDelay, actorVisualScale } from "./entities/visual-rules";
 import {
   EntityActor,
   ActorAssetCache,
@@ -44,7 +44,7 @@ import {
 import { ExplorationParty } from "./world/party";
 import { Residents } from "./world/residents";
 import { EnemyField } from "./world/enemies";
-import { CHARACTERS, AREAS, type CharacterId } from "./data";
+import { AREAS, type CharacterId } from "./data";
 import {
   Hunt,
   LocalProgressStore,
@@ -83,20 +83,20 @@ let initialMap: WorldMap;
 let initialNavigation: NativeGrid;
 let worldMaps: WorldMap[];
 const specialAction = () =>
-  presentationData.characters[save.character].action || "SP_skill1";
+  presentationData.characters[starterCharacter(save) || "recruit"]?.action || "SP_skill1";
+const presentationCharacter = () => starterCharacter(save) || "recruit";
 let cast: {
   hero: EntityManifest;
   enemies: EntityManifest[];
   npcs: EntityManifest[];
   party: EntityManifest[];
 };
-const starterIds = CHARACTER_IDS;
 const miniWindow = installMiniWindow({
   button: $("mini-window") as HTMLButtonElement,
   canvas: canvasHost,
   notify: toast,
   summary: () => scene?.hunt
-    ? `${CHARACTERS[save.character].name} · Nível ${save.level} · ${save.paused ? "Pausado" : scene.isLobby ? "Vila" : scene.hunt.phase} · Vida ${Math.ceil(scene.hunt.hp)}/${stats(save).maxHp} · Chakra ${Math.floor(scene.hunt.chakra)}`
+    ? `${cast.hero.name} · Nível ${save.level} · ${save.paused ? "Pausado" : scene.isLobby ? "Vila" : scene.hunt.phase} · Vida ${Math.ceil(scene.hunt.hp)}/${stats(save).maxHp} · Chakra ${Math.floor(scene.hunt.chakra)}`
     : "Carregando…",
   onViewport: bindMiniViewport,
   openOnLocalhost: () => {
@@ -185,17 +185,16 @@ const openLibrary = installLibrary(
   async (id, role) => {
     if (!scene || !game)
       throw new Error("Inicie sua jornada para colocar personagens na vila.");
-    await scene.chooseEntity(id, role);
+    if (role === "companion" && save.collection?.includes(id)) await switchHero(id);
+    else await scene.chooseEntity(id, role);
   },
   () => new Set(save?.collection || STARTER_COLLECTION),
 );
 $("library").onclick = () => void openLibrary();
 const openProgression = installProgression(() => ({
   save,
-  heroId: starterIds[save.character],
-  invite: async (id) => {
-    await scene.chooseEntity(id, "companion");
-  },
+  heroId: activeCharacterId(save),
+  switchCharacter: switchHero,
   onChange: () => {
     scene.hunt.hp = Math.min(scene.hunt.hp, stats(save).maxHp);
     scene.hunt.chakra = Math.min(scene.hunt.chakra, stats(save).maxChakra);
@@ -204,6 +203,36 @@ const openProgression = installProgression(() => ({
   },
 }));
 $("progression").onclick = () => openProgression();
+let switchingHero = false;
+async function switchHero(id: string) {
+  if (switchingHero || !worldReady || scene.loadingActor) throw new Error("Aguarde o carregamento atual.");
+  if (id === activeCharacterId(save)) return;
+  if (scene.hunt.phase !== "explorando") throw new Error("Conclua o encontro antes de trocar de personagem.");
+  if (!save.collection?.includes(id) || FUTURE_CHARACTERS.has(id)) throw new Error("Personagem indisponível na sua coleção.");
+  switchingHero = true;
+  const previous = game!;
+  previous.loop.sleep();
+  try {
+    const manifest = await entityCatalog.get(id);
+    if (game !== previous || !worldReady) throw new Error("Jornada encerrada.");
+    if (manifest.collection !== "playable" || !manifest.capabilities.companion ||
+      !manifest.modes.world?.animations.idle_0 || !manifest.modes.world?.animations.run_0 ||
+      !manifest.modes.battle?.animations.C_idle || !manifest.modes.battle?.animations.A_1hit)
+      throw new Error("Este modelo ainda não possui as animações necessárias para jogar.");
+    commit();
+    const next = structuredClone(save);
+    selectCharacter(next, id);
+    next.area = AREAS.reduce((chosen, area, index) => index <= next.area && area.level <= next.level ? index : chosen, 0);
+    next.autoHunt = false;
+    // Close the dialog before the loading overlay is displayed in the top layer.
+    document.querySelectorAll<HTMLDialogElement>("dialog[open]").forEach(dialog => dialog.close());
+    previous.loop.wake();
+    await start(next);
+  } finally {
+    switchingHero = false;
+    if (game === previous) previous.loop.wake();
+  }
+}
 const openArena = installArena(
   () => save.character,
   (character) => characterLoadout(save, character),
@@ -296,10 +325,10 @@ async function start(s: Save) {
       return manifest.capabilities[role] ? manifest : undefined;
     };
     const [startNavigation, hero, enemyModels, residentModels, partyModels] = await Promise.all([
-      mapNavigation(startMap), entityCatalog.get(starterIds[s.character]),
+      mapNavigation(startMap), entityCatalog.get(activeCharacterId(s)),
       Promise.all((startMap.kind === "lobby" ? [] : s.enemyId ? [s.enemyId] : startMap.enemies).map(id => load(id, "enemy"))),
       Promise.all((s.npcIds || ["11001601", "11001201"]).slice(0, 3).map(id => load(id, "npc"))),
-      Promise.all((s.partyIds || []).slice(0, 3).map(id => load(id, "companion"))),
+      Promise.resolve([] as EntityManifest[]),
     ]);
     if (request !== launchVersion) return;
     const enemies = enemyModels.filter((m): m is EntityManifest => !!m);
@@ -307,7 +336,14 @@ async function start(s: Save) {
     const npcs = residentModels.filter((m): m is EntityManifest => !!m);
     const party = partyModels.filter((m): m is EntityManifest => !!m);
     if (import.meta.env.DEV) delete (window as unknown as { __idle?: unknown }).__idle;
-    save = s; initialMap = startMap; initialNavigation = startNavigation; worldMaps = maps;
+    if (game) {
+      const previous = game;
+      await new Promise<void>(resolve => { previous.events.once(Phaser.Core.Events.DESTROY, resolve); previous.destroy(true); });
+      if (request !== launchVersion) return;
+      game = undefined;
+    }
+    save = s; s.partyIds = []; delete s.companionId;
+    initialMap = startMap; initialNavigation = startNavigation; worldMaps = maps;
     s.location = startMap.id; s.collection ??= [...STARTER_COLLECTION];
     s.visitedMaps = [...new Set([...(s.visitedMaps || []), startMap.id])];
     cast = { hero, enemies, npcs, party };
@@ -316,7 +352,6 @@ async function start(s: Save) {
     }])) as AnimSet;
     $("menu").hidden = true; $("play").hidden = false;
     session.start = Date.now(); session.xp = session.coins = session.wins = 0; messages.length = 0;
-    game?.destroy(true);
     await new Promise<void>((resolve, reject) => {
       startup = { version: request, stage, failed: new Set(), resolve, reject };
       game = new Phaser.Game({
@@ -430,7 +465,7 @@ class HuntScene extends Phaser.Scene {
       "map-" + initialMap.id + "-foreground",
       initialMap.foreground,
     );
-    queuePresentation(this, presentationData, save.character, { effects: initialMap.kind !== "lobby", audio: false });
+    queuePresentation(this, presentationData, presentationCharacter(), { effects: initialMap.kind !== "lobby", audio: false });
     for (const manifest of cast.enemies) {
       queueActor(this, manifest, "enemy");
       if (manifest.capabilities.companion)
@@ -479,7 +514,7 @@ class HuntScene extends Phaser.Scene {
     this.presentation = new PresentationPlayer(
       this,
       presentationData,
-      save.character,
+      presentationCharacter(),
     );
     this.presentation.settings(
       save.sound,
@@ -582,7 +617,7 @@ class HuntScene extends Phaser.Scene {
     this.renderParty();
     this.bars = this.add.graphics().setDepth(2000);
     this.hunt.onEvent = (event, value) => this.effect(event, value);
-    $("hero-name").textContent = CHARACTERS[save.character].name;
+    $("hero-name").textContent = cast.hero.name;
     ($("sound") as HTMLInputElement).checked = save.sound;
     ($("music") as HTMLInputElement).checked = save.music || false;
     ($("volume") as HTMLInputElement).value = String(
@@ -600,6 +635,7 @@ class HuntScene extends Phaser.Scene {
     if (import.meta.env.DEV)
       (window as unknown as { __idle: unknown }).__idle = {
         snapshot: () => ({
+          activeEntityId: activeCharacterId(save),
           phase: this.isLobby ? "lobby" : this.hunt.phase,
           mapId: this.map.id,
           mode: this.map.kind,
@@ -726,7 +762,7 @@ class HuntScene extends Phaser.Scene {
   async ensureCombat() {
     if (this.combatReady) return;
     await loadSceneAssets(this, () => {
-      queuePresentation(this, presentationData, save.character, { effects: true, audio: false });
+      queuePresentation(this, presentationData, presentationCharacter(), { effects: true, audio: false });
       for (const action of ["C_idle", "A_1hit", specialAction(), "C_dead"]) {
         const anim = definitions[save.character + "-battle"]?.animations[action];
         if (anim && !this.textures.exists("battle-" + action))
@@ -741,7 +777,7 @@ class HuntScene extends Phaser.Scene {
     let queued = false;
     return this.audioLoad ??= loadSceneAssets(this, () => {
       queued = true;
-      queuePresentation(this, presentationData, save.character, { effects: false, audio: true });
+      queuePresentation(this, presentationData, presentationCharacter(), { effects: false, audio: true });
     }, () => !save.sound || this.audioReady).then(() => {
       if (!this.sys.isActive()) return;
       if (queued) this.audioReady = true;
@@ -760,11 +796,7 @@ class HuntScene extends Phaser.Scene {
       const definition = cast.hero.modes[mode];
       const animation = definition?.animations[action];
       if (animation) this.hero.setOrigin(...animation.origin);
-      this.hero.setScale(
-        45 /
-          Math.max(1, definition?.referenceHeight || 120) /
-          (animation?.rigScale ?? 1),
-      );
+      this.hero.setScale(actorVisualScale(cast.hero.id, mode, definition?.referenceHeight || 120, animation?.rigScale ?? 1));
       this.hero.setFlipX(
         key.startsWith("battle-") && this.enemy.x < this.hero.x,
       );
@@ -919,13 +951,15 @@ class HuntScene extends Phaser.Scene {
         this.party.members.some((m) => m.manifest.id === id))
     )
       throw new Error("Este personagem já está no grupo.");
+    if (role === "companion" && FUTURE_CHARACTERS.has(id)) throw new Error("Esta versão do Sasuke será disponibilizada no futuro.");
+    if (role === "companion" && save.collection?.includes(id)) throw new Error("Use a troca de personagem na sua coleção.");
     if (role === "companion" && !save.collection?.includes(id)) {
       const manifest = await entityCatalog.get(id);
       if (manifest.collection !== "playable" || !manifest.capabilities.companion)
         throw new Error("Este modelo ainda está em revisão.");
       recruit(save, id);
       journal(
-        manifest.name + " entrou na sua coleção. Convide-o quando quiser.",
+        manifest.name + " entrou na sua coleção. Você já pode selecioná-lo para jogar.",
       );
       commit();
       return;
@@ -1074,7 +1108,7 @@ class HuntScene extends Phaser.Scene {
     );
     if (this.isLobby)
       this.npcs = cast.npcs
-        .filter((m) => !partyIds.has(m.id))
+        .filter((m) => m.id !== cast.hero.id && !partyIds.has(m.id))
         .map((manifest, i) => {
           const point = this.navigation.nearest(
             [
@@ -1285,30 +1319,7 @@ class HuntScene extends Phaser.Scene {
   renderParty() {
     const root = $("party");
     root.replaceChildren();
-    const heading = document.createElement("p");
-    heading.className = "caption";
-    heading.textContent = `Grupo de exploração · ${this.party.members.length}/3`;
-    root.append(heading);
-    if (!this.party.members.length) {
-      const text = document.createElement("p");
-      text.className = "caption";
-      text.textContent =
-        "Nenhum convidado. Convide personagens na biblioteca se quiser explorar em grupo.";
-      root.append(text);
-    }
-    for (const member of this.party.members) {
-      const row = document.createElement("div");
-      row.className = "party-member";
-      const name = document.createElement("span");
-      name.textContent = `${member.manifest.name} · Nível ${characterProgress(save, member.manifest.id).level}`;
-      const button = document.createElement("button");
-      button.className = "text-button";
-      button.textContent = "Remover";
-      button.dataset.dismiss = member.manifest.id;
-      button.onclick = () => this.removeParty(member.manifest.id);
-      row.append(name, button);
-      root.append(row);
-    }
+    root.hidden = true;
   }
   update(_time: number, delta: number) {
     if (!this.hero) return;
@@ -1467,7 +1478,7 @@ class HuntScene extends Phaser.Scene {
     $("auto-hunt").textContent = save.autoHunt
       ? "Parar caçada automática"
       : "Iniciar caçada automática";
-    $("cast-skill").hidden = this.isLobby;
+    $("cast-skill").hidden = this.isLobby || !starterCharacter(save);
     ($("cast-skill") as HTMLButtonElement).disabled =
       save.paused ||
       this.hunt.phase !== "combatendo" ||
