@@ -260,3 +260,37 @@ body {
 .admin-review label { display: inline-block; margin: 0 16px 8px 0; }
 .admin-assets { max-height: 240px; overflow: auto; overflow-wrap: anywhere; }
 .admin-assets a { color: #b8d9a6; }
+
+.animation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+  gap: 10px;
+  max-height: 360px;
+  overflow-y: auto;
+  padding: 4px;
+  margin-bottom: 16px;
+}
+.animation-card {
+  min-width: 0;
+  padding: 6px;
+  border: 1px solid #526953;
+  background: #23392b;
+  color: #eeeadd;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+}
+.animation-card:hover, .animation-card:focus-visible, .animation-card.selected {
+  border-color: #f0b66b;
+  outline: 2px solid #f0b66b;
+  outline-offset: -2px;
+}
+.admin-detail .animation-card canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 6px;
+  border-radius: 4px;
+}
+.animation-card span, .animation-card small { display: block; overflow-wrap: anywhere; }
+.animation-card small { color: #b9c9b3; margin-top: 3px; }
