@@ -123,7 +123,9 @@ function bindMiniViewport(host: Window) {
     const rect = canvasHost.getBoundingClientRect();
     if (rect.width && rect.height) {
       current.scale.getParentBounds();
-      current.scale.resize(rect.width, rect.height);
+      // A collapsed/fractional viewport must never create a zero-sized WebGL target.
+      // Keep this in sync with the Scale Manager limits (including automatic resizes).
+      current.scale.resize(Math.max(160, Math.floor(rect.width)), Math.max(90, Math.floor(rect.height)));
       scene.cameras.main.centerOn(scene.hero.x, scene.hero.y);
       updateBounds();
     }
@@ -320,7 +322,7 @@ async function start(s: Save) {
       game = new Phaser.Game({
         type: Phaser.AUTO, parent: "canvas", backgroundColor: "#15241e",
         width: $("canvas").clientWidth, height: $("canvas").clientHeight,
-        scale: { mode: Phaser.Scale.RESIZE, autoCenter: Phaser.Scale.CENTER_BOTH },
+        scale: { mode: Phaser.Scale.RESIZE, autoCenter: Phaser.Scale.CENTER_BOTH, min: { width: 160, height: 90 } },
         scene: HuntScene, autoFocus: false,
         loader: { maxParallelDownloads: 4, timeout: 20000 },
         render: { antialias: true, roundPixels: false }, audio: { noAudio: false },
