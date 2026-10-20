@@ -1,14 +1,12 @@
 # Ponto de continuidade
 
-## Retomada solicitada — 20/10/2026 às 20h20 (Brasília)
+## Retomada de 20/10/2026 às 20h20: extração e integração primeiro
 
-Automação Evoluir Naruto Idle RPG reativada por autorização explícita. Primeira retomada nominal em 20/10/2026 às 20h20 de Brasília, seguida de intervalos de cinco horas; consultar o reset real e reajustar a mesma automação quando necessário. O agendador pode variar alguns minutos: se iniciar antes do reset com a reserva atingida, aguardar o reset natural em esperas interrompíveis de até 60 segundos e consultar novamente as cotas. Preservar 10% das cotas e executar uma tarefa pesada por vez. A nota histórica abaixo sobre pergunta de reativação pendente está superada.
+Ordem corrigida pelo usuário: antes dos portais, extrair TODO o restante disponível do original (mapas, camadas/objetos, personagens/animações, jutsus/efeitos, sons, músicas, interface e demais recursos), organizar no projeto e implementar a integração correta ao jogo. Trabalhar em lotes pequenos e retomáveis, com uma tarefa pesada por vez. Catálogo ou cópia isolada não encerram a tarefa. Manter acompanhamento por categoria/ID e dependências, separando descoberto, extraído, convertido, integrado, testado e bloqueado; não declarar tudo recuperado com pendências.
 
-Prioridade nova: conectar os mapas por portais/zonas de transição acionados ao caminhar, como as passagens do original. Recuperar do acervo as ligações, zonas e coordenadas de chegada; registrar o que não existir ou não tiver sido recuperado. Começar pelos seis mapas integrados e pela passagem do portão mostrada pelo usuário. Cada ligação deve definir ID estável, mapa de origem, zona de ativação, destino e ponto de chegada transitável. Não basta abrir o menu de viagens.
+Durante a extração, preservar também dados de ligações e coordenadas encontrados. Somente APÓS essa etapa prioritária, implementar a navegação por portais/zonas acionados ao caminhar, com conexões corretas do original e ponto específico de chegada transitável. Não criar agora conexões arbitrárias entre os seis mapas atuais. O portão mostrado é referência de passagem, sem comprovar sozinho o destino. Depois validar ida/volta, clique/WASD, ciclos, combate/carregamento, spawn, câmera, save/reload e falha/retry.
 
-Implementar carregamento progressivo, bloqueio em combate/carregamento, proteção contra ciclos imediatos e reativação somente após sair da zona. Validar ida/volta por WASD e clique, colisões, spawn, câmera, save/reload e retry em falhas sem perder progresso. Ampliar os vínculos ao integrar novos mapas. Esta solicitação está registrada para desenvolvimento na retomada; os portais ainda não foram implementados.
-
-
+Automação reativada, retomada nominal às 20h20 de Brasília e repetição prevista de cinco horas. Conferir resetsAt real e ajustar a mesma automação se necessário. Se o disparo ocorrer minutos antes, aguardar o reset em esperas interrompíveis de até 60 segundos e consultar novamente as cotas. Preservar reserva de 10% das janelas de cinco horas e semanal; não resgatar créditos. A nota histórica abaixo sobre reativação pendente está superada.
 
 ## Loading original — lote 6/14/22
 

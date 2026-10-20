@@ -43,11 +43,11 @@ Relatórios: original-inventory-summary.json, original-map-audit.json, native-fo
 
 ## Próximos blocos, nesta ordem
 
-**Primeira prioridade na retomada de 20/10 às 20h20 (Brasília):**
+**Ordem corrigida pelo usuário para a retomada de 20/10 às 20h20 (Brasília):**
 
-- [ ] Conectar os seis mapas por portais/zonas acionadas ao caminhar, recuperando ligações e coordenadas do original; cada passagem deve levar a um ponto transitável específico no destino.
-- [ ] Estruturar vínculos por ID e zonas, com carregamento/retry, proteção contra ciclos, bloqueio durante combate e validação de ida/volta, clique/WASD, câmera e save/reload. Ampliar a rede junto aos novos mapas.
-
+- [ ] Primeiro extrair, organizar e integrar TODO o restante disponível: mapas e camadas/objetos, personagens/animações, jutsus/efeitos, sons, músicas, interface e demais recursos. Implementar o uso correto no jogo, com lotes pequenos, testes e dependências registradas; cópia ou catálogo isolado não bastam.
+- [ ] Durante a recuperação, registrar as ligações originais, zonas e coordenadas de chegada encontradas, sem inventar conexões entre os mapas atuais.
+- [ ] APÓS a etapa prioritária de recuperação/integração, implementar portais/zonas de transição com os destinos corretos e chegada transitável específica; validar ida/volta, loading/retry, ciclos, clique/WASD, combate, câmera e save/reload.
 
 **Retomada no computador com os originais:** seguir integralmente [Extração e integração dos originais](EXTRACAO_E_INTEGRACAO_ORIGINAIS.md). O pedido abrange modularidade/profundidade dos mapas, todos os demais mapas e o restante de personagens, modelos, efeitos, áudio, interface e conteúdos encontrados. Extração e catálogo não bastam: implementar o suporte, integrar ao jogo, organizar e testar cada lote. Manter acompanhamento de todos os recursos e dependências, preservando grupo adiado e variantes reservadas.
 
