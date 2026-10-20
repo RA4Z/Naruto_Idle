@@ -1,0 +1,167 @@
+.arena-panel {
+  width: min(1080px, 95vw);
+  max-height: 94vh;
+  overflow: auto;
+  padding: 24px;
+  background: #162a22;
+  color: #eeeadd;
+  border: 1px solid #657b61;
+  border-radius: 16px;
+}
+.arena-panel::backdrop {
+  background: #07140dea;
+}
+.arena-panel header {
+  position: static;
+  padding: 0;
+  background: none;
+  border: 0;
+}
+.arena-panel h2 {
+  margin: 4px 0 14px;
+}
+.arena-intro,
+.arena-note,
+.arena-panel [data-rules] {
+  color: #bdceba;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.arena-note {
+  border-top: 1px solid #3c5642;
+  padding-top: 14px;
+  font-size: 12px;
+}
+.arena-panel label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.arena-panel select,
+.arena-panel input {
+  padding: 12px;
+  color: #f5edda;
+  background: #0e2019;
+  border: 1px solid #536d54;
+  border-radius: 7px;
+}
+.arena-entry-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 16px;
+  margin: 20px 0;
+}
+.arena-entry-actions label {
+  flex: 1;
+  min-width: 180px;
+}
+.arena-panel input {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+.arena-room {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.arena-room strong {
+  color: #edc679;
+  font: bold 20px monospace;
+  letter-spacing: 0.09em;
+}
+.arena-room span {
+  margin-left: auto;
+  color: #a8c7b2;
+  font-size: 12px;
+}
+.arena-fighters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.arena-fighter {
+  padding: 12px;
+  border: 1px solid #425f49;
+  border-radius: 8px;
+}
+.arena-fighter.current {
+  border-color: #e5b867;
+  background: #2b3e29;
+}
+.arena-fighter h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+.arena-fighter p {
+  font-size: 12px;
+  margin: 8px 0 0;
+}
+.arena-fighter progress {
+  width: 100%;
+  accent-color: #8ec686;
+}
+.arena-stage {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1000/330;
+  margin: 16px 0;
+  border-radius: 10px;
+  background:
+    linear-gradient(#14251f33, #14251f77),
+    url("/assets/maps/10006/background.jpg") 50% 52% / cover;
+}
+.arena-actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.arena-actions button {
+  padding: 12px 6px;
+  font-size: 13px;
+}
+.arena-log {
+  padding-left: 24px;
+  color: #d4d9c8;
+  font-size: 13px;
+  line-height: 1.9;
+  max-height: 180px;
+  overflow: auto;
+}
+.arena-panel [data-feedback] {
+  color: #edc679;
+  min-height: 20px;
+}
+@media (max-width: 650px) {
+  .arena-panel {
+    padding: 14px;
+  }
+  .arena-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+  .arena-fighters {
+    gap: 8px;
+  }
+  .arena-fighter h3 {
+    font-size: 13px;
+  }
+  .arena-room span {
+    margin-left: 0;
+  }
+}
+
+.arena-landing {
+  max-width: 750px;
+  margin: 10vh auto;
+  padding: 24px;
+}
+
+.arena-panel .arena-sound {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 12px;
+}

@@ -71,6 +71,7 @@ test("admin API requires a server session, rejects bad passwords and cross-origi
     });
     assert.equal(r.status, 401);
   } finally {
+    api.close();
     server.closeAllConnections();
     await new Promise((resolve) => server.close(resolve));
   }

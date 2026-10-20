@@ -18,7 +18,7 @@ const mime = {
   ".mp3": "audio/mpeg",
   ".svg": "image/svg+xml",
 };
-createServer(
+const server = createServer(
   (req, res) =>
     void api(req, res, async () => {
       try {
@@ -65,3 +65,5 @@ createServer(
   process.env.HOST || "127.0.0.1",
   () => console.log("Naruto Idle server ready."),
 );
+
+server.once("close", () => api.close());

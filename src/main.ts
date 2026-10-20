@@ -1,3 +1,4 @@
+import { installArena } from "./arena/ui";
 import { installProgression } from "./progression/ui";
 import { recruit, STARTER_COLLECTION } from "./progression/rules";
 import Phaser from "phaser";
@@ -104,6 +105,19 @@ const openProgression = installProgression(() => ({
   },
 }));
 $("progression").onclick = () => openProgression();
+const openArena = installArena(() => save.character);
+$("arena").onclick = () => {
+  const current = game;
+  current?.loop.sleep();
+  void openArena().finally(() => {
+    const dialog = document.querySelector<HTMLDialogElement>(".arena-panel");
+    const resume = () => {
+      if (game === current) current?.loop.wake();
+    };
+    if (dialog?.open) dialog.addEventListener("close", resume, { once: true });
+    else resume();
+  });
+};
 $("cast-skill").onclick = () => {
   if (scene.hunt.castSkill()) commit();
 };

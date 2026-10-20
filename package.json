@@ -7,10 +7,10 @@
     "dev": "vite --host 127.0.0.1",
     "typecheck": "tsc --noEmit",
     "build": "tsc --noEmit && vite build",
-    "test": "tsx --test tests/*.test.ts",
+    "test": "tsx --test --test-concurrency=1 tests/*.test.ts",
     "preview": "vite preview --host 127.0.0.1",
     "start": "node server/index.mjs",
-    "test:server": "node --test tests/server.test.mjs"
+    "test:server": "node --test --test-concurrency=1 tests/*.test.mjs"
   },
   "dependencies": {
     "phaser": "3.90.0"

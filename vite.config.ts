@@ -13,6 +13,7 @@ export default defineConfig({
         const api = createGameApi(
           fileURLToPath(new URL("./", import.meta.url)),
         );
+        server.httpServer?.once("close", () => api.close());
         server.middlewares.use((req, res, next) => void api(req, res, next));
         // Vite caches its public-file inventory. Conversion outputs are deliberately
         // unwatched; serve these bounded directories directly so new batches work

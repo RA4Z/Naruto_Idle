@@ -14,7 +14,7 @@ npm run dev -- --port 5178
 
 Abra **http://127.0.0.1:5178/**. Não abra `index.html` diretamente pelo Explorador: o carregamento dos módulos e assets precisa do servidor local.
 
-Escolha **Novo jogo**, depois Naruto, Sasuke ou Sakura. A caçada começa automaticamente. Use **Pausar caçada** para congelar exploração ou combate. O botão de treino custa 25 moedas. A patrulha avançada é liberada no nível 5 e usa o mesmo cenário nesta versão.
+Escolha **Novo jogo**, depois Naruto, Sasuke ou Sakura. A jornada começa na Vila da Folha, um lobby seguro. Viaje para iniciar uma caçada opcional. Use **Pausar caçada** para congelar exploração ou combate. O botão de treino custa 25 moedas. A patrulha avançada é liberada no nível 5 e usa o mesmo cenário nesta versão.
 
 O botão **Continuar jornada** recupera a escolha, nível, XP, moedas, inventário, área, melhorias e configurações do navegador. Um novo jogo pede confirmação antes de substituir o progresso existente.
 
@@ -31,7 +31,7 @@ O botão **Continuar jornada** recupera a escolha, nível, XP, moedas, inventár
 - Resumo da sessão, histórico de encontros e drops.
 - Salvamento local versionado e recompensa offline limitada a duas horas. O cálculo é gravado antes de mostrar o resumo, para não pagar o mesmo intervalo novamente.
 
-**O progresso é um protótipo local:** relógio e localStorage podem ser manipulados. Não há servidor autoritativo, contas, ranking, PvP, guildas ou multiplayer real. `src/server-contracts.ts` define apenas uma fronteira futura; não é um serviço implementado.
+**O progresso é um protótipo local:** relógio e localStorage podem ser manipulados. O PvE e sua progressão ainda usam localStorage. A arena agora possui um servidor autoritativo próprio para duelos; não há contas, ranking ou guildas. Equipamentos da jornada ainda não afetam o modo nivelado da arena.
 
 ## Assets reais e elementos provisórios
 
@@ -41,7 +41,7 @@ O botão **Continuar jornada** recupera a escolha, nível, XP, moedas, inventár
 | Exploração dos iniciais | 16 ações por personagem: oito paradas e oito caminhadas; direções conferidas visualmente |
 | Combate dos iniciais | SWFs próprios, com idle, ataque e ações especiais; limitações por ação no manifesto |
 | Primeiro cenário | Fundo do mapa 10001 recomposto de 144 blocos; não inclui toda a animação das camadas superiores |
-| Caminho e colisão | Rua superior auditada, com polígono e margem para os pés; não é a colisão original recuperada |
+| Caminho e colisão | Grade original MapInfo.map, projeção isométrica e caminhos sobre células transitáveis |
 | Inimigos e NPCs | Modelos originais recuperados; biblioteca com busca, funções por capacidade e pendências sinalizadas |
 | Jutsus dos iniciais | Efeitos originais de Rasengan, Chidori e Cura ligados aos IDs de configuração e adaptados ao espaço/cadência do protótipo |
 | Sons dos iniciais | 61 MP3 originais de 27 pacotes, com tempos/camadas recuperados; volume e música opcionais |
@@ -146,11 +146,11 @@ A especificação fornecida foi preservada em `docs/ESPECIFICACAO.md`. O esboço
 
 O ciclo jogável já está validado, mas a extração geral ainda não inclui todas as imagens Lossless embutidas: o inventário registrou 178.637 tags DefineBitsLossless2 e 88 DefineBitsLossless, além de vetores e linhas do tempo complexas preservados nos SWFs. Esses números são ocorrências de tags, não uma contagem de novos arquivos únicos.
 
-A automação **Concluir esboço Naruto Idle RPG** foi criada nesta conversa, ativa a cada cinco horas, para continuar as conversões viáveis e os refinamentos restantes, consultando a cota real e mantendo o ponto de continuidade. Ela deve ser desativada quando os critérios documentados forem atendidos. Não se exige fidelidade 1:1 de todo o jogo. Mantenha o computador ligado e o app aberto para as retomadas locais.
+A automação **Concluir esboço Naruto Idle RPG** foi criada nesta conversa, ativa a cada cinco horas, para continuar as conversões viáveis e os refinamentos restantes, consultando a cota real e mantendo o ponto de continuidade. Ela continua conforme docs/ROADMAP.md e não deve ser desativada apenas por concluir o esboço inicial. Não se exige fidelidade 1:1 de todo o jogo. Mantenha o computador ligado e o app aberto para as retomadas locais.
 
 ## Revisão de cenário e proporções
 
-A câmera usa zoom fixo 2,15 e acompanha a patrulha na rua superior. O personagem tem proporção menor em relação aos prédios, com escalas fixas por rig e uma referência de altura comum nos três iniciais. Corrida agachada muda a silhueta original, sem reduzir progressivamente a escala. O alvo permanece no chão da rua durante o combate. A patrulha não dá acesso ao mapa inteiro.
+A câmera usa zoom fixo 3,1 e acompanha a exploração livre pela grade nativa. O personagem tem proporção menor em relação aos prédios, com escalas fixas por rig e uma referência de altura comum nos três iniciais. Corrida agachada muda a silhueta original, sem reduzir progressivamente a escala. O alvo permanece no chão da rua durante o combate. A navegação permite percorrer o componente transitável principal dos quatro mapas integrados.
 
 O fundo preserva os 3072×3072 pixels dos blocos recuperados. O canvas ocupa o espaço real da janela, sem faixas internas ou redução CSS quando o diário cresce. Detalhes, limites e evidências em `reports/SCENE-REFINEMENT.md`, `scene-validation.json` e `viewport-validation.json`.
 
@@ -200,4 +200,8 @@ Leia `docs/ROADMAP.md` para as funcionalidades ainda pendentes e a continuidade 
 
 O painel Mochila · missões · loja reúne quatro equipamentos com bônus reais, compras por moedas, cinco missões de recompensa única e a coleção de personagens. Os três iniciais já pertencem à coleção; recrutar outro modelo elegível custa 60 moedas e 3 fragmentos. Recrutar e convidar para o grupo são ações separadas. O chakra base é 100; jutsus custam 35 e têm cooldown de 1,2 s. Há regeneração contínua e bônus por equipamento. O botão Jutsu permite lançar manualmente durante o combate. Os saves anteriores recebem os novos campos sem apagar o progresso.
 
-Arena PvP ainda em desenvolvimento; acompanhe docs/ROADMAP.md.
+Arena PvP local disponível no botão da jornada ou em `/arena`. Crie uma sala, compartilhe a chave e entre por outro navegador/perfil conectado ao mesmo servidor. A rota dedicada não carrega Phaser nem a vila. Dois perfis independentes representam dois jogadores; duas abas do mesmo perfil compartilham a mesma sessão.
+
+O servidor controla turnos de 30 segundos, vida, dano, chakra, recarga e resultado. Há ataque, jutsu, defesa e concentração de chakra, com Rasengan/Chidori/Cura e áudio original opcional. O modo atual usa atributos nivelados; o modo com equipamento/progressão é a próxima adição. Atualizar a página retoma a sessão, mas o relógio continua; ausência prolongada encerra o duelo. Salas temporárias em memória, sem ranking nem recompensas. Acesso pela internet não foi publicado; dois computadores precisam alcançar o mesmo servidor. O /admin inclui Salas da arena.
+
+Para validar com baixa carga: `npm test`, depois `npm run test:server`, depois `npm run build`, cada comando separadamente. Para navegador, um único `node tools/arena-check.mjs`, com o servidor local ativo. Não sobreponha extrações/builds/navegadores. Mais detalhes em reports/ARENA.md.

@@ -63,6 +63,7 @@ async function shell() {
     ["effects", "Efeitos"],
     ["sounds", "Sons e músicas"],
     ["progression", "Itens e missões"],
+    ["arena", "Salas da arena"],
     ["files", "Todos os arquivos"],
   ]) {
     const button = node("button", name, "secondary");
@@ -220,6 +221,39 @@ async function show(id: string, title: string) {
         grid.append(card);
       }
       content.append(grid);
+    } else if (id === "arena") {
+      const data = await api("arena");
+      if (request !== generation) return;
+      const refresh = node("button", "Atualizar salas", "secondary");
+      refresh.onclick = () => void show("arena", "Salas da arena");
+      const grid = node("div", undefined, "admin-grid");
+      for (const room of data.rooms) {
+        const card = node("article", undefined, "admin-card");
+        card.append(
+          node("h3", "Sala " + room.code),
+          node(
+            "p",
+            `${room.status} · Turno ${room.turnNumber} · ${room.players.length}/2 jogadores`,
+          ),
+        );
+        for (const p of room.players)
+          card.append(
+            node(
+              "p",
+              `${p.character} · ${p.hp}/${p.maxHp} vida · ${p.chakra} chakra · ${p.connected ? "conectado" : "ausente"}`,
+            ),
+          );
+        if (room.reason) card.append(node("p", "Encerramento: " + room.reason));
+        grid.append(card);
+      }
+      content.replaceChildren(
+        refresh,
+        node(
+          "p",
+          `${data.rooms.length}/${data.capacity} salas locais. Sessões temporárias, sem ranking ou recompensas.`,
+        ),
+        grid,
+      );
     } else if (id === "files") files();
   } catch (e) {
     if (request === generation)

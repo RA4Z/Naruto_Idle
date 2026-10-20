@@ -4,6 +4,10 @@
 
 O usuário autorizou desenvolvimento contínuo nos resets naturais, mantendo aproximadamente 10% da cota de 5 horas e da cota semanal. Consultar o uso real antes e entre etapas. Não resgatar créditos de reset. Fazer commit e push de cada etapa validada em origin (RA4Z/Naruto_Idle). Não incluir alterações alheias: a exclusão pré-existente de DESIGN_DE_PROGRESSAO.md ainda não pertence a estes commits. Não contratar nem publicar infraestrutura sem nova autorização. Multiplayer local e seu desenvolvimento estão autorizados.
 
+## Consumo da máquina
+
+Pedido do usuário em 20/10/2026: uma tarefa pesada por vez. Não sobrepor build, extração e testes de navegador. Suites serializadas e apenas um Chromium; /arena permite dois clientes sem duas cenas Phaser. Manter essa restrição em todos os resets.
+
 ## Entregas verificadas
 
 - [x] Organização de 312 modelos/variantes e 1.154 entradas de revisão com IDs estáveis.
@@ -24,7 +28,7 @@ O usuário autorizou desenvolvimento contínuo nos resets naturais, mantendo apr
 3. [x] Loot e mochila, quatro equipamentos, loja, slots weapon/armor/charm e bônus reais nos atributos; compras/equipamento e migração testados. Próximo: ampliar itens, consumíveis, receitas e raridades.
 4. [x] Cinco missões persistentes de exploração/combate, recompensas únicas em XP/moedas e painel no lobby. Próximo: cadeias de missões e variedade de objetivos.
 5. [x] Coleção separada do grupo, três iniciais disponíveis e recrutamento de modelos elegíveis por 60 moedas + 3 fragmentos. Próximo: progressão individual, afinidades e builds do grupo.
-6. [ ] Arena de turnos sincronizados: servidor autoritativo, salas por chave, dois clientes independentes, chakra, cooldown, validação de turno, reconexão e expiração. Não apresentar simulação local como multiplayer. Acesso pela internet depende de hospedagem/configuração posterior.
+6. [x] Arena local de turnos sincronizados: servidor autoritativo, salas por chave, dois clientes independentes, chakra, cooldown, validação de turno, reconexão e expiração. Implementada com SSE e sessões HttpOnly, atributos nivelados e efeitos/vozes originais dos três iniciais. Novo pedido: adicionar modo com atributos/equipamentos da jornada. Acesso pela internet depende de hospedagem/configuração posterior.
 7. [ ] Admin com itens, equipamentos, quests, salas da arena, diagnósticos e colisões sobrepostas no mapa.
 8. [ ] Expandir mapas e NPCs incrementalmente, com entrada/saída, população e inspeção visual. Não basta trocar o fundo.
 9. [ ] Nitidez: preservar pixels originais e testar densidade de tela, filtros e escala. Não afirmar detalhes ou super-resolução que não existem.
@@ -35,7 +39,7 @@ O usuário autorizou desenvolvimento contínuo nos resets naturais, mantendo apr
 
 ## Limites atuais
 
-145 conjuntos de mapas originais identificados, quatro integrados. Os SWFs animados da camada intermediária permanecem preservados na origem, sem execução. Personagens adicionais ainda não têm todos os jutsus e vozes associados. A seleção inicial tem três protagonistas. A arena permanece pendente e é a próxima entrega estrutural. A cota deve preservar a reserva solicitada; não reduzir testes para iniciar um bloco que não caiba nesta janela.
+145 conjuntos de mapas originais identificados, quatro integrados. Os SWFs animados da camada intermediária permanecem preservados na origem, sem execução. Personagens adicionais ainda não têm todos os jutsus e vozes associados. A seleção inicial tem três protagonistas. A arena local nivelada está implementada; modo com atributos/equipamentos e revisão de corpos duplicados são os próximos pedidos. A cota deve preservar a reserva solicitada; não reduzir testes para iniciar um bloco que não caiba nesta janela.
 
 ## Servidor e Git
 
@@ -44,3 +48,5 @@ Vite local em 127.0.0.1:5178 inclui a API administrativa. `npm start` serve a bu
 Os assets de runtime somam aproximadamente 2,22 GB. Versionar binários usando Git LFS; manter node_modules, dist, assets-extraidos, cache do JPEXS e arquivos de ambiente fora do Git. A extração original de 8 GB permanece local e preservada.
 
 Progressão validada também por `node tools/progression-check.mjs` e reports/progression-browser-validation.json: custos de compra/recrutamento, equipamento, chakra máximo, recompensa única, convite com formação visível e persistência após recarga. Admin ganhou a tela Itens e missões.
+
+Validação de arena: `npm run test:server` (6 testes), `node tools/arena-check.mjs` (um Chromium, dois clientes /arena independentes). Relatório reports/arena-browser-validation.json. Admin agora inclui Salas da arena.

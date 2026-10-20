@@ -104,5 +104,20 @@
     },
     "validatedAt": "2026-10-20T01:38:54.848915+00:00",
     "arenaStatus": "pending"
-  }
+  },
+  "arena": {
+    "status": "implemented-local-balanced",
+    "serverTests": 6,
+    "browserReport": "reports/arena-browser-validation.json",
+    "pending": [
+      "equipment-attributes-mode",
+      "external-shadow-duplicate-fix"
+    ],
+    "limitations": [
+      "in-memory rooms",
+      "no accounts or rankings",
+      "not externally hosted"
+    ]
+  },
+  "resourcePolicy": "One heavy task at a time; tests serialized; one browser, lightweight arena clients."
 }

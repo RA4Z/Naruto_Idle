@@ -1,3 +1,4 @@
+import { createArenaApi } from "./arena.mjs";
 import { randomBytes, createHash, timingSafeEqual } from "node:crypto";
 import { readFile, readdir, stat } from "node:fs/promises";
 import { resolve, join, relative, sep } from "node:path";
@@ -5,6 +6,7 @@ export function createGameApi(
   root,
   { password = process.env.NARUTO_ADMIN_PASSWORD || "admin" } = {},
 ) {
+  const arena = createArenaApi();
   const sessions = new Map(),
     attempts = new Map();
   let fileCache = [],
@@ -57,9 +59,9 @@ export function createGameApi(
     fileTime = Date.now();
     return output;
   }
-  return async (req, res, next) => {
+  const handler = async (req, res, next) => {
     const url = new URL(req.url, "http://localhost");
-    if (!url.pathname.startsWith("/api/admin/")) return next();
+    if (!url.pathname.startsWith("/api/admin/")) return arena(req, res, next);
     try {
       if (req.method === "POST") {
         if (
@@ -118,6 +120,8 @@ export function createGameApi(
         return json(res, 405, { error: "Método não permitido." });
       if (!authorized(req))
         return json(res, 401, { error: "Entre como administrador." });
+      if (url.pathname === "/api/admin/arena")
+        return json(res, 200, arena.diagnostics());
       if (url.pathname === "/api/admin/session")
         return json(res, 200, { authenticated: true });
       if (url.pathname === "/api/admin/characters")
@@ -197,4 +201,6 @@ export function createGameApi(
       });
     }
   };
+  handler.close = () => arena.close();
+  return handler;
 }
