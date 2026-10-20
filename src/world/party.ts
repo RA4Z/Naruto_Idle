@@ -11,7 +11,7 @@ export class ExplorationParty {
   members: EntityActor[] = [];
   private trail: Point[] = [];
   constructor(private scene: Phaser.Scene) {}
-  add(manifest: EntityManifest, hero: Point) {
+  add(manifest: EntityManifest, hero: Point, nav?: NativeNavigation) {
     if (this.members.some((m) => m.manifest.id === manifest.id))
       throw new Error("Este personagem já está no grupo.");
     if (this.members.length >= 3)
@@ -19,7 +19,8 @@ export class ExplorationParty {
         "O grupo comporta até três convidados. Remova alguém antes de convidar outro.",
       );
     const behind = this.pointBehind(28 * (this.members.length + 1));
-    const position = behind || hero;
+    const position =
+      behind || (nav ? this.formation(hero, this.members.length, nav) : hero);
     this.members.push(
       new EntityActor(
         this.scene,
@@ -27,7 +28,7 @@ export class ExplorationParty {
         position.y,
         manifest,
         "companion",
-      ).setVisible(!!behind),
+      ).setVisible(!!behind || !!nav),
     );
     if (!this.trail.length) this.trail = [{ x: hero.x, y: hero.y }];
   }
@@ -46,11 +47,39 @@ export class ExplorationParty {
     const i = this.members.findIndex((m) => m.manifest.id === id);
     if (i >= 0) this.members.splice(i, 1)[0].destroy();
   }
-  reset(hero: Point) {
-    this.trail = [{ x: hero.x, y: hero.y }];
-    this.members.forEach((m) =>
-      m.setPosition(hero.x, hero.y).setVisible(false),
+  private formation(hero: Point, index: number, nav: NativeNavigation) {
+    const desired = {
+      x: hero.x - 25 * (index + 1),
+      y: hero.y - 15 * (index + 1),
+    };
+    const candidates = nav.points.filter(
+      (p) =>
+        Math.hypot(p.x - hero.x, p.y - hero.y) > 18 &&
+        Math.hypot(p.x - hero.x, p.y - hero.y) < 35 * (index + 1) + 15 &&
+        nav.clear(hero, p),
     );
+    return (
+      candidates.sort((a, b) => {
+        const score = (p: Point) =>
+          Math.hypot(p.x - desired.x, p.y - desired.y) +
+          this.members
+            .filter((_, i) => i !== index)
+            .reduce(
+              (sum, m) =>
+                sum + (Math.hypot(m.x - p.x, m.y - p.y) < 18 ? 1000 : 0),
+              0,
+            );
+        return score(a) - score(b);
+      })[0] || hero
+    );
+  }
+  reset(hero: Point, nav?: NativeNavigation) {
+    this.trail = [{ x: hero.x, y: hero.y }];
+    this.members.forEach((m, i) => {
+      const p = nav ? this.formation(hero, i, nav) : hero;
+      m.setPosition(p.x, p.y).setVisible(!!nav);
+      m.play("world", "idle_0");
+    });
   }
   update(hero: Point, delta: number, nav: NativeNavigation, paused: boolean) {
     for (const m of this.members) m.tick(paused);

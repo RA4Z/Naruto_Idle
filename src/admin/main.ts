@@ -62,6 +62,7 @@ async function shell() {
     ["maps", "Mapas"],
     ["effects", "Efeitos"],
     ["sounds", "Sons e músicas"],
+    ["progression", "Itens e missões"],
     ["files", "Todos os arquivos"],
   ]) {
     const button = node("button", name, "secondary");
@@ -188,6 +189,36 @@ async function show(id: string, title: string) {
           card.append(button);
           grid.append(card);
         }
+      content.append(grid);
+    } else if (id === "progression") {
+      const data = await api("progression");
+      if (request !== generation) return;
+      content.replaceChildren();
+      const grid = node("div", undefined, "admin-grid");
+      for (const item of data.items) {
+        const card = node("article", undefined, "admin-card");
+        card.append(
+          node("h3", item.name),
+          node("p", item.description),
+          node(
+            "p",
+            `${item.price} moedas · ${item.slot} · Ataque +${item.attack} · Vida +${item.hp} · Chakra +${item.chakra}`,
+          ),
+        );
+        grid.append(card);
+      }
+      for (const quest of data.quests) {
+        const card = node("article", undefined, "admin-card");
+        card.append(
+          node("h3", quest.name),
+          node("p", quest.description),
+          node(
+            "p",
+            `${quest.coins} moedas + ${quest.xp} XP · recompensa única`,
+          ),
+        );
+        grid.append(card);
+      }
       content.append(grid);
     } else if (id === "files") files();
   } catch (e) {

@@ -194,3 +194,10 @@ Vila da Folha agora é um lobby seguro: clique no chão ou use WASD/setas. Camin
 Abra `/admin` e entre com a senha inicial `admin`. A senha é validada pela API do servidor e a sessão usa cookie HttpOnly; `NARUTO_ADMIN_PASSWORD` permite alterá-la. As telas incluem personagens e suas animações, mapas, efeitos, áudio e todos os arquivos do runtime. `npm run dev` inclui a API; para servir a build, use `npm start` (porta 5180 por padrão). A simples hospedagem estática não fornece autenticação administrativa.
 
 Leia `docs/ROADMAP.md` para as funcionalidades ainda pendentes e a continuidade nos resets. Validação atual em `reports/world-admin-validation.json`.
+
+
+## Progressão
+
+O painel Mochila · missões · loja reúne quatro equipamentos com bônus reais, compras por moedas, cinco missões de recompensa única e a coleção de personagens. Os três iniciais já pertencem à coleção; recrutar outro modelo elegível custa 60 moedas e 3 fragmentos. Recrutar e convidar para o grupo são ações separadas. O chakra base é 100; jutsus custam 35 e têm cooldown de 1,2 s. Há regeneração contínua e bônus por equipamento. O botão Jutsu permite lançar manualmente durante o combate. Os saves anteriores recebem os novos campos sem apagar o progresso.
+
+Arena PvP ainda em desenvolvimento; acompanhe docs/ROADMAP.md.

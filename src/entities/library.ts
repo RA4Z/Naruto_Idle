@@ -7,6 +7,7 @@ const roleLabels: Record<ActorRole, string> = {
 };
 export function installLibrary(
   onChoose: (id: string, role: ActorRole) => Promise<void>,
+  getCollection: () => ReadonlySet<string> = () => new Set(),
 ) {
   const dialog = document.createElement("dialog");
   dialog.className = "entity-library";
@@ -66,7 +67,10 @@ export function installLibrary(
           const button = document.createElement("button");
           button.className = "secondary";
           button.dataset.role = role;
-          button.textContent = roleLabels[role];
+          button.textContent =
+            role === "companion" && !getCollection().has(e.id)
+              ? "Recrutar · 60 moedas + 3 fragmentos"
+              : roleLabels[role];
           button.onclick = async () => {
             const buttons = dialog.querySelectorAll<HTMLButtonElement>(
               ".entity-card button",
@@ -75,7 +79,7 @@ export function installLibrary(
             feedback.textContent = "Carregando " + e.name + "…";
             try {
               await onChoose(e.id, role);
-              feedback.textContent = e.name + " está na vila.";
+              feedback.textContent = e.name + " atualizado.";
               dialog.close();
             } catch (error) {
               feedback.textContent =

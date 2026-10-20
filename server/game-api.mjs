@@ -171,6 +171,13 @@ export function createGameApi(
           bytes: list.reduce((n, f) => n + f.bytes, 0),
         });
       }
+      if (url.pathname === "/api/admin/progression") {
+        const { ITEMS, QUESTS } = await import("../src/progression/rules.ts");
+        return json(res, 200, {
+          items: ITEMS,
+          quests: QUESTS.map(({ progress, ...q }) => q),
+        });
+      }
       const match = url.pathname.match(
         /^\/api\/admin\/characters\/(\d{6,12})$/,
       );

@@ -1,4 +1,10 @@
 import {
+  equipmentBonuses,
+  ITEMS,
+  QUESTS,
+  STARTER_COLLECTION,
+} from "./progression/rules";
+import {
   CHARACTERS,
   AREAS,
   LOOT,
@@ -22,6 +28,10 @@ export type Save = {
   music?: boolean;
   soundVolume?: number;
   paused: boolean;
+  equipment?: { weapon?: string; armor?: string; charm?: string };
+  questClaims?: string[];
+  visitedMaps?: string[];
+  collection?: string[];
   companionId?: string;
   location?: string;
   autoHunt?: boolean;
@@ -59,6 +69,10 @@ export const fresh = (character: CharacterId, now = Date.now()): Save => ({
   location: "10001",
   autoHunt: false,
   partyIds: [],
+  equipment: {},
+  questClaims: [],
+  visitedMaps: ["10001"],
+  collection: [...STARTER_COLLECTION],
 });
 export const needed = (level: number) => Math.floor(80 * Math.pow(level, 1.35));
 export function addXp(s: Save, xp: number) {
@@ -70,9 +84,12 @@ export function addXp(s: Save, xp: number) {
 }
 export function stats(s: Save) {
   const c = CHARACTERS[s.character];
+  const gear = equipmentBonuses(s);
   return {
-    maxHp: c.hp + (s.level - 1) * 12 + s.upgrades * 9,
-    attack: c.attack + (s.level - 1) * 2 + s.upgrades * 3,
+    maxHp: c.hp + (s.level - 1) * 12 + s.upgrades * 9 + gear.hp,
+    attack: c.attack + (s.level - 1) * 2 + s.upgrades * 3 + gear.attack,
+    maxChakra: 100 + gear.chakra,
+    chakraRegen: 5 + gear.regen,
     interval: c.interval,
   };
 }
@@ -87,6 +104,10 @@ export function reward(s: Save, random = Math.random) {
         (s.inventory[d.id] || 0) +
         d.min +
         Math.floor(random() * (d.max - d.min + 1));
+  if (random() < 0.18)
+    s.inventory["chakra-shard"] = (s.inventory["chakra-shard"] || 0) + 1;
+  if (random() < 0.02 && !s.inventory["kunai-treino"])
+    s.inventory["kunai-treino"] = 1;
 }
 export function restore(
   store: ProgressStore,
@@ -175,6 +196,38 @@ export function restore(
         s.worldPosition.y > 5000))
   )
     return null;
+  if (
+    (s.equipment !== undefined &&
+      (!s.equipment ||
+        typeof s.equipment !== "object" ||
+        Array.isArray(s.equipment) ||
+        Object.entries(s.equipment).some(
+          ([slot, id]) =>
+            !ITEMS.some((item) => item.slot === slot && item.id === id) ||
+            !s.inventory[id],
+        ))) ||
+    (s.questClaims !== undefined &&
+      (!Array.isArray(s.questClaims) ||
+        s.questClaims.length > QUESTS.length ||
+        new Set(s.questClaims).size !== s.questClaims.length ||
+        s.questClaims.some((id) => !QUESTS.some((q) => q.id === id)))) ||
+    (s.visitedMaps !== undefined &&
+      (!Array.isArray(s.visitedMaps) ||
+        s.visitedMaps.length > 4 ||
+        s.visitedMaps.some((id) => !locations.includes(id)))) ||
+    (s.collection !== undefined &&
+      (!Array.isArray(s.collection) ||
+        s.collection.length > 1466 ||
+        new Set(s.collection).size !== s.collection.length ||
+        s.collection.some(
+          (id) => typeof id !== "string" || !/^\d{6,12}$/.test(id),
+        )))
+  )
+    return null;
+  s.equipment ??= {};
+  s.questClaims ??= [];
+  s.visitedMaps ??= [s.location || "10001"];
+  s.collection ??= [...new Set([...STARTER_COLLECTION, ...(s.partyIds || [])])];
   s.location ??= "10001";
   s.partyIds ??= [];
   s.autoHunt ??= false;
@@ -207,6 +260,8 @@ export type Phase =
 export class Hunt {
   phase: Phase = "explorando";
   hp: number;
+  chakra: number;
+  skillCooldown = 0;
   enemyHp = 0;
   enemyMax = 0;
   timer = 0;
@@ -219,6 +274,27 @@ export class Hunt {
     private random = Math.random,
   ) {
     this.hp = stats(save).maxHp;
+    this.chakra = stats(save).maxChakra;
+  }
+  castSkill() {
+    if (
+      this.phase !== "combatendo" ||
+      this.save.paused ||
+      this.enemyHp <= 0 ||
+      this.chakra < 35 ||
+      this.skillCooldown > 0
+    )
+      return false;
+    this.chakra -= 35;
+    this.skillCooldown = 1200;
+    this.playerClock = 0;
+    const st = stats(this.save),
+      damage = st.attack * COMBAT.specialMultiplier;
+    this.enemyHp = Math.max(0, this.enemyHp - damage);
+    if (this.save.character === "sakura")
+      this.hp = Math.min(st.maxHp, this.hp + st.maxHp * COMBAT.sakuraRecovery);
+    this.onEvent("skill", damage);
+    return true;
   }
   encounter() {
     if (this.phase !== "explorando" || this.save.paused) return false;
@@ -234,6 +310,11 @@ export class Hunt {
     if (this.save.paused) return;
     ms = Math.min(Math.max(ms, 0), 250);
     const st = stats(this.save);
+    this.chakra = Math.min(
+      st.maxChakra,
+      this.chakra + (st.chakraRegen * ms) / 1000,
+    );
+    this.skillCooldown = Math.max(0, this.skillCooldown - ms);
     this.timer += ms;
     if (this.phase === "iniciando combate" && this.timer >= 650) {
       this.phase = "combatendo";
@@ -243,7 +324,14 @@ export class Hunt {
       this.enemyClock += ms;
       if (this.playerClock >= st.interval) {
         this.playerClock -= st.interval;
-        const special = ++this.attacks % COMBAT.specialEvery === 0;
+        const special =
+          ++this.attacks % COMBAT.specialEvery === 0 &&
+          this.chakra >= 35 &&
+          this.skillCooldown <= 0;
+        if (special) {
+          this.chakra -= 35;
+          this.skillCooldown = 1200;
+        } else this.chakra = Math.min(st.maxChakra, this.chakra + 6);
         const damage = st.attack * (special ? COMBAT.specialMultiplier : 1);
         this.enemyHp = Math.max(0, this.enemyHp - damage);
         if (special && this.save.character === "sakura")

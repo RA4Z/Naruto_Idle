@@ -1,3 +1,5 @@
+import { installProgression } from "./progression/ui";
+import { recruit, STARTER_COLLECTION } from "./progression/rules";
 import Phaser from "phaser";
 import "./style.css";
 import {
@@ -79,12 +81,32 @@ const starterIds = {
   sasuke: "11000201",
   sakura: "11000301",
 };
-const openLibrary = installLibrary(async (id, role) => {
-  if (!scene || !game)
-    throw new Error("Inicie sua jornada para colocar personagens na vila.");
-  await scene.chooseEntity(id, role);
-});
+const openLibrary = installLibrary(
+  async (id, role) => {
+    if (!scene || !game)
+      throw new Error("Inicie sua jornada para colocar personagens na vila.");
+    await scene.chooseEntity(id, role);
+  },
+  () => new Set(save?.collection || STARTER_COLLECTION),
+);
 $("library").onclick = () => void openLibrary();
+const openProgression = installProgression(() => ({
+  save,
+  heroId: starterIds[save.character],
+  invite: async (id) => {
+    await scene.chooseEntity(id, "companion");
+  },
+  onChange: () => {
+    scene.hunt.hp = Math.min(scene.hunt.hp, stats(save).maxHp);
+    scene.hunt.chakra = Math.min(scene.hunt.chakra, stats(save).maxChakra);
+    commit();
+    scene.renderUI();
+  },
+}));
+$("progression").onclick = () => openProgression();
+$("cast-skill").onclick = () => {
+  if (scene.hunt.castSkill()) commit();
+};
 const openTravel = installTravel(
   () => scene?.map?.id || "10001",
   async (map) => {
@@ -181,6 +203,8 @@ async function start(s: Save) {
   initialNavigation = startNavigation;
   worldMaps = maps;
   s.location = startMap.id;
+  s.collection ??= [...STARTER_COLLECTION];
+  s.visitedMaps = [...new Set([...(s.visitedMaps || []), startMap.id])];
   cast = { hero, enemies, npcs, party };
   definitions = Object.fromEntries(
     ["world", "battle"].map((mode) => [
@@ -463,7 +487,8 @@ class HuntScene extends Phaser.Scene {
     );
     this.actorCache.seed([...cast.enemies, ...cast.npcs, ...cast.party]);
     this.party = new ExplorationParty(this);
-    for (const manifest of cast.party) this.party.add(manifest, this.hero);
+    for (const manifest of cast.party)
+      this.party.add(manifest, this.hero, this.navigation);
     this.destination = this.add
       .ellipse(0, 0, 12, 5, 0xe4ab60, 0.15)
       .setStrokeStyle(1, 0xffd38b)
@@ -514,6 +539,8 @@ class HuntScene extends Phaser.Scene {
             walkable: this.navigation.walkable(n),
           })),
           hp: this.hunt.hp,
+          chakra: this.hunt.chakra,
+          maxChakra: stats(save).maxChakra,
           hero: { x: this.hero.x, y: this.hero.y },
           enemy: { x: this.enemy.x, y: this.enemy.y },
           scene: this.scene.key,
@@ -694,7 +721,7 @@ class HuntScene extends Phaser.Scene {
       this.enemyField.disengage(this.enemy);
       const spawn = this.navigation.nearest(this.map.spawn)!;
       this.hero.setPosition(spawn.x, spawn.y);
-      this.party.reset(this.hero);
+      this.party.reset(this.hero, this.navigation);
       journal("Recuperado no ponto de entrada. Seu inventário foi preservado.");
     }
   }
@@ -729,6 +756,17 @@ class HuntScene extends Phaser.Scene {
         this.party.members.some((m) => m.manifest.id === id))
     )
       throw new Error("Este personagem já está no grupo.");
+    if (role === "companion" && !save.collection?.includes(id)) {
+      const manifest = await entityCatalog.get(id);
+      if (!manifest.organization?.eligible)
+        throw new Error("Este modelo ainda está em revisão.");
+      recruit(save, id);
+      journal(
+        manifest.name + " entrou na sua coleção. Convide-o quando quiser.",
+      );
+      commit();
+      return;
+    }
     if (role === "companion" && this.party.members.length >= 3)
       throw new Error("O grupo comporta até três convidados.");
     if (this.loadingActor) throw new Error("Aguarde o carregamento atual.");
@@ -752,7 +790,7 @@ class HuntScene extends Phaser.Scene {
         this.enemy.setVisible(true);
         this.placeEnemy();
       } else if (role === "companion") {
-        this.party.add(manifest, this.hero);
+        this.party.add(manifest, this.hero, this.navigation);
         const resident = this.npcs.find((n) => n.manifest.id === id);
         if (resident) {
           this.npcs.splice(this.npcs.indexOf(resident), 1);
@@ -994,14 +1032,18 @@ class HuntScene extends Phaser.Scene {
       this.destination.setVisible(false);
       this.hunt.phase = "explorando";
       this.hunt.timer = 0;
-      if (this.isLobby) this.hunt.hp = stats(save).maxHp;
+      if (this.isLobby) {
+        this.hunt.hp = stats(save).maxHp;
+        this.hunt.chakra = stats(save).maxChakra;
+      }
       this.enemy.use(pool[0], "enemy");
       this.enemy.angle = 0;
       this.resetResidents();
       this.placeEnemy();
-      this.party.reset(this.hero);
+      this.party.reset(this.hero, this.navigation);
       this.makePortal();
       save.location = map.id;
+      save.visitedMaps = [...new Set([...(save.visitedMaps || []), map.id])];
       save.autoHunt = false;
       delete save.enemyId;
       this.play("world-idle_0");
@@ -1132,7 +1174,7 @@ class HuntScene extends Phaser.Scene {
     delta = Math.min(delta, 100);
     if (blocked) this.hero.anims.pause();
     else this.hero.anims.resume();
-    if (!blocked && !this.isLobby) this.hunt.tick(delta);
+    if (!blocked) this.hunt.tick(delta);
     this.residents.update(delta, this.navigation, blocked);
     this.enemyField.update(
       delta,
@@ -1269,13 +1311,19 @@ class HuntScene extends Phaser.Scene {
     $("auto-hunt").textContent = save.autoHunt
       ? "Parar caçada automática"
       : "Iniciar caçada automática";
+    $("cast-skill").hidden = this.isLobby;
+    ($("cast-skill") as HTMLButtonElement).disabled =
+      save.paused ||
+      this.hunt.phase !== "combatendo" ||
+      this.hunt.chakra < 35 ||
+      this.hunt.skillCooldown > 0;
     const phase = save.paused
       ? "Pausado"
       : this.isLobby
         ? "Lobby · movimento livre"
         : this.hunt.phase;
     $("status").innerHTML =
-      `<div class="level">Nível ${save.level}<span>${phase}</span></div><div class="meter"><i style="width:${(this.hunt.hp / st.maxHp) * 100}%"></i></div><p class="caption">Vida ${Math.ceil(this.hunt.hp)} / ${st.maxHp}</p><div class="meter xp"><i style="width:${pct}%"></i></div><p class="caption">${save.xp} / ${needed(save.level)} XP</p><dl><dt>Moedas</dt><dd>${save.coins}</dd><dt>Vitórias</dt><dd>${save.kills}</dd><dt>Derrotas</dt><dd>${save.defeats}</dd><dt>Fragmentos</dt><dd>${save.inventory.fragmento || 0}</dd></dl>`;
+      `<div class="level">Nível ${save.level}<span>${phase}</span></div><div class="meter"><i style="width:${(this.hunt.hp / st.maxHp) * 100}%"></i></div><p class="caption">Vida ${Math.ceil(this.hunt.hp)} / ${st.maxHp}</p><div class="meter xp"><i style="width:${pct}%"></i></div><p class="caption">${save.xp} / ${needed(save.level)} XP</p><div class="meter chakra"><i style="width:${(this.hunt.chakra / st.maxChakra) * 100}%"></i></div><p class="caption">Chakra ${Math.floor(this.hunt.chakra)} / ${st.maxChakra}</p><dl><dt>Moedas</dt><dd>${save.coins}</dd><dt>Vitórias</dt><dd>${save.kills}</dd><dt>Derrotas</dt><dd>${save.defeats}</dd><dt>Fragmentos</dt><dd>${save.inventory.fragmento || 0}</dd></dl>`;
     $("session").textContent =
       `${Math.floor((Date.now() - session.start) / 60000)} min · ${session.wins} vitórias · ${session.xp} XP · ${session.coins} moedas`;
   }
