@@ -1,5 +1,14 @@
 # Ponto de continuidade
 
+## Retomada solicitada — 20/10/2026 às 20h20 (Brasília)
+
+Automação Evoluir Naruto Idle RPG reativada por autorização explícita. Primeira retomada nominal em 20/10/2026 às 20h20 de Brasília, seguida de intervalos de cinco horas; consultar o reset real e reajustar a mesma automação quando necessário. O agendador pode variar alguns minutos: se iniciar antes do reset com a reserva atingida, aguardar o reset natural em esperas interrompíveis de até 60 segundos e consultar novamente as cotas. Preservar 10% das cotas e executar uma tarefa pesada por vez. A nota histórica abaixo sobre pergunta de reativação pendente está superada.
+
+Prioridade nova: conectar os mapas por portais/zonas de transição acionados ao caminhar, como as passagens do original. Recuperar do acervo as ligações, zonas e coordenadas de chegada; registrar o que não existir ou não tiver sido recuperado. Começar pelos seis mapas integrados e pela passagem do portão mostrada pelo usuário. Cada ligação deve definir ID estável, mapa de origem, zona de ativação, destino e ponto de chegada transitável. Não basta abrir o menu de viagens.
+
+Implementar carregamento progressivo, bloqueio em combate/carregamento, proteção contra ciclos imediatos e reativação somente após sair da zona. Validar ida/volta por WASD e clique, colisões, spawn, câmera, save/reload e retry em falhas sem perder progresso. Ampliar os vínculos ao integrar novos mapas. Esta solicitação está registrada para desenvolvimento na retomada; os portais ainda não foram implementados.
+
+
 ## Loading original — lote 6/14/22
 
 Três artes JPEG originais (IDs 6,14,22) copiadas sem alterar bytes, dimensões ou hashes e integradas ao ciclo da tela de carregamento. Catálogo canônico: public/assets/loading/index.json; prepare-runtime.mjs gera somente a lista curta de URLs em src/config/loading-art.ts. Não carrega o álbum completo ou o catálogo de entidades no menu. Falha da arte opcional não bloqueia o jogo. A UI é nova e usa artes originais; não afirmar que o cliente Flash inteiro foi recuperado.
