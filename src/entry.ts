@@ -1,4 +1,5 @@
 import "./style.css";
+import { loadingScreen } from "./loading-screen";
 async function boot() {
   if (/^\/admin(?:\/|$)/.test(location.pathname)) await import("./admin/main");
   else if (/^\/arena(?:\/|$)/.test(location.pathname))
@@ -26,12 +27,14 @@ async function boot() {
         transferError = (error as Error).message;
       }
     }
-    await import("./main");
+    const { installMenu } = await import("./menu");
+    installMenu();
     for (const id of ["new", "continue"]) {
       const button = document.getElementById(id) as HTMLButtonElement | null;
       if (button) button.disabled = false;
     }
     document.getElementById("menu-loading")?.setAttribute("hidden", "");
+    loadingScreen.hide();
     if (transferError) {
       const status = document.getElementById("menu-loading")!;
       status.textContent = transferError;
@@ -40,9 +43,20 @@ async function boot() {
     if (transferred) document.getElementById("continue")?.click();
   }
 }
-void boot().catch(() => {
-  const status = document.getElementById("menu-loading");
-  if (status)
-    status.textContent =
-      "Não foi possível carregar o jogo. Recarregue a página.";
-});
+const initial = loadingScreen.begin("Preparando sua jornada");
+void boot()
+  .then(() => {
+    if (/^\/(admin|arena)(?:\/|$)/.test(location.pathname))
+      loadingScreen.hide();
+  })
+  .catch(() => {
+    initial.fail(
+      new Error(
+        "Não foi possível carregar o jogo. Verifique sua conexão e tente novamente.",
+      ),
+    );
+    const status = document.getElementById("menu-loading");
+    if (status)
+      status.textContent =
+        "Não foi possível carregar o jogo. Recarregue a página.";
+  });

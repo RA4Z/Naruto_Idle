@@ -10,6 +10,9 @@ Pedido do usuário em 20/10/2026: uma tarefa pesada por vez. Não sobrepor build
 
 ## Entregas verificadas
 
+- [x] Site na Vercel funcionando no navegador, confirmado pelo usuário em 20/10/2026; publicação/imagens removidas das pendências.
+- [x] Menu sem motor Phaser antecipado; lobby carrega só o essencial, com tela de progresso, retry/cancelamento e áudio sob demanda.
+
 - [x] Minijanela pelo botão no jogo: Document PiP em contexto seguro com suporte, fallback interno arrastável/redimensionável no HTTP LAN; mesma partida, controles compactos, retorno sem recarga e caçada testada com outra aba aberta.
 
 - [x] Organização de 312 modelos/variantes e 1.154 entradas de revisão com IDs estáveis.
@@ -34,8 +37,11 @@ Pedido do usuário em 20/10/2026: uma tarefa pesada por vez. Não sobrepor build
 7. [ ] Admin com itens, equipamentos, quests, salas da arena, diagnósticos e colisões sobrepostas no mapa.
 8. [ ] Expandir mapas e NPCs incrementalmente, com entrada/saída, população e inspeção visual. Não basta trocar o fundo.
 9. [ ] Nitidez: preservar pixels originais e testar densidade de tela, filtros e escala. Não afirmar detalhes ou super-resolução que não existem.
+10. [ ] Trazer do outro computador e integrar as artes originais de loading (`assets/loading/*.jpg`, `config/LoadingTips.xml`). Adiado explicitamente pelo usuário; tela funcional provisória usa a arte da vila disponível.
 
 ## Verificação
+
+Carregamento progressivo: comparação local de nova jornada com Naruto caiu de 147 requests/18.261.524 bytes de assets antes do lobby para 31 requests/4.001.631 bytes (-78%). `tools/loading-check.mjs` verifica menu sem Phaser antecipado, loading até primeira imagem válida, downloads essenciais, áudio opcional, moradores progressivos, viagem/vitória, recarga de aventura, retry e cancelamento. Passaram também 56 testes de domínio via Node nativo, 13 testes de servidor/assets, regressão dos três iniciais e lifecycle. A build de produção passou; sob rede simulada de 800 KiB/s e latência de 60 ms, Sasuke entrou em ~6,9 s e completou viagem/combate sem erros. Evidências em `reports/loading-validation.json` e `reports/loading-production-validation.json`. Não houve novo deploy da otimização; a confirmação de funcionamento da publicação anterior veio do usuário.
 
 Correção do acesso por IP no próprio servidor: 53 testes de domínio passaram via Node nativo, incluindo transferência de progresso para localhost e preservação do save antigo em caso de falha. `tools/localhost-transfer-check.mjs` percorreu HTTP por IP → aviso sem fallback silencioso → localhost na mesma porta com save completo e backup → PiP nativo → vitória com outra aba aberta. O modo interno exige escolha explícita. Relatório `reports/localhost-transfer-validation.json`; os modos da minijanela também foram revalidados separadamente.
 
@@ -65,7 +71,7 @@ PvP pela rede local: corrigida a geração de identificadores de ações em HTTP
 
 Vite local em 127.0.0.1:5178 inclui a API administrativa. `npm start` serve a build e a API em 127.0.0.1:5180, configurável por HOST/PORT. A senha inicial solicitada é admin; NARUTO_ADMIN_PASSWORD permite alterá-la no servidor. Não existe senha embutida no bundle de interface.
 
-Os assets de runtime somam aproximadamente 2,22 GB. Versionar binários usando Git LFS; manter node_modules, dist, assets-extraidos, cache do JPEXS e arquivos de ambiente fora do Git. A extração original de 8 GB permanece local e preservada.
+Os assets de runtime somam aproximadamente 2,22 GB, além das cópias WebP otimizadas. Versionar binários usando Git LFS; manter node_modules, dist, assets-extraidos, cache do JPEXS e arquivos de ambiente fora do Git. O acervo original está no outro computador; esta cópia contém os recursos de runtime e os relatórios da extração.
 
 Progressão validada também por `node tools/progression-check.mjs` e reports/progression-browser-validation.json: custos de compra/recrutamento, equipamento, chakra máximo, recompensa única, convite com formação visível e persistência após recarga. Admin ganhou a tela Itens e missões.
 
@@ -79,6 +85,6 @@ Validação de arena: `npm run test:server` (6 testes), `node tools/arena-check.
 - [x] Sombras externas não podem reutilizar bitmap local zero como corpo. Quinze ações dos iniciais e quatro ataques dos inimigos de exploração corrigidos.
 - [x] Timelines deduplicadas, origens por ação e janela de preparação sem fuga pelo cenário. Clone original do Rasengan é temporário e intencional.
 - [ ] Continuar revisão explícita em lotes pequenos, a partir de reports/external-symbol-audit.json. Restam 530 ações/403 modelos do acervo, nem todos usados no combate atual.
-- [ ] Publicação Vercel adiada pelo usuário; não solicitar login nem ativar configuração enquanto o assunto não for retomado.
+- [x] Site Vercel funcional no navegador, confirmado pelo usuário; problema de imagens/publicação encerrado na lista de pendências.
 
 Validações adicionais: 9 testes de servidor/deploy, 5 testes Python de decodificação/namespace/janelas, 22 testes de domínio e navegador combat-refinement-check.mjs, um único personagem/cena por vez. Estimativas de memória dos cinco atlas revisados por inicial caíram de 52–68 MiB para 2–5 MiB; não é uma medição da memória total do processo.

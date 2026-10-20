@@ -1,0 +1,32 @@
+import type { ActorRole, EntitySummary } from "../entities/types";
+import type { WorldMap } from "../world/maps";
+export type RuntimeEntry = {
+  name: string;
+  preview?: string;
+  variant?: string;
+  url: string;
+  capabilities: Partial<Record<ActorRole, boolean>>;
+  collection?: EntitySummary["collection"];
+};
+let pending:
+  | Promise<{ entities: Record<string, RuntimeEntry>; maps: WorldMap[] }>
+  | undefined;
+export function runtimeIndex(): Promise<{
+  entities: Record<string, RuntimeEntry>;
+  maps: WorldMap[];
+}> {
+  return (pending ??= fetch("/assets/catalog/runtime.json", {
+    signal: AbortSignal.timeout(20000),
+  })
+    .then(async (response) => {
+      if (!response.ok)
+        throw new Error(
+          "Não foi possível carregar os dados essenciais do jogo.",
+        );
+      return response.json();
+    })
+    .catch((error) => {
+      pending = undefined;
+      throw error;
+    }));
+}

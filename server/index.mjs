@@ -14,6 +14,7 @@ const mime = {
   ".css": "text/css",
   ".png": "image/png",
   ".jpg": "image/jpeg",
+  ".webp": "image/webp",
   ".json": "application/json",
   ".xml": "application/xml",
   ".mp3": "audio/mpeg",

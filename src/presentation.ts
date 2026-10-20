@@ -32,15 +32,20 @@ export function queuePresentation(
   scene: Phaser.Scene,
   data: PresentationConfig,
   character: string,
+  options = { effects: true, audio: true },
 ) {
-  for (const [name, anim] of Object.entries(data.effects).filter(([name]) =>
-    effectsFor(character).has(name),
+  for (const [name, anim] of Object.entries(data.effects).filter(
+    ([name]) =>
+      options.effects &&
+      effectsFor(character).has(name) &&
+      !scene.textures.exists(effectKey(name)),
   ))
     scene.load.spritesheet(effectKey(name), anim.url, {
       frameWidth: anim.frameWidth,
       frameHeight: anim.frameHeight,
       endFrame: anim.frames - 1,
     });
+  if (!options.audio) return;
   const ids = new Set(
     Object.values(data.characters[character].actions)
       .flat()
@@ -49,10 +54,13 @@ export function queuePresentation(
   ids.add("196");
   ids.add("197");
   for (const id of ids)
-    data.sounds[id]?.urls.forEach((url, i) =>
-      scene.load.audio(soundKey(id, i), url),
+    data.sounds[id]?.urls.forEach(
+      (url, i) =>
+        !scene.cache.audio.exists(soundKey(id, i)) &&
+        scene.load.audio(soundKey(id, i), url),
     );
-  scene.load.audio("original:village", data.music.url);
+  if (!scene.cache.audio.exists("original:village"))
+    scene.load.audio("original:village", data.music.url);
 }
 export class PresentationPlayer {
   private active = new Set<Phaser.GameObjects.Sprite>();
@@ -68,18 +76,7 @@ export class PresentationPlayer {
     private data: PresentationConfig,
     private character: string,
   ) {
-    for (const [name, anim] of Object.entries(data.effects).filter(([name]) =>
-      effectsFor(character).has(name),
-    ))
-      if (scene.textures.exists(effectKey(name)))
-        scene.anims.create({
-          key: effectKey(name),
-          frames: (
-            anim.timeline || Array.from({ length: anim.frames }, (_, i) => i)
-          ).map((frame) => ({ key: effectKey(name), frame })),
-          frameRate: anim.fps,
-          repeat: 0,
-        });
+    this.registerEffects();
     let disposed = false;
     const dispose = () => {
       if (disposed) return;
@@ -90,6 +87,26 @@ export class PresentationPlayer {
     };
     scene.events.once("shutdown", dispose);
     scene.events.once("destroy", dispose);
+  }
+  registerEffects() {
+    const scene = this.scene,
+      data = this.data,
+      character = this.character;
+    for (const [name, anim] of Object.entries(data.effects).filter(([name]) =>
+      effectsFor(character).has(name),
+    ))
+      if (
+        scene.textures.exists(effectKey(name)) &&
+        !scene.anims.exists(effectKey(name))
+      )
+        scene.anims.create({
+          key: effectKey(name),
+          frames: (
+            anim.timeline || Array.from({ length: anim.frames }, (_, i) => i)
+          ).map((frame) => ({ key: effectKey(name), frame })),
+          frameRate: anim.fps,
+          repeat: 0,
+        });
   }
   settings(enabled: boolean, music: boolean, volume: number) {
     this.enabled = enabled;

@@ -111,6 +111,12 @@ Para adicionar um personagem, identifique sua origem visual primeiro, prepare os
 
 ## Testar e gerar produção
 
+O carregamento acontece por etapas. O menu não baixa o Phaser antecipadamente; ao iniciar ou continuar, uma tela de progresso cobre a interface até o cenário e os personagens essenciais estarem prontos. Há opções de tentar novamente ou voltar ao início em caso de falha. O lobby deixa combate/efeitos para a viagem, amplia as animações dos moradores em segundo plano e só baixa áudio quando o som está habilitado. A ficha e a coleção usam um catálogo compacto; o catálogo completo fica para a biblioteca. Mapas usam cópias WebP na mesma resolução, preservando os JPEGs originais. O menu/loading usa uma versão menor da arte da vila; importar as artes originais de loading continua no a fazer, conforme pedido do usuário.
+
+Na comparação local de uma nova jornada com Naruto, os assets antes de entrar no lobby passaram de 147 solicitações/18,3 MB para 31 solicitações/4,0 MB (78% menos bytes). Isso não é uma medição da rede Vercel nem uma promessa de redução igual em segundos. Validação: `tools/loading-check.mjs`, `tools/loading-production-check.mjs`, `reports/loading-validation.json` e `reports/loading-production-validation.json`.
+
+`predev`, `preadmin` e `prebuild` atualizam automaticamente `public/assets/catalog/runtime.json`. Ao substituir as imagens originais, rode manualmente `node tools/optimize-runtime-images.mjs` com Chrome instalado (`CHROME_PATH` opcional), depois `node tools/prepare-runtime.mjs`. Os WebP gerados já acompanham o projeto via LFS; a build de hospedagem não precisa iniciar navegador nem converter imagens. Se o JPEG de um mapa mudar sem reconversão, o runtime usa o original para evitar uma cópia visual desatualizada.
+
 O botão **Abrir janela flutuante** usa a [Document Picture-in-Picture API](https://developer.chrome.com/docs/web-platform/document-picture-in-picture) em contexto seguro (localhost ou HTTPS) e navegador com suporte. A janela permanece sobre outras abas/aplicativos, com vida/chakra, pausa, caçada automática e jutsu. Fechar ou clicar em Restaurar devolve o jogo à página; mantenha a aba original aberta. Pelo IP em HTTP, o botão explica a limitação em vez de abrir silenciosamente uma imitação dentro da aba. Se o servidor roda neste computador, escolha **Abrir em localhost com meu progresso**: a partida é validada, copiada para o endereço localhost na mesma porta e retomada automaticamente. Clique novamente em **Abrir janela flutuante** (o navegador exige um clique nesse endereço). O save anterior de localhost recebe um backup em `folha-idle-before-localhost-transfer`; o save do IP continua preservado. Depois use localhost neste computador, pois endereços diferentes mantêm saves separados. O fragmento de transferência é removido do endereço antes do carregamento do jogo. A opção **Usar somente nesta aba** mantém o modo interno arrastável/redimensionável, explicitamente sem acompanhar outras abas. Mapas, coleção e outros painéis restauram a visualização normal antes de abrir. Testes: `node tools/mini-window-check.mjs` com `BASE_URL` apontando para o Vite e `LAN_TEST_URL` opcional; `node tools/localhost-transfer-check.mjs` verifica o percurso IP → localhost → PiP → outra aba. Evidências em `reports/mini-window-validation.json` e `reports/localhost-transfer-validation.json`.
 
 O painel **Atributos · mochila · missões → Atributos** permite selecionar cada personagem da coleção e consultar seu nível, XP, treinos e atributos próprios. Vitalidade define a vida; força alimenta ataques; ninjutsu alimenta jutsus e cura; chakra define a reserva; controle define a regeneração; resistência reduz dano nas caçadas. Velocidade define movimento e frequência dos golpes. Treinar custa 25 moedas e afeta apenas o personagem selecionado. Novos recrutas começam no nível 1; modelos adicionais usam uma base provisória indicada na ficha.
@@ -126,7 +132,7 @@ npm run build
 npm run preview -- --port 4173
 ```
 
-A build está em `dist`. O pacote Phaser gera um aviso de tamanho de chunk; a build conclui, e o motor está separado do código do jogo. Não houve publicação externa.
+A build está em `dist`. O pacote Phaser gera um aviso de tamanho de chunk; o motor fica separado e só é baixado ao iniciar uma jornada. O usuário confirmou o site Vercel funcionando; esta etapa foi validada localmente, sem um novo deploy pelo agente.
 
 Com o servidor de desenvolvimento na porta 5178 e Chrome instalado no caminho padrão:
 
@@ -221,7 +227,7 @@ A interface chama os iniciais de Naruto, Sasuke e Sakura; as pastas `*-kid` pres
 
 Os atlas revisados agora usam quadros únicos e janelas de preparação compatíveis com os efeitos separados; isso reduz sua memória RGBA estimada de 52–68 MiB para 2–5 MiB por inicial. Não significa que o processo inteiro usa apenas esse volume. Revisões futuras são incrementais, sem refazer o catálogo todo. Consulte reports/COMBAT-REFINEMENT.md.
 
-A publicação em naruto-idle.vercel.app foi adiada por pedido do usuário; diagnóstico em docs/VERCEL.md, sem alteração da configuração ativa de hospedagem.
+O usuário confirmou que naruto-idle.vercel.app está funcionando corretamente. O problema de imagens/publicação foi retirado das pendências; histórico e limites de backend em docs/VERCEL.md.
 
 ## Revisão local de personagens
 

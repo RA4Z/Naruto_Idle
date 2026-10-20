@@ -1,6 +1,7 @@
 import { chromium } from "@playwright/test";
 import assert from "node:assert/strict";
 import fs from "node:fs/promises";
+const base = process.env.BASE_URL || "http://127.0.0.1:5178";
 const browser = await chromium.launch({
   headless: true,
   executablePath: "C:/Program Files/Google/Chrome/Application/chrome.exe",
@@ -13,7 +14,7 @@ try {
   const errors = [];
   page.on("pageerror", (e) => errors.push(String(e)));
   page.on("dialog", (d) => d.accept());
-  await page.goto("http://127.0.0.1:5178");
+  await page.goto(base);
   await page.locator("#new").click();
   await page.locator('[data-character="naruto"]').click();
   await page.waitForFunction(() => window.__idle?.snapshot());

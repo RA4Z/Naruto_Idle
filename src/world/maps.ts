@@ -1,5 +1,6 @@
 import type { NativeGrid, Point } from "./navigation";
 import { withSceneGeometry } from "./scene-geometry";
+import { runtimeIndex } from "../assets/runtime-index";
 export type WorldMap = {
   id: string;
   name: string;
@@ -16,20 +17,17 @@ export type WorldMap = {
 };
 let catalog: Promise<WorldMap[]> | undefined;
 export function listMaps() {
-  return (catalog ??= fetch("/assets/maps/index.json")
-    .then(async (r) => {
-      if (!r.ok) throw new Error("Mapas indisponíveis");
-      return (await r.json()).maps as WorldMap[];
-    })
+  return (catalog ??= runtimeIndex()
+    .then((data) => data.maps)
     .catch((e) => {
       catalog = undefined;
       throw e;
     }));
 }
 export async function mapNavigation(map: WorldMap) {
-  const r = await fetch(map.navigation);
+  const r = await fetch(map.navigation, { signal: AbortSignal.timeout(20000) });
   if (!r.ok) throw new Error("Não foi possível carregar os caminhos do mapa.");
-  return withSceneGeometry(map.id, await r.json() as NativeGrid);
+  return withSceneGeometry(map.id, (await r.json()) as NativeGrid);
 }
 export function installTravel(
   getCurrent: () => string,
