@@ -261,3 +261,9 @@ O inventário do CDN é retomável: `python tools/inventory_originals.py --sourc
 `python tools/recover_native_foreground.py --source <raiz-dos-originais> --ids 10001,10005,10006,10008` recupera as máscaras frontais originais em lote explícito, com um worker. Usa alphaMap e retângulos dos JPEGs, preserva fontes e URLs, salva backup e deriva WebP sem perda para Canvas. No WebGL, o jogo aplica o alpha original ao fundo já carregado, sem baixar sua cópia colorida. `python tools/validate_native_foreground.py --source <raiz-dos-originais>` confere pixels e hashes. Depois rode `node tools/prepare-runtime.mjs`.
 
 Validar com Vite: `node tools/native-foreground-check.mjs`; para Canvas, defina FORCE_CANVAS=1. Ambos verificam composição de pixels em um navegador, com viagens sequenciais. A camada frontal global não resolve profundidade por objeto ou SWFs intermediários. Detalhes em docs/MAP_LAYERS.md.
+
+## Novos destinos recuperados
+
+Costa Verde (10007) e A Floresta da Morte (10009) estão no menu Viajar: navegação nativa, seis adversários móveis, combate/loot, recarga do save no destino e retorno à Folha. IDs de região do MapInfo variam; Costa Verde usa a região 2. A lista de mapas implementados em src/config/maps.ts acompanha o catálogo para validar saves.
+
+O preparador foi tornado incremental: `python tools/prepare_world.py --source <acervo> --ids 10007,10009 --limit 2`. Recusa reescrever mapas já existentes sem --refresh explícito e faz backups locais. Usa os nomes de SceneCFG.xml, mantém os demais destinos e processa um mapa por vez. As populações/regras idle são próprias. SWFs intermediários e ordenação individual de objetos seguem pendentes.

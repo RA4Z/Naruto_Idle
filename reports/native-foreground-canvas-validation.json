@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-20T21:29:40.497Z",
+  "checkedAt": "2026-10-20T21:54:56.425Z",
   "renderer": "canvas",
   "results": [
     {
@@ -75,6 +75,7 @@
           ]
         }
       ],
+      "unprobedThinLevels": [],
       "opaqueCutoutsDisabled": true,
       "singleHero": true,
       "partyEmpty": true
@@ -152,6 +153,7 @@
           ]
         }
       ],
+      "unprobedThinLevels": [],
       "opaqueCutoutsDisabled": true,
       "singleHero": true,
       "partyEmpty": true
@@ -229,6 +231,7 @@
           ]
         }
       ],
+      "unprobedThinLevels": [],
       "opaqueCutoutsDisabled": true,
       "singleHero": true,
       "partyEmpty": true
@@ -306,6 +309,122 @@
           ]
         }
       ],
+      "unprobedThinLevels": [],
+      "opaqueCutoutsDisabled": true,
+      "singleHero": true,
+      "partyEmpty": true
+    },
+    {
+      "map": "10007",
+      "renderedAlphaLevels": [
+        {
+          "source": {
+            "x": 100,
+            "y": 100,
+            "rgba": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "rendered": [
+            255,
+            0,
+            255,
+            255
+          ],
+          "expected": [
+            255,
+            0,
+            255
+          ]
+        },
+        {
+          "source": {
+            "x": 1045,
+            "y": 100,
+            "rgba": [
+              43,
+              75,
+              25,
+              85
+            ]
+          },
+          "rendered": [
+            184,
+            25,
+            178,
+            255
+          ],
+          "expected": [
+            184,
+            25,
+            178
+          ]
+        }
+      ],
+      "unprobedThinLevels": [],
+      "opaqueCutoutsDisabled": true,
+      "singleHero": true,
+      "partyEmpty": true
+    },
+    {
+      "map": "10009",
+      "renderedAlphaLevels": [
+        {
+          "source": {
+            "x": 100,
+            "y": 100,
+            "rgba": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "rendered": [
+            255,
+            0,
+            255,
+            255
+          ],
+          "expected": [
+            255,
+            0,
+            255
+          ]
+        },
+        {
+          "source": {
+            "x": 1269,
+            "y": 492,
+            "rgba": [
+              142,
+              210,
+              61,
+              170
+            ]
+          },
+          "rendered": [
+            179,
+            140,
+            125,
+            255
+          ],
+          "expected": [
+            179,
+            140,
+            125
+          ]
+        }
+      ],
+      "unprobedThinLevels": [
+        {
+          "alpha": 85,
+          "reason": "No uniform 5x5 neighbourhood for a stable linear-filter GPU probe; every alpha pixel still checked against source."
+        }
+      ],
       "opaqueCutoutsDisabled": true,
       "singleHero": true,
       "partyEmpty": true
@@ -313,5 +432,5 @@
   ],
   "errors": [],
   "missing": [],
-  "policy": "one browser, one Phaser scene, serial maps and real renderer pixel probes"
+  "policy": "one browser, one Phaser scene; ordinary linear rendering, uniform pixel probes; all source alpha pixels validated separately"
 }

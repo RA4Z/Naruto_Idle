@@ -21,9 +21,9 @@ try {
   for (const source of sources) {
     const input = await readFile("public" + source);
     const result = await page.evaluate(
-      async ({ data, cover }) => {
+      async ({ data, cover, mime }) => {
         const image = new Image();
-        image.src = "data:image/jpeg;base64," + data;
+        image.src = `data:${mime};base64,` + data;
         await image.decode();
         const scale = cover ? Math.min(1, 1536 / image.width) : 1;
         const canvas = document.createElement("canvas");
@@ -38,9 +38,9 @@ try {
           height: canvas.height,
         };
       },
-      { data: input.toString("base64"), cover: source === "/assets/world.jpg" },
+      { data: input.toString("base64"), cover: source === "/assets/world.jpg", mime: source.endsWith(".png") ? "image/png" : "image/jpeg" },
     );
-    const url = source.replace(/\.jpg$/, ".webp");
+    const url = source.replace(/\.(jpg|png)$/, ".webp");
     await writeFile("public" + url, Buffer.from(result.data, "base64"));
     images[source] = {
       url,

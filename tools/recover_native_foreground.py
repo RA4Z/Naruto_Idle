@@ -36,7 +36,7 @@ def recover(archive, ident, project):
     fg = [n.attrib for n in ET.fromstring(archive.data(fg_path)).iter('img')]
     sources = [bg_path,fg_path,alpha_path]+sorted({n['url'] for n in bg if any(n['imgX']==f['imgX'] and n['imgY']==f['imgY'] for f in fg)})
     before = [archive.record(p) for p in sources]
-    with Image.open(folder/'background.jpg') as background:
+    with Image.open(project/'public'/manifest['background'].lstrip('/')) as background:
         size = background.size
     with Image.open(io.BytesIO(archive.raw(alpha_path))) as alpha:
         image = compose_foreground(bg,fg,alpha,size,lambda name: Image.open(io.BytesIO(archive.raw(name))))

@@ -35,7 +35,8 @@
             170
           ]
         }
-      ]
+      ],
+      "unprobedThinLevels": []
     },
     {
       "id": "10005",
@@ -72,7 +73,8 @@
             170
           ]
         }
-      ]
+      ],
+      "unprobedThinLevels": []
     },
     {
       "id": "10006",
@@ -109,7 +111,8 @@
             170
           ]
         }
-      ]
+      ],
+      "unprobedThinLevels": []
     },
     {
       "id": "10008",
@@ -145,6 +148,68 @@
             56,
             170
           ]
+        }
+      ],
+      "unprobedThinLevels": []
+    },
+    {
+      "id": "10007",
+      "allAlphaPixelsMatchOriginal": true,
+      "sourceHashesPreserved": true,
+      "probes": [
+        {
+          "x": 100,
+          "y": 100,
+          "rgba": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "x": 1045,
+          "y": 100,
+          "rgba": [
+            43,
+            75,
+            25,
+            85
+          ]
+        }
+      ],
+      "unprobedThinLevels": []
+    },
+    {
+      "id": "10009",
+      "allAlphaPixelsMatchOriginal": true,
+      "sourceHashesPreserved": true,
+      "probes": [
+        {
+          "x": 100,
+          "y": 100,
+          "rgba": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "x": 1269,
+          "y": 492,
+          "rgba": [
+            142,
+            210,
+            61,
+            170
+          ]
+        }
+      ],
+      "unprobedThinLevels": [
+        {
+          "alpha": 85,
+          "reason": "No uniform 5x5 neighbourhood for a stable linear-filter GPU probe; every alpha pixel still checked against source."
         }
       ]
     }

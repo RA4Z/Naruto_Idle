@@ -14,8 +14,10 @@ Pedido do usuário em 20/10/2026: uma tarefa pesada por vez. Não sobrepor build
 - [x] Auditar os 145 conjuntos de mapas, inclusive referências virtuais do XML frontal.
 - [x] Recuperar e integrar as máscaras frontais nativas de 10001/10005/10006/10008, preservando alpha e navegação; WebGL reutiliza fundo, Canvas tem fallback.
 - [ ] Recuperar SWFs intermediários, transformações e objetos com ordenação de profundidade própria. A máscara global não encerra esse item.
-- [ ] Integrar os 141 mapas restantes por lotes com viagens, navegação, população, encontros, saves e validação visual.
+- [ ] Integrar os 139 mapas restantes por lotes com viagens, navegação, população, encontros, saves e validação visual.
 - [ ] Integrar artes originais de loading e ampliar os vínculos de jutsus/áudio/conteúdo sem reativar party.
+
+- [x] Costa Verde 10007 e A Floresta da Morte 10009 com navegação, população móvel, combate, recompensas, save/reload e retorno. Seis mapas integrados; região principal 2 da Costa validada.
 
 Relatórios: original-inventory-summary.json, original-map-audit.json, native-foreground-recovery.json e respectivas validações de pixels/navegador. Novos scripts não sobrescrevem bruto e não executam ActionScript.
 

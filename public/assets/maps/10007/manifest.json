@@ -1,0 +1,74 @@
+{
+  "id": "10007",
+  "name": "Costa Verde",
+  "kind": "adventure",
+  "background": "/assets/maps/10007/background.png",
+  "foreground": "/assets/maps/10007/foreground.png",
+  "thumbnail": "/assets/maps/10007/thumbnail.jpg",
+  "navigation": "/assets/maps/10007/navigation.json",
+  "width": 1171.875,
+  "height": 781.25,
+  "spawn": {
+    "x": 554.6875,
+    "y": 425.78125
+  },
+  "enemies": [
+    "19001701",
+    "19001801"
+  ],
+  "description": "Patrulhe a Costa Verde e enfrente ninjas da Névoa.",
+  "source": "assets/scene/map/10007/",
+  "sourceScene": {
+    "id": "2010001",
+    "mapId": "10007",
+    "time": "1",
+    "type": "1",
+    "name": "Costa Verde",
+    "minLevel": null,
+    "worldMapId": "2010001",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "54174c7d1588f74c321218448bfb989d730a900da9b2a52d384ba5d478ed2e5f",
+  "populationPolicy": "Six patrolling enemies; authored idle-RPG roster using recovered eligible models, not original encounter rules.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 150,
+    "foregroundTiles": 88,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 88,
+      "opaqueGroundCutouts": false,
+      "alphaLevels": [
+        0,
+        85
+      ],
+      "nontransparentPixels": 1295622,
+      "dimensions": [
+        3600,
+        2400
+      ],
+      "sha256": "71ef570d878f0952b56ee1843b172d3360c4546a78b5304191bdf5aa57a272af",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/10007/foreground.webp",
+        "sourceSha256": "71ef570d878f0952b56ee1843b172d3360c4546a78b5304191bdf5aa57a272af",
+        "originalBytes": 3544246,
+        "bytes": 2329308,
+        "width": 3600,
+        "height": 2400,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/10007/native-alpha.png",
+    "width": 3600,
+    "height": 2400,
+    "sha256": "625fbfa5986d0264cc79a5ef2620851618257aa196abe9dc32469a9fa88cc5e9"
+  }
+}

@@ -10,7 +10,8 @@ for (const map of maps) {
   test(`${map.id}: scenery corrections preserve routes from the spawn and valid actor positions`, () => {
     const raw = JSON.parse(readFileSync(new URL(`../public${map.navigation}`, import.meta.url), "utf8"));
     const grid = withSceneGeometry(map.id, raw), nav = new NativeNavigation(grid);
-    assert.ok(grid.obstacles?.length);
+    if (["10001", "10005", "10006", "10008"].includes(map.id)) assert.ok(grid.obstacles?.length);
+    else assert.equal(grid.obstacles, undefined);
     const spawn = nav.nearest(map.spawn)!;
     assert.ok(nav.walkable(spawn));
     assert.ok(nav.points.every(point => nav.walkable(point)));

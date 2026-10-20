@@ -1,5 +1,13 @@
 # Ponto de continuidade
 
+## Expansão seguinte — Costa Verde e Floresta da Morte
+
+Dois novos mapas funcionais: 10007 Costa Verde e 10009 A Floresta da Morte, nomes e IDs vinculados a config/world/SceneCFG.xml. Agora são seis destinos. Blocos originais recompostos em PNG sem perda adicional e WebP de runtime; alpha original, navegação, spawn válido, seis adversários patrulhando, encontros/recompensas, save/reload e volta ao lobby foram testados. Roster/loop idle são próprios; não afirmar que são as regras ou encontros exatos do jogo antigo.
+
+Corrigida uma suposição do decoder: IDs de região não são sempre zero. MapData.setData marca cada célula registrada como transitável. O novo preparador escolhe o maior componente dentro dos limites da imagem; a Costa Verde usa região 2. Não copiar a filtragem antiga por região 0 para os mapas restantes. Os quatro mapas existentes não foram regenerados. IMPLEMENTED_MAP_IDS em src/config/maps.ts valida os destinos no restore; teste confere alinhamento com o catálogo.
+
+prepare_world.py foi refatorado: --source e --ids obrigatórios, --limit máximo 2, um worker, preserva outras entradas, recusa sobrescrever mapas existentes sem --refresh e guarda backup dos derivados ao atualizar. Não executar conversão geral. Restam 139 conjuntos de mapas e os objetos SWF intermediários. Alpha integral dos seis mapas e fallback lossless comparados às fontes. Probes no navegador usam renderização linear normal; níveis finos sem vizinhança uniforme ficam explícitos, não são falsamente marcados como medidos em GPU. Build e produção passaram com viagem/vitória, recompensa persistida e reload dos dois destinos; 64 testes de domínio, 16 de servidor e 11 Python. Ver reports/world-expansion-batch.json e validações relacionadas. O Vite já existente na 5178 foi preservado. Servidor temporário de produção deste lote: sessão exec 99722, porta 5195; encerrar apenas esse temporário ao concluir.
+
 ## Retomada do acervo original — lote de máscaras nativas
 
 Raiz canônica confirmada no merge 2d664eae. Acervo separado: `D:/Naruto Idle/Naruto_Idle`. Inventário SHA-256 do escopo recovered-web/cdn concluído: 57.496 arquivos físicos/7.841.306.427 bytes, todos os 57.421 itens declarados presentes e 75 extras. Há 1.800 grupos de conteúdo duplicado (6.688 caminhos), preservados. Detalhes locais retomáveis em assets-extraidos/manifestos; resumo portável em reports/original-inventory-summary.json. Tamanhos declarados diferem dos armazenados em vários wrappers/compressões; isso não comprova corrupção. flashlib/build/src/payloads históricos ainda não receberam inventário integral nesta etapa.

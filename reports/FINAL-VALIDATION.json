@@ -139,9 +139,9 @@
   "latestValidation": {
     "typecheck": "passed",
     "build": "passed",
-    "domainTests": 60,
+    "domainTests": 64,
     "serverAndDeploymentTests": 16,
-    "pythonTests": 9,
+    "pythonTests": 11,
     "arenaBrowser": "passed",
     "characterSelectionBrowser": "passed",
     "sasukeSkillsBrowser": "passed",
@@ -151,7 +151,9 @@
     "mergeReport": "reports/merge-validation.json",
     "nativeForegroundWebGL": "passed",
     "nativeForegroundCanvas": "passed",
-    "productionLoading": "passed"
+    "productionLoading": "passed",
+    "worldExpansionBrowser": "passed",
+    "worldExpansionProduction": "passed"
   },
   "nativeForeground": {
     "maps": [
@@ -165,5 +167,16 @@
     "originalAlphaPreserved": true,
     "globalLayerOnly": true,
     "individualObjectDepth": "pending"
+  },
+  "worldExpansion": {
+    "maps": [
+      "10007",
+      "10009"
+    ],
+    "totalIntegratedMaps": 6,
+    "remainingMapSets": 139,
+    "report": "reports/world-expansion-batch.json",
+    "productionBrowser": "passed",
+    "sourceRegionAssumptionFixed": true
   }
 }

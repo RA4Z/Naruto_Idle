@@ -26,6 +26,7 @@ try {
   for(const p of map.probes){
    const sample=await page.evaluate(p=>window.__idle.probeNativeForeground(p),p);
    assert.equal(sample.native[3],p.rgba[3]);
+
    // Browser canvas readback unpremultiplies translucent RGB with byte rounding.
    // RGB comes from the existing optimized background in WebGL; alpha stays exact.
    const alpha=p.rgba[3]/255;
@@ -36,9 +37,9 @@ try {
   await page.waitForTimeout(500);
   await page.screenshot({path:`reports/native-layer-game-${map.id}.png`});
   const after=await page.evaluate(()=>window.__idle.snapshot());assert.ok(after.walkable&&after.enemies.every(e=>e.walkable));
-  results.push({map:map.id,renderedAlphaLevels:samples,opaqueCutoutsDisabled:true,singleHero:after.heroSpriteInstances===1,partyEmpty:true});
+  results.push({map:map.id,renderedAlphaLevels:samples,unprobedThinLevels:map.unprobedThinLevels||[],opaqueCutoutsDisabled:true,singleHero:after.heroSpriteInstances===1,partyEmpty:true});
  }
  assert.deepEqual(errors,[]);assert.deepEqual(missing,[]);
- const report={checkedAt:new Date().toISOString(),renderer:forceCanvas?"canvas":"webgl-native-mask",results,errors,missing,policy:"one browser, one Phaser scene, serial maps and real renderer pixel probes"};
+ const report={checkedAt:new Date().toISOString(),renderer:forceCanvas?"canvas":"webgl-native-mask",results,errors,missing,policy:"one browser, one Phaser scene; ordinary linear rendering, uniform pixel probes; all source alpha pixels validated separately"};
  await writeFile(forceCanvas?"reports/native-foreground-canvas-validation.json":"reports/native-foreground-browser-validation.json",JSON.stringify(report,null,2)+"\n");console.log(JSON.stringify(report));
 }finally{await browser.close();}

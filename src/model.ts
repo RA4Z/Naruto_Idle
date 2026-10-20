@@ -1,3 +1,4 @@
+import { IMPLEMENTED_MAP_IDS } from "./config/maps";
 import { combatStats, damageAfterResistance } from "./progression/combat-stats";
 import { ITEMS, QUESTS, STARTER_COLLECTION } from "./progression/rules";
 import {
@@ -171,7 +172,7 @@ export function restore(
         s.soundVolume > 1))
   )
     return null;
-  const locations = ["10001", "10005", "10006", "10008"];
+  const locations = IMPLEMENTED_MAP_IDS;
   if (
     (s.location !== undefined && !locations.includes(s.location)) ||
     (s.autoHunt !== undefined && typeof s.autoHunt !== "boolean") ||
