@@ -36,6 +36,7 @@ const entities = Object.fromEntries(
 const maps = sourceMaps.map((map) => ({
   ...map,
   background: replacements[map.background] || map.background,
+  foreground: replacements[map.foreground] || map.foreground,
 }));
 const result = JSON.stringify({ version: 1, entities, maps });
 await writeFile("public/assets/catalog/runtime.json", result + "\n");

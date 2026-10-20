@@ -48,3 +48,15 @@ test("optimized maps keep world dimensions and reference real WebP files generat
     assert.equal(webp.toString("ascii", 8, 12), "WEBP");
   }
 });
+
+test("native foreground runtime derives losslessly from the recovered mask and keeps stable PNG URLs", async () => {
+ const maps=JSON.parse(await readFile("public/assets/maps/index.json","utf8")).maps;
+ const runtime=JSON.parse(await readFile("public/assets/catalog/runtime.json","utf8"));
+ const images=JSON.parse(await readFile("public/assets/catalog/runtime-images.json","utf8"));
+ for(const map of maps.filter(m=>m.layers?.nativeForeground)){
+  const derivative=images[map.foreground];assert.equal(derivative.lossless,true);
+  assert.equal(derivative.sourceSha256,createHash("sha256").update(await readFile("public"+map.foreground)).digest("hex"));
+  assert.equal(runtime.maps.find(m=>m.id===map.id).foreground,derivative.url);
+  const data=await readFile("public"+derivative.url);assert.equal(data.toString("ascii",8,12),"WEBP");
+ }
+});

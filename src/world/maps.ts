@@ -7,6 +7,7 @@ export type WorldMap = {
   kind: "lobby" | "adventure";
   background: string;
   foreground: string;
+  nativeAlpha?: { url: string; width: number; height: number; sha256: string };
   thumbnail: string;
   navigation: string;
   width: number;

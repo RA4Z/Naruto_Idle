@@ -570,6 +570,10 @@ async function inspectMap(map: any) {
     image,
     node("p", `ID ${map.id} · Grade original de colisões · ${map.navigation}`),
   );
+  if (map.layers?.nativeForeground) {
+    const layer = map.layers.nativeForeground;
+    dialog.append(node("p", `Máscara frontal original: ${layer.foregroundRects} blocos, alpha ${layer.alphaLevels.join(" / ")}. Camada translúcida global; profundidade por objeto ainda pendente.`));
+  }
   const r = await fetch(map.navigation),
     nav = await r.json();
   dialog.append(

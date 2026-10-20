@@ -13,7 +13,9 @@ const browser = await chromium.launch({
     "C:/Program Files/Google/Chrome/Application/chrome.exe",
   args: ["--renderer-process-limit=1"],
 });
-const images = {};
+let images = {};
+try { images = JSON.parse(await readFile("public/assets/catalog/runtime-images.json", "utf8")); }
+catch (error) { if (error.code !== "ENOENT") throw error; }
 try {
   const page = await browser.newPage();
   for (const source of sources) {

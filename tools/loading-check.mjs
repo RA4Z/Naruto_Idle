@@ -90,6 +90,9 @@ try {
     ),
     false,
   );
+  assert.equal(first.snapshot.nativeForeground.masked,true);
+  assert.ok(first.assets.some(e=>e.url.endsWith("/native-alpha.png")));
+  assert.equal(first.assets.some(e=>/\/foreground\.(png|webp)$/.test(e.url)),false,"WebGL reuses the existing background texture");
   assert.ok(first.assets.length < 50);
   const assetBytes = first.assets.reduce((n, e) => n + e.bytes, 0);
   assert.ok(assetBytes < 6 * 1024 * 1024);

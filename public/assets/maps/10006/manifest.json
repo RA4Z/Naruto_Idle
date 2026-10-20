@@ -21,7 +21,43 @@
   "navigationSha256": "c926df5535682e8d3f8940791eb0470df8b73c26675ae0dd797c8107306b0787",
   "layers": {
     "backgroundTiles": 64,
-    "foregroundTiles": 0,
-    "animatedMiddleground": "preserved in originals; not executed"
+    "foregroundTiles": 43,
+    "animatedMiddleground": "preserved in originals; not executed",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 43,
+      "opaqueGroundCutouts": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 637957,
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "sha256": "a05f1038e7036b6e17b9889068fe09c2eef0bcdf116b4563a54095aa634674a0",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/10006/foreground.webp",
+        "sourceSha256": "a05f1038e7036b6e17b9889068fe09c2eef0bcdf116b4563a54095aa634674a0",
+        "originalBytes": 1835044,
+        "bytes": 1259684,
+        "width": 2048,
+        "height": 2048,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/10006/native-alpha.png",
+    "width": 2000,
+    "height": 2000,
+    "sha256": "033b58f03be8cf642780b3897407b10f55ebc355b4db36665bbaa627ed66ddd3"
   }
 }

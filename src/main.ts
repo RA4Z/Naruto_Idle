@@ -1,3 +1,6 @@
+import { NativeForegroundLayer } from "./world/native-foreground";
+import { foregroundPlan } from "./world/foreground-plan";
+import { probeNativeForeground } from "./world/foreground-diagnostics";
 import { loadingScreen } from "./loading-screen";
 import { runtimeIndex } from "./assets/runtime-index";
 import { loadSceneAssets } from "./assets/scene-loader";
@@ -463,7 +466,7 @@ class HuntScene extends Phaser.Scene {
     this.load.image("map-" + initialMap.id, initialMap.background);
     this.load.image(
       "map-" + initialMap.id + "-foreground",
-      initialMap.foreground,
+      foregroundPlan(initialMap, this.game.renderer.type === Phaser.WEBGL).url,
     );
     queuePresentation(this, presentationData, presentationCharacter(), { effects: initialMap.kind !== "lobby", audio: false });
     for (const manifest of cast.enemies) {
@@ -529,11 +532,9 @@ class HuntScene extends Phaser.Scene {
     this.occlusion = new WorldOcclusion(this);
     this.occlusion.setMap(this.map);
     this.events.once("shutdown", () => this.occlusion.clear());
-    this.foreground = this.add
-      .image(0, 0, "map-" + this.map.id + "-foreground")
-      .setOrigin(0)
-      .setDisplaySize(this.map.width, this.map.height)
-      .setDepth(10000);
+    this.foreground = new NativeForegroundLayer(this);
+    this.foreground.setMap(this.map);
+    this.events.once("shutdown", () => this.foreground.destroy());
     this.cameras.main
       .setBounds(0, 0, this.map.width, this.map.height)
       .setZoom(CAMERA_ZOOM);
@@ -695,6 +696,7 @@ class HuntScene extends Phaser.Scene {
           enemyScale: this.enemy.visual.scaleX,
           enemyFlipped: this.enemy.visual.flipX,
           occlusion: this.occlusion.snapshot(),
+          nativeForeground: { texture: this.foreground.image.texture.key, visible: this.foreground.image.visible, depth: this.foreground.image.depth, masked: !!this.foreground.alpha },
           enemyVisible: this.enemy.visible,
           enemies: this.enemyField.members.map((m) => ({
             id: m.actor.manifest.id,
@@ -730,6 +732,11 @@ class HuntScene extends Phaser.Scene {
         },
         walkTo: (p: Point) => this.walkTo(p),
         navigation: () => this.navigation,
+        probeNativeForeground: async (source: Point) => {
+          const paused = save.paused; save.paused = true;
+          try { return await probeNativeForeground(this, this.foreground, this.hero, source); }
+          finally { save.paused = paused; }
+        },
         previewSkill: () => this.effect("skill", stats(save).skillDamage),
         setHp: (hp: number) => {
           this.hunt.hp = hp;
@@ -1032,7 +1039,7 @@ class HuntScene extends Phaser.Scene {
   map!: WorldMap;
   navigation!: NativeNavigation;
   background!: Phaser.GameObjects.Image;
-  foreground!: Phaser.GameObjects.Image;
+  foreground!: NativeForegroundLayer;
   occlusion!: WorldOcclusion;
   portal?: Phaser.GameObjects.Container;
   destination!: Phaser.GameObjects.Ellipse;
@@ -1232,9 +1239,7 @@ class HuntScene extends Phaser.Scene {
         .setTexture("map-" + map.id)
         .setDisplaySize(map.width, map.height);
       this.occlusion.setMap(map);
-      this.foreground
-        .setTexture("map-" + map.id + "-foreground")
-        .setDisplaySize(map.width, map.height);
+      this.foreground.setMap(map);
       this.cameras.main.setBounds(0, 0, map.width, map.height);
       this.hero.setPosition(spawn.x, spawn.y);
       this.cameras.main.centerOn(spawn.x, spawn.y);
@@ -1282,7 +1287,7 @@ class HuntScene extends Phaser.Scene {
     const keys = ["map-" + map.id, "map-" + map.id + "-foreground"];
     return loadSceneAssets(this, () => {
       if (!this.textures.exists(keys[0])) this.load.image(keys[0], map.background);
-      if (!this.textures.exists(keys[1])) this.load.image(keys[1], map.foreground);
+      if (!this.textures.exists(keys[1])) this.load.image(keys[1], foregroundPlan(map, this.game.renderer.type === Phaser.WEBGL).url);
     }, () => keys.every(key => this.textures.exists(key)));
   }
   toggleHunt() {

@@ -1,5 +1,5 @@
 {
-  "validatedAt": "2026-10-20T20:55:49.040233+00:00",
+  "validatedAt": "2026-10-20T21:35:44.002191+00:00",
   "catalogue": {
     "discovered": 1466,
     "processed": 1466,
@@ -139,15 +139,31 @@
   "latestValidation": {
     "typecheck": "passed",
     "build": "passed",
-    "domainTests": 59,
-    "serverAndDeploymentTests": 15,
-    "pythonTests": 7,
+    "domainTests": 60,
+    "serverAndDeploymentTests": 16,
+    "pythonTests": 9,
     "arenaBrowser": "passed",
     "characterSelectionBrowser": "passed",
     "sasukeSkillsBrowser": "passed",
     "progressiveLoadingBrowser": "passed",
     "miniWindowResizeBrowser": "passed",
     "catalogAdminBrowser": "passed",
-    "mergeReport": "reports/merge-validation.json"
+    "mergeReport": "reports/merge-validation.json",
+    "nativeForegroundWebGL": "passed",
+    "nativeForegroundCanvas": "passed",
+    "productionLoading": "passed"
+  },
+  "nativeForeground": {
+    "maps": [
+      "10001",
+      "10005",
+      "10006",
+      "10008"
+    ],
+    "report": "reports/native-foreground-recovery.json",
+    "state": "tested",
+    "originalAlphaPreserved": true,
+    "globalLayerOnly": true,
+    "individualObjectDepth": "pending"
   }
 }

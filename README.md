@@ -253,3 +253,11 @@ git lfs pull
 ```
 
 A segunda linha materializa imagens e sons do Git LFS. Não copie arquivos da pasta histórica de recuperação por cima do projeto atual. Relatório da integração: `reports/merge-validation.json`.
+
+## Acervo original e máscaras dos mapas
+
+O inventário do CDN é retomável: `python tools/inventory_originals.py --source <raiz-dos-originais>`. O detalhamento e os hashes ficam localmente em assets-extraidos/manifestos; reports/original-inventory-summary.json é o resumo portável. Isso não equivale a integrar todos os recursos descobertos.
+
+`python tools/recover_native_foreground.py --source <raiz-dos-originais> --ids 10001,10005,10006,10008` recupera as máscaras frontais originais em lote explícito, com um worker. Usa alphaMap e retângulos dos JPEGs, preserva fontes e URLs, salva backup e deriva WebP sem perda para Canvas. No WebGL, o jogo aplica o alpha original ao fundo já carregado, sem baixar sua cópia colorida. `python tools/validate_native_foreground.py --source <raiz-dos-originais>` confere pixels e hashes. Depois rode `node tools/prepare-runtime.mjs`.
+
+Validar com Vite: `node tools/native-foreground-check.mjs`; para Canvas, defina FORCE_CANVAS=1. Ambos verificam composição de pixels em um navegador, com viagens sequenciais. A camada frontal global não resolve profundidade por objeto ou SWFs intermediários. Detalhes em docs/MAP_LAYERS.md.

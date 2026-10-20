@@ -8,6 +8,17 @@ O usuário autorizou desenvolvimento contínuo nos resets naturais, mantendo apr
 
 Pedido do usuário em 20/10/2026: uma tarefa pesada por vez. Não sobrepor build, extração e testes de navegador. Suites serializadas e apenas um Chromium; /arena permite dois clientes sem duas cenas Phaser. Manter essa restrição em todos os resets.
 
+## Recuperação atual do acervo
+
+- [x] Inventário do CDN: 57.496 arquivos físicos, hashes retomáveis, 75 extras e duplicatas preservadas; outras raízes históricas seguem pendentes.
+- [x] Auditar os 145 conjuntos de mapas, inclusive referências virtuais do XML frontal.
+- [x] Recuperar e integrar as máscaras frontais nativas de 10001/10005/10006/10008, preservando alpha e navegação; WebGL reutiliza fundo, Canvas tem fallback.
+- [ ] Recuperar SWFs intermediários, transformações e objetos com ordenação de profundidade própria. A máscara global não encerra esse item.
+- [ ] Integrar os 141 mapas restantes por lotes com viagens, navegação, população, encontros, saves e validação visual.
+- [ ] Integrar artes originais de loading e ampliar os vínculos de jutsus/áudio/conteúdo sem reativar party.
+
+Relatórios: original-inventory-summary.json, original-map-audit.json, native-foreground-recovery.json e respectivas validações de pixels/navegador. Novos scripts não sobrescrevem bruto e não executam ActionScript.
+
 ## Entregas verificadas
 
 - [x] Site na Vercel funcionando no navegador, confirmado pelo usuário em 20/10/2026; publicação/imagens removidas das pendências.
