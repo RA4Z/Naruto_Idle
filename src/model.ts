@@ -69,14 +69,6 @@ export interface ProgressStore {
   read(): string | null;
   write(value: string): void;
 }
-export class LocalProgressStore implements ProgressStore {
-  read() {
-    return localStorage.getItem("folha-idle-v1");
-  }
-  write(value: string) {
-    localStorage.setItem("folha-idle-v1", value);
-  }
-}
 export const fresh = (character: CharacterId, now = Date.now()): Save => ({
   version: 1,
   character,

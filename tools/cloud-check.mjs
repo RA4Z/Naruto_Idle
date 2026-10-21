@@ -38,14 +38,11 @@ try {
         new URL(response.url()).pathname,
       );
   });
+  await context.addInitScript(() => {
+    localStorage.setItem("folha-idle-v1", '{"coins":999999}');
+  });
   await page.goto(base);
   await page.locator("#account-access").waitFor();
-  await page.evaluate(async () => {
-    const { fresh } = await import("/src/model.ts");
-    const save = fresh("naruto");
-    save.coins = 7;
-    localStorage.setItem("folha-idle-v1", JSON.stringify(save));
-  });
   const login = async (p, password = "local-test-only") => {
     await p
       .locator("#account-access [name=email]")
@@ -67,15 +64,13 @@ try {
       document.getElementById("game-loading").hidden,
   );
   assert.equal(
-    await page.evaluate(() => JSON.parse(localStorage.getItem("folha-idle-v1")).character),
-    "sasuke",
+    await page.evaluate(() => window.__idle.snapshot().activeEntityId),
+    "11000211",
   );
   await page.locator("#upgrade").click();
   assert.equal(
-    await page.evaluate(
-      () => JSON.parse(localStorage.getItem("folha-idle-v1")).coins,
-    ),
-    475,
+    await page.locator("#status dl dd").first().textContent(),
+    "475",
   );
   results.loginAndCloudResume = true;
   // Second device is menu-only: never a second active Phaser scene.
@@ -98,16 +93,16 @@ try {
   await page.waitForFunction(() => document.getElementById("play").hidden);
   assert.equal(
     await page.evaluate(
-      () => JSON.parse(localStorage.getItem("folha-idle-v1")).coins,
+      () => localStorage.getItem("folha-idle-v1"),
     ),
-    7,
+    null,
   );
   const stored = (
     await (await fetch("http://127.0.0.1:5195/diagnostics")).json()
   )[0];
   assert.equal(stored.snapshot.coins, 475);
   assert.equal(stored.lease_id, null);
-  results.flushAndGuestBackup = true;
+  results.cloudOnlyPersistence = true;
   await page.locator("[data-language]").selectOption("en");
   await page.locator("#account-access").waitFor();
   await page
@@ -119,10 +114,8 @@ try {
       document.getElementById("game-loading").hidden,
   );
   assert.equal(
-    await page.evaluate(
-      () => JSON.parse(localStorage.getItem("folha-idle-v1")).coins,
-    ),
-    475,
+    await page.locator("#status dl dd").first().textContent(),
+    "475",
   );
   await page.locator("[data-language]").selectOption("es");
   await page.waitForFunction(
@@ -132,14 +125,12 @@ try {
       document.getElementById("game-loading").hidden,
   );
   assert.equal(
-    await page.evaluate(() => JSON.parse(localStorage.getItem("folha-idle-v1")).character),
-    "sasuke",
+    await page.evaluate(() => window.__idle.snapshot().activeEntityId),
+    "11000211",
   );
   assert.equal(
-    await page.evaluate(
-      () => JSON.parse(localStorage.getItem("folha-idle-v1")).coins,
-    ),
-    475,
+    await page.locator("#status dl dd").first().textContent(),
+    "475",
   );
   results.languageResume = true;
   await page.locator("#back").click();

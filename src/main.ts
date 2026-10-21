@@ -22,7 +22,7 @@ import {
   queueCloudSave,
   openCloudJourney,
   closeCloudJourney,
-  restoreGuestCache,
+  flushCloudSave,
 } from "./cloud/journey";
 import { cloudError } from "./cloud/ui";
 function ownsJourney() {
@@ -38,7 +38,7 @@ import { runtimeIndex } from "./assets/runtime-index";
 import { loadSceneAssets } from "./assets/scene-loader";
 import { installArena } from "./arena/ui";
 import { installMiniWindow } from "./mini-window";
-import { localhostTransferUrl } from "./progression/local-transfer";
+import { runtimeProgress } from "./cloud/runtime-progress";
 import { installProgression } from "./progression/ui";
 import { recruit, STARTER_COLLECTION } from "./progression/rules";
 import { ITEMS } from "./progression/rules";
@@ -93,7 +93,6 @@ import { visionRadius } from "./world/awareness";
 import { AREAS, type CharacterId } from "./data";
 import {
   Hunt,
-  LocalProgressStore,
   fresh,
   restore,
   stats,
@@ -121,9 +120,8 @@ type AnimSet = Record<
 const canvasHost = document.getElementById("canvas")!;
 const $ = (id: string) =>
   id === "canvas" ? canvasHost : document.getElementById(id)!;
-const localStore = new LocalProgressStore();
 const store = {
-  read: () => localStore.read(),
+  read: () => runtimeProgress.read(),
   write: (value: string) => {
     writeJourney(value);
     queueCloudSave(value);
@@ -177,7 +175,16 @@ const miniWindow = installMiniWindow({
   onViewport: bindMiniViewport,
   openOnLocalhost: () => {
     commit();
-    location.assign(localhostTransferUrl(location.href, store.read()!));
+    void (async () => {
+      try {
+        await closeCloudJourney();
+        releaseJourney();
+        const target = new URL(location.href);
+        target.hostname = "localhost";
+        target.hash = "";
+        location.assign(target.origin + target.pathname);
+      } catch (error) { toast(cloudError(error)); }
+    })();
   },
 });
 function bindMiniViewport(host: Window) {
@@ -697,6 +704,7 @@ document.addEventListener(
 );
 window.addEventListener("pagehide", () => {
   commit();
+  void flushCloudSave().catch(() => {});
   releaseJourney();
   game?.loop.sleep();
 });
@@ -720,7 +728,10 @@ window.addEventListener("before-language-change", (event) => {
   releaseJourney();
 });
 document.addEventListener("visibilitychange", () => {
-  if (document.hidden) commit();
+  if (document.hidden) {
+    commit();
+    void flushCloudSave().catch(() => {});
+  }
   else if (worldReady && !ownsJourney())
     window.dispatchEvent(new Event("journey-lock-lost"));
   else {

@@ -18,6 +18,8 @@ export const cloudClient =
           fetch: (input, init) =>
             fetch(input, {
               ...init,
+              // Best effort on tab close; large payloads use normal fetch.
+              keepalive: typeof init?.body === "string" && new TextEncoder().encode(init.body).length <= 60000,
               signal: init?.signal ?? AbortSignal.timeout(20000),
             }),
         },
@@ -35,7 +37,7 @@ export async function rpc(
 }
 export const transport: CloudTransport = {
   claim: (lease: string, initial?: Save) =>
-    rpc("game_claim", { p_lease: lease, p_snapshot: initial ?? null }),
+    rpc("game_open", { p_lease: lease, p_character: initial?.character ?? null }),
   commit: (lease, revision, request, snapshot) =>
     rpc("game_commit", {
       p_lease: lease,

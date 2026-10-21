@@ -13,6 +13,7 @@ await db.exec(
   await readFile("supabase/migrations/202610210001_cloud_progress.sql", "utf8"),
 );
 await db.exec(await readFile("supabase/migrations/202610210002_player_accounts.sql", "utf8"));
+await db.exec(await readFile("supabase/migrations/202610210003_cloud_only_progress.sql", "utf8"));
 const id = "11111111-1111-4111-8111-111111111111";
 await db.query("insert into auth.users(id,raw_user_meta_data) values ($1,$2)", [id, {username:"fixture_ninja"}]);
 const initial = fresh("sasuke");
@@ -104,6 +105,7 @@ const server = createServer((req, res) => {
         return send(200, (await db.query("select username from public.player_profiles")).rows);
       const funcs = {
         game_claim: ["p_lease", "p_snapshot"],
+        game_open: ["p_lease", "p_character"],
         game_commit: ["p_lease", "p_revision", "p_request", "p_snapshot"],
         game_heartbeat: ["p_lease"],
         game_release: ["p_lease"],
@@ -120,6 +122,7 @@ const server = createServer((req, res) => {
           p_request: "uuid",
           p_snapshot: "jsonb",
           p_username: "text",
+          p_character: "text",
         };
         const args = fields.map((f) => body[f] ?? null),
           params = fields.map((f, i) => `$${i + 1}::${casts[f]}`).join(",");

@@ -1,10 +1,11 @@
-import { t, errorText } from "./i18n/core.ts";
+import { t } from "./i18n/core.ts";
 import "./style.css";
 import { installLanguageControl, consumeLanguageResume } from "./i18n/browser";
 import { loadingScreen } from "./loading-screen";
-import { acquireJourney, releaseJourney } from "./journey-lock";
 import { installPreferences } from "./preferences";
+import { clearLegacyProgress } from "./cloud/runtime-progress";
 async function boot() {
+  try { clearLegacyProgress(localStorage); } catch { /* No local save is needed when storage is unavailable. */ }
   if (/^\/admin(?:\/|$)/.test(location.pathname)) await import("./admin/main");
   else if (/^\/arena(?:\/|$)/.test(location.pathname)) {
     const { requireAccount } = await import("./cloud/profile");
@@ -13,30 +14,11 @@ async function boot() {
     await import("./arena/page");
   }
   else {
-    let transferred = false;
-    let transferError = "";
     if (
       new URLSearchParams(location.hash.slice(1)).has("folha-local-transfer")
     ) {
-      const address = location.href;
-      // Do not leave a copy of the save in the address bar/history after consuming it.
+      // Obsolete save-transfer links are discarded, never imported.
       history.replaceState(null, "", location.pathname + location.search);
-      try {
-        const { acceptLocalhostTransfer, LOCAL_TRANSFER_BACKUP } = await import(
-          "./progression/local-transfer"
-        );
-        const { LocalProgressStore } = await import("./model");
-        await acquireJourney();
-        transferred = acceptLocalhostTransfer(
-          address,
-          new LocalProgressStore(),
-          (previous) => localStorage.setItem(LOCAL_TRANSFER_BACKUP, previous),
-        );
-        if (!transferred) releaseJourney();
-      } catch (error) {
-        releaseJourney();
-        transferError = errorText(error);
-      }
     }
     const { installMenu, continueCloud } = await import("./menu");
     await installMenu();
@@ -46,11 +28,6 @@ async function boot() {
     }
     document.getElementById("menu-loading")?.setAttribute("hidden", "");
     loadingScreen.hide();
-    if (transferError) {
-      const status = document.getElementById("menu-loading")!;
-      status.textContent = transferError;
-      status.hidden = false;
-    }
     if (sessionStorage.getItem("folha-idle-cloud-resume")) {
       sessionStorage.removeItem("folha-idle-cloud-resume");
       consumeLanguageResume();
@@ -59,9 +36,6 @@ async function boot() {
       );
     } else {
       consumeLanguageResume();
-      // Legacy transfers remain available for explicit account import. They must
-      // not start guest gameplay or hold the local journey lease on the login page.
-      if (transferred) releaseJourney();
     }
   }
 }

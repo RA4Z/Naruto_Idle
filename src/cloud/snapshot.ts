@@ -1,8 +1,5 @@
 import { restore, type Save } from "../model";
 
-export const LOCAL_SAVE_KEY = "folha-idle-v1";
-export const LOCAL_BACKUP_KEY = "folha-idle-before-cloud";
-
 /** Migrate through the same validator as local saves, without claiming offline XP. */
 export function cloudSnapshot(value: unknown): Save {
   const encoded = JSON.stringify(value);

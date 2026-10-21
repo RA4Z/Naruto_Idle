@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-21T21:28:41.445Z",
+  "date": "2026-10-21T21:59:24.810Z",
   "projectRef": "gxyxlfytcjvvkmrlalrs",
   "environment": "live Supabase Auth + PostgREST + PostgreSQL",
   "plan": "free",
@@ -11,6 +11,10 @@
     {
       "version": "20261021211745",
       "name": "202610210002_player_accounts"
+    },
+    {
+      "version": "20261021215614",
+      "name": "202610210003_cloud_only_progress"
     }
   ],
   "auth": {
@@ -21,30 +25,33 @@
   "results": {
     "passwordLoginTwoAccounts": true,
     "usernameProfilesAndIsolation": true,
+    "serverDefaultsAndLegacyImportDisabled": true,
     "secondSessionBlocked": true,
     "rlsAndDirectWrites": true,
-    "syncHeartbeatReleaseResumeAndCreateOnlyImport": true,
     "idempotencyAndStaleWriterProtection": true,
     "independentAccountProgress": true,
     "renderedSignupValidation": true,
+    "noPersistentBrowserProgressAndTamperedCacheIgnored": true,
     "renderedLoginReloadPlayLogoutAndExclusivity": true,
     "renderedLegacyProfileAndCharacterSelection": true,
-    "renderedMobileAndThreeLanguages": true
+    "renderedMobileAndThreeLanguages": true,
+    "syncHeartbeatReleaseResumeAndServerCreation": true
   },
   "cleanup": true,
   "limits": [
     "Temporary users are confirmed through Admin API; no signup/confirmation/recovery emails tested.",
     "Rendered Chrome with isolated browser profiles; not two physical devices.",
     "Lease expiry covered locally, not by waiting 120 seconds in this live check.",
-    "No frontend deploy performed; PvE snapshots remain client_unverified."
+    "No frontend deploy performed; PvE snapshots remain client_unverified.",
+    "Password-manager attributes tested; personal browser vaults were not changed.",
+    "Cloud-only storage is not authoritative economy: game_commit still accepts client_unverified snapshots."
   ],
-  "browserBuild": "Final production bundle served by server/index.mjs on temporary port 5194",
   "localChecks": {
-    "cloudTests": "9 passed",
-    "typecheck": "passed during final production build",
-    "i18n": "1199 keys, 3 languages",
-    "productionBuild": "passed; existing Phaser chunk-size warning",
-    "bundleSecrets": "passed",
-    "diffWhitespace": "passed"
-  }
+    "cloudTests": "12 passed",
+    "typecheck": "passed",
+    "i18n": "1200 keys, 3 languages",
+    "productionBuild": "passed",
+    "bundleSecrets": "passed"
+  },
+  "browserBuild": "Production bundle served by server/index.mjs on temporary port 5194"
 }

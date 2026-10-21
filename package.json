@@ -8,7 +8,7 @@
     "db:verify": "node --use-system-ca tools/supabase-verify.mjs",
     "db:setup": "node --use-system-ca tools/supabase-setup.mjs",
     "check:bundle-secrets": "node tools/check-bundle-secrets.mjs",
-    "test:cloud": "node --experimental-transform-types --import ./tools/resolve-test-imports.mjs --test --test-concurrency=1 tests/cloud-sync.test.ts tests/cloud-database.test.mjs tests/account-database.test.mjs",
+    "test:cloud": "node --experimental-transform-types --import ./tools/resolve-test-imports.mjs --test --test-concurrency=1 tests/cloud-sync.test.ts tests/cloud-storage.test.ts tests/cloud-database.test.mjs tests/account-database.test.mjs tests/cloud-only-database.test.mjs",
     "predev": "node tools/prepare-runtime.mjs",
     "preadmin": "node tools/prepare-runtime.mjs",
     "prebuild": "node tools/prepare-runtime.mjs",

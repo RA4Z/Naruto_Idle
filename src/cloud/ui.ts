@@ -1,7 +1,7 @@
 import { t, th } from "../i18n/core";
 import { cloudClient } from "./client";
 import { normalizeUsername } from "./profile";
-import { cloudJourneyActive, cloudSync, localSnapshot, downloadLocalBackup } from "./journey";
+import { cloudJourneyActive, cloudSync } from "./journey";
 import type { Save } from "../model";
 
 export function cloudError(error: unknown) {
@@ -53,13 +53,12 @@ export async function installCloudAccount(launch: (initial?: Save) => Promise<vo
       <p class="account-caption">${th(user ? "auth.accountSaved" : "auth.required")}</p>
       ${!cloudClient ? `<p role="alert">${th("cloud.unavailable")}</p>` :
         user && username && mode !== "password" ? `<p class="account-identity"><strong data-username></strong><span data-email></span></p>
-          <div class="account-actions">${hasSave ? `<button data-action="play">${th("cloud.continue")}</button>` : `<button data-action="choose">${th("auth.choose")}</button><button class="secondary" data-action="import">${th("cloud.import")}</button>`}
-          <button class="secondary" data-action="backup">${th("cloud.backup")}</button>
+          <div class="account-actions">${hasSave ? `<button data-action="play">${th("cloud.continue")}</button>` : `<button data-action="choose">${th("auth.choose")}</button>`}
           <button class="text-button" data-action="logout">${th("cloud.logout")}</button></div>` :
-        `<form>
-          ${completing || mode === "signup" ? field("username", th("auth.username"), "text", 'autocomplete="username" minlength="3" maxlength="20" pattern="[A-Za-z][A-Za-z0-9_]{2,19}" aria-describedby="username-help"') + `<small id="username-help">${th("auth.usernameHelp")}</small>` : ""}
-          ${completing || mode === "password" ? "" : field("email", th("cloud.email"), "email", 'autocomplete="email" maxlength="254"')}
-          ${completing || mode === "reset" ? "" : field("password", th("cloud.password"), "password", `autocomplete="${mode === "login" ? "current-password" : "new-password"}" minlength="8" maxlength="128"`)}
+        `<form id="account-${completing ? "profile" : mode}" autocomplete="on">
+          ${completing || mode === "password" ? "" : field("email", th("cloud.email"), "email", `autocomplete="${mode === "reset" ? "email" : "username"}" inputmode="email" autocapitalize="none" spellcheck="false" maxlength="254"`)}
+          ${completing || mode === "signup" ? field("nickname", th("auth.username"), "text", 'autocomplete="off" data-lpignore="true" data-1p-ignore="true" minlength="3" maxlength="20" pattern="[A-Za-z][A-Za-z0-9_]{2,19}" aria-describedby="username-help"') + `<small id="username-help">${th("auth.usernameHelp")}</small>` : ""}
+          ${completing || mode === "reset" ? "" : field("password", th(mode === "login" ? "auth.password" : "cloud.password"), "password", `autocomplete="${mode === "login" ? "current-password" : "new-password"}" ${mode === "login" ? "" : 'minlength="8" maxlength="128"'}`)}
           ${mode === "signup" || mode === "password" ? field("confirm", th("auth.confirmPassword"), "password", 'autocomplete="new-password" minlength="8" maxlength="128"') : ""}
           <button type="submit">${th(completing ? "auth.saveUsername" : mode === "signup" ? "cloud.signup" : mode === "reset" ? "auth.sendReset" : mode === "password" ? "cloud.updatePassword" : "cloud.login")}</button>
         </form>
@@ -122,7 +121,7 @@ export async function installCloudAccount(launch: (initial?: Save) => Promise<vo
         if (reply.error) throw reply.error;
         await refresh();
       } else if (name === "signup" || name === "profile") {
-        const candidate = normalizeUsername(value("username"));
+        const candidate = normalizeUsername(value("nickname"));
         if (name === "profile") {
           const result = await cloudClient.rpc("game_set_username", { p_username: candidate });
           if (result.error) throw result.error;
@@ -151,11 +150,6 @@ export async function installCloudAccount(launch: (initial?: Save) => Promise<vo
         mode = "login";
         await refresh();
         feedback(t("auth.passwordUpdated"));
-      } else if (name === "backup") {
-        const owner = localStorage.getItem("folha-idle-cloud-owner");
-        if (owner && owner !== user?.id) throw new Error("AUTH_REQUIRED");
-        downloadLocalBackup();
-        feedback(t("cloud.backupDone"));
       } else if (name === "logout") {
         if (cloudJourneyActive()) throw new Error("SESSION_BUSY");
         const result = await cloudClient.auth.signOut({ scope: "local" });
@@ -165,14 +159,8 @@ export async function installCloudAccount(launch: (initial?: Save) => Promise<vo
       } else if (name === "choose") {
         document.getElementById("new")?.click();
         feedback("");
-      } else if (name === "play" || name === "import") {
-        let initial: Save | undefined;
-        if (name === "import") {
-          initial = localSnapshot();
-          if (!initial) throw new Error("SAVE_MISSING");
-          if (!confirm(t("cloud.importConfirm"))) { feedback(""); return; }
-        }
-        await launch(initial);
+      } else if (name === "play") {
+        await launch();
         await refresh();
       }
     } catch (error) { feedback(cloudError(error)); }

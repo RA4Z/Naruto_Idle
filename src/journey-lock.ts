@@ -1,4 +1,5 @@
 import { t } from "./i18n/core.ts";
+import { runtimeProgress } from "./cloud/runtime-progress";
 
 // Web Locks survive background throttling. On insecure LAN origins an IndexedDB
 // transaction arbitrates a fenced lease; an expired owner can never write again.
@@ -12,8 +13,6 @@ let releaseNative: (() => void) | undefined;
 let heartbeat: ReturnType<typeof setInterval> | undefined;
 let acquiring: Promise<void> | undefined;
 let db: Promise<IDBDatabase> | undefined;
-let pendingWrite: Promise<void> = Promise.resolve();
-export const flushJourneyWrites = () => pendingWrite;
 function database() {
   return (db ??= new Promise((resolve, reject) => {
     const request = indexedDB.open(NAME, 1);
@@ -29,7 +28,6 @@ async function transact(
   id: string,
   release = false,
   renew = false,
-  snapshot?: string,
 ) {
   const databaseHandle = await database();
   return new Promise<boolean>((resolve, reject) => {
@@ -41,14 +39,7 @@ async function transact(
       const previous = request.result as
         | { id: string; until: number }
         | undefined;
-      if (snapshot !== undefined) {
-        // Claims and fallback writes share this transaction queue. A write from
-        // a suspended former owner cannot land after another tab's claim.
-        if (previous?.id === id && previous.until > Date.now()) {
-          localStorage.setItem("folha-idle-v1", snapshot);
-          accepted = true;
-        }
-      } else if (release) {
+      if (release) {
         if (previous?.id === id) {
           store.delete("active");
           if (localStorage.getItem(FENCE) === id)
@@ -90,17 +81,7 @@ export function assertJourneyOwner() {
 }
 export function writeJourney(snapshot: string) {
   assertJourneyOwner();
-  if (native) localStorage.setItem("folha-idle-v1", snapshot);
-  else {
-    const id = owner;
-    pendingWrite = transact(id, false, false, snapshot)
-      .then((ok) => {
-        if (!ok && owner === id) lost();
-      })
-      .catch(() => {
-        if (owner === id) lost();
-      });
-  }
+  runtimeProgress.write(snapshot);
 }
 function lost() {
   releaseJourney();

@@ -13,6 +13,8 @@ try {
     not has_table_privilege('anon','public.game_saves','SELECT') as no_guest_read,
     has_function_privilege('authenticated','public.game_claim(uuid,jsonb)','EXECUTE') as claim_allowed,
     not has_function_privilege('anon','public.game_claim(uuid,jsonb)','EXECUTE') as no_guest_claim,
+    has_function_privilege('authenticated','public.game_open(uuid,text)','EXECUTE') as open_allowed,
+    not has_function_privilege('anon','public.game_open(uuid,text)','EXECUTE') as no_guest_open,
     exists(select 1 from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname='public' and c.relname='player_profiles' and c.relrowsecurity) as profile_rls,
     has_table_privilege('authenticated','public.player_profiles','SELECT') as own_profile_read,
     not has_table_privilege('anon','public.player_profiles','SELECT') as no_guest_profile_read,

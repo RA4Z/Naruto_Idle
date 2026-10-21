@@ -42,7 +42,7 @@ Português, inglês e espanhol. Primeiro acesso usa as preferências do navegado
 
 ## Progresso e estabilidade
 
-O PvE exige conta Supabase e salva o progresso por usuário: login, importação explícita, backup e sessão exclusiva entre dispositivos. O banco remoto foi ativado e testado por SDK e Chrome em 21/10/2026, no plano Free; SMTP para cadastro/recuperação públicos e variáveis/deploy da Vercel ainda estão pendentes. Configuração e limites em [Backend e Supabase](docs/BACKEND_E_SUPABASE.md). Os snapshots da beta são não verificados; a economia ainda roda no cliente. Apenas uma aba pode controlar a jornada por origem; HTTP LAN usa uma lease transacional quando Web Locks não está disponível. Aba que perde a posse não pode gravar nem continuar simulando.
+O PvE exige conta Supabase e salva o progresso por usuário: login e sessão exclusiva entre dispositivos. O progresso persistente existe somente no Supabase; a aba usa memória temporária e descarta os caches locais antigos. Importação/exportação de saves foi removida. O banco remoto foi ativado e testado por SDK e Chrome em 21/10/2026, no plano Free; SMTP para cadastro/recuperação públicos e variáveis/deploy da Vercel ainda estão pendentes. Configuração e limites em [Backend e Supabase](docs/BACKEND_E_SUPABASE.md). Os snapshots da beta são não verificados; a economia ainda roda no cliente. Apenas uma aba pode controlar a jornada por origem; HTTP LAN usa uma lease transacional quando Web Locks não está disponível. Aba que perde a posse não pode gravar nem continuar simulando.
 
 Perda de contexto WebGL reconstrói o cenário com o snapshot salvo, usando Canvas se o navegador não restaurar a GPU. Minijanela preserva tamanho mínimo do renderizador. Combate parcial não é restaurado.
 

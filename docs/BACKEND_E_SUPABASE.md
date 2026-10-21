@@ -4,7 +4,7 @@ Para o agente que fará a ativação em outro computador, seguir o [roteiro oper
 
 ## Estado desta entrega
 
-Primeira etapa de backend: contas por e-mail/senha, recuperação de senha, save por conta, importação explícita, backup local/exportação JSON, sincronização periódica e posse exclusiva entre dispositivos. A entrada no jogo agora exige login e perfil de conta; sem Supabase configurado a tela informa indisponibilidade e não abre uma jornada local.
+Contas por e-mail/senha, recuperação de senha, save por conta, sincronização e posse exclusiva entre dispositivos. O progresso é persistido somente no Supabase, sem importação/exportação ou backup local. A entrada no jogo agora exige login e perfil de conta; sem Supabase configurado a tela informa indisponibilidade e não abre uma jornada local.
 
 **Banco remoto ativado em 21/10/2026.** Organização **Lharaz**, plano **Free** confirmado, projeto existente **Naruto Idle**, referência pública `gxyxlfytcjvvkmrlalrs`, ativo em `us-east-1`. Migração `202610210001_cloud_progress` aplicada pela Management API; segunda execução reconheceu o histórico sem reaplicar SQL. `db:verify` aprovou RLS/permissões. URL/chave pública foram gravadas no `.env` ignorado e site/redirects de Auth configurados, preservando confirmação de e-mail e redirects anteriores.
 
@@ -19,6 +19,14 @@ A tela inicial contém Entrar, Criar conta e Recuperar senha em PT/EN/ES. Cadast
 Contas existentes sem perfil completam o nome pela RPC game_set_username, que não permite renomear perfis existentes. game_claim exige perfil; o cliente valida a conta com Auth getUser antes de iniciar. Saves existentes não são substituídos e o antigo save local só vai para a conta por importação explícita. A entrada de navegador /arena também verifica conta/perfil; isso não transforma a API Node da arena em uma API autenticada pelo Supabase.
 
 Migração 202610210002_player_accounts aplicada no projeto Free em 21/10/2026. Nove testes de nuvem, db:verify, typecheck/build, 1199 mensagens PT/EN/ES e inspeção do bundle sem segredos passaram. O Chrome validou também a build final de produção servida pelo Node. O teste de cadastro no navegador cobre validação de senha e nome duplicado; as contas reais dos testes são confirmadas pela Admin API sem enviar mensagens. SMTP e recebimento de links seguem pendentes.
+
+## Persistência exclusiva no Supabase (vigente)
+
+A migração 202610210003_cloud_only_progress substitui a criação por snapshot por game_open(p_lease,p_character). O banco monta o save inicial e nunca substitui uma jornada existente. A RPC antiga game_claim não aceita mais JSON (IMPORT_DISABLED), mesmo chamada diretamente. Não restaurar importação/exportação a partir de trechos históricos deste guia.
+
+A aba usa MemoryProgressStore sem persistência para desenho e recuperação gráfica; a arena lê diretamente o save da conta no Supabase. Saves/backups legados são apagados na abertura, links de transferência são descartados e não há fallback de progresso offline local. Auth, preferências e metadados de exclusividade podem continuar no armazenamento do navegador; não são um save. Autossave agrupa alterações por um segundo, com heartbeat em 30s e tentativa de flush ao ocultar/fechar a aba. Sair pelo menu e mudar idioma aguardam confirmação. Fechamento abrupto ou falha de rede pode perder alterações ainda não confirmadas; só o save remoto será retomado.
+
+Remover cache local impede que editar localStorage seja usado para restaurar progresso. O navegador ainda calcula e envia o snapshot por game_commit; a economia continua client_unverified e requer migração para comandos autoritativos para resistir a requisições forjadas. Detalhes: [persistência exclusiva](CLOUD_ONLY_PROGRESS.md).
 
 ## Limite de confiança
 
