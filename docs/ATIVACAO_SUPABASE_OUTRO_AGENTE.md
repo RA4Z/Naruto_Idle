@@ -6,7 +6,7 @@ Ativar e validar a integração já implementada no projeto **Naruto Idle**, org
 
 Esta tarefa foi autorizada pelo usuário. Aproveitar o projeto existente; não criar uma segunda organização/projeto para contornar erros ou limites. Não contratar SMTP, hospedagem ou recursos pagos. A publicação do frontend deve seguir a autorização vigente na sessão do agente; configurar Supabase não publica automaticamente na Vercel.
 
-Na entrega de 21/10/2026, **nenhuma alteração remota foi realizada**: a rede bloqueou a Management API com página McAfee HTTP 403. Houve testes locais de SQL, sincronização e navegador com autenticação fictícia. Não tratar esses relatórios como evidência de Auth, SMTP ou banco remoto funcionando. Conferir o estado remoto atual antes de agir, pois o usuário ou outro agente pode ter avançado desde então.
+**Atualização de 21/10/2026:** o bloqueio da máquina anterior foi superado. Plano Free confirmado, migração `202610210001_cloud_progress` aplicada, RLS/permissões verificadas e URL/chave pública gravadas no `.env` da cópia `D:\Naruto Idle\Naruto Idle RPG`. Testes SDK no Supabase real passaram com duas contas temporárias, removidas com seus saves; evidência `reports/supabase-live-validation.json`. SMTP e recebimento de e-mails, validação renderizada com contas reais e variáveis/deploy Vercel continuam pendentes. O restante do roteiro descreve a reprodução; consultar o estado antes de reaplicar qualquer etapa. Os relatórios antigos com Auth fictício não comprovam essas pendências.
 
 ## 1. Contextualização obrigatória
 
