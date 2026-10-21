@@ -113,9 +113,9 @@ def prepare(archive,ident):
                      'limits':['Middleground animation pending','No per-object Y sorting','Enemy roster and idle rules are authored, not copied']}
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--source',required=True);ap.add_argument('--ids',required=True);ap.add_argument('--limit',type=int,default=2);ap.add_argument('--refresh',action='store_true');args=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--source',required=True);ap.add_argument('--ids',required=True);ap.add_argument('--limit',type=int,default=4);ap.add_argument('--refresh',action='store_true');args=ap.parse_args()
     ids=args.ids.split(',')
-    if not 1<=len(ids)<=args.limit<=2 or len(set(ids))!=len(ids) or any(i not in SPECS for i in ids):raise SystemExit('Use one explicit batch of up to two configured IDs')
+    if not 1<=len(ids)<=args.limit<=4 or len(set(ids))!=len(ids) or any(i not in SPECS for i in ids):raise SystemExit('Use one explicit batch of up to four configured IDs')
     archive=OriginalArchive(args.source)
     if PROJECT.is_relative_to(archive.root) or archive.root.is_relative_to(PROJECT):raise SystemExit('Original and project roots must be separate')
     index_path=PROJECT/'public/assets/maps/index.json';index=json.loads(index_path.read_text(encoding='utf-8'));known={m['id'] for m in index['maps']}

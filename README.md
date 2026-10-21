@@ -280,3 +280,10 @@ A tela usa as artes originais 6, 14 e 22, em ciclo, preservando bytes e resoluç
 Profundezas da Floresta da Folha (30008) e Ponte Tenchi (300131) ampliam o catálogo para oito mapas. Os sete destinos de exploração usam música e ambiente vinculados a SceneCFG.xml/MapMusicConfig.xml, com 11 MP3 originais compartilhados, reproduzidos sob demanda (no máximo duas faixas). A floresta respeita fade de dois segundos. Som, música, volume, pausa e troca de mapa são independentes; o lobby ainda usa main.mp3 provisoriamente. Admin permite ouvir as faixas sem pré-carregar o álbum. Os portais originais só serão implementados depois da etapa prioritária de recuperação/integração do restante do acervo.
 
 Uma tarefa pesada por vez: conversão, testes e build em série, sem servidor extra e com uma página de navegador. Exemplo para a build: NODE_OPTIONS=--max-old-space-size=512, UV_THREADPOOL_SIZE=1 e GOMAXPROCS=1 (definir como variáveis de ambiente do shell). O teste tools/build-world-check.mjs executa os arquivos dist por interceptação local, sem levantar outro servidor; não comprova hospedagem/backend de produção.
+
+
+## Sons da interface e lotes seguintes
+
+Clique, fechar, início de combate, vitória, derrota e novo nível usam seis MP3 originais vinculados ao XML. São opcionais, limitados a quatro vozes curtas e funcionam nos menus mesmo com o mundo pausado. Mute impede novas reproduções. A jornada pode salvar todos os mapas visitados; o antigo limite de quatro foi removido.
+
+O preparador aceita até quatro IDs por lote (--limit 4), executados serialmente. A quantidade por lote não aumenta o número de workers. Novos mapas continuam exigindo configuração explícita e testes antes de publicação. Portais entre mapas permanecem para depois da recuperação/integração prioritária.

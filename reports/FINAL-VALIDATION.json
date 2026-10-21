@@ -1,5 +1,5 @@
 {
-  "validatedAt": "2026-10-21T00:16:36.995302+00:00",
+  "validatedAt": "2026-10-21T00:32:31.675881+00:00",
   "catalogue": {
     "discovered": 1466,
     "processed": 1466,
@@ -45,7 +45,7 @@
     "sasuke": "SP_skill1",
     "sakura": "SP_skill2"
   },
-  "audioFiles": 61,
+  "audioFiles": 67,
   "characterOrganization": {
     "entities": 1466,
     "playableAnimationSets": 312,
@@ -139,8 +139,8 @@
   "latestValidation": {
     "typecheck": "passed",
     "build": "passed",
-    "domainTests": 73,
-    "serverAndDeploymentTests": 19,
+    "domainTests": 74,
+    "serverAndDeploymentTests": 20,
     "pythonTests": 11,
     "arenaBrowser": "passed",
     "characterSelectionBrowser": "passed",
@@ -164,7 +164,9 @@
     "forestBridgeCompiledBundle": "passed",
     "forestBridgeNativeAlpha": "passed",
     "forestBridgeAudioAndFades": "passed",
-    "compiledBundleMode": "local browser interception; no extra server; live production backend not retested"
+    "compiledBundleMode": "local browser interception; no extra server; live production backend not retested",
+    "uiAudio": "passed",
+    "allVisitedMapsSaveRestore": "passed, all eight maps in dev and compiled bundle"
   },
   "nativeForeground": {
     "maps": [
@@ -225,5 +227,27 @@
     "remainingIndependentSourcePaths": 225,
     "embeddedSoundPackages": "further integration pending",
     "nativeFades": "30008: two seconds in/out; HTMLAudio timeupdate, no animation loop"
+  },
+  "uiAudio": {
+    "events": 6,
+    "files": 6,
+    "originalSoundIds": [
+      "216",
+      "217",
+      "253",
+      "263",
+      "267",
+      "268"
+    ],
+    "state": "tested",
+    "report": "reports/ui-audio-recovery.json",
+    "maxShortVoices": 4
+  },
+  "publicMp3Files": 79,
+  "saveVisitedMaps": {
+    "legacyFixedCapRemoved": true,
+    "limit": "number of integrated destinations",
+    "duplicatesRejected": true,
+    "allEightReloaded": true
   }
 }

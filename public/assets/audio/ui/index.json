@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "events": {
+    "click": {
+      "uiId": "1",
+      "soundId": "216",
+      "sourceMapping": {
+        "id": "1",
+        "sound": "216",
+        "desc": "除关闭、离开以外的所有按钮音效"
+      },
+      "source": {
+        "path": "assets/sound/swf/s216.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 32741,
+        "sha256": "6805cd30fc7fad674e79be80bfd4bcae78597eb82b645b0d1c0c6fde9d8f3c11"
+      },
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/216/1.mp3",
+          "symbolId": 1,
+          "sha256": "9d73131cf85356630f0d883e5d3fff4b9b76e21e5e99bee43dae6a3e0ba39079",
+          "bytes": 46979,
+          "seekSamples": 0,
+          "sampleCount": 129024
+        }
+      ],
+      "status": "tested",
+      "adaptation": "Original clip on equivalent idle UI/battle event; battle-start cue originally belongs to its button."
+    },
+    "close": {
+      "uiId": "2",
+      "soundId": "217",
+      "sourceMapping": {
+        "id": "2",
+        "sound": "217",
+        "desc": "所有关闭、离开、取消按钮音效"
+      },
+      "source": {
+        "path": "assets/sound/swf/s217.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 23370,
+        "sha256": "3125bfe733bb83ded56ed0a728562626f0eb98b81444a2a5fa3f505284736562"
+      },
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/217/1.mp3",
+          "symbolId": 1,
+          "sha256": "fb5d384eec35145b2df722748b9c321c992de3c49f1524ecab1dffbb21a75fc3",
+          "bytes": 39313,
+          "seekSamples": 0,
+          "sampleCount": 108288
+        }
+      ],
+      "status": "tested",
+      "adaptation": "Original clip on equivalent idle UI/battle event; battle-start cue originally belongs to its button."
+    },
+    "battleStart": {
+      "uiId": "4",
+      "soundId": "253",
+      "sourceMapping": {
+        "id": "4",
+        "sound": "253",
+        "desc": "战斗开始按钮"
+      },
+      "source": {
+        "path": "assets/sound/swf/s253.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 28899,
+        "sha256": "9967c955510553950ba44b468a7ed42f6d7e065fbb387ff4be70ae7432ff2323"
+      },
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/253/1.mp3",
+          "symbolId": 1,
+          "sha256": "8e3eb002f291b3f581b317e3e2895f44a51b10427b61de1b02d419b6d3212cc9",
+          "bytes": 30858,
+          "seekSamples": 0,
+          "sampleCount": 85248
+        }
+      ],
+      "status": "tested",
+      "adaptation": "Original clip on equivalent idle UI/battle event; battle-start cue originally belongs to its button."
+    },
+    "levelUp": {
+      "uiId": "14",
+      "soundId": "263",
+      "sourceMapping": {
+        "id": "14",
+        "sound": "263",
+        "desc": "升级音效"
+      },
+      "source": {
+        "path": "assets/sound/swf/s263.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 24108,
+        "sha256": "c8552488745146a358cf4d0e2bb2604f1a99b2baa0b4f239438222ac1092a298"
+      },
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/263/1.mp3",
+          "symbolId": 1,
+          "sha256": "1106e0a0cdbbefb1f26ad751019593a4f0d322b2f2f45b169e8c7ab8d902bcde",
+          "bytes": 24603,
+          "seekSamples": 0,
+          "sampleCount": 67968
+        }
+      ],
+      "status": "tested",
+      "adaptation": "Original clip on equivalent idle UI/battle event; battle-start cue originally belongs to its button."
+    },
+    "victory": {
+      "uiId": "18",
+      "soundId": "267",
+      "sourceMapping": {
+        "id": "18",
+        "sound": "267",
+        "desc": "战斗胜利音效"
+      },
+      "source": {
+        "path": "assets/sound/swf/s267.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 70099,
+        "sha256": "b508314a11e01f039baf5d422ed2fce10da903845cd96277c16b6d753e976eff"
+      },
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/267/1.mp3",
+          "symbolId": 1,
+          "sha256": "100917bd134c22d1a9de9440b4f747fcc4f9444c637a82ddcea8631855f229a5",
+          "bytes": 78183,
+          "seekSamples": 0,
+          "sampleCount": 215424
+        }
+      ],
+      "status": "tested",
+      "adaptation": "Original clip on equivalent idle UI/battle event; battle-start cue originally belongs to its button."
+    },
+    "defeat": {
+      "uiId": "19",
+      "soundId": "268",
+      "sourceMapping": {
+        "id": "19",
+        "sound": "268",
+        "desc": "战斗失败音效"
+      },
+      "source": {
+        "path": "assets/sound/swf/s268.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 64203,
+        "sha256": "e2575a1d4f33a62c895afee701e562ffe26459c9cb4e0a8f0d202261c167a6c3"
+      },
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/268/1.mp3",
+          "symbolId": 1,
+          "sha256": "fa72b20d40d9273a99401a0b618976c418cacf8780e586c95780c46b24c63b38",
+          "bytes": 68570,
+          "seekSamples": 0,
+          "sampleCount": 188928
+        }
+      ],
+      "status": "tested",
+      "adaptation": "Original clip on equivalent idle UI/battle event; battle-start cue originally belongs to its button."
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import Phaser from "phaser";
 import { SceneAudioPlayer, type SceneAudioCatalog } from "./audio/scene-audio";
+import type { UiCue } from "./audio/ui-cues";
 import type { AnimationDef } from "./entities/types";
 export type PresentationConfig = {
   characters: Record<
@@ -18,6 +19,7 @@ export type PresentationConfig = {
   sounds: Record<string, { name: string; urls: string[] }>;
   music: { url: string };
   sceneAudio?: SceneAudioCatalog;
+  uiCues?: Partial<Record<UiCue, string>>;
 };
 const effectKey = (name: string) => "effect:" + name;
 const effectsFor = (character: string) =>
@@ -55,6 +57,7 @@ export function queuePresentation(
   );
   ids.add("196");
   ids.add("197");
+  for (const id of Object.values(data.uiCues || {})) if (id) ids.add(id);
   for (const id of ids)
     data.sounds[id]?.urls.forEach(
       (url, i) =>
@@ -72,6 +75,8 @@ export class PresentationPlayer {
   private lastSoundAt = -100;
   private soundCount = 0;
   private effectCount = 0;
+  private lastUiAt = -100;
+  private cuesPlayed: Partial<Record<UiCue, number>> = {};
   constructor(
     private scene: Phaser.Scene,
     private data: PresentationConfig,
@@ -132,7 +137,11 @@ export class PresentationPlayer {
     if (this.paused !== paused) {
       this.paused = paused;
       if (paused) this.scene.sound.pauseAll();
-      else this.scene.sound.resumeAll();
+      else {
+        this.scene.sound.resumeAll();
+        const playing = this.scene.sound.getAllPlaying();
+        for (const sound of playing.slice(0, Math.max(0, playing.length - 4))) sound.destroy();
+      }
     }
     for (const sprite of this.active)
       paused ? sprite.anims.pause() : sprite.anims.resume();
@@ -144,18 +153,41 @@ export class PresentationPlayer {
     });
     this.timers.add(timer);
   }
-  private sound(id: string, volume: number) {
-    if (!this.enabled || this.paused) return;
+  private sound(id: string, volume: number, priority = false, allowPaused = false) {
+    if (!this.enabled || (this.paused && !allowPaused)) return false;
     const entry = this.data.sounds[id];
-    if (!entry) return;
-    // At most six short voices, including all original sound layers of one strike.
-    if (this.scene.sound.getAllPlaying().length >= 7) return;
+    if (!entry?.urls.length) return false;
+    // Four short voices plus the two independently streamed ambience/music layers.
+    const voices = this.scene.sound.getAllPlaying();
+    if (voices.length >= 4) {
+      if (!priority) return false;
+      voices[0].destroy();
+    }
     const index = Math.floor(Math.random() * entry.urls.length),
       key = soundKey(id, index);
     if (this.scene.cache.audio.exists(key)) {
       this.scene.sound.play(key, { volume: volume * 0.5 });
       this.soundCount++;
       this.lastSoundAt = this.scene.time.now;
+      return true;
+    }
+    return false;
+  }
+  ui(cue: UiCue) {
+    const id = this.data.uiCues?.[cue];
+    const now = performance.now();
+    const button = cue === "click" || cue === "close";
+    if (!id || (button && now - this.lastUiAt < 80)) return;
+    // Retriggering a button must not stack its trailing silence or mask a result cue.
+    const controls = [this.data.uiCues?.click, this.data.uiCues?.close];
+    for (const control of controls)
+      if (control) this.data.sounds[control]?.urls.forEach((_, index) => {
+        for (const voice of this.scene.sound.getAll(soundKey(control, index))) voice.destroy();
+      });
+    // Dialogs pause the world; their UI feedback remains available when sound is enabled.
+    if (this.sound(id, button ? 0.4 : 0.65, !button, true)) {
+      if (button) this.lastUiAt = now;
+      this.cuesPlayed[cue] = (this.cuesPlayed[cue] || 0) + 1;
     }
   }
   footstep() {
@@ -253,6 +285,8 @@ export class PresentationPlayer {
         y: sprite.y,
       })),
       effectsPlayed: this.effectCount,
+      cuesPlayed: { ...this.cuesPlayed },
+      shortVoices: this.scene.sound.getAllPlaying().length,
       soundsPlayed: this.soundCount,
       lastSoundAt: this.lastSoundAt,
       audioUnlocked:

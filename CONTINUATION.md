@@ -1,5 +1,16 @@
 # Ponto de continuidade
 
+## Sons de interface e save de viagens — lote concluído
+
+Seis MP3 originais dos pacotes 216/217/253/263/267/268 foram extraídos de DefineSound sem transcodificação, com hashes e ligações de UISoundConfig.xml: clique, fechar, início de combate, nível, vitória e derrota. O início de combate adapta o som do botão original ao evento do idle. Catálogo public/assets/audio/ui/index.json; extrator tools/recover_ui_audio.py com até seis eventos explícitos e um arquivo por vez. Demais vozes/efeitos e os outros 20 eventos UI seguem pendentes.
+
+Sons carregam somente ao habilitar áudio; cliques não se empilham e o limite é quatro vozes curtas, além das duas faixas longas. Resultados têm prioridade. Menus continuam emitindo feedback durante a pausa do mundo; mute continua impedindo novos sons. O render de UI detecta subida de nível uma vez, sem tocar novamente ao restaurar um save. Testes reais do navegador cobriram cinco encontros, uma derrota controlada via setHp de desenvolvimento, quatro vitórias e uma subida de nível; máximo observado de quatro vozes.
+
+Corrigido bug legado: restore rejeitava jornadas com mais de quatro mapas visitados, apesar de oito mapas já integrados. O limite agora acompanha o registro de destinos e rejeita duplicatas/IDs inválidos. Visitar todos os oito e recarregar passou no dev e no dist compilado. Passaram 74 testes de domínio, 20 servidor/assets, typecheck, build e navegador serial. Nenhum servidor extra. Ver reports/ui-audio-*.json.
+
+Pedido mais recente do usuário: PRÓXIMOS LOTES DE ATÉ QUATRO MAPAS, SEM CONCORRÊNCIA. prepare_world.py agora aceita --limit 4 (padrão 4); processar cada mapa até terminar antes do seguinte, depois testes e build em separado. Ainda há oito mapas integrados e 137 conjuntos pendentes; não converter vários mapas ao mesmo tempo. Preservar Vite 5178 e a exclusão alheia de DESIGN_DE_PROGRESSAO.md. Os lotes de músicas e floresta/ponte foram publicados em 6f664983 e a193978b.
+
+
 ## Segundo lote de mapas — oito destinos integrados
 
 Adicionados 30008 Profundezas da Floresta da Folha (cena 1008001) e 300131 Ponte Tenchi (cena 2015006), com fundo, máscara nativa, navegação, spawn válido, seis inimigos patrulhando, combate/recompensas, save/reload e retorno à vila. O roster e as regras idle são autorais; conexões originais/portais continuam adiados. Os seis mapas anteriores ficaram byte a byte intactos. Agora 8/145 conjuntos integrados; 137 pendentes. Relatório: reports/world-expansion-30008-300131.json.

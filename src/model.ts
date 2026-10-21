@@ -211,7 +211,8 @@ export function restore(
         s.questClaims.some((id) => !QUESTS.some((q) => q.id === id)))) ||
     (s.visitedMaps !== undefined &&
       (!Array.isArray(s.visitedMaps) ||
-        s.visitedMaps.length > 4 ||
+        s.visitedMaps.length > locations.length ||
+        new Set(s.visitedMaps).size !== s.visitedMaps.length ||
         s.visitedMaps.some((id) => !locations.includes(id)))) ||
     (s.collection !== undefined &&
       (!Array.isArray(s.collection) ||

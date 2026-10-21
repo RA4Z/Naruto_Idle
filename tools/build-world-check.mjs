@@ -11,6 +11,14 @@ const errors=[],missing=[],results=[];
 const mime={".html":"text/html",".js":"text/javascript",".css":"text/css",".png":"image/png",".jpg":"image/jpeg",".webp":"image/webp",".json":"application/json",".xml":"application/xml",".mp3":"audio/mpeg"};
 try{
  const page=await browser.newPage({viewport:{width:1280,height:900}});
+ if(process.env.CHECK_UI==="1") await page.addInitScript(()=>{
+  window.__productionAudioStarts=[];
+  const original=AudioBufferSourceNode.prototype.start;
+  AudioBufferSourceNode.prototype.start=function(...args){
+   if(this.buffer?.duration>0.05)window.__productionAudioStarts.push(this.buffer.duration);
+   return original.apply(this,args);
+  };
+ });
  page.on("pageerror",error=>errors.push(String(error)));
  await page.route(base+"/**",async route=>{
   const url=new URL(route.request().url());
@@ -23,6 +31,32 @@ try{
  await page.goto(base);await page.locator("#new").click();await page.locator('[data-character="naruto"]').click();
  await page.waitForFunction(()=>document.getElementById("game-loading").hidden&&!!document.querySelector("#canvas canvas"));
  assert.equal(await page.evaluate(()=>typeof window.__idle),"undefined","production diagnostics must stay disabled");
+ let uiFeedback;
+ if(process.env.CHECK_UI==="1"){
+  const allMaps=JSON.parse(await readFile("dist/assets/maps/index.json","utf8")).maps;
+  for(const map of allMaps.filter(map=>map.id!=="10001")){
+   await page.locator("#maps").click();await page.locator('[data-map="'+map.id+'"]').click();
+   await page.waitForFunction(id=>document.getElementById("game-loading").hidden&&JSON.parse(localStorage.getItem("folha-idle-v1")).location===id,map.id);
+  }
+  await page.reload();await page.locator("#continue").click();
+  await page.waitForFunction(()=>document.getElementById("game-loading").hidden&&!!document.querySelector("#canvas canvas"));
+  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem("folha-idle-v1")).visitedMaps.length),allMaps.length);
+  await page.locator("#sound").check();
+  // Playback readiness is verified through actual WebAudio starts, without enabling dev hooks.
+  await page.waitForTimeout(1300);
+  await page.locator("#progression").click();
+  await page.waitForFunction(()=>window.__productionAudioStarts.length>=1);
+  await page.waitForTimeout(100);
+  await page.locator(".progression-panel [data-close]").click();
+  await page.waitForFunction(()=>window.__productionAudioStarts.length>=2);
+  const clickAndCloseStarts=await page.evaluate(()=>window.__productionAudioStarts.length);
+  await page.locator("#sound").uncheck();
+  await page.locator("#progression").click();await page.locator(".progression-panel [data-close]").click();
+  assert.equal(await page.evaluate(()=>window.__productionAudioStarts.length),clickAndCloseStarts);
+  await page.locator("#return-lobby").click();
+  await page.waitForFunction(()=>document.getElementById("game-loading").hidden&&JSON.parse(localStorage.getItem("folha-idle-v1")).location==="10001");
+  uiFeedback={compiledClickAndClosePlayAudio:true,mutePreventsNewAudio:true,allVisitedMapsReload:allMaps.length,devHooksAbsent:true};
+ }
  for(const id of ids){
   const before=await page.evaluate(()=>JSON.parse(localStorage.getItem("folha-idle-v1")));
   await page.locator("#maps").click();await page.locator('[data-map="'+id+'"]').click();
@@ -41,6 +75,6 @@ try{
   results.push({id,productionTravel:true,victoryAndPersistedLoot:true,reload:true,lobbyReturn:true,singleCanvas:true});
  }
  assert.deepEqual(errors,[]);assert.deepEqual(missing,[]);
- const report={checkedAt:new Date().toISOString(),mode:"compiled dist bundle via local browser interception; no extra server",backendServerTestedThisBatch:false,results,errors,missing};
- await writeFile("reports/forest-bridge-build-browser-validation.json",JSON.stringify(report,null,2)+"\n");console.log(JSON.stringify(report));
+ const report={checkedAt:new Date().toISOString(),mode:"compiled dist bundle via local browser interception; no extra server",backendServerTestedThisBatch:false,uiFeedback,results,errors,missing};
+ await writeFile("reports/"+(process.env.REPORT_FILE||"forest-bridge-build-browser-validation.json"),JSON.stringify(report,null,2)+"\n");console.log(JSON.stringify(report));
 }finally{await browser.close();}

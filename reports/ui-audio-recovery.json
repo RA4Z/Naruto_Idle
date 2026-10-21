@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-10-21T00:19:43.886874+00:00",
+  "events": [
+    "click",
+    "close",
+    "battleStart",
+    "levelUp",
+    "victory",
+    "defeat"
+  ],
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/UISoundConfig.xml",
+      "tag": "PT_NarutoAlpha6.00Build300",
+      "bytes": 585,
+      "sha256": "8f28798497427fbc43bd9998e22ffeed0b5eb3d478ec2336db6118d20ec6271d"
+    },
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318"
+    }
+  ],
+  "sourceHashesPreserved": true,
+  "workers": 1,
+  "files": 6,
+  "state": "tested",
+  "limits": [
+    "Only six UI cues are integrated; the remaining configured UI, voice and effect packages stay pending."
+  ],
+  "validation": {
+    "domainTests": 74,
+    "serverTests": 20,
+    "typecheck": "passed",
+    "build": "passed, serial constrained runtime",
+    "dev": "reports/ui-audio-browser-validation.json",
+    "compiledBundle": "reports/ui-audio-build-browser-validation.json"
+  },
+  "playback": {
+    "maxShortVoices": 4,
+    "maxLongStreams": 2,
+    "buttonRetriggerReplacesOldControlSound": true,
+    "worldPauseKeepsMenuFeedback": true,
+    "muteHonored": true
+  }
+}

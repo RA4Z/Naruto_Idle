@@ -796,6 +796,54 @@
         "/assets/audio/sfx/93/3.mp3"
       ],
       "source": "assets/sound/swf/s93.swf"
+    },
+    "216": {
+      "name": "Clique",
+      "sourceName": "menu_fix2菜单_通用确定2",
+      "source": "assets/sound/swf/s216.swf",
+      "urls": [
+        "/assets/audio/sfx/216/1.mp3"
+      ]
+    },
+    "217": {
+      "name": "Fechar",
+      "sourceName": "menu_cancel菜单_取消",
+      "source": "assets/sound/swf/s217.swf",
+      "urls": [
+        "/assets/audio/sfx/217/1.mp3"
+      ]
+    },
+    "253": {
+      "name": "Inicio de combate",
+      "sourceName": "01_start",
+      "source": "assets/sound/swf/s253.swf",
+      "urls": [
+        "/assets/audio/sfx/253/1.mp3"
+      ]
+    },
+    "263": {
+      "name": "Novo nivel",
+      "sourceName": "13_ui",
+      "source": "assets/sound/swf/s263.swf",
+      "urls": [
+        "/assets/audio/sfx/263/1.mp3"
+      ]
+    },
+    "267": {
+      "name": "Vitoria",
+      "sourceName": "03_win",
+      "source": "assets/sound/swf/s267.swf",
+      "urls": [
+        "/assets/audio/sfx/267/1.mp3"
+      ]
+    },
+    "268": {
+      "name": "Derrota",
+      "sourceName": "04_lose",
+      "source": "assets/sound/swf/s268.swf",
+      "urls": [
+        "/assets/audio/sfx/268/1.mp3"
+      ]
     }
   },
   "issues": [],
@@ -870,5 +918,13 @@
       "fadeInMs": 0,
       "fadeOutMs": 0
     }
+  },
+  "uiCues": {
+    "click": "216",
+    "close": "217",
+    "battleStart": "253",
+    "levelUp": "263",
+    "victory": "267",
+    "defeat": "268"
   }
 }

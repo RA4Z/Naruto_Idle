@@ -12,6 +12,9 @@ Pedido do usuário em 20/10/2026: uma tarefa pesada por vez. Não sobrepor build
 
 - [x] 30008 Profundezas da Floresta da Folha e 300131 Ponte Tenchi: oito destinos, 137 conjuntos restantes, seis inimigos/viagem/loot/save testados. Sete mapas com áudio original vinculado; fade de dois segundos da floresta implementado. Ver reports/world-expansion-30008-300131.json.
 
+- [x] Seis sons UI/resultados originais integrados, voz limitada, pausa/mute e eventos reais testados; save aceita todos os oito mapas visitados em vez de rejeitar o quinto.
+- [ ] Próximos lotes: até quatro mapas por lote, sempre UM MAPA POR VEZ; sons/efeitos e demais categorias continuam em lotes pequenos separados.
+
 ## Recuperação atual do acervo
 
 - [x] Inventário do CDN: 57.496 arquivos físicos, hashes retomáveis, 75 extras e duplicatas preservadas; outras raízes históricas seguem pendentes.

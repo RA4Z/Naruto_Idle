@@ -28,3 +28,14 @@ test("new worlds have real source identities, valid native spawns and usable ene
   }
  }
 });
+
+test("journeys restore all integrated visited maps instead of failing after the fifth destination",()=>{
+ const save=fresh("naruto",1000);
+ save.location=maps.at(-1).id;save.visitedMaps=maps.map((m:any)=>m.id);
+ const loaded=restore({read:()=>JSON.stringify(save),write:()=>{}},1000);
+ assert.ok(loaded);assert.deepEqual(loaded.save.visitedMaps,save.visitedMaps);
+ for(const invalid of [[...save.visitedMaps,save.visitedMaps[0]],["10001","10001"],["10001","missing"]]){
+  const invalidSave={...save,visitedMaps:invalid};
+  assert.equal(restore({read:()=>JSON.stringify(invalidSave),write:()=>{}},1000),null);
+ }
+});

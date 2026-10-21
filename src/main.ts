@@ -2,6 +2,7 @@ import { NativeForegroundLayer } from "./world/native-foreground";
 import { foregroundPlan } from "./world/foreground-plan";
 import { probeNativeForeground } from "./world/foreground-diagnostics";
 import { loadingScreen } from "./loading-screen";
+import { buttonCue } from "./audio/ui-cues";
 import { runtimeIndex } from "./assets/runtime-index";
 import { loadSceneAssets } from "./assets/scene-loader";
 import { installArena } from "./arena/ui";
@@ -429,6 +430,13 @@ $("volume").oninput = () => {
   );
   commit();
 };
+document.addEventListener("click", (event) => {
+  if (!worldReady || !scene?.sys.isActive() || !(event.target instanceof Element)) return;
+  const button = event.target.closest<HTMLButtonElement>("button");
+  if (!button) return;
+  const cue = buttonCue(button);
+  if (cue) scene.presentation.ui(cue);
+}, { capture: true });
 window.addEventListener("pagehide", commit);
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) commit();
@@ -441,6 +449,7 @@ class HuntScene extends Phaser.Scene {
   private combatReady = false;
   private audioLoad?: Promise<void>;
   private audioReady = false;
+  private shownLevel?: number;
   hunt!: Hunt;
   hero!: Phaser.GameObjects.Sprite;
   enemy!: EntityActor;
@@ -678,6 +687,7 @@ class HuntScene extends Phaser.Scene {
               /^(world|battle)-/.test(o.texture.key),
           ).length,
           gameLoopRunning: this.game.loop.running,
+          audioReady: this.audioReady,
           audioState: this.sound instanceof Phaser.Sound.WebAudioSoundManager ? this.sound.context.state : "html",
           origin: [this.hero.originX, this.hero.originY],
           scale: this.hero.scaleX,
@@ -839,6 +849,7 @@ class HuntScene extends Phaser.Scene {
   }
   effect(event: string, value: number) {
     if (event === "encounter") {
+      this.presentation.ui("battleStart");
       this.enemy.play("battle", "C_idle", true);
       this.play("battle-C_idle");
       this.enemy.face(this.hero.x < this.enemy.x);
@@ -881,6 +892,7 @@ class HuntScene extends Phaser.Scene {
     }
     if (event === "loot") journal(`Drop · Fragmento de treino ×${value}`);
     if (event === "victory") {
+      this.presentation.ui("victory");
       const defeatedEnemy = this.enemy;
       this.enemyField.defeat(defeatedEnemy);
       session.xp += value;
@@ -914,6 +926,7 @@ class HuntScene extends Phaser.Scene {
       this.play("world-idle_0");
     }
     if (event === "defeat") {
+      this.presentation.ui("defeat");
       this.play("battle-C_dead", true);
       this.presentation.play("C_dead", this.hero, this.enemy, 500);
       journal("Derrota: recuperação por 3 segundos, sem perda do inventário.");
@@ -1473,6 +1486,8 @@ class HuntScene extends Phaser.Scene {
     }
   }
   renderUI() {
+    if (this.shownLevel !== undefined && save.level > this.shownLevel) this.presentation.ui("levelUp");
+    this.shownLevel = save.level;
     const st = stats(save),
       pct = (save.xp / needed(save.level)) * 100;
     $("pause").textContent = save.paused ? "Retomar movimento" : "Pausar";
