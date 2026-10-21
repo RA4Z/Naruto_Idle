@@ -1,0 +1,74 @@
+{
+  "id": "10013",
+  "name": "No Topo do Vale do Fim",
+  "kind": "adventure",
+  "background": "/assets/maps/10013/background.png",
+  "foreground": "/assets/maps/10013/foreground.png",
+  "thumbnail": "/assets/maps/10013/thumbnail.jpg",
+  "navigation": "/assets/maps/10013/navigation.json",
+  "width": 976.5625,
+  "height": 325.5208333333333,
+  "spawn": {
+    "x": 467.44791666666663,
+    "y": 271.484375
+  },
+  "enemies": [
+    "19000901",
+    "19001001"
+  ],
+  "description": "Patrulhe as passagens no topo do Vale do Fim.",
+  "source": "assets/scene/map/10013/",
+  "sourceScene": {
+    "id": "2014002",
+    "mapId": "10013",
+    "time": "1",
+    "type": "1",
+    "name": "No Topo do Vale do Fim",
+    "minLevel": null,
+    "worldMapId": "2014001",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "51c3a6d15725e6c367545390d693d8e9b741e482cf8108cb44b5dc55b655199a",
+  "populationPolicy": "Six patrolling enemies; authored idle-RPG roster using recovered eligible models, not original encounter rules.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 48,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 0,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": true,
+      "alphaLevels": [
+        0
+      ],
+      "nontransparentPixels": 0,
+      "dimensions": [
+        3000,
+        1000
+      ],
+      "sha256": "92e1b2b34b41db2857626bf8a8124b0c7d936abff71b9d66adbfcd3f132c8649",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/10013/foreground.webp",
+        "sourceSha256": "92e1b2b34b41db2857626bf8a8124b0c7d936abff71b9d66adbfcd3f132c8649",
+        "originalBytes": 11722,
+        "bytes": 166,
+        "width": 3000,
+        "height": 1000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/10013/native-alpha.png",
+    "width": 3000,
+    "height": 1000,
+    "sha256": "4cbe9bd4d01ba2cbc426d9d1f3d848501015192617c14b5c8fc4c37c997eb353"
+  }
+}

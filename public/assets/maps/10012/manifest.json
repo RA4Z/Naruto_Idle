@@ -1,0 +1,76 @@
+{
+  "id": "10012",
+  "name": "Em Baixo do Vale do Fim",
+  "kind": "adventure",
+  "background": "/assets/maps/10012/background.png",
+  "foreground": "/assets/maps/10012/foreground.png",
+  "thumbnail": "/assets/maps/10012/thumbnail.jpg",
+  "navigation": "/assets/maps/10012/navigation.json",
+  "width": 976.5625,
+  "height": 716.1458333333334,
+  "spawn": {
+    "x": 498.69791666666663,
+    "y": 474.609375
+  },
+  "enemies": [
+    "19001701",
+    "19001801"
+  ],
+  "description": "Explore as trilhas na parte baixa do Vale do Fim.",
+  "source": "assets/scene/map/10012/",
+  "sourceScene": {
+    "id": "2014001",
+    "mapId": "10012",
+    "time": "1",
+    "type": "1",
+    "name": "Em Baixo do Vale do Fim",
+    "minLevel": null,
+    "worldMapId": "2014001",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "e40048ebdeccdb73a24cb56d9e469935cce741cb126136d3f855aef90b9c46d9",
+  "populationPolicy": "Six patrolling enemies; authored idle-RPG roster using recovered eligible models, not original encounter rules.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 108,
+    "foregroundTiles": 68,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 68,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 787514,
+      "dimensions": [
+        3000,
+        2200
+      ],
+      "sha256": "37800d5a5ab73baf3e440b1bdf7bead4d9c0c4f51c577893f6cc7638aa8864fa",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/10012/foreground.webp",
+        "sourceSha256": "37800d5a5ab73baf3e440b1bdf7bead4d9c0c4f51c577893f6cc7638aa8864fa",
+        "originalBytes": 2405610,
+        "bytes": 1736804,
+        "width": 3000,
+        "height": 2200,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/10012/native-alpha.png",
+    "width": 3000,
+    "height": 2200,
+    "sha256": "24cfc551fdf61f8b413c0abf3456b4b00336a271e3a68cae635be41c4ed343ef"
+  }
+}

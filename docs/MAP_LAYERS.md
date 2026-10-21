@@ -1,5 +1,9 @@
 # Camadas dos mapas: investigação pendente
 
+## Camadas frontais nativamente vazias — 21/10/2026
+
+10013 (topo do Vale do Fim) e 10016 (cânion) têm zero recortes no XML frontal e alphaMap.png inteiramente transparente. O extrator aceita essa ausência comprovada, sem criar pixels ou obstáculos. Caso haja recortes declarados e composição inesperadamente vazia, continua recusando o resultado. Teste de regressão, comparação integral do alpha e navegador WebGL/Canvas cobrem os dois mapas. Os novos 10012/10021 possuem máscaras reais; os dezesseis mapas integrados continuam sem profundidade individual de objetos/SWF intermediários.
+
 ## Atualização confirmada: máscara frontal nativa
 
 O acervo está disponível neste computador, separado do projeto canônico. A referência estática `map/images/MapTile.as`, método `processImageRender`, esclarece o formato: os nomes PNG do XML frontal são virtuais. O cliente recorta o bloco JPEG correspondente usando offset/width/height e aplica o alpha original de `alphaMap.png` com `BitmapData.copyPixels`. Os `.cfg/.bin` inspecionados contêm metadados AMF3, não imagens empacotadas.

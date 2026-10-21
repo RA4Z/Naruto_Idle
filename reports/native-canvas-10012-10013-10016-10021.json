@@ -1,0 +1,211 @@
+{
+  "checkedAt": "2026-10-21T08:45:06.372Z",
+  "renderer": "canvas",
+  "results": [
+    {
+      "map": "10012",
+      "renderedAlphaLevels": [
+        {
+          "source": {
+            "x": 100,
+            "y": 100,
+            "rgba": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "rendered": [
+            255,
+            0,
+            255,
+            255
+          ],
+          "expected": [
+            255,
+            0,
+            255
+          ]
+        },
+        {
+          "source": {
+            "x": 1829,
+            "y": 625,
+            "rgba": [
+              58,
+              78,
+              7,
+              85
+            ]
+          },
+          "rendered": [
+            189,
+            26,
+            172,
+            255
+          ],
+          "expected": [
+            189,
+            26,
+            172
+          ]
+        },
+        {
+          "source": {
+            "x": 464,
+            "y": 387,
+            "rgba": [
+              39,
+              64,
+              7,
+              170
+            ]
+          },
+          "rendered": [
+            112,
+            44,
+            90,
+            255
+          ],
+          "expected": [
+            111,
+            42,
+            89
+          ]
+        }
+      ],
+      "unprobedThinLevels": [],
+      "opaqueCutoutsDisabled": true,
+      "singleHero": true,
+      "partyEmpty": true
+    },
+    {
+      "map": "10013",
+      "renderedAlphaLevels": [
+        {
+          "source": {
+            "x": 100,
+            "y": 100,
+            "rgba": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "rendered": [
+            255,
+            0,
+            255,
+            255
+          ],
+          "expected": [
+            255,
+            0,
+            255
+          ]
+        }
+      ],
+      "unprobedThinLevels": [],
+      "opaqueCutoutsDisabled": true,
+      "singleHero": true,
+      "partyEmpty": true
+    },
+    {
+      "map": "10016",
+      "renderedAlphaLevels": [
+        {
+          "source": {
+            "x": 100,
+            "y": 100,
+            "rgba": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "rendered": [
+            255,
+            0,
+            255,
+            255
+          ],
+          "expected": [
+            255,
+            0,
+            255
+          ]
+        }
+      ],
+      "unprobedThinLevels": [],
+      "opaqueCutoutsDisabled": true,
+      "singleHero": true,
+      "partyEmpty": true
+    },
+    {
+      "map": "10021",
+      "renderedAlphaLevels": [
+        {
+          "source": {
+            "x": 100,
+            "y": 100,
+            "rgba": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "rendered": [
+            255,
+            0,
+            255,
+            255
+          ],
+          "expected": [
+            255,
+            0,
+            255
+          ]
+        },
+        {
+          "source": {
+            "x": 121,
+            "y": 149,
+            "rgba": [
+              34,
+              70,
+              22,
+              170
+            ]
+          },
+          "rendered": [
+            108,
+            46,
+            99,
+            255
+          ],
+          "expected": [
+            107,
+            46,
+            99
+          ]
+        }
+      ],
+      "unprobedThinLevels": [
+        {
+          "alpha": 85,
+          "reason": "No uniform 5x5 neighbourhood for a stable linear-filter GPU probe; every alpha pixel still checked against source."
+        }
+      ],
+      "opaqueCutoutsDisabled": true,
+      "singleHero": true,
+      "partyEmpty": true
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "policy": "one browser, one Phaser scene; ordinary linear rendering, uniform pixel probes; all source alpha pixels validated separately"
+}

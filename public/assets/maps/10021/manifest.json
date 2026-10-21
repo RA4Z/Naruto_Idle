@@ -1,0 +1,76 @@
+{
+  "id": "10021",
+  "name": "Barreira dos Cinco Selos",
+  "kind": "adventure",
+  "background": "/assets/maps/10021/background.png",
+  "foreground": "/assets/maps/10021/foreground.png",
+  "thumbnail": "/assets/maps/10021/thumbnail.jpg",
+  "navigation": "/assets/maps/10021/navigation.json",
+  "width": 1074.21875,
+  "height": 878.90625,
+  "spawn": {
+    "x": 537.109375,
+    "y": 476.23697916666663
+  },
+  "enemies": [
+    "19000901",
+    "19001001"
+  ],
+  "description": "Explore o entorno da Barreira dos Cinco Selos.",
+  "source": "assets/scene/map/10021/",
+  "sourceScene": {
+    "id": "2013001",
+    "mapId": "10021",
+    "time": "1",
+    "type": "1",
+    "name": "Barreira dos Cinco Selos",
+    "minLevel": null,
+    "worldMapId": "2013001",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "8b22c0ddbb66c4aefdab72ff48ddf1566057259094ee249add0e898dfa1a3b7e",
+  "populationPolicy": "Six patrolling enemies; authored idle-RPG roster using recovered eligible models, not original encounter rules.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 143,
+    "foregroundTiles": 79,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 79,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 781811,
+      "dimensions": [
+        3300,
+        2700
+      ],
+      "sha256": "bba3165357c64d952465762ac6921e8611a5662f7c9d9fb83ed497db70be845f",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/10021/foreground.webp",
+        "sourceSha256": "bba3165357c64d952465762ac6921e8611a5662f7c9d9fb83ed497db70be845f",
+        "originalBytes": 2098239,
+        "bytes": 1375986,
+        "width": 3300,
+        "height": 2700,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/10021/native-alpha.png",
+    "width": 3300,
+    "height": 2700,
+    "sha256": "d8d24c5f2c0576e57783aef538b8b89e7e0a3893ffc87c8f1cdaec63fd55e5fc"
+  }
+}

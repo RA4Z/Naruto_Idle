@@ -21,13 +21,15 @@ Limite atualizado pelo usuário: até SEIS LOTES DE VERIFICAÇÃO POR CICLO, exe
 
 - [x] Sons de ataque/derrota de quatro modelos (19000101/19000201/19004301/19002301): 32 MP3 novos, 42 clipes compartilhados, eventos nativos por quadro, carregamento serial sob demanda, teto compartilhado de quatro sons e limpeza testada. Herói recrutado e quatro inimigos verificados no dev e no dist; 87 testes de domínio e 21 servidor/assets. Outros modelos/ações/efeitos continuam pendentes.
 
+- [x] Segundo lote de quatro mapas: Vale do Fim inferior/topo (10012/10013), cânion (10016), Barreira dos Cinco Selos (10021). Total 16 mapas, 129 pendentes; duas camadas nativamente vazias suportadas. Quinze músicas/ambientes, quinze mapas de exploração com áudio; 92 testes de domínio, 21 servidor/assets, três Python e dev/dist aprovados.
+
 ## Recuperação atual do acervo
 
 - [x] Inventário do CDN: 57.496 arquivos físicos, hashes retomáveis, 75 extras e duplicatas preservadas; outras raízes históricas seguem pendentes.
 - [x] Auditar os 145 conjuntos de mapas, inclusive referências virtuais do XML frontal.
 - [x] Recuperar e integrar as máscaras frontais nativas de 10001/10005/10006/10008, preservando alpha e navegação; WebGL reutiliza fundo, Canvas tem fallback.
 - [ ] Recuperar SWFs intermediários, transformações e objetos com ordenação de profundidade própria. A máscara global não encerra esse item.
-- [ ] Integrar os 133 mapas restantes por lotes com viagens, navegação, população, encontros, saves e validação visual.
+- [ ] Integrar os 129 mapas restantes por lotes com viagens, navegação, população, encontros, saves e validação visual.
 - [x] Primeiro lote de loading original: 6/14/22, ciclo funcional, integridade dos JPEGs e falha opcional testados.
 - [ ] Integrar as outras 195 artes e ampliar os vínculos de jutsus/áudio/conteúdo sem reativar party. As 71 dicas originais estão em revisão, sem anunciar mecânicas inexistentes.
 

@@ -1,5 +1,5 @@
 {
-  "validatedAt": "2026-10-21T01:31:11.322630+00:00",
+  "validatedAt": "2026-10-21T08:48:39.392214+00:00",
   "catalogue": {
     "discovered": 1466,
     "processed": 1466,
@@ -139,7 +139,7 @@
   "latestValidation": {
     "typecheck": "passed",
     "build": "passed",
-    "domainTests": 87,
+    "domainTests": 92,
     "serverAndDeploymentTests": 21,
     "pythonTests": 11,
     "arenaBrowser": "passed",
@@ -159,19 +159,21 @@
     "sceneAudioBrowser": "passed",
     "sceneAudioProduction": "passed",
     "byteRangeStreaming": "passed",
-    "affectedPythonTestsThisBatch": 4,
+    "affectedPythonTestsThisBatch": 3,
     "forestBridgeWorldBrowser": "passed",
     "forestBridgeCompiledBundle": "passed",
     "forestBridgeNativeAlpha": "passed",
     "forestBridgeAudioAndFades": "passed",
     "compiledBundleMode": "local browser interception; no extra server; live production backend not retested",
     "uiAudio": "passed",
-    "allVisitedMapsSaveRestore": "passed, all twelve maps in compiled bundle",
+    "allVisitedMapsSaveRestore": "passed, all sixteen maps in compiled bundle",
     "fourWorldsBrowser": "passed",
     "fourWorldsCompiledBundle": "passed",
     "entityAudioBrowser": "passed",
     "entityAudioCompiledBundle": "passed",
-    "entityAudioSourceHashes": "passed"
+    "entityAudioSourceHashes": "passed",
+    "valleyCanyonSealWorlds": "passed",
+    "emptyNativeForeground": "passed"
   },
   "nativeForeground": {
     "maps": [
@@ -184,26 +186,41 @@
     "state": "tested",
     "originalAlphaPreserved": true,
     "globalLayerOnly": true,
-    "individualObjectDepth": "pending"
+    "individualObjectDepth": "pending",
+    "latestBatch": {
+      "maps": [
+        "10012",
+        "10013",
+        "10016",
+        "10021"
+      ],
+      "emptyOriginalLayers": [
+        "10013",
+        "10016"
+      ],
+      "pixelReport": "reports/native-alpha-10012-10013-10016-10021.json",
+      "webgl": "passed",
+      "canvas": "passed"
+    }
   },
   "worldExpansion": {
     "maps": [
       "10007",
       "10009"
     ],
-    "totalIntegratedMaps": 12,
-    "remainingMapSets": 133,
+    "totalIntegratedMaps": 16,
+    "remainingMapSets": 129,
     "report": "reports/world-expansion-batch.json",
     "productionBrowser": "passed",
     "sourceRegionAssumptionFixed": true,
     "latestBatch": {
       "maps": [
-        "10010",
-        "10011",
-        "10020",
-        "10015"
+        "10012",
+        "10013",
+        "10016",
+        "10021"
       ],
-      "report": "reports/world-expansion-10010-10011-10020-10015.json"
+      "report": "reports/world-expansion-10012-10013-10016-10021.json"
     }
   },
   "loadingOriginalArt": {
@@ -216,8 +233,8 @@
   },
   "sceneAudio": {
     "state": "tested",
-    "linkedExplorationMaps": 11,
-    "originalFiles": 13,
+    "linkedExplorationMaps": 15,
+    "originalFiles": 15,
     "sourceHashesPreserved": true,
     "streamedChannelsMax": 2,
     "maps": [
@@ -231,11 +248,15 @@
       "10010",
       "10011",
       "10020",
-      "10015"
+      "10015",
+      "10012",
+      "10013",
+      "10016",
+      "10021"
     ],
     "report": "reports/scene-audio-recovery.json",
     "villageMapping": "existing main.mp3 prototype fallback",
-    "remainingIndependentSourcePaths": 223,
+    "remainingIndependentSourcePaths": 221,
     "embeddedSoundPackages": "further integration pending",
     "nativeFades": "30008: two seconds in/out; HTMLAudio timeupdate, no animation loop"
   },
@@ -254,7 +275,7 @@
     "report": "reports/ui-audio-recovery.json",
     "maxShortVoices": 4
   },
-  "publicMp3Files": 113,
+  "publicMp3Files": 115,
   "saveVisitedMaps": {
     "legacyFixedCapRemoved": true,
     "limit": "number of integrated destinations",

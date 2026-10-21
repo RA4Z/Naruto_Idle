@@ -849,6 +849,306 @@
         "height": 3000,
         "sha256": "275247e46732f8f59e98b8ae2579e503c905918bc1918da5086c9aaa32115931"
       }
+    },
+    {
+      "id": "10012",
+      "name": "Em Baixo do Vale do Fim",
+      "kind": "adventure",
+      "background": "/assets/maps/10012/background.png",
+      "foreground": "/assets/maps/10012/foreground.png",
+      "thumbnail": "/assets/maps/10012/thumbnail.jpg",
+      "navigation": "/assets/maps/10012/navigation.json",
+      "width": 976.5625,
+      "height": 716.1458333333334,
+      "spawn": {
+        "x": 498.69791666666663,
+        "y": 474.609375
+      },
+      "enemies": [
+        "19001701",
+        "19001801"
+      ],
+      "description": "Explore as trilhas na parte baixa do Vale do Fim.",
+      "source": "assets/scene/map/10012/",
+      "sourceScene": {
+        "id": "2014001",
+        "mapId": "10012",
+        "time": "1",
+        "type": "1",
+        "name": "Em Baixo do Vale do Fim",
+        "minLevel": null,
+        "worldMapId": "2014001",
+        "replaceSelfNinja": null
+      },
+      "navigationSha256": "e40048ebdeccdb73a24cb56d9e469935cce741cb126136d3f855aef90b9c46d9",
+      "populationPolicy": "Six patrolling enemies; authored idle-RPG roster using recovered eligible models, not original encounter rules.",
+      "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+      "layers": {
+        "backgroundTiles": 108,
+        "foregroundTiles": 68,
+        "animatedMiddleground": "available in originals; pending conversion",
+        "nativeForeground": {
+          "method": "native-alpha-map-and-original-tile-rectangles-v1",
+          "foregroundRects": 68,
+          "opaqueGroundCutouts": false,
+          "emptyNativeLayer": false,
+          "alphaLevels": [
+            0,
+            85,
+            170
+          ],
+          "nontransparentPixels": 787514,
+          "dimensions": [
+            3000,
+            2200
+          ],
+          "sha256": "37800d5a5ab73baf3e440b1bdf7bead4d9c0c4f51c577893f6cc7638aa8864fa",
+          "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+          "limits": [
+            "Native global translucent front layer; not per-object Y sorting.",
+            "Middleground SWF objects require a separate conversion."
+          ],
+          "optimizedRuntime": {
+            "url": "/assets/maps/10012/foreground.webp",
+            "sourceSha256": "37800d5a5ab73baf3e440b1bdf7bead4d9c0c4f51c577893f6cc7638aa8864fa",
+            "originalBytes": 2405610,
+            "bytes": 1736804,
+            "width": 3000,
+            "height": 2200,
+            "lossless": true
+          }
+        }
+      },
+      "nativeAlpha": {
+        "url": "/assets/maps/10012/native-alpha.png",
+        "width": 3000,
+        "height": 2200,
+        "sha256": "24cfc551fdf61f8b413c0abf3456b4b00336a271e3a68cae635be41c4ed343ef"
+      }
+    },
+    {
+      "id": "10013",
+      "name": "No Topo do Vale do Fim",
+      "kind": "adventure",
+      "background": "/assets/maps/10013/background.png",
+      "foreground": "/assets/maps/10013/foreground.png",
+      "thumbnail": "/assets/maps/10013/thumbnail.jpg",
+      "navigation": "/assets/maps/10013/navigation.json",
+      "width": 976.5625,
+      "height": 325.5208333333333,
+      "spawn": {
+        "x": 467.44791666666663,
+        "y": 271.484375
+      },
+      "enemies": [
+        "19000901",
+        "19001001"
+      ],
+      "description": "Patrulhe as passagens no topo do Vale do Fim.",
+      "source": "assets/scene/map/10013/",
+      "sourceScene": {
+        "id": "2014002",
+        "mapId": "10013",
+        "time": "1",
+        "type": "1",
+        "name": "No Topo do Vale do Fim",
+        "minLevel": null,
+        "worldMapId": "2014001",
+        "replaceSelfNinja": null
+      },
+      "navigationSha256": "51c3a6d15725e6c367545390d693d8e9b741e482cf8108cb44b5dc55b655199a",
+      "populationPolicy": "Six patrolling enemies; authored idle-RPG roster using recovered eligible models, not original encounter rules.",
+      "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+      "layers": {
+        "backgroundTiles": 48,
+        "foregroundTiles": 0,
+        "animatedMiddleground": "available in originals; pending conversion",
+        "nativeForeground": {
+          "method": "native-alpha-map-and-original-tile-rectangles-v1",
+          "foregroundRects": 0,
+          "opaqueGroundCutouts": false,
+          "emptyNativeLayer": true,
+          "alphaLevels": [
+            0
+          ],
+          "nontransparentPixels": 0,
+          "dimensions": [
+            3000,
+            1000
+          ],
+          "sha256": "92e1b2b34b41db2857626bf8a8124b0c7d936abff71b9d66adbfcd3f132c8649",
+          "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+          "limits": [
+            "Native global translucent front layer; not per-object Y sorting.",
+            "Middleground SWF objects require a separate conversion."
+          ],
+          "optimizedRuntime": {
+            "url": "/assets/maps/10013/foreground.webp",
+            "sourceSha256": "92e1b2b34b41db2857626bf8a8124b0c7d936abff71b9d66adbfcd3f132c8649",
+            "originalBytes": 11722,
+            "bytes": 166,
+            "width": 3000,
+            "height": 1000,
+            "lossless": true
+          }
+        }
+      },
+      "nativeAlpha": {
+        "url": "/assets/maps/10013/native-alpha.png",
+        "width": 3000,
+        "height": 1000,
+        "sha256": "4cbe9bd4d01ba2cbc426d9d1f3d848501015192617c14b5c8fc4c37c997eb353"
+      }
+    },
+    {
+      "id": "10016",
+      "name": "Caniôn do País dos Rios",
+      "kind": "adventure",
+      "background": "/assets/maps/10016/background.png",
+      "foreground": "/assets/maps/10016/foreground.png",
+      "thumbnail": "/assets/maps/10016/thumbnail.jpg",
+      "navigation": "/assets/maps/10016/navigation.json",
+      "width": 878.90625,
+      "height": 1074.21875,
+      "spawn": {
+        "x": 429.0364583333333,
+        "y": 603.1901041666666
+      },
+      "enemies": [
+        "19000101",
+        "19000201"
+      ],
+      "description": "Cruze os caminhos do cânion no País dos Rios.",
+      "source": "assets/scene/map/10016/",
+      "sourceScene": {
+        "id": "2006001",
+        "mapId": "10016",
+        "time": "1",
+        "type": "1",
+        "name": "Caniôn do País dos Rios",
+        "minLevel": null,
+        "worldMapId": "2006001",
+        "replaceSelfNinja": null
+      },
+      "navigationSha256": "78ac454971c5f554494c4b29b3ca2f4c4661b09a2133132f90898b2443805433",
+      "populationPolicy": "Six patrolling enemies; authored idle-RPG roster using recovered eligible models, not original encounter rules.",
+      "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+      "layers": {
+        "backgroundTiles": 143,
+        "foregroundTiles": 0,
+        "animatedMiddleground": "available in originals; pending conversion",
+        "nativeForeground": {
+          "method": "native-alpha-map-and-original-tile-rectangles-v1",
+          "foregroundRects": 0,
+          "opaqueGroundCutouts": false,
+          "emptyNativeLayer": true,
+          "alphaLevels": [
+            0
+          ],
+          "nontransparentPixels": 0,
+          "dimensions": [
+            2700,
+            3300
+          ],
+          "sha256": "c4eb1a28c086171d1267b70ba5e22578198b50ac66171f4b7dfc0e46164dbdb4",
+          "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+          "limits": [
+            "Native global translucent front layer; not per-object Y sorting.",
+            "Middleground SWF objects require a separate conversion."
+          ],
+          "optimizedRuntime": {
+            "url": "/assets/maps/10016/foreground.webp",
+            "sourceSha256": "c4eb1a28c086171d1267b70ba5e22578198b50ac66171f4b7dfc0e46164dbdb4",
+            "originalBytes": 34669,
+            "bytes": 414,
+            "width": 2700,
+            "height": 3300,
+            "lossless": true
+          }
+        }
+      },
+      "nativeAlpha": {
+        "url": "/assets/maps/10016/native-alpha.png",
+        "width": 2700,
+        "height": 3300,
+        "sha256": "0836b29d117140f6b4780cac16caa445c0b3f4f227b33f1729cbb5033a4efddd"
+      }
+    },
+    {
+      "id": "10021",
+      "name": "Barreira dos Cinco Selos",
+      "kind": "adventure",
+      "background": "/assets/maps/10021/background.png",
+      "foreground": "/assets/maps/10021/foreground.png",
+      "thumbnail": "/assets/maps/10021/thumbnail.jpg",
+      "navigation": "/assets/maps/10021/navigation.json",
+      "width": 1074.21875,
+      "height": 878.90625,
+      "spawn": {
+        "x": 537.109375,
+        "y": 476.23697916666663
+      },
+      "enemies": [
+        "19000901",
+        "19001001"
+      ],
+      "description": "Explore o entorno da Barreira dos Cinco Selos.",
+      "source": "assets/scene/map/10021/",
+      "sourceScene": {
+        "id": "2013001",
+        "mapId": "10021",
+        "time": "1",
+        "type": "1",
+        "name": "Barreira dos Cinco Selos",
+        "minLevel": null,
+        "worldMapId": "2013001",
+        "replaceSelfNinja": null
+      },
+      "navigationSha256": "8b22c0ddbb66c4aefdab72ff48ddf1566057259094ee249add0e898dfa1a3b7e",
+      "populationPolicy": "Six patrolling enemies; authored idle-RPG roster using recovered eligible models, not original encounter rules.",
+      "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+      "layers": {
+        "backgroundTiles": 143,
+        "foregroundTiles": 79,
+        "animatedMiddleground": "available in originals; pending conversion",
+        "nativeForeground": {
+          "method": "native-alpha-map-and-original-tile-rectangles-v1",
+          "foregroundRects": 79,
+          "opaqueGroundCutouts": false,
+          "emptyNativeLayer": false,
+          "alphaLevels": [
+            0,
+            85,
+            170
+          ],
+          "nontransparentPixels": 781811,
+          "dimensions": [
+            3300,
+            2700
+          ],
+          "sha256": "bba3165357c64d952465762ac6921e8611a5662f7c9d9fb83ed497db70be845f",
+          "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+          "limits": [
+            "Native global translucent front layer; not per-object Y sorting.",
+            "Middleground SWF objects require a separate conversion."
+          ],
+          "optimizedRuntime": {
+            "url": "/assets/maps/10021/foreground.webp",
+            "sourceSha256": "bba3165357c64d952465762ac6921e8611a5662f7c9d9fb83ed497db70be845f",
+            "originalBytes": 2098239,
+            "bytes": 1375986,
+            "width": 3300,
+            "height": 2700,
+            "lossless": true
+          }
+        }
+      },
+      "nativeAlpha": {
+        "url": "/assets/maps/10021/native-alpha.png",
+        "width": 3300,
+        "height": 2700,
+        "sha256": "d8d24c5f2c0576e57783aef538b8b89e7e0a3893ffc87c8f1cdaec63fd55e5fc"
+      }
     }
   ]
 }

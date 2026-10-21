@@ -1,5 +1,17 @@
 # Ponto de continuidade
 
+## Vale do Fim, cânion e barreira — lote validado em 21/10/2026
+
+Integrados 10012 Em Baixo do Vale do Fim (cena 2014001), 10013 No Topo do Vale do Fim (2014002), 10016 Caniôn do País dos Rios (2006001) e 10021 Barreira dos Cinco Selos (2013001). Total: 16/145 conjuntos, 129 restantes. Fundo, grade nativa, máscaras e viagens funcionam; seis inimigos móveis, encontros/loot/XP, save/reload e retorno testados nos quatro. Populações e regras idle são autorais. Portais e conexões originais continuam adiados. Os 102 arquivos dos doze mapas anteriores foram preservados byte a byte.
+
+Topo do Vale e cânion possuem zero recortes frontais e alpha nativo todo zero: o extrator passa a aceitar a camada vazia comprovada, mantendo transparência real. Teste de regressão cobre esse caso sem fabricar objetos. O Vale inferior e a barreira usam máscaras nativas; nível 85 da barreira é fino demais para probe GPU uniforme, mas todos os pixels foram comparados à fonte em CPU. Camadas intermediárias SWF e profundidade individual ainda pendentes.
+
+Recuperados dois MP3 adicionais, stage08.mp3 e stage08_fx.mp3; os demais mapas reutilizam adv04/adv05. Quinze arquivos de música/ambiente, quinze destinos de exploração com vínculo nativo e 115 MP3 totais em runtime. Restam 221 caminhos MP3 independentes, incluindo cópias duplicadas. A reprodução continua com até dois streams longos e quatro sons curtos compartilhados. Backend de produção não retestado ao vivo; bundle compilado executado por interceptação local.
+
+Validação: 92 testes de domínio, 21 servidor/assets, três Python de foreground, typecheck e build de 41,72 s (Node 512 MB e threads limitadas). Navegador dev: quatro caminhadas, seis patrulhas/mapa, vitórias, loot, reload, retorno, áudio e admin; alpha WebGL/Canvas. Bundle compilado: restaurou os dezesseis mapas visitados e completou uma vitória em cada mapa novo, com save/reload e retorno. Screenshots dos quatro cenários inspecionados. Sem erros ou assets ausentes. Os testes de assets inicialmente encontraram o índice compacto desatualizado; prepare-runtime o regenerou e todos passaram. Um navegador e uma página por vez; até seis lotes de verificação seriais por ciclo. O único Vite temporário desta execução foi encerrado; nenhum processo do usuário foi fechado.
+
+Relatórios: world-expansion-10012-10013-10016-10021.json, world-preservation-10012-10013-10016-10021.json, world-browser-10012-10013-10016-10021.json, world-production-10012-10013-10016-10021.json, native-alpha/native-webgl/native-canvas-10012-10013-10016-10021.json e scene-audio-browser-10012-10013-10016-10021.json. Lote anterior de sons por modelo publicado em 47ea4af6. Próximos lotes ainda incluem mapas, efeitos/jutsus, sons/músicas, personagens/animações, objetos/camadas e 195 artes; não declarar recuperação completa. Preservar exclusão alheia DESIGN_DE_PROGRESSAO.md.
+
 ## Sons originais de quatro modelos — integração validada
 
 Integrados ataque e derrota de 19000101 (marionetes da Areia), 19000201 (longo alcance da Areia), 19004301 (cura da Areia) e 19002301 (samurai). São 13 pacotes e 42 clipes referenciados: 32 novos MP3, 378.094 bytes, mais dez já existentes. Total de runtime: 113 MP3. Fontes: ações XML embutidas nos SWFs, soundConfig.xml e deathSoundConfig.xml; DefineSound preservado sem transcodificação, hashes e símbolos conferidos. Modelos continuam em suas coleções existentes; esta etapa não reclassifica recursos incompletos como personagens padrão.

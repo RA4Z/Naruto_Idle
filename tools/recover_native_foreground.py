@@ -40,7 +40,9 @@ def recover(archive, ident, project):
         size = background.size
     with Image.open(io.BytesIO(archive.raw(alpha_path))) as alpha:
         image = compose_foreground(bg,fg,alpha,size,lambda name: Image.open(io.BytesIO(archive.raw(name))))
-    if image.getbbox() is None: raise ValueError('Native foreground is empty')
+    empty_native_layer = not fg and alpha.convert('RGBA').getchannel('A').getbbox() is None
+    if image.getbbox() is None and not empty_native_layer:
+        raise ValueError('Unexpected empty foreground despite native rectangles')
     backup = project/'assets-extraidos/mapas/before-native-alpha'/ident
     backup.mkdir(parents=True,exist_ok=True)
     for name in ['foreground.png','manifest.json']:
@@ -58,7 +60,7 @@ def recover(archive, ident, project):
     runtime_path.write_text(json.dumps(replacements,indent=2)+'\n',encoding='utf-8')
     histogram = image.getchannel('A').histogram()
     info = {'method':'native-alpha-map-and-original-tile-rectangles-v1',
-            'foregroundRects':len(fg),'opaqueGroundCutouts':False,
+            'foregroundRects':len(fg),'opaqueGroundCutouts':False,'emptyNativeLayer':empty_native_layer,
             'alphaLevels':[i for i,n in enumerate(histogram) if n],
             'nontransparentPixels':sum(histogram[1:]),'dimensions':list(size),
             'sha256':hashlib.sha256((folder/'foreground.png').read_bytes()).hexdigest(),

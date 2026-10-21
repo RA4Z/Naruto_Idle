@@ -257,6 +257,102 @@
       "fadeOutMs": 0,
       "status": "integrated",
       "playback": "random selection on completion; original interval; looped ambience"
+    },
+    "10012": {
+      "sceneId": "2014001",
+      "name": "Em Baixo do Vale do Fim",
+      "tracks": [
+        "/assets/audio/scenes/adv04.mp3"
+      ],
+      "environment": "/assets/audio/scenes/adv04_fx.mp3",
+      "intervalMs": 10000,
+      "sourceMapping": {
+        "id": "2014001",
+        "envAudio": "assets\\sound\\scene\\SE\\adv04_fx.mp3",
+        "bgMusics": "assets\\sound\\scene\\SE\\adv04.mp3,,,",
+        "interval": "10000",
+        "gapBegining": "0",
+        "gapEnding": "0",
+        "fadeIn": "",
+        "fadeOut": "",
+        "desc": ""
+      },
+      "fadeInMs": 0,
+      "fadeOutMs": 0,
+      "status": "integrated",
+      "playback": "random selection on completion; original interval; looped ambience"
+    },
+    "10013": {
+      "sceneId": "2014002",
+      "name": "No Topo do Vale do Fim",
+      "tracks": [
+        "/assets/audio/scenes/stage08.mp3"
+      ],
+      "environment": "/assets/audio/scenes/stage08_fx.mp3",
+      "intervalMs": 10000,
+      "sourceMapping": {
+        "id": "2014002",
+        "envAudio": "assets\\sound\\scene\\SE\\stage08_fx.mp3",
+        "bgMusics": "assets\\sound\\scene\\SE\\stage08.mp3,,,",
+        "interval": "10000",
+        "gapBegining": "0",
+        "gapEnding": "0",
+        "fadeIn": "",
+        "fadeOut": "",
+        "desc": ""
+      },
+      "fadeInMs": 0,
+      "fadeOutMs": 0,
+      "status": "integrated",
+      "playback": "random selection on completion; original interval; looped ambience"
+    },
+    "10016": {
+      "sceneId": "2006001",
+      "name": "Caniôn do País dos Rios",
+      "tracks": [
+        "/assets/audio/scenes/adv04.mp3"
+      ],
+      "environment": "/assets/audio/scenes/adv04_fx.mp3",
+      "intervalMs": 10000,
+      "sourceMapping": {
+        "id": "2006001",
+        "envAudio": "assets\\sound\\scene\\SE\\adv04_fx.mp3",
+        "bgMusics": "assets\\sound\\scene\\SE\\adv04.mp3,,,",
+        "interval": "10000",
+        "gapBegining": "0",
+        "gapEnding": "0",
+        "fadeIn": "",
+        "fadeOut": "",
+        "desc": ""
+      },
+      "fadeInMs": 0,
+      "fadeOutMs": 0,
+      "status": "integrated",
+      "playback": "random selection on completion; original interval; looped ambience"
+    },
+    "10021": {
+      "sceneId": "2013001",
+      "name": "Barreira dos Cinco Selos",
+      "tracks": [
+        "/assets/audio/scenes/adv05.mp3"
+      ],
+      "environment": "/assets/audio/scenes/adv05_fx.mp3",
+      "intervalMs": 10000,
+      "sourceMapping": {
+        "id": "2013001",
+        "envAudio": "assets\\sound\\scene\\SE\\adv05_fx.mp3",
+        "bgMusics": "assets\\sound\\scene\\SE\\adv05.mp3,,,",
+        "interval": "10000",
+        "gapBegining": "0",
+        "gapEnding": "0",
+        "fadeIn": "",
+        "fadeOut": "",
+        "desc": ""
+      },
+      "fadeInMs": 0,
+      "fadeOutMs": 0,
+      "status": "integrated",
+      "playback": "random selection on completion; original interval; looped ambience"
     }
   },
   "files": {
@@ -349,6 +445,20 @@
       "sourceTag": "PT_NarutoAlpha6.00Build300",
       "sha256": "e66da1bb66a5c86fa03c4c9b77d8a025f3678f13d8b6c88278b6940bfb3afa98",
       "bytes": 576368,
+      "status": "integrated"
+    },
+    "/assets/audio/scenes/stage08.mp3": {
+      "source": "assets/sound/scene/SE/stage08.mp3",
+      "sourceTag": "PT_NarutoAlpha6.00Build300",
+      "sha256": "45345d125654c8f1a62550980c07555efba65333a4e9c143d39e1f21767d0384",
+      "bytes": 437632,
+      "status": "integrated"
+    },
+    "/assets/audio/scenes/stage08_fx.mp3": {
+      "source": "assets/sound/scene/SE/stage08_fx.mp3",
+      "sourceTag": "PT_NarutoAlpha6.00Build300",
+      "sha256": "ef8d73d26795a681a74db5fcce6635b48fbdefde3d0540d496fa7bf546709117",
+      "bytes": 428064,
       "status": "integrated"
     }
   }

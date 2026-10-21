@@ -4,6 +4,7 @@ Existing map entries remain unchanged unless --refresh is explicitly provided.
 from pathlib import Path
 import argparse,collections,hashlib,io,json,shutil,struct,zlib
 import xml.etree.ElementTree as ET
+import subprocess
 from PIL import Image
 from original_archive import OriginalArchive
 from recover_native_foreground import recover
@@ -23,7 +24,17 @@ SPECS={
  '10011':{'enemies':['19002301','19000901'],'kind':'adventure','description':'Patrulhe as estradas de Tanzaku e encontre samurais.'},
  '10020':{'enemies':['19000101','19000201'],'kind':'adventure','description':'Cruze as dunas do País do Vento entre ninjas da Areia.'},
  '10015':{'enemies':['19000101','19004301'],'kind':'adventure','description':'Explore o Deserto Quente e enfrente unidades da Areia.'},
+ '10012':{'enemies':['19001701','19001801'],'kind':'adventure','description':'Explore as trilhas na parte baixa do Vale do Fim.'},
+ '10013':{'enemies':['19000901','19001001'],'kind':'adventure','description':'Patrulhe as passagens no topo do Vale do Fim.'},
+ '10016':{'enemies':['19000101','19000201'],'kind':'adventure','description':'Cruze os caminhos do cânion no País dos Rios.'},
+ '10021':{'enemies':['19000901','19001001'],'kind':'adventure','description':'Explore o entorno da Barreira dos Cinco Selos.'},
 }
+
+def write_json(path,value):
+    previous=subprocess.run(['git','show','HEAD:'+str(path.relative_to(PROJECT)).replace('\\','/')],cwd=PROJECT,capture_output=True).stdout
+    eol='\r\n' if previous.count(b'\n') and previous.count(b'\n')==previous.count(b'\r\n') else '\n'
+    path.write_bytes((json.dumps(value,ensure_ascii=False,indent=2)+'\n').replace('\n',eol).encode('utf-8'))
+
 
 def native_navigation(raw):
     width, height, tile_w, tile_h, cols, rows, cell_w, cell_h = struct.unpack_from('>4I4H', raw)
@@ -111,7 +122,7 @@ def prepare(archive,ident):
     replacements_path=PROJECT/'public/assets/catalog/runtime-images.json';replacements=json.loads(replacements_path.read_text(encoding='utf-8'))
     replacements[manifest['background']]={'url':f'/assets/maps/{ident}/background.webp','sourceSha256':hashlib.sha256((folder/'background.png').read_bytes()).hexdigest(),
                                          'originalBytes':(folder/'background.png').stat().st_size,'bytes':(folder/'background.webp').stat().st_size,'width':width,'height':height}
-    replacements_path.write_text(json.dumps(replacements,indent=2)+'\n',encoding='utf-8')
+    write_json(replacements_path,replacements)
     assert hashes==[archive.record(name) for name in source_names], 'Original source changed'
     return manifest,{'id':ident,'state':'integrated-awaiting-tests','sourceScene':scene,'sources':hashes,'foreground':foreground,
                      'limits':['Middleground animation pending','No per-object Y sorting','Enemy roster and idle rules are authored, not copied']}
@@ -138,7 +149,7 @@ def main():
     for ident in ids:
         manifest,row=prepare(archive,ident);manifests[ident]=manifest;rows.append(row);print(json.dumps({'id':ident,'name':manifest['name'],'spawn':manifest['spawn']},ensure_ascii=True),flush=True)
     index['maps']=[manifests.pop(m['id'],m) for m in index['maps']]+list(manifests.values())
-    index_path.write_text(json.dumps(index,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    write_json(index_path,index)
     report={'policy':'one map at a time; explicit IDs; existing entries and original files preserved','maps':rows}
     (PROJECT/('reports/world-expansion-'+('-'.join(ids))+'.json')).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 if __name__=='__main__':main()
