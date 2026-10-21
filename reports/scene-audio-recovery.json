@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-10-20T23:24:43.017571+00:00",
+  "maps": [
+    "10005",
+    "10006",
+    "10008",
+    "10007",
+    "10009"
+  ],
+  "files": 11,
+  "sourceConfigSha256": {
+    "config/world/SceneCFG.xml": "efea068f921282d9f13cbede5e1da18df6a354072432491a397cc830cc78426a",
+    "config/world/MapMusicConfig.xml": "77f95069171a19a9956a3b53e582a2e43a4b6dae271277c4dc88e44b34785ed1"
+  },
+  "sourceBytesPreserved": true,
+  "workers": 1,
+  "independentMp3Discovered": 237,
+  "integratedSceneFiles": 11,
+  "legacyMainTrackAlreadyIntegrated": 1,
+  "remainingIndependentSourcePaths": 225,
+  "limits": [
+    "Source-path counts include duplicate copies across scene/sound directories.",
+    "Only named exploration scenes are linked; village keeps documented prototype main.mp3 fallback.",
+    "Embedded SWF voices/effects, other scene tracks and battle-music mappings remain pending."
+  ],
+  "state": "tested",
+  "validation": {
+    "domainTests": 69,
+    "serverTests": 19,
+    "typecheck": "passed",
+    "build": "emitted and production-browser-validated",
+    "browser": "reports/scene-audio-browser-validation.json",
+    "production": "reports/scene-audio-production-validation.json",
+    "sourceAudioFilesDecoded": 11
+  }
+}

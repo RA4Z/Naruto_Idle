@@ -19,6 +19,7 @@ test("admin API requires a server session, rejects bad passwords and cross-origi
   try {
     let r = await fetch(base + "/api/admin/characters");
     assert.equal(r.status, 401);
+    assert.equal((await fetch(base + "/api/admin/scene-audio")).status, 401);
     r = await fetch(base + "/api/admin/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -52,6 +53,9 @@ test("admin API requires a server session, rejects bad passwords and cross-origi
     r = await fetch(base + "/api/admin/maps", { headers: { Cookie: cookie } });
     const maps = (await r.json()).maps;
     assert.ok(["10001", "10005", "10006", "10008", "10007", "10009"].every(id => maps.some(map => map.id === id)));
+    r = await fetch(base + "/api/admin/scene-audio", { headers: { Cookie: cookie } });
+    assert.equal(r.status, 200);
+    assert.equal(Object.keys((await r.json()).files).length, 11);
     r = await fetch(base + "/api/admin/characters/11000101", {
       headers: { Cookie: cookie },
     });

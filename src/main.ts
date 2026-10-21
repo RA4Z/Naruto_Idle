@@ -518,6 +518,7 @@ class HuntScene extends Phaser.Scene {
       this,
       presentationData,
       presentationCharacter(),
+      this.map.id,
     );
     this.presentation.settings(
       save.sound,
@@ -1232,6 +1233,7 @@ class HuntScene extends Phaser.Scene {
       if (!this.sys.isActive()) return;
       this.enemy = this.standbyEnemy;
       this.map = map;
+      this.presentation.setMap(map.id);
       this.navigation = new NativeNavigation(grid);
       cast.enemies = pool;
       const spawn = this.navigation.nearest(map.spawn)!;

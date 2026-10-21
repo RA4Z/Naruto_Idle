@@ -1,6 +1,6 @@
 import { createServer } from "node:http";
 import { networkInterfaces } from "node:os";
-import { createReadStream } from "node:fs";
+import { serveFile } from "./static-file.mjs";
 import { stat } from "node:fs/promises";
 import { resolve, sep, extname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -47,16 +47,7 @@ const server = createServer(
           } else throw new Error();
         }
         if (!info.isFile()) throw new Error();
-        res.setHeader(
-          "Content-Type",
-          mime[extname(path)] || "application/octet-stream",
-        );
-        res.setHeader("X-Content-Type-Options", "nosniff");
-        if (req.method === "HEAD") return res.end();
-        const stream = createReadStream(path);
-        stream.on("error", () => res.destroy());
-        res.on("close", () => stream.destroy());
-        stream.pipe(res);
+        serveFile(req, res, path, info.size, mime[extname(path)] || "application/octet-stream");
       } catch {
         res.writeHead(404);
         res.end("Not found");

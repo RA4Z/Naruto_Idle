@@ -144,6 +144,7 @@ async function show(id: string, title: string) {
       content.append(grid);
     } else if (id === "effects" || id === "sounds") {
       const data = await api("presentation");
+      const sceneAudio = id === "sounds" ? await api("scene-audio") : undefined;
       if (request !== generation) return;
       content.replaceChildren();
       const grid = node("div", undefined, "admin-grid");
@@ -170,8 +171,25 @@ async function show(id: string, title: string) {
         audio.controls = true;
         audio.preload = "none";
         audio.src = data.music.url;
-        card.append(audio);
+        audio.onplay = () => document.querySelectorAll("audio").forEach(other => { if (other !== audio) other.pause(); });
+        card.append(node("p", "Trilha provisória do lobby; vínculo original ainda em revisão."), audio);
         grid.prepend(card);
+        for (const [url, file] of Object.entries<any>(sceneAudio.files)) {
+          const entry = node("article", undefined, "admin-card");
+          entry.dataset.sceneAudio = url;
+          const uses = Object.entries<any>(sceneAudio.maps)
+            .filter(([, map]) => map.tracks.includes(url) || map.environment === url)
+            .map(([id, map]) => map.name + " (" + id + ")");
+          entry.append(node("h3", url.split("/").pop()!), node("p", uses.join(" · ")),
+            node("p", file.source));
+          const preview = node("audio");
+          preview.controls = true;
+          preview.preload = "none";
+          preview.src = url;
+          preview.onplay = () => document.querySelectorAll("audio").forEach(other => { if (other !== preview) other.pause(); });
+          entry.append(preview);
+          grid.prepend(entry);
+        }
       } else
         for (const [key, effect] of Object.entries<any>(data.effects)) {
           const card = node("article", undefined, "admin-card");

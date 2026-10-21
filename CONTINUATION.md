@@ -1,5 +1,16 @@
 # Ponto de continuidade
 
+## Músicas e ambientes originais por cena — lote concluído
+
+Recuperados 11 MP3 originais, sem alterar bytes/hashes, vinculados por SceneCFG.xml e MapMusicConfig.xml a cinco mapas: Floresta da Folha, Campo de Treinamento, País das Ondas, Costa Verde e Floresta da Morte. Sete músicas e quatro ambientes compartilhados; escolhas aleatórias e intervalo original de 10 s. O lobby conserva main.mp3 como trilha provisória, sem afirmar um vínculo original ainda não demonstrado. Catálogo em public/assets/audio/scenes/index.json, script tools/recover_scene_audio.py com até cinco IDs explícitos e um worker.
+
+Áudios longos são transmitidos por HTMLAudio: no máximo uma música e um ambiente, sem PCM de todas as trilhas visitadas no cache Phaser. Som/música/volume, pausa, troca de mapa e encerramento liberam ou suspendem as faixas corretamente. Falha opcional não bloqueia viagem; outro clique permite retry. Admin autenticado exibe as 11 prévias com preload=none. Produção corrigida para Content-Length, HEAD e byte ranges, permitindo duração e busca corretas nos MP3.
+
+Validação: 69 testes de domínio, 19 servidor/assets/streaming, typecheck, build emitida e navegadores dev/produção; os 11 arquivos foram decodificados/reproduzidos sequencialmente. Falha induzida de música e retry cobertos no dev. Relatórios scene-audio-*.json. Restam 225 caminhos MP3 independentes (incluem cópias duplicadas entre diretórios), pacotes SWF de efeitos/vozes e outros vínculos; não declarar recuperação completa.
+
+Restrição reforçada: uma tarefa pesada de cada vez, sem Promise.all/pools em conversores; reaproveitar Vite 5178 do usuário sem iniciar servidor extra. Uma página de teste por vez (fechar jogo antes do admin), navegador encerrado antes do build/conversão. Servidores temporários anteriores encerrados; confirmar processos reais, nunca matar processos pelo nome. Primeiro terminar commit/push deste lote, depois selecionar outro lote pequeno. Portais continuam APÓS a extração/integração prioritária.
+
+
 ## Retomada de 20/10/2026 às 20h20: extração e integração primeiro
 
 Ordem corrigida pelo usuário: antes dos portais, extrair TODO o restante disponível do original (mapas, camadas/objetos, personagens/animações, jutsus/efeitos, sons, músicas, interface e demais recursos), organizar no projeto e implementar a integração correta ao jogo. Trabalhar em lotes pequenos e retomáveis, com uma tarefa pesada por vez. Catálogo ou cópia isolada não encerram a tarefa. Manter acompanhamento por categoria/ID e dependências, separando descoberto, extraído, convertido, integrado, testado e bloqueado; não declarar tudo recuperado com pendências.

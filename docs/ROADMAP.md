@@ -8,6 +8,8 @@ O usuário autorizou desenvolvimento contínuo nos resets naturais, mantendo apr
 
 Pedido do usuário em 20/10/2026: uma tarefa pesada por vez. Não sobrepor build, extração e testes de navegador. Suites serializadas e apenas um Chromium; /arena permite dois clientes sem duas cenas Phaser. Manter essa restrição em todos os resets.
 
+- [x] Lote de música/ambiente original de cinco cenas: 11 MP3 com hashes, streaming limitado, preferências, pausa/limpeza, admin e suporte a byte ranges testados. Demais 225 caminhos MP3 e pacotes SWF ainda pendentes.
+
 ## Recuperação atual do acervo
 
 - [x] Inventário do CDN: 57.496 arquivos físicos, hashes retomáveis, 75 extras e duplicatas preservadas; outras raízes históricas seguem pendentes.

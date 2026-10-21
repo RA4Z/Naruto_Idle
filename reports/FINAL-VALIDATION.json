@@ -1,5 +1,5 @@
 {
-  "validatedAt": "2026-10-20T22:11:51.604524+00:00",
+  "validatedAt": "2026-10-21T00:05:21.785718+00:00",
   "catalogue": {
     "discovered": 1466,
     "processed": 1466,
@@ -139,8 +139,8 @@
   "latestValidation": {
     "typecheck": "passed",
     "build": "passed",
-    "domainTests": 64,
-    "serverAndDeploymentTests": 17,
+    "domainTests": 69,
+    "serverAndDeploymentTests": 19,
     "pythonTests": 11,
     "arenaBrowser": "passed",
     "characterSelectionBrowser": "passed",
@@ -155,7 +155,10 @@
     "worldExpansionBrowser": "passed",
     "worldExpansionProduction": "passed",
     "loadingOriginalArt": "passed",
-    "loadingArtFailure": "passed"
+    "loadingArtFailure": "passed",
+    "sceneAudioBrowser": "passed",
+    "sceneAudioProduction": "passed",
+    "byteRangeStreaming": "passed"
   },
   "nativeForeground": {
     "maps": [
@@ -188,5 +191,23 @@
     "reviewOnlyTips": 71,
     "report": "reports/loading-art-recovery.json",
     "state": "tested"
+  },
+  "sceneAudio": {
+    "state": "tested",
+    "linkedExplorationMaps": 5,
+    "originalFiles": 11,
+    "sourceHashesPreserved": true,
+    "streamedChannelsMax": 2,
+    "maps": [
+      "10005",
+      "10006",
+      "10008",
+      "10007",
+      "10009"
+    ],
+    "report": "reports/scene-audio-recovery.json",
+    "villageMapping": "existing main.mp3 prototype fallback",
+    "remainingIndependentSourcePaths": 225,
+    "embeddedSoundPackages": "further integration pending"
   }
 }

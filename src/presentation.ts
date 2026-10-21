@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import { SceneAudioPlayer, type SceneAudioCatalog } from "./audio/scene-audio";
 import type { AnimationDef } from "./entities/types";
 export type PresentationConfig = {
   characters: Record<
@@ -16,6 +17,7 @@ export type PresentationConfig = {
   effects: Record<string, AnimationDef>;
   sounds: Record<string, { name: string; urls: string[] }>;
   music: { url: string };
+  sceneAudio?: SceneAudioCatalog;
 };
 const effectKey = (name: string) => "effect:" + name;
 const effectsFor = (character: string) =>
@@ -59,13 +61,12 @@ export function queuePresentation(
         !scene.cache.audio.exists(soundKey(id, i)) &&
         scene.load.audio(soundKey(id, i), url),
     );
-  if (!scene.cache.audio.exists("original:village"))
-    scene.load.audio("original:village", data.music.url);
+
 }
 export class PresentationPlayer {
   private active = new Set<Phaser.GameObjects.Sprite>();
   private timers = new Set<Phaser.Time.TimerEvent>();
-  private music?: Phaser.Sound.BaseSound;
+  private ambience: SceneAudioPlayer;
   private paused = false;
   private enabled = false;
   private lastSoundAt = -100;
@@ -75,7 +76,10 @@ export class PresentationPlayer {
     private scene: Phaser.Scene,
     private data: PresentationConfig,
     private character: string,
+    mapId = "10001",
   ) {
+    this.ambience = new SceneAudioPlayer(data.sceneAudio || {}, data.music.url);
+    this.ambience.setMap(mapId);
     this.registerEffects();
     let disposed = false;
     const dispose = () => {
@@ -83,7 +87,7 @@ export class PresentationPlayer {
       disposed = true;
       this.timers.forEach((t) => t.remove());
       this.active.forEach((s) => s.destroy());
-      this.music?.destroy();
+      this.ambience.dispose();
     };
     scene.events.once("shutdown", dispose);
     scene.events.once("destroy", dispose);
@@ -112,29 +116,19 @@ export class PresentationPlayer {
     this.enabled = enabled;
     this.scene.sound.mute = !enabled;
     this.scene.sound.volume = volume;
-    if (
-      enabled &&
-      music &&
-      !this.music &&
-      this.scene.cache.audio.exists("original:village")
-    ) {
-      this.music = this.scene.sound.add("original:village", {
-        loop: true,
-        volume: 0.18,
-      });
-      this.music.play();
-    } else if ((!music || !enabled) && this.music) {
-      this.music.destroy();
-      this.music = undefined;
-    }
-    if (this.paused && this.music?.isPlaying) this.music.pause();
+    this.ambience.settings(enabled, music, volume);
+  }
+  setMap(id: string) {
+    this.ambience.setMap(id);
   }
   unlock() {
+    this.ambience.unlock();
     const manager = this.scene.sound;
     if (manager instanceof Phaser.Sound.WebAudioSoundManager)
       void manager.context.resume();
   }
   pause(paused: boolean) {
+    this.ambience.pause(paused);
     if (this.paused !== paused) {
       this.paused = paused;
       if (paused) this.scene.sound.pauseAll();
@@ -264,7 +258,7 @@ export class PresentationPlayer {
       audioUnlocked:
         !(this.scene.sound instanceof Phaser.Sound.WebAudioSoundManager) ||
         this.scene.sound.context.state === "running",
-      musicPlaying: !!this.music?.isPlaying,
+      ...this.ambience.snapshot(),
     };
   }
 }

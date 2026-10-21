@@ -805,5 +805,50 @@
     "assets/battle/Effect.xml",
     "assets/sound/soundConfig.xml",
     "config/battle/SkillInfos.xml"
-  ]
+  ],
+  "sceneAudio": {
+    "10005": {
+      "sceneId": "1003001",
+      "tracks": [
+        "/assets/audio/scenes/adv00.mp3",
+        "/assets/audio/scenes/shop.mp3",
+        "/assets/audio/scenes/title_mode2(2).mp3",
+        "/assets/audio/scenes/ev26.mp3"
+      ],
+      "environment": "/assets/audio/scenes/adv00_fx.mp3",
+      "intervalMs": 10000
+    },
+    "10006": {
+      "sceneId": "1004001",
+      "tracks": [
+        "/assets/audio/scenes/adv05.mp3"
+      ],
+      "environment": "/assets/audio/scenes/adv05_fx.mp3",
+      "intervalMs": 10000
+    },
+    "10008": {
+      "sceneId": "2005001",
+      "tracks": [
+        "/assets/audio/scenes/adv04.mp3"
+      ],
+      "environment": "/assets/audio/scenes/adv04_fx.mp3",
+      "intervalMs": 10000
+    },
+    "10007": {
+      "sceneId": "2010001",
+      "tracks": [
+        "/assets/audio/scenes/adv05.mp3"
+      ],
+      "environment": "/assets/audio/scenes/adv05_fx.mp3",
+      "intervalMs": 10000
+    },
+    "10009": {
+      "sceneId": "2012001",
+      "tracks": [
+        "/assets/audio/scenes/adv07.mp3"
+      ],
+      "environment": "/assets/audio/scenes/adv07_fx.mp3",
+      "intervalMs": 10000
+    }
+  }
 }

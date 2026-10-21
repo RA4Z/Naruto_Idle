@@ -193,6 +193,8 @@ export function createGameApi(
         return json(res, 200, await read("public/assets/maps/index.json"));
       if (url.pathname === "/api/admin/presentation")
         return json(res, 200, await read("public/assets/presentation.json"));
+      if (url.pathname === "/api/admin/scene-audio")
+        return json(res, 200, await read("public/assets/audio/scenes/index.json"));
       if (url.pathname === "/api/admin/files") {
         const list = await files(),
           q = (url.searchParams.get("q") || "").toLowerCase().slice(0, 100),

@@ -1,0 +1,197 @@
+{
+  "version": 1,
+  "maps": {
+    "10005": {
+      "sceneId": "1003001",
+      "name": "Floresta da Folha",
+      "tracks": [
+        "/assets/audio/scenes/adv00.mp3",
+        "/assets/audio/scenes/shop.mp3",
+        "/assets/audio/scenes/title_mode2(2).mp3",
+        "/assets/audio/scenes/ev26.mp3"
+      ],
+      "environment": "/assets/audio/scenes/adv00_fx.mp3",
+      "intervalMs": 10000,
+      "sourceMapping": {
+        "id": "1003001",
+        "envAudio": "assets\\sound\\scene\\SE\\adv00_fx.mp3",
+        "bgMusics": "assets\\sound\\scene\\SE\\adv00.mp3,assets\\sound\\scene\\SE\\shop.mp3,assets\\sound\\scene\\SE\\title_mode2(2).mp3,assets\\sound\\scene\\SE\\ev26.mp3",
+        "interval": "10000",
+        "gapBegining": "0",
+        "gapEnding": "0",
+        "fadeIn": "",
+        "fadeOut": "",
+        "desc": ""
+      },
+      "status": "integrated",
+      "playback": "random selection on completion; original interval; looped ambience"
+    },
+    "10006": {
+      "sceneId": "1004001",
+      "name": "Campo de Treinamento da Folha",
+      "tracks": [
+        "/assets/audio/scenes/adv05.mp3"
+      ],
+      "environment": "/assets/audio/scenes/adv05_fx.mp3",
+      "intervalMs": 10000,
+      "sourceMapping": {
+        "id": "1004001",
+        "envAudio": "assets\\sound\\scene\\SE\\adv05_fx.mp3",
+        "bgMusics": "assets\\sound\\scene\\SE\\adv05.mp3,,,",
+        "interval": "10000",
+        "gapBegining": "0",
+        "gapEnding": "0",
+        "fadeIn": "",
+        "fadeOut": "",
+        "desc": ""
+      },
+      "status": "integrated",
+      "playback": "random selection on completion; original interval; looped ambience"
+    },
+    "10008": {
+      "sceneId": "2005001",
+      "name": "País das Ondas",
+      "tracks": [
+        "/assets/audio/scenes/adv04.mp3"
+      ],
+      "environment": "/assets/audio/scenes/adv04_fx.mp3",
+      "intervalMs": 10000,
+      "sourceMapping": {
+        "id": "2005001",
+        "envAudio": "assets\\sound\\scene\\SE\\adv04_fx.mp3",
+        "bgMusics": "assets\\sound\\scene\\SE\\adv04.mp3,,,",
+        "interval": "10000",
+        "gapBegining": "0",
+        "gapEnding": "0",
+        "fadeIn": "",
+        "fadeOut": "",
+        "desc": ""
+      },
+      "status": "integrated",
+      "playback": "random selection on completion; original interval; looped ambience"
+    },
+    "10007": {
+      "sceneId": "2010001",
+      "name": "Costa Verde",
+      "tracks": [
+        "/assets/audio/scenes/adv05.mp3"
+      ],
+      "environment": "/assets/audio/scenes/adv05_fx.mp3",
+      "intervalMs": 10000,
+      "sourceMapping": {
+        "id": "2010001",
+        "envAudio": "assets\\sound\\scene\\SE\\adv05_fx.mp3",
+        "bgMusics": "assets\\sound\\scene\\SE\\adv05.mp3,,,",
+        "interval": "10000",
+        "gapBegining": "0",
+        "gapEnding": "0",
+        "fadeIn": "",
+        "fadeOut": "",
+        "desc": ""
+      },
+      "status": "integrated",
+      "playback": "random selection on completion; original interval; looped ambience"
+    },
+    "10009": {
+      "sceneId": "2012001",
+      "name": "A Floresta da Morte",
+      "tracks": [
+        "/assets/audio/scenes/adv07.mp3"
+      ],
+      "environment": "/assets/audio/scenes/adv07_fx.mp3",
+      "intervalMs": 10000,
+      "sourceMapping": {
+        "id": "2012001",
+        "envAudio": "assets\\sound\\scene\\SE\\adv07_fx.mp3",
+        "bgMusics": "assets\\sound\\scene\\SE\\adv07.mp3,,,",
+        "interval": "10000",
+        "gapBegining": "0",
+        "gapEnding": "0",
+        "fadeIn": "",
+        "fadeOut": "",
+        "desc": ""
+      },
+      "status": "integrated",
+      "playback": "random selection on completion; original interval; looped ambience"
+    }
+  },
+  "files": {
+    "/assets/audio/scenes/adv00.mp3": {
+      "source": "assets/sound/scene/SE/adv00.mp3",
+      "sourceTag": "PT_NarutoAlpha6.00Build300",
+      "sha256": "023aa11c63e6d6e0982d6318067273b415acd4068b403aefefb39dfe8efa1316",
+      "bytes": 497120,
+      "status": "integrated"
+    },
+    "/assets/audio/scenes/shop.mp3": {
+      "source": "assets/sound/scene/SE/shop.mp3",
+      "sourceTag": "PT_NarutoAlpha6.00Build300",
+      "sha256": "c42798f082700a1f46eb4f60c5223c3ee34fff5f86f888bd380404d914363abd",
+      "bytes": 342160,
+      "status": "integrated"
+    },
+    "/assets/audio/scenes/title_mode2(2).mp3": {
+      "source": "assets/sound/scene/SE/title_mode2(2).mp3",
+      "sourceTag": "PT_NarutoAlpha6.00Build300",
+      "sha256": "fc1ee969fd5dc6202d216e3a924cb40fa0c91976f81c45cc5b2a276b918137f0",
+      "bytes": 279968,
+      "status": "integrated"
+    },
+    "/assets/audio/scenes/ev26.mp3": {
+      "source": "assets/sound/scene/SE/ev26.mp3",
+      "sourceTag": "PT_NarutoAlpha6.00Build300",
+      "sha256": "4a3bce2cccabf31a1357573efb6c0dc785c0fdeac8ff04f35fc09cd2a2fd1e37",
+      "bytes": 393120,
+      "status": "integrated"
+    },
+    "/assets/audio/scenes/adv00_fx.mp3": {
+      "source": "assets/sound/scene/SE/adv00_fx.mp3",
+      "sourceTag": "PT_NarutoAlpha6.00Build300",
+      "sha256": "4f7089749387dd571d19515e6d7421fb726297022035358b348050e9801da9b6",
+      "bytes": 309296,
+      "status": "integrated"
+    },
+    "/assets/audio/scenes/adv05.mp3": {
+      "source": "assets/sound/scene/SE/adv05.mp3",
+      "sourceTag": "PT_NarutoAlpha6.00Build300",
+      "sha256": "a7cf4693c2fdb316dddcb6f1e1c5a98697430732ea242c4e5fe2c20a6a591400",
+      "bytes": 440128,
+      "status": "integrated"
+    },
+    "/assets/audio/scenes/adv05_fx.mp3": {
+      "source": "assets/sound/scene/SE/adv05_fx.mp3",
+      "sourceTag": "PT_NarutoAlpha6.00Build300",
+      "sha256": "bb5667bcdece4263775313027caaed4d1df800dbd786c694832677923702ef0b",
+      "bytes": 319488,
+      "status": "integrated"
+    },
+    "/assets/audio/scenes/adv04.mp3": {
+      "source": "assets/sound/scene/SE/adv04.mp3",
+      "sourceTag": "PT_NarutoAlpha6.00Build300",
+      "sha256": "2e7ec8e7d408b24757bce1e3d465c6a397279ee7b0c79356fcc899d1641aba7c",
+      "bytes": 473408,
+      "status": "integrated"
+    },
+    "/assets/audio/scenes/adv04_fx.mp3": {
+      "source": "assets/sound/scene/SE/adv04_fx.mp3",
+      "sourceTag": "PT_NarutoAlpha6.00Build300",
+      "sha256": "2cd1bf35ee1fefc93205a6e9ad8b9fe766fc9b609019e387943bc4f5e47cbc32",
+      "bytes": 504400,
+      "status": "integrated"
+    },
+    "/assets/audio/scenes/adv07.mp3": {
+      "source": "assets/sound/scene/SE/adv07.mp3",
+      "sourceTag": "PT_NarutoAlpha6.00Build300",
+      "sha256": "ea00622cd8c9a769654158105934bb5ce6b746b1b1ef357e9aaaa242f3b277da",
+      "bytes": 437008,
+      "status": "integrated"
+    },
+    "/assets/audio/scenes/adv07_fx.mp3": {
+      "source": "assets/sound/scene/SE/adv07_fx.mp3",
+      "sourceTag": "PT_NarutoAlpha6.00Build300",
+      "sha256": "4acf6b696479518dfd78645b9727c258f0e4593ccee2aaa084f1140bf15714fa",
+      "bytes": 556608,
+      "status": "integrated"
+    }
+  }
+}
