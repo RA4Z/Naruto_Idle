@@ -60,6 +60,9 @@ try {
       document.getElementById("game-loading").hidden,
   );
   const other = await context.newPage();
+  await page.locator("#canvas canvas").focus();
+  await page.keyboard.press("Quote");
+  assert.equal(await page.locator("#admin-debug-console").count(), 0);
   await other.goto(base);
   await other.waitForFunction(
     () => !document.getElementById("continue").disabled,

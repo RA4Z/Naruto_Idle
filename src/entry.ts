@@ -65,6 +65,10 @@ installPreferences();
 const initial = loadingScreen.begin(t("entry.ddc49b1c5f"));
 void boot()
   .then(() => {
+    if (import.meta.env.DEV && import.meta.env.ADMIN_CONSOLE)
+      void import("./admin/debug-console").then((module) =>
+        module.installDebugConsole(),
+      );
     if (/^\/(admin|arena)(?:\/|$)/.test(location.pathname))
       loadingScreen.hide();
   })

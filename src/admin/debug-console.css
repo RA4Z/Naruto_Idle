@@ -1,0 +1,49 @@
+﻿.admin-debug-console {
+  position: fixed;
+  inset: 0 0 auto;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  max-height: 45vh;
+  box-sizing: border-box;
+  overflow: auto;
+  z-index: 10000;
+  background: #101a18f5;
+  color: #daeed8;
+  border: 1px solid #79a68c;
+  padding: 16px;
+  font: 0.9rem monospace;
+}
+.admin-debug-console::backdrop {
+  background: #0005;
+}
+.admin-debug-console h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+.admin-debug-console p {
+  margin: 8px 0;
+}
+.admin-debug-console [role="log"] {
+  max-height: 15vh;
+  overflow-y: auto;
+}
+.admin-debug-console form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.admin-debug-console input {
+  flex: 1 1 160px;
+  min-width: 0;
+  padding: 8px;
+  color: #eef5e8;
+  background: #20342b;
+  border: 1px solid #79a68c;
+}
+.admin-debug-console button {
+  width: auto;
+  margin: 0;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+}

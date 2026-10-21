@@ -881,3 +881,24 @@ button:disabled {
 .preset-help {
   grid-column: 1 / -1;
 }
+
+#combat-targets {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #785649;
+  border-radius: 8px;
+}
+#combat-targets p {
+  font-size: 0.8rem;
+  margin: 0 0 8px;
+}
+#combat-targets button {
+  width: 100%;
+  margin: 4px 0;
+  padding: 8px;
+  font-size: 0.8rem;
+}
+#combat-targets button[aria-pressed="true"] {
+  border-color: #72e5ef;
+  box-shadow: inset 3px 0 #72e5ef;
+}

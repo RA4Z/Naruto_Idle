@@ -6,6 +6,11 @@ import { resolve, sep, extname } from "node:path";
 import { fileURLToPath } from "node:url";
 const publicRoot = fileURLToPath(new URL("./public/", import.meta.url));
 export default defineConfig({
+  define: {
+    "import.meta.env.ADMIN_CONSOLE": JSON.stringify(
+      process.env.npm_lifecycle_event === "admin",
+    ),
+  },
   plugins: [
     {
       name: "incremental-recovered-assets",

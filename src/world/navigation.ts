@@ -109,7 +109,7 @@ export class NativeNavigation {
     });
   }
   nearest(p: Point, maxDistance = Infinity): Point | undefined {
-    if (this.walkable(p)) return { ...p };
+    if (this.walkable(p)) return { x: p.x, y: p.y };
     if (!Number.isFinite(p.x) || !Number.isFinite(p.y) || maxDistance < 0) return undefined;
     let best: Point | undefined,
       distance = maxDistance * maxDistance;
@@ -120,7 +120,7 @@ export class NativeNavigation {
         distance = d;
       }
     }
-    return best ? { ...best } : undefined;
+    return best ? { x: best.x, y: best.y } : undefined;
   }
   clear(a: Point, b: Point) {
     const steps = Math.max(1, Math.ceil(Math.hypot(b.x - a.x, b.y - a.y)));

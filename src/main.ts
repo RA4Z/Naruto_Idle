@@ -89,6 +89,7 @@ import {
 import { ExplorationParty } from "./world/party";
 import { Residents } from "./world/residents";
 import { EnemyField } from "./world/enemies";
+import { visionRadius } from "./world/awareness";
 import { AREAS, type CharacterId } from "./data";
 import {
   Hunt,
@@ -834,6 +835,8 @@ class HuntScene extends Phaser.Scene {
   loadingActor = false;
   encounterSequence = 0;
   private autoNavigator = new AutoHuntNavigator<EntityActor>();
+  private manualTarget?: EntityActor;
+  private manualRepathMs = 0;
   private minimap?: Minimap;
   private routeOverlay?: RouteOverlay;
   bars!: Phaser.GameObjects.Graphics;
@@ -1025,7 +1028,7 @@ class HuntScene extends Phaser.Scene {
     const destroyMinimap = () => this.minimap?.destroy();
     this.events.once("shutdown", destroyMinimap);
     this.events.once("destroy", destroyMinimap);
-    this.hunt.onEvent = (event, value) => this.effect(event, value);
+    this.hunt.onEvent = (event, value, id) => this.effect(event, value, id);
     $("hero-name").textContent = cast.hero.name;
     ($("sound") as HTMLInputElement).checked = save.sound;
     ($("music") as HTMLInputElement).checked = save.music || false;
@@ -1103,6 +1106,8 @@ class HuntScene extends Phaser.Scene {
           scale: this.hero.scaleX,
           zoom: this.cameras.main.zoom,
           viewport: {
+            worldX: this.cameras.main.worldView.x,
+            worldY: this.cameras.main.worldView.y,
             width: this.cameras.main.width,
             height: this.cameras.main.height,
             canvasWidth: this.game.canvas.width,
@@ -1125,6 +1130,12 @@ class HuntScene extends Phaser.Scene {
             this.hunt.phase === "explorando"
               ? this.enemyField.profileFor(this.enemy)
               : this.hunt.enemy,
+          targetId: this.hunt.targetId,
+          visionDebug: this.enemyField.visionVisible,
+          opponents: this.hunt.livingOpponents.map((e) => ({
+            ...e,
+            profile: e.profile,
+          })),
           enemyHp: this.hunt.enemyHp,
           heroStyle:
             starterCharacter(save) ||
@@ -1142,6 +1153,10 @@ class HuntScene extends Phaser.Scene {
           enemyVisible: this.enemy.visible,
           enemies: this.enemyField.members.map((m) => ({
             id: m.actor.manifest.id,
+            key: m.id,
+            alerted: m.awareness.alerted,
+            returning: m.awareness.returning,
+            heading: { ...m.heading },
             elite: m.profile.elite,
             kind: m.profile.kind,
             x: m.actor.x,
@@ -1176,6 +1191,37 @@ class HuntScene extends Phaser.Scene {
         },
         walkTo: (p: Point) => this.walkTo(p),
         navigation: () => this.navigation,
+        // Development-only reproducible positioning for awareness/group regression tests.
+        arrange: (
+          hero: Point,
+          enemies: { key: string; point: Point; heading: Point }[],
+        ) => {
+          if (
+            this.hunt.phase !== "explorando" ||
+            !this.navigation.walkable(hero)
+          )
+            throw new Error("Invalid scenario");
+          for (const item of enemies)
+            if (
+              !this.enemyField.byId(item.key) ||
+              !this.navigation.walkable(item.point)
+            )
+              throw new Error("Invalid enemy position");
+          this.hero.setPosition(hero.x, hero.y);
+          this.path = [];
+          save.autoHunt = false;
+          for (const item of enemies) {
+            const mob = this.enemyField.byId(item.key)!;
+            mob.actor.setPosition(item.point.x, item.point.y);
+            mob.home = { ...item.point };
+            mob.heading = { ...item.heading };
+            mob.path = [];
+            mob.wait = 60000;
+            mob.awareness = { alerted: false, returning: false, unseenMs: 0 };
+            mob.repathMs = 0;
+            mob.stuckMs = 0;
+          }
+        },
         probeNativeForeground: async (source: Point) => {
           const paused = save.paused;
           save.paused = true;
@@ -1339,7 +1385,19 @@ class HuntScene extends Phaser.Scene {
       onComplete: () => t.destroy(),
     });
   }
-  effect(event: string, value: number) {
+  effect(event: string, value: number, id?: string) {
+    const source =
+      (id ? this.enemyField.byId(id)?.actor : undefined) || this.enemy;
+    if (event === "target") {
+      this.enemy = source;
+      this.hero.setFlipX(source.x < this.hero.x);
+      source.face(this.hero.x < source.x);
+    }
+    if (event === "disengage") {
+      this.manualTarget = undefined;
+      this.placeEnemy();
+      this.play("world-idle_0");
+    }
     if (event === "encounter") {
       this.combatStartedAt = performance.now();
       this.firstStrikeMs = undefined;
@@ -1410,9 +1468,9 @@ class HuntScene extends Phaser.Scene {
     if (event === "heal")
       this.floating("+" + value, this.hero.x, this.hero.y - 60, "#b8f7a5");
     if (event === "enemy-windup")
-      journal(t("balance.enemyWindup", { name: this.enemy.manifest.name }));
+      journal(t("balance.enemyWindup", { name: source.manifest.name }));
     if (event === "enemy-heal")
-      this.floating("+" + value, this.enemy.x, this.enemy.y - 60, "#b8f7a5");
+      this.floating("+" + value, source.x, source.y - 60, "#b8f7a5");
     if (event === "equipment-drop") {
       const item = ITEMS.find(
         (item) => item.id === this.hunt.lastReward.equipment,
@@ -1420,12 +1478,12 @@ class HuntScene extends Phaser.Scene {
       if (item) journal(t("balance.equipmentDrop", { name: item.name }));
     }
     if (event === "hurt" || event === "enemy-special") {
-      this.enemy.play("battle", "A_1hit", true);
+      source.play("battle", "A_1hit", true);
       this.presentation.entityAction(
-        this.enemy.manifest.id,
+        source.manifest.id,
         "A_1hit",
-        (this.enemy.visual.anims.currentAnim?.duration || 450) /
-          (this.enemy.visual.anims.timeScale || 1),
+        (source.visual.anims.currentAnim?.duration || 450) /
+          (source.visual.anims.timeScale || 1),
         "enemy",
       );
       this.floating(
@@ -1437,7 +1495,7 @@ class HuntScene extends Phaser.Scene {
     }
     if (event === "loot") journal(t("main.ce48f03344", { v0: value }));
     if (event === "victory") {
-      const defeatedEnemy = this.enemy;
+      const defeatedEnemy = source;
       this.enemyField.defeat(defeatedEnemy);
       session.xp += value;
       session.coins += this.hunt.lastReward.coins;
@@ -1505,11 +1563,147 @@ class HuntScene extends Phaser.Scene {
       commit();
     }
     if (event === "recover") {
-      this.enemyField.disengage(this.enemy);
+      this.enemyField.disengageAll();
+      this.hunt.opponents.clear();
+      this.manualTarget = undefined;
       const spawn = this.navigation.nearest(this.map.spawn)!;
       this.hero.setPosition(spawn.x, spawn.y);
       this.party.reset(this.hero, this.navigation);
       journal(t("main.3977c42d13"));
+    }
+  }
+  private startEncounter(actor: EntityActor) {
+    const mob = this.enemyField.member(actor);
+    if (!mob?.alive || this.hunt.phase !== "explorando") return;
+    this.enemy = actor;
+    this.enemyField.alert(actor);
+    this.path = [];
+    this.destination.setVisible(false);
+    this.hunt.encounter(mob.profile, mob.id);
+  }
+  private syncEncounters() {
+    if (this.isLobby) return;
+    for (const foe of this.hunt.livingOpponents) {
+      const mob = this.enemyField.byId(foe.id);
+      if (!mob?.alive || !mob.awareness.alerted) this.hunt.leave(foe.id);
+      else
+        foe.inRange = this.enemyField.inRange(mob, this.hero, this.navigation);
+    }
+    if (this.hunt.phase === "explorando") {
+      const ready = this.enemyField.members.filter(
+        (m) =>
+          m.alive &&
+          m.awareness.alerted &&
+          this.enemyField.inRange(m, this.hero, this.navigation),
+      );
+      const first = ready.find((m) => m.actor === this.enemy) || ready[0];
+      if (first) this.startEncounter(first.actor);
+    }
+    if (["combatendo", "recompensas"].includes(this.hunt.phase))
+      for (const mob of this.enemyField.members)
+        if (mob.alive && mob.awareness.alerted)
+          this.hunt.join(
+            mob.id,
+            mob.profile,
+            this.enemyField.inRange(mob, this.hero, this.navigation),
+          );
+  }
+  private chooseTarget(actor: EntityActor) {
+    if (
+      save.paused ||
+      this.loadingActor ||
+      document.querySelector("dialog[open]")
+    )
+      return false;
+    const mob = this.enemyField.member(actor);
+    if (!mob?.alive) return false;
+    if (this.hunt.phase === "explorando") {
+      if (this.enemyField.inRange(mob, this.hero, this.navigation)) {
+        save.autoHunt = false;
+        this.startEncounter(actor);
+        this.renderUI();
+        return true;
+      }
+      if (!this.walkTo(actor)) return false;
+      this.enemy = actor;
+      this.manualTarget = actor;
+      this.manualRepathMs = 0;
+      if (this.enemyField.inRange(mob, this.hero, this.navigation))
+        this.startEncounter(actor);
+    } else if (["combatendo", "recompensas"].includes(this.hunt.phase)) {
+      if (!mob.awareness.alerted) {
+        if (
+          Math.hypot(actor.x - this.hero.x, actor.y - this.hero.y) >
+            visionRadius(mob.profile) ||
+          !this.navigation.clear(actor, this.hero)
+        )
+          return false;
+        this.enemyField.alert(actor);
+      }
+      this.hunt.join(
+        mob.id,
+        mob.profile,
+        this.enemyField.inRange(mob, this.hero, this.navigation),
+      );
+      if (!this.hunt.selectTarget(mob.id)) return false;
+    } else return false;
+    this.renderUI();
+    return true;
+  }
+  private bindEnemy(actor: EntityActor) {
+    actor.visual.setInteractive({ useHandCursor: true });
+    actor.visual.on("pointerdown", () => this.chooseTarget(actor));
+  }
+  private renderCombatTargets() {
+    let panel = document.getElementById("combat-targets");
+    if (!panel) {
+      panel = document.createElement("section");
+      panel.id = "combat-targets";
+      $("status").after(panel);
+    }
+    const foes = this.hunt.livingOpponents;
+    panel.hidden =
+      this.isLobby ||
+      !["combatendo", "recompensas"].includes(this.hunt.phase) ||
+      !foes.length;
+    if (panel.hidden) {
+      panel.replaceChildren();
+      return;
+    }
+    let heading = panel.querySelector("p");
+    if (!heading) {
+      heading = document.createElement("p");
+      panel.append(heading);
+    }
+    heading.textContent = t("stealth.attackers", { count: foes.length });
+    for (const button of Array.from(
+      panel.querySelectorAll<HTMLButtonElement>("button"),
+    ))
+      if (!foes.some((e) => e.id === button.dataset.targetId)) button.remove();
+    for (const foe of foes) {
+      const actor = this.enemyField.byId(foe.id)?.actor;
+      if (!actor) continue;
+      let button = Array.from(
+        panel.querySelectorAll<HTMLButtonElement>("button"),
+      ).find((b) => b.dataset.targetId === foe.id);
+      if (!button) {
+        button = document.createElement("button");
+        button.className = "secondary";
+        button.dataset.targetId = foe.id;
+        button.onclick = () => this.chooseTarget(actor);
+        panel.append(button);
+      }
+      button.textContent = t("stealth.targetHealth", {
+        name: actor.manifest.name,
+        hp: Math.ceil(foe.hp),
+        max: foe.maxHp,
+      });
+      button.setAttribute(
+        "aria-pressed",
+        String(foe.id === this.hunt.targetId),
+      );
+      button.disabled = save.paused || this.loadingActor;
+      button.title = t(foe.inRange ? "stealth.choose" : "stealth.approaching");
     }
   }
   bindNpc(npc: EntityActor) {
@@ -1679,6 +1873,7 @@ class HuntScene extends Phaser.Scene {
     );
   }
   walkTo(point: Point) {
+    this.manualTarget = undefined;
     if (this.hunt.phase !== "explorando") {
       toast(t("main.9693b68fd2"));
       return false;
@@ -1728,7 +1923,8 @@ class HuntScene extends Phaser.Scene {
   }
   placeEnemy() {
     this.autoNavigator.reset();
-    this.enemyField ??= new EnemyField(this);
+    this.manualTarget = undefined;
+    this.enemyField ??= new EnemyField(this, (actor) => this.bindEnemy(actor));
     if (this.enemyField.mapId !== this.map.id)
       this.enemyField.reset(
         this.map.id,
@@ -1958,15 +2154,20 @@ class HuntScene extends Phaser.Scene {
     }
     if (blocked) this.hero.anims.pause();
     else this.hero.anims.resume();
-    if (!blocked) this.hunt.tick(delta);
     this.residents.update(delta, this.navigation, blocked);
     this.enemyField.update(
       delta,
       this.navigation,
       this.hero,
-      this.hunt.phase !== "explorando" ? this.enemy : undefined,
+      new Set(this.hunt.livingOpponents.map((e) => e.id)),
       blocked,
+      this.hunt.phase === "derrota" ||
+        this.hunt.phase === "retomando explora\u00e7\u00e3o",
     );
+    if (!blocked) {
+      this.syncEncounters();
+      this.hunt.tick(delta);
+    }
     if (!this.isLobby && this.hunt.phase === "explorando") {
       if (!blocked && save.autoHunt) {
         const candidates = this.enemyField.members
@@ -1982,7 +2183,18 @@ class HuntScene extends Phaser.Scene {
         this.path = hunt.path;
       } else if (!save.autoHunt) {
         this.autoNavigator.reset();
-        this.enemy = this.enemyField.nearest(this.hero) || this.standbyEnemy;
+        const manual =
+          this.manualTarget && this.enemyField.member(this.manualTarget);
+        this.enemy = manual?.alive
+          ? manual.actor
+          : this.enemyField.nearest(this.hero) || this.standbyEnemy;
+        if (manual?.alive) {
+          this.manualRepathMs -= delta;
+          if (!blocked && this.manualRepathMs <= 0) {
+            this.path = this.navigation.path(this.hero, manual.actor);
+            this.manualRepathMs = 500;
+          }
+        }
       }
     }
     if (!this.enemyField.members.some((member) => member.actor === this.enemy))
@@ -2041,7 +2253,7 @@ class HuntScene extends Phaser.Scene {
       ) {
         this.path = [];
         this.destination.setVisible(false);
-        this.hunt.encounter(this.enemyField.profileFor(this.enemy));
+        this.startEncounter(this.enemy);
       }
     } else if (
       !blocked &&
@@ -2086,17 +2298,15 @@ class HuntScene extends Phaser.Scene {
           3,
           1.5,
         );
-      if (["iniciando combate", "combatendo"].includes(this.hunt.phase))
+      for (const foe of this.hunt.livingOpponents) {
+        const actor = this.enemyField.byId(foe.id)?.actor;
+        if (!actor?.visible) continue;
         this.bars
           .fillStyle(0x14211b)
-          .fillRect(this.enemy.x - 12, this.enemy.y + 4, 24, 3)
-          .fillStyle(0xe69878)
-          .fillRect(
-            this.enemy.x - 12,
-            this.enemy.y + 4,
-            (24 * this.hunt.enemyHp) / this.hunt.enemyMax,
-            3,
-          );
+          .fillRect(actor.x - 12, actor.y + 4, 24, 3)
+          .fillStyle(foe.id === this.hunt.targetId ? 0x72e5ef : 0xe69878)
+          .fillRect(actor.x - 12, actor.y + 4, (24 * foe.hp) / foe.maxHp, 3);
+      }
     }
     this.lastUi += delta;
     this.lastSave += delta;
@@ -2116,7 +2326,9 @@ class HuntScene extends Phaser.Scene {
         m.alive &&
         m.actor.visible &&
         m.actor === this.enemy &&
-        ((!this.isLobby && active && save.autoHunt) ||
+        ((!this.isLobby &&
+          active &&
+          (save.autoHunt || this.manualTarget === m.actor)) ||
           this.hunt.phase === "combatendo" ||
           this.hunt.phase === "iniciando combate"),
     );
@@ -2148,6 +2360,7 @@ class HuntScene extends Phaser.Scene {
   }
   renderUI() {
     this.renderNavigation();
+    this.renderCombatTargets();
     if (this.shownLevel !== undefined && save.level > this.shownLevel)
       this.presentation.ui("levelUp");
     this.shownLevel = save.level;
@@ -2160,6 +2373,7 @@ class HuntScene extends Phaser.Scene {
     $("world-help").textContent = this.isLobby
       ? t("main.ab8ef7e487")
       : t("main.ba4dfc88ee");
+    if (!this.isLobby) $("world-help").textContent += " " + t("stealth.help");
     $("auto-hunt").hidden = this.isLobby;
     $("return-lobby").hidden = this.isLobby;
     const travelReason = this.loadingActor
@@ -2197,6 +2411,7 @@ class HuntScene extends Phaser.Scene {
     ($("cast-skill") as HTMLButtonElement).disabled =
       save.paused ||
       this.hunt.phase !== "combatendo" ||
+      this.hunt.opponents.get(this.hunt.targetId)?.inRange === false ||
       this.hunt.chakra < st.skillCost ||
       this.hunt.skillCooldown > 0;
     const phase = save.paused
@@ -2208,11 +2423,13 @@ class HuntScene extends Phaser.Scene {
       ? t("common.paused")
       : this.hunt.phase !== "combatendo"
         ? t("qol.needCombat")
-        : this.hunt.chakra < st.skillCost
-          ? t("balance.needChakra", { cost: st.skillCost })
-          : this.hunt.skillCooldown > 0
-            ? t("qol.cooldown")
-            : "";
+        : this.hunt.opponents.get(this.hunt.targetId)?.inRange === false
+          ? t("stealth.outOfRange")
+          : this.hunt.chakra < st.skillCost
+            ? t("balance.needChakra", { cost: st.skillCost })
+            : this.hunt.skillCooldown > 0
+              ? t("qol.cooldown")
+              : "";
     $("cast-skill").title = skillReason;
     $("cast-skill").setAttribute("aria-description", skillReason);
     let skillFeedback = document.getElementById("skill-reason");

@@ -1,3 +1,7 @@
+import {
+  combatOpponent,
+  type CombatOpponent,
+} from "./progression/combat-opponent";
 import { IMPLEMENTED_MAP_IDS } from "./config/maps";
 import { recruitProfile } from "./progression/recruit-profiles.ts";
 import { enemyProfile, type EnemyProfile } from "./world/enemy-profiles.ts";
@@ -376,10 +380,97 @@ export type Phase =
   | "derrota";
 export class Hunt {
   private lastAttackDuration = 450;
-  enemy: EnemyProfile = enemyProfile();
-  enemyAttacks = 0;
-  enemyWindup = false;
-  enemyHealsLeft = 3;
+  readonly opponents = new Map<string, CombatOpponent>();
+  targetId = "primary";
+  private idle = combatOpponent("primary", enemyProfile(), 0, 0);
+  private get target() {
+    return this.opponents.get(this.targetId) || this.idle;
+  }
+  get enemy() {
+    return this.target.profile;
+  }
+  set enemy(value: EnemyProfile) {
+    this.target.profile = value;
+  }
+  get enemyHp() {
+    return this.target.hp;
+  }
+  set enemyHp(value: number) {
+    this.target.hp = value;
+  }
+  get enemyMax() {
+    return this.target.maxHp;
+  }
+  set enemyMax(value: number) {
+    this.target.maxHp = value;
+  }
+  get enemyClock() {
+    return this.target.clock;
+  }
+  set enemyClock(value: number) {
+    this.target.clock = value;
+  }
+  get enemyAttacks() {
+    return this.target.attacks;
+  }
+  set enemyAttacks(value: number) {
+    this.target.attacks = value;
+  }
+  get enemyWindup() {
+    return this.target.windup;
+  }
+  set enemyWindup(value: boolean) {
+    this.target.windup = value;
+  }
+  get enemyHealsLeft() {
+    return this.target.healsLeft;
+  }
+  set enemyHealsLeft(value: number) {
+    this.target.healsLeft = value;
+  }
+  get livingOpponents() {
+    return [...this.opponents.values()].filter((e) => e.hp > 0);
+  }
+  selectTarget(id: string) {
+    const next = this.opponents.get(id);
+    if (
+      this.save.paused ||
+      !next ||
+      next.hp <= 0 ||
+      !["combatendo", "recompensas"].includes(this.phase)
+    )
+      return false;
+    this.targetId = id;
+    this.phase = "combatendo";
+    this.onEvent("target", 0, id);
+    return true;
+  }
+  join(id: string, profile: EnemyProfile, inRange = true) {
+    if (this.save.paused || !["combatendo", "recompensas"].includes(this.phase))
+      return false;
+    if ((this.opponents.get(id)?.hp || 0) > 0) return false;
+    const foe = combatOpponent(
+      id,
+      profile,
+      Math.round(AREAS[this.save.area].enemyHp * profile.hp),
+      COMBAT.firstEnemyAttackMs,
+    );
+    foe.inRange = inRange;
+    this.opponents.set(id, foe);
+    this.onEvent("join", 0, id);
+    if (this.enemyHp <= 0) this.selectTarget(id);
+    return true;
+  }
+  leave(id: string) {
+    this.opponents.delete(id);
+    if (id !== this.targetId) return;
+    const next = this.livingOpponents[0];
+    if (next) this.selectTarget(next.id);
+    else if (this.phase === "combatendo") {
+      this.phase = "explorando";
+      this.onEvent("disengage", 0);
+    }
+  }
   guard = 0;
   lastReward: { xp: number; coins: number; equipment?: string } = {
     xp: 0,
@@ -389,13 +480,11 @@ export class Hunt {
   hp: number;
   chakra: number;
   skillCooldown = 0;
-  enemyHp = 0;
-  enemyMax = 0;
   timer = 0;
   playerClock = 0;
-  enemyClock = 0;
   attacks = 0;
-  onEvent: (type: string, value: number) => void = () => {};
+  onEvent: (type: string, value: number, opponentId?: string) => void =
+    () => {};
   constructor(
     public save: Save,
     private random = Math.random,
@@ -408,12 +497,14 @@ export class Hunt {
       this.phase !== "combatendo" ||
       this.save.paused ||
       this.enemyHp <= 0 ||
+      !this.target.inRange ||
       this.chakra < stats(this.save).skillCost ||
       this.skillCooldown > 0
     )
       return false;
     this.playerClock = 0;
     this.technique(stats(this.save));
+    this.settleDeaths();
     return true;
   }
   private technique(st: ReturnType<typeof stats>) {
@@ -437,13 +528,24 @@ export class Hunt {
       this.hp = Math.min(st.maxHp, this.hp + st.skillHeal);
       if (this.hp > previous) this.onEvent("heal", this.hp - previous);
     }
-    this.onEvent(starterCharacter(this.save) ? "skill" : "technique", damage);
+    this.onEvent(
+      starterCharacter(this.save) ? "skill" : "technique",
+      damage,
+      this.targetId,
+    );
   }
-  encounter(profile: EnemyProfile = enemyProfile()) {
+  encounter(profile: EnemyProfile = enemyProfile(), id = "primary") {
     if (this.phase !== "explorando" || this.save.paused) return false;
-    this.enemy = { ...profile };
-    this.enemyMax = this.enemyHp = Math.round(
-      AREAS[this.save.area].enemyHp * profile.hp,
+    this.opponents.clear();
+    this.targetId = id;
+    this.opponents.set(
+      id,
+      combatOpponent(
+        id,
+        profile,
+        Math.round(AREAS[this.save.area].enemyHp * profile.hp),
+        COMBAT.firstEnemyAttackMs,
+      ),
     );
     this.phase = "iniciando combate";
     this.timer = 0;
@@ -458,11 +560,71 @@ export class Hunt {
     this.enemyHealsLeft = 3;
     this.guard = 0;
     this.lastReward = { xp: 0, coins: 0 };
-    this.onEvent("encounter", 0);
+    this.onEvent("encounter", 0, id);
     // Start the opening strike on the encounter frame, even at a low render FPS.
     // Following attacks still use the character's full speed-derived interval.
     this.tick(0);
     return true;
+  }
+  private settleDeaths() {
+    for (const foe of this.opponents.values()) {
+      if (foe.hp > 0 || foe.rewarded) continue;
+      foe.rewarded = true;
+      const before = this.save.inventory.fragmento || 0;
+      this.lastReward = reward(this.save, this.random, foe.profile);
+      const dropped = (this.save.inventory.fragmento || 0) - before;
+      if (dropped > 0) this.onEvent("loot", dropped, foe.id);
+      if (this.lastReward.equipment) this.onEvent("equipment-drop", 0, foe.id);
+      this.onEvent("victory", this.lastReward.xp, foe.id);
+    }
+    if (this.enemyHp <= 0) {
+      const next =
+        this.livingOpponents.find((e) => e.inRange) || this.livingOpponents[0];
+      if (next) this.selectTarget(next.id);
+      else {
+        this.phase = "recompensas";
+        this.timer = 0;
+      }
+    }
+  }
+  private tickOpponent(
+    foe: CombatOpponent,
+    ms: number,
+    st: ReturnType<typeof stats>,
+  ) {
+    // Out-of-range attackers keep a capped clock, never accumulate a burst.
+    foe.clock = Math.min(foe.profile.interval, foe.clock + ms);
+    if (!foe.inRange || this.hp <= 0) return;
+    const e = foe.profile;
+    const special =
+      e.specialEvery > 0 && (foe.attacks + 1) % e.specialEvery === 0;
+    if (special && !foe.windup && foe.clock >= e.interval - 300) {
+      foe.windup = true;
+      this.onEvent("enemy-windup", 0, foe.id);
+    }
+    if (foe.clock < e.interval) return;
+    foe.clock -= e.interval;
+    foe.attacks++;
+    foe.windup = false;
+    if (special && e.heal && foe.healsLeft > 0 && foe.hp < foe.maxHp) {
+      foe.healsLeft--;
+      const heal = Math.min(foe.maxHp - foe.hp, Math.round(foe.maxHp * e.heal));
+      foe.hp += heal;
+      this.onEvent("enemy-heal", heal, foe.id);
+    } else {
+      const amount =
+        AREAS[this.save.area].enemyAttack *
+        e.attack *
+        (special ? e.specialPower : 1);
+      const defense = st.defense * (1 - (special ? e.pierce : 0));
+      const damage = Math.max(
+        1,
+        Math.round(damageAfterResistance(amount, defense) * (1 - this.guard)),
+      );
+      this.guard = 0;
+      this.hp = Math.max(0, this.hp - damage);
+      this.onEvent(special ? "enemy-special" : "hurt", damage, foe.id);
+    }
   }
   tick(ms: number) {
     if (this.save.paused) return;
@@ -482,9 +644,12 @@ export class Hunt {
       this.timer = 0;
     }
     if (this.phase === "combatendo") {
-      this.playerClock += ms;
-      this.enemyClock += ms;
-      if (this.playerClock >= st.interval) {
+      this.playerClock = Math.min(st.interval, this.playerClock + ms);
+      if (
+        this.playerClock >= st.interval &&
+        this.target.inRange &&
+        this.enemyHp > 0
+      ) {
         this.playerClock -= st.interval;
         const special =
           ++this.attacks % COMBAT.specialEvery === 0 &&
@@ -497,66 +662,12 @@ export class Hunt {
           this.chakra = Math.min(st.maxChakra, this.chakra + 6);
           const damage = damageAfterResistance(st.attack, this.enemy.defense);
           this.enemyHp = Math.max(0, this.enemyHp - damage);
-          this.onEvent("attack", damage);
+          this.onEvent("attack", damage, this.targetId);
         }
       }
-      if (this.enemyHp <= 0) {
-        const before = this.save.inventory.fragmento || 0;
-        this.lastReward = reward(this.save, this.random, this.enemy);
-        const dropped = (this.save.inventory.fragmento || 0) - before;
-        if (dropped > 0) this.onEvent("loot", dropped);
-        this.phase = "recompensas";
-        this.timer = 0;
-        if (this.lastReward.equipment) this.onEvent("equipment-drop", 0);
-        this.onEvent("victory", this.lastReward.xp);
-        return;
-      }
-      const specialNext =
-        this.enemy.specialEvery > 0 &&
-        (this.enemyAttacks + 1) % this.enemy.specialEvery === 0;
-      if (
-        specialNext &&
-        !this.enemyWindup &&
-        this.enemyClock >= this.enemy.interval - 300
-      ) {
-        this.enemyWindup = true;
-        this.onEvent("enemy-windup", 0);
-      }
-      if (this.enemyClock >= this.enemy.interval) {
-        this.enemyClock -= this.enemy.interval;
-        this.enemyAttacks++;
-        this.enemyWindup = false;
-        if (
-          specialNext &&
-          this.enemy.heal &&
-          this.enemyHealsLeft > 0 &&
-          this.enemyHp < this.enemyMax
-        ) {
-          this.enemyHealsLeft--;
-          const heal = Math.min(
-            this.enemyMax - this.enemyHp,
-            Math.round(this.enemyMax * this.enemy.heal),
-          );
-          this.enemyHp += heal;
-          this.onEvent("enemy-heal", heal);
-        } else {
-          const amount =
-            AREAS[this.save.area].enemyAttack *
-            this.enemy.attack *
-            (specialNext ? this.enemy.specialPower : 1);
-          const defense =
-            st.defense * (1 - (specialNext ? this.enemy.pierce : 0));
-          const damage = Math.max(
-            1,
-            Math.round(
-              damageAfterResistance(amount, defense) * (1 - this.guard),
-            ),
-          );
-          this.guard = 0;
-          this.hp = Math.max(0, this.hp - damage);
-          this.onEvent(specialNext ? "enemy-special" : "hurt", damage);
-        }
-      }
+      this.settleDeaths();
+      if (this.phase !== "combatendo") return;
+      for (const foe of this.livingOpponents) this.tickOpponent(foe, ms, st);
       if (this.hp <= 0) {
         this.save.defeats++;
         this.phase = "derrota";
