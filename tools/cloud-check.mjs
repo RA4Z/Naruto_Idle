@@ -39,7 +39,7 @@ try {
       );
   });
   await page.goto(base);
-  await page.locator("#cloud-account").waitFor();
+  await page.locator("#account-access").waitFor();
   await page.evaluate(async () => {
     const { fresh } = await import("/src/model.ts");
     const save = fresh("naruto");
@@ -47,28 +47,27 @@ try {
     localStorage.setItem("folha-idle-v1", JSON.stringify(save));
   });
   const login = async (p, password = "local-test-only") => {
-    await p.locator("#cloud-account").click();
     await p
-      .locator(".cloud-panel [name=email]")
+      .locator("#account-access [name=email]")
       .fill("cloud-test@example.invalid");
-    await p.locator(".cloud-panel [name=password]").fill(password);
-    await p.locator(".cloud-panel button[type=submit]").click();
+    await p.locator("#account-access [name=password]").fill(password);
+    await p.locator("#account-access button[type=submit]").click();
   };
   await login(page, "incorrect-password");
   await page
     .getByText("E-mail ou senha incorretos.", { exact: true })
     .waitFor();
-  await page.locator(".cloud-panel [name=password]").fill("local-test-only");
-  await page.locator(".cloud-panel button[type=submit]").click();
-  await page.locator("[data-action=continue]").waitFor();
-  await page.locator("[data-action=continue]").click();
+  await page.locator("#account-access [name=password]").fill("local-test-only");
+  await page.locator("#account-access button[type=submit]").click();
+  await page.locator("[data-action=play]").waitFor();
+  await page.locator("[data-action=play]").click();
   await page.waitForFunction(
     () =>
       !!window.__idle?.snapshot() &&
       document.getElementById("game-loading").hidden,
   );
   assert.equal(
-    await page.evaluate(() => window.__idle.snapshot().character),
+    await page.evaluate(() => JSON.parse(localStorage.getItem("folha-idle-v1")).character),
     "sasuke",
   );
   await page.locator("#upgrade").click();
@@ -83,10 +82,10 @@ try {
   const other = await browser.newContext({ locale: "pt-BR" }),
     second = await other.newPage();
   await second.goto(base);
-  await second.locator("#cloud-account").waitFor();
+  await second.locator("#account-access").waitFor();
   await login(second);
-  await second.locator("[data-action=continue]").waitFor();
-  await second.locator("[data-action=continue]").click();
+  await second.locator("[data-action=play]").waitFor();
+  await second.locator("[data-action=play]").click();
   await second
     .getByText(
       "Esta jornada está aberta em outro dispositivo. Encerre-a lá ou aguarde até dois minutos após fechá-la.",
@@ -110,8 +109,7 @@ try {
   assert.equal(stored.lease_id, null);
   results.flushAndGuestBackup = true;
   await page.locator("[data-language]").selectOption("en");
-  await page.locator("#cloud-account").waitFor();
-  await page.locator("#cloud-account").click();
+  await page.locator("#account-access").waitFor();
   await page
     .getByRole("button", { name: "Continue cloud journey", exact: true })
     .click();
@@ -134,7 +132,7 @@ try {
       document.getElementById("game-loading").hidden,
   );
   assert.equal(
-    await page.evaluate(() => window.__idle.snapshot().character),
+    await page.evaluate(() => JSON.parse(localStorage.getItem("folha-idle-v1")).character),
     "sasuke",
   );
   assert.equal(
@@ -146,11 +144,10 @@ try {
   results.languageResume = true;
   await page.locator("#back").click();
   await page.waitForFunction(() => document.getElementById("play").hidden);
-  await page.locator("#cloud-account").click();
   await page
     .getByRole("button", { name: "Cerrar sesión", exact: true })
     .click();
-  await page.locator(".cloud-panel [name=email]").waitFor();
+  await page.locator("#account-access [name=email]").waitFor();
   results.logoutAndSpanish = true;
   // Secret-file protection must hold even through Vite's absolute FS endpoint.
   for (const path of [
@@ -185,7 +182,7 @@ try {
   console.error(
     "Cloud UI diagnostic:",
     await currentPage
-      ?.locator(".cloud-panel")
+      ?.locator("#account-access")
       .innerText()
       .catch(() => ""),
   );

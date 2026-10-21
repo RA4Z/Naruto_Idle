@@ -7,7 +7,7 @@ test("cloud SQL enforces RLS, create-only import, exclusive lease, receipt retri
   const db = new PGlite();
   try {
     await db.exec(`create role anon; create role authenticated;
-      create schema auth; create table auth.users(id uuid primary key);
+      create schema auth; create table auth.users(id uuid primary key, raw_user_meta_data jsonb default '{}');
       create function auth.uid() returns uuid language sql as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
       grant usage on schema auth,public to authenticated,anon;
       grant execute on function auth.uid() to authenticated,anon;`);
@@ -17,12 +17,13 @@ test("cloud SQL enforces RLS, create-only import, exclusive lease, receipt retri
         "utf8",
       ),
     );
+    await db.exec(await readFile("supabase/migrations/202610210002_player_accounts.sql", "utf8"));
     const a = "11111111-1111-4111-8111-111111111111",
       b = "22222222-2222-4222-8222-222222222222";
     const lease = "33333333-3333-4333-8333-333333333333",
       otherLease = "44444444-4444-4444-8444-444444444444";
     const request = "55555555-5555-4555-8555-555555555555";
-    await db.query("insert into auth.users values ($1),($2)", [a, b]);
+    await db.query("insert into auth.users(id,raw_user_meta_data) values ($1,$3),($2,$4)", [a, b, {username:"player_a"}, {username:"player_b"}]);
     async function asUser(id) {
       await db.exec("reset role");
       await db.query("select set_config('request.jwt.claim.sub',$1,false)", [

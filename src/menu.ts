@@ -3,10 +3,12 @@ import { CHARACTERS, type CharacterId } from "./data";
 import { loadingScreen } from "./loading-screen";
 import { acquireJourney, releaseJourney } from "./journey-lock";
 import { installCloudAccount } from "./cloud/ui";
-import { restoreGuestCache } from "./cloud/journey";
+import { requireAccount } from "./cloud/profile";
+import { fresh } from "./model";
 let engine: Promise<typeof import("./main")> | undefined;
 let version = 0;
 export async function continueCloud(initial?: import("./model").Save) {
+  await requireAccount();
   await acquireJourney();
   try {
     const game = await (engine ??= import("./main").catch((error) => {
@@ -19,8 +21,7 @@ export async function continueCloud(initial?: import("./model").Save) {
     throw error;
   }
 }
-export function installMenu() {
-  installCloudAccount(continueCloud);
+export async function installMenu() {
   const element = (id: string) => document.getElementById(id)!;
   async function launch(character?: CharacterId) {
     const request = ++version;
@@ -36,7 +37,7 @@ export function installMenu() {
     stage.update(t("menu.6d1ba3345a"));
     try {
       await acquireJourney();
-      restoreGuestCache();
+      await requireAccount();
       if (request !== version) {
         if (version === request + 1) releaseJourney();
         return;
@@ -46,8 +47,7 @@ export function installMenu() {
         throw error;
       }));
       if (request !== version) return;
-      if (character) await game.startNewJourney(character);
-      else await game.continueJourney();
+      await game.startCloudJourney(character ? fresh(character) : undefined);
     } catch (error) {
       if (request === version) releaseJourney();
       stage.fail(error);
@@ -66,14 +66,10 @@ export function installMenu() {
       .querySelectorAll<HTMLButtonElement>("[data-character]")
       .forEach((button) => {
         button.onclick = () => {
-          if (
-            localStorage.getItem("folha-idle-v1") &&
-            !confirm(t("menu.3cd10efbb8"))
-          )
-            return;
           void launch(button.dataset.character as CharacterId);
         };
       });
   };
   element("continue").onclick = () => void launch();
+  await installCloudAccount(continueCloud);
 }

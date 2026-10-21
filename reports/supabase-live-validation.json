@@ -1,27 +1,16 @@
 {
-  "date": "2026-10-21T21:02:00.788Z",
+  "date": "2026-10-21T21:28:41.445Z",
   "projectRef": "gxyxlfytcjvvkmrlalrs",
   "environment": "live Supabase Auth + PostgREST + PostgreSQL",
   "plan": "free",
-  "results": {
-    "passwordLoginTwoAccounts": true,
-    "secondSessionBlocked": true,
-    "rlsAndDirectWrites": true,
-    "syncHeartbeatReleaseResumeAndCreateOnlyImport": true,
-    "idempotencyAndStaleWriterProtection": true,
-    "independentAccountProgress": true
-  },
-  "cleanup": true,
-  "limits": [
-    "Temporary users are confirmed through Admin API; no signup/confirmation/recovery emails tested.",
-    "Independent SDK sessions, not two physical devices or rendered browser gameplay.",
-    "Lease expiry covered locally, not by waiting 120 seconds in this live check.",
-    "No frontend deploy performed; PvE snapshots remain client_unverified."
-  ],
   "migrations": [
     {
       "version": "20261021205949",
       "name": "202610210001_cloud_progress"
+    },
+    {
+      "version": "20261021211745",
+      "name": "202610210002_player_accounts"
     }
   ],
   "auth": {
@@ -29,13 +18,33 @@
     "smtpConfigured": false,
     "siteUrl": "https://naruto-idle.vercel.app"
   },
-  "schemaPermissionsVerified": true,
-  "setupReexecutionRecognizedMigration": true,
+  "results": {
+    "passwordLoginTwoAccounts": true,
+    "usernameProfilesAndIsolation": true,
+    "secondSessionBlocked": true,
+    "rlsAndDirectWrites": true,
+    "syncHeartbeatReleaseResumeAndCreateOnlyImport": true,
+    "idempotencyAndStaleWriterProtection": true,
+    "independentAccountProgress": true,
+    "renderedSignupValidation": true,
+    "renderedLoginReloadPlayLogoutAndExclusivity": true,
+    "renderedLegacyProfileAndCharacterSelection": true,
+    "renderedMobileAndThreeLanguages": true
+  },
+  "cleanup": true,
+  "limits": [
+    "Temporary users are confirmed through Admin API; no signup/confirmation/recovery emails tested.",
+    "Rendered Chrome with isolated browser profiles; not two physical devices.",
+    "Lease expiry covered locally, not by waiting 120 seconds in this live check.",
+    "No frontend deploy performed; PvE snapshots remain client_unverified."
+  ],
+  "browserBuild": "Final production bundle served by server/index.mjs on temporary port 5194",
   "localChecks": {
-    "cloudTests": "8 passed",
-    "typecheck": "passed",
-    "i18n": "1177 keys, 3 languages",
-    "productionBuild": "passed; Phaser chunk-size warning",
-    "bundleSecrets": "passed"
+    "cloudTests": "9 passed",
+    "typecheck": "passed during final production build",
+    "i18n": "1199 keys, 3 languages",
+    "productionBuild": "passed; existing Phaser chunk-size warning",
+    "bundleSecrets": "passed",
+    "diffWhitespace": "passed"
   }
 }

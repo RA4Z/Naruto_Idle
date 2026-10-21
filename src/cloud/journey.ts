@@ -9,6 +9,7 @@ import {
   flushJourneyWrites,
 } from "../journey-lock";
 import { restore, type Save } from "../model";
+import { requireAccount } from "./profile";
 
 export const cloudSync = new CloudSync(transport, (state: SyncState) => {
   window.dispatchEvent(new CustomEvent("cloud-state", { detail: state }));
@@ -26,6 +27,7 @@ export function queueCloudSave(snapshot: string) {
 }
 
 export async function openCloudJourney(initial?: Save) {
+  await requireAccount();
   if (!cloudClient) throw new Error("CLOUD_UNAVAILABLE");
   const {
     data: { session },

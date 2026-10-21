@@ -446,9 +446,7 @@ let startup:
     }
   | undefined;
 export async function startNewJourney(character: CharacterId) {
-  await acquireJourney();
-  if (!cloudJourneyActive()) restoreGuestCache();
-  await start(fresh(character));
+  await startCloudJourney(fresh(character));
 }
 export async function startCloudJourney(initial?: Save) {
   const restored = await openCloudJourney(initial);
@@ -460,25 +458,10 @@ export async function startCloudJourney(initial?: Save) {
   }
 }
 export async function continueJourney() {
-  await acquireJourney();
-  if (!cloudJourneyActive()) restoreGuestCache();
-  const restored = restore(store);
-  if (!restored) {
-    releaseJourney();
-    loadingScreen.hide();
-    toast(t("main.d5234d5425"));
-    return;
-  }
-  await start(restored.save);
-  if (restored.offline.xp || restored.offline.coins)
-    toast(
-      t("common.offlineReward", {
-        xp: restored.offline.xp,
-        coins: restored.offline.coins,
-      }),
-    );
+  await startCloudJourney();
 }
 async function start(s: Save) {
+  if (!cloudJourneyActive() || !cloudJourneyOwner()) throw new Error("AUTH_REQUIRED");
   await acquireJourney();
   miniWindow.restore();
   worldReady = false;
@@ -650,6 +633,7 @@ $("back").onclick = async () => {
   releaseJourney();
   $("play").hidden = true;
   $("menu").hidden = false;
+  window.dispatchEvent(new Event("account-menu"));
 };
 $("pause").onclick = () => {
   save.paused = !save.paused;

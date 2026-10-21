@@ -37,6 +37,7 @@ Atualizado em 21/10/2026. O [histórico](history/ROADMAP-2026-10-21.md) preserva
 - [x] Tamanho de texto, redução de efeitos e volumes separados de música, ambiente e vozes.
 - [x] Documentação vigente separada dos registros históricos.
 - [x] Implementação local da integração Supabase: contas, saves opcionais, importação explícita, backup, revisão/idempotência e posse entre dispositivos. [Configuração e limites](BACKEND_E_SUPABASE.md).
+- [x] Tela obrigatória de login/cadastro/recuperação, nome de usuário único, perfis com RLS e proteção de entrada na jornada. Migração de perfis aplicada e Chrome validado com Supabase real (desktop, celular e PT/EN/ES).
 - [x] Banco Supabase remoto no plano Free: migração aplicada, RLS/permissões verificadas e sessões SDK reais de duas contas temporárias validadas; contas/saves de teste removidos. Evidência em reports/supabase-live-validation.json.
 
 Detalhes e limites: [Especificação](ESPECIFICACAO.md), [estabilidade/QoL](ESTABILIDADE_E_QOL.md), [traduções](TRADUCOES.md).
@@ -57,7 +58,7 @@ Detalhes e limites: [Especificação](ESPECIFICACAO.md), [estabilidade/QoL](ESTA
 - [ ] Restauração por arquivo JSON exportado e auditoria do balanceamento offline. Exportação local e importação explícita para uma conta ainda sem save já estão na integração Supabase.
 - [ ] Expandir diagnósticos administrativos e edição de colisões, itens/missões.
 - [ ] Troca de idioma sem recarregar; hoje salva e restaura a jornada.
-- [ ] Concluir a ativação pública da integração Supabase: configurar SMTP e testar confirmação/recuperação por e-mail, variáveis públicas/deploy da Vercel e fluxo renderizado em dispositivos reais. Banco/RLS e sessões SDK reais já validados; bloqueio McAfee anterior encerrado nesta máquina.
+- [ ] Concluir a ativação pública da integração Supabase: configurar SMTP e testar confirmação/recuperação por e-mail, variáveis públicas/deploy da Vercel e teste em dois dispositivos físicos. Banco/RLS, SDK e Chrome com perfis isolados já validados; bloqueio McAfee anterior encerrado nesta máquina.
 - [ ] Economia PvE autoritativa e tabelas normalizadas, política para legado não verificado, persistência da arena e hospedagem externa do Node. Contas/snapshots desta beta não habilitam rankings ou comércio confiáveis.
 - [ ] Party, formação e afinidades: adiados expressamente pelo usuário.
 

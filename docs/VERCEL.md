@@ -11,3 +11,9 @@ O comando npm run check:assets verifica imagens/sons e identifica ponteiros LFS 
 ## Escopo do funcionamento confirmado
 
 A confirmação diz respeito ao jogo no navegador. A hospedagem estática não executa automaticamente server/index.mjs; admin e arena autoritativa continuam dependendo de backend Node e não foram revalidados neste domínio nesta etapa. Isso é uma limitação arquitetural separada, não uma reabertura da pendência de imagens.
+
+## Contas Supabase (21/10/2026)
+
+Esta aplicação é Vite. Em Settings → Environment Variables do projeto, configurar VITE_SUPABASE_URL e VITE_SUPABASE_PUBLISHABLE_KEY (valores do .env local), pelo menos em Production. Variáveis NEXT_PUBLIC_SUPABASE_* ou SUPABASE_* sem VITE_ não configuram este cliente. Não prefixar service_role, secret, JWT secret ou senha do banco com VITE_. Não copiar o .env inteiro. Deploy precisa incluir a nova tela e ser recompilado após definir as variáveis.
+
+O banco já possui as migrações 202610210001_cloud_progress e 202610210002_player_accounts, com login/saves/perfis reais validados. SMTP e recebimento de confirmação/recuperação permanecem pendentes. Esta etapa não publicou alterações na Vercel.

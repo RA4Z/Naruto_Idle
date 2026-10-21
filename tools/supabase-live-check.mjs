@@ -35,11 +35,12 @@ const report = {
     smtpConfigured: !!authConfig.smtp_host, siteUrl: authConfig.site_url },
   results: {}, cleanup: false,
   limits: ["Temporary users are confirmed through Admin API; no signup/confirmation/recovery emails tested.",
-    "Independent SDK sessions, not two physical devices or rendered browser gameplay.",
+    process.argv.includes("--browser") ? "Rendered Chrome with isolated browser profiles; not two physical devices." : "Independent SDK sessions; rendered browser gameplay not tested in this run.",
     "Lease expiry covered locally, not by waiting 120 seconds in this live check.",
     "No frontend deploy performed; PvE snapshots remain client_unverified."],
 };
 let stage = "create temporary users";
+const credentials = [];
 function ok(reply) {
   assert.ok(!reply.error, `Supabase operation failed at ${stage}: ${reply.error?.code || reply.error?.status || "unknown"}`);
   return reply.data;
@@ -60,11 +61,11 @@ function gateway(c) {
   };
 }
 try {
-  const credentials = [];
   for (let i = 0; i < 2; i++) {
     const email = `naruto-live-${randomUUID()}@example.invalid`;
     const password = randomBytes(32).toString("base64url");
-    const data = ok(await admin.auth.admin.createUser({ email, password, email_confirm: true,
+    const username = "n" + randomUUID().replaceAll("-", "").slice(0, 18);
+    const data = ok(await admin.auth.admin.createUser({ email, password, email_confirm: true, user_metadata: {username},
       app_metadata: { purpose: "disposable-supabase-integration-check" } }));
     users.push(data.user.id);
     credentials.push({ email, password });
@@ -76,6 +77,13 @@ try {
   ok(await b.auth.signInWithPassword(credentials[1]));
   ok(await second.auth.signInWithPassword(credentials[0]));
   report.results.passwordLoginTwoAccounts = true;
+  stage = "account profiles";
+  const profile = ok(await a.from("player_profiles").select("username").eq("user_id", users[0]).single());
+  assert.ok(profile.username);
+  assert.deepEqual(ok(await b.from("player_profiles").select("username").eq("user_id", users[0])), []);
+  assert.ok((await guest.from("player_profiles").select("username").eq("user_id", users[0])).error);
+  assert.equal(ok(await guest.rpc("game_username_available", {p_username:profile.username.toUpperCase()})), false);
+  report.results.usernameProfilesAndIsolation = true;
   stage = "create cloud save";
   const initial = cloudSnapshot({ ...fresh("sasuke"), coins: 37, inventory: { "kunai-treino": 1 } });
   const sync = new CloudSync(gateway(a));
@@ -127,8 +135,111 @@ try {
   assert.deepEqual(ok(await a.from("game_saves").select("revision").eq("user_id", users[1])), []);
   await bg.release(blease);
   report.results.independentAccountProgress = true;
-} catch {
+  if (process.argv.includes("--browser")) {
+    stage = "rendered account access";
+    const { chromium } = await import("@playwright/test");
+    const browser = await chromium.launch({ headless: true,
+      executablePath: "C:/Program Files/Google/Chrome/Application/chrome.exe",
+      args: ["--disable-extensions", "--renderer-process-limit=1"] });
+    try {
+      const context = await browser.newContext({locale:"pt-BR", viewport:{width:1440,height:1000}});
+      const page = await context.newPage();
+      const errors = [];
+      page.on("pageerror", () => errors.push("pageerror"));
+      await page.goto("http://localhost:5194");
+      await page.locator("#auth-email").waitFor();
+      assert.equal(await page.locator("#new").isVisible(), false);
+      assert.equal(await page.locator("#continue").isVisible(), false);
+      assert.equal(await page.locator("canvas").count(), 0);
+      await page.locator('[data-mode="signup"]').click();
+      await page.locator("#auth-username").fill("new_ninja");
+      await page.locator("#auth-email").fill(credentials[0].email);
+      await page.locator("#auth-password").fill("password-123");
+      await page.locator("#auth-confirm").fill("different-123");
+      await page.locator('#account-access button[type="submit"]').click();
+      await page.getByText("As senhas não coincidem.", {exact:true}).waitFor();
+      await page.locator("#auth-username").fill(profile.username.toUpperCase());
+      await page.locator("#auth-confirm").fill("password-123");
+      await page.locator('#account-access button[type="submit"]').click();
+      await page.getByText("Esse nome de usuário já está em uso. Escolha outro.", {exact:true}).waitFor();
+      await page.screenshot({path:"reports/account-signup-desktop.png"});
+      report.results.renderedSignupValidation = true;
+      stage = "rendered login";
+      await page.locator('[data-mode="login"]').click();
+      await page.locator("#auth-email").fill(credentials[0].email);
+      await page.locator("#auth-password").fill(credentials[0].password);
+      await page.locator('#account-access button[type="submit"]').click();
+      await page.locator('[data-action="play"]').waitFor();
+      assert.equal(await page.locator('[data-username]').textContent(), profile.username);
+      stage = "rendered authenticated reload";
+      await page.reload();
+      await page.locator('[data-action="play"]').waitFor();
+      stage = "rendered resume gameplay";
+      await page.locator('[data-action="play"]').click();
+      await page.waitForFunction(() => !!document.querySelector("#canvas canvas") && !document.getElementById("play").hidden && document.getElementById("game-loading").hidden);
+      assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem("folha-idle-v1")).coins), 81);
+      stage = "rendered second session";
+      const other = await browser.newContext({locale:"pt-BR"});
+      const secondPage = await other.newPage();
+      await secondPage.goto("http://localhost:5194");
+      await secondPage.locator("#auth-email").fill(credentials[0].email);
+      await secondPage.locator("#auth-password").fill(credentials[0].password);
+      await secondPage.locator('#account-access button[type="submit"]').click();
+      await secondPage.locator('[data-action="play"]').click();
+      await secondPage.getByText(/Esta jornada está aberta em outro dispositivo/).waitFor();
+      assert.equal(await secondPage.locator("#canvas canvas").count(), 0);
+      assert.equal(await secondPage.locator("#play").isVisible(), false);
+      await other.close();
+      await page.locator("#back").click();
+      await page.waitForFunction(() => document.getElementById("play").hidden);
+      await page.locator('[data-action="logout"]').click();
+      await page.locator("#auth-email").waitFor();
+      assert.equal(await page.locator("#new").isVisible(), false);
+      report.results.renderedLoginReloadPlayLogoutAndExclusivity = true;
+      stage = "legacy profile and first character selection";
+      ok(await admin.from("game_saves").delete().eq("user_id", users[1]));
+      ok(await admin.from("player_profiles").delete().eq("user_id", users[1]));
+      await page.locator("#auth-email").fill(credentials[1].email);
+      await page.locator("#auth-password").fill(credentials[1].password);
+      await page.locator('#account-access button[type="submit"]').click();
+      await page.getByRole("heading", {name:"Escolha seu nome de usuário"}).waitFor();
+      assert.equal(await page.locator('[data-action="choose"]').count(), 0);
+      await page.locator("#auth-username").fill("n" + randomUUID().replaceAll("-", "").slice(0,18));
+      await page.locator('#account-access button[type="submit"]').click();
+      await page.locator('[data-action="choose"]').click();
+      await page.locator('[data-character="sakura"]').click();
+      await page.waitForFunction(() => !!document.querySelector("#canvas canvas") && !document.getElementById("play").hidden && document.getElementById("game-loading").hidden);
+      assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem("folha-idle-v1")).character), "sakura");
+      await page.locator("#back").click();
+      await page.waitForFunction(() => document.getElementById("play").hidden);
+      await page.reload();
+      await page.locator('[data-action="play"]').waitFor();
+      await page.locator('[data-action="logout"]').click();
+      await page.locator("#auth-email").waitFor();
+      report.results.renderedLegacyProfileAndCharacterSelection = true;
+      stage = "mobile account access";
+      await page.setViewportSize({width:390,height:844});
+      await page.locator('[data-mode="signup"]').click();
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+      await page.screenshot({path:"reports/account-signup-mobile.png",fullPage:true});
+      await page.locator('[data-language]').selectOption("en");
+      await page.locator("#auth-email").waitFor();
+      await page.getByRole("heading",{name:"Sign in to your journey"}).waitFor();
+      await page.locator('[data-language]').selectOption("es");
+      await page.getByRole("heading",{name:"Entra en tu aventura"}).waitFor();
+      assert.deepEqual(errors, []);
+      report.results.renderedMobileAndThreeLanguages = true;
+    } catch (error) {
+      await browser.contexts()[0]?.pages()[0]?.screenshot({path:"reports/account-failure.png",fullPage:true}).catch(() => {});
+      throw error;
+    } finally { await browser.close(); }
+  }
+} catch (error) {
   report.failedStage = stage;
+  let diagnostic = String(error.message).slice(0, 1800);
+  for (const value of [privateKey, process.env.SUPABASE_ACCESS_TOKEN, ...credentials.flatMap(c=>[c.email,c.password])])
+    if (value) diagnostic = diagnostic.replaceAll(value, "[redacted]");
+  report.diagnostic = diagnostic;
   process.exitCode = 1;
 } finally {
   let clean = true;

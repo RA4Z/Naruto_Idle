@@ -6,14 +6,15 @@ import { PGlite } from "@electric-sql/pglite";
 import { fresh } from "../src/model.ts";
 const db = new PGlite();
 await db.exec(`create role anon; create role authenticated;
-  create schema auth; create table auth.users(id uuid primary key);
+  create schema auth; create table auth.users(id uuid primary key, raw_user_meta_data jsonb default '{}');
   create function auth.uid() returns uuid language sql as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
   grant usage on schema auth,public to authenticated,anon; grant execute on function auth.uid() to authenticated,anon;`);
 await db.exec(
   await readFile("supabase/migrations/202610210001_cloud_progress.sql", "utf8"),
 );
+await db.exec(await readFile("supabase/migrations/202610210002_player_accounts.sql", "utf8"));
 const id = "11111111-1111-4111-8111-111111111111";
-await db.query("insert into auth.users values ($1)", [id]);
+await db.query("insert into auth.users(id,raw_user_meta_data) values ($1,$2)", [id, {username:"fixture_ninja"}]);
 const initial = fresh("sasuke");
 initial.coins = 500;
 await db.query(
@@ -27,7 +28,7 @@ const user = {
   role: "authenticated",
   created_at: new Date().toISOString(),
   app_metadata: { provider: "email" },
-  user_metadata: {},
+  user_metadata: {username:"fixture_ninja"},
 };
 const token = [
   Buffer.from(JSON.stringify({ alg: "HS256", typ: "JWT" })).toString(
@@ -99,11 +100,15 @@ const server = createServer((req, res) => {
           (await db.query("select revision,updated_at from public.game_saves"))
             .rows,
         );
+      if (url.pathname === "/rest/v1/player_profiles")
+        return send(200, (await db.query("select username from public.player_profiles")).rows);
       const funcs = {
         game_claim: ["p_lease", "p_snapshot"],
         game_commit: ["p_lease", "p_revision", "p_request", "p_snapshot"],
         game_heartbeat: ["p_lease"],
         game_release: ["p_lease"],
+        game_set_username: ["p_username"],
+        game_username_available: ["p_username"],
       };
       const name = url.pathname.split("/").at(-1),
         fields = funcs[name];
@@ -114,6 +119,7 @@ const server = createServer((req, res) => {
           p_revision: "bigint",
           p_request: "uuid",
           p_snapshot: "jsonb",
+          p_username: "text",
         };
         const args = fields.map((f) => body[f] ?? null),
           params = fields.map((f, i) => `$${i + 1}::${casts[f]}`).join(",");

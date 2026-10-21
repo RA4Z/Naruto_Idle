@@ -6,8 +6,12 @@ import { acquireJourney, releaseJourney } from "./journey-lock";
 import { installPreferences } from "./preferences";
 async function boot() {
   if (/^\/admin(?:\/|$)/.test(location.pathname)) await import("./admin/main");
-  else if (/^\/arena(?:\/|$)/.test(location.pathname))
+  else if (/^\/arena(?:\/|$)/.test(location.pathname)) {
+    const { requireAccount } = await import("./cloud/profile");
+    try { await requireAccount(); }
+    catch { location.replace("/"); return; }
     await import("./arena/page");
+  }
   else {
     let transferred = false;
     let transferError = "";
@@ -35,7 +39,7 @@ async function boot() {
       }
     }
     const { installMenu, continueCloud } = await import("./menu");
-    installMenu();
+    await installMenu();
     for (const id of ["new", "continue"]) {
       const button = document.getElementById(id) as HTMLButtonElement | null;
       if (button) button.disabled = false;
@@ -51,13 +55,14 @@ async function boot() {
       sessionStorage.removeItem("folha-idle-cloud-resume");
       consumeLanguageResume();
       await continueCloud().catch(() =>
-        document.getElementById("cloud-account")?.click(),
+        window.dispatchEvent(new Event("account-access-required")),
       );
-    } else if (
-      transferred ||
-      (consumeLanguageResume() && localStorage.getItem("folha-idle-v1"))
-    )
-      document.getElementById("continue")?.click();
+    } else {
+      consumeLanguageResume();
+      // Legacy transfers remain available for explicit account import. They must
+      // not start guest gameplay or hold the local journey lease on the login page.
+      if (transferred) releaseJourney();
+    }
   }
 }
 installLanguageControl();

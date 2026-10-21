@@ -902,3 +902,36 @@ button:disabled {
   border-color: #72e5ef;
   box-shadow: inset 3px 0 #72e5ef;
 }
+
+/* Account access shares the existing village backdrop and visual language. */
+#menu { display: grid; grid-template-columns: minmax(0, 1fr) minmax(340px, 440px); column-gap: clamp(28px, 7vw, 120px); align-content: center; }
+#menu > .eyebrow, #menu > h1, #menu > p { grid-column: 1; }
+#menu > .eyebrow { grid-row: 1; align-self: end; }
+#menu > h1 { grid-row: 2; }
+#menu > p:not(.eyebrow) { grid-row: 3; }
+#menu > .actions[hidden] { display: none; }
+#menu[hidden] { display: none; }
+#menu > #menu-loading { grid-row: 5; }
+#choices { grid-column: 1 / -1; grid-row: 6; }
+.account-card { grid-column: 2; grid-row: 1 / 5; align-self: center; width: 100%; padding: 30px; background: #11251ef2; border: 1px solid #56715b; border-radius: 16px; box-shadow: 0 20px 70px #06150d70; }
+.account-card h2 { margin: 14px 0 10px; font-size: 1.8rem; line-height: 1.2; }
+.account-card .eyebrow { margin: 0; }
+.account-card .account-caption { color: #becbbc; font-size: .9rem; line-height: 1.6; margin: 0 0 20px; }
+.account-card form { display: grid; gap: 9px; }
+.account-card label { font-size: .9rem; margin-top: 7px; }
+.account-card input { width: 100%; min-height: 46px; padding: 12px; border: 1px solid #607d65; background: #0b1b16; color: #f5f1e5; border-radius: 7px; font: inherit; }
+.account-card input:focus-visible { outline: 2px solid #e4ab60; outline-offset: 2px; }
+.account-card form > button { margin-top: 14px; }
+.account-card small { color: #a8bba8; font-size: .75rem; line-height: 1.5; }
+.account-links { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px; margin-top: 16px; }
+.account-card .text-button { padding: 9px 0; font-size: .85rem; text-align: left; }
+.account-card [data-feedback] { margin: 14px 0 0; font-size: .85rem; color: #f3d394; line-height: 1.5; overflow-wrap: anywhere; }
+.account-card [data-feedback]:empty { display: none; }
+.account-actions, .account-identity { display: grid; gap: 12px; }
+.account-identity strong { font-size: 1.25rem; color: #f4cd8c; }
+.account-identity span { overflow-wrap: anywhere; font-size: .85rem; color: #b9ccbb; }
+@media (max-width: 860px) {
+  #menu { display: block; padding: 38px 6vw 70px; }
+  #menu > h1 { font-size: clamp(2rem, 7vw, 3.2rem); }
+  .account-card { max-width: 480px; margin: 28px auto 0; padding: 24px; }
+}
