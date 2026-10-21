@@ -1,5 +1,16 @@
 # Ponto de continuidade
 
+## Segundo lote de mapas — oito destinos integrados
+
+Adicionados 30008 Profundezas da Floresta da Folha (cena 1008001) e 300131 Ponte Tenchi (cena 2015006), com fundo, máscara nativa, navegação, spawn válido, seis inimigos patrulhando, combate/recompensas, save/reload e retorno à vila. O roster e as regras idle são autorais; conexões originais/portais continuam adiados. Os seis mapas anteriores ficaram byte a byte intactos. Agora 8/145 conjuntos integrados; 137 pendentes. Relatório: reports/world-expansion-30008-300131.json.
+
+Os dois destinos reutilizam adv05.mp3 e adv05_fx.mp3 sem duplicar arquivos. Sete mapas de exploração com vínculo de áudio; permanecem 11 arquivos independentes integrados e 225 caminhos originais MP3 pendentes, incluindo duplicatas. Implementados fade-in/out nativos de dois segundos na cena 1008001 via relógio do próprio HTMLAudio, sem outro loop de animação. Trimming não zero ainda exige adaptador e é recusado explicitamente pelo extrator.
+
+Passaram 73 testes de domínio, 19 servidor/assets, quatro Python afetados, typecheck e build com Node 512 MB, UV_THREADPOOL_SIZE=1 e GOMAXPROCS=1. Navegadores em série: caminhada/loot/save, probes WebGL e Canvas, música/ambiente/fade e execução do dist compilado por interceptação local. Nenhum servidor adicional foi iniciado neste lote; backend HTTP de produção não retestado ao vivo nesta etapa. Screenshots da floresta e ponte inspecionados. Todas as instâncias de teste encerradas; Vite 5178 preservado.
+
+prepare_world.py passa a guardar MapInfo.map bruto somente em assets-extraidos/mapas/<id>, ignorado pelo Git; o runtime usa navigation.json. Novos relatórios de lote têm IDs no nome, preservando provas anteriores. Manter a exclusão alheia de DESIGN_DE_PROGRESSAO.md. Próximos lotes ainda abrangem efeitos/sons/músicas, outros mapas e camadas/objetos, 195 artes e animações grandes; não apresentar o acervo inteiro como concluído.
+
+
 ## Músicas e ambientes originais por cena — lote concluído
 
 Recuperados 11 MP3 originais, sem alterar bytes/hashes, vinculados por SceneCFG.xml e MapMusicConfig.xml a cinco mapas: Floresta da Folha, Campo de Treinamento, País das Ondas, Costa Verde e Floresta da Morte. Sete músicas e quatro ambientes compartilhados; escolhas aleatórias e intervalo original de 10 s. O lobby conserva main.mp3 como trilha provisória, sem afirmar um vínculo original ainda não demonstrado. Catálogo em public/assets/audio/scenes/index.json, script tools/recover_scene_audio.py com até cinco IDs explícitos e um worker.

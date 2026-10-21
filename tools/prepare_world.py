@@ -17,6 +17,8 @@ SPECS={
  '10008':{'enemies':['19001701','19001801'],'kind':'adventure','description':'Caminhos no País das Ondas.'},
  '10007':{'enemies':['19001701','19001801'],'kind':'adventure','description':'Patrulhe a Costa Verde e enfrente ninjas da Névoa.'},
  '10009':{'enemies':['19000301','19000701','19000901'],'kind':'adventure','description':'Explore a Floresta da Morte entre feras e ninjas Anbu.'},
+ '30008':{'enemies':['19000301','19000701'],'kind':'adventure','description':'Explore as trilhas das profundezas da Floresta da Folha.'},
+ '300131':{'enemies':['19000901','19001001'],'kind':'adventure','description':'Patrulhe os caminhos da Ponte Tenchi.'},
 }
 
 def native_navigation(raw):
@@ -89,7 +91,8 @@ def prepare(archive,ident):
     thumb=image.copy();thumb.thumbnail((480,300));thumb.save(folder/'thumbnail.jpg',quality=84)
     Image.new('RGBA',image.size).save(folder/'foreground.png',compress_level=2)
     (folder/'navigation.json').write_text(json.dumps(nav,separators=(',',':'))+'\n',encoding='utf-8')
-    (folder/'MapInfo.map').write_bytes(raw)
+    intermediate=PROJECT/'assets-extraidos/mapas'/ident;intermediate.mkdir(parents=True,exist_ok=True)
+    (intermediate/'MapInfo.map').write_bytes(raw)
     spec=SPECS[ident]
     manifest={'id':ident,'name':scene['name'],'kind':spec['kind'],'background':f'/assets/maps/{ident}/background.png',
               'foreground':f'/assets/maps/{ident}/foreground.png','thumbnail':f'/assets/maps/{ident}/thumbnail.jpg',
@@ -133,5 +136,5 @@ def main():
     index['maps']=[manifests.pop(m['id'],m) for m in index['maps']]+list(manifests.values())
     index_path.write_text(json.dumps(index,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     report={'policy':'one map at a time; explicit IDs; existing entries and original files preserved','maps':rows}
-    (PROJECT/'reports/world-expansion-batch.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    (PROJECT/('reports/world-expansion-'+('-'.join(ids))+'.json')).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 if __name__=='__main__':main()

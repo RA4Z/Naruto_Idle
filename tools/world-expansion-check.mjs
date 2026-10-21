@@ -9,7 +9,7 @@ try{
  page.on("pageerror",e=>errors.push(String(e)));page.on("response",r=>{if(r.status()>=400)missing.push(r.url());});
  await page.goto(base);await page.locator("#new").click();await page.locator('[data-character="naruto"]').click();
  await page.waitForFunction(()=>window.__idle?.snapshot()&&document.getElementById("game-loading").hidden);
- for(const id of ["10007","10009"]){
+ for(const id of (process.env.MAP_IDS||"10007,10009").split(",")){
   await page.locator("#maps").click();await page.locator(`[data-map="${id}"]`).click();
   await page.waitForFunction(id=>window.__idle.snapshot().mapId===id&&!window.__idle.snapshot().loadingActor,id);
   const beforeSave=await page.evaluate(()=>JSON.parse(localStorage.getItem("folha-idle-v1")));
@@ -37,6 +37,6 @@ try{
  }
  assert.deepEqual(errors,[]);assert.deepEqual(missing,[]);
  const report={checkedAt:new Date().toISOString(),results,errors,missing,policy:"one browser, one game scene, sequential maps"};
- await writeFile("reports/world-expansion-browser-validation.json",JSON.stringify(report,null,2)+"\n");console.log(JSON.stringify(report));
+ await writeFile("reports/"+(process.env.REPORT_FILE||"world-expansion-browser-validation.json"),JSON.stringify(report,null,2)+"\n");console.log(JSON.stringify(report));
 }catch(error){console.error(JSON.stringify({completed:results,errors,missing,failure:String(error)}));throw error;}
 finally{await browser.close();}

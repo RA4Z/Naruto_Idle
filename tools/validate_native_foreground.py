@@ -6,10 +6,13 @@ from original_archive import OriginalArchive
 ROOT=Path(__file__).resolve().parents[1]
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--source',required=True);args=ap.parse_args();archive=OriginalArchive(args.source)
+    ap=argparse.ArgumentParser();ap.add_argument('--source',required=True);ap.add_argument('--batch');ap.add_argument('--report',default='native-foreground-pixel-validation.json');args=ap.parse_args();archive=OriginalArchive(args.source)
     recovery=json.loads((ROOT/'reports/native-foreground-recovery.json').read_text(encoding='utf-8'));rows=[]
+    if args.batch:
+        batch=json.loads((ROOT/'reports'/args.batch).read_text(encoding='utf-8'))
+        recovery={'maps':[m['foreground'] for m in batch['maps']]}
     expansion=ROOT/'reports/world-expansion-batch.json'
-    if expansion.exists():
+    if expansion.exists() and not args.batch:
         extras=json.loads(expansion.read_text(encoding='utf-8'))['maps']
         known={m['id'] for m in recovery['maps']}
         recovery['maps'].extend(m['foreground'] for m in extras if m['id'] not in known)
@@ -40,6 +43,6 @@ def main():
             samples.append(found)
         thumbnail=image.copy();thumbnail.thumbnail((600,600));thumbnail.save(ROOT/f'reports/native-foreground-{ident}.png')
         rows.append({'id':ident,'allAlphaPixelsMatchOriginal':True,'sourceHashesPreserved':True,'probes':samples,'unprobedThinLevels':deferred})
-    (ROOT/'reports/native-foreground-pixel-validation.json').write_text(json.dumps({'maps':rows},indent=2)+'\n',encoding='utf-8')
+    (ROOT/'reports'/args.report).write_text(json.dumps({'maps':rows},indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'verifiedMaps':len(rows),'sourceAlphaExact':True}))
 if __name__=='__main__':main()

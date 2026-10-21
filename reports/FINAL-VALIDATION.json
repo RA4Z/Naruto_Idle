@@ -1,5 +1,5 @@
 {
-  "validatedAt": "2026-10-21T00:05:21.785718+00:00",
+  "validatedAt": "2026-10-21T00:16:36.995302+00:00",
   "catalogue": {
     "discovered": 1466,
     "processed": 1466,
@@ -139,7 +139,7 @@
   "latestValidation": {
     "typecheck": "passed",
     "build": "passed",
-    "domainTests": 69,
+    "domainTests": 73,
     "serverAndDeploymentTests": 19,
     "pythonTests": 11,
     "arenaBrowser": "passed",
@@ -158,7 +158,13 @@
     "loadingArtFailure": "passed",
     "sceneAudioBrowser": "passed",
     "sceneAudioProduction": "passed",
-    "byteRangeStreaming": "passed"
+    "byteRangeStreaming": "passed",
+    "affectedPythonTestsThisBatch": 4,
+    "forestBridgeWorldBrowser": "passed",
+    "forestBridgeCompiledBundle": "passed",
+    "forestBridgeNativeAlpha": "passed",
+    "forestBridgeAudioAndFades": "passed",
+    "compiledBundleMode": "local browser interception; no extra server; live production backend not retested"
   },
   "nativeForeground": {
     "maps": [
@@ -178,11 +184,18 @@
       "10007",
       "10009"
     ],
-    "totalIntegratedMaps": 6,
-    "remainingMapSets": 139,
+    "totalIntegratedMaps": 8,
+    "remainingMapSets": 137,
     "report": "reports/world-expansion-batch.json",
     "productionBrowser": "passed",
-    "sourceRegionAssumptionFixed": true
+    "sourceRegionAssumptionFixed": true,
+    "latestBatch": {
+      "maps": [
+        "30008",
+        "300131"
+      ],
+      "report": "reports/world-expansion-30008-300131.json"
+    }
   },
   "loadingOriginalArt": {
     "integrated": 3,
@@ -194,7 +207,7 @@
   },
   "sceneAudio": {
     "state": "tested",
-    "linkedExplorationMaps": 5,
+    "linkedExplorationMaps": 7,
     "originalFiles": 11,
     "sourceHashesPreserved": true,
     "streamedChannelsMax": 2,
@@ -203,11 +216,14 @@
       "10006",
       "10008",
       "10007",
-      "10009"
+      "10009",
+      "30008",
+      "300131"
     ],
     "report": "reports/scene-audio-recovery.json",
     "villageMapping": "existing main.mp3 prototype fallback",
     "remainingIndependentSourcePaths": 225,
-    "embeddedSoundPackages": "further integration pending"
+    "embeddedSoundPackages": "further integration pending",
+    "nativeFades": "30008: two seconds in/out; HTMLAudio timeupdate, no animation loop"
   }
 }

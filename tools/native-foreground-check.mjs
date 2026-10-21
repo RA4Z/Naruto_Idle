@@ -2,7 +2,7 @@ import { chromium } from "@playwright/test";
 import assert from "node:assert/strict";
 import { readFile,writeFile } from "node:fs/promises";
 const base=process.env.BASE_URL||"http://127.0.0.1:5178";
-const fixture=JSON.parse(await readFile("reports/native-foreground-pixel-validation.json","utf8"));
+const fixture=JSON.parse(await readFile("reports/"+(process.env.PROBE_FIXTURE||"native-foreground-pixel-validation.json"),"utf8"));
 const browser=await chromium.launch({headless:true,executablePath:"C:/Program Files/Google/Chrome/Application/chrome.exe",args:["--disable-extensions","--renderer-process-limit=1"]});
 const errors=[],missing=[],results=[];
 const forceCanvas=process.env.FORCE_CANVAS==="1";
@@ -41,5 +41,5 @@ try {
  }
  assert.deepEqual(errors,[]);assert.deepEqual(missing,[]);
  const report={checkedAt:new Date().toISOString(),renderer:forceCanvas?"canvas":"webgl-native-mask",results,errors,missing,policy:"one browser, one Phaser scene; ordinary linear rendering, uniform pixel probes; all source alpha pixels validated separately"};
- await writeFile(forceCanvas?"reports/native-foreground-canvas-validation.json":"reports/native-foreground-browser-validation.json",JSON.stringify(report,null,2)+"\n");console.log(JSON.stringify(report));
+ await writeFile("reports/"+(process.env.REPORT_FILE||(forceCanvas?"native-foreground-canvas-validation.json":"native-foreground-browser-validation.json")),JSON.stringify(report,null,2)+"\n");console.log(JSON.stringify(report));
 }finally{await browser.close();}

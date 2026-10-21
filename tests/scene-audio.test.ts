@@ -3,6 +3,8 @@ import assert from "node:assert/strict";
 import { SceneAudioPlayer } from "../src/audio/scene-audio";
 class Clip {
   src = ""; preload = ""; loop = false; volume = 1; paused = true; readyState = 4;
+  currentTime = 0; duration = 60;
+  ontimeupdate: ((event: Event) => unknown) | null = null;
   onended: ((event: Event) => unknown) | null = null;
   onerror: ((event: string | Event) => unknown) | null = null;
   playCount = 0; released = false; rejectPlay = false;
@@ -91,4 +93,18 @@ test("autoplay rejection is recoverable on unlock and unknown scenes use the doc
   clips[0].rejectPlay = false; player.unlock(); await tick();
   assert.equal(player.snapshot().musicPlaying, true);
   player.dispose();
+});
+
+test("native two-second fades follow the track clock, volume and pause without another animation loop", () => {
+ const clips: Clip[]=[];
+ const player=new SceneAudioPlayer({forest:{tracks:["/forest.mp3"],intervalMs:10000,fadeInMs:2000,fadeOutMs:2000}},
+ "/fallback.mp3",()=>{const clip=new Clip();clips.push(clip);return clip;});
+ player.setMap("forest");player.settings(true,true,1);
+ const clip=clips[0];assert.equal(clip.volume,0);
+ clip.currentTime=1;clip.ontimeupdate!(new Event("timeupdate"));assert.equal(clip.volume,0.09);
+ clip.currentTime=30;clip.ontimeupdate!(new Event("timeupdate"));assert.equal(clip.volume,0.18);
+ clip.currentTime=59;clip.ontimeupdate!(new Event("timeupdate"));assert.equal(clip.volume,0.09);
+ player.settings(true,true,0.5);assert.equal(clip.volume,0.045);
+ player.pause(true);assert.equal(clip.paused,true);
+ player.dispose();assert.equal(clip.ontimeupdate,null);
 });

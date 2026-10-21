@@ -3,9 +3,11 @@ export type SceneAudio = {
   tracks: string[];
   environment?: string;
   intervalMs: number;
+  fadeInMs?: number;
+  fadeOutMs?: number;
 };
 export type SceneAudioCatalog = Record<string, SceneAudio>;
-type AudioPort = Pick<HTMLAudioElement, "src" | "preload" | "loop" | "volume" | "paused" | "readyState" | "play" | "pause" | "load" | "removeAttribute" | "onended" | "onerror">;
+type AudioPort = Pick<HTMLAudioElement, "src" | "preload" | "loop" | "volume" | "paused" | "readyState" | "play" | "pause" | "load" | "removeAttribute" | "onended" | "onerror" | "ontimeupdate" | "currentTime" | "duration">;
 type Channel = { audio: AudioPort; url: string; failed: boolean };
 export type AudioFactory = () => AudioPort;
 
@@ -61,6 +63,7 @@ export class SceneAudioPlayer {
     if (!channel) return;
     channel.audio.onended = null;
     channel.audio.onerror = null;
+    channel.audio.ontimeupdate = null;
     channel.audio.pause();
     channel.audio.removeAttribute("src");
     channel.audio.load();
@@ -120,8 +123,19 @@ export class SceneAudioPlayer {
       this.waiting = true;
       this.sync();
     };
-    channel.audio.volume = this.volume * 0.18;
+    channel.audio.ontimeupdate = () => { if (this.music === channel) this.musicVolume(channel); };
+    this.musicVolume(channel);
     this.resume(channel);
+  }
+  private musicVolume(channel: Channel) {
+    const seconds = channel.audio.currentTime;
+    const remaining = channel.audio.duration - seconds;
+    const fadeIn = this.config?.fadeInMs || 0;
+    const fadeOut = this.config?.fadeOutMs || 0;
+    const gain = Math.max(0, Math.min(1,
+      fadeIn ? seconds * 1000 / fadeIn : 1,
+      fadeOut && Number.isFinite(remaining) ? remaining * 1000 / fadeOut : 1));
+    channel.audio.volume = this.volume * 0.18 * gain;
   }
   private sync() {
     if (this.disposed || !this.config) return;
@@ -157,7 +171,7 @@ export class SceneAudioPlayer {
       return;
     }
     if (this.music) {
-      this.music.audio.volume = this.volume * 0.18;
+      this.musicVolume(this.music);
       this.resume(this.music);
     } else if (this.waiting && this.timer === undefined) {
       this.timer = setTimeout(() => {
@@ -174,6 +188,7 @@ export class SceneAudioPlayer {
       mapId: this.mapId,
       sourceSceneId: this.config?.sceneId,
       musicUrl: this.music?.url,
+      musicVolume: this.music?.audio.volume,
       environmentUrl: this.environment?.url,
       musicPlaying: !!this.music && !this.music.audio.paused && this.music.audio.readyState >= 2,
       environmentPlaying: !!this.environment && !this.environment.audio.paused && this.environment.audio.readyState >= 2,

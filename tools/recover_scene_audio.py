@@ -63,14 +63,15 @@ def recover(source, target, ids):
             return url
         tracks=list(dict.fromkeys(copy(n) for n in row.get("bgMusics","").split(",") if n.strip()))
         env=copy(row.get("envAudio",""))
-        # Selected exploration rows currently have no trimming or fades. Preserve
-        # full native fields, refuse unsupported nonzero values instead of ignoring.
-        for key in ("gapBegining","gapEnding","fadeIn","fadeOut"):
+        # Nonzero trimming still requires an adapter. Native fades are supported.
+        for key in ("gapBegining","gapEnding"):
             if row.get(key,"") not in ("","0"):raise ValueError("Needs timing adapter: "+key)
+        fades={key:int(row.get(source_key) or 0) for key,source_key in [("fadeInMs","fadeIn"),("fadeOutMs","fadeOut")]}
+        if any(not 0<=value<=60000 for value in fades.values()):raise ValueError("Fade duration outside budget")
         index["maps"][map_id]={"sceneId":sid,"name":scene.findtext("name"),"tracks":tracks,
-            "environment":env,"intervalMs":int(row.get("interval") or 0),"sourceMapping":row,
+            "environment":env,"intervalMs":int(row.get("interval") or 0),"sourceMapping":row,**fades,
             "status":"integrated","playback":"random selection on completion; original interval; looped ambience"}
-    existing["sceneAudio"]={k:{key:value for key,value in v.items() if key in ("sceneId","tracks","environment","intervalMs")} for k,v in index["maps"].items()}
+    existing["sceneAudio"]={k:{key:value for key,value in v.items() if key in ("sceneId","tracks","environment","intervalMs","fadeInMs","fadeOutMs")} for k,v in index["maps"].items()}
     write_json(index_path,index);write_json(target/"public/assets/presentation.json",existing)
     available=[p for p in lookup if p.endswith(".mp3")]
     summary={"checkedAt":datetime.now(timezone.utc).isoformat(),"maps":ids,"files":len(set(copied)),
@@ -81,7 +82,7 @@ def recover(source, target, ids):
                   "Only named exploration scenes are linked; village keeps documented prototype main.mp3 fallback.",
                   "Embedded SWF voices/effects, other scene tracks and battle-music mappings remain pending.",
                   "Browser decoding, lifecycle and production validation still required."]}
-    write_json(target/"reports/scene-audio-recovery.json",summary)
+    write_json(target/("reports/scene-audio-"+("-".join(ids))+".json"),summary)
     print(json.dumps(summary,ensure_ascii=True))
 
 if __name__=="__main__":

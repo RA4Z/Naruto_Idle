@@ -1,0 +1,142 @@
+{
+  "checkedAt": "2026-10-21T00:11:16.675Z",
+  "renderer": "canvas",
+  "results": [
+    {
+      "map": "30008",
+      "renderedAlphaLevels": [
+        {
+          "source": {
+            "x": 100,
+            "y": 100,
+            "rgba": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "rendered": [
+            255,
+            0,
+            255,
+            255
+          ],
+          "expected": [
+            255,
+            0,
+            255
+          ]
+        },
+        {
+          "source": {
+            "x": 1857,
+            "y": 177,
+            "rgba": [
+              69,
+              110,
+              4,
+              85
+            ]
+          },
+          "rendered": [
+            193,
+            36,
+            172,
+            255
+          ],
+          "expected": [
+            193,
+            36,
+            171
+          ]
+        }
+      ],
+      "unprobedThinLevels": [],
+      "opaqueCutoutsDisabled": true,
+      "singleHero": true,
+      "partyEmpty": true
+    },
+    {
+      "map": "300131",
+      "renderedAlphaLevels": [
+        {
+          "source": {
+            "x": 100,
+            "y": 100,
+            "rgba": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "rendered": [
+            255,
+            0,
+            255,
+            255
+          ],
+          "expected": [
+            255,
+            0,
+            255
+          ]
+        },
+        {
+          "source": {
+            "x": 1059,
+            "y": 1640,
+            "rgba": [
+              59,
+              46,
+              30,
+              85
+            ]
+          },
+          "rendered": [
+            189,
+            15,
+            180,
+            255
+          ],
+          "expected": [
+            189,
+            15,
+            180
+          ]
+        },
+        {
+          "source": {
+            "x": 2074,
+            "y": 100,
+            "rgba": [
+              78,
+              142,
+              46,
+              170
+            ]
+          },
+          "rendered": [
+            137,
+            94,
+            115,
+            255
+          ],
+          "expected": [
+            137,
+            94,
+            115
+          ]
+        }
+      ],
+      "unprobedThinLevels": [],
+      "opaqueCutoutsDisabled": true,
+      "singleHero": true,
+      "partyEmpty": true
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "policy": "one browser, one Phaser scene; ordinary linear rendering, uniform pixel probes; all source alpha pixels validated separately"
+}

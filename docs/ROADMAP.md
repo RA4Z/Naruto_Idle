@@ -10,13 +10,15 @@ Pedido do usuário em 20/10/2026: uma tarefa pesada por vez. Não sobrepor build
 
 - [x] Lote de música/ambiente original de cinco cenas: 11 MP3 com hashes, streaming limitado, preferências, pausa/limpeza, admin e suporte a byte ranges testados. Demais 225 caminhos MP3 e pacotes SWF ainda pendentes.
 
+- [x] 30008 Profundezas da Floresta da Folha e 300131 Ponte Tenchi: oito destinos, 137 conjuntos restantes, seis inimigos/viagem/loot/save testados. Sete mapas com áudio original vinculado; fade de dois segundos da floresta implementado. Ver reports/world-expansion-30008-300131.json.
+
 ## Recuperação atual do acervo
 
 - [x] Inventário do CDN: 57.496 arquivos físicos, hashes retomáveis, 75 extras e duplicatas preservadas; outras raízes históricas seguem pendentes.
 - [x] Auditar os 145 conjuntos de mapas, inclusive referências virtuais do XML frontal.
 - [x] Recuperar e integrar as máscaras frontais nativas de 10001/10005/10006/10008, preservando alpha e navegação; WebGL reutiliza fundo, Canvas tem fallback.
 - [ ] Recuperar SWFs intermediários, transformações e objetos com ordenação de profundidade própria. A máscara global não encerra esse item.
-- [ ] Integrar os 139 mapas restantes por lotes com viagens, navegação, população, encontros, saves e validação visual.
+- [ ] Integrar os 137 mapas restantes por lotes com viagens, navegação, população, encontros, saves e validação visual.
 - [x] Primeiro lote de loading original: 6/14/22, ciclo funcional, integridade dos JPEGs e falha opcional testados.
 - [ ] Integrar as outras 195 artes e ampliar os vínculos de jutsus/áudio/conteúdo sem reativar party. As 71 dicas originais estão em revisão, sem anunciar mecânicas inexistentes.
 

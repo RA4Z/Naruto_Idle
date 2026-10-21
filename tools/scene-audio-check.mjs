@@ -34,13 +34,14 @@ try {
   await page.waitForFunction(()=>window.__idle.snapshot().presentation.musicPlaying);
   assert.equal((await snapshot()).musicUrl,"/assets/audio/music/main.mp3");
  }
- for(const id of ["10005","10006","10008","10007","10009"]){
+ for(const id of (process.env.MAP_IDS||"10005,10006,10008,10007,10009").split(",")){
   await page.locator("#maps").click();await page.locator('[data-map="'+id+'"]').click();
   await page.waitForFunction(id=>document.getElementById("game-loading").hidden&&JSON.parse(localStorage.getItem("folha-idle-v1")).location===id,id);
   if(!production){
    await page.waitForFunction(id=>{const s=window.__idle.snapshot();return s.mapId===id&&s.presentation.musicPlaying&&s.presentation.environmentPlaying;},id);
    const state=await snapshot();assert.equal(state.sourceSceneId,index.maps[id].sceneId);
    assert.ok(index.maps[id].tracks.includes(state.musicUrl));assert.equal(state.environmentUrl,index.maps[id].environment);assert.equal(state.activeElements,2);
+   if(id==="30008") await page.waitForFunction(()=>{const v=window.__idle.snapshot().presentation.musicVolume;return v>0&&v<0.072;});
    await page.locator("#pause").click();
    await page.waitForFunction(()=>!window.__idle.snapshot().presentation.musicPlaying&&!window.__idle.snapshot().presentation.environmentPlaying);
    await page.locator("#pause").click();
@@ -78,6 +79,6 @@ try {
  assert.equal(await admin.locator("[data-scene-audio] audio").evaluateAll(list=>list.every(a=>a.preload==="none")),true);
  assert.deepEqual(errors,[]);
  const report={checkedAt:new Date().toISOString(),production,decoded,results,noAudioBeforeOptIn:true,optionalFailureDoesNotBlockTravel:production ? "not-run" : true,authenticatedAdminTracks:11,errors};
- await writeFile("reports/scene-audio-"+(production?"production":"browser")+"-validation.json",JSON.stringify(report,null,2)+"\n");
+ await writeFile("reports/"+(process.env.REPORT_FILE||("scene-audio-"+(production?"production":"browser")+"-validation.json")),JSON.stringify(report,null,2)+"\n");
  console.log(JSON.stringify(report));
 } finally {await browser.close();}

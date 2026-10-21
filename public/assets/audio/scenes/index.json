@@ -113,6 +113,54 @@
       },
       "status": "integrated",
       "playback": "random selection on completion; original interval; looped ambience"
+    },
+    "30008": {
+      "sceneId": "1008001",
+      "name": "Profundezas da Floresta da Folha",
+      "tracks": [
+        "/assets/audio/scenes/adv05.mp3"
+      ],
+      "environment": "/assets/audio/scenes/adv05_fx.mp3",
+      "intervalMs": 10000,
+      "sourceMapping": {
+        "id": "1008001",
+        "envAudio": "assets\\sound\\scene\\SE\\adv05_fx.mp3",
+        "bgMusics": "assets\\sound\\scene\\SE\\adv05.mp3,,,",
+        "interval": "10000",
+        "gapBegining": "0",
+        "gapEnding": "0",
+        "fadeIn": "2000",
+        "fadeOut": "2000",
+        "desc": ""
+      },
+      "fadeInMs": 2000,
+      "fadeOutMs": 2000,
+      "status": "integrated",
+      "playback": "random selection on completion; original interval; looped ambience"
+    },
+    "300131": {
+      "sceneId": "2015006",
+      "name": "Ponte Tenchi",
+      "tracks": [
+        "/assets/audio/scenes/adv05.mp3"
+      ],
+      "environment": "/assets/audio/scenes/adv05_fx.mp3",
+      "intervalMs": 10000,
+      "sourceMapping": {
+        "id": "2015006",
+        "envAudio": "assets\\sound\\scene\\SE\\adv05_fx.mp3",
+        "bgMusics": "assets\\sound\\scene\\SE\\adv05.mp3,,,",
+        "interval": "10000",
+        "gapBegining": "0",
+        "gapEnding": "0",
+        "fadeIn": "",
+        "fadeOut": "",
+        "desc": ""
+      },
+      "fadeInMs": 0,
+      "fadeOutMs": 0,
+      "status": "integrated",
+      "playback": "random selection on completion; original interval; looped ambience"
     }
   },
   "files": {

@@ -1,0 +1,74 @@
+{
+  "id": "30008",
+  "name": "Profundezas da Floresta da Folha",
+  "kind": "adventure",
+  "background": "/assets/maps/30008/background.png",
+  "foreground": "/assets/maps/30008/foreground.png",
+  "thumbnail": "/assets/maps/30008/thumbnail.jpg",
+  "navigation": "/assets/maps/30008/navigation.json",
+  "width": 651.0416666666666,
+  "height": 488.28125,
+  "spawn": {
+    "x": 325.5208333333333,
+    "y": 269.53125
+  },
+  "enemies": [
+    "19000301",
+    "19000701"
+  ],
+  "description": "Explore as trilhas das profundezas da Floresta da Folha.",
+  "source": "assets/scene/map/30008/",
+  "sourceScene": {
+    "id": "1008001",
+    "mapId": "30008",
+    "time": "1",
+    "type": "1",
+    "name": "Profundezas da Floresta da Folha",
+    "minLevel": null,
+    "worldMapId": "1008001",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "7d8b5a8423ddefdcd9a7af058f7f753b08ecb76ff6ede20b8f78dbc7960ea71e",
+  "populationPolicy": "Six patrolling enemies; authored idle-RPG roster using recovered eligible models, not original encounter rules.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 48,
+    "foregroundTiles": 38,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 38,
+      "opaqueGroundCutouts": false,
+      "alphaLevels": [
+        0,
+        85
+      ],
+      "nontransparentPixels": 585129,
+      "dimensions": [
+        2000,
+        1500
+      ],
+      "sha256": "2398a49d92716df2e1f1e6ce0aac0b8a062536ac6f217977fc78b953a381c4dc",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30008/foreground.webp",
+        "sourceSha256": "2398a49d92716df2e1f1e6ce0aac0b8a062536ac6f217977fc78b953a381c4dc",
+        "originalBytes": 1416157,
+        "bytes": 913290,
+        "width": 2000,
+        "height": 1500,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30008/native-alpha.png",
+    "width": 2000,
+    "height": 1500,
+    "sha256": "c61392ca92dfe182d5fc5f6a1ed2361d926e7f2524b97165e61d09fc71286494"
+  }
+}

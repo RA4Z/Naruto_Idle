@@ -1,6 +1,6 @@
 {
   "mapsDiscovered": 145,
-  "mapsIntegrated": 6,
+  "mapsIntegrated": 8,
   "sourceForegroundRule": "Virtual PNGs are generated from background JPEG tile rectangles and alphaMap, as observed in MapTile.as.",
   "packageFormat": "_scene_*.cfg/.bin samples are AMF3 metadata, not embedded PNG packs; XML metadata is available.",
   "maps": [
@@ -1479,7 +1479,7 @@
     },
     {
       "id": "30008",
-      "state": "discovered-pending-integration",
+      "state": "integrated-native-alpha-tested",
       "layers": {
         "bg": {
           "references": 48,
@@ -1512,7 +1512,8 @@
       "missingDependencies": [],
       "limits": [
         "Middleground transforms and object depth not yet integrated"
-      ]
+      ],
+      "integrationReport": "reports/world-expansion-30008-300131.json"
     },
     {
       "id": "30009",
@@ -1627,7 +1628,7 @@
     },
     {
       "id": "300131",
-      "state": "discovered-pending-integration",
+      "state": "integrated-native-alpha-tested",
       "layers": {
         "bg": {
           "references": 88,
@@ -1660,7 +1661,8 @@
       "missingDependencies": [],
       "limits": [
         "Middleground transforms and object depth not yet integrated"
-      ]
+      ],
+      "integrationReport": "reports/world-expansion-30008-300131.json"
     },
     {
       "id": "300132",

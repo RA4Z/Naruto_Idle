@@ -1,0 +1,75 @@
+{
+  "id": "300131",
+  "name": "Ponte Tenchi",
+  "kind": "adventure",
+  "background": "/assets/maps/300131/background.png",
+  "foreground": "/assets/maps/300131/foreground.png",
+  "thumbnail": "/assets/maps/300131/thumbnail.jpg",
+  "navigation": "/assets/maps/300131/navigation.json",
+  "width": 846.3541666666666,
+  "height": 651.0416666666666,
+  "spawn": {
+    "x": 423.1770833333333,
+    "y": 356.1197916666667
+  },
+  "enemies": [
+    "19000901",
+    "19001001"
+  ],
+  "description": "Patrulhe os caminhos da Ponte Tenchi.",
+  "source": "assets/scene/map/300131/",
+  "sourceScene": {
+    "id": "2015006",
+    "mapId": "300131",
+    "time": "1",
+    "type": "1",
+    "name": "Ponte Tenchi",
+    "minLevel": null,
+    "worldMapId": "2015006",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "233f89fbfc94b1610ced84f2e6deef2828c002a276403ca7dc7e3fd3353e7f9b",
+  "populationPolicy": "Six patrolling enemies; authored idle-RPG roster using recovered eligible models, not original encounter rules.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 88,
+    "foregroundTiles": 49,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 49,
+      "opaqueGroundCutouts": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 788065,
+      "dimensions": [
+        2600,
+        2000
+      ],
+      "sha256": "e71fa2041791751da8c1f55107ff73ee6ebc74d3c39edf39c40756d0e408ceb1",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300131/foreground.webp",
+        "sourceSha256": "e71fa2041791751da8c1f55107ff73ee6ebc74d3c39edf39c40756d0e408ceb1",
+        "originalBytes": 2049222,
+        "bytes": 1401500,
+        "width": 2600,
+        "height": 2000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300131/native-alpha.png",
+    "width": 2600,
+    "height": 2000,
+    "sha256": "2c7c39c51621da5283d84545740b5529acf69ad3ebe195e4dee940bf2233153f"
+  }
+}

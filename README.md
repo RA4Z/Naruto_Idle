@@ -203,7 +203,7 @@ Validação específica: `python tools/check_character_layout.py`. Consulte `rep
 
 ## Lobby, mapas e administração
 
-Vila da Folha é um lobby seguro: clique no chão ou use WASD/setas. Movimento depende da velocidade individual, com zoom 3.1. Viajar abre os quatro mapas integrados; nos três destinos de exploração existem seis inimigos com patrulha e respawn. A caçada automática é opcional e é desligada ao trocar de personagem. Grupo está desativado por enquanto. A biblioteca e o admin mostram personagens inteiros.
+Vila da Folha é um lobby seguro: clique no chão ou use WASD/setas. Movimento depende da velocidade individual, com zoom 3.1. Viajar abre oito mapas integrados; os sete destinos de exploração possuem seis inimigos com patrulha e respawn. A caçada automática é opcional e é desligada ao trocar de personagem. Grupo está desativado por enquanto. A biblioteca e o admin mostram personagens inteiros.
 
 Abra `/admin` e entre com a senha inicial `admin`. A senha é validada pela API do servidor e a sessão usa cookie HttpOnly; `NARUTO_ADMIN_PASSWORD` permite alterá-la. As telas incluem personagens e suas animações, mapas, efeitos, áudio e todos os arquivos do runtime. `npm run dev` inclui a API; para servir a build, use `npm start` (porta 5180 por padrão). A simples hospedagem estática não fornece autenticação administrativa.
 
@@ -273,3 +273,10 @@ O preparador foi tornado incremental: `python tools/prepare_world.py --source <a
 A tela usa as artes originais 6, 14 e 22, em ciclo, preservando bytes e resolução. O catálogo é public/assets/loading/index.json; predev/prebuild geram a lista curta usada pelo carregador. Falha de imagem opcional mantém a entrada funcional com fundo legível. Novos lotes: `python tools/recover_loading_art.py --source <acervo> --ids <até-três-IDs>`, depois `node tools/prepare-runtime.mjs`.
 
 71 dicas do cliente antigo ficam catalogadas para revisão; não anunciam mecânicas ausentes deste idle. A medição com as artes ficou em 33 requests/~4,38 MB antes do lobby (76% menos bytes que a referência inicial). Restam 195 artes e outras categorias para lotes futuros. Teste visual e de falha: `node tools/loading-art-check.mjs`.
+
+
+## Novos mapas e áudio por cena
+
+Profundezas da Floresta da Folha (30008) e Ponte Tenchi (300131) ampliam o catálogo para oito mapas. Os sete destinos de exploração usam música e ambiente vinculados a SceneCFG.xml/MapMusicConfig.xml, com 11 MP3 originais compartilhados, reproduzidos sob demanda (no máximo duas faixas). A floresta respeita fade de dois segundos. Som, música, volume, pausa e troca de mapa são independentes; o lobby ainda usa main.mp3 provisoriamente. Admin permite ouvir as faixas sem pré-carregar o álbum. Os portais originais só serão implementados depois da etapa prioritária de recuperação/integração do restante do acervo.
+
+Uma tarefa pesada por vez: conversão, testes e build em série, sem servidor extra e com uma página de navegador. Exemplo para a build: NODE_OPTIONS=--max-old-space-size=512, UV_THREADPOOL_SIZE=1 e GOMAXPROCS=1 (definir como variáveis de ambiente do shell). O teste tools/build-world-check.mjs executa os arquivos dist por interceptação local, sem levantar outro servidor; não comprova hospedagem/backend de produção.
