@@ -1,6 +1,6 @@
+import { t, localizeContent } from "../i18n/core.ts";
 import type { EntityManifest, EntitySummary, ActorRole } from "./types";
 import { runtimeIndex } from "../assets/runtime-index";
-
 export function filterEntities(
   entries: EntitySummary[],
   search: string,
@@ -29,7 +29,10 @@ export class EntityCatalog {
   private reviews?: Promise<
     Record<
       string,
-      { decision: string; capabilities: EntitySummary["capabilities"] }
+      {
+        decision: string;
+        capabilities: EntitySummary["capabilities"];
+      }
     >
   >;
   private getReviews() {
@@ -38,7 +41,7 @@ export class EntityCatalog {
       signal: AbortSignal.timeout(20000),
     })
       .then(async (response) => {
-        if (!response.ok) throw new Error("Revisões indisponíveis");
+        if (!response.ok) throw new Error(t("entities.catalog.1879f249a3"));
         return response.json();
       })
       .catch((error) => {
@@ -49,9 +52,10 @@ export class EntityCatalog {
   list(): Promise<EntitySummary[]> {
     return (this.index ??= fetch("/assets/catalog/entities.json")
       .then(async (response) => {
-        if (!response.ok) throw new Error("Catálogo indisponível");
-        const data = await response.json();
-        if (!Array.isArray(data.entities)) throw new Error("Catálogo inválido");
+        if (!response.ok) throw new Error(t("entities.catalog.b645176888"));
+        const data = localizeContent(await response.json());
+        if (!Array.isArray(data.entities))
+          throw new Error(t("entities.catalog.1d4676885b"));
         const reviews = await this.getReviews();
         return (data.entities as EntitySummary[]).map(
           (entry): EntitySummary => {
@@ -88,14 +92,16 @@ export class EntityCatalog {
           collection: full.collection,
         };
     }
-    if (!entry) throw new Error("Personagem não encontrado: " + id);
+    if (!entry) throw new Error(t("entities.catalog.73279dd547") + id);
     let cached = this.manifests.get(id);
     if (!cached) {
       cached = fetch(entry.url, { signal: AbortSignal.timeout(20000) })
         .then(async (response) => {
           if (!response.ok)
-            throw new Error("Recursos ainda indisponíveis: " + id);
-          const manifest = (await response.json()) as EntityManifest;
+            throw new Error(t("entities.catalog.ead5a398e6") + id);
+          const manifest = localizeContent(
+            await response.json(),
+          ) as EntityManifest;
           const review = (await this.getReviews())[id];
           return {
             ...manifest,

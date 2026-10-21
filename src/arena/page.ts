@@ -1,10 +1,10 @@
+import { t, th } from "../i18n/core.ts";
 import { restore } from "../model";
 import { installArena } from "./ui";
 import { characterLoadout } from "../progression/character-progress";
 const root = document.getElementById("app")!;
-document.title = "Arena PvP · Caminho da Folha";
-root.innerHTML =
-  '<main class="arena-landing"><p class="eyebrow">CAMINHO DA FOLHA</p><h1>Arena PvP</h1><p>Duelo por chave, com turnos sincronizados no servidor.</p><p>Esta tela carrega apenas a arena para economizar memória.</p><button id="open-arena">Entrar na arena</button><p><a href="/">Voltar à vila</a></p></main>';
+document.title = t("arena.page.61c031c567");
+root.innerHTML = `<main class="arena-landing"><p class="eyebrow">${th("arena.page.7984cfa6d0")}</p><h1>${th("arena.page.da8fa6e923")}</h1><p>${th("arena.page.0bf8b72edb")}</p><p>${th("arena.page.6216f272be")}</p><button id="open-arena">${th("arena.page.ec077a30d7")}</button><p><a href="/">Voltar \u00E0 vila</a></p></main>`;
 const profile = () =>
   restore({
     read: () => localStorage.getItem("folha-idle-v1"),

@@ -1,7 +1,8 @@
+import { t } from "../i18n/core.ts";
 export const AREAS = [
   {
     id: "folha",
-    name: "Ruas da Folha",
+    name: t("config.areas.164b6f7d1e"),
     level: 1,
     enemyHp: 52,
     enemyAttack: 6,
@@ -10,7 +11,7 @@ export const AREAS = [
   },
   {
     id: "patrulha",
-    name: "Patrulha avançada",
+    name: t("config.areas.31e5d49a93"),
     level: 5,
     enemyHp: 110,
     enemyAttack: 13,

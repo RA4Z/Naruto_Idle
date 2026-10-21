@@ -1,3 +1,4 @@
+import { t, th } from "./i18n/core.ts";
 import { CHARACTERS, type CharacterId } from "./data";
 import { loadingScreen } from "./loading-screen";
 let engine: Promise<typeof import("./main")> | undefined;
@@ -7,14 +8,14 @@ export function installMenu() {
   async function launch(character?: CharacterId) {
     const request = ++version;
     const stage = loadingScreen.begin(
-      "Carregando o jogo",
+      t("common.loadingGame"),
       () => location.reload(),
       () => {
         version++;
         loadingScreen.hide();
       },
     );
-    stage.update("Carregando o motor e preparando os recursos essenciais…");
+    stage.update(t("menu.6d1ba3345a"));
     try {
       const game = await (engine ??= import("./main").catch((error) => {
         engine = undefined;
@@ -33,7 +34,7 @@ export function installMenu() {
     choices.innerHTML = (Object.keys(CHARACTERS) as CharacterId[])
       .map((id) => {
         const c = CHARACTERS[id];
-        return `<button class="character" data-character="${id}"><img src="${c.portrait}" alt="Retrato recuperado de ${c.name}"><span class="character-name">${c.name}</span><em>${c.subtitle}</em><p>${c.description}</p><p>Vitalidade ${c.attributes.vitality} · Força ${c.attributes.strength} · Velocidade ${c.attributes.speed}</p><span class="select-label">Escolher ${c.name} →</span></button>`;
+        return `<button class="character" data-character="${id}"><img src="${c.portrait}" alt="${th("menu.74687eddfe", { v0: c.name })}"><span class="character-name">${c.name}</span><em>${c.subtitle}</em><p>${c.description}</p><p>${th("menu.e296b7d57d", { v0: c.attributes.vitality, v1: c.attributes.strength, v2: c.attributes.speed })}</p><span class="select-label">${th("menu.10ce8b712b", { v0: c.name })}</span></button>`;
       })
       .join("");
     choices
@@ -42,9 +43,7 @@ export function installMenu() {
         button.onclick = () => {
           if (
             localStorage.getItem("folha-idle-v1") &&
-            !confirm(
-              "Começar uma nova jornada substituirá seu progresso local. Continuar?",
-            )
+            !confirm(t("menu.3cd10efbb8"))
           )
             return;
           void launch(button.dataset.character as CharacterId);

@@ -1,10 +1,9 @@
+import { t } from "../i18n/core.ts";
 import { restore, type ProgressStore } from "../model";
-
 export const TRANSFER_FRAGMENT = "folha-local-transfer";
 export const LOCAL_TRANSFER_BACKUP = "folha-idle-before-localhost-transfer";
 const loopback = (hostname: string) =>
   ["localhost", "127.0.0.1", "[::1]"].includes(hostname);
-
 export function localhostTransferUrl(
   address: string,
   progress: string,
@@ -20,7 +19,6 @@ export function localhostTransferUrl(
   }).toString();
   return target.href;
 }
-
 export function acceptLocalhostTransfer(
   address: string,
   store: ProgressStore,
@@ -33,7 +31,7 @@ export function acceptLocalhostTransfer(
   );
   if (progress === null) return false;
   if (!loopback(url.hostname))
-    throw new Error("A transferência deve ser aberta em localhost.");
+    throw new Error(t("progression.local-transfer.1bcf23efcb"));
   let validated: string | undefined;
   const result = restore(
     {
@@ -45,9 +43,7 @@ export function acceptLocalhostTransfer(
     now,
   );
   if (!result || !validated)
-    throw new Error(
-      "O progresso recebido não é válido. O save anterior foi mantido.",
-    );
+    throw new Error(t("progression.local-transfer.e89645fc77"));
   const previous = store.read();
   if (previous && previous !== validated) backup(previous);
   store.write(validated);

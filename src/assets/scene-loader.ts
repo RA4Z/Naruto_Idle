@@ -1,3 +1,4 @@
+import { t } from "../i18n/core.ts";
 import type Phaser from "phaser";
 const jobs = new WeakMap<Phaser.Scene, Promise<void>>();
 // One queue owns Phaser's loader: optional audio/NPCs cannot race with travel or recruitment.
@@ -10,7 +11,7 @@ export function loadSceneAssets(
     .catch(() => {})
     .then(async () => {
       if (!scene.sys.isActive())
-        throw new Error("Carregamento cancelado ao sair da cena.");
+        throw new Error(t("assets.scene-loader.09ba472af1"));
       if (ready()) return;
       const wait = (enqueue: boolean) =>
         new Promise<void>((resolve, reject) => {
@@ -24,11 +25,7 @@ export function loadSceneAssets(
           const complete = () => {
             cleanup();
             failed.length
-              ? reject(
-                  new Error(
-                    "Não foi possível carregar alguns recursos. Verifique sua conexão e tente novamente.",
-                  ),
-                )
+              ? reject(new Error(t("assets.scene-loader.168ba6316b")))
               : resolve();
           };
           const error = (file: Phaser.Loader.File) => {
@@ -36,7 +33,7 @@ export function loadSceneAssets(
           };
           const cancel = () => {
             cleanup();
-            reject(new Error("Carregamento cancelado ao sair da cena."));
+            reject(new Error(t("assets.scene-loader.09ba472af1")));
           };
           scene.load.once("complete", complete);
           scene.load.on("loaderror", error);
@@ -53,7 +50,8 @@ export function loadSceneAssets(
           }
         });
       if (scene.load.isLoading()) await wait(false);
-      if (!scene.sys.isActive()) throw new Error("Cena encerrada.");
+      if (!scene.sys.isActive())
+        throw new Error(t("assets.scene-loader.426b6eda53"));
       if (!ready()) await wait(true);
     });
   jobs.set(

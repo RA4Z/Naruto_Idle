@@ -615,3 +615,7 @@ button:disabled {
   width: 100%;
   object-fit: contain;
 }
+/* Language stays available on the game, administrator and dedicated arena. */
+.language-control { position: fixed; top: 8px; right: 12px; z-index: 80; display: flex; align-items: center; gap: 6px; padding: 4px 8px; border-radius: 6px; background: #14251fee; color: #eeeadd; font: 12px system-ui, sans-serif; }
+.language-control select { color: #eeeadd; background: #20382b; border: 1px solid #718167; border-radius: 4px; padding: 3px; max-width: 110px; }
+@media (max-width: 600px) { .language-control { top: 4px; right: 4px; font-size: 10px; } }

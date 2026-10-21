@@ -1,3 +1,4 @@
+import { t } from "../i18n/core.ts";
 import { loadSceneAssets } from "../assets/scene-loader";
 import Phaser from "phaser";
 import type {
@@ -6,7 +7,11 @@ import type {
   AnimationDef,
   EntityManifest,
 } from "./types";
-import { actorVisualScale, resetWorldMirror, shouldReturnToBattleIdle } from "./visual-rules";
+import {
+  actorVisualScale,
+  resetWorldMirror,
+  shouldReturnToBattleIdle,
+} from "./visual-rules";
 const requested = new WeakMap<Phaser.Scene, Set<string>>();
 export const actorKey = (id: string, mode: ActorMode, action: string) =>
   `entity:${id}:${mode}:${action}`;
@@ -96,7 +101,8 @@ export class ActorAssetCache {
   }
   load(manifest: EntityManifest, role: ActorRole) {
     const operation = this.work.then(async () => {
-      if (!this.scene.sys.isActive()) throw new Error("Cena encerrada");
+      if (!this.scene.sys.isActive())
+        throw new Error(t("entities.actor.8e3f99b3a5"));
       const missing = actorActions(manifest, role).some(
         ([action]) =>
           !this.scene.textures.exists(
@@ -109,16 +115,35 @@ export class ActorAssetCache {
       );
       if (missing) {
         try {
-          await loadSceneAssets(this.scene, () => queueActor(this.scene, manifest, role), () => actorActions(manifest, role).every(([action]) => this.scene.textures.exists(actorKey(manifest.id, role === "enemy" ? "battle" : "world", action))));
+          await loadSceneAssets(
+            this.scene,
+            () => queueActor(this.scene, manifest, role),
+            () =>
+              actorActions(manifest, role).every(([action]) =>
+                this.scene.textures.exists(
+                  actorKey(
+                    manifest.id,
+                    role === "enemy" ? "battle" : "world",
+                    action,
+                  ),
+                ),
+              ),
+          );
         } catch (error) {
           for (const [action] of actorActions(manifest, role)) {
-            const key = actorKey(manifest.id, role === "enemy" ? "battle" : "world", action);
-            if (!this.scene.textures.exists(key)) requested.get(this.scene)?.delete(key);
+            const key = actorKey(
+              manifest.id,
+              role === "enemy" ? "battle" : "world",
+              action,
+            );
+            if (!this.scene.textures.exists(key))
+              requested.get(this.scene)?.delete(key);
           }
           throw error;
         }
       }
-      if (!this.scene.sys.isActive()) throw new Error("Cena encerrada");
+      if (!this.scene.sys.isActive())
+        throw new Error(t("entities.actor.8e3f99b3a5"));
       registerActor(this.scene, manifest, role);
       this.loaded.delete(manifest.id);
       this.loaded.set(manifest.id, manifest);
@@ -210,20 +235,31 @@ export class EntityActor extends Phaser.GameObjects.Container {
     this.visual
       .setOrigin(...anim.origin)
       .setScale(
-        actorVisualScale(this.manifest.id, mode, modeDef.referenceHeight, anim.rigScale),
+        actorVisualScale(
+          this.manifest.id,
+          mode,
+          modeDef.referenceHeight,
+          anim.rigScale,
+        ),
       );
     if (force || this.visual.anims.currentAnim?.key !== key) {
       this.visual.play(key);
-      this.visual.anims.timeScale = chosen === "A_1hit"
-        ? this.visual.anims.currentAnim!.duration / 450
-        : 1;
+      this.visual.anims.timeScale =
+        chosen === "A_1hit" ? this.visual.anims.currentAnim!.duration / 450 : 1;
     }
   }
   tick(paused: boolean) {
     this.setDepth(this.y);
     if (paused) this.visual.anims.pause();
     else this.visual.anims.resume();
-    if (!paused && this.role === "enemy" && shouldReturnToBattleIdle(this.visual.anims.currentAnim?.key, this.visual.anims.isPlaying))
+    if (
+      !paused &&
+      this.role === "enemy" &&
+      shouldReturnToBattleIdle(
+        this.visual.anims.currentAnim?.key,
+        this.visual.anims.isPlaying,
+      )
+    )
       this.play("battle", "C_idle");
   }
   face(left: boolean) {

@@ -1,5 +1,7 @@
 # Caminho da Folha — Idle RPG
 
+Idiomas disponíveis: **Português, English e Español**, pelo seletor no canto superior. A escolha é salva separadamente do progresso; a jornada aberta é salva e retomada ao trocar. Textos ficam centralizados em `src/i18n/locales/`; instruções para editar textos, adicionar idiomas, interpolação, pluralização e conteúdo recuperado estão em [docs/TRADUCOES.md](docs/TRADUCOES.md). Valide os catálogos com `npm run check:i18n`.
+
 Protótipo local de um jogo **novo**, em Phaser 3 e TypeScript. As regras de combate, progressão, drops e progresso offline são próprias. Os arquivos ActionScript do jogo anterior não são usados como motor ou regras deste projeto.
 
 Sons originais de ataque e derrota estão integrados para quatro modelos da Areia/samurai, além dos protagonistas: carregam só para o elenco atual com som habilitado, usam os eventos das animações e compartilham o limite de quatro sons curtos. As prévias desses modelos ficam em **Admin → Sons e músicas**, carregadas ao solicitar. Outros modelos e jutsus individuais seguem em recuperação.

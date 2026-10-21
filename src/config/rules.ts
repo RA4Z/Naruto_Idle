@@ -1,3 +1,4 @@
+import { t } from "../i18n/core.ts";
 export const OFFLINE = {
   capSeconds: 7200,
   intervalSeconds: 24,
@@ -10,4 +11,7 @@ export const COMBAT = {
   specialEvery: 3,
   enemyInterval: 1450,
 };
-export const ENEMY = { name: "Alvo de treino", visual: "authored-placeholder" };
+export const ENEMY = {
+  name: t("config.rules.82d7684225"),
+  visual: "authored-placeholder",
+};

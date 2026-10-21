@@ -1,3 +1,4 @@
+import { t, th, errorText } from "../i18n/core.ts";
 import type { NativeGrid, Point } from "./navigation";
 import { withSceneGeometry } from "./scene-geometry";
 import { runtimeIndex } from "../assets/runtime-index";
@@ -7,7 +8,12 @@ export type WorldMap = {
   kind: "lobby" | "adventure";
   background: string;
   foreground: string;
-  nativeAlpha?: { url: string; width: number; height: number; sha256: string };
+  nativeAlpha?: {
+    url: string;
+    width: number;
+    height: number;
+    sha256: string;
+  };
   thumbnail: string;
   navigation: string;
   width: number;
@@ -27,7 +33,7 @@ export function listMaps() {
 }
 export async function mapNavigation(map: WorldMap) {
   const r = await fetch(map.navigation, { signal: AbortSignal.timeout(20000) });
-  if (!r.ok) throw new Error("Não foi possível carregar os caminhos do mapa.");
+  if (!r.ok) throw new Error(t("world.maps.3a9da8ffb0"));
   return withSceneGeometry(map.id, (await r.json()) as NativeGrid);
 }
 export function installTravel(
@@ -36,8 +42,7 @@ export function installTravel(
 ) {
   const dialog = document.createElement("dialog");
   dialog.className = "map-library";
-  dialog.innerHTML =
-    '<div class="library-heading"><div><p class="eyebrow">VIAGENS</p><h2>Escolha seu destino</h2></div><button class="secondary" data-close>Fechar</button></div><div class="map-grid"></div><p role="status"></p>';
+  dialog.innerHTML = `<div class="library-heading"><div><p class="eyebrow">${th("common.travels")}</p><h2>${th("world.maps.9be3dd6e3c")}</h2></div><button class="secondary" data-close>${th("world.maps.0f2bd88ef0")}</button></div><div class="map-grid"></div><p role="status"></p>`;
   document.body.append(dialog);
   dialog
     .querySelector("[data-close]")!
@@ -46,7 +51,7 @@ export function installTravel(
     dialog.showModal();
     const grid = dialog.querySelector(".map-grid")!,
       feedback = dialog.querySelector('[role="status"]')!;
-    feedback.textContent = "Carregando destinos…";
+    feedback.textContent = t("world.maps.b06b615999");
     grid.replaceChildren();
     try {
       for (const map of await listMaps()) {
@@ -64,19 +69,19 @@ export function installTravel(
         button.dataset.map = map.id;
         button.textContent =
           map.id === getCurrent()
-            ? "Você está aqui"
+            ? t("world.maps.dbe19f7fd8")
             : map.kind === "lobby"
-              ? "Voltar ao lobby"
-              : "Explorar";
+              ? t("world.maps.6b91bfdb4a")
+              : t("common.explore");
         button.disabled = map.id === getCurrent();
         button.onclick = async () => {
           dialog.querySelectorAll("button").forEach((b) => (b.disabled = true));
-          feedback.textContent = "Viajando para " + map.name + "…";
+          feedback.textContent = t("world.maps.80bfdbb9d3") + map.name + "…";
           try {
             await onChoose(map);
             dialog.close();
           } catch (e) {
-            feedback.textContent = String(e);
+            feedback.textContent = errorText(e);
           } finally {
             dialog
               .querySelectorAll("button")
@@ -91,10 +96,9 @@ export function installTravel(
         card.append(image, title, text, button);
         grid.append(card);
       }
-      feedback.textContent =
-        "Na vila você pode caminhar livremente. A caçada automática pode ser ativada nos mapas de exploração.";
+      feedback.textContent = t("world.maps.595a57e23c");
     } catch (e) {
-      feedback.textContent = String(e);
+      feedback.textContent = errorText(e);
     }
   };
 }

@@ -1,3 +1,4 @@
+import { t, th, errorText, formatNumber } from "../i18n/core.ts";
 import { ITEMS, QUESTS, buyItem, equipItem, claimQuest } from "./rules";
 import { addXp, stats, needed, type Save } from "../model";
 import { ATTRIBUTE_LABELS } from "./combat-stats";
@@ -17,8 +18,7 @@ type Context = {
 export function installProgression(context: () => Context) {
   const dialog = document.createElement("dialog");
   dialog.className = "progression-panel";
-  dialog.innerHTML =
-    '<div class="library-heading"><div><p class="eyebrow">SEU CAMINHO NINJA</p><h2>Mochila e progresso</h2></div><button class="secondary" data-close>Fechar</button></div><nav></nav><p data-balance></p><div data-content></div><p role="status"></p>';
+  dialog.innerHTML = `<div class="library-heading"><div><p class="eyebrow">${th("progression.ui.d768a61929")}</p><h2>${th("common.bagProgress")}</h2></div><button class="secondary" data-close>${th("progression.ui.0f2bd88ef0")}</button></div><nav></nav><p data-balance></p><div data-content></div><p role="status"></p>`;
   document.body.append(dialog);
   dialog
     .querySelector("[data-close]")!
@@ -35,8 +35,10 @@ export function installProgression(context: () => Context) {
   async function render() {
     const request = ++version,
       { save, onChange, switchCharacter, heroId } = context();
-    dialog.querySelector("[data-balance]")!.textContent =
-      `${save.coins} moedas · ${save.inventory.fragmento || 0} fragmentos de treino`;
+    dialog.querySelector("[data-balance]")!.textContent = t(
+      "progression.ui.89b45cb7e8",
+      { v0: save.coins, v1: save.inventory.fragmento || 0 },
+    );
     const content = dialog.querySelector("[data-content]")!;
     content.replaceChildren();
     dialog
@@ -56,10 +58,10 @@ export function installProgression(context: () => Context) {
         try {
           await run();
           onChange();
-          feedback.textContent = "Atualizado.";
+          feedback.textContent = t("common.updated");
           if (dialog.open) void render();
         } catch (e) {
-          feedback.textContent = String(e);
+          feedback.textContent = errorText(e);
           b.disabled = false;
         }
       };
@@ -77,13 +79,16 @@ export function installProgression(context: () => Context) {
         p = characterProgress(save, id),
         st = stats(save, id);
       const picker = document.createElement("select");
-      picker.setAttribute("aria-label", "Personagem da ficha");
+      picker.setAttribute("aria-label", t("progression.ui.a89c4c5f33"));
       for (const ownedId of save.collection || []) {
         if (FUTURE_CHARACTERS.has(ownedId)) continue;
         const option = document.createElement("option");
         const progress = characterProgress(save, ownedId);
         option.value = ownedId;
-        option.textContent = `${entries.find((e) => e.id === ownedId)?.name || ownedId} · Nível ${progress.level}`;
+        option.textContent = t("progression.ui.33a1d3557c", {
+          v0: entries.find((e) => e.id === ownedId)?.name || ownedId,
+          v1: progress.level,
+        });
         picker.append(option);
       }
       picker.value = id;
@@ -91,7 +96,7 @@ export function installProgression(context: () => Context) {
         attributeId = picker.value;
         void render();
       };
-      const label = element("label", "Personagem ");
+      const label = element("label", t("progression.ui.aa45b4c186"));
       label.append(picker);
       const summary = element("section", "");
       summary.className = "attribute-summary";
@@ -100,53 +105,77 @@ export function installProgression(context: () => Context) {
         element("h3", entries.find((e) => e.id === id)?.name || id),
         element(
           "p",
-          `Nível ${p.level} · ${p.level >= 100 ? "Nível máximo" : `${p.xp}/${needed(p.level)} XP`} · ${p.upgrades} treinos`,
+          t("progression.ui.20cb1676ce", {
+            v0: p.level,
+            v1:
+              p.level >= 100
+                ? t("progression.ui.f20408d1c9")
+                : t("progression.ui.29612b2ab1", {
+                    v0: p.xp,
+                    v1: needed(p.level),
+                  }),
+            v2: p.upgrades,
+          }),
+        ),
+        element("p", t("progression.ui.281a9eee15")),
+        element(
+          "p",
+          t("progression.ui.157bed64c8", {
+            v0: st.attack,
+            v1: st.skillDamage,
+            v2: st.maxHp,
+            v3: st.maxChakra,
+          }),
         ),
         element(
           "p",
-          "Cada personagem tem seu próprio nível, XP, treinos e atributos. Somente o personagem que você está controlando recebe XP das caçadas e missões.",
+          t("progression.ui.9ca9ba07c4", {
+            v0: formatNumber(1000 / st.interval, {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            }),
+            v1: formatNumber(st.interval / 1000, {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            }),
+            v2: formatNumber(st.moveSpeed, {
+              minimumFractionDigits: 1,
+              maximumFractionDigits: 1,
+            }),
+          }),
         ),
         element(
           "p",
-          `Ataque ${st.attack} · Jutsu ${st.skillDamage} · Vida ${st.maxHp} · Chakra ${st.maxChakra}`,
-        ),
-        element(
-          "p",
-          `${(1000 / st.interval).toFixed(2)} ataques/s · ${(st.interval / 1000).toFixed(2)} s entre golpes · Movimento ${st.moveSpeed.toFixed(1)} u/s`,
-        ),
-        element(
-          "p",
-          `Regeneração ${st.chakraRegen.toFixed(1)} chakra/s · Redução de dano ${((100 * st.defense) / (100 + st.defense)).toFixed(1)}%`,
+          t("progression.ui.54739eb301", {
+            v0: formatNumber(st.chakraRegen, {
+              minimumFractionDigits: 1,
+              maximumFractionDigits: 1,
+            }),
+            v1: formatNumber((100 * st.defense) / (100 + st.defense), {
+              minimumFractionDigits: 1,
+              maximumFractionDigits: 1,
+            }),
+          }),
         ),
         action(
-          "Treinar este personagem · 25 moedas",
+          t("progression.ui.ffd73c0921"),
           () => trainCharacter(save, id),
           save.coins < 25 || p.upgrades >= 10000,
         ),
       );
       if (!Object.values(CHARACTER_IDS).includes(id))
-        summary.append(
-          element(
-            "p",
-            "Atributos-base provisórios de recruta; balanceamento individual pendente.",
-          ),
-        );
+        summary.append(element("p", t("progression.ui.593edf69bc")));
       if (id !== heroId)
-        summary.append(
-          element(
-            "p",
-            "Selecione este personagem na coleção para jogar e ganhar experiência com ele.",
-          ),
-        );
+        summary.append(element("p", t("progression.ui.50268bde1b")));
       content.append(summary);
       const descriptions = {
-        vitality: "Define a vida máxima.",
-        strength: "Aumenta o dano dos ataques e contribui para os jutsus.",
-        ninjutsu: "Aumenta o dano dos jutsus e a cura da Sakura.",
-        speed: "Acelera os ataques automáticos e o movimento pelo mapa.",
-        chakra: "Define a reserva máxima de chakra.",
-        control: "Aumenta a regeneração de chakra.",
-        resistance: "Reduz o dano recebido nas caçadas.",
+        vitality: t("progression.ui.d4ff71ed5f"),
+        strength: t("progression.ui.c58888502e"),
+        ninjutsu: t("progression.ui.1429d1edd1"),
+        speed: t("progression.ui.4f9dded311"),
+        chakra: t("progression.ui.8d97d3bd5a"),
+        control: t("progression.ui.27f9a01512"),
+        resistance: t("progression.ui.80f02da48c"),
       };
       for (const key of Object.keys(
         ATTRIBUTE_LABELS,
@@ -174,10 +203,15 @@ export function installProgression(context: () => Context) {
           element("p", q.description),
           element(
             "p",
-            `${progress}/${q.target} · ${q.coins} moedas + ${q.xp} XP`,
+            t("progression.ui.878825bc1a", {
+              v0: progress,
+              v1: q.target,
+              v2: q.coins,
+              v3: q.xp,
+            }),
           ),
           action(
-            claimed ? "Recebida" : "Receber recompensa",
+            claimed ? t("common.claimed") : t("progression.ui.df6466e7d9"),
             () => {
               const reward = claimQuest(save, q.id);
               addXp(save, reward.xp);
@@ -195,19 +229,22 @@ export function installProgression(context: () => Context) {
         card.className = "progress-card";
         const equipped = save.equipment?.[item.slot] === item.id;
         card.append(
-          element("h3", item.name + (equipped ? " · equipado" : "")),
+          element(
+            "h3",
+            item.name + (equipped ? t("common.equippedSuffix") : ""),
+          ),
           element("p", item.description),
           element(
             "p",
-            `Ataque +${item.attack} · Vida +${item.hp} · Chakra +${item.chakra}${item.regen ? " · Regeneração +" + item.regen + "/s" : ""}`,
+            `Ataque +${item.attack} · Vida +${item.hp} · Chakra +${item.chakra}${item.regen ? t("progression.ui.182b9d2e42") + item.regen + "/s" : ""}`,
           ),
         );
         if (selected === "shop")
           card.append(
             action(
               save.inventory[item.id]
-                ? "Na mochila"
-                : `Comprar · ${item.price} moedas`,
+                ? t("progression.ui.0dd8617e2b")
+                : t("progression.ui.370bf0579c", { v0: item.price }),
               () => {
                 buyItem(save, item.id);
               },
@@ -217,7 +254,7 @@ export function installProgression(context: () => Context) {
         else
           card.append(
             action(
-              equipped ? "Equipado" : "Equipar",
+              equipped ? t("common.equipped") : t("progression.ui.82ed3d66ab"),
               () => {
                 equipItem(save, item.id);
               },
@@ -236,9 +273,9 @@ export function installProgression(context: () => Context) {
             materials
               .map(
                 ([id, n]) =>
-                  `${id === "fragmento" ? "Fragmentos de treino" : id}: ${n}`,
+                  `${id === "fragmento" ? t("progression.ui.892dd2b4e9") : id === "chakra-shard" ? t("content.chakraShard") : id}: ${n}`,
               )
-              .join(" · ") || "Sua mochila está vazia. Lute e visite a loja.",
+              .join(" · ") || t("progression.ui.93faee80ef"),
           ),
         );
       }
@@ -260,21 +297,33 @@ export function installProgression(context: () => Context) {
         if (e.preview) {
           const img = document.createElement("img");
           img.src = e.preview;
-          img.alt = "Corpo inteiro de " + e.name;
+          img.alt = t("progression.ui.40e5dc98cf") + e.name;
           card.append(img);
         }
         card.append(
           element("h3", e.name + (e.variant ? " [" + e.variant + "]" : "")),
           element(
             "p",
-            `Nível ${progress.level} · ${progress.level >= 100 ? "Nível máximo" : `${progress.xp}/${needed(progress.level)} XP`} · ${progress.upgrades} treinos`,
+            t("progression.ui.20cb1676ce", {
+              v0: progress.level,
+              v1:
+                progress.level >= 100
+                  ? t("progression.ui.f20408d1c9")
+                  : t("progression.ui.29612b2ab1", {
+                      v0: progress.xp,
+                      v1: needed(progress.level),
+                    }),
+              v2: progress.upgrades,
+            }),
           ),
-          action("Ver atributos", () => {
+          action(t("progression.ui.7e182509da"), () => {
             attributeId = id;
             selected = "attributes";
           }),
           action(
-            id === heroId ? "Personagem ativo" : "Jogar com este personagem",
+            id === heroId
+              ? t("progression.ui.2ddbfee8b6")
+              : t("progression.ui.2e7fa90a28"),
             async () => {
               await switchCharacter(id);
             },
@@ -283,20 +332,15 @@ export function installProgression(context: () => Context) {
         );
         content.append(card);
       }
-      content.append(
-        element(
-          "p",
-          "Troque de personagem fora de combate. Encontre novos personagens na biblioteca; o recrutamento custa 60 moedas e 3 fragmentos. O sistema de grupo ficará para uma atualização futura.",
-        ),
-      );
+      content.append(element("p", t("progression.ui.62ec09bfd4")));
     }
   }
   for (const [id, name] of [
-    ["attributes", "Atributos"],
-    ["quests", "Missões"],
-    ["inventory", "Mochila"],
-    ["shop", "Loja"],
-    ["collection", "Coleção"],
+    ["attributes", t("progression.ui.d6436ac4f7")],
+    ["quests", t("progression.ui.2d1c19f7e3")],
+    ["inventory", t("progression.ui.a5aa9d7a87")],
+    ["shop", t("progression.ui.70feed55e9")],
+    ["collection", t("progression.ui.7c52deaf16")],
   ]) {
     const b = document.createElement("button");
     b.className = "secondary";

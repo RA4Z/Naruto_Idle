@@ -10,6 +10,7 @@
     "dev": "vite --host 0.0.0.0 --port 5178 --strictPort --configLoader runner",
     "admin": "vite --host 0.0.0.0 --port 5178 --strictPort --open /admin --configLoader runner",
     "typecheck": "tsc --noEmit",
+    "check:i18n": "node tools/check-i18n.mjs",
     "build": "tsc --noEmit && vite build",
     "test": "tsx --test --test-concurrency=1 tests/*.test.ts",
     "preview": "vite preview --host 127.0.0.1",

@@ -1,8 +1,16 @@
+import { t } from "../i18n/core.ts";
 import { ARENA_FIGHTERS, type ArenaState, type ArenaCharacter } from "./rules";
 import type { AnimationDef, EntityManifest } from "../entities/types";
 import type { PresentationConfig } from "../presentation";
-type Sheet = { anim: AnimationDef; image: HTMLImageElement; reference: number };
-type AudioSettings = () => { enabled: boolean; volume: number };
+type Sheet = {
+  anim: AnimationDef;
+  image: HTMLImageElement;
+  reference: number;
+};
+type AudioSettings = () => {
+  enabled: boolean;
+  volume: number;
+};
 export class ArenaView {
   private ctx: CanvasRenderingContext2D;
   private sheets = new Map<string, Sheet>();
@@ -37,8 +45,7 @@ export class ArenaView {
         if (!this.destroyed) this.presentation = data;
       })
       .catch(() => {
-        if (!this.destroyed)
-          this.error("Os efeitos da arena não puderam ser carregados.");
+        if (!this.destroyed) this.error(t("arena.view.f8838c03e4"));
       });
   }
   update(state: ArenaState) {
@@ -82,10 +89,7 @@ export class ArenaView {
       await image.decode();
       if (!this.destroyed) this.sheets.set(key, { image, anim, reference });
     } catch {
-      if (!this.destroyed)
-        this.error(
-          "Uma animação da arena não pôde ser carregada. Os turnos continuam sincronizados.",
-        );
+      if (!this.destroyed) this.error(t("arena.view.99984b2384"));
     }
   }
   private async load(character: ArenaCharacter) {
@@ -108,8 +112,7 @@ export class ArenaView {
           m.modes.battle!.referenceHeight,
         );
     } catch {
-      if (!this.destroyed)
-        this.error("Não foi possível carregar este ninja na arena.");
+      if (!this.destroyed) this.error(t("arena.view.a37aeef510"));
     }
   }
   private sound(character: ArenaCharacter, action: string) {

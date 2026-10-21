@@ -1,3 +1,4 @@
+import { t } from "./i18n/core.ts";
 import { LOADING_ART_URLS } from "./config/loading-art";
 const overlay = document.getElementById("game-loading")!;
 const title = document.getElementById("loading-title")!;
@@ -23,7 +24,7 @@ export const loadingScreen = {
     document.getElementById("app")!.inert = true;
     overlay.setAttribute("aria-busy", "true");
     title.textContent = label;
-    message.textContent = "Preparando sua jornada…";
+    message.textContent = t("loading-screen.b196d543af");
     progress.removeAttribute("value");
     retry.hidden = true;
     cancel.hidden = !onCancel;
@@ -39,13 +40,13 @@ export const loadingScreen = {
       fail(reason: unknown) {
         if (request !== version) return;
         overlay.setAttribute("aria-busy", "false");
-        title.textContent = "Não foi possível entrar no jogo";
+        title.textContent = t("loading-screen.19aa45bd62");
         message.textContent =
           reason instanceof DOMException || reason instanceof TypeError
-            ? "O carregamento falhou ou demorou demais. Verifique sua conexão e tente novamente."
+            ? t("loading-screen.4229eaefd3")
             : reason instanceof Error
               ? reason.message
-              : "Verifique sua conexão e tente novamente.";
+              : t("loading-screen.ec3fe65bf4");
         progress.value = 0;
         retry.hidden = false;
       },

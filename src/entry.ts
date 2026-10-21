@@ -1,4 +1,6 @@
+import { t, errorText } from "./i18n/core.ts";
 import "./style.css";
+import { installLanguageControl, consumeLanguageResume } from "./i18n/browser";
 import { loadingScreen } from "./loading-screen";
 async function boot() {
   if (/^\/admin(?:\/|$)/.test(location.pathname)) await import("./admin/main");
@@ -24,7 +26,7 @@ async function boot() {
           (previous) => localStorage.setItem(LOCAL_TRANSFER_BACKUP, previous),
         );
       } catch (error) {
-        transferError = (error as Error).message;
+        transferError = errorText(error);
       }
     }
     const { installMenu } = await import("./menu");
@@ -40,23 +42,22 @@ async function boot() {
       status.textContent = transferError;
       status.hidden = false;
     }
-    if (transferred) document.getElementById("continue")?.click();
+    if (
+      transferred ||
+      (consumeLanguageResume() && localStorage.getItem("folha-idle-v1"))
+    )
+      document.getElementById("continue")?.click();
   }
 }
-const initial = loadingScreen.begin("Preparando sua jornada");
+installLanguageControl();
+const initial = loadingScreen.begin(t("entry.ddc49b1c5f"));
 void boot()
   .then(() => {
     if (/^\/(admin|arena)(?:\/|$)/.test(location.pathname))
       loadingScreen.hide();
   })
   .catch(() => {
-    initial.fail(
-      new Error(
-        "Não foi possível carregar o jogo. Verifique sua conexão e tente novamente.",
-      ),
-    );
+    initial.fail(new Error(t("entry.83eda3ec00")));
     const status = document.getElementById("menu-loading");
-    if (status)
-      status.textContent =
-        "Não foi possível carregar o jogo. Recarregue a página.";
+    if (status) status.textContent = t("entry.f8b4ab8a93");
   });

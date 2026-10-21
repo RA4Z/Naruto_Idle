@@ -1,3 +1,12 @@
+import {
+  t,
+  th,
+  localizeContent,
+  errorText,
+  translateText,
+  formatNumber,
+  statusText,
+} from "../i18n/core.ts";
 import "./admin.css";
 type Entry = {
   id: string;
@@ -9,15 +18,16 @@ type Entry = {
   status: string;
 };
 const root = document.getElementById("app")!;
-document.title = "Admin · Caminho da Folha";
+document.title = t("admin.main.ca22623e43");
 async function api(path: string, body?: unknown) {
   const r = await fetch("/api/admin/" + path, {
     method: body ? "POST" : "GET",
     headers: body ? { "Content-Type": "application/json" } : undefined,
     body: body ? JSON.stringify(body) : undefined,
   });
-  const data = await r.json();
-  if (!r.ok) throw new Error(data.error || "Falha ao carregar");
+  const data = localizeContent(await r.json());
+  if (!r.ok)
+    throw new Error(errorText(data.error || t("admin.main.828889030a")));
   return data;
 }
 function node<K extends keyof HTMLElementTagNameMap>(
@@ -31,8 +41,7 @@ function node<K extends keyof HTMLElementTagNameMap>(
   return e;
 }
 function login() {
-  root.innerHTML =
-    '<main class="admin-login"><p class="eyebrow">CAMINHO DA FOLHA</p><h1>Administração</h1><p>Entre para consultar os recursos e diagnósticos do jogo.</p><form><label>Senha de administrador<input name="password" type="password" autocomplete="current-password" required></label><button>Entrar</button><p role="status"></p></form><a href="/">Voltar ao jogo</a></main>';
+  root.innerHTML = `<main class="admin-login"><p class="eyebrow">${th("admin.main.7984cfa6d0")}</p><h1>${th("admin.main.7d8098b4f7")}</h1><p>${th("admin.main.b235bf06ba")}</p><form><label>${th("admin.main.c7b3d7022a")}<input name="password" type="password" autocomplete="current-password" required></label><button>${th("admin.main.4105811890")}</button><p role="status"></p></form><a href="/">${th("admin.main.48a640ef1d")}</a></main>`;
   root.querySelector("form")!.onsubmit = async (e) => {
     e.preventDefault();
     const button = root.querySelector("button")!;
@@ -53,18 +62,17 @@ let content: HTMLElement,
   section = "overview",
   generation = 0;
 async function shell() {
-  root.innerHTML =
-    '<div class="admin-shell"><aside class="admin-nav"><p class="eyebrow">CAMINHO DA FOLHA</p><h2>Administração</h2><nav></nav><a href="/">Abrir o jogo ↗</a><button data-logout class="secondary">Sair</button></aside><main class="admin-main"><header><div><p class="eyebrow">ACERVO DO JOGO</p><h1 data-title></h1></div><span class="admin-badge">Acesso administrativo</span></header><section data-content></section></main></div>';
+  root.innerHTML = `<div class="admin-shell"><aside class="admin-nav"><p class="eyebrow">${th("admin.main.7984cfa6d0")}</p><h2>${th("admin.main.7d8098b4f7")}</h2><nav></nav><a href="/">Abrir o jogo \u2197</a><button data-logout class="secondary">${th("admin.main.2d023dea2a")}</button></aside><main class="admin-main"><header><div><p class="eyebrow">${th("admin.main.d0c40a35b6")}</p><h1 data-title></h1></div><span class="admin-badge">${th("admin.main.f6c44eaec8")}</span></header><section data-content></section></main></div>`;
   content = root.querySelector("[data-content]")!;
   for (const [id, name] of [
-    ["overview", "Visão geral"],
-    ["characters", "Personagens"],
-    ["maps", "Mapas"],
-    ["effects", "Efeitos"],
-    ["sounds", "Sons e músicas"],
-    ["progression", "Itens e missões"],
-    ["arena", "Salas da arena"],
-    ["files", "Todos os arquivos"],
+    ["overview", t("admin.main.36664e8242")],
+    ["characters", t("admin.main.125523ff6a")],
+    ["maps", t("admin.main.7ab84a7603")],
+    ["effects", t("admin.main.020cdce113")],
+    ["sounds", t("admin.main.0476208c29")],
+    ["progression", t("admin.main.3a245f3036")],
+    ["arena", t("admin.main.a5f5025f3a")],
+    ["files", t("admin.main.0d4623424b")],
   ]) {
     const button = node("button", name, "secondary");
     button.dataset.section = id;
@@ -76,7 +84,7 @@ async function shell() {
       await api("logout", {});
       login();
     };
-  await show("overview", "Visão geral");
+  await show("overview", t("admin.main.36664e8242"));
 }
 async function show(id: string, title: string) {
   section = id;
@@ -85,23 +93,25 @@ async function show(id: string, title: string) {
   root
     .querySelectorAll<HTMLButtonElement>("[data-section]")
     .forEach((b) => b.classList.toggle("active", b.dataset.section === id));
-  content.querySelectorAll("audio").forEach(audio => {
-    audio.pause(); audio.removeAttribute("src"); audio.load();
+  content.querySelectorAll("audio").forEach((audio) => {
+    audio.pause();
+    audio.removeAttribute("src");
+    audio.load();
   });
-  content.replaceChildren(node("p", "Carregando…"));
+  content.replaceChildren(node("p", t("common.loading")));
   try {
     if (id === "overview") {
       const data = await api("overview");
       if (request !== generation) return;
       const grid = node("div", undefined, "admin-stats");
       for (const [key, label] of [
-        ["characters", "Modelos catalogados"],
-        ["playable", "Modelos com ações padrão"],
-        ["previews", "Prévias de corpo inteiro"],
-        ["maps", "Mapas integrados"],
-        ["effects", "Efeitos preparados"],
-        ["sounds", "Arquivos de som"],
-        ["files", "Arquivos no jogo"],
+        ["characters", t("admin.main.b8e48d64b5")],
+        ["playable", t("admin.main.2ddf37c17f")],
+        ["previews", t("admin.main.665064ba23")],
+        ["maps", t("admin.main.771d20b513")],
+        ["effects", t("admin.main.33ee891fa6")],
+        ["sounds", t("admin.main.e894147eef")],
+        ["files", t("admin.main.577b5bed9a")],
       ]) {
         const card = node("article");
         card.append(node("strong", String(data[key])), node("span", label));
@@ -109,11 +119,7 @@ async function show(id: string, title: string) {
       }
       content.replaceChildren(
         grid,
-        node(
-          "p",
-          "A coleção principal reúne os modelos com caminhada e combate preservados. O acervo de revisão mantém NPCs, objetos, invocações e recursos incompletos. Os mapas ainda não integrados e as próximas funcionalidades estão registrados no roadmap.",
-          "admin-note",
-        ),
+        node("p", t("admin.main.13f0402845"), "admin-note"),
       );
     } else if (id === "characters") {
       const data = await api("characters");
@@ -136,10 +142,14 @@ async function show(id: string, title: string) {
           node("p", map.description),
           node(
             "p",
-            `ID ${map.id} · ${Math.round(map.width)} × ${Math.round(map.height)} unidades`,
+            t("admin.main.007351c4f9", {
+              v0: map.id,
+              v1: Math.round(map.width),
+              v2: Math.round(map.height),
+            }),
           ),
         );
-        const button = node("button", "Inspecionar mapa", "secondary");
+        const button = node("button", t("admin.main.94d0c95e58"), "secondary");
         button.onclick = () => void inspectMap(map);
         card.append(button);
         grid.append(card);
@@ -168,56 +178,85 @@ async function show(id: string, title: string) {
           }
           grid.append(card);
         }
-        for (const [modelId, ref] of Object.entries<any>(data.entityAudio || {})) {
+        for (const [modelId, ref] of Object.entries<any>(
+          data.entityAudio || {},
+        )) {
           const entry = node("article", undefined, "admin-card");
           entry.dataset.entityAudio = modelId;
-          entry.append(node("h3", ref.name), node("p", "Modelo " + modelId + " · Ataque e derrota originais"));
-          const button = node("button", "Carregar sons deste modelo", "secondary");
+          entry.append(
+            node("h3", ref.name),
+            node("p", t("common.model") + modelId + t("admin.main.153b3ebfee")),
+          );
+          const button = node(
+            "button",
+            t("admin.main.4c4c4e16a0"),
+            "secondary",
+          );
           button.onclick = async () => {
             button.disabled = true;
             try {
-              const response = await fetch(ref.url, { signal: AbortSignal.timeout(15000) });
-              if (!response.ok) throw new Error("Falha ao carregar sons");
+              const response = await fetch(ref.url, {
+                signal: AbortSignal.timeout(15000),
+              });
+              if (!response.ok) throw new Error(t("admin.main.acb2115f9a"));
               const model = await response.json();
               if (request !== generation) return;
               for (const [sid, sound] of Object.entries<any>(model.sounds)) {
-                entry.append(node("p", "Pacote " + sid));
+                entry.append(node("p", t("common.package") + sid));
                 for (const clip of sound.clips) {
                   const preview = node("audio");
-                  preview.controls = true; preview.preload = "none"; preview.src = clip.url;
-                  preview.onplay = () => document.querySelectorAll("audio").forEach(other => { if (other !== preview) other.pause(); });
+                  preview.controls = true;
+                  preview.preload = "none";
+                  preview.src = clip.url;
+                  preview.onplay = () =>
+                    document.querySelectorAll("audio").forEach((other) => {
+                      if (other !== preview) other.pause();
+                    });
                   entry.append(preview);
                 }
               }
               button.remove();
             } catch {
-              button.disabled = false; button.textContent = "Tentar carregar novamente";
+              button.disabled = false;
+              button.textContent = t("admin.main.be839d7fb4");
             }
           };
-          entry.append(button); grid.append(entry);
+          entry.append(button);
+          grid.append(entry);
         }
         const card = node("article", undefined, "admin-card");
-        card.append(node("h3", "Música principal"));
+        card.append(node("h3", t("admin.main.9ce5f599cc")));
         const audio = node("audio");
         audio.controls = true;
         audio.preload = "none";
         audio.src = data.music.url;
-        audio.onplay = () => document.querySelectorAll("audio").forEach(other => { if (other !== audio) other.pause(); });
-        card.append(node("p", "Trilha provisória do lobby; vínculo original ainda em revisão."), audio);
+        audio.onplay = () =>
+          document.querySelectorAll("audio").forEach((other) => {
+            if (other !== audio) other.pause();
+          });
+        card.append(node("p", t("admin.main.6ffe95954a")), audio);
         grid.prepend(card);
         for (const [url, file] of Object.entries<any>(sceneAudio.files)) {
           const entry = node("article", undefined, "admin-card");
           entry.dataset.sceneAudio = url;
           const uses = Object.entries<any>(sceneAudio.maps)
-            .filter(([, map]) => map.tracks.includes(url) || map.environment === url)
+            .filter(
+              ([, map]) => map.tracks.includes(url) || map.environment === url,
+            )
             .map(([id, map]) => map.name + " (" + id + ")");
-          entry.append(node("h3", url.split("/").pop()!), node("p", uses.join(" · ")),
-            node("p", file.source));
+          entry.append(
+            node("h3", url.split("/").pop()!),
+            node("p", uses.join(" · ")),
+            node("p", file.source),
+          );
           const preview = node("audio");
           preview.controls = true;
           preview.preload = "none";
           preview.src = url;
-          preview.onplay = () => document.querySelectorAll("audio").forEach(other => { if (other !== preview) other.pause(); });
+          preview.onplay = () =>
+            document.querySelectorAll("audio").forEach((other) => {
+              if (other !== preview) other.pause();
+            });
           entry.append(preview);
           grid.prepend(entry);
         }
@@ -226,9 +265,16 @@ async function show(id: string, title: string) {
           const card = node("article", undefined, "admin-card");
           card.append(
             node("h3", key),
-            node("p", `${effect.frames} quadros · ${effect.fps} FPS`),
+            node(
+              "p",
+              t("admin.main.a1aba54bcd", { v0: effect.frames, v1: effect.fps }),
+            ),
           );
-          const button = node("button", "Visualizar efeito", "secondary");
+          const button = node(
+            "button",
+            t("admin.main.a82031d4ce"),
+            "secondary",
+          );
           button.onclick = () =>
             animationDialog(key, {
               effect: {
@@ -252,7 +298,13 @@ async function show(id: string, title: string) {
           node("p", item.description),
           node(
             "p",
-            `${item.price} moedas · ${item.slot} · Ataque +${item.attack} · Vida +${item.hp} · Chakra +${item.chakra}`,
+            t("admin.main.716ad8ef8f", {
+              v0: item.price,
+              v1: statusText(item.slot),
+              v2: item.attack,
+              v3: item.hp,
+              v4: item.chakra,
+            }),
           ),
         );
         grid.append(card);
@@ -264,7 +316,7 @@ async function show(id: string, title: string) {
           node("p", quest.description),
           node(
             "p",
-            `${quest.coins} moedas + ${quest.xp} XP · recompensa única`,
+            t("admin.main.f4371821aa", { v0: quest.coins, v1: quest.xp }),
           ),
         );
         grid.append(card);
@@ -273,40 +325,58 @@ async function show(id: string, title: string) {
     } else if (id === "arena") {
       const data = await api("arena");
       if (request !== generation) return;
-      const refresh = node("button", "Atualizar salas", "secondary");
-      refresh.onclick = () => void show("arena", "Salas da arena");
+      const refresh = node("button", t("admin.main.2c892d733b"), "secondary");
+      refresh.onclick = () => void show("arena", t("admin.main.a5f5025f3a"));
       const grid = node("div", undefined, "admin-grid");
       for (const room of data.rooms) {
         const card = node("article", undefined, "admin-card");
         card.append(
-          node("h3", "Sala " + room.code),
+          node("h3", t("common.room") + room.code),
           node(
             "p",
-            `${room.status} · ${room.mode === "journey" ? "Jornada" : "Nivelado"} · Turno ${room.turnNumber} · ${room.players.length}/2 jogadores`,
+            t("admin.main.dad3543391", {
+              v0: statusText(room.status),
+              v1:
+                room.mode === "journey"
+                  ? t("admin.main.20c99ea996")
+                  : t("admin.main.58aa7af176"),
+              v2: room.turnNumber,
+              v3: room.players.length,
+            }),
           ),
         );
         for (const p of room.players)
           card.append(
             node(
               "p",
-              `${p.character} · ${p.hp}/${p.maxHp} vida · ${p.chakra} chakra · ${p.connected ? "conectado" : "ausente"}`,
+              t("admin.main.e0977f1300", {
+                v0: p.character,
+                v1: p.hp,
+                v2: p.maxHp,
+                v3: p.chakra,
+                v4: p.connected ? "conectado" : "ausente",
+              }),
             ),
           );
-        if (room.reason) card.append(node("p", "Encerramento: " + room.reason));
+        if (room.reason)
+          card.append(node("p", t("common.ending") + room.reason));
         grid.append(card);
       }
       content.replaceChildren(
         refresh,
         node(
           "p",
-          `${data.rooms.length}/${data.capacity} salas locais. Sessões temporárias, sem ranking ou recompensas.`,
+          t("admin.main.bab7410da8", {
+            v0: data.rooms.length,
+            v1: data.capacity,
+          }),
         ),
         grid,
       );
     } else if (id === "files") files();
   } catch (e) {
     if (request === generation)
-      content.replaceChildren(node("p", String(e), "admin-error"));
+      content.replaceChildren(node("p", errorText(e), "admin-error"));
   }
 }
 function characters(entries: Entry[]) {
@@ -315,12 +385,12 @@ function characters(entries: Entry[]) {
     collection = node("select"),
     grid = node("div", undefined, "admin-grid"),
     pages = node("div", undefined, "admin-pages");
-  search.placeholder = "Buscar nome, variante ou ID";
-  search.setAttribute("aria-label", "Buscar no acervo");
+  search.placeholder = t("admin.main.10e02090d3");
+  search.setAttribute("aria-label", t("admin.main.58e3fc6ab2"));
   for (const [value, label] of [
-    ["all", "Todo o acervo"],
-    ["playable", "Personagens com ações padrão"],
-    ["review", "Para revisão"],
+    ["all", t("common.allArchive")],
+    ["playable", t("admin.main.710053a202")],
+    ["review", t("admin.main.73d5490306")],
   ]) {
     const o = node("option", label);
     o.value = value;
@@ -352,8 +422,8 @@ function characters(entries: Entry[]) {
         image.src = entry.preview || entry.portrait!;
         image.loading = "lazy";
         image.alt = entry.preview
-          ? "Corpo inteiro de " + entry.name
-          : "Retrato de " + entry.name;
+          ? t("admin.main.40e5dc98cf") + entry.name
+          : t("admin.main.784b535812") + entry.name;
         image.className = "admin-character";
         card.append(image);
       }
@@ -364,26 +434,34 @@ function characters(entries: Entry[]) {
         ),
         node(
           "p",
-          `ID ${entry.id} · ${entry.collection === "playable" ? "Coleção principal" : "Em revisão"}`,
+          t("admin.main.35a06c5c0c", {
+            v0: entry.id,
+            v1:
+              entry.collection === "playable"
+                ? t("admin.main.21cc76e3ac")
+                : t("admin.main.5f80549834"),
+          }),
         ),
       );
-      const button = node("button", "Ver ações e animações", "secondary");
+      const button = node("button", t("admin.main.e5b3ce7ac0"), "secondary");
       button.onclick = async () => {
         try {
           const m = await api("characters/" + entry.id);
           animationDialog(entry.name, m.modes || {}, m);
         } catch (e) {
-          alert(String(e));
+          alert(errorText(e));
         }
       };
       card.append(button);
       card.style.cursor = "pointer";
-      card.onclick = (event) => { if (event.target !== button) button.click(); };
+      card.onclick = (event) => {
+        if (event.target !== button) button.click();
+      };
       grid.append(card);
     }
     pages.replaceChildren();
-    const prev = node("button", "Anterior", "secondary"),
-      next = node("button", "Próxima", "secondary");
+    const prev = node("button", t("admin.main.e4ce7c09d5"), "secondary"),
+      next = node("button", t("admin.main.2fe966afd7"), "secondary");
     prev.disabled = page === 0;
     next.disabled = (page + 1) * 24 >= filtered.length;
     prev.onclick = () => {
@@ -398,7 +476,11 @@ function characters(entries: Entry[]) {
       prev,
       node(
         "span",
-        `${filtered.length} modelos · página ${page + 1} / ${Math.max(1, Math.ceil(filtered.length / 24))}`,
+        t("admin.main.d906beb0eb", {
+          v0: filtered.length,
+          v1: page + 1,
+          v2: Math.max(1, Math.ceil(filtered.length / 24)),
+        }),
       ),
       next,
     );
@@ -412,7 +494,7 @@ function characters(entries: Entry[]) {
 function modal(title: string) {
   const dialog = node("dialog", undefined, "admin-detail");
   const top = node("div", undefined, "admin-detail-heading"),
-    close = node("button", "Fechar", "secondary");
+    close = node("button", t("admin.main.0f2bd88ef0"), "secondary");
   top.append(node("h2", title), close);
   dialog.append(top);
   document.body.append(dialog);
@@ -434,122 +516,265 @@ function animationDialog(title: string, modes: any, manifest?: any) {
   zoom.max = "2";
   zoom.step = "0.05";
   zoom.value = "1";
-  zoom.setAttribute("aria-label", "Zoom da prévia");
+  zoom.setAttribute("aria-label", t("admin.main.6dfeceaf97"));
   const actions: any[] = [];
   for (const [mode, data] of Object.entries<any>(modes))
     for (const [name, anim] of Object.entries<any>(data.animations || {})) {
       actions.push({ mode, name, anim, reference: data.referenceHeight });
     }
-  actionGrid.setAttribute("aria-label", "Animações disponíveis");
-  dialog.append(node("p", "Passe o mouse ou use o teclado para ver uma prévia. Clique para ampliar."), actionGrid, zoom, canvas, info);
+  actionGrid.setAttribute("aria-label", t("admin.main.cdf24c02e5"));
+  dialog.append(
+    node("p", t("admin.main.c7b3df9c67")),
+    actionGrid,
+    zoom,
+    canvas,
+    info,
+  );
   if (manifest) {
-    const details = node("details"), summary = node("summary", `Arquivos do modelo (${manifest.assets?.length || 0})`), list = node("ul", undefined, "admin-assets");
+    const details = node("details"),
+      summary = node(
+        "summary",
+        t("admin.main.2f771c4f1e", { v0: manifest.assets?.length || 0 }),
+      ),
+      list = node("ul", undefined, "admin-assets");
     for (const asset of manifest.assets || []) {
-      const li = node("li"), link = node("a", asset.url.split("/").slice(-2).join("/"));
-      link.href = asset.url; link.target = "_blank"; link.rel = "noopener";
-      li.append(link, document.createTextNode(` ? ${Math.ceil(asset.bytes / 1024)} KB`)); list.append(li);
+      const li = node("li"),
+        link = node("a", asset.url.split("/").slice(-2).join("/"));
+      link.href = asset.url;
+      link.target = "_blank";
+      link.rel = "noopener";
+      li.append(
+        link,
+        document.createTextNode(
+          t("admin.main.21d35bf930", { v0: Math.ceil(asset.bytes / 1024) }),
+        ),
+      );
+      list.append(li);
     }
-    details.append(summary, list); dialog.append(details);
-    if (manifest.issues?.length) dialog.append(node("p", "Pendências: " + JSON.stringify(manifest.issues)));
-    const form = node("form", undefined, "admin-review"), decision = node("select"), notes = node("textarea"), roles = node("div"), status = node("p"), save = node("button", "Salvar revisão");
-    for (const [value, label] of [["pending", "Pendente"], ["approved", "Aprovado para uso"], ["rejected", "Não utilizável"]]) { const option = node("option", label); option.value = value; decision.append(option); }
+    details.append(summary, list);
+    dialog.append(details);
+    if (manifest.issues?.length)
+      dialog.append(
+        node("p", t("admin.main.bceeb00a5e") + JSON.stringify(manifest.issues)),
+      );
+    const form = node("form", undefined, "admin-review"),
+      decision = node("select"),
+      notes = node("textarea"),
+      roles = node("div"),
+      status = node("p"),
+      save = node("button", t("admin.main.151029cd95"));
+    for (const [value, label] of [
+      ["pending", t("admin.main.0b52c68ee6")],
+      ["approved", t("admin.main.09242e57b4")],
+      ["rejected", t("admin.main.c9ea857e45")],
+    ]) {
+      const option = node("option", label);
+      option.value = value;
+      decision.append(option);
+    }
     decision.value = manifest.review?.decision || "pending";
-    notes.placeholder = "Observações da revisão"; notes.maxLength = 1000; notes.value = manifest.review?.notes || "";
+    notes.placeholder = t("admin.main.b820bf07a9");
+    notes.maxLength = 1000;
+    notes.value = manifest.review?.notes || "";
     const checks: Record<string, HTMLInputElement> = {};
-    for (const [role, label] of [["npc", "Morador"], ["companion", "Companheiro recrutável"], ["enemy", "Adversário"]]) {
-      const wrap = node("label"), checkbox = node("input"); checkbox.type = "checkbox"; checkbox.checked = manifest.review?.capabilities?.[role] ?? manifest.capabilities?.[role] ?? false; checks[role] = checkbox;
-      wrap.append(checkbox, document.createTextNode(" " + label)); roles.append(wrap);
+    for (const [role, label] of [
+      ["npc", t("common.resident")],
+      ["companion", t("admin.main.551338a627")],
+      ["enemy", t("admin.main.77ba10b67c")],
+    ]) {
+      const wrap = node("label"),
+        checkbox = node("input");
+      checkbox.type = "checkbox";
+      checkbox.checked =
+        manifest.review?.capabilities?.[role] ??
+        manifest.capabilities?.[role] ??
+        false;
+      checks[role] = checkbox;
+      wrap.append(checkbox, document.createTextNode(" " + label));
+      roles.append(wrap);
     }
-    form.append(node("h3", "Revisão e uso no jogo"), node("p", "A aprovação libera as funções selecionadas na biblioteca após recarregar o jogo. Não adiciona protagonistas nem reconstrói animações ausentes."), decision, roles, notes, save, status);
+    form.append(
+      node("h3", t("admin.main.1112fd3993")),
+      node("p", t("admin.main.8a6c014009")),
+      decision,
+      roles,
+      notes,
+      save,
+      status,
+    );
     form.onsubmit = async (event) => {
-      event.preventDefault(); save.disabled = true; status.textContent = "Salvando...";
+      event.preventDefault();
+      save.disabled = true;
+      status.textContent = t("common.saving");
       try {
         const enabled = decision.value === "approved";
-        await api(`characters/${manifest.id}/review`, { decision: decision.value, notes: notes.value, capabilities: Object.fromEntries(Object.entries(checks).map(([role, checkbox]) => [role, enabled && checkbox.checked])) });
-        status.textContent = "Revisão salva. Recarregue o jogo para aplicar.";
-      } catch (error) { status.textContent = String(error); } finally { save.disabled = false; }
+        await api(`characters/${manifest.id}/review`, {
+          decision: decision.value,
+          notes: notes.value,
+          capabilities: Object.fromEntries(
+            Object.entries(checks).map(([role, checkbox]) => [
+              role,
+              enabled && checkbox.checked,
+            ]),
+          ),
+        });
+        status.textContent = t("admin.main.dc66834ae1");
+      } catch (error) {
+        status.textContent = errorText(error);
+      } finally {
+        save.disabled = false;
+      }
     };
     dialog.append(form);
   }
   if (!actions.length) {
-    info.textContent = "Este recurso não possui animações convertidas.";
+    info.textContent = t("admin.main.c9ea27d9d7");
     return;
   }
-  let selected = 0, hovered = -1, hoverImage: HTMLImageElement | undefined,
-    hoverStart = 0, hoverToken = 0,
+  let selected = 0,
+    hovered = -1,
+    hoverImage: HTMLImageElement | undefined,
+    hoverStart = 0,
+    hoverToken = 0,
     frame = 0,
     image: HTMLImageElement | undefined,
     start = 0,
     raf = 0,
-    token = 0, lastDraw = 0;
-  const buttons: HTMLButtonElement[] = [], thumbnails: HTMLCanvasElement[] = [];
-  const visible = new Set<number>(), pending: number[] = [];
+    token = 0,
+    lastDraw = 0;
+  const buttons: HTMLButtonElement[] = [],
+    thumbnails: HTMLCanvasElement[] = [];
+  const visible = new Set<number>(),
+    pending: number[] = [];
   let loading = 0;
-  const paintThumb = (index: number, img: HTMLImageElement, time: number, began: number) => {
-    const thumb = thumbnails[index], ctx = thumb.getContext("2d")!, entry = actions[index], anim = entry.anim;
-    const timeline = anim.timeline?.length ? anim.timeline : Array.from({ length: anim.frames }, (_, i) => i);
+  const paintThumb = (
+    index: number,
+    img: HTMLImageElement,
+    time: number,
+    began: number,
+  ) => {
+    const thumb = thumbnails[index],
+      ctx = thumb.getContext("2d")!,
+      entry = actions[index],
+      anim = entry.anim;
+    const timeline = anim.timeline?.length
+      ? anim.timeline
+      : Array.from({ length: anim.frames }, (_, i) => i);
     const cols = Math.floor(img.width / anim.frameWidth);
     if (!timeline.length || !cols || !anim.frameHeight) return;
-    const frame = timeline[Math.floor((time - began) / 1000 * anim.fps) % timeline.length];
-    const scale = Math.min(2, 62 / Math.max(1, entry.reference || anim.frameHeight));
-    const w = anim.frameWidth * scale, h = anim.frameHeight * scale;
+    const frame =
+      timeline[
+        Math.floor(((time - began) / 1000) * anim.fps) % timeline.length
+      ];
+    const scale = Math.min(
+      2,
+      62 / Math.max(1, entry.reference || anim.frameHeight),
+    );
+    const w = anim.frameWidth * scale,
+      h = anim.frameHeight * scale;
     ctx.clearRect(0, 0, thumb.width, thumb.height);
-    ctx.drawImage(img, frame % cols * anim.frameWidth, Math.floor(frame / cols) * anim.frameHeight,
-      anim.frameWidth, anim.frameHeight, thumb.width / 2 - w * (anim.origin?.[0] ?? 0.5),
-      thumb.height * 0.875 - h * (anim.origin?.[1] ?? 1), w, h);
+    ctx.drawImage(
+      img,
+      (frame % cols) * anim.frameWidth,
+      Math.floor(frame / cols) * anim.frameHeight,
+      anim.frameWidth,
+      anim.frameHeight,
+      thumb.width / 2 - w * (anim.origin?.[0] ?? 0.5),
+      thumb.height * 0.875 - h * (anim.origin?.[1] ?? 1),
+      w,
+      h,
+    );
   };
   const load = async (index: number) => {
-    const img = new Image(); img.src = actions[index].anim.url; await img.decode(); return img;
+    const img = new Image();
+    img.src = actions[index].anim.url;
+    await img.decode();
+    return img;
   };
   const pump = () => {
     while (dialog.open && loading < 1 && pending.length) {
       const index = pending.shift()!;
       if (!visible.has(index)) continue;
       loading++;
-      void load(index).then(img => {
-        if (dialog.open && visible.has(index) && hovered !== index) paintThumb(index, img, 0, 0);
-      }).catch(() => { if (dialog.open) buttons[index].title = "Imagem indisponível"; })
-        .finally(() => { loading--; pump(); });
+      void load(index)
+        .then((img) => {
+          if (dialog.open && visible.has(index) && hovered !== index)
+            paintThumb(index, img, 0, 0);
+        })
+        .catch(() => {
+          if (dialog.open) buttons[index].title = t("admin.main.209eda3bf6");
+        })
+        .finally(() => {
+          loading--;
+          pump();
+        });
     }
   };
-  const observer = new IntersectionObserver(entries => {
-    for (const entry of entries) {
-      const index = Number((entry.target as HTMLElement).dataset.index);
-      if (entry.isIntersecting) { visible.add(index); pending.push(index); }
-      else visible.delete(index);
-    }
-    pump();
-  }, { root: actionGrid, rootMargin: "80px" });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const index = Number((entry.target as HTMLElement).dataset.index);
+        if (entry.isIntersecting) {
+          visible.add(index);
+          pending.push(index);
+        } else visible.delete(index);
+      }
+      pump();
+    },
+    { root: actionGrid, rootMargin: "80px" },
+  );
   const preview = async (index: number) => {
-    hovered = index; hoverImage = undefined;
+    hovered = index;
+    hoverImage = undefined;
     const request = ++hoverToken;
     try {
       const img = await load(index);
       if (request !== hoverToken || !dialog.open) return;
-      hoverImage = img; hoverStart = performance.now();
-    } catch { /* The static thumbnail remains available. */ }
+      hoverImage = img;
+      hoverStart = performance.now();
+    } catch {
+      /* The static thumbnail remains available. */
+    }
   };
   const stopPreview = (index: number) => {
     if (hovered !== index) return;
     if (hoverImage) paintThumb(index, hoverImage, 0, 0);
-    hovered = -1; hoverImage = undefined; hoverToken++;
+    hovered = -1;
+    hoverImage = undefined;
+    hoverToken++;
   };
   actions.forEach((entry, index) => {
-    const button = node("button", undefined, "animation-card"), thumb = node("canvas");
-    button.type = "button"; button.dataset.index = String(index); button.setAttribute("aria-pressed", "false");
-    thumb.width = 160; thumb.height = 112; thumb.setAttribute("aria-hidden", "true");
-    button.append(thumb, node("span", entry.name), node("small", entry.mode));
-    if (entry.anim.fallback) button.append(node("small", "Prévia provisória"));
+    const button = node("button", undefined, "animation-card"),
+      thumb = node("canvas");
+    button.type = "button";
+    button.dataset.index = String(index);
+    button.setAttribute("aria-pressed", "false");
+    thumb.width = 160;
+    thumb.height = 112;
+    thumb.setAttribute("aria-hidden", "true");
+    button.append(
+      thumb,
+      node("span", entry.name),
+      node("small", statusText(entry.mode)),
+    );
+    if (entry.anim.fallback)
+      button.append(node("small", t("admin.main.248b16bc68")));
     button.onclick = () => void choose(index);
     button.onpointerenter = () => void preview(index);
     button.onpointerleave = () => stopPreview(index);
     button.onfocus = () => void preview(index);
     button.onblur = () => stopPreview(index);
-    buttons.push(button); thumbnails.push(thumb); actionGrid.append(button); observer.observe(button);
+    buttons.push(button);
+    thumbnails.push(thumb);
+    actionGrid.append(button);
+    observer.observe(button);
   });
   const choose = async (index: number) => {
     selected = index;
-    buttons.forEach((button, i) => { button.classList.toggle("selected", i === index); button.setAttribute("aria-pressed", String(i === index)); });
+    buttons.forEach((button, i) => {
+      button.classList.toggle("selected", i === index);
+      button.setAttribute("aria-pressed", String(i === index));
+    });
     const request = ++token,
       entry = actions[index];
     image = undefined;
@@ -560,10 +785,21 @@ function animationDialog(title: string, modes: any, manifest?: any) {
       if (request !== token || !dialog.open) return;
       image = im;
       start = performance.now();
-      info.textContent = `${entry.mode} · ${entry.name} · ${entry.anim.frames} quadros únicos · ${entry.anim.fps} FPS · ${entry.anim.status}${manifest?.organization ? " · " + manifest.organization.reason : ""}`;
-      if (entry.anim.fallback) info.textContent += " · " + entry.anim.fallback.reason;
+      info.textContent = t("admin.main.e4026fd796", {
+        v0: statusText(entry.mode),
+        v1: entry.name,
+        v2: entry.anim.frames,
+        v3: entry.anim.fps,
+        v4: statusText(entry.anim.status),
+        v5: manifest?.organization
+          ? " · " + translateText(manifest.organization.reason)
+          : "",
+      });
+      if (entry.anim.fallback)
+        info.textContent += " · " + entry.anim.fallback.reason;
     } catch {
-      if (request === token && dialog.open) info.textContent = "Imagem indisponível.";
+      if (request === token && dialog.open)
+        info.textContent = t("admin.main.b37bde4762");
     }
   };
   const draw = (time: number) => {
@@ -602,10 +838,18 @@ function animationDialog(title: string, modes: any, manifest?: any) {
         h,
       );
     }
-    if (hoverImage && hovered >= 0) paintThumb(hovered, hoverImage, time, hoverStart);
+    if (hoverImage && hovered >= 0)
+      paintThumb(hovered, hoverImage, time, hoverStart);
     raf = requestAnimationFrame(draw);
   };
-  dialog.addEventListener("close", () => { token++; hoverToken++; observer.disconnect(); visible.clear(); pending.length = 0; cancelAnimationFrame(raf); });
+  dialog.addEventListener("close", () => {
+    token++;
+    hoverToken++;
+    observer.disconnect();
+    visible.clear();
+    pending.length = 0;
+    cancelAnimationFrame(raf);
+  });
   void choose(0);
   raf = requestAnimationFrame(draw);
 }
@@ -617,18 +861,31 @@ async function inspectMap(map: any) {
   image.alt = map.name;
   dialog.append(
     image,
-    node("p", `ID ${map.id} · Grade original de colisões · ${map.navigation}`),
+    node("p", t("admin.main.a40490fece", { v0: map.id, v1: map.navigation })),
   );
   if (map.layers?.nativeForeground) {
     const layer = map.layers.nativeForeground;
-    dialog.append(node("p", `Máscara frontal original: ${layer.foregroundRects} blocos, alpha ${layer.alphaLevels.join(" / ")}. Camada translúcida global; profundidade por objeto ainda pendente.`));
+    dialog.append(
+      node(
+        "p",
+        t("admin.main.472965c682", {
+          v0: layer.foregroundRects,
+          v1: layer.alphaLevels.join(" / "),
+        }),
+      ),
+    );
   }
   const r = await fetch(map.navigation),
     nav = await r.json();
   dialog.append(
     node(
       "p",
-      `${nav.cells.length} células transitáveis · região principal ${nav.sourceRegion} · projeção isométrica ${nav.cellWidth}×${nav.cellHeight}`,
+      t("admin.main.c7c939764a", {
+        v0: nav.cells.length,
+        v1: nav.sourceRegion,
+        v2: nav.cellWidth,
+        v3: nav.cellHeight,
+      }),
     ),
   );
 }
@@ -636,8 +893,8 @@ function files() {
   const input = node("input"),
     list = node("div"),
     pages = node("div", undefined, "admin-pages");
-  input.placeholder = "Buscar caminho ou extensão";
-  input.setAttribute("aria-label", "Buscar arquivo");
+  input.placeholder = t("admin.main.a2a616e778");
+  input.setAttribute("aria-label", t("admin.main.e8447477bd"));
   content.replaceChildren(input, list, pages);
   let page = 0,
     request = 0,
@@ -656,12 +913,23 @@ function files() {
         link.href = file.url;
         link.target = "_blank";
         link.rel = "noopener";
-        row.append(link, node("span", `${(file.bytes / 1024).toFixed(1)} KB`));
+        row.append(
+          link,
+          node(
+            "span",
+            t("admin.main.86b3da5385", {
+              v0: formatNumber(file.bytes / 1024, {
+                minimumFractionDigits: 1,
+                maximumFractionDigits: 1,
+              }),
+            }),
+          ),
+        );
         list.append(row);
       }
       pages.replaceChildren();
-      const prev = node("button", "Anterior", "secondary"),
-        next = node("button", "Próxima", "secondary");
+      const prev = node("button", t("admin.main.e4ce7c09d5"), "secondary"),
+        next = node("button", t("admin.main.2fe966afd7"), "secondary");
       prev.disabled = !page;
       next.disabled = (page + 1) * 60 >= result.total;
       prev.onclick = () => {
@@ -674,11 +942,14 @@ function files() {
       };
       pages.append(
         prev,
-        node("span", `${result.total} arquivos · página ${page + 1}`),
+        node(
+          "span",
+          t("admin.main.26a98310eb", { v0: result.total, v1: page + 1 }),
+        ),
         next,
       );
     } catch (e) {
-      list.textContent = String(e);
+      list.textContent = errorText(e);
     }
   };
   input.oninput = () => {

@@ -3,27 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Naruto • Caminho da Folha</title>
+    <title data-i18n="index.f8b52b04b4">Naruto • Caminho da Folha</title>
   </head>
   <body>
     <div id="game-loading" class="game-loading" role="status" aria-live="polite" aria-busy="true">
-      <div class="loading-content"><p class="eyebrow">CAMINHO DA FOLHA</p><h1 id="loading-title">Preparando sua jornada</h1><p id="loading-message">Carregando…</p><progress id="loading-progress" max="1" aria-label="Progresso do carregamento"></progress><p class="loading-tip">O mundo está sendo preparado. Seu progresso continua salvo.</p><div class="actions"><button id="loading-retry" hidden>Tentar novamente</button><button id="loading-cancel" class="secondary" hidden>Voltar ao início</button></div></div>
+      <div class="loading-content"><p class="eyebrow"><span data-i18n="index.7984cfa6d0">CAMINHO DA FOLHA</span></p><h1 id="loading-title"><span data-i18n="index.ddc49b1c5f">Preparando sua jornada</span></h1><p id="loading-message">Carregando…</p><progress id="loading-progress" max="1" aria-label="Progresso do carregamento" data-i18n-aria-label="index.c3ec38a1eb"></progress><p class="loading-tip"><span data-i18n="index.7f493f44bd">O mundo está sendo preparado. Seu progresso continua salvo.</span></p><div class="actions"><button id="loading-retry" hidden><span data-i18n="index.b9e10688be">Tentar novamente</span></button><button id="loading-cancel" class="secondary" hidden><span data-i18n="index.37278736f8">Voltar ao início</span></button></div></div>
     </div>
     <div id="app">
       <header>
-        <span class="brand">木ノ葉 <b>CAMINHO DA FOLHA</b></span
-        ><span class="badge">IDLE RPG · PROTÓTIPO LOCAL</span>
+        <span class="brand">木ノ葉 <b><span data-i18n="index.7984cfa6d0">CAMINHO DA FOLHA</span></b></span
+        ><span class="badge"><span data-i18n="index.22df07a12a">IDLE RPG · PROTÓTIPO LOCAL</span></span>
       </header>
       <main id="menu">
-        <p class="eyebrow">UMA NOVA JORNADA</p>
-        <h1>Sua próxima aventura<br />começa na Folha.</h1>
+        <p class="eyebrow"><span data-i18n="index.79901fcf78">UMA NOVA JORNADA</span></p>
+        <h1><span data-i18n="index.f1f48d358a">Sua próxima aventura</span><br /><span data-i18n="index.27e3827eed">começa na Folha.</span></h1>
         <p>
-          Escolha seu caminho. Explore, enfrente desafios e cresça a cada
-          encontro.
+          <span data-i18n="index.85b4bfe7a6">Escolha seu caminho. Explore, enfrente desafios e cresça a cada encontro.</span>
         </p>
         <div class="actions">
-          <button id="new" disabled>Novo jogo</button
-          ><button id="continue" class="secondary" disabled>Continuar jornada</button>
+          <button id="new" disabled><span data-i18n="index.30864d2c25">Novo jogo</span></button
+          ><button id="continue" class="secondary" disabled><span data-i18n="index.6ec92e28df">Continuar jornada</span></button>
         </div>
         <p id="menu-loading" role="status">Carregando o jogo…</p>
         <section id="choices" hidden></section>
@@ -31,65 +30,63 @@
       <div id="play" hidden>
         <div id="canvas"></div>
         <aside>
-          <p class="eyebrow">SUA JORNADA</p>
+          <p class="eyebrow"><span data-i18n="index.00a8b5ef66">SUA JORNADA</span></p>
           <h2 id="hero-name"></h2>
           <h3 id="world-name"></h3>
           <p id="world-help" class="caption"></p>
           <div id="status"></div>
-          <button id="mini-window" class="secondary">Abrir janela flutuante</button>
-          <button id="maps">Viajar · mapas</button>
+          <button id="mini-window" class="secondary"><span data-i18n="index.499b8aac78">Abrir janela flutuante</span></button>
+          <button id="maps" data-i18n="common.travelMaps">Viajar · mapas</button>
           <button id="return-lobby" class="secondary" hidden>
-            Voltar ao lobby
+            <span data-i18n="index.6b91bfdb4a">Voltar ao lobby</span>
           </button>
           <button id="auto-hunt" class="secondary" hidden>
-            Iniciar caçada automática
+            <span data-i18n="index.15a42e6c7b">Iniciar caçada automática</span>
           </button>
           <button id="progression" class="secondary">
-            Atributos · mochila · missões
+            <span data-i18n="index.4512f4406f">Atributos · mochila · missões</span>
           </button>
-          <button id="cast-skill" class="secondary" hidden>
+          <button id="cast-skill" class="secondary" data-i18n="common.jutsuCost" hidden>
             Jutsu · 35 chakra
           </button>
           <button id="arena" class="secondary">
-            Arena PvP · duelo por chave
+            <span data-i18n="index.53eedf02bf">Arena PvP · duelo por chave</span>
           </button>
           <section id="party"></section>
           <button id="library" class="secondary">
-            Personagens · corpo inteiro
+            <span data-i18n="index.afdf1baeab">Personagens · corpo inteiro</span>
           </button>
-          <button id="pause">Pausar caçada</button
+          <button id="pause"><span data-i18n="index.51dc5a250e">Pausar caçada</span></button
           ><button id="upgrade" class="secondary">
-            Treinar atributos · 25 moedas</button
-          ><label><input id="sound" type="checkbox" /> Sons originais</label
-          ><label><input id="music" type="checkbox" /> Música do cenário</label
+            <span data-i18n="index.767ab1b30e">Treinar atributos · 25 moedas</span></button
+          ><label><input id="sound" type="checkbox" /> <span data-i18n="index.a98677352d">Sons originais</span></label
+          ><label><input id="music" type="checkbox" /> <span data-i18n="index.f24b2584f1">Música do cenário</span></label
           ><label
-            >Volume
+            ><span data-i18n="index.b10fb966d7">Volume</span>
             <input
               id="volume"
               type="range"
               min="0"
               max="100"
               value="40"
-              aria-label="Volume do jogo" /></label
-          ><button id="back" class="text-button">Voltar ao início</button>
+              aria-label="Volume do jogo" data-i18n-aria-label="index.3aae321672" /></label
+          ><button id="back" class="text-button"><span data-i18n="index.37278736f8">Voltar ao início</span></button>
           <section>
-            <h3>Resumo da sessão</h3>
+            <h3><span data-i18n="index.107de59cb6">Resumo da sessão</span></h3>
             <div id="session"></div>
           </section>
           <section>
-            <h3>Últimos encontros</h3>
+            <h3><span data-i18n="index.f6c66bef1c">Últimos encontros</span></h3>
             <div id="journal"></div>
           </section>
           <small
-            >Regras próprias. Personagens, efeitos e sons recuperados dos
-            arquivos locais. Alguns modelos ainda têm limitações registradas na
-            biblioteca.</small
+            ><span data-i18n="index.a1da85d948">Regras próprias. Personagens, efeitos e sons recuperados dos arquivos locais. Alguns modelos ainda têm limitações registradas na biblioteca.</span></small
           >
         </aside>
       </div>
       <div id="toast" role="status"></div>
       <footer>
-        Lobby livre · Mapas de exploração · Coleção de personagens · Salvamento local
+        <span data-i18n="index.9a9c3ac6d2">Lobby livre · Mapas de exploração · Coleção de personagens · Salvamento local</span>
       </footer>
     </div>
     <script type="module" src="/src/entry.ts"></script>

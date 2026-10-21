@@ -1,13 +1,15 @@
+import { t } from "../i18n/core.ts";
 import type { Save } from "../model";
 import type { CharacterId } from "../config/characters";
 import type { CombatLoadout } from "./combat-stats";
-
 export const CHARACTER_IDS: Record<CharacterId, string> = {
   naruto: "11000101",
   sasuke: "11000211",
   sakura: "11000301",
 };
-export type CharacterProgress = CombatLoadout & { xp: number };
+export type CharacterProgress = CombatLoadout & {
+  xp: number;
+};
 export const newCharacterProgress = (): CharacterProgress => ({
   level: 1,
   xp: 0,
@@ -22,10 +24,9 @@ export const starterCharacter = (s: Save) =>
   (Object.keys(CHARACTER_IDS) as CharacterId[]).find(
     (key) => CHARACTER_IDS[key] === activeCharacterId(s),
   );
-
 export function selectCharacter(s: Save, id: string) {
   if (!s.collection?.includes(id) || FUTURE_CHARACTERS.has(id))
-    throw new Error("Personagem indisponível na sua coleção.");
+    throw new Error(t("progression.character-progress.ffc1895c38"));
   syncCharacterProgress(s);
   const p = characterProgress(s, id);
   s.activeEntityId = id;
@@ -40,7 +41,6 @@ export function selectCharacter(s: Save, id: string) {
   s.partyIds = [];
   delete s.companionId;
 }
-
 // The legacy fields remain the active protagonist's projection for existing game systems.
 // Never copy them into a different member's record during migration or recruitment.
 export function syncCharacterProgress(s: Save) {
@@ -67,7 +67,7 @@ export function characterProgress(
   // Avoid rewriting the roster in the per-frame combat/movement path.
   if (!s.characterProgress?.[id]) syncCharacterProgress(s);
   if (!s.collection?.includes(id))
-    throw new Error("Personagem fora da sua coleção.");
+    throw new Error(t("progression.character-progress.47b7ee984e"));
   if (id === activeCharacterId(s)) {
     const p = s.characterProgress![id];
     p.level = s.level;
@@ -93,8 +93,10 @@ export function addCharacterXp(s: Save, xp: number, id = activeCharacterId(s)) {
 }
 export function trainCharacter(s: Save, id = activeCharacterId(s)) {
   const p = characterProgress(s, id);
-  if (p.upgrades >= 10000) throw new Error("Limite de treinos atingido.");
-  if (s.coins < 25) throw new Error("Você precisa de 25 moedas para treinar.");
+  if (p.upgrades >= 10000)
+    throw new Error(t("progression.character-progress.a597630b25"));
+  if (s.coins < 25)
+    throw new Error(t("progression.character-progress.2becb8cdaa"));
   s.coins -= 25;
   p.upgrades++;
   if (id === activeCharacterId(s)) s.upgrades = p.upgrades;

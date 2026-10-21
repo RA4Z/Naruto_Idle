@@ -39,6 +39,8 @@ Relatórios: original-inventory-summary.json, original-map-audit.json, native-fo
 
 ## Entregas verificadas
 
+- [x] Tradução oficial pt-BR/en/es com seletor persistente, catálogos centralizados, interpolação/pluralização/números e associação de conteúdo canônico independente da redação. Jogo, admin, arena e troca de idioma com progresso preservado validados. Manutenção em [TRADUCOES.md](TRADUCOES.md); `npm run check:i18n` impede referências, parâmetros e catálogos incompletos.
+
 - [x] Site na Vercel funcionando no navegador, confirmado pelo usuário em 20/10/2026; publicação/imagens removidas das pendências.
 - [x] Menu sem motor Phaser antecipado; lobby carrega só o essencial, com tela de progresso, retry/cancelamento e áudio sob demanda.
 

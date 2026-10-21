@@ -1,3 +1,4 @@
+import { t, th, errorText, translateText } from "../i18n/core.ts";
 import {
   arenaJourneyStats,
   type CombatLoadout,
@@ -13,7 +14,6 @@ import {
 import { ArenaView } from "./view";
 import { arenaRequestId } from "./request-id";
 import "./arena.css";
-
 export function installArena(
   character: () => ArenaCharacter,
   loadout: (character: ArenaCharacter) => CombatLoadout = () => ({
@@ -24,12 +24,12 @@ export function installArena(
 ) {
   const dialog = document.createElement("dialog");
   dialog.className = "arena-panel";
-  dialog.setAttribute("aria-label", "Arena PvP");
-  dialog.innerHTML = `<header class="library-heading"><div><p class="eyebrow">DESAFIO SHINOBI</p><h2>Arena PvP</h2></div><button class="secondary" data-close>Fechar</button></header>
-    <p class="arena-intro">Convide outra pessoa pela chave. Dois jogadores conectados ao mesmo servidor disputam por turnos de 30 segundos. Escolha um duelo nivelado ou lute com o nível, os treinos e equipamentos da sua jornada.</p>
-    <form data-entry><label>Seu ninja<select aria-label="Ninja da arena" name="character"></select></label><label>Modo ao criar<select aria-label="Modo do duelo" name="mode"><option value="balanced">Nivelado · atributos fixos</option><option value="journey">Jornada · meus atributos e equipamentos</option></select></label><p data-build-preview></p><div class="arena-entry-actions"><button type="button" data-create>Criar sala</button><label>Chave da sala<input name="code" aria-label="Chave da sala" maxlength="10" autocomplete="off" placeholder="Ex.: A12B34C56D"></label><button type="submit">Entrar na sala</button></div></form>
-    <section data-duel hidden><div class="arena-room"><strong data-code></strong><button class="secondary" data-copy>Copiar chave</button><span data-connection></span></div><p data-phase role="status"></p><div class="arena-fighters"></div><canvas class="arena-stage" aria-label="Combate sincronizado da arena"></canvas><div class="arena-actions"></div><p data-rules></p><ol class="arena-log" aria-label="Histórico do duelo"></ol><button data-leave class="secondary">Sair da sala</button></section>
-    <label class="arena-sound"><input type="checkbox" data-arena-sound> Sons originais da arena</label><p data-feedback role="status"></p><p class="arena-note">Fechar mantém a sessão para retomar, mas o relógio continua. A ausência por 60 segundos encerra o duelo. Sem ranking ou recompensas nesta versão; salas ficam na memória e se encerram ao reiniciar o servidor.</p>`;
+  dialog.setAttribute("aria-label", t("arena.ui.da8fa6e923"));
+  dialog.innerHTML = `<header class="library-heading"><div><p class="eyebrow">${th("arena.ui.64cf0b94b4")}</p><h2>${th("arena.ui.da8fa6e923")}</h2></div><button class="secondary" data-close>${th("arena.ui.0f2bd88ef0")}</button></header>
+    <p class="arena-intro">${th("arena.ui.e52a569b7b")}</p>
+    <form data-entry><label>${th("arena.ui.b26f614334")}<select aria-label="${th("arena.ui.4037200994")}" name="character"></select></label><label>${th("arena.ui.f795bab533")}<select aria-label="${th("arena.ui.aef1bad7b5")}" name="mode"><option value="balanced">${th("arena.ui.4d68b46241")}</option><option value="journey">${th("arena.ui.94fd629981")}</option></select></label><p data-build-preview></p><div class="arena-entry-actions"><button type="button" data-create>${th("arena.ui.b5dddc9be1")}</button><label>${th("arena.ui.29e0d1c043")}<input name="code" aria-label="${th("arena.ui.29e0d1c043")}" maxlength="10" autocomplete="off" placeholder="${th("common.codeExample")}"></label><button type="submit">${th("arena.ui.f1388bfdc0")}</button></div></form>
+    <section data-duel hidden><div class="arena-room"><strong data-code></strong><button class="secondary" data-copy>${th("arena.ui.7cd76ef5b6")}</button><span data-connection></span></div><p data-phase role="status"></p><div class="arena-fighters"></div><canvas class="arena-stage" aria-label="${th("arena.ui.49686b9f6a")}"></canvas><div class="arena-actions"></div><p data-rules></p><ol class="arena-log" aria-label="${th("arena.ui.0c846cc99f")}"></ol><button data-leave class="secondary">${th("arena.ui.7d9b7fe65c")}</button></section>
+    <label class="arena-sound"><input type="checkbox" data-arena-sound> ${th("arena.ui.2cd1cc4c34")}</label><p data-feedback role="status"></p><p class="arena-note">${th("arena.ui.001bf6303d")}</p>`;
   document.body.append(dialog);
   const find = <T extends HTMLElement>(s: string) =>
     dialog.querySelector<T>(s)!;
@@ -53,8 +53,15 @@ export function installArena(
       .join(" · ");
     find("[data-build-preview]").textContent =
       mode.value === "journey"
-        ? `Sua build: nível ${profile.level} · ${profile.upgrades} treinos · ${stats.maxHp} vida · ${stats.attack} ataque · ${stats.maxChakra} chakra. ${names || "Sem equipamentos"}. Amistoso com save local, sem ranking; a build é fixada ao entrar.`
-        : "Nivelado: todos usam atributos fixos. Ao entrar por uma chave, vale o modo escolhido pelo criador da sala.";
+        ? t("arena.ui.75dc2640c6", {
+            v0: profile.level,
+            v1: profile.upgrades,
+            v2: stats.maxHp,
+            v3: stats.attack,
+            v4: stats.maxChakra,
+            v5: names || t("arena.ui.329808e539"),
+          })
+        : t("arena.ui.acb51c487c");
   }
   select.onchange = mode.onchange = previewBuild;
   let state: ArenaState | null = null,
@@ -68,10 +75,10 @@ export function installArena(
     version = 0;
   const buttons = new Map<ArenaAction, HTMLButtonElement>();
   for (const [action, label] of [
-    ["attack", "Atacar"],
-    ["skill", "Jutsu · 35 chakra"],
-    ["guard", "Defender"],
-    ["charge", "Concentrar chakra"],
+    ["attack", t("arena.ui.88bdb16bc2")],
+    ["skill", t("common.jutsuCost")],
+    ["guard", t("arena.ui.157ddc59b5")],
+    ["charge", t("arena.ui.dfa379429d")],
   ] as const) {
     const b = document.createElement("button");
     b.textContent = label;
@@ -87,7 +94,8 @@ export function installArena(
       body: body ? JSON.stringify(body) : undefined,
     });
     const data = await response.json();
-    if (!response.ok) throw new Error(data.error || "Arena indisponível.");
+    if (!response.ok)
+      throw new Error(errorText(data.error || t("arena.ui.b9f14258ad")));
     return data;
   }
   function update(session: ArenaSession) {
@@ -119,14 +127,13 @@ export function installArena(
       try {
         update({ room: JSON.parse((e as MessageEvent).data), seat });
       } catch {
-        feedback.textContent = "Resposta inválida da arena.";
+        feedback.textContent = t("arena.ui.8551d8d70c");
       }
     });
     stream.onerror = () => {
       connected = false;
       renderClock();
-      feedback.textContent =
-        "Conexão interrompida. Tentando reconectar à sala…";
+      feedback.textContent = t("arena.ui.644f90e547");
     };
   }
   function renderClock() {
@@ -138,16 +145,20 @@ export function installArena(
       Math.ceil((state.deadline - Date.now() - offset) / 1000),
     );
     find("[data-connection]").textContent = connected
-      ? "● Conectado ao servidor"
-      : "○ Reconectando…";
+      ? t("arena.ui.0647d1838a")
+      : t("common.reconnecting");
     find("[data-phase]").textContent =
       state.status === "waiting"
-        ? "Aguardando o segundo jogador. Compartilhe a chave acima."
+        ? t("arena.ui.793b53e153")
         : state.status === "active"
-          ? `Turno ${state.turnNumber} · ${myTurn ? "Sua vez" : "Vez do adversário"} · ${seconds}s`
+          ? t("arena.ui.3580d205fa", {
+              v0: state.turnNumber,
+              v1: myTurn ? t("arena.ui.41576b0f25") : t("arena.ui.726f9dddbf"),
+              v2: seconds,
+            })
           : state.winner === null
-            ? "Sala encerrada · " + reason(state.reason)
-            : `${state.winner === seat ? "Você venceu!" : "Você perdeu este duelo."} · ${reason(state.reason)}`;
+            ? t("arena.ui.8087e10ef2") + reason(state.reason)
+            : `${state.winner === seat ? t("arena.ui.51244f41bb") : t("arena.ui.bb33ebc796")} · ${reason(state.reason)}`;
     for (const [action, b] of buttons) {
       b.disabled =
         busy ||
@@ -158,8 +169,11 @@ export function installArena(
           (me.chakra < state.rules.skillCost || me.cooldown > 0));
       if (action === "skill")
         b.textContent = me.cooldown
-          ? `Jutsu · recarga ${me.cooldown} turno(s)`
-          : `${ARENA_FIGHTERS[me.character].skill} · ${state.rules.skillCost} chakra`;
+          ? t("arena.ui.b305905414", { v0: me.cooldown })
+          : t("arena.ui.5a59c447fb", {
+              v0: ARENA_FIGHTERS[me.character].skill,
+              v1: state.rules.skillCost,
+            });
     }
   }
   function render() {
@@ -167,9 +181,11 @@ export function installArena(
     duel.hidden = !state;
     if (!state || seat === null) return;
     find("[data-code]").textContent =
-      "Sala " +
+      t("common.room") +
       state.code +
-      (state.mode === "journey" ? " · Jornada" : " · Nivelado");
+      (state.mode === "journey"
+        ? t("common.journeySuffix")
+        : t("common.balancedSuffix"));
     const list = find(".arena-fighters");
     list.replaceChildren();
     state.players.forEach((p, i) => {
@@ -179,24 +195,35 @@ export function installArena(
         (state?.status === "active" && state.turn === i ? " current" : "");
       card.dataset.seat = String(i);
       const title = document.createElement("h3");
-      title.textContent = `${ARENA_FIGHTERS[p.character].name} · ${i === seat ? "Você" : "Adversário"}`;
+      title.textContent = `${ARENA_FIGHTERS[p.character].name} · ${i === seat ? t("arena.ui.b21e91730d") : t("arena.ui.77ba10b67c")}`;
       const text = document.createElement("p");
-      text.textContent = `${p.hp}/${p.maxHp} vida · ${p.chakra}/${p.maxChakra} chakra · ${p.attack} ataque${p.guarding ? " · Defendendo" : ""}${p.connected ? "" : " · Desconectado"}`;
+      text.textContent = t("arena.ui.517f7e48b4", {
+        v0: p.hp,
+        v1: p.maxHp,
+        v2: p.chakra,
+        v3: p.maxChakra,
+        v4: p.attack,
+        v5: p.guarding ? t("common.guardingSuffix") : "",
+        v6: p.connected ? "" : t("common.disconnectedSuffix"),
+      });
       const hp = document.createElement("progress");
       hp.max = p.maxHp;
       hp.value = p.hp;
       hp.setAttribute(
         "aria-label",
-        "Vida de " + ARENA_FIGHTERS[p.character].name,
+        t("arena.ui.16680f4cd3") + ARENA_FIGHTERS[p.character].name,
       );
       card.append(title, hp, text);
       if (p.loadout) {
         const build = document.createElement("p");
         build.textContent =
-          `Nível ${p.loadout.level} · ${p.loadout.upgrades} treinos · ` +
+          t("arena.ui.61236074e6", {
+            v0: p.loadout.level,
+            v1: p.loadout.upgrades,
+          }) +
           (Object.values(p.loadout.equipment)
             .map((id) => ITEMS.find((i) => i.id === id)?.name || id)
-            .join(" · ") || "Sem equipamentos");
+            .join(" · ") || t("arena.ui.329808e539"));
         card.append(build);
       }
       list.append(card);
@@ -205,23 +232,47 @@ export function installArena(
     log.replaceChildren();
     for (const event of state.log.slice(-8).reverse()) {
       const li = document.createElement("li");
-      li.textContent = `#${event.id} ${event.text}`;
+      const fighter = state.players[event.seat];
+      const action =
+        event.action === "attack"
+          ? translateText("Ataque")
+          : event.action === "skill"
+            ? ARENA_FIGHTERS[fighter.character].skill
+            : event.action === "guard"
+              ? translateText("Defesa")
+              : event.action === "charge"
+                ? t("arena.ui.dfa379429d")
+                : event.action === "timeout"
+                  ? t("arena.timeout")
+                  : t("arena.leave");
+      li.textContent =
+        `#${event.id} ` +
+        t("arena.log", {
+          name: ARENA_FIGHTERS[fighter.character].name,
+          action,
+          damage: event.damage
+            ? t("arena.damage", { count: event.damage })
+            : "",
+          heal: event.heal ? t("arena.heal", { count: event.heal }) : "",
+        });
       log.append(li);
     }
-    find("[data-rules]").textContent =
-      `Defender reduz o próximo golpe à metade. Concentrar recupera 30 chakra. +${state.players[seat].chakraRegen} chakra por turno; jutsus recarregam por dois turnos próprios.${state.mode === "journey" ? " A agilidade do ninja define quem começa; em empate, o criador inicia." : ""}`;
+    find("[data-rules]").textContent = t("arena.ui.9c1aa0c9b5", {
+      v0: state.players[seat].chakraRegen,
+      v1: state.mode === "journey" ? t("arena.ui.b0466e5f04") : "",
+    });
     find<HTMLButtonElement>("[data-leave]").textContent = [
       "active",
       "waiting",
     ].includes(state.status)
-      ? "Desistir e sair da sala"
-      : "Voltar para criar outra sala";
+      ? t("arena.ui.a4c0b7b0ce")
+      : t("arena.ui.405d7ac360");
     renderClock();
   }
   async function start(path: "create" | "join") {
     if (busy) return;
     busy = true;
-    feedback.textContent = "Conectando…";
+    feedback.textContent = t("common.connecting");
     entry.querySelectorAll("button").forEach((b) => (b.disabled = true));
     const request = version;
     try {
@@ -234,10 +285,9 @@ export function installArena(
       if (request !== version || !dialog.open) return;
       update(result);
       connect();
-      feedback.textContent =
-        "Sala pronta. Compartilhe apenas a chave; sua sessão fica neste navegador.";
+      feedback.textContent = t("arena.ui.70b7ec7748");
     } catch (e) {
-      if (request === version) feedback.textContent = String(e);
+      if (request === version) feedback.textContent = errorText(e);
     } finally {
       busy = false;
       entry.querySelectorAll("button").forEach((b) => (b.disabled = false));
@@ -268,7 +318,7 @@ export function installArena(
       }
     } catch (e) {
       if (request === version) {
-        feedback.textContent = String(e);
+        feedback.textContent = errorText(e);
         try {
           update(await api("session"));
         } catch {
@@ -288,9 +338,9 @@ export function installArena(
   find<HTMLButtonElement>("[data-copy]").onclick = async () => {
     try {
       await navigator.clipboard.writeText(state?.code || "");
-      feedback.textContent = "Chave copiada.";
+      feedback.textContent = t("arena.ui.726d606ca2");
     } catch {
-      feedback.textContent = "Copie a chave exibida acima.";
+      feedback.textContent = t("arena.ui.57c8c979f6");
     }
   };
   find<HTMLButtonElement>("[data-leave]").onclick = async () => {
@@ -301,9 +351,9 @@ export function installArena(
       stream?.close();
       connected = false;
       update({ room: null, seat: null });
-      feedback.textContent = "Sala encerrada. Você pode iniciar outro duelo.";
+      feedback.textContent = t("arena.ui.5a0b8df418");
     } catch (e) {
-      feedback.textContent = String(e);
+      feedback.textContent = errorText(e);
     } finally {
       busy = false;
       renderClock();
@@ -328,7 +378,7 @@ export function installArena(
     render();
     select.value = character();
     previewBuild();
-    feedback.textContent = "Verificando sessão…";
+    feedback.textContent = t("arena.ui.5f14dd6cdb");
     dialog.showModal();
     view = new ArenaView(
       find<HTMLCanvasElement>("canvas"),
@@ -348,7 +398,7 @@ export function installArena(
       if (data.room) connect();
       feedback.textContent = "";
     } catch (e) {
-      if (request === version) feedback.textContent = String(e);
+      if (request === version) feedback.textContent = errorText(e);
     } finally {
       busy = false;
       renderClock();
@@ -359,13 +409,13 @@ function reason(value: string | null) {
   return (
     (
       {
-        knockout: "nocaute",
-        "turn-timeout": "tempo do turno esgotado",
-        disconnected: "ausência prolongada",
-        left: "desistência",
-        "waiting-expired": "convite expirado",
-        "match-expired": "limite de duração",
+        knockout: t("arena.knockout"),
+        "turn-timeout": t("arena.ui.c854380dfc"),
+        disconnected: t("arena.ui.4bf3f7fc27"),
+        left: t("arena.ui.717efa7450"),
+        "waiting-expired": t("arena.ui.cdfde07eb7"),
+        "match-expired": t("arena.ui.7d8b71ffbd"),
       } as Record<string, string>
-    )[value || ""] || "duelo encerrado"
+    )[value || ""] || t("arena.ui.2493221869")
   );
 }

@@ -1,3 +1,11 @@
+import {
+  t,
+  th,
+  phaseText,
+  localizeContent,
+  errorText,
+  formatNumber,
+} from "./i18n/core.ts";
 import { NativeForegroundLayer } from "./world/native-foreground";
 import { foregroundPlan } from "./world/foreground-plan";
 import { probeNativeForeground } from "./world/foreground-diagnostics";
@@ -11,7 +19,15 @@ import { localhostTransferUrl } from "./progression/local-transfer";
 import { installProgression } from "./progression/ui";
 import { recruit, STARTER_COLLECTION } from "./progression/rules";
 import { strikeDuration } from "./progression/combat-stats";
-import { activeCharacterId, starterCharacter, selectCharacter, FUTURE_CHARACTERS, characterLoadout, syncCharacterProgress, trainCharacter } from "./progression/character-progress";
+import {
+  activeCharacterId,
+  starterCharacter,
+  selectCharacter,
+  FUTURE_CHARACTERS,
+  characterLoadout,
+  syncCharacterProgress,
+  trainCharacter,
+} from "./progression/character-progress";
 import Phaser from "phaser";
 import "./style.css";
 import {
@@ -71,10 +87,14 @@ type Anim = {
 };
 type AnimSet = Record<
   string,
-  { animations: Record<string, Anim>; warnings: unknown[] }
+  {
+    animations: Record<string, Anim>;
+    warnings: unknown[];
+  }
 >;
 const canvasHost = document.getElementById("canvas")!;
-const $ = (id: string) => id === "canvas" ? canvasHost : document.getElementById(id)!;
+const $ = (id: string) =>
+  id === "canvas" ? canvasHost : document.getElementById(id)!;
 const store = new LocalProgressStore();
 let save: Save;
 let game: Phaser.Game | undefined;
@@ -87,7 +107,8 @@ let initialMap: WorldMap;
 let initialNavigation: NativeGrid;
 let worldMaps: WorldMap[];
 const specialAction = () =>
-  presentationData.characters[starterCharacter(save) || "recruit"]?.action || "SP_skill1";
+  presentationData.characters[starterCharacter(save) || "recruit"]?.action ||
+  "SP_skill1";
 const presentationCharacter = () => starterCharacter(save) || "recruit";
 let cast: {
   hero: EntityManifest;
@@ -99,9 +120,21 @@ const miniWindow = installMiniWindow({
   button: $("mini-window") as HTMLButtonElement,
   canvas: canvasHost,
   notify: toast,
-  summary: () => scene?.hunt
-    ? `${cast.hero.name} · Nível ${save.level} · ${save.paused ? "Pausado" : scene.isLobby ? "Vila" : scene.hunt.phase} · Vida ${Math.ceil(scene.hunt.hp)}/${stats(save).maxHp} · Chakra ${Math.floor(scene.hunt.chakra)}`
-    : "Carregando…",
+  summary: () =>
+    scene?.hunt
+      ? t("main.3331da37dd", {
+          v0: cast.hero.name,
+          v1: save.level,
+          v2: save.paused
+            ? t("common.paused")
+            : scene.isLobby
+              ? t("main.5c0b464698")
+              : phaseText(scene.hunt.phase),
+          v3: Math.ceil(scene.hunt.hp),
+          v4: stats(save).maxHp,
+          v5: Math.floor(scene.hunt.chakra),
+        })
+      : t("common.loading"),
   onViewport: bindMiniViewport,
   openOnLocalhost: () => {
     commit();
@@ -129,7 +162,10 @@ function bindMiniViewport(host: Window) {
       current.scale.getParentBounds();
       // A collapsed/fractional viewport must never create a zero-sized WebGL target.
       // Keep this in sync with the Scale Manager limits (including automatic resizes).
-      current.scale.resize(Math.max(160, Math.floor(rect.width)), Math.max(90, Math.floor(rect.height)));
+      current.scale.resize(
+        Math.max(160, Math.floor(rect.width)),
+        Math.max(90, Math.floor(rect.height)),
+      );
       scene.cameras.main.centerOn(scene.hero.x, scene.hero.y);
       updateBounds();
     }
@@ -138,7 +174,8 @@ function bindMiniViewport(host: Window) {
     scene?.input.keyboard?.resetKeys();
     current.input.activePointer.reset();
   };
-  const releaseMouse = (event: MouseEvent) => current.input.mouse?.onMouseUpWindow(event);
+  const releaseMouse = (event: MouseEvent) =>
+    current.input.mouse?.onMouseUpWindow(event);
   const observer = new ResizeObserver(resize);
   observer.observe(canvasHost);
   host.addEventListener("resize", resize);
@@ -150,7 +187,9 @@ function bindMiniViewport(host: Window) {
     current.events.emit(Phaser.Core.Events.FOCUS);
     current.sound.pauseOnBlur = false;
     scene.presentation.unlock();
-    keyboard.stopListeners(); keyboard.target = host; keyboard.startListeners();
+    keyboard.stopListeners();
+    keyboard.target = host;
+    keyboard.startListeners();
     host.addEventListener("mouseup", releaseMouse);
     resetKeys();
     // Let the visible PiP document own the animation clock while the original tab is hidden.
@@ -173,23 +212,34 @@ function bindMiniViewport(host: Window) {
     resetKeys();
     if (external) {
       current.sound.pauseOnBlur = pauseSoundOnBlur;
-      current.events.emit(document.hasFocus() ? Phaser.Core.Events.FOCUS : Phaser.Core.Events.BLUR);
+      current.events.emit(
+        document.hasFocus()
+          ? Phaser.Core.Events.FOCUS
+          : Phaser.Core.Events.BLUR,
+      );
       host.removeEventListener("mouseup", releaseMouse);
       host.cancelAnimationFrame(frame);
-      keyboard.stopListeners(); keyboard.target = originalTarget; keyboard.startListeners();
-      current.loop.resetDelta(); current.loop.wake();
+      keyboard.stopListeners();
+      keyboard.target = originalTarget;
+      keyboard.startListeners();
+      current.loop.resetDelta();
+      current.loop.wake();
     }
     commit();
-    window.requestAnimationFrame(() => { if (game === current) resize(); });
+    window.requestAnimationFrame(() => {
+      if (game === current) resize();
+    });
   };
 }
 for (const id of ["maps", "return-lobby", "progression", "arena", "library"])
-  $(id).addEventListener("click", () => miniWindow.restore(), { capture: true });
+  $(id).addEventListener("click", () => miniWindow.restore(), {
+    capture: true,
+  });
 const openLibrary = installLibrary(
   async (id, role) => {
-    if (!scene || !game)
-      throw new Error("Inicie sua jornada para colocar personagens na vila.");
-    if (role === "companion" && save.collection?.includes(id)) await switchHero(id);
+    if (!scene || !game) throw new Error(t("main.67ed697360"));
+    if (role === "companion" && save.collection?.includes(id))
+      await switchHero(id);
     else await scene.chooseEntity(id, role);
   },
   () => new Set(save?.collection || STARTER_COLLECTION),
@@ -209,27 +259,40 @@ const openProgression = installProgression(() => ({
 $("progression").onclick = () => openProgression();
 let switchingHero = false;
 async function switchHero(id: string) {
-  if (switchingHero || !worldReady || scene.loadingActor) throw new Error("Aguarde o carregamento atual.");
+  if (switchingHero || !worldReady || scene.loadingActor)
+    throw new Error(t("main.bca7c6597d"));
   if (id === activeCharacterId(save)) return;
-  if (scene.hunt.phase !== "explorando") throw new Error("Conclua o encontro antes de trocar de personagem.");
-  if (!save.collection?.includes(id) || FUTURE_CHARACTERS.has(id)) throw new Error("Personagem indisponível na sua coleção.");
+  if (scene.hunt.phase !== "explorando") throw new Error(t("main.62ce2518fe"));
+  if (!save.collection?.includes(id) || FUTURE_CHARACTERS.has(id))
+    throw new Error(t("main.ffc1895c38"));
   switchingHero = true;
   const previous = game!;
   previous.loop.sleep();
   try {
     const manifest = await entityCatalog.get(id);
-    if (game !== previous || !worldReady) throw new Error("Jornada encerrada.");
-    if (manifest.collection !== "playable" || !manifest.capabilities.companion ||
-      !manifest.modes.world?.animations.idle_0 || !manifest.modes.world?.animations.run_0 ||
-      !manifest.modes.battle?.animations.C_idle || !manifest.modes.battle?.animations.A_1hit)
-      throw new Error("Este modelo ainda não possui as animações necessárias para jogar.");
+    if (game !== previous || !worldReady) throw new Error(t("main.d076b8fb31"));
+    if (
+      manifest.collection !== "playable" ||
+      !manifest.capabilities.companion ||
+      !manifest.modes.world?.animations.idle_0 ||
+      !manifest.modes.world?.animations.run_0 ||
+      !manifest.modes.battle?.animations.C_idle ||
+      !manifest.modes.battle?.animations.A_1hit
+    )
+      throw new Error(t("main.3e53f56b0c"));
     commit();
     const next = structuredClone(save);
     selectCharacter(next, id);
-    next.area = AREAS.reduce((chosen, area, index) => index <= next.area && area.level <= next.level ? index : chosen, 0);
+    next.area = AREAS.reduce(
+      (chosen, area, index) =>
+        index <= next.area && area.level <= next.level ? index : chosen,
+      0,
+    );
     next.autoHunt = false;
     // Close the dialog before the loading overlay is displayed in the top layer.
-    document.querySelectorAll<HTMLDialogElement>("dialog[open]").forEach(dialog => dialog.close());
+    document
+      .querySelectorAll<HTMLDialogElement>("dialog[open]")
+      .forEach((dialog) => dialog.close());
     previous.loop.wake();
     await start(next);
   } finally {
@@ -259,7 +322,7 @@ $("cast-skill").onclick = () => {
 const openTravel = installTravel(
   () => scene?.map?.id || "10001",
   async (map) => {
-    if (!scene || !game) throw new Error("Inicie sua jornada antes de viajar.");
+    if (!scene || !game) throw new Error(t("main.f0ca8ca6a9"));
     await scene.travel(map);
   },
 );
@@ -268,7 +331,7 @@ $("auto-hunt").onclick = () => scene?.toggleHunt();
 $("return-lobby").onclick = () =>
   void scene
     .travel(worldMaps.find((m) => m.id === "10001")!)
-    .catch((e) => toast(String(e)));
+    .catch((e) => toast(errorText(e)));
 const session = { start: Date.now(), xp: 0, coins: 0, wins: 0 };
 const messages: string[] = [];
 function journal(text: string) {
@@ -300,79 +363,160 @@ function toast(text: string) {
   $("toast").classList.add("visible");
   setTimeout(() => $("toast").classList.remove("visible"), 6000);
 }
-let startup: { version: number; stage: ReturnType<typeof loadingScreen.begin>; failed: Set<string>; resolve: () => void; reject: (error: Error) => void } | undefined;
-export async function startNewJourney(character: CharacterId) { await start(fresh(character)); }
+let startup:
+  | {
+      version: number;
+      stage: ReturnType<typeof loadingScreen.begin>;
+      failed: Set<string>;
+      resolve: () => void;
+      reject: (error: Error) => void;
+    }
+  | undefined;
+export async function startNewJourney(character: CharacterId) {
+  await start(fresh(character));
+}
 export async function continueJourney() {
   const restored = restore(store);
-  if (!restored) { loadingScreen.hide(); toast("Nenhum progresso válido encontrado. Escolha Novo jogo."); return; }
+  if (!restored) {
+    loadingScreen.hide();
+    toast(t("main.d5234d5425"));
+    return;
+  }
   await start(restored.save);
   if (restored.offline.xp || restored.offline.coins)
-    toast("Enquanto você estava fora: +" + restored.offline.xp + " XP e +" + restored.offline.coins + " moedas.");
+    toast(
+      t("common.offlineReward", {
+        xp: restored.offline.xp,
+        coins: restored.offline.coins,
+      }),
+    );
 }
 async function start(s: Save) {
   miniWindow.restore();
   worldReady = false;
   const request = ++launchVersion;
-  const stage = loadingScreen.begin("Preparando sua jornada", () => void start(s).catch(() => {}), () => $("back").click());
-  stage.update("Preparando os dados do mapa e dos personagens…", 0.05);
+  const stage = loadingScreen.begin(
+    t("main.ddc49b1c5f"),
+    () => void start(s).catch(() => {}),
+    () => $("back").click(),
+  );
+  stage.update(t("main.9a19a0e75a"), 0.05);
   try {
     const [presentation, maps, runtime] = await Promise.all([
-      presentationData || fetch("/assets/presentation.json", { signal: AbortSignal.timeout(20000) }).then(r => { if (!r.ok) throw new Error("Recursos de apresentação indisponíveis."); return r.json(); }),
-      listMaps(), runtimeIndex(),
+      presentationData ||
+        fetch("/assets/presentation.json", {
+          signal: AbortSignal.timeout(20000),
+        }).then(async (r) => {
+          if (!r.ok) throw new Error(t("main.44ff29f375"));
+          return localizeContent(await r.json());
+        }),
+      listMaps(),
+      runtimeIndex(),
     ]);
     if (request !== launchVersion) return;
     presentationData = presentation;
-    const startMap = maps.find(m => m.id === s.location) || maps.find(m => m.id === "10001")!;
+    const startMap =
+      maps.find((m) => m.id === s.location) ||
+      maps.find((m) => m.id === "10001")!;
     const load = async (id: string | undefined, role: ActorRole) => {
       if (!id || !runtime.entities[id]) return undefined;
       const manifest = await entityCatalog.get(id);
       return manifest.capabilities[role] ? manifest : undefined;
     };
-    const [startNavigation, hero, enemyModels, residentModels, partyModels] = await Promise.all([
-      mapNavigation(startMap), entityCatalog.get(activeCharacterId(s)),
-      Promise.all((startMap.kind === "lobby" ? [] : s.enemyId ? [s.enemyId] : startMap.enemies).map(id => load(id, "enemy"))),
-      Promise.all((s.npcIds || ["11001601", "11001201"]).slice(0, 3).map(id => load(id, "npc"))),
-      Promise.resolve([] as EntityManifest[]),
-    ]);
+    const [startNavigation, hero, enemyModels, residentModels, partyModels] =
+      await Promise.all([
+        mapNavigation(startMap),
+        entityCatalog.get(activeCharacterId(s)),
+        Promise.all(
+          (startMap.kind === "lobby"
+            ? []
+            : s.enemyId
+              ? [s.enemyId]
+              : startMap.enemies
+          ).map((id) => load(id, "enemy")),
+        ),
+        Promise.all(
+          (s.npcIds || ["11001601", "11001201"])
+            .slice(0, 3)
+            .map((id) => load(id, "npc")),
+        ),
+        Promise.resolve([] as EntityManifest[]),
+      ]);
     if (request !== launchVersion) return;
     const enemies = enemyModels.filter((m): m is EntityManifest => !!m);
-    if (startMap.kind !== "lobby" && !enemies.length) throw new Error("Nenhum adversário disponível neste mapa.");
+    if (startMap.kind !== "lobby" && !enemies.length)
+      throw new Error(t("main.9298b997a2"));
     const npcs = residentModels.filter((m): m is EntityManifest => !!m);
     const party = partyModels.filter((m): m is EntityManifest => !!m);
-    if (import.meta.env.DEV) delete (window as unknown as { __idle?: unknown }).__idle;
+    if (import.meta.env.DEV)
+      delete (
+        window as unknown as {
+          __idle?: unknown;
+        }
+      ).__idle;
     if (game) {
       const previous = game;
-      await new Promise<void>(resolve => { previous.events.once(Phaser.Core.Events.DESTROY, resolve); previous.destroy(true); });
+      await new Promise<void>((resolve) => {
+        previous.events.once(Phaser.Core.Events.DESTROY, resolve);
+        previous.destroy(true);
+      });
       if (request !== launchVersion) return;
       game = undefined;
     }
-    save = s; s.partyIds = []; delete s.companionId;
-    initialMap = startMap; initialNavigation = startNavigation; worldMaps = maps;
-    s.location = startMap.id; s.collection ??= [...STARTER_COLLECTION];
+    save = s;
+    s.partyIds = [];
+    delete s.companionId;
+    initialMap = startMap;
+    initialNavigation = startNavigation;
+    worldMaps = maps;
+    s.location = startMap.id;
+    s.collection ??= [...STARTER_COLLECTION];
     s.visitedMaps = [...new Set([...(s.visitedMaps || []), startMap.id])];
     cast = { hero, enemies, npcs, party };
-    definitions = Object.fromEntries(["world", "battle"].map(mode => [s.character + "-" + mode, {
-      animations: hero.modes[mode as "world" | "battle"]?.animations || {}, warnings: [],
-    }])) as AnimSet;
-    $("menu").hidden = true; $("play").hidden = false;
-    session.start = Date.now(); session.xp = session.coins = session.wins = 0; messages.length = 0;
+    definitions = Object.fromEntries(
+      ["world", "battle"].map((mode) => [
+        s.character + "-" + mode,
+        {
+          animations: hero.modes[mode as "world" | "battle"]?.animations || {},
+          warnings: [],
+        },
+      ]),
+    ) as AnimSet;
+    $("menu").hidden = true;
+    $("play").hidden = false;
+    session.start = Date.now();
+    session.xp = session.coins = session.wins = 0;
+    messages.length = 0;
     await new Promise<void>((resolve, reject) => {
       startup = { version: request, stage, failed: new Set(), resolve, reject };
       game = new Phaser.Game({
-        type: Phaser.AUTO, parent: "canvas", backgroundColor: "#15241e",
-        width: $("canvas").clientWidth, height: $("canvas").clientHeight,
-        scale: { mode: Phaser.Scale.RESIZE, autoCenter: Phaser.Scale.CENTER_BOTH, min: { width: 160, height: 90 } },
-        scene: HuntScene, autoFocus: false,
+        type: Phaser.AUTO,
+        parent: "canvas",
+        backgroundColor: "#15241e",
+        width: $("canvas").clientWidth,
+        height: $("canvas").clientHeight,
+        scale: {
+          mode: Phaser.Scale.RESIZE,
+          autoCenter: Phaser.Scale.CENTER_BOTH,
+          min: { width: 160, height: 90 },
+        },
+        scene: HuntScene,
+        autoFocus: false,
         loader: { maxParallelDownloads: 4, timeout: 20000 },
-        render: { antialias: true, roundPixels: false }, audio: { noAudio: false },
+        render: { antialias: true, roundPixels: false },
+        audio: { noAudio: false },
       });
     });
     if (request !== launchVersion) return;
-    worldReady = true; commit(); stage.finish();
+    worldReady = true;
+    commit();
+    stage.finish();
   } catch (error) {
     if (request === launchVersion) {
-      game?.destroy(true); game = undefined;
-      $("play").hidden = true; $("menu").hidden = false;
+      game?.destroy(true);
+      game = undefined;
+      $("play").hidden = true;
+      $("menu").hidden = false;
       stage.fail(error);
     }
     throw error;
@@ -381,10 +525,14 @@ async function start(s: Save) {
 $("back").onclick = () => {
   miniWindow.restore();
   launchVersion++;
-  startup?.reject(new Error("Carregamento cancelado."));
+  startup?.reject(new Error(t("main.942c696ec9")));
   loadingScreen.hide();
   if (import.meta.env.DEV)
-    delete (window as unknown as { __idle?: unknown }).__idle;
+    delete (
+      window as unknown as {
+        __idle?: unknown;
+      }
+    ).__idle;
   commit();
   game?.destroy(true);
   game = undefined;
@@ -397,10 +545,14 @@ $("pause").onclick = () => {
   commit();
 };
 $("upgrade").onclick = () => {
-  try { trainCharacter(save); }
-  catch (error) { toast((error as Error).message); return; }
+  try {
+    trainCharacter(save);
+  } catch (error) {
+    toast(errorText(error));
+    return;
+  }
   scene.hunt.hp = Math.min(stats(save).maxHp, scene.hunt.hp + 9);
-  journal("Treino concluído: força e resistência melhoradas.");
+  journal(t("main.a9b45f2d07"));
   commit();
 };
 $("sound").onchange = () => {
@@ -411,14 +563,16 @@ $("sound").onchange = () => {
     save.soundVolume ?? 0.4,
   );
   scene?.presentation.unlock();
-  if (save.sound) void scene.ensureAudio().catch(error => toast((error as Error).message));
+  if (save.sound)
+    void scene.ensureAudio().catch((error) => toast(errorText(error)));
   commit();
 };
 $("music").onchange = () => {
   save.music = ($("music") as HTMLInputElement).checked;
   scene.presentation.unlock();
   scene.presentation.settings(save.sound, save.music, save.soundVolume ?? 0.4);
-  if (save.sound) void scene.ensureAudio().catch(error => toast((error as Error).message));
+  if (save.sound)
+    void scene.ensureAudio().catch((error) => toast(errorText(error)));
   commit();
 };
 $("volume").oninput = () => {
@@ -430,14 +584,27 @@ $("volume").oninput = () => {
   );
   commit();
 };
-document.addEventListener("click", (event) => {
-  if (!worldReady || !scene?.sys.isActive() || !(event.target instanceof Element)) return;
-  const button = event.target.closest<HTMLButtonElement>("button");
-  if (!button) return;
-  const cue = buttonCue(button);
-  if (cue) scene.presentation.ui(cue);
-}, { capture: true });
+document.addEventListener(
+  "click",
+  (event) => {
+    if (
+      !worldReady ||
+      !scene?.sys.isActive() ||
+      !(event.target instanceof Element)
+    )
+      return;
+    const button = event.target.closest<HTMLButtonElement>("button");
+    if (!button) return;
+    const cue = buttonCue(button);
+    if (cue) scene.presentation.ui(cue);
+  },
+  { capture: true },
+);
 window.addEventListener("pagehide", commit);
+window.addEventListener("before-language-change", () => {
+  miniWindow.restore();
+  commit();
+});
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) commit();
 });
@@ -470,33 +637,38 @@ class HuntScene extends Phaser.Scene {
     super("hunt");
   }
   preload() {
-    this.load.on("progress", (value: number) => this.startup.stage.update(`Carregando recursos essenciais · ${Math.round(value * 100)}% dos arquivos`, 0.2 + value * 0.75));
-    this.load.on("loaderror", (file: Phaser.Loader.File) => this.startup.failed.add(file.key));
+    this.load.on("progress", (value: number) =>
+      this.startup.stage.update(
+        t("main.0f7ab66f9a", { v0: Math.round(value * 100) }),
+        0.2 + value * 0.75,
+      ),
+    );
+    this.load.on("loaderror", (file: Phaser.Loader.File) =>
+      this.startup.failed.add(file.key),
+    );
     this.load.image("map-" + initialMap.id, initialMap.background);
     this.load.image(
       "map-" + initialMap.id + "-foreground",
       foregroundPlan(initialMap, this.game.renderer.type === Phaser.WEBGL).url,
     );
-    queuePresentation(this, presentationData, presentationCharacter(), { effects: initialMap.kind !== "lobby", audio: false });
+    queuePresentation(this, presentationData, presentationCharacter(), {
+      effects: initialMap.kind !== "lobby",
+      audio: false,
+    });
     for (const manifest of cast.enemies) {
       queueActor(this, manifest, "enemy");
       if (manifest.capabilities.companion)
         queueActor(this, manifest, "companion");
     }
-    for (const manifest of cast.npcs)
-      queueActor(
-        this,
-        manifest,
-        "npc",
-      );
+    for (const manifest of cast.npcs) queueActor(this, manifest, "npc");
     for (const manifest of cast.party) queueActor(this, manifest, "companion");
     for (const mode of ["world", "battle"]) {
       const set = definitions[save.character + "-" + mode]?.animations || {};
       for (const [action, anim] of Object.entries(set)) {
         if (
-          mode === "world" || (initialMap.kind !== "lobby" &&
-          ["C_idle", "A_1hit", specialAction(), "C_dead"].includes(action)
-          )
+          mode === "world" ||
+          (initialMap.kind !== "lobby" &&
+            ["C_idle", "A_1hit", specialAction(), "C_dead"].includes(action))
         )
           this.load.spritesheet(mode + "-" + action, anim.url, {
             frameWidth: anim.frameWidth,
@@ -508,8 +680,9 @@ class HuntScene extends Phaser.Scene {
   }
   create() {
     if (this.startup.failed.size) {
-      this.startup.reject(new Error("Não foi possível carregar imagens essenciais do jogo. Verifique sua conexão e tente novamente."));
-      this.scene.stop(); return;
+      this.startup.reject(new Error(t("main.6f5e01fe73")));
+      this.scene.stop();
+      return;
     }
     scene = this;
     this.combatReady = initialMap.kind !== "lobby";
@@ -529,7 +702,9 @@ class HuntScene extends Phaser.Scene {
       presentationCharacter(),
       this.map.id,
     );
-    this.presentation.setActors(this.isLobby ? [] : [cast.hero.id, ...cast.enemies.map(e => e.id)]);
+    this.presentation.setActors(
+      this.isLobby ? [] : [cast.hero.id, ...cast.enemies.map((e) => e.id)],
+    );
     this.presentation.settings(
       save.sound,
       save.music || false,
@@ -585,12 +760,7 @@ class HuntScene extends Phaser.Scene {
       if (manifest.capabilities.companion)
         registerActor(this, manifest, "companion");
     }
-    for (const manifest of cast.npcs)
-      registerActor(
-        this,
-        manifest,
-        "npc",
-      );
+    for (const manifest of cast.npcs) registerActor(this, manifest, "npc");
     for (const manifest of cast.party)
       registerActor(this, manifest, "companion");
     this.enemy = new EntityActor(
@@ -637,15 +807,23 @@ class HuntScene extends Phaser.Scene {
     );
     journal(
       this.isLobby
-        ? "Bem-vindo à Vila da Folha. Clique no chão ou use WASD / setas para caminhar."
-        : "Explore " + this.map.name + ". A caçada automática é opcional.",
+        ? t("main.7b721e9774")
+        : t("common.explorePrefix") + this.map.name + t("common.optionalHunt"),
     );
     this.events.once("shutdown", () => {
       if (import.meta.env.DEV && scene === this)
-        delete (window as unknown as { __idle?: unknown }).__idle;
+        delete (
+          window as unknown as {
+            __idle?: unknown;
+          }
+        ).__idle;
     });
     if (import.meta.env.DEV)
-      (window as unknown as { __idle: unknown }).__idle = {
+      (
+        window as unknown as {
+          __idle: unknown;
+        }
+      ).__idle = {
         snapshot: () => ({
           activeEntityId: activeCharacterId(save),
           phase: this.isLobby ? "lobby" : this.hunt.phase,
@@ -689,16 +867,27 @@ class HuntScene extends Phaser.Scene {
           ).length,
           gameLoopRunning: this.game.loop.running,
           audioReady: this.audioReady,
-          audioState: this.sound instanceof Phaser.Sound.WebAudioSoundManager ? this.sound.context.state : "html",
+          audioState:
+            this.sound instanceof Phaser.Sound.WebAudioSoundManager
+              ? this.sound.context.state
+              : "html",
           origin: [this.hero.originX, this.hero.originY],
           scale: this.hero.scaleX,
           zoom: this.cameras.main.zoom,
           viewport: {
-            width: this.cameras.main.width, height: this.cameras.main.height,
-            canvasWidth: this.game.canvas.width, canvasHeight: this.game.canvas.height,
-            heroVisible: this.cameras.main.worldView.contains(this.hero.x, this.hero.y),
+            width: this.cameras.main.width,
+            height: this.cameras.main.height,
+            canvasWidth: this.game.canvas.width,
+            canvasHeight: this.game.canvas.height,
+            heroVisible: this.cameras.main.worldView.contains(
+              this.hero.x,
+              this.hero.y,
+            ),
           },
-          pointer: { x: this.input.activePointer.x, y: this.input.activePointer.y },
+          pointer: {
+            x: this.input.activePointer.x,
+            y: this.input.activePointer.y,
+          },
           walkable: this.navigation.walkable(this.hero),
           enemyWalkable: this.navigation.walkable(this.enemy),
           presentation: this.presentation.snapshot(),
@@ -708,7 +897,12 @@ class HuntScene extends Phaser.Scene {
           enemyScale: this.enemy.visual.scaleX,
           enemyFlipped: this.enemy.visual.flipX,
           occlusion: this.occlusion.snapshot(),
-          nativeForeground: { texture: this.foreground.image.texture.key, visible: this.foreground.image.visible, depth: this.foreground.image.depth, masked: !!this.foreground.alpha },
+          nativeForeground: {
+            texture: this.foreground.image.texture.key,
+            visible: this.foreground.image.visible,
+            depth: this.foreground.image.depth,
+            masked: !!this.foreground.alpha,
+          },
           enemyVisible: this.enemy.visible,
           enemies: this.enemyField.members.map((m) => ({
             id: m.actor.manifest.id,
@@ -745,9 +939,18 @@ class HuntScene extends Phaser.Scene {
         walkTo: (p: Point) => this.walkTo(p),
         navigation: () => this.navigation,
         probeNativeForeground: async (source: Point) => {
-          const paused = save.paused; save.paused = true;
-          try { return await probeNativeForeground(this, this.foreground, this.hero, source); }
-          finally { save.paused = paused; }
+          const paused = save.paused;
+          save.paused = true;
+          try {
+            return await probeNativeForeground(
+              this,
+              this.foreground,
+              this.hero,
+              source,
+            );
+          } finally {
+            save.paused = paused;
+          }
         },
         previewSkill: () => this.effect("skill", stats(save).skillDamage),
         setHp: (hp: number) => {
@@ -755,11 +958,13 @@ class HuntScene extends Phaser.Scene {
         },
       };
     this.renderUI();
-    this.startup.stage.update("Entrando no mundo…", 0.98);
+    this.startup.stage.update(t("main.161cf74cd8"), 0.98);
     this.game.events.once(Phaser.Core.Events.POST_RENDER, () => {
-      if (!this.sys.isActive() || this.startup.version !== launchVersion) return;
+      if (!this.sys.isActive() || this.startup.version !== launchVersion)
+        return;
       this.startup.resolve();
-      if (save.sound) void this.ensureAudio().catch(error => toast((error as Error).message));
+      if (save.sound)
+        void this.ensureAudio().catch((error) => toast(errorText(error)));
       const timer = window.setTimeout(() => {
         if (!this.sys.isActive()) return;
         for (const manifest of cast.npcs)
@@ -770,40 +975,76 @@ class HuntScene extends Phaser.Scene {
     });
   }
   private registerHeroBattle() {
-    for (const [action, anim] of Object.entries(definitions[save.character + "-battle"]?.animations || {})) {
+    for (const [action, anim] of Object.entries(
+      definitions[save.character + "-battle"]?.animations || {},
+    )) {
       const key = "battle-" + action;
       if (!this.textures.exists(key) || this.anims.exists(key)) continue;
-      this.anims.create({ key, frames: (anim.timeline || Array.from({ length: anim.frames }, (_, i) => i)).map(frame => ({ key, frame })),
-        frameRate: anim.fps, repeat: action === "C_idle" ? -1 : 0 });
+      this.anims.create({
+        key,
+        frames: (
+          anim.timeline || Array.from({ length: anim.frames }, (_, i) => i)
+        ).map((frame) => ({ key, frame })),
+        frameRate: anim.fps,
+        repeat: action === "C_idle" ? -1 : 0,
+      });
     }
     this.presentation.registerEffects();
   }
   async ensureCombat() {
     if (this.combatReady) return;
-    await loadSceneAssets(this, () => {
-      queuePresentation(this, presentationData, presentationCharacter(), { effects: true, audio: false });
-      for (const action of ["C_idle", "A_1hit", specialAction(), "C_dead"]) {
-        const anim = definitions[save.character + "-battle"]?.animations[action];
-        if (anim && !this.textures.exists("battle-" + action))
-          this.load.spritesheet("battle-" + action, anim.url, { frameWidth: anim.frameWidth, frameHeight: anim.frameHeight, endFrame: anim.frames - 1 });
-      }
-    }, () => this.combatReady);
-    if (!this.sys.isActive()) throw new Error("Cena encerrada.");
-    this.registerHeroBattle(); this.combatReady = true;
+    await loadSceneAssets(
+      this,
+      () => {
+        queuePresentation(this, presentationData, presentationCharacter(), {
+          effects: true,
+          audio: false,
+        });
+        for (const action of ["C_idle", "A_1hit", specialAction(), "C_dead"]) {
+          const anim =
+            definitions[save.character + "-battle"]?.animations[action];
+          if (anim && !this.textures.exists("battle-" + action))
+            this.load.spritesheet("battle-" + action, anim.url, {
+              frameWidth: anim.frameWidth,
+              frameHeight: anim.frameHeight,
+              endFrame: anim.frames - 1,
+            });
+        }
+      },
+      () => this.combatReady,
+    );
+    if (!this.sys.isActive()) throw new Error(t("main.426b6eda53"));
+    this.registerHeroBattle();
+    this.combatReady = true;
   }
   ensureAudio() {
     if (!save.sound || this.audioReady) return Promise.resolve();
     let queued = false;
-    return this.audioLoad ??= loadSceneAssets(this, () => {
-      queued = true;
-      queuePresentation(this, presentationData, presentationCharacter(), { effects: false, audio: true });
-    }, () => !save.sound || this.audioReady).then(() => {
-      if (!this.sys.isActive()) return;
-      if (queued) this.audioReady = true;
-      this.presentation.settings(save.sound, save.music || false, save.soundVolume ?? 0.4);
-      this.presentation.pause(save.paused);
-      this.presentation.unlock();
-    }).finally(() => { this.audioLoad = undefined; });
+    return (this.audioLoad ??= loadSceneAssets(
+      this,
+      () => {
+        queued = true;
+        queuePresentation(this, presentationData, presentationCharacter(), {
+          effects: false,
+          audio: true,
+        });
+      },
+      () => !save.sound || this.audioReady,
+    )
+      .then(() => {
+        if (!this.sys.isActive()) return;
+        if (queued) this.audioReady = true;
+        this.presentation.settings(
+          save.sound,
+          save.music || false,
+          save.soundVolume ?? 0.4,
+        );
+        this.presentation.pause(save.paused);
+        this.presentation.unlock();
+      })
+      .finally(() => {
+        this.audioLoad = undefined;
+      }));
   }
   play(key: string, force = false) {
     if (
@@ -815,7 +1056,14 @@ class HuntScene extends Phaser.Scene {
       const definition = cast.hero.modes[mode];
       const animation = definition?.animations[action];
       if (animation) this.hero.setOrigin(...animation.origin);
-      this.hero.setScale(actorVisualScale(cast.hero.id, mode, definition?.referenceHeight || 120, animation?.rigScale ?? 1));
+      this.hero.setScale(
+        actorVisualScale(
+          cast.hero.id,
+          mode,
+          definition?.referenceHeight || 120,
+          animation?.rigScale ?? 1,
+        ),
+      );
       this.hero.setFlipX(
         key.startsWith("battle-") && this.enemy.x < this.hero.x,
       );
@@ -823,8 +1071,13 @@ class HuntScene extends Phaser.Scene {
       this.hero.anims.timeScale =
         key === "battle-" + specialAction() || key === "battle-A_1hit"
           ? this.hero.anims.currentAnim!.duration /
-            strikeDuration(key === "battle-" + specialAction(), stats(save).interval)
-          : key.startsWith("world-run_") ? stats(save).moveSpeed / 96 : 1;
+            strikeDuration(
+              key === "battle-" + specialAction(),
+              stats(save).interval,
+            )
+          : key.startsWith("world-run_")
+            ? stats(save).moveSpeed / 96
+            : 1;
       this.lastAnim = key;
     }
   }
@@ -856,7 +1109,7 @@ class HuntScene extends Phaser.Scene {
       this.enemy.face(this.hero.x < this.enemy.x);
       // The target stays at its audited street position. No arbitrary X offset
       // can move an encounter into a building or across a fence.
-      journal("Encontro: a luta acontece aqui mesmo.");
+      journal(t("main.b5b540d3b4"));
     }
     if (event === "attack" || event === "skill") {
       this.play(
@@ -876,9 +1129,16 @@ class HuntScene extends Phaser.Scene {
         yoyo: true,
       });
       this.enemy.play("battle", "C_hurt", true);
-      this.presentation.entityAction(this.enemy.manifest.id, "C_hurt", 1, "enemy");
-      this.lastStrikeDuration =
-        strikeDuration(event === "skill", stats(save).interval);
+      this.presentation.entityAction(
+        this.enemy.manifest.id,
+        "C_hurt",
+        1,
+        "enemy",
+      );
+      this.lastStrikeDuration = strikeDuration(
+        event === "skill",
+        stats(save).interval,
+      );
       this.presentation.play(
         event === "skill" ? "SP_skill1" : "A_1hit",
         this.hero,
@@ -886,17 +1146,30 @@ class HuntScene extends Phaser.Scene {
         this.lastStrikeDuration,
       );
       if (!starterCharacter(save))
-        this.presentation.entityAction(cast.hero.id, "A_1hit", this.lastStrikeDuration, "hero");
+        this.presentation.entityAction(
+          cast.hero.id,
+          "A_1hit",
+          this.lastStrikeDuration,
+          "hero",
+        );
       if (event === "skill")
-        journal("Jutsu · " + presentationData.characters[save.character].name);
+        journal(
+          t("common.jutsuPrefix") +
+            presentationData.characters[save.character].name,
+        );
     }
     if (event === "hurt") {
       this.enemy.play("battle", "A_1hit", true);
-      this.presentation.entityAction(this.enemy.manifest.id, "A_1hit",
-        (this.enemy.visual.anims.currentAnim?.duration || 450) / (this.enemy.visual.anims.timeScale || 1), "enemy");
+      this.presentation.entityAction(
+        this.enemy.manifest.id,
+        "A_1hit",
+        (this.enemy.visual.anims.currentAnim?.duration || 450) /
+          (this.enemy.visual.anims.timeScale || 1),
+        "enemy",
+      );
       this.floating("-" + value, this.hero.x, this.hero.y - 53, "#ffc0a3");
     }
-    if (event === "loot") journal(`Drop · Fragmento de treino ×${value}`);
+    if (event === "loot") journal(t("main.ce48f03344", { v0: value }));
     if (event === "victory") {
       this.presentation.ui("victory");
       const defeatedEnemy = this.enemy;
@@ -910,20 +1183,37 @@ class HuntScene extends Phaser.Scene {
         this.hero.y - 61,
         "#c5ffbd",
       );
-      journal(`Vitória · +${value} XP · +${AREAS[save.area].coins} moedas`);
+      journal(t("main.92450b8e85", { v0: value, v1: AREAS[save.area].coins }));
       this.renderParty();
       this.time.delayedCall(this.lastStrikeDuration * 0.85, () => {
-        if (!defeatedEnemy.active || !this.enemyField.members.some((member) => member.actor === defeatedEnemy && !member.alive)) return;
+        if (
+          !defeatedEnemy.active ||
+          !this.enemyField.members.some(
+            (member) => member.actor === defeatedEnemy && !member.alive,
+          )
+        )
+          return;
         defeatedEnemy.play("battle", "C_dead", true);
         const death = defeatedEnemy.manifest.modes.battle?.animations.C_dead;
-        this.presentation.entityAction(defeatedEnemy.manifest.id, "C_dead",
-          ((death?.timeline?.length || death?.frames || 1) * 1000) / (death?.fps || 24), "enemy");
+        this.presentation.entityAction(
+          defeatedEnemy.manifest.id,
+          "C_dead",
+          ((death?.timeline?.length || death?.frames || 1) * 1000) /
+            (death?.fps || 24),
+          "enemy",
+        );
         this.tweens.add({
           targets: defeatedEnemy,
           alpha: 0,
-          delay: deathFadeDelay(death?.timeline?.length || death?.frames || 0, death?.fps || 0),
+          delay: deathFadeDelay(
+            death?.timeline?.length || death?.frames || 0,
+            death?.fps || 0,
+          ),
           duration: 400,
-          onComplete: () => { if (defeatedEnemy.active) defeatedEnemy.setVisible(false).setAlpha(1); },
+          onComplete: () => {
+            if (defeatedEnemy.active)
+              defeatedEnemy.setVisible(false).setAlpha(1);
+          },
         });
       });
       commit();
@@ -937,8 +1227,9 @@ class HuntScene extends Phaser.Scene {
       this.presentation.ui("defeat");
       this.play("battle-C_dead", true);
       this.presentation.play("C_dead", this.hero, this.enemy, 500);
-      if (!starterCharacter(save)) this.presentation.entityAction(cast.hero.id, "C_dead", 500, "hero");
-      journal("Derrota: recuperação por 3 segundos, sem perda do inventário.");
+      if (!starterCharacter(save))
+        this.presentation.entityAction(cast.hero.id, "C_dead", 500, "hero");
+      journal(t("main.e926cb9bf6"));
       commit();
     }
     if (event === "recover") {
@@ -946,7 +1237,7 @@ class HuntScene extends Phaser.Scene {
       const spawn = this.navigation.nearest(this.map.spawn)!;
       this.hero.setPosition(spawn.x, spawn.y);
       this.party.reset(this.hero, this.navigation);
-      journal("Recuperado no ponto de entrada. Seu inventário foi preservado.");
+      journal(t("main.3977c42d13"));
     }
   }
   bindNpc(npc: EntityActor) {
@@ -960,7 +1251,7 @@ class HuntScene extends Phaser.Scene {
       )
         return;
       npc.face(this.hero.x < npc.x);
-      toast(npc.manifest.name + " · Morador da vila");
+      toast(npc.manifest.name + t("main.bb8abca08d"));
     });
   }
   async chooseEntity(id: string, role: ActorRole) {
@@ -972,38 +1263,38 @@ class HuntScene extends Phaser.Scene {
         this.party.members.some((m) => m.manifest.id === id) ||
         this.npcs.some((n) => n.manifest.id === id))
     )
-      throw new Error("Este personagem já está presente.");
-    if (role === "npc" && !this.isLobby)
-      throw new Error("Adicione moradores estando no lobby da vila.");
+      throw new Error(t("main.193cab3cff"));
+    if (role === "npc" && !this.isLobby) throw new Error(t("main.ef2da6f38d"));
     if (
       role === "companion" &&
       (id === cast.hero.id ||
         this.party.members.some((m) => m.manifest.id === id))
     )
-      throw new Error("Este personagem já está no grupo.");
-    if (role === "companion" && FUTURE_CHARACTERS.has(id)) throw new Error("Esta versão do Sasuke será disponibilizada no futuro.");
-    if (role === "companion" && save.collection?.includes(id)) throw new Error("Use a troca de personagem na sua coleção.");
+      throw new Error(t("main.1fa3efe045"));
+    if (role === "companion" && FUTURE_CHARACTERS.has(id))
+      throw new Error(t("main.5d62a61688"));
+    if (role === "companion" && save.collection?.includes(id))
+      throw new Error(t("main.2b514b3060"));
     if (role === "companion" && !save.collection?.includes(id)) {
       const manifest = await entityCatalog.get(id);
-      if (manifest.collection !== "playable" || !manifest.capabilities.companion)
-        throw new Error("Este modelo ainda está em revisão.");
+      if (
+        manifest.collection !== "playable" ||
+        !manifest.capabilities.companion
+      )
+        throw new Error(t("main.ede0188aee"));
       recruit(save, id);
-      journal(
-        manifest.name + " entrou na sua coleção. Você já pode selecioná-lo para jogar.",
-      );
+      journal(manifest.name + t("main.f4a8ffa21e"));
       commit();
       return;
     }
     if (role === "companion" && this.party.members.length >= 3)
-      throw new Error("O grupo comporta até três convidados.");
-    if (this.loadingActor) throw new Error("Aguarde o carregamento atual.");
-    if (this.hunt.phase !== "explorando")
-      throw new Error("Conclua o encontro antes de alterar os personagens.");
+      throw new Error(t("main.03ba6e6afa"));
+    if (this.loadingActor) throw new Error(t("main.bca7c6597d"));
+    if (this.hunt.phase !== "explorando") throw new Error(t("main.319e894396"));
     this.loadingActor = true;
     try {
       const manifest = await entityCatalog.get(id);
-      if (!manifest.capabilities[role])
-        throw new Error("Recurso indisponível para esta função.");
+      if (!manifest.capabilities[role]) throw new Error(t("main.8efefe8d9f"));
       await this.actorCache.load(
         manifest,
         role === "npc" && manifest.capabilities.companion ? "companion" : role,
@@ -1015,7 +1306,9 @@ class HuntScene extends Phaser.Scene {
         this.standbyEnemy.use(manifest, role);
         save.enemyId = id;
         cast.enemies = [manifest];
-        this.presentation.setActors(this.isLobby ? [] : [cast.hero.id, manifest.id]);
+        this.presentation.setActors(
+          this.isLobby ? [] : [cast.hero.id, manifest.id],
+        );
         this.enemyField.mapId = "";
         this.placeEnemy();
       } else if (role === "companion") {
@@ -1051,7 +1344,7 @@ class HuntScene extends Phaser.Scene {
         cast.npcs = this.npcs.map((n) => n.manifest);
         this.residents.reset(this.npcs);
       }
-      journal(manifest.name + " entrou na vila.");
+      journal(manifest.name + t("main.4bd3105b89"));
       commit();
     } finally {
       this.loadingActor = false;
@@ -1115,12 +1408,12 @@ class HuntScene extends Phaser.Scene {
   }
   walkTo(point: Point) {
     if (this.hunt.phase !== "explorando") {
-      toast("Conclua o encontro para continuar caminhando.");
+      toast(t("main.9693b68fd2"));
       return;
     }
     const path = this.navigation.path(this.hero, point);
     if (!path.length) {
-      this.floating("Caminho bloqueado", this.hero.x, this.hero.y - 60);
+      this.floating(t("main.463c2c1666"), this.hero.x, this.hero.y - 60);
       return;
     }
     save.autoHunt = false;
@@ -1196,13 +1489,18 @@ class HuntScene extends Phaser.Scene {
       .ellipse(0, 0, 17, 7, 0xe4ab60, 0.35)
       .setStrokeStyle(1, 0xf5cb83);
     const text = this.add
-      .text(0, -10, this.isLobby ? "✦ Viajar" : "✦ Voltar à Folha", {
-        fontFamily: "Segoe UI, sans-serif",
-        fontSize: "8px",
-        color: "#ffe3a1",
-        backgroundColor: "#14251ed9",
-        padding: { x: 4, y: 3 },
-      })
+      .text(
+        0,
+        -10,
+        this.isLobby ? t("common.travelMarker") : t("common.returnMarker"),
+        {
+          fontFamily: t("main.ad77391333"),
+          fontSize: "8px",
+          color: "#ffe3a1",
+          backgroundColor: "#14251ed9",
+          padding: { x: 4, y: 3 },
+        },
+      )
       .setOrigin(0.5, 1)
       .setResolution(2);
     this.portal = this.add
@@ -1221,22 +1519,25 @@ class HuntScene extends Phaser.Scene {
       if (this.isLobby) void openTravel();
       else
         void this.travel(worldMaps.find((m) => m.id === "10001")!).catch((e) =>
-          toast(String(e)),
+          toast(errorText(e)),
         );
     });
   }
   async travel(map: WorldMap) {
     if (map.id === this.map.id) return;
-    if (this.loadingActor) throw new Error("Aguarde o carregamento atual.");
-    if (this.hunt.phase !== "explorando")
-      throw new Error("Conclua o encontro antes de viajar.");
+    if (this.loadingActor) throw new Error(t("main.bca7c6597d"));
+    if (this.hunt.phase !== "explorando") throw new Error(t("main.9c6a33d994"));
     this.loadingActor = true;
     document.querySelector<HTMLDialogElement>(".map-library")?.close();
-    const stage = loadingScreen.begin("Viajando para " + map.name,
-      () => void this.travel(map).catch(() => {}), () => $("back").click());
-    stage.update("Preparando os caminhos…", 0.05);
+    const stage = loadingScreen.begin(
+      t("main.80bfdbb9d3") + map.name,
+      () => void this.travel(map).catch(() => {}),
+      () => $("back").click(),
+    );
+    stage.update(t("main.fdf7f6902c"), 0.05);
     const old = this.map;
-    const progress = (value: number) => stage.update(`Carregando recursos da viagem · ${Math.round(value * 100)}% do lote atual`);
+    const progress = (value: number) =>
+      stage.update(t("main.8be7deb387", { v0: Math.round(value * 100) }));
     this.load.on("progress", progress);
     try {
       const grid = await mapNavigation(map);
@@ -1259,7 +1560,9 @@ class HuntScene extends Phaser.Scene {
       this.presentation.setMap(map.id);
       this.navigation = new NativeNavigation(grid);
       cast.enemies = pool;
-      this.presentation.setActors(this.isLobby ? [] : [cast.hero.id, ...pool.map(e => e.id)]);
+      this.presentation.setActors(
+        this.isLobby ? [] : [cast.hero.id, ...pool.map((e) => e.id)],
+      );
       const spawn = this.navigation.nearest(map.spawn)!;
       this.background
         .setTexture("map-" + map.id)
@@ -1295,10 +1598,8 @@ class HuntScene extends Phaser.Scene {
         if (this.textures.exists(key)) this.textures.remove(key);
       journal(
         this.isLobby
-          ? "Você voltou à Vila da Folha. Área segura."
-          : "Viagem · " +
-              map.name +
-              ". Explore livremente ou inicie uma caçada.",
+          ? t("main.b037a2c5a9")
+          : t("common.travelPrefix") + map.name + t("common.exploreFreely"),
       );
       stage.finish();
     } catch (error) {
@@ -1311,14 +1612,23 @@ class HuntScene extends Phaser.Scene {
   }
   loadMapImages(map: WorldMap) {
     const keys = ["map-" + map.id, "map-" + map.id + "-foreground"];
-    return loadSceneAssets(this, () => {
-      if (!this.textures.exists(keys[0])) this.load.image(keys[0], map.background);
-      if (!this.textures.exists(keys[1])) this.load.image(keys[1], foregroundPlan(map, this.game.renderer.type === Phaser.WEBGL).url);
-    }, () => keys.every(key => this.textures.exists(key)));
+    return loadSceneAssets(
+      this,
+      () => {
+        if (!this.textures.exists(keys[0]))
+          this.load.image(keys[0], map.background);
+        if (!this.textures.exists(keys[1]))
+          this.load.image(
+            keys[1],
+            foregroundPlan(map, this.game.renderer.type === Phaser.WEBGL).url,
+          );
+      },
+      () => keys.every((key) => this.textures.exists(key)),
+    );
   }
   toggleHunt() {
     if (this.isLobby) {
-      toast("A vila é uma área segura. Escolha um destino em Viajar.");
+      toast(t("main.fe4a69686b"));
       return;
     }
     save.autoHunt = !save.autoHunt;
@@ -1329,7 +1639,7 @@ class HuntScene extends Phaser.Scene {
   }
   removeParty(id: string) {
     if (this.loadingActor) {
-      toast("Aguarde o carregamento atual.");
+      toast(t("main.bca7c6597d"));
       return;
     }
     this.party.remove(id);
@@ -1377,8 +1687,15 @@ class HuntScene extends Phaser.Scene {
     );
     if (!this.isLobby && this.hunt.phase === "explorando") {
       if (!blocked && save.autoHunt) {
-        const candidates = this.enemyField.members.filter(m => m.alive && m.actor.visible).map(m => m.actor);
-        const hunt = this.autoNavigator.update(this.hero, candidates, delta, this.navigation);
+        const candidates = this.enemyField.members
+          .filter((m) => m.alive && m.actor.visible)
+          .map((m) => m.actor);
+        const hunt = this.autoNavigator.update(
+          this.hero,
+          candidates,
+          delta,
+          this.navigation,
+        );
         this.enemy = hunt.target || this.standbyEnemy;
         this.path = hunt.path;
       } else if (!save.autoHunt) {
@@ -1439,7 +1756,8 @@ class HuntScene extends Phaser.Scene {
       if (
         !this.isLobby &&
         this.enemy.visible &&
-        Math.hypot(this.hero.x - this.enemy.x, this.hero.y - this.enemy.y) < 28 &&
+        Math.hypot(this.hero.x - this.enemy.x, this.hero.y - this.enemy.y) <
+          28 &&
         this.navigation.clear(this.hero, this.enemy)
       ) {
         this.path = [];
@@ -1448,12 +1766,20 @@ class HuntScene extends Phaser.Scene {
       }
     } else if (
       !blocked &&
-      ["iniciando combate", "combatendo", "recompensas"].includes(this.hunt.phase) &&
+      ["iniciando combate", "combatendo", "recompensas"].includes(
+        this.hunt.phase,
+      ) &&
       !this.hero.anims.isPlaying
     )
       this.play("battle-C_idle");
-    this.party.update(this.hero, delta, this.navigation, blocked, walkSpeed,
-      id => stats(save, id).moveSpeed);
+    this.party.update(
+      this.hero,
+      delta,
+      this.navigation,
+      blocked,
+      walkSpeed,
+      (id) => stats(save, id).moveSpeed,
+    );
     this.groundShadow
       .setPosition(this.hero.x, this.hero.y)
       .setDepth(this.hero.y - 0.5);
@@ -1497,20 +1823,23 @@ class HuntScene extends Phaser.Scene {
     }
   }
   renderUI() {
-    if (this.shownLevel !== undefined && save.level > this.shownLevel) this.presentation.ui("levelUp");
+    if (this.shownLevel !== undefined && save.level > this.shownLevel)
+      this.presentation.ui("levelUp");
     this.shownLevel = save.level;
     const st = stats(save),
       pct = (save.xp / needed(save.level)) * 100;
-    $("pause").textContent = save.paused ? "Retomar movimento" : "Pausar";
+    $("pause").textContent = save.paused
+      ? t("main.960cc636c1")
+      : t("main.cd25ee5b1d");
     $("world-name").textContent = this.map.name;
     $("world-help").textContent = this.isLobby
-      ? "Lobby seguro · clique no chão ou use WASD / setas para caminhar."
-      : "Clique no chão ou use WASD / setas. Aproxime-se de um inimigo para lutar.";
+      ? t("main.ab8ef7e487")
+      : t("main.ba4dfc88ee");
     $("auto-hunt").hidden = this.isLobby;
     $("return-lobby").hidden = this.isLobby;
     $("auto-hunt").textContent = save.autoHunt
-      ? "Parar caçada automática"
-      : "Iniciar caçada automática";
+      ? t("main.0ec6283eb1")
+      : t("main.15a42e6c7b");
     $("cast-skill").hidden = this.isLobby || !starterCharacter(save);
     ($("cast-skill") as HTMLButtonElement).disabled =
       save.paused ||
@@ -1518,19 +1847,33 @@ class HuntScene extends Phaser.Scene {
       this.hunt.chakra < 35 ||
       this.hunt.skillCooldown > 0;
     const phase = save.paused
-      ? "Pausado"
+      ? t("common.paused")
       : this.isLobby
-        ? "Lobby · movimento livre"
-        : this.hunt.phase;
+        ? t("main.7ca4480827")
+        : phaseText(this.hunt.phase);
     $("status").innerHTML =
-      `<div class="level">Nível ${save.level}<span>${phase}</span></div><div class="meter"><i style="width:${(this.hunt.hp / st.maxHp) * 100}%"></i></div><p class="caption">Vida ${Math.ceil(this.hunt.hp)} / ${st.maxHp}</p><div class="meter xp"><i style="width:${pct}%"></i></div><p class="caption">${save.xp} / ${needed(save.level)} XP</p><div class="meter chakra"><i style="width:${(this.hunt.chakra / st.maxChakra) * 100}%"></i></div><p class="caption">Chakra ${Math.floor(this.hunt.chakra)} / ${st.maxChakra}</p><dl><dt>Moedas</dt><dd>${save.coins}</dd><dt>Vitórias</dt><dd>${save.kills}</dd><dt>Derrotas</dt><dd>${save.defeats}</dd><dt>Fragmentos</dt><dd>${save.inventory.fragmento || 0}</dd></dl>`;
+      `<div class="level">${th("main.27617734dd", { v0: save.level })}<span>${phase}</span></div><div class="meter"><i style="width:${(this.hunt.hp / st.maxHp) * 100}%"></i></div><p class="caption">${th("main.daff5c99bc", { v0: Math.ceil(this.hunt.hp), v1: st.maxHp })}</p><div class="meter xp"><i style="width:${pct}%"></i></div><p class="caption">${th("main.9e9fa512af", { v0: save.xp, v1: needed(save.level) })}</p><div class="meter chakra"><i style="width:${(this.hunt.chakra / st.maxChakra) * 100}%"></i></div><p class="caption">${th("main.28e9b6b10b", { v0: Math.floor(this.hunt.chakra), v1: st.maxChakra })}</p><dl><dt>${th("main.c7d55f788a")}</dt><dd>${save.coins}</dd><dt>${th("main.6c05b13ab4")}</dt><dd>${save.kills}</dd><dt>${th("main.ccbaf8a1d3")}</dt><dd>${save.defeats}</dd><dt>${th("main.023b326283")}</dt><dd>${save.inventory.fragmento || 0}</dd></dl>`;
     const cadence = document.createElement("p");
     cadence.className = "caption";
     cadence.dataset.cadence = "";
-    cadence.textContent = `Ataque ${st.attack} · ${(1000 / st.interval).toFixed(2)} golpes/s · Movimento ${st.moveSpeed.toFixed(1)}`;
+    cadence.textContent = t("main.e93105e45c", {
+      v0: st.attack,
+      v1: formatNumber(1000 / st.interval, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }),
+      v2: formatNumber(st.moveSpeed, {
+        minimumFractionDigits: 1,
+        maximumFractionDigits: 1,
+      }),
+    });
     $("status").append(cadence);
-    $("session").textContent =
-      `${Math.floor((Date.now() - session.start) / 60000)} min · ${session.wins} vitórias · ${session.xp} XP · ${session.coins} moedas`;
+    $("session").textContent = t("main.0d7db12c3b", {
+      v0: Math.floor((Date.now() - session.start) / 60000),
+      v1: session.wins,
+      v2: session.xp,
+      v3: session.coins,
+    });
     miniWindow.sync();
   }
 }

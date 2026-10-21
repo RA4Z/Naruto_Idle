@@ -1,3 +1,4 @@
+import { t } from "../i18n/core.ts";
 import type { CombatLoadout } from "../progression/combat-stats";
 // Arena stats are independent of editable local saves and PvE equipment.
 export const ARENA_FIGHTERS = {
@@ -24,7 +25,7 @@ export const ARENA_FIGHTERS = {
     folder: "sakura-kid",
     hp: 190,
     attack: 26,
-    skill: "Cura",
+    skill: t("arena.rules.67a34b8a11"),
     damage: 0,
     heal: 52,
   },
@@ -83,4 +84,7 @@ export type ArenaState = {
   log: ArenaEvent[];
   rules: typeof ARENA_RULES;
 };
-export type ArenaSession = { room: ArenaState | null; seat: number | null };
+export type ArenaSession = {
+  room: ArenaState | null;
+  seat: number | null;
+};

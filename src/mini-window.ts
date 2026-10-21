@@ -1,3 +1,4 @@
+import { t, th, errorText } from "./i18n/core.ts";
 type PictureInPictureHost = Window & {
   documentPictureInPicture?: {
     requestWindow(options: { width: number; height: number }): Promise<Window>;
@@ -11,14 +12,13 @@ type MiniWindowOptions = {
   notify: (text: string) => void;
   openOnLocalhost: () => void;
 };
-
 // Move the existing canvas, keeping one game instance and one save writer.
 export function installMiniWindow(options: MiniWindowOptions) {
   const { button, canvas } = options;
   const help = document.createElement("dialog");
   help.className = "mini-help";
   help.setAttribute("aria-labelledby", "mini-help-title");
-  help.innerHTML = `<h2 id="mini-help-title">Janela sobre outras abas</h2><p data-mini-reason></p><div data-localhost-help><p>Se o servidor está neste computador, abra por localhost para habilitar a janela flutuante. Seu progresso acompanha a mudança de endereço. Depois, continue usando localhost neste computador.</p><button data-mini-localhost>Abrir em localhost com meu progresso</button></div><p class="caption">A minijanela interna fica somente nesta aba e não acompanha outras abas.</p><div class="mini-help-actions"><button class="secondary" data-mini-internal>Usar somente nesta aba</button><button class="secondary" data-mini-cancel>Cancelar</button></div>`;
+  help.innerHTML = `<h2 id="mini-help-title">${th("mini-window.7a6f4a54ad")}</h2><p data-mini-reason></p><div data-localhost-help><p>${th("mini-window.b3bbc6ea0d")}</p><button data-mini-localhost>${th("mini-window.48384038e6")}</button></div><p class="caption">${th("mini-window.6c0ca4ae16")}</p><div class="mini-help-actions"><button class="secondary" data-mini-internal>${th("mini-window.c971868da4")}</button><button class="secondary" data-mini-cancel>${th("mini-window.bb9dbb406d")}</button></div>`;
   document.body.append(help);
   help.querySelector<HTMLButtonElement>("[data-mini-localhost]")!.onclick =
     () => {
@@ -39,16 +39,15 @@ export function installMiniWindow(options: MiniWindowOptions) {
   }
   const panel = document.createElement("section");
   panel.className = "mini-window";
-  panel.setAttribute("aria-label", "Minijanela do jogo");
+  panel.setAttribute("aria-label", t("mini-window.3cf56c728b"));
   panel.hidden = true;
-  panel.innerHTML = `<div class="mini-window-bar"><button class="mini-drag" aria-label="Arrastar minijanela" title="Arraste para mover; use as setas quando estiver focado">Caminho da Folha</button><button class="secondary" data-mini-return>Restaurar</button></div><div class="mini-viewport"></div><p class="mini-summary"></p><div class="mini-actions"></div><p class="mini-note"></p>`;
+  panel.innerHTML = `<div class="mini-window-bar"><button class="mini-drag" aria-label="${th("mini-window.a00933cd61")}" title="${th("mini-window.93a80616e4")}">${th("mini-window.448bfa476b")}</button><button class="secondary" data-mini-return>${th("mini-window.eda02893d3")}</button></div><div class="mini-viewport"></div><p class="mini-summary"></p><div class="mini-actions"></div><p class="mini-note"></p>`;
   document.body.append(panel);
   const viewport = panel.querySelector<HTMLElement>(".mini-viewport")!;
   const summary = panel.querySelector<HTMLElement>(".mini-summary")!;
   const placeholder = document.createElement("section");
   placeholder.className = "mini-placeholder";
-  placeholder.innerHTML =
-    "<p>O jogo está na minijanela.</p><button>Voltar à tela normal</button>";
+  placeholder.innerHTML = `<p>${th("mini-window.4b97868ed9")}</p><button>${th("mini-window.c4b7a07acc")}</button>`;
   let host: Window | undefined;
   let stopViewport: (() => void) | undefined;
   let opening = false;
@@ -86,7 +85,7 @@ export function installMiniWindow(options: MiniWindowOptions) {
     document.body.append(panel);
     panel.hidden = true;
     panel.classList.remove("mini-external");
-    button.textContent = "Abrir janela flutuante";
+    button.textContent = t("mini-window.499b8aac78");
     button.setAttribute("aria-pressed", "false");
     if (previousHost && previousHost !== window && !previousHost.closed)
       previousHost.close();
@@ -97,6 +96,7 @@ export function installMiniWindow(options: MiniWindowOptions) {
   panel.querySelector<HTMLButtonElement>("[data-mini-return]")!.onclick =
     restore;
   function copyStyles(target: Document) {
+    target.documentElement.lang = document.documentElement.lang;
     const base = target.createElement("base");
     base.href = document.baseURI;
     target.head.append(base);
@@ -133,8 +133,8 @@ export function installMiniWindow(options: MiniWindowOptions) {
       if (!internal && (!window.isSecureContext || !api)) {
         explain(
           !window.isSecureContext
-            ? "O endereço HTTP por IP não permite a janela flutuante do navegador. Por isso ela desaparece quando você muda de aba."
-            : "A janela flutuante não está disponível neste navegador. A opção abaixo funciona somente nesta aba.",
+            ? t("mini-window.f946ecbb98")
+            : t("mini-window.58552ec442"),
         );
         return;
       }
@@ -142,9 +142,7 @@ export function installMiniWindow(options: MiniWindowOptions) {
         try {
           destination = await api.requestWindow({ width: 520, height: 420 });
         } catch {
-          explain(
-            "O navegador não permitiu abrir a janela flutuante. Tente novamente pelo botão ou escolha a minijanela interna.",
-          );
+          explain(t("mini-window.2b1d3c8203"));
           return;
         }
       }
@@ -154,7 +152,7 @@ export function installMiniWindow(options: MiniWindowOptions) {
       }
       if (destination !== window) {
         copyStyles(destination.document);
-        destination.document.title = "Caminho da Folha · Minijanela";
+        destination.document.title = t("mini-window.c507e981ab");
         destination.document.body.append(panel);
         destination.addEventListener("pagehide", restore, { once: true });
       }
@@ -162,12 +160,12 @@ export function installMiniWindow(options: MiniWindowOptions) {
       panel.classList.toggle("mini-external", host !== window);
       panel.querySelector(".mini-note")!.textContent =
         host === window
-          ? "Somente nesta aba — não acompanha outras abas. Arraste pelo título para mover."
-          : "Arraste a janela pela barra do navegador. Fechar devolve o jogo à página.";
+          ? t("mini-window.79f9ab6a87")
+          : t("mini-window.351c32f3ac");
       canvas.replaceWith(placeholder);
       viewport.append(canvas);
       panel.hidden = false;
-      button.textContent = "Voltar à tela normal";
+      button.textContent = t("mini-window.c4b7a07acc");
       button.setAttribute("aria-pressed", "true");
       stopViewport = options.onViewport(host);
       sync();
@@ -176,9 +174,7 @@ export function installMiniWindow(options: MiniWindowOptions) {
     } catch (error) {
       restore();
       if (destination !== window && !destination.closed) destination.close();
-      options.notify(
-        `Não foi possível abrir a minijanela: ${(error as Error).message}`,
-      );
+      options.notify(t("mini-window.1f03cdaf41", { v0: errorText(error) }));
     } finally {
       opening = false;
       button.disabled = false;
@@ -198,7 +194,13 @@ export function installMiniWindow(options: MiniWindowOptions) {
   }
   const drag = panel.querySelector<HTMLButtonElement>(".mini-drag")!;
   let pointer:
-    | { id: number; x: number; y: number; left: number; top: number }
+    | {
+        id: number;
+        x: number;
+        y: number;
+        left: number;
+        top: number;
+      }
     | undefined;
   drag.onpointerdown = (event) => {
     if (host !== window || event.button !== 0) return;
