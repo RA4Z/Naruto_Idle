@@ -1,5 +1,7 @@
 # Roteiro para o computador com os arquivos originais
 
+**Atualização técnica dos mapas em 21/10/2026:** ler primeiro [Mapas: formato confirmado, extração e pendências](MAP_LAYERS.md). Esse guia detalha resolução por versão do CDN, blocos de 256 pixels, PNGs frontais virtuais, aplicação de alphaMap, formato binário/projeção da navegação, escala, comandos por lote e validação. A investigação histórica abaixo não deve fazer a IA procurar PNGs frontais físicos inexistentes nem repetir a tentativa de recortar chão. Máscara nativa já foi recuperada; modularidade/SWF intermediário e profundidade por objeto continuam pendentes. Consultar CONTINUATION/ROADMAP para não repetir tarefas já concluídas, inclusive a reconstrução original das skills do Sasuke.
+
 Nota da integração entre computadores: os atlas das duas skills do Sasuke azul 11000211 já foram regenerados do SWF nesta máquina e preservados no merge. Conferir rendererRevision antes de converter; não reaplicar o fallback histórico. A fila atual tem 31 ações/30 modelos, conforme reports/external-symbol-audit.json. O restante deste roteiro continua sendo trabalho futuro, sem disparar extração integral durante o merge.
 
 ## Objetivo e ordem de leitura

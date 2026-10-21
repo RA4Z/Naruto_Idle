@@ -1,5 +1,7 @@
 # Ponto de continuidade
 
+Documentação técnica dos mapas consolidada em 21/10/2026: `docs/MAP_LAYERS.md` agora explica o formato confirmado e a sequência operacional de extração. Inclui resolução de fontes/tag via OriginalArchive, blocos de 256 px, PNG frontal virtual + alphaMap, cabeçalho/flags/projeção de MapInfo.map, escala 3.072, maior componente conexo, SPECS/registro de saves, comandos por lote e verificações WebGL/Canvas. Não confundir máscara frontal com profundidade por objeto. A disponibilidade do acervo é específica da máquina; o caminho D: não está disponível nesta cópia C:. Nesta etapa foram alterados apenas documentos; nenhuma conversão ou teste de jogo foi executado.
+
 ## Vale do Fim, cânion e barreira — lote validado em 21/10/2026
 
 Integrados 10012 Em Baixo do Vale do Fim (cena 2014001), 10013 No Topo do Vale do Fim (2014002), 10016 Caniôn do País dos Rios (2006001) e 10021 Barreira dos Cinco Selos (2013001). Total: 16/145 conjuntos, 129 restantes. Fundo, grade nativa, máscaras e viagens funcionam; seis inimigos móveis, encontros/loot/XP, save/reload e retorno testados nos quatro. Populações e regras idle são autorais. Portais e conexões originais continuam adiados. Os 102 arquivos dos doze mapas anteriores foram preservados byte a byte.
