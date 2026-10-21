@@ -1,0 +1,75 @@
+{
+  "id": "10011",
+  "name": "Tanzaku",
+  "kind": "adventure",
+  "background": "/assets/maps/10011/background.png",
+  "foreground": "/assets/maps/10011/foreground.png",
+  "thumbnail": "/assets/maps/10011/thumbnail.jpg",
+  "navigation": "/assets/maps/10011/navigation.json",
+  "width": 1171.875,
+  "height": 781.25,
+  "spawn": {
+    "x": 585.9375,
+    "y": 420.5729166666667
+  },
+  "enemies": [
+    "19002301",
+    "19000901"
+  ],
+  "description": "Patrulhe as estradas de Tanzaku e encontre samurais.",
+  "source": "assets/scene/map/10011/",
+  "sourceScene": {
+    "id": "2007001",
+    "mapId": "10011",
+    "time": "1",
+    "type": "1",
+    "name": "Tanzaku",
+    "minLevel": null,
+    "worldMapId": "2007001",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "118410a289d965c2547d8bb29fb6af3e9a6c9d6805db1cfe3ef4dc3862089227",
+  "populationPolicy": "Six patrolling enemies; authored idle-RPG roster using recovered eligible models, not original encounter rules.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 150,
+    "foregroundTiles": 102,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 102,
+      "opaqueGroundCutouts": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 1914650,
+      "dimensions": [
+        3600,
+        2400
+      ],
+      "sha256": "43fd414b0cba13c14fd4688a3cb0b22caeeaf720600b5d23a4c3e59f2aac8ddf",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/10011/foreground.webp",
+        "sourceSha256": "43fd414b0cba13c14fd4688a3cb0b22caeeaf720600b5d23a4c3e59f2aac8ddf",
+        "originalBytes": 4489812,
+        "bytes": 2957496,
+        "width": 3600,
+        "height": 2400,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/10011/native-alpha.png",
+    "width": 3600,
+    "height": 2400,
+    "sha256": "797ac0d52bd3bd967cf778fab505d1ddf4f13038a739f32f417728b201962c02"
+  }
+}

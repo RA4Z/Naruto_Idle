@@ -203,7 +203,7 @@ Validação específica: `python tools/check_character_layout.py`. Consulte `rep
 
 ## Lobby, mapas e administração
 
-Vila da Folha é um lobby seguro: clique no chão ou use WASD/setas. Movimento depende da velocidade individual, com zoom 3.1. Viajar abre oito mapas integrados; os sete destinos de exploração possuem seis inimigos com patrulha e respawn. A caçada automática é opcional e é desligada ao trocar de personagem. Grupo está desativado por enquanto. A biblioteca e o admin mostram personagens inteiros.
+Vila da Folha é um lobby seguro: clique no chão ou use WASD/setas. Movimento depende da velocidade individual, com zoom 3.1. Viajar abre doze mapas integrados; os onze destinos de exploração possuem seis inimigos com patrulha e respawn. A caçada automática é opcional e é desligada ao trocar de personagem. Grupo está desativado por enquanto. A biblioteca e o admin mostram personagens inteiros.
 
 Abra `/admin` e entre com a senha inicial `admin`. A senha é validada pela API do servidor e a sessão usa cookie HttpOnly; `NARUTO_ADMIN_PASSWORD` permite alterá-la. As telas incluem personagens e suas animações, mapas, efeitos, áudio e todos os arquivos do runtime. `npm run dev` inclui a API; para servir a build, use `npm start` (porta 5180 por padrão). A simples hospedagem estática não fornece autenticação administrativa.
 
@@ -287,3 +287,8 @@ Uma tarefa pesada por vez: conversão, testes e build em série, sem servidor ex
 Clique, fechar, início de combate, vitória, derrota e novo nível usam seis MP3 originais vinculados ao XML. São opcionais, limitados a quatro vozes curtas e funcionam nos menus mesmo com o mundo pausado. Mute impede novas reproduções. A jornada pode salvar todos os mapas visitados; o antigo limite de quatro foi removido.
 
 O preparador aceita até quatro IDs por lote (--limit 4), executados serialmente. A quantidade por lote não aumenta o número de workers. Novos mapas continuam exigindo configuração explícita e testes antes de publicação. Portais entre mapas permanecem para depois da recuperação/integração prioritária.
+
+
+## Lote de quatro cenários
+
+Floresta do País do Fogo (10010), Tanzaku (10011), Deserto do País do Vento (10020) e O Deserto Quente (10015) elevam o catálogo para doze destinos. Possuem navegação/máscaras nativas, seis inimigos com patrulha e respawn, combate/loot, recarga do progresso e retorno à vila. Os desertos acrescentam duas faixas originais; os onze mapas de exploração compartilham treze arquivos de música/ambiente. Este lote foi convertido e testado serialmente, sem servidor extra. As ligações originais entre mapas e profundidade por objeto continuam pendentes.

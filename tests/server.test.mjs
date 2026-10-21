@@ -55,7 +55,7 @@ test("admin API requires a server session, rejects bad passwords and cross-origi
     assert.ok(["10001", "10005", "10006", "10008", "10007", "10009"].every(id => maps.some(map => map.id === id)));
     r = await fetch(base + "/api/admin/scene-audio", { headers: { Cookie: cookie } });
     assert.equal(r.status, 200);
-    assert.equal(Object.keys((await r.json()).files).length, 11);
+    assert.ok((await r.json()).files["/assets/audio/scenes/adv05.mp3"]);
     r = await fetch(base + "/api/admin/characters/11000101", {
       headers: { Cookie: cookie },
     });

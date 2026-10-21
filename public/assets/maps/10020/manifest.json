@@ -1,0 +1,75 @@
+{
+  "id": "10020",
+  "name": "Deserto do País do Vento",
+  "kind": "adventure",
+  "background": "/assets/maps/10020/background.png",
+  "foreground": "/assets/maps/10020/foreground.png",
+  "thumbnail": "/assets/maps/10020/thumbnail.jpg",
+  "navigation": "/assets/maps/10020/navigation.json",
+  "width": 976.5625,
+  "height": 976.5625,
+  "spawn": {
+    "x": 488.28125,
+    "y": 542.3177083333334
+  },
+  "enemies": [
+    "19000101",
+    "19000201"
+  ],
+  "description": "Cruze as dunas do País do Vento entre ninjas da Areia.",
+  "source": "assets/scene/map/10020/",
+  "sourceScene": {
+    "id": "2008001",
+    "mapId": "10020",
+    "time": "1",
+    "type": "1",
+    "name": "Deserto do País do Vento",
+    "minLevel": null,
+    "worldMapId": "2008001",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "5f749e97488f9210cf7b6409209330818794ce14958820d8dbae35fd4956e352",
+  "populationPolicy": "Six patrolling enemies; authored idle-RPG roster using recovered eligible models, not original encounter rules.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 144,
+    "foregroundTiles": 48,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 48,
+      "opaqueGroundCutouts": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 495858,
+      "dimensions": [
+        3000,
+        3000
+      ],
+      "sha256": "0715decbea7703487c699e11dbf98789243643ce542bb11c06ead9e536954ce4",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/10020/foreground.webp",
+        "sourceSha256": "0715decbea7703487c699e11dbf98789243643ce542bb11c06ead9e536954ce4",
+        "originalBytes": 1104163,
+        "bytes": 617312,
+        "width": 3000,
+        "height": 3000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/10020/native-alpha.png",
+    "width": 3000,
+    "height": 3000,
+    "sha256": "a100126cf1af5fd2bf01770a4c1cce5eb4385345194726c684524147d58debf5"
+  }
+}

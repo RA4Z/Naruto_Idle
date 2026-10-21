@@ -549,6 +549,306 @@
         "height": 2000,
         "sha256": "2c7c39c51621da5283d84545740b5529acf69ad3ebe195e4dee940bf2233153f"
       }
+    },
+    {
+      "id": "10010",
+      "name": "Floresta do País do Fogo",
+      "kind": "adventure",
+      "background": "/assets/maps/10010/background.png",
+      "foreground": "/assets/maps/10010/foreground.png",
+      "thumbnail": "/assets/maps/10010/thumbnail.jpg",
+      "navigation": "/assets/maps/10010/navigation.json",
+      "width": 976.5625,
+      "height": 976.5625,
+      "spawn": {
+        "x": 654.9479166666666,
+        "y": 625.6510416666666
+      },
+      "enemies": [
+        "19000301",
+        "19000701"
+      ],
+      "description": "Explore as trilhas da Floresta do País do Fogo.",
+      "source": "assets/scene/map/10010/",
+      "sourceScene": {
+        "id": "2009001",
+        "mapId": "10010",
+        "time": "1",
+        "type": "1",
+        "name": "Floresta do País do Fogo",
+        "minLevel": null,
+        "worldMapId": "2009001",
+        "replaceSelfNinja": null
+      },
+      "navigationSha256": "57d2e0f58bdc68229db2cc985f496ff8efb244ac09171950e20586a1c38ce3bb",
+      "populationPolicy": "Six patrolling enemies; authored idle-RPG roster using recovered eligible models, not original encounter rules.",
+      "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+      "layers": {
+        "backgroundTiles": 144,
+        "foregroundTiles": 88,
+        "animatedMiddleground": "available in originals; pending conversion",
+        "nativeForeground": {
+          "method": "native-alpha-map-and-original-tile-rectangles-v1",
+          "foregroundRects": 88,
+          "opaqueGroundCutouts": false,
+          "alphaLevels": [
+            0,
+            85,
+            170
+          ],
+          "nontransparentPixels": 1568388,
+          "dimensions": [
+            3000,
+            3000
+          ],
+          "sha256": "b5a4c7185ef783545569524c955fd8e293343e72e510f3e4a973fac46bec6434",
+          "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+          "limits": [
+            "Native global translucent front layer; not per-object Y sorting.",
+            "Middleground SWF objects require a separate conversion."
+          ],
+          "optimizedRuntime": {
+            "url": "/assets/maps/10010/foreground.webp",
+            "sourceSha256": "b5a4c7185ef783545569524c955fd8e293343e72e510f3e4a973fac46bec6434",
+            "originalBytes": 4216620,
+            "bytes": 2942238,
+            "width": 3000,
+            "height": 3000,
+            "lossless": true
+          }
+        }
+      },
+      "nativeAlpha": {
+        "url": "/assets/maps/10010/native-alpha.png",
+        "width": 3000,
+        "height": 3000,
+        "sha256": "97f293c12dd7d1149a0ed25382899c9e8f277ef6b7d34b4390e828998146489b"
+      }
+    },
+    {
+      "id": "10011",
+      "name": "Tanzaku",
+      "kind": "adventure",
+      "background": "/assets/maps/10011/background.png",
+      "foreground": "/assets/maps/10011/foreground.png",
+      "thumbnail": "/assets/maps/10011/thumbnail.jpg",
+      "navigation": "/assets/maps/10011/navigation.json",
+      "width": 1171.875,
+      "height": 781.25,
+      "spawn": {
+        "x": 585.9375,
+        "y": 420.5729166666667
+      },
+      "enemies": [
+        "19002301",
+        "19000901"
+      ],
+      "description": "Patrulhe as estradas de Tanzaku e encontre samurais.",
+      "source": "assets/scene/map/10011/",
+      "sourceScene": {
+        "id": "2007001",
+        "mapId": "10011",
+        "time": "1",
+        "type": "1",
+        "name": "Tanzaku",
+        "minLevel": null,
+        "worldMapId": "2007001",
+        "replaceSelfNinja": null
+      },
+      "navigationSha256": "118410a289d965c2547d8bb29fb6af3e9a6c9d6805db1cfe3ef4dc3862089227",
+      "populationPolicy": "Six patrolling enemies; authored idle-RPG roster using recovered eligible models, not original encounter rules.",
+      "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+      "layers": {
+        "backgroundTiles": 150,
+        "foregroundTiles": 102,
+        "animatedMiddleground": "available in originals; pending conversion",
+        "nativeForeground": {
+          "method": "native-alpha-map-and-original-tile-rectangles-v1",
+          "foregroundRects": 102,
+          "opaqueGroundCutouts": false,
+          "alphaLevels": [
+            0,
+            85,
+            170
+          ],
+          "nontransparentPixels": 1914650,
+          "dimensions": [
+            3600,
+            2400
+          ],
+          "sha256": "43fd414b0cba13c14fd4688a3cb0b22caeeaf720600b5d23a4c3e59f2aac8ddf",
+          "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+          "limits": [
+            "Native global translucent front layer; not per-object Y sorting.",
+            "Middleground SWF objects require a separate conversion."
+          ],
+          "optimizedRuntime": {
+            "url": "/assets/maps/10011/foreground.webp",
+            "sourceSha256": "43fd414b0cba13c14fd4688a3cb0b22caeeaf720600b5d23a4c3e59f2aac8ddf",
+            "originalBytes": 4489812,
+            "bytes": 2957496,
+            "width": 3600,
+            "height": 2400,
+            "lossless": true
+          }
+        }
+      },
+      "nativeAlpha": {
+        "url": "/assets/maps/10011/native-alpha.png",
+        "width": 3600,
+        "height": 2400,
+        "sha256": "797ac0d52bd3bd967cf778fab505d1ddf4f13038a739f32f417728b201962c02"
+      }
+    },
+    {
+      "id": "10020",
+      "name": "Deserto do País do Vento",
+      "kind": "adventure",
+      "background": "/assets/maps/10020/background.png",
+      "foreground": "/assets/maps/10020/foreground.png",
+      "thumbnail": "/assets/maps/10020/thumbnail.jpg",
+      "navigation": "/assets/maps/10020/navigation.json",
+      "width": 976.5625,
+      "height": 976.5625,
+      "spawn": {
+        "x": 488.28125,
+        "y": 542.3177083333334
+      },
+      "enemies": [
+        "19000101",
+        "19000201"
+      ],
+      "description": "Cruze as dunas do País do Vento entre ninjas da Areia.",
+      "source": "assets/scene/map/10020/",
+      "sourceScene": {
+        "id": "2008001",
+        "mapId": "10020",
+        "time": "1",
+        "type": "1",
+        "name": "Deserto do País do Vento",
+        "minLevel": null,
+        "worldMapId": "2008001",
+        "replaceSelfNinja": null
+      },
+      "navigationSha256": "5f749e97488f9210cf7b6409209330818794ce14958820d8dbae35fd4956e352",
+      "populationPolicy": "Six patrolling enemies; authored idle-RPG roster using recovered eligible models, not original encounter rules.",
+      "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+      "layers": {
+        "backgroundTiles": 144,
+        "foregroundTiles": 48,
+        "animatedMiddleground": "available in originals; pending conversion",
+        "nativeForeground": {
+          "method": "native-alpha-map-and-original-tile-rectangles-v1",
+          "foregroundRects": 48,
+          "opaqueGroundCutouts": false,
+          "alphaLevels": [
+            0,
+            85,
+            170
+          ],
+          "nontransparentPixels": 495858,
+          "dimensions": [
+            3000,
+            3000
+          ],
+          "sha256": "0715decbea7703487c699e11dbf98789243643ce542bb11c06ead9e536954ce4",
+          "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+          "limits": [
+            "Native global translucent front layer; not per-object Y sorting.",
+            "Middleground SWF objects require a separate conversion."
+          ],
+          "optimizedRuntime": {
+            "url": "/assets/maps/10020/foreground.webp",
+            "sourceSha256": "0715decbea7703487c699e11dbf98789243643ce542bb11c06ead9e536954ce4",
+            "originalBytes": 1104163,
+            "bytes": 617312,
+            "width": 3000,
+            "height": 3000,
+            "lossless": true
+          }
+        }
+      },
+      "nativeAlpha": {
+        "url": "/assets/maps/10020/native-alpha.png",
+        "width": 3000,
+        "height": 3000,
+        "sha256": "a100126cf1af5fd2bf01770a4c1cce5eb4385345194726c684524147d58debf5"
+      }
+    },
+    {
+      "id": "10015",
+      "name": "O Deserto Quente",
+      "kind": "adventure",
+      "background": "/assets/maps/10015/background.png",
+      "foreground": "/assets/maps/10015/foreground.png",
+      "thumbnail": "/assets/maps/10015/thumbnail.jpg",
+      "navigation": "/assets/maps/10015/navigation.json",
+      "width": 976.5625,
+      "height": 976.5625,
+      "spawn": {
+        "x": 488.28125,
+        "y": 542.3177083333334
+      },
+      "enemies": [
+        "19000101",
+        "19004301"
+      ],
+      "description": "Explore o Deserto Quente e enfrente unidades da Areia.",
+      "source": "assets/scene/map/10015/",
+      "sourceScene": {
+        "id": "2011001",
+        "mapId": "10015",
+        "time": "1",
+        "type": "1",
+        "name": "O Deserto Quente",
+        "minLevel": null,
+        "worldMapId": "2011001",
+        "replaceSelfNinja": null
+      },
+      "navigationSha256": "fb90696e882e08091b7471c7dff1d14b3ab5fc2b1fb72146b55f3e79081e06d0",
+      "populationPolicy": "Six patrolling enemies; authored idle-RPG roster using recovered eligible models, not original encounter rules.",
+      "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+      "layers": {
+        "backgroundTiles": 144,
+        "foregroundTiles": 64,
+        "animatedMiddleground": "available in originals; pending conversion",
+        "nativeForeground": {
+          "method": "native-alpha-map-and-original-tile-rectangles-v1",
+          "foregroundRects": 64,
+          "opaqueGroundCutouts": false,
+          "alphaLevels": [
+            0,
+            85,
+            170
+          ],
+          "nontransparentPixels": 526814,
+          "dimensions": [
+            3000,
+            3000
+          ],
+          "sha256": "daf4654b4c82262f891f9a291ecc034e13f7d93554df64a2301dd2fc663ddcac",
+          "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+          "limits": [
+            "Native global translucent front layer; not per-object Y sorting.",
+            "Middleground SWF objects require a separate conversion."
+          ],
+          "optimizedRuntime": {
+            "url": "/assets/maps/10015/foreground.webp",
+            "sourceSha256": "daf4654b4c82262f891f9a291ecc034e13f7d93554df64a2301dd2fc663ddcac",
+            "originalBytes": 1099336,
+            "bytes": 613184,
+            "width": 3000,
+            "height": 3000,
+            "lossless": true
+          }
+        }
+      },
+      "nativeAlpha": {
+        "url": "/assets/maps/10015/native-alpha.png",
+        "width": 3000,
+        "height": 3000,
+        "sha256": "275247e46732f8f59e98b8ae2579e503c905918bc1918da5086c9aaa32115931"
+      }
     }
   ]
 }

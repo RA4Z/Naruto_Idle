@@ -1,0 +1,75 @@
+{
+  "id": "10010",
+  "name": "Floresta do País do Fogo",
+  "kind": "adventure",
+  "background": "/assets/maps/10010/background.png",
+  "foreground": "/assets/maps/10010/foreground.png",
+  "thumbnail": "/assets/maps/10010/thumbnail.jpg",
+  "navigation": "/assets/maps/10010/navigation.json",
+  "width": 976.5625,
+  "height": 976.5625,
+  "spawn": {
+    "x": 654.9479166666666,
+    "y": 625.6510416666666
+  },
+  "enemies": [
+    "19000301",
+    "19000701"
+  ],
+  "description": "Explore as trilhas da Floresta do País do Fogo.",
+  "source": "assets/scene/map/10010/",
+  "sourceScene": {
+    "id": "2009001",
+    "mapId": "10010",
+    "time": "1",
+    "type": "1",
+    "name": "Floresta do País do Fogo",
+    "minLevel": null,
+    "worldMapId": "2009001",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "57d2e0f58bdc68229db2cc985f496ff8efb244ac09171950e20586a1c38ce3bb",
+  "populationPolicy": "Six patrolling enemies; authored idle-RPG roster using recovered eligible models, not original encounter rules.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 144,
+    "foregroundTiles": 88,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 88,
+      "opaqueGroundCutouts": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 1568388,
+      "dimensions": [
+        3000,
+        3000
+      ],
+      "sha256": "b5a4c7185ef783545569524c955fd8e293343e72e510f3e4a973fac46bec6434",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/10010/foreground.webp",
+        "sourceSha256": "b5a4c7185ef783545569524c955fd8e293343e72e510f3e4a973fac46bec6434",
+        "originalBytes": 4216620,
+        "bytes": 2942238,
+        "width": 3000,
+        "height": 3000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/10010/native-alpha.png",
+    "width": 3000,
+    "height": 3000,
+    "sha256": "97f293c12dd7d1149a0ed25382899c9e8f277ef6b7d34b4390e828998146489b"
+  }
+}

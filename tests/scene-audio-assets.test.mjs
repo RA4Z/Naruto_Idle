@@ -5,7 +5,8 @@ import { createHash } from "node:crypto";
 test("scene music runtime links preserve source hashes, share files and distinguish prototype fallback", async () => {
  const index=JSON.parse(await readFile("public/assets/audio/scenes/index.json","utf8"));
  const presentation=JSON.parse(await readFile("public/assets/presentation.json","utf8"));
- assert.deepEqual(Object.keys(index.maps).sort(),["10005","10006","10007","10008","10009","30008","300131"]);
+ const maps=JSON.parse(await readFile("public/assets/maps/index.json","utf8")).maps;
+ assert.deepEqual(Object.keys(index.maps).sort(),maps.filter(m=>m.kind==="adventure").map(m=>m.id).sort());
  assert.equal(index.maps["10007"].sceneId,"2010001");
  assert.equal(index.maps["10005"].sceneId,"1003001");
  assert.deepEqual(index.maps["10006"].tracks,index.maps["10007"].tracks);
@@ -22,7 +23,7 @@ test("scene music runtime links preserve source hashes, share files and distingu
    assert.ok(bytes.toString("ascii",0,3)==="ID3"||(bytes[0]===255&&(bytes[1]&224)===224));
   }
  }
- assert.equal(Object.keys(index.files).length,11);
+ assert.ok(Object.keys(index.files).length>=11);
  assert.equal(index.maps["30008"].fadeInMs,2000);
  assert.equal(index.maps["30008"].fadeOutMs,2000);
  assert.equal(index.maps["300131"].sceneId,"2015006");

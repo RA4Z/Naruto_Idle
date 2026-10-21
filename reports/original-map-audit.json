@@ -1,6 +1,6 @@
 {
   "mapsDiscovered": 145,
-  "mapsIntegrated": 8,
+  "mapsIntegrated": 12,
   "sourceForegroundRule": "Virtual PNGs are generated from background JPEG tile rectangles and alphaMap, as observed in MapTile.as.",
   "packageFormat": "_scene_*.cfg/.bin samples are AMF3 metadata, not embedded PNG packs; XML metadata is available.",
   "maps": [
@@ -355,7 +355,7 @@
     },
     {
       "id": "10010",
-      "state": "discovered-pending-integration",
+      "state": "integrated-native-alpha-tested",
       "layers": {
         "bg": {
           "references": 144,
@@ -388,11 +388,12 @@
       "missingDependencies": [],
       "limits": [
         "Middleground transforms and object depth not yet integrated"
-      ]
+      ],
+      "integrationReport": "reports/world-expansion-10010-10011-10020-10015.json"
     },
     {
       "id": "10011",
-      "state": "discovered-pending-integration",
+      "state": "integrated-native-alpha-tested",
       "layers": {
         "bg": {
           "references": 150,
@@ -425,7 +426,8 @@
       "missingDependencies": [],
       "limits": [
         "Middleground transforms and object depth not yet integrated"
-      ]
+      ],
+      "integrationReport": "reports/world-expansion-10010-10011-10020-10015.json"
     },
     {
       "id": "10012",
@@ -505,7 +507,7 @@
     },
     {
       "id": "10015",
-      "state": "discovered-pending-integration",
+      "state": "integrated-native-alpha-tested",
       "layers": {
         "bg": {
           "references": 144,
@@ -538,7 +540,8 @@
       "missingDependencies": [],
       "limits": [
         "Middleground transforms and object depth not yet integrated"
-      ]
+      ],
+      "integrationReport": "reports/world-expansion-10010-10011-10020-10015.json"
     },
     {
       "id": "10016",
@@ -616,7 +619,7 @@
     },
     {
       "id": "10020",
-      "state": "discovered-pending-integration",
+      "state": "integrated-native-alpha-tested",
       "layers": {
         "bg": {
           "references": 144,
@@ -649,7 +652,8 @@
       "missingDependencies": [],
       "limits": [
         "Middleground transforms and object depth not yet integrated"
-      ]
+      ],
+      "integrationReport": "reports/world-expansion-10010-10011-10020-10015.json"
     },
     {
       "id": "10021",

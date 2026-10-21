@@ -1,0 +1,75 @@
+{
+  "id": "10015",
+  "name": "O Deserto Quente",
+  "kind": "adventure",
+  "background": "/assets/maps/10015/background.png",
+  "foreground": "/assets/maps/10015/foreground.png",
+  "thumbnail": "/assets/maps/10015/thumbnail.jpg",
+  "navigation": "/assets/maps/10015/navigation.json",
+  "width": 976.5625,
+  "height": 976.5625,
+  "spawn": {
+    "x": 488.28125,
+    "y": 542.3177083333334
+  },
+  "enemies": [
+    "19000101",
+    "19004301"
+  ],
+  "description": "Explore o Deserto Quente e enfrente unidades da Areia.",
+  "source": "assets/scene/map/10015/",
+  "sourceScene": {
+    "id": "2011001",
+    "mapId": "10015",
+    "time": "1",
+    "type": "1",
+    "name": "O Deserto Quente",
+    "minLevel": null,
+    "worldMapId": "2011001",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "fb90696e882e08091b7471c7dff1d14b3ab5fc2b1fb72146b55f3e79081e06d0",
+  "populationPolicy": "Six patrolling enemies; authored idle-RPG roster using recovered eligible models, not original encounter rules.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 144,
+    "foregroundTiles": 64,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 64,
+      "opaqueGroundCutouts": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 526814,
+      "dimensions": [
+        3000,
+        3000
+      ],
+      "sha256": "daf4654b4c82262f891f9a291ecc034e13f7d93554df64a2301dd2fc663ddcac",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/10015/foreground.webp",
+        "sourceSha256": "daf4654b4c82262f891f9a291ecc034e13f7d93554df64a2301dd2fc663ddcac",
+        "originalBytes": 1099336,
+        "bytes": 613184,
+        "width": 3000,
+        "height": 3000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/10015/native-alpha.png",
+    "width": 3000,
+    "height": 3000,
+    "sha256": "275247e46732f8f59e98b8ae2579e503c905918bc1918da5086c9aaa32115931"
+  }
+}

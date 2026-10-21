@@ -1,5 +1,5 @@
 {
-  "validatedAt": "2026-10-21T00:32:31.675881+00:00",
+  "validatedAt": "2026-10-21T00:45:54.758006+00:00",
   "catalogue": {
     "discovered": 1466,
     "processed": 1466,
@@ -139,7 +139,7 @@
   "latestValidation": {
     "typecheck": "passed",
     "build": "passed",
-    "domainTests": 74,
+    "domainTests": 79,
     "serverAndDeploymentTests": 20,
     "pythonTests": 11,
     "arenaBrowser": "passed",
@@ -166,7 +166,9 @@
     "forestBridgeAudioAndFades": "passed",
     "compiledBundleMode": "local browser interception; no extra server; live production backend not retested",
     "uiAudio": "passed",
-    "allVisitedMapsSaveRestore": "passed, all eight maps in dev and compiled bundle"
+    "allVisitedMapsSaveRestore": "passed, all twelve maps in compiled bundle",
+    "fourWorldsBrowser": "passed",
+    "fourWorldsCompiledBundle": "passed"
   },
   "nativeForeground": {
     "maps": [
@@ -186,17 +188,19 @@
       "10007",
       "10009"
     ],
-    "totalIntegratedMaps": 8,
-    "remainingMapSets": 137,
+    "totalIntegratedMaps": 12,
+    "remainingMapSets": 133,
     "report": "reports/world-expansion-batch.json",
     "productionBrowser": "passed",
     "sourceRegionAssumptionFixed": true,
     "latestBatch": {
       "maps": [
-        "30008",
-        "300131"
+        "10010",
+        "10011",
+        "10020",
+        "10015"
       ],
-      "report": "reports/world-expansion-30008-300131.json"
+      "report": "reports/world-expansion-10010-10011-10020-10015.json"
     }
   },
   "loadingOriginalArt": {
@@ -209,8 +213,8 @@
   },
   "sceneAudio": {
     "state": "tested",
-    "linkedExplorationMaps": 7,
-    "originalFiles": 11,
+    "linkedExplorationMaps": 11,
+    "originalFiles": 13,
     "sourceHashesPreserved": true,
     "streamedChannelsMax": 2,
     "maps": [
@@ -220,11 +224,15 @@
       "10007",
       "10009",
       "30008",
-      "300131"
+      "300131",
+      "10010",
+      "10011",
+      "10020",
+      "10015"
     ],
     "report": "reports/scene-audio-recovery.json",
     "villageMapping": "existing main.mp3 prototype fallback",
-    "remainingIndependentSourcePaths": 225,
+    "remainingIndependentSourcePaths": 223,
     "embeddedSoundPackages": "further integration pending",
     "nativeFades": "30008: two seconds in/out; HTMLAudio timeupdate, no animation loop"
   },
@@ -243,11 +251,12 @@
     "report": "reports/ui-audio-recovery.json",
     "maxShortVoices": 4
   },
-  "publicMp3Files": 79,
+  "publicMp3Files": 81,
   "saveVisitedMaps": {
     "legacyFixedCapRemoved": true,
     "limit": "number of integrated destinations",
     "duplicatesRejected": true,
-    "allEightReloaded": true
+    "allEightReloaded": true,
+    "allTwelveReloaded": true
   }
 }

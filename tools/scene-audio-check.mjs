@@ -75,10 +75,10 @@ try {
  await admin.locator('input[type="password"]').fill("admin");await admin.getByRole("button",{name:"Entrar",exact:true}).click();
  await admin.getByRole("button",{name:"Sons e músicas",exact:true}).click();
  await admin.locator("[data-scene-audio]").first().waitFor();
- assert.equal(await admin.locator("[data-scene-audio]").count(),11);
+ assert.equal(await admin.locator("[data-scene-audio]").count(),Object.keys(index.files).length);
  assert.equal(await admin.locator("[data-scene-audio] audio").evaluateAll(list=>list.every(a=>a.preload==="none")),true);
  assert.deepEqual(errors,[]);
- const report={checkedAt:new Date().toISOString(),production,decoded,results,noAudioBeforeOptIn:true,optionalFailureDoesNotBlockTravel:production ? "not-run" : true,authenticatedAdminTracks:11,errors};
+ const report={checkedAt:new Date().toISOString(),production,decoded,results,noAudioBeforeOptIn:true,optionalFailureDoesNotBlockTravel:production ? "not-run" : true,authenticatedAdminTracks:Object.keys(index.files).length,errors};
  await writeFile("reports/"+(process.env.REPORT_FILE||("scene-audio-"+(production?"production":"browser")+"-validation.json")),JSON.stringify(report,null,2)+"\n");
  console.log(JSON.stringify(report));
 } finally {await browser.close();}

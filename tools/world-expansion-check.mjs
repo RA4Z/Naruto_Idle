@@ -13,6 +13,8 @@ try{
   await page.locator("#maps").click();await page.locator(`[data-map="${id}"]`).click();
   await page.waitForFunction(id=>window.__idle.snapshot().mapId===id&&!window.__idle.snapshot().loadingActor,id);
   const beforeSave=await page.evaluate(()=>JSON.parse(localStorage.getItem("folha-idle-v1")));
+  const nativeRegion=await page.evaluate(()=>window.__idle.navigation().grid.sourceRegion);
+  if(id==="10020")assert.equal(nativeRegion,2);
   const before=await page.evaluate(()=>window.__idle.snapshot());assert.equal(before.enemies.length,6);assert.ok(before.walkable);assert.ok(before.nativeForeground.masked);assert.equal(before.party.length,0);
   await page.waitForTimeout(1700);
   const moved=await page.evaluate(()=>window.__idle.snapshot());
@@ -33,7 +35,7 @@ try{
   const restored=await page.evaluate(()=>window.__idle.snapshot());assert.equal(restored.kills,won.kills);assert.equal(restored.heroSpriteInstances,1);
   const save=await page.evaluate(()=>JSON.parse(localStorage.getItem("folha-idle-v1")));assert.ok(save.visitedMaps.includes(id));
   await page.locator("#return-lobby").click();await page.waitForFunction(()=>window.__idle.snapshot().mapId==="10001"&&!window.__idle.snapshot().loadingActor);
-  results.push({map:id,nativeRegion:id==="10007"?2:0,sixPatrollingEnemies:true,manualWalk:true,victoryAndLoot:true,reloadPreservesMapAndProgress:true,returnToLobby:true,partyEmpty:true,singleHero:true});
+  results.push({map:id,nativeRegion,sixPatrollingEnemies:true,manualWalk:true,victoryAndLoot:true,reloadPreservesMapAndProgress:true,returnToLobby:true,partyEmpty:true,singleHero:true});
  }
  assert.deepEqual(errors,[]);assert.deepEqual(missing,[]);
  const report={checkedAt:new Date().toISOString(),results,errors,missing,policy:"one browser, one game scene, sequential maps"};

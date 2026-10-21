@@ -1,5 +1,16 @@
 # Ponto de continuidade
 
+## Primeiro lote de quatro mapas — doze destinos integrados
+
+Concluídos 10010 Floresta do País do Fogo, 10011 Tanzaku, 10020 Deserto do País do Vento e 10015 O Deserto Quente. Conversão serial, um mapa por vez, preservando byte a byte os oito anteriores. Grade e máscara nativas, seis adversários móveis, caminhada, encontros/recompensas, save/reload e retorno validados; populações/regras idle são autorais. Deserto do País do Vento usa região 2. Não inferir região pela ordem do mapa; o teste agora lê a grade real. Total: 12/145 conjuntos, 133 pendentes. Relatório world-expansion-10010-10011-10020-10015.json.
+
+Os desertos usam adv03.mp3/adv03_fx.mp3, dois novos originais preservados; os outros dois mapas reutilizam adv05. Agora 13 arquivos de música/ambiente e 11 mapas de exploração com vínculo nativo; lobby permanece com main.mp3 provisório. Restam 223 caminhos MP3 independentes, incluindo cópias duplicadas. Asserções do catálogo passaram a acompanhar os destinos de exploração, sem fixar a contagem antiga de cinco ou sete.
+
+Passaram 79 testes de domínio, 20 servidor/assets, quatro Python afetados, typecheck e build de 23,6 s com Node 512 MB, UV_THREADPOOL_SIZE=1 e GOMAXPROCS=1. Navegadores em série verificaram exploração, alpha WebGL/Canvas, áudio/admin e a build compilada. Todos os doze destinos visitados foram restaurados na build; quatro vitórias nela também deram loot e XP reais locais. Sem servidor extra, backend HTTP de produção não retestado. Alpha 85 do mapa 10020 é fino demais para probe uniforme em GPU; todos os pixels foram conferidos em CPU. Screenshots dos quatro cenários inspecionados.
+
+Lotes seguintes continuam de ATÉ QUATRO MAPAS COM UM WORKER, nenhuma conversão/teste/build simultânea, uma página de navegador. Pacotes de sons/efeitos, mapas restantes, camadas/objetos e 195 artes ainda precisam de integração. Portais ficam depois desta etapa prioritária. Não encerrar Vite 5178 nem incluir a exclusão alheia de DESIGN_DE_PROGRESSAO.md. Sons UI e correção do save já publicados em bd629245.
+
+
 ## Sons de interface e save de viagens — lote concluído
 
 Seis MP3 originais dos pacotes 216/217/253/263/267/268 foram extraídos de DefineSound sem transcodificação, com hashes e ligações de UISoundConfig.xml: clique, fechar, início de combate, nível, vitória e derrota. O início de combate adapta o som do botão original ao evento do idle. Catálogo public/assets/audio/ui/index.json; extrator tools/recover_ui_audio.py com até seis eventos explícitos e um arquivo por vez. Demais vozes/efeitos e os outros 20 eventos UI seguem pendentes.

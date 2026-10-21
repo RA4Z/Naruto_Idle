@@ -1,0 +1,303 @@
+{
+  "checkedAt": "2026-10-21T00:39:38.983Z",
+  "renderer": "webgl-native-mask",
+  "results": [
+    {
+      "map": "10010",
+      "renderedAlphaLevels": [
+        {
+          "source": {
+            "x": 100,
+            "y": 100,
+            "rgba": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "rendered": [
+            255,
+            0,
+            255,
+            255
+          ],
+          "expected": [
+            255,
+            0,
+            255
+          ]
+        },
+        {
+          "source": {
+            "x": 954,
+            "y": 310,
+            "rgba": [
+              68,
+              137,
+              12,
+              85
+            ]
+          },
+          "rendered": [
+            193,
+            45,
+            173,
+            255
+          ],
+          "expected": [
+            193,
+            45,
+            173
+          ]
+        },
+        {
+          "source": {
+            "x": 1087,
+            "y": 100,
+            "rgba": [
+              61,
+              100,
+              11,
+              170
+            ]
+          },
+          "rendered": [
+            123,
+            65,
+            89,
+            255
+          ],
+          "expected": [
+            123,
+            64,
+            90
+          ]
+        }
+      ],
+      "unprobedThinLevels": [],
+      "opaqueCutoutsDisabled": true,
+      "singleHero": true,
+      "partyEmpty": true
+    },
+    {
+      "map": "10011",
+      "renderedAlphaLevels": [
+        {
+          "source": {
+            "x": 100,
+            "y": 100,
+            "rgba": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "rendered": [
+            255,
+            0,
+            255,
+            255
+          ],
+          "expected": [
+            255,
+            0,
+            255
+          ]
+        },
+        {
+          "source": {
+            "x": 3257,
+            "y": 100,
+            "rgba": [
+              159,
+              186,
+              105,
+              85
+            ]
+          },
+          "rendered": [
+            224,
+            62,
+            205,
+            255
+          ],
+          "expected": [
+            223,
+            61,
+            204
+          ]
+        },
+        {
+          "source": {
+            "x": 254,
+            "y": 100,
+            "rgba": [
+              60,
+              55,
+              17,
+              170
+            ]
+          },
+          "rendered": [
+            124,
+            35,
+            94,
+            255
+          ],
+          "expected": [
+            126,
+            38,
+            96
+          ]
+        }
+      ],
+      "unprobedThinLevels": [],
+      "opaqueCutoutsDisabled": true,
+      "singleHero": true,
+      "partyEmpty": true
+    },
+    {
+      "map": "10020",
+      "renderedAlphaLevels": [
+        {
+          "source": {
+            "x": 100,
+            "y": 100,
+            "rgba": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "rendered": [
+            255,
+            0,
+            255,
+            255
+          ],
+          "expected": [
+            255,
+            0,
+            255
+          ]
+        },
+        {
+          "source": {
+            "x": 492,
+            "y": 100,
+            "rgba": [
+              115,
+              107,
+              88,
+              170
+            ]
+          },
+          "rendered": [
+            162,
+            71,
+            143,
+            255
+          ],
+          "expected": [
+            162,
+            71,
+            143
+          ]
+        }
+      ],
+      "unprobedThinLevels": [
+        {
+          "alpha": 85,
+          "reason": "No uniform 5x5 neighbourhood for a stable linear-filter GPU probe; every alpha pixel still checked against source."
+        }
+      ],
+      "opaqueCutoutsDisabled": true,
+      "singleHero": true,
+      "partyEmpty": true
+    },
+    {
+      "map": "10015",
+      "renderedAlphaLevels": [
+        {
+          "source": {
+            "x": 100,
+            "y": 100,
+            "rgba": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "rendered": [
+            255,
+            0,
+            255,
+            255
+          ],
+          "expected": [
+            255,
+            0,
+            255
+          ]
+        },
+        {
+          "source": {
+            "x": 1318,
+            "y": 933,
+            "rgba": [
+              207,
+              173,
+              112,
+              85
+            ]
+          },
+          "rendered": [
+            238,
+            56,
+            206,
+            255
+          ],
+          "expected": [
+            239,
+            58,
+            207
+          ]
+        },
+        {
+          "source": {
+            "x": 1843,
+            "y": 821,
+            "rgba": [
+              141,
+              109,
+              62,
+              170
+            ]
+          },
+          "rendered": [
+            184,
+            76,
+            130,
+            255
+          ],
+          "expected": [
+            180,
+            72,
+            127
+          ]
+        }
+      ],
+      "unprobedThinLevels": [],
+      "opaqueCutoutsDisabled": true,
+      "singleHero": true,
+      "partyEmpty": true
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "policy": "one browser, one Phaser scene; ordinary linear rendering, uniform pixel probes; all source alpha pixels validated separately"
+}

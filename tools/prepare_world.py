@@ -19,6 +19,10 @@ SPECS={
  '10009':{'enemies':['19000301','19000701','19000901'],'kind':'adventure','description':'Explore a Floresta da Morte entre feras e ninjas Anbu.'},
  '30008':{'enemies':['19000301','19000701'],'kind':'adventure','description':'Explore as trilhas das profundezas da Floresta da Folha.'},
  '300131':{'enemies':['19000901','19001001'],'kind':'adventure','description':'Patrulhe os caminhos da Ponte Tenchi.'},
+ '10010':{'enemies':['19000301','19000701'],'kind':'adventure','description':'Explore as trilhas da Floresta do País do Fogo.'},
+ '10011':{'enemies':['19002301','19000901'],'kind':'adventure','description':'Patrulhe as estradas de Tanzaku e encontre samurais.'},
+ '10020':{'enemies':['19000101','19000201'],'kind':'adventure','description':'Cruze as dunas do País do Vento entre ninjas da Areia.'},
+ '10015':{'enemies':['19000101','19004301'],'kind':'adventure','description':'Explore o Deserto Quente e enfrente unidades da Areia.'},
 }
 
 def native_navigation(raw):
@@ -132,7 +136,7 @@ def main():
                     if file.is_file() and not file.is_symlink() and not (snapshot/file.name).exists():shutil.copy2(file,snapshot/file.name)
     manifests={};rows=[]
     for ident in ids:
-        manifest,row=prepare(archive,ident);manifests[ident]=manifest;rows.append(row);print(ident,manifest['name'],manifest['spawn'],flush=True)
+        manifest,row=prepare(archive,ident);manifests[ident]=manifest;rows.append(row);print(json.dumps({'id':ident,'name':manifest['name'],'spawn':manifest['spawn']},ensure_ascii=True),flush=True)
     index['maps']=[manifests.pop(m['id'],m) for m in index['maps']]+list(manifests.values())
     index_path.write_text(json.dumps(index,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     report={'policy':'one map at a time; explicit IDs; existing entries and original files preserved','maps':rows}

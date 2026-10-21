@@ -161,6 +161,102 @@
       "fadeOutMs": 0,
       "status": "integrated",
       "playback": "random selection on completion; original interval; looped ambience"
+    },
+    "10010": {
+      "sceneId": "2009001",
+      "name": "Floresta do País do Fogo",
+      "tracks": [
+        "/assets/audio/scenes/adv05.mp3"
+      ],
+      "environment": "/assets/audio/scenes/adv05_fx.mp3",
+      "intervalMs": 10000,
+      "sourceMapping": {
+        "id": "2009001",
+        "envAudio": "assets\\sound\\scene\\SE\\adv05_fx.mp3",
+        "bgMusics": "assets\\sound\\scene\\SE\\adv05.mp3,,,",
+        "interval": "10000",
+        "gapBegining": "0",
+        "gapEnding": "0",
+        "fadeIn": "",
+        "fadeOut": "",
+        "desc": ""
+      },
+      "fadeInMs": 0,
+      "fadeOutMs": 0,
+      "status": "integrated",
+      "playback": "random selection on completion; original interval; looped ambience"
+    },
+    "10011": {
+      "sceneId": "2007001",
+      "name": "Tanzaku",
+      "tracks": [
+        "/assets/audio/scenes/adv05.mp3"
+      ],
+      "environment": "/assets/audio/scenes/adv05_fx.mp3",
+      "intervalMs": 10000,
+      "sourceMapping": {
+        "id": "2007001",
+        "envAudio": "assets\\sound\\scene\\SE\\adv05_fx.mp3",
+        "bgMusics": "assets\\sound\\scene\\SE\\adv05.mp3,,,",
+        "interval": "10000",
+        "gapBegining": "0",
+        "gapEnding": "0",
+        "fadeIn": "",
+        "fadeOut": "",
+        "desc": ""
+      },
+      "fadeInMs": 0,
+      "fadeOutMs": 0,
+      "status": "integrated",
+      "playback": "random selection on completion; original interval; looped ambience"
+    },
+    "10020": {
+      "sceneId": "2008001",
+      "name": "Deserto do País do Vento",
+      "tracks": [
+        "/assets/audio/scenes/adv03.mp3"
+      ],
+      "environment": "/assets/audio/scenes/adv03_fx.mp3",
+      "intervalMs": 10000,
+      "sourceMapping": {
+        "id": "2008001",
+        "envAudio": "assets\\sound\\scene\\SE\\adv03_fx.mp3",
+        "bgMusics": "assets\\sound\\scene\\SE\\adv03.mp3,,,",
+        "interval": "10000",
+        "gapBegining": "0",
+        "gapEnding": "0",
+        "fadeIn": "",
+        "fadeOut": "",
+        "desc": ""
+      },
+      "fadeInMs": 0,
+      "fadeOutMs": 0,
+      "status": "integrated",
+      "playback": "random selection on completion; original interval; looped ambience"
+    },
+    "10015": {
+      "sceneId": "2011001",
+      "name": "O Deserto Quente",
+      "tracks": [
+        "/assets/audio/scenes/adv03.mp3"
+      ],
+      "environment": "/assets/audio/scenes/adv03_fx.mp3",
+      "intervalMs": 10000,
+      "sourceMapping": {
+        "id": "2011001",
+        "envAudio": "assets\\sound\\scene\\SE\\adv03_fx.mp3",
+        "bgMusics": "assets\\sound\\scene\\SE\\adv03.mp3,,,",
+        "interval": "10000",
+        "gapBegining": "0",
+        "gapEnding": "0",
+        "fadeIn": "",
+        "fadeOut": "",
+        "desc": ""
+      },
+      "fadeInMs": 0,
+      "fadeOutMs": 0,
+      "status": "integrated",
+      "playback": "random selection on completion; original interval; looped ambience"
     }
   },
   "files": {
@@ -239,6 +335,20 @@
       "sourceTag": "PT_NarutoAlpha6.00Build300",
       "sha256": "4acf6b696479518dfd78645b9727c258f0e4593ccee2aaa084f1140bf15714fa",
       "bytes": 556608,
+      "status": "integrated"
+    },
+    "/assets/audio/scenes/adv03.mp3": {
+      "source": "assets/sound/scene/SE/adv03.mp3",
+      "sourceTag": "PT_NarutoAlpha6.00Build300",
+      "sha256": "3f246b9136f80c7d2b8daa32d623e14a0ec177fa8f45237ad07e60cd5a7e6293",
+      "bytes": 419120,
+      "status": "integrated"
+    },
+    "/assets/audio/scenes/adv03_fx.mp3": {
+      "source": "assets/sound/scene/SE/adv03_fx.mp3",
+      "sourceTag": "PT_NarutoAlpha6.00Build300",
+      "sha256": "e66da1bb66a5c86fa03c4c9b77d8a025f3678f13d8b6c88278b6940bfb3afa98",
+      "bytes": 576368,
       "status": "integrated"
     }
   }
