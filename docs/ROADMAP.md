@@ -4,6 +4,9 @@ Atualizado em 21/10/2026. O [histórico](history/ROADMAP-2026-10-21.md) preserva
 
 ## Entregas atuais
 
+- [x] Combate PvE com múltiplos atacantes, alvo trocável por clique e continuação entre inimigos sem reiniciar seus atributos/relógios.
+- [x] Percepção circular e frontal, perseguição com memória/retorno e zonas invisíveis por padrão. Console de visualização exclusivo de `npm run admin`. [Regras e manutenção](COMBATE_E_PERCEPCAO.md).
+
 - [x] Retomada após vitória vinculada à duração do golpe final, sem espera fixa de 1,7 s.
 - [x] Alvo destacado e rota manual/automática desenhada no cenário.
 - [x] Três conjuntos de equipamentos por personagem, com comparação, aplicação validada e persistência.

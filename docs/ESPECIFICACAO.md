@@ -40,6 +40,8 @@ Perda de contexto WebGL interrompe a simulação e reconstrói a cena a partir d
 
 ## Interface e qualidade de vida
 
+Combate PvE permite vários inimigos simultâneos, mantendo um alvo para os golpes do jogador. Clique no sprite ou na lista de oponentes para trocar. Vida, cadência e cura são individuais; matar um continua a luta contra os sobreviventes. Inimigos detectam por círculo curto e cone frontal maior, usando os obstáculos da navegação e memória de perseguição. Zonas são invisíveis; `npm run admin` permite mostrá-las pelo console aberto com `'`, usando `debug=true`. O jogo normal não instala esse console. [Regras e limites](COMBATE_E_PERCEPCAO.md).
+
 - Minimapa navegável por clique/teclado; rotas douradas/ciano e alvo destacado no cenário. Recolhimento automático em janela pequena.
 - Três conjuntos de equipamentos por personagem, prévia dos atributos, validação completa antes de aplicar e persistência no save.
 - Vitória libera exploração após o golpe final (até 700 ms), mantendo a recompensa única e os efeitos de morte/XP. [Detalhes](ESTABILIDADE_E_QOL.md#navegação-e-conjuntos-de-equipamentos).

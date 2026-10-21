@@ -85,3 +85,7 @@ As regressões `reports/qol-production-validation.json` e `reports/i18n-browser-
 - `tools/balance-production-check.mjs`: mesmos contratos essenciais no bundle compilado, sem atalhos da cena de desenvolvimento. Evidência `reports/balance-production-validation.json`.
 
 Executar em série, uma tarefa pesada por vez. Validar uma mudança de números com simulações e confrontar no navegador; não declarar vantagem de um conjunto somente pelo dano bruto. Dano pode vencer mais rápido e falhar contra elites; sobrevivência troca velocidade por consistência; chakra depende do perfil e da resistência do alvo. A simulação final registrou zero combates acima de 60 segundos após limitar a cura inimiga.
+
+## Confrontos com vários inimigos
+
+Cada inimigo conserva os multiplicadores deste documento, mas pode atacar junto de outros que detectaram o jogador. O jogador atinge um alvo por vez; trocar o foco preserva vidas, cadências e limites de cura. A recuperação de 20% ocorre ao encerrar o grupo, não em cada morte. Percepção, perseguição e console de teste estão detalhados em [COMBATE_E_PERCEPCAO.md](COMBATE_E_PERCEPCAO.md). O cálculo offline estimado não simula confrontos em grupo.
