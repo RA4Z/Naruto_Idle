@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { AutoHuntNavigator } from "../src/world/auto-hunt.ts";
 import type { NativeNavigation, Point } from "../src/world/navigation.ts";
 
-test("automatic hunt keeps its target aligned with the route and replans when it moves", () => {
+test("automatic hunt reevaluates a much closer enemy on the throttled check and keeps its route aligned", () => {
   const calls: Point[] = [];
   const nav = {
     clear: () => true,
@@ -24,8 +24,8 @@ test("automatic hunt keeps its target aligned with the route and replans when it
   assert.equal(calls.length, 1);
   first.x = 130;
   state = hunt.update(hero, [first, second], 500, nav);
-  assert.equal(state.target, first);
-  assert.deepEqual(calls.at(-1), { x: 130, y: 0 });
+  assert.equal(state.target, second);
+  assert.deepEqual(state.path.at(-1), { x: 35, y: 0 });
   state = hunt.update(hero, [second], 16, nav);
   assert.equal(state.target, second);
 });
@@ -45,16 +45,79 @@ test("unreachable targets are skipped and pathfinding retries are throttled", ()
     reachable = { x: 100, y: 0 };
   assert.equal(
     hunt.update(hero, [unreachable, reachable], 16, nav).target,
-    undefined,
+    reachable,
   );
   for (let i = 0; i < 20; i++)
     hunt.update(hero, [unreachable, reachable], 16, nav);
-  assert.equal(calls, 1);
+  assert.equal(calls, 2);
   assert.equal(
     hunt.update(hero, [unreachable, reachable], 200, nav).target,
     reachable,
   );
+  assert.equal(calls, 3);
+});
+
+test("selection compares walkable route length instead of proximity through a wall", () => {
+  const hero = { x: 0, y: 0 },
+    behindWall = { x: 60, y: 0 },
+    open = { x: 110, y: 0 };
+  const nav = {
+    clear: () => true,
+    path: (_from: Point, to: Point) =>
+      to === behindWall
+        ? [{ x: 0, y: 140 }, { x: 60, y: 140 }, { ...to }]
+        : [{ ...to }],
+  } as NativeNavigation;
+  const hunt = new AutoHuntNavigator<Point>();
+  const result = hunt.update(hero, [behindWall, open], 16, nav);
+  assert.equal(result.target, open);
+  assert.deepEqual(result.path, [open]);
+});
+
+test("small patrol fluctuations do not cause target oscillation, but a nearby respawn wins", () => {
+  const hero = { x: 0, y: 0 },
+    first = { x: 120, y: 0 },
+    other = { x: 130, y: 0 };
+  const nav = {
+    clear: () => true,
+    path: (_from: Point, to: Point) => [{ ...to }],
+  } as NativeNavigation;
+  const hunt = new AutoHuntNavigator<Point>();
+  assert.equal(hunt.update(hero, [first, other], 16, nav).target, first);
+  for (let i = 0; i < 4; i++) {
+    other.x = i % 2 === 0 ? 110 : 118;
+    assert.equal(hunt.update(hero, [first, other], 500, nav).target, first);
+  }
+  const respawn = { x: 38, y: 0 };
+  assert.equal(
+    hunt.update(hero, [first, other, respawn], 500, nav).target,
+    respawn,
+  );
+  const inRange = { x: 20, y: 0 };
+  assert.equal(hunt.update(hero, [respawn, inRange], 500, nav).target, inRange);
+});
+
+test("slow target motion accumulates against the original route destination before replanning", () => {
+  let calls = 0;
+  const hero = { x: 0, y: 0 },
+    enemy = { x: 100, y: 0 };
+  const nav = {
+    clear: () => true,
+    path: (_from: Point, to: Point) => {
+      calls++;
+      return [{ ...to }];
+    },
+  } as NativeNavigation;
+  const hunt = new AutoHuntNavigator<Point>();
+  hunt.update(hero, [enemy], 16, nav);
+  enemy.x = 110;
+  hunt.update(hero, [enemy], 500, nav);
+  assert.equal(calls, 1);
+  enemy.x = 120;
+  const result = hunt.update(hero, [enemy], 500, nav);
   assert.equal(calls, 2);
+  assert.equal(result.target, enemy);
+  assert.deepEqual(result.path.at(-1), enemy);
 });
 
 test("a nonempty route that stops outside reachable attack range is rejected", () => {
