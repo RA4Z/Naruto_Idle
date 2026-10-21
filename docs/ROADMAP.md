@@ -10,6 +10,8 @@ Pedido do usuário em 20/10/2026: uma tarefa pesada por vez. Não sobrepor build
 
 - [x] Lote de música/ambiente original de cinco cenas: 11 MP3 com hashes, streaming limitado, preferências, pausa/limpeza, admin e suporte a byte ranges testados. Demais 225 caminhos MP3 e pacotes SWF ainda pendentes.
 
+Limite atualizado pelo usuário: até SEIS LOTES DE VERIFICAÇÃO POR CICLO, executados UM DE CADA VEZ. Antes de outro ciclo, encerrar os recursos de teste desta execução e conferir processos/memória; reduzir o lote se houver sobrecarga. Substitui o pedido intermediário de quatro verificações. Preparação continua em ATÉ QUATRO MAPAS por lote, um mapa por vez; são limites diferentes.
+
 - [x] 30008 Profundezas da Floresta da Folha e 300131 Ponte Tenchi: oito destinos, 137 conjuntos restantes, seis inimigos/viagem/loot/save testados. Sete mapas com áudio original vinculado; fade de dois segundos da floresta implementado. Ver reports/world-expansion-30008-300131.json.
 
 - [x] Seis sons UI/resultados originais integrados, voz limitada, pausa/mute e eventos reais testados; save aceita todos os oito mapas visitados em vez de rejeitar o quinto.

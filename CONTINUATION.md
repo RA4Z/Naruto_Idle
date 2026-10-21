@@ -1,5 +1,9 @@
 # Ponto de continuidade
 
+## Limite de verificações — atualização de 20/10/2026
+
+Limite atualizado pelo usuário: até SEIS LOTES DE VERIFICAÇÃO POR CICLO, executados UM DE CADA VEZ. Antes de outro ciclo, encerrar os recursos de teste desta execução e conferir processos/memória; reduzir o lote se houver sobrecarga. Substitui o pedido intermediário de quatro verificações. Preparação continua em ATÉ QUATRO MAPAS por lote, um mapa por vez; são limites diferentes.
+
 ## Uso noturno e próxima retomada — 20/10/2026
 
 Autorização mais recente: durante noites e madrugadas pode consumir toda a janela de cinco horas, chegando a 0% restante. Aplicar das 18h às 6h no horário de Brasília; durante o dia manter a reserva de aproximadamente 10%. A reserva semanal de 10% continua em todos os horários e prevalece. Não resgatar créditos de reset. Salvar checkpoints e publicar etapas testadas antes de esgotar a janela. Não aumentar concorrência: uma tarefa pesada por vez, um worker e uma página de navegador.
