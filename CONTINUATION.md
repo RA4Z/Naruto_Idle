@@ -39,6 +39,9 @@ A autorização histórica de desenvolvimento contínuo, limites de uso e public
 
 ## Validação e retomada
 
+Portrait do Sasuke inicial (21/10/2026): src/config/characters.ts passou de preview.png (corpo inteiro) para portrait.png do próprio modelo sasuke-11000211. O portrait original já existia no runtime/Git; não foi trocado o modelo ou alterado o arquivo de imagem. Evidência visual em reports/starter-portraits.png e reports/starter-portraits-validation.json.
+
+
 Persistência exclusiva no Supabase (21/10/2026): login mostra apenas Senha, sem limite mínimo no formulário; cadastro/troca preservam mínimo de oito. E-mail é o identificador de credencial (autocomplete=username, type=email); apelido usa name=nickname/autocomplete=off para não ser gravado como login pelo gerenciador. Importar/exportar e cache de progresso foram removidos. src/cloud/runtime-progress.ts mantém somente memória da aba para renderização/recuperação gráfica; a inicialização remove os saves/backups locais antigos. Auth, idioma, preferências e metadados de exclusividade continuam locais, sem inventário/XP/moedas. Arena standalone lê snapshot do Supabase; transferência por hash é descartada. Migração 202610210003_cloud_only_progress aplicada: game_open recebe só personagem, cria defaults no servidor e preserva save existente. game_claim rejeita JSON com IMPORT_DISABLED, permitindo apenas retomar. game_commit ainda recebe snapshots client_unverified: isso NÃO fecha adulteração de economia por requisições forjadas; falta backend autoritativo por comandos. Esta atualização prevalece sobre os registros históricos abaixo que mencionam importação/backup local. Guia docs/CLOUD_ONLY_PROGRESS.md.
 
 

@@ -21,7 +21,7 @@ export const CHARACTERS = {
   sasuke: {
     name: "Sasuke",
     assetFolder: "sasuke-11000211",
-    portrait: "/assets/characters/sasuke-11000211/preview.png",
+    portrait: "/assets/characters/sasuke-11000211/portrait.png",
     subtitle: t("config.characters.11962ef004"),
     description: t("config.characters.577c8c8bbc"),
     attributes: {
