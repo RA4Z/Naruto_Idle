@@ -45,7 +45,7 @@ try{
  await page.locator("#auto-hunt").click();
  await page.waitForFunction(()=>window.__idle.snapshot().phase==="explorando",null,{timeout:15000});
  const cues=await page.evaluate(()=>window.__idle.snapshot().presentation.cuesPlayed);
- assert.ok(cues.battleStart>=5);assert.ok(cues.victory>=4);assert.equal(cues.defeat,1);assert.equal(cues.levelUp,1);
+ assert.equal(cues.battleStart||0,0);assert.equal(cues.victory||0,0);assert.equal(cues.defeat||0,0);assert.equal(cues.levelUp,1);
  assert.equal(await page.evaluate(()=>window.__idle.snapshot().heroSpriteInstances),1);
  const maxVoices=await page.evaluate(()=>Math.max(0,...window.__voices));assert.ok(maxVoices<=4);
  await page.locator("#sound").uncheck();const before=await page.evaluate(()=>window.__idle.snapshot().presentation.cuesPlayed);

@@ -27,6 +27,7 @@ function ownsJourney() {
   return ownsLocalJourney() && cloudJourneyOwner();
 }
 import { getPreferences } from "./preferences";
+import { FootstepCadence } from "./audio/footsteps";
 import { foregroundPlan } from "./world/foreground-plan";
 import { probeNativeForeground } from "./world/foreground-diagnostics";
 import { loadingScreen } from "./loading-screen";
@@ -833,7 +834,9 @@ class HuntScene extends Phaser.Scene {
   private autoNavigator = new AutoHuntNavigator<EntityActor>();
   bars!: Phaser.GameObjects.Graphics;
   groundShadow!: Phaser.GameObjects.Ellipse;
-  stepDistance = 0;
+  private footsteps = new FootstepCadence();
+  private combatStartedAt = 0;
+  private firstStrikeMs?: number;
   lastSave = 0;
   lastUi = 0;
   lastAnim = "";
@@ -1039,6 +1042,7 @@ class HuntScene extends Phaser.Scene {
           attributes: stats(save).attributes,
           attackInterval: stats(save).interval,
           attacks: this.hunt.attacks,
+          firstStrikeMs: this.firstStrikeMs,
           path: this.path.map((p) => ({ ...p })),
           npcs: this.npcs.map((n) => ({
             id: n.manifest.id,
@@ -1318,7 +1322,9 @@ class HuntScene extends Phaser.Scene {
   }
   effect(event: string, value: number) {
     if (event === "encounter") {
-      this.presentation.ui("battleStart");
+      this.combatStartedAt = performance.now();
+      this.firstStrikeMs = undefined;
+      this.presentation.stopFootsteps();
       this.enemy.play("battle", "C_idle", true);
       this.play("battle-C_idle");
       this.enemy.face(this.hero.x < this.enemy.x);
@@ -1327,6 +1333,7 @@ class HuntScene extends Phaser.Scene {
       journal(t("main.b5b540d3b4"));
     }
     if (event === "attack" || event === "skill" || event === "technique") {
+      this.firstStrikeMs ??= performance.now() - this.combatStartedAt;
       this.play(
         event === "skill" ? "battle-" + specialAction() : "battle-A_1hit",
         true,
@@ -1411,7 +1418,6 @@ class HuntScene extends Phaser.Scene {
     }
     if (event === "loot") journal(t("main.ce48f03344", { v0: value }));
     if (event === "victory") {
-      this.presentation.ui("victory");
       const defeatedEnemy = this.enemy;
       this.enemyField.defeat(defeatedEnemy);
       session.xp += value;
@@ -1472,7 +1478,6 @@ class HuntScene extends Phaser.Scene {
     if (event === "defeat") {
       session.defeats++;
       sessionSegment().defeats++;
-      this.presentation.ui("defeat");
       this.play("battle-C_dead", true);
       this.presentation.play("C_dead", this.hero, this.enemy, 500);
       if (!starterCharacter(save))
@@ -2002,11 +2007,8 @@ class HuntScene extends Phaser.Scene {
         this.lastFacing = facing(mx, my);
         this.play("world-run_" + this.lastFacing);
         this.hero.anims.timeScale = walkSpeed / 96;
-        this.stepDistance += distance;
-        if (this.stepDistance >= 10) {
-          this.stepDistance %= 10;
-          this.presentation.footstep();
-        }
+        const step = this.footsteps.update(distance, delta);
+        if (step !== undefined) this.presentation.footstep(step);
       } else this.play("world-idle_" + this.lastFacing);
       if (!this.path.length) this.destination.setVisible(false);
       if (
@@ -2028,6 +2030,14 @@ class HuntScene extends Phaser.Scene {
       !this.hero.anims.isPlaying
     )
       this.play("battle-C_idle");
+    if (
+      blocked ||
+      this.hunt.phase !== "explorando" ||
+      this.hero.anims.currentAnim?.key.startsWith("world-idle_")
+    ) {
+      this.footsteps.update(0, blocked ? 0 : delta);
+      this.presentation.stopFootsteps();
+    }
     this.party.update(
       this.hero,
       delta,

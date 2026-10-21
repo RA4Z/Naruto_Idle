@@ -40,7 +40,7 @@ test("pause freezes combat and resumes without duplicating encounters", () => {
   h.encounter();
   s.paused = true;
   for (let i = 0; i < 200; i++) h.tick(100);
-  assert.equal(h.phase, "iniciando combate");
+  assert.equal(h.phase, "combatendo");
   assert.equal(s.kills, 0);
   s.paused = false;
   for (let i = 0; i < 200; i++) h.tick(100);

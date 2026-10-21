@@ -16,15 +16,6 @@ try {
         collection: ["11000101", "11000201", "11000301", "11001201"] }));
       sessionStorage.setItem("attribute-fixture", "1");
       }
-      window.__attackTiming = {};
-      const timer = setInterval(() => {
-        if (!window.__idle) return;
-        const s = window.__idle.snapshot();
-        if (s.phase === "iniciando combate" && !window.__attackTiming.encounter) window.__attackTiming.encounter = performance.now();
-        if (s.attacks > 0 && window.__attackTiming.encounter && !window.__attackTiming.attack) {
-          window.__attackTiming.attack = performance.now(); clearInterval(timer);
-        }
-      }, 10);
     }, character);
     const page = await context.newPage();
     page.on("pageerror", error => errors.push(String(error)));
@@ -51,10 +42,9 @@ try {
     await page.locator('#maps').click(); await page.locator('[data-map="10006"]').click();
     await page.waitForFunction(() => window.__idle.snapshot().mapId === '10006' && !window.__idle.snapshot().loadingActor);
     await page.locator('#auto-hunt').click();
-    await page.waitForFunction(() => window.__attackTiming.attack, null, { timeout: 20000 });
-    const timing = await page.evaluate(() => window.__attackTiming);
-    const latency = timing.attack - timing.encounter;
-    assert.ok(latency > 100 && latency < 700, `${character}: first attack ${latency} ms`);
+    await page.waitForFunction(() => window.__idle.snapshot().firstStrikeMs !== undefined, null, { timeout: 20000 });
+    const latency = await page.evaluate(() => window.__idle.snapshot().firstStrikeMs);
+    assert.ok(latency >= 0 && latency < 50, `${character}: first attack ${latency} ms`);
     const combat = await page.evaluate(() => window.__idle.snapshot());
     assert.ok(combat.animation.startsWith('battle-'));
     assert.ok(combat.animationTimeScale >= 1);

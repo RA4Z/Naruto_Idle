@@ -17,15 +17,15 @@ test("the first strikes start promptly, then higher speed produces more attacks"
   const counts: number[] = [];
   for (const id of ["naruto", "sasuke", "sakura"] as const) {
     const hunt = new Hunt(fresh(id));
-    let elapsed = 0, firstAttack = 0, firstEnemy = 0;
+    let elapsed = 0, firstAttack: number | undefined, firstEnemy: number | undefined;
     hunt.onEvent = type => {
-      if (type === "attack" && !firstAttack) firstAttack = elapsed;
-      if (type === "hurt" && !firstEnemy) firstEnemy = elapsed;
+      if (type === "attack" && firstAttack === undefined) firstAttack = elapsed;
+      if (type === "hurt" && firstEnemy === undefined) firstEnemy = elapsed;
     };
     hunt.encounter(); hunt.enemyHp = hunt.enemyMax = 100000;
     for (elapsed = 10; elapsed <= 16000; elapsed += 10) hunt.tick(10);
-    assert.ok(firstAttack >= 120 && firstAttack <= 350, `${id}: first strike ${firstAttack}`);
-    assert.ok(firstEnemy <= 500 && firstEnemy > firstAttack);
+    assert.equal(firstAttack, 0, `${id}: opening attack must happen on the encounter frame`);
+    assert.ok(firstEnemy !== undefined && firstEnemy <= 250 && firstEnemy > firstAttack!);
     counts.push(hunt.attacks);
   }
   assert.ok(counts[1] > counts[0] && counts[0] > counts[2]);
@@ -50,9 +50,9 @@ test("level, training and owned equipment affect actual derived attributes with 
 
 test("pause freezes the early attack and legacy saves derive their attributes without new fields", () => {
   const save = fresh("naruto"), hunt = new Hunt(save);
-  hunt.encounter(); save.paused = true;
+  hunt.encounter(); const openingAttacks = hunt.attacks; save.paused = true;
   for (let i = 0; i < 30; i++) hunt.tick(100);
-  assert.equal(hunt.attacks, 0);
+  assert.equal(hunt.attacks, openingAttacks);
   save.paused = false;
   for (let i = 0; i < 35; i++) hunt.tick(10);
   assert.equal(hunt.attacks, 1);

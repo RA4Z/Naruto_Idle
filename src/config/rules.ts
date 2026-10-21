@@ -5,9 +5,9 @@ export const OFFLINE = {
   fraction: 0.35,
 };
 export const COMBAT = {
-  preparationMs: 120,
-  firstAttackMs: 200,
-  firstEnemyAttackMs: 350,
+  preparationMs: 0,
+  firstAttackMs: 0,
+  firstEnemyAttackMs: 220,
   specialEvery: 3,
   enemyInterval: 1450,
 };

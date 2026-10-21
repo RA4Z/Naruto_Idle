@@ -440,6 +440,9 @@ export class Hunt {
     this.guard = 0;
     this.lastReward = { xp: 0, coins: 0 };
     this.onEvent("encounter", 0);
+    // Start the opening strike on the encounter frame, even at a low render FPS.
+    // Following attacks still use the character's full speed-derived interval.
+    this.tick(0);
     return true;
   }
   tick(ms: number) {
@@ -458,7 +461,8 @@ export class Hunt {
     ) {
       this.phase = "combatendo";
       this.timer = 0;
-    } else if (this.phase === "combatendo") {
+    }
+    if (this.phase === "combatendo") {
       this.playerClock += ms;
       this.enemyClock += ms;
       if (this.playerClock >= st.interval) {

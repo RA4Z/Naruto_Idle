@@ -66,7 +66,8 @@ export function queuePresentation(
   );
   ids.add("196");
   ids.add("197");
-  for (const id of Object.values(data.uiCues || {})) if (id) ids.add(id);
+  for (const [cue, id] of Object.entries(data.uiCues || {}))
+    if (id && ["click", "close", "levelUp"].includes(cue)) ids.add(id);
   for (const id of ids)
     data.sounds[id]?.urls.forEach(
       (url, i) =>
@@ -86,6 +87,8 @@ export class PresentationPlayer {
   private effectCount = 0;
   private lastUiAt = -100;
   private cuesPlayed: Partial<Record<UiCue, number>> = {};
+  private walkingSound?: Phaser.Sound.BaseSound;
+  private footstepsPlayed = 0;
   constructor(
     private scene: Phaser.Scene,
     private data: PresentationConfig,
@@ -121,6 +124,7 @@ export class PresentationPlayer {
       this.active.forEach((s) => s.destroy());
       this.ambience.dispose();
       this.actors.dispose();
+      this.stopFootsteps();
     };
     scene.events.once("shutdown", dispose);
     scene.events.once("destroy", dispose);
@@ -147,6 +151,7 @@ export class PresentationPlayer {
   }
   settings(enabled: boolean, music: boolean, volume: number) {
     this.enabled = enabled;
+    if (!enabled) this.stopFootsteps();
     this.actors.settings(enabled, volume);
     this.scene.sound.mute = !enabled;
     this.scene.sound.volume = volume;
@@ -164,6 +169,7 @@ export class PresentationPlayer {
     this.actors.action(id, action, duration, owner);
   }
   setMap(id: string) {
+    this.stopFootsteps();
     this.ambience.setMap(id);
   }
   unlock() {
@@ -173,6 +179,7 @@ export class PresentationPlayer {
       void manager.context.resume();
   }
   pause(paused: boolean) {
+    if (paused) this.stopFootsteps();
     this.ambience.pause(paused);
     this.actors.pause(paused);
     if (this.paused !== paused) {
@@ -227,6 +234,8 @@ export class PresentationPlayer {
     return false;
   }
   ui(cue: UiCue) {
+    // Open-world fights have no start/result fanfare. Arena audio is separate.
+    if (cue === "battleStart" || cue === "victory" || cue === "defeat") return;
     const id = this.data.uiCues?.[cue];
     const now = performance.now();
     const button = cue === "click" || cue === "close";
@@ -245,8 +254,36 @@ export class PresentationPlayer {
       this.cuesPlayed[cue] = (this.cuesPlayed[cue] || 0) + 1;
     }
   }
-  footstep() {
-    this.sound(Math.random() < 0.5 ? "196" : "197", 0.18);
+  stopFootsteps() {
+    this.walkingSound?.destroy();
+    this.walkingSound = undefined;
+  }
+  footstep(foot: 0 | 1) {
+    if (!this.enabled || this.paused) return;
+    const key = soundKey(foot === 0 ? "196" : "197", 0);
+    if (!this.scene.cache.audio.exists(key)) return;
+    this.stopFootsteps();
+    if (
+      this.scene.sound.getAllPlaying().length + this.actors.snapshot().voices >=
+      4
+    )
+      return;
+    const sound = this.scene.sound.add(key);
+    this.walkingSound = sound;
+    // Play only the short contact, not the file's long tail. A single channel
+    // cannot accumulate overlapping steps or resume an old step after a dialog.
+    sound.addMarker({
+      name: "contact",
+      start: 0,
+      duration: Math.min(sound.totalDuration, 0.16),
+      config: { volume: 0.06 },
+    });
+    sound.once("complete", () => {
+      if (this.walkingSound === sound) this.walkingSound = undefined;
+      sound.destroy();
+    });
+    sound.play("contact");
+    this.footstepsPlayed++;
   }
   private effect(
     name: string,
@@ -342,6 +379,8 @@ export class PresentationPlayer {
       })),
       effectsPlayed: this.effectCount,
       cuesPlayed: { ...this.cuesPlayed },
+      footstepsPlayed: this.footstepsPlayed,
+      footstepPlaying: !!this.walkingSound?.isPlaying,
       entityAudio: this.actors.snapshot(),
       shortVoices:
         this.scene.sound.getAllPlaying().length + this.actors.snapshot().voices,

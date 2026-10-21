@@ -20,6 +20,8 @@ Há 16 mapas integrados. O jogador anda por clique ou WASD/setas sobre a grade n
 
 Ataques são automáticos; os iniciais possuem jutsu manual com chakra e recarga. Vitória concede XP, moedas e loot; derrota retorna à recuperação. Caçada automática escolhe alvos alcançáveis, recalcula rotas alteradas, descarta caminhos que não chegam ao alcance, detecta falta de movimento e limita a duração da perseguição. Sem inimigos vivos, aguarda respawn.
 
+O primeiro golpe acontece no próprio encontro; os seguintes respeitam a velocidade individual. O inimigo pode responder após 220 ms de simulação ativa. Mundo aberto não toca vinhetas de início/vitória/derrota. Passos seguem movimento real com intervalo mínimo e um canal, interrompido ao parar, pausar ou entrar em combate; demais ações/vozes e som de nível continuam disponíveis.
+
 A dificuldade vem da área escolhida, não do ID do mapa. Viagens permitem escolher dificuldades de nível 1/5/12/25 e mostram o nível do personagem. Onze modelos inimigos têm perfis próprios de resistência, cadência e comportamento; um dos seis inimigos de cada grupo é elite, identificado por estrela/rótulo dourado e anel. Elites têm recompensas maiores e chance de equipamento limitada por nível/dificuldade. Cura inimiga pode ocorrer até três vezes por encontro. Não inventar portais entre mapas sem dados comprovados.
 
 Máscaras frontais nativas usam transparência recuperada, mas não equivalem a objetos com profundidade individual. Recortes opacos de chão são proibidos. Guia técnico: [MAP_LAYERS.md](MAP_LAYERS.md).

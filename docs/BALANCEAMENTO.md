@@ -69,6 +69,10 @@ Perfis e elites aplicam seus modificadores sobre esses valores. As duas primeira
 
 ## Manutenção e verificação
 
+Entrada em combate revisada em 21/10/2026: o primeiro ataque do jogador acontece no frame do encontro, sem a preparação anterior; golpes seguintes mantêm o intervalo derivado da velocidade. Primeiro ataque inimigo após 220 ms de simulação ativa. Pausa congela o encontro e não repete o golpe de abertura. Essa revisão foi validada com 116 testes de domínio e no navegador para os três iniciais e Guy (`reports/combat-audio-validation.json`); as simulações de balanceamento abaixo pertencem à entrega anterior.
+
+No mundo aberto, as vinhetas de início/vitória/derrota ficam desativadas; ações, vozes e subida de nível mantêm seus próprios sons. Passos alternados seguem deslocamento real (24 px, mínimo 180 ms), um único canal e contato de até 160 ms, sem acumular clipes ao parar/pausar ou abrir diálogos. Os arquivos originais permanecem preservados.
+
 Fechamento em 21/10/2026: passaram 107 testes de domínio e 21 de servidor/assets, verificação das 1.115 chaves nos três idiomas, typecheck e build final. As 2.112 simulações terminaram em vitória ou derrota antes de 60 segundos. Os relatórios de navegador citados abaixo validam também vitória contra elite no desenvolvimento e conjurador/equipamento III no bundle de produção. São amostras de validação, não garantia de equilíbrio perfeito.
 
 As regressões `reports/qol-production-validation.json` e `reports/i18n-browser-validation.json` passaram após o balanceamento, incluindo recuperação real de WebGL, minijanela, troca de personagem, equipamentos, viagem, acessibilidade, idiomas, arena e administração dos 22 itens/cinco missões. A API administrativa passou a importar as regras estaticamente para evitar erro de módulo encerrado no Vite. Servidor temporário e navegadores de teste encerrados; sem deploy.
