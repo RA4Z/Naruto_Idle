@@ -18,6 +18,24 @@ export const AREAS = [
     xp: 48,
     coins: 19,
   },
+  {
+    id: "veterana",
+    name: t("balance.area.veteran"),
+    level: 12,
+    enemyHp: 330,
+    enemyAttack: 35,
+    xp: 125,
+    coins: 48,
+  },
+  {
+    id: "elite",
+    name: t("balance.area.elite"),
+    level: 25,
+    enemyHp: 850,
+    enemyAttack: 80,
+    xp: 320,
+    coins: 120,
+  },
 ];
 // Manually audited street waypoints, in the 1000 x 1000 world coordinate system.
 // Background collision data was not recovered; see navigation.ts for the street boundary.

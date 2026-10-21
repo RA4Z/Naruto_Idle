@@ -38,7 +38,7 @@ Todas as mensagens novas têm pt-BR/en/es. Preferência do navegador é usada no
 
 ## Verificação
 
-Resultado final desta execução: **102 testes de domínio e 21 de servidor/assets passaram**, além de typecheck, verificação dos 1.021 textos nos três idiomas e build de produção (49,56 s no último build). Após o último ajuste de navegação, os 22 testes relevantes de caçada/equipamento/áudio passaram novamente. A única advertência de build é o tamanho do chunk Phaser já existente.
+Resultado da entrega anterior de estabilidade/QoL, antes do lote de [balanceamento](BALANCEAMENTO.md): **102 testes de domínio e 21 de servidor/assets passaram**, além de typecheck, verificação dos 1.021 textos nos três idiomas e build de produção (49,56 s). Após o ajuste de navegação, os 22 testes relevantes de caçada/equipamento/áudio passaram novamente. A única advertência de build era o tamanho do chunk Phaser já existente. Os resultados atuais de personagens/inimigos/equipamento ficam no guia de balanceamento.
 
 Navegador dev: bloqueio/liberação de abas, lease expirada, antigo proprietário impedido de gravar, retomada de idioma no fallback LAN, congelamento/retomada via Chrome DevTools, coleção/acervo, comparação, preferências, viagem/vitória e perda real/restauração WebGL, incluindo Canvas após timeout. Todos aprovados sem erros em reports/qol-validation.json. Também passaram os três idiomas com jogo/admin/arena, redimensionamento extremo da minijanela e loading com imagem obrigatória ausente, retry, cancelamento/reinício e vitória após reload.
 

@@ -4,6 +4,17 @@
   background: #111c18;
   font-synthesis: none;
 }
+.elite-profile {
+  border: 1px solid #b88b36;
+  padding: 8px;
+  color: #ffda76;
+}
+.enemy-profile {
+  line-height: 1.6;
+}
+.progression-panel [data-content] > .library-controls {
+  grid-column: 1 / -1;
+}
 * {
   box-sizing: border-box;
 }

@@ -2,6 +2,7 @@ import { t, th, errorText } from "../i18n/core.ts";
 import type { NativeGrid, Point } from "./navigation";
 import { withSceneGeometry } from "./scene-geometry";
 import { runtimeIndex } from "../assets/runtime-index";
+import { AREAS } from "../config/areas";
 import {
   getPreferences,
   toggleFavorite,
@@ -45,9 +46,10 @@ export function installTravel(
   getCurrent: () => string,
   onChoose: (map: WorldMap) => Promise<void>,
   getDifficulty?: () => {
-    area: { name: string; level: number };
+    area: { id: string; name: string; level: number };
     level: number;
   },
+  setDifficulty?: (index: number) => void,
 ) {
   const dialog = document.createElement("dialog");
   dialog.className = "map-library";
@@ -62,6 +64,18 @@ export function installTravel(
   const favorites = dialog.querySelector<HTMLInputElement>(
     "[data-map-favorites]",
   )!;
+  const difficulty = document.createElement("select");
+  difficulty.dataset.difficultyPicker = "";
+  difficulty.setAttribute("aria-label", t("balance.difficulty"));
+  if (getDifficulty && setDifficulty) {
+    dialog.querySelector(".library-controls")!.append(difficulty);
+    difficulty.onchange = () => {
+      if (!busy) {
+        setDifficulty(Number(difficulty.value));
+        void render();
+      }
+    };
+  }
   const render = async () => {
     const request = ++renderVersion;
     const grid = dialog.querySelector(".map-grid")!,
@@ -178,6 +192,21 @@ export function installTravel(
     if (!busy) void render();
   };
   return async () => {
+    if (getDifficulty && setDifficulty) {
+      difficulty.replaceChildren();
+      const current = getDifficulty();
+      for (const [index, area] of AREAS.entries()) {
+        const option = document.createElement("option");
+        option.value = String(index);
+        option.textContent = t("balance.areaOption", {
+          name: area.name,
+          level: area.level,
+        });
+        option.disabled = current.level < area.level;
+        option.selected = area.id === current.area.id;
+        difficulty.append(option);
+      }
+    }
     dialog.showModal();
     await render();
   };

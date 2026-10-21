@@ -20,6 +20,10 @@ test("shop comparisons simulate ownership, replace the same slot and never mutat
     hp: 0,
     chakra: 0,
     regen: 0,
+    skillDamage: 0,
+    attackRate: 0,
+    moveSpeed: 0,
+    defense: 0,
   });
   const stronger = ITEMS.find(
     (other) => other.slot === item.slot && other.attack > item.attack,

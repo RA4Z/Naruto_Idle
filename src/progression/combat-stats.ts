@@ -1,6 +1,7 @@
 import { t } from "../i18n/core.ts";
 import { CHARACTERS, type CharacterId } from "../config/characters.ts";
 import { ITEMS, type Slot } from "./rules.ts";
+import type { recruitProfile } from "./recruit-profiles.ts";
 export type CombatLoadout = {
   level: number;
   upgrades: number;
@@ -32,32 +33,94 @@ export function strikeDuration(special: boolean, interval: number) {
 export function combatStats(
   s: CombatProfile,
   base: Attributes = CHARACTERS[s.character].attributes,
+  recruit?: ReturnType<typeof recruitProfile>,
 ) {
-  const gear = { attack: 0, hp: 0, chakra: 0, regen: 0 };
+  const gear = {
+    attack: 0,
+    hp: 0,
+    chakra: 0,
+    regen: 0,
+    ninjutsu: 0,
+    speed: 0,
+    defense: 0,
+  };
   for (const [slot, id] of Object.entries(s.equipment || {})) {
     const item = ITEMS.find((i) => i.id === id && i.slot === slot);
-    if (item && (s.inventory[item.id] || 0) > 0)
-      for (const key of ["attack", "hp", "chakra", "regen"] as const)
-        gear[key] += item[key];
+    if (item && s.level >= item.level && (s.inventory[item.id] || 0) > 0)
+      for (const key of [
+        "attack",
+        "hp",
+        "chakra",
+        "regen",
+        "ninjutsu",
+        "speed",
+        "defense",
+      ] as const)
+        gear[key] += item[key] || 0;
   }
   const level = Math.max(0, s.level - 1),
     training = Math.max(0, s.upgrades);
+  const growth = recruit?.growth || {
+    vitality: 12,
+    strength: 2,
+    ninjutsu: 2,
+    speed: 0.75,
+    chakra: 2,
+    control: 0.1,
+    resistance: 0.5,
+  };
   const attributes: Attributes = {
-    vitality: base.vitality + level * 12 + training * 9 + gear.hp,
-    strength: base.strength + level * 2 + training * 3 + gear.attack,
-    ninjutsu: base.ninjutsu + level * 2 + training * 2,
-    speed: base.speed + level * 0.75 + training * 0.5,
-    chakra: base.chakra + level * 2 + training * 2 + gear.chakra,
-    control: base.control + level * 0.1 + training * 0.2 + gear.regen * 2,
-    resistance: base.resistance + level * 0.5 + training * 0.5,
+    vitality: Math.max(
+      1,
+      base.vitality + level * growth.vitality + training * 9 + gear.hp,
+    ),
+    strength: Math.max(
+      1,
+      base.strength + level * growth.strength + training * 3 + gear.attack,
+    ),
+    ninjutsu: Math.max(
+      0,
+      base.ninjutsu + level * growth.ninjutsu + training * 2 + gear.ninjutsu,
+    ),
+    speed: Math.max(
+      1,
+      base.speed + level * growth.speed + training * 0.5 + gear.speed,
+    ),
+    chakra: Math.max(
+      1,
+      base.chakra + level * growth.chakra + training * 2 + gear.chakra,
+    ),
+    control: Math.max(
+      0,
+      base.control + level * growth.control + training * 0.2 + gear.regen * 2,
+    ),
+    resistance: Math.max(
+      0,
+      base.resistance +
+        level * growth.resistance +
+        training * 0.5 +
+        gear.defense,
+    ),
   };
   return {
     attributes,
     maxHp: Math.round(attributes.vitality),
     attack: Math.round(attributes.strength),
-    skillDamage: Math.round(attributes.strength + attributes.ninjutsu),
+    skillCost: recruit?.cost || 35,
+    skillPhysical: recruit?.physical || false,
+    skillGuard: recruit?.guard || 0,
+    skillDamage: Math.round(
+      recruit
+        ? attributes.strength * recruit.power[0] +
+            attributes.ninjutsu * recruit.power[1]
+        : attributes.strength + attributes.ninjutsu,
+    ),
     skillHeal: Math.round(
-      attributes.vitality * 0.15 + attributes.ninjutsu * 0.5,
+      recruit
+        ? recruit.heal
+          ? attributes.vitality * recruit.heal + attributes.ninjutsu * 0.9
+          : 0
+        : attributes.vitality * 0.15 + attributes.ninjutsu * 0.5,
     ),
     maxChakra: Math.round(attributes.chakra),
     chakraRegen: attributes.control * 0.5,
@@ -96,7 +159,11 @@ export function validateArenaLoadout(input: unknown): CombatLoadout {
     throw new Error(t("progression.combat-stats.db9f0cc42b"));
   const equipment: Partial<Record<Slot, string>> = {};
   for (const [slot, id] of Object.entries(s.equipment)) {
-    if (!ITEMS.some((i) => i.id === id && i.slot === slot))
+    if (
+      !ITEMS.some(
+        (i) => i.id === id && i.slot === slot && i.level <= (s.level as number),
+      )
+    )
       throw new Error(t("progression.combat-stats.ae5c7a5f49"));
     equipment[slot as Slot] = id as string;
   }

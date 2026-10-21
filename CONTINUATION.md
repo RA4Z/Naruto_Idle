@@ -9,6 +9,7 @@ Atualizado em 21/10/2026. Este arquivo descreve o estado vigente. O [histórico 
 3. [Estabilidade e qualidade de vida](docs/ESTABILIDADE_E_QOL.md): mudanças desta etapa, arquitetura, testes e limites.
 4. [Mapas e extração](docs/MAP_LAYERS.md) e [integração dos originais](docs/EXTRACAO_E_INTEGRACAO_ORIGINAIS.md).
 5. [Traduções](docs/TRADUCOES.md).
+6. [Balanceamento](docs/BALANCEAMENTO.md): estilos, técnicas, inimigos/elites, equipamentos e dificuldades.
 
 ## Produto e código
 
@@ -17,7 +18,8 @@ Atualizado em 21/10/2026. Este arquivo descreve o estado vigente. O [histórico 
 - Um personagem controlado por vez. Nível, XP, treino e equipamento individuais; XP online/offline somente do ativo. Party continua adiada.
 - 16 mapas funcionais de 145 conjuntos identificados; 129 restantes. Navegação nativa, patrulhas, encontros, recompensas, viagens e persistência.
 - Máscaras frontais nativas recuperadas. Profundidade por objeto/SWF intermediário ainda pendente. Não reativar recortes opacos de background.jpg.
-- Quatro equipamentos, cinco missões, recrutamento, jutsus dos iniciais, loja, coleção e arena local autoritativa. Recrutas adicionais têm atributos provisórios e não herdam jutsu de outro modelo.
+- 22 equipamentos em três caminhos e três graus, cinco missões, recrutamento, jutsus dos iniciais, loja, coleção e arena local autoritativa. Recrutas têm oito estilos por família, crescimento e técnicas genéricas autorais, sem herdar jutsus de outros modelos. Todos os recrutáveis atuais com exploração/combate têm família configurada.
+- Onze modelos inimigos dos mapas têm perfis de caçador/brutamontes/assassino/blindado/conjurador/curandeiro; uma elite por grupo de seis, identificação dourada e recompensas próprias. Cura inimiga limitada a três usos por encontro. Dificuldades selecionáveis em Viagens nos níveis 1/5/12/25; graus de equipamento I/II/III exigem nível 1/5/12. Drop de elite limitado pelo nível e pela dificuldade.
 - Carregamento progressivo, retry, três artes originais de loading, áudio sob demanda e minijanela nativa quando suportada. Produção Vercel funcionando conforme confirmação do usuário; backend da arena/admin depende do servidor Node.
 - PT/EN/ES oficiais. Primeiro acesso detecta preferências do navegador, inclusive variantes regionais; fallback inglês. Escolha manual salva prevalece. IDs, regras, notas do usuário e caminhos não são traduzidos.
 - Jornada exclusiva por origem do navegador: Web Locks ou lease transacional em IndexedDB no HTTP LAN, com conferência de posse antes de gravar/restaurar. Menu e acervo podem abrir em outras abas.

@@ -1,4 +1,6 @@
 import type Phaser from "phaser";
+import { t } from "../i18n/core.ts";
+import { enemyProfile, type EnemyProfile } from "./enemy-profiles";
 import { EntityActor } from "../entities/actor";
 import type { EntityManifest } from "../entities/types";
 import {
@@ -16,6 +18,7 @@ type Mob = {
   respawn: number;
   sequence: number;
   direction: number;
+  profile: EnemyProfile;
 };
 export class EnemyField {
   mapId = "";
@@ -32,10 +35,9 @@ export class EnemyField {
     this.members = [];
     this.mapId = mapId;
     if (safe) return;
-    const candidates = nav.pointsWithin(hero, 320).filter(
-      (p) =>
-        Math.hypot(p.x - hero.x, p.y - hero.y) > 85,
-    );
+    const candidates = nav
+      .pointsWithin(hero, 320)
+      .filter((p) => Math.hypot(p.x - hero.x, p.y - hero.y) > 85);
     for (let i = 0; i < 6; i++) {
       const sorted = candidates
         .map((p) => ({
@@ -60,6 +62,11 @@ export class EnemyField {
         manifest,
         "enemy",
       );
+      const profile = enemyProfile(manifest.id, i === 5);
+      actor.setCombatLabel(
+        `${profile.elite ? "★ " + t("balance.elite") + " · " : ""}${manifest.name} · ${t(`balance.enemy.${profile.kind}`)}`,
+        profile.elite,
+      );
       this.members.push({
         actor,
         home: { ...home },
@@ -69,6 +76,7 @@ export class EnemyField {
         respawn: 0,
         sequence: i * 23 + 1,
         direction: 0,
+        profile,
       });
       if (manifest.capabilities.companion) actor.play("world", "idle_0");
     }
@@ -81,6 +89,12 @@ export class EnemyField {
           Math.hypot(a.actor.x - hero.x, a.actor.y - hero.y) -
           Math.hypot(b.actor.x - hero.x, b.actor.y - hero.y),
       )[0]?.actor;
+  }
+  profileFor(actor: EntityActor) {
+    return (
+      this.members.find((m) => m.actor === actor)?.profile ||
+      enemyProfile(actor.manifest.id)
+    );
   }
   defeat(actor: EntityActor) {
     const mob = this.members.find((m) => m.actor === actor);
@@ -130,16 +144,42 @@ export class EnemyField {
         actor.play("world", "idle_" + mob.direction);
         mob.wait -= delta;
         if (mob.wait > 0) continue;
-        const options = nav.pointsWithin(mob.home, 65).filter(
-          (p) =>
-            Math.hypot(p.x - actor.x, p.y - actor.y) > 18 &&
-            (!engaged || Math.hypot(p.x - hero.x, p.y - hero.y) > 40),
-        );
-        const target = options[(mob.sequence++ * 103) % options.length];
+        const options = nav
+          .pointsWithin(mob.home, mob.profile.radius)
+          .filter(
+            (p) =>
+              Math.hypot(p.x - actor.x, p.y - actor.y) > 18 &&
+              (!engaged || Math.hypot(p.x - hero.x, p.y - hero.y) > 40),
+          );
+        const distance = Math.hypot(hero.x - actor.x, hero.y - actor.y);
+        let target = options[(mob.sequence++ * 103) % options.length];
+        if (
+          !engaged &&
+          mob.profile.behavior === "chase" &&
+          distance < 95 &&
+          Math.hypot(hero.x - mob.home.x, hero.y - mob.home.y) <
+            mob.profile.radius
+        )
+          target = hero;
+        else if (
+          !engaged &&
+          mob.profile.behavior === "retreat" &&
+          distance < 65
+        )
+          target = [...options].sort(
+            (a, b) =>
+              Math.hypot(b.x - hero.x, b.y - hero.y) -
+              Math.hypot(a.x - hero.x, a.y - hero.y),
+          )[0];
         if (target) mob.path = nav.path(actor, target);
         mob.wait = 1000 + (mob.sequence % 4) * 400;
       }
-      const p = advancePath(actor, mob.path, delta * 0.023, nav),
+      const p = advancePath(
+          actor,
+          mob.path,
+          (delta * mob.profile.speed) / 1000,
+          nav,
+        ),
         dx = p.x - actor.x,
         dy = p.y - actor.y;
       if (Math.hypot(dx, dy) > 0.02) {

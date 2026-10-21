@@ -12,7 +12,7 @@ Novo jogo permite Naruto 11000101, Sasuke azul/branco 11000211 ou Sakura 1100030
 
 O jogador controla um personagem possuído por vez e pode trocá-lo fora de combate. Nível, XP, treinos e equipamento pertencem a cada personagem; somente o ativo recebe XP online/offline. Party não está disponível nesta versão.
 
-Vitalidade, força, ninjutsu, velocidade, chakra, controle e resistência determinam os valores derivados. Velocidade afeta movimento e intervalo de ataques; limites ficam em src/progression/combat-stats.ts. Recrutas ainda sem configuração própria têm atributos provisórios identificados, sem herdar jutsu de outro modelo.
+Vitalidade, força, ninjutsu, velocidade, chakra, controle e resistência determinam os valores derivados. Velocidade afeta movimento e intervalo de ataques; limites ficam em src/progression/combat-stats.ts. Recrutas têm perfis por família em oito estilos, crescimento próprio e técnicas genéricas autorais, sem herdar jutsu de outro modelo. A tabela cobre os recrutáveis atuais com exploração/combate. Detalhes em [BALANCEAMENTO.md](BALANCEAMENTO.md).
 
 ## Mundo e combate
 
@@ -20,13 +20,13 @@ Há 16 mapas integrados. O jogador anda por clique ou WASD/setas sobre a grade n
 
 Ataques são automáticos; os iniciais possuem jutsu manual com chakra e recarga. Vitória concede XP, moedas e loot; derrota retorna à recuperação. Caçada automática escolhe alvos alcançáveis, recalcula rotas alteradas, descarta caminhos que não chegam ao alcance, detecta falta de movimento e limita a duração da perseguição. Sem inimigos vivos, aguarda respawn.
 
-A dificuldade atual vem da área escolhida, não do ID do mapa. Viagens mostram essa regra e o nível do personagem. Não inventar níveis próprios ou portais entre mapas sem dados/regra implementada.
+A dificuldade vem da área escolhida, não do ID do mapa. Viagens permitem escolher dificuldades de nível 1/5/12/25 e mostram o nível do personagem. Onze modelos inimigos têm perfis próprios de resistência, cadência e comportamento; um dos seis inimigos de cada grupo é elite, identificado por estrela/rótulo dourado e anel. Elites têm recompensas maiores e chance de equipamento limitada por nível/dificuldade. Cura inimiga pode ocorrer até três vezes por encontro. Não inventar portais entre mapas sem dados comprovados.
 
 Máscaras frontais nativas usam transparência recuperada, mas não equivalem a objetos com profundidade individual. Recortes opacos de chão são proibidos. Guia técnico: [MAP_LAYERS.md](MAP_LAYERS.md).
 
 ## Progressão e persistência
 
-Loja/mochila com quatro equipamentos e comparação de atributos antes da compra/equipamento; cinco missões persistentes; coleção e recrutamento. Progresso local versionado em folha-idle-v1. Offline limitado conforme src/config/rules.ts, concedido apenas na caçada ativa e gravado antes de mostrar o resumo.
+Loja/mochila com 22 equipamentos, filtros por slot/caminho e comparação de atributos antes da compra/equipamento; cinco missões persistentes; coleção e recrutamento. Caminhos de dano, sobrevivência e chakra têm ganhos e penalidades; graus II/III exigem nível 5/12 do personagem selecionado. Posse dos quatro itens antigos e seus atributos são preservados. Progresso local versionado em folha-idle-v1. Offline limitado conforme src/config/rules.ts, concedido apenas na caçada ativa e gravado antes de mostrar o resumo; continua como estimativa da dificuldade, sem simular perfis/elites/equipamento.
 
 Apenas uma aba controla a jornada por origem/perfil de navegador. A posse é adquirida antes de restaurar/calcular offline e conferida antes de gravar. Outra aba pode usar menu/admin/arena; não pode iniciar uma segunda jornada. Não é sincronização de contas entre IP, localhost, domínios ou dispositivos.
 

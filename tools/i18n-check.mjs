@@ -115,7 +115,7 @@ try {
       new RegExp(words[locale].attrs),
     );
     await page.locator('[data-tab="shop"]').click();
-    assert.equal(await page.locator(".progress-card").count(), 4);
+    assert.equal(await page.locator(".progress-card").count(), 22);
     await page.locator(".progression-panel [data-close]").click();
     await page.locator("#library").click();
     await page.locator("[data-open-archive]").click();
@@ -195,6 +195,10 @@ try {
     );
     await page.locator('input[name="password"]').fill("admin");
     await page.locator("form button").click();
+    await page.locator('[data-section="progression"]').click();
+    await page.waitForFunction(() => document.querySelectorAll(".admin-card").length === 27);
+    const blade = { "pt-BR": "Lâmina de assalto II", en: "Assault blade II", es: "Hoja de asalto II" }[locale];
+    assert.ok((await page.locator(".admin-card h3").allTextContents()).includes(blade));
     await page.locator('[data-section="characters"]').click();
     await page.locator(".admin-controls input").fill("19000701");
     assert.match(
@@ -266,6 +270,13 @@ try {
     JSON.stringify(report, null, 2) + "\n",
   );
   console.log(JSON.stringify(report));
+} catch (error) {
+  console.error(errors);
+  for (const context of browser.contexts()) for (const page of context.pages()) {
+    console.error((await page.locator("body").innerText()).slice(-2200));
+    await page.screenshot({ path: "reports/i18n-failure.png" }).catch(() => {});
+  }
+  throw error;
 } finally {
   await browser.close();
 }

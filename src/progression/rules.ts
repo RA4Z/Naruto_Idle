@@ -2,9 +2,29 @@ import { t } from "../i18n/core.ts";
 import type { Save } from "../model";
 import { syncCharacterProgress } from "./character-progress.ts";
 export type Slot = "weapon" | "armor" | "charm";
-export const ITEMS = [
+export type Item = {
+  id: string;
+  name: string;
+  slot: Slot;
+  price: number;
+  attack: number;
+  hp: number;
+  chakra: number;
+  regen: number;
+  ninjutsu?: number;
+  speed?: number;
+  defense?: number;
+  level: number;
+  tier: number;
+  path: "damage" | "survival" | "chakra";
+  description: string;
+};
+export const ITEMS: Item[] = [
   {
     id: "kunai-treino",
+    level: 1,
+    tier: 1,
+    path: "damage",
     name: t("progression.rules.a4da266cf9"),
     slot: "weapon" as Slot,
     price: 45,
@@ -16,6 +36,9 @@ export const ITEMS = [
   },
   {
     id: "kunai-reforcada",
+    level: 1,
+    tier: 1,
+    path: "damage",
     name: t("progression.rules.a98e982537"),
     slot: "weapon" as Slot,
     price: 140,
@@ -27,6 +50,9 @@ export const ITEMS = [
   },
   {
     id: "colete-shinobi",
+    level: 1,
+    tier: 1,
+    path: "survival",
     name: t("progression.rules.0144c71e0e"),
     slot: "armor" as Slot,
     price: 70,
@@ -38,6 +64,9 @@ export const ITEMS = [
   },
   {
     id: "amuleto-chakra",
+    level: 1,
+    tier: 1,
+    path: "chakra",
     name: t("progression.rules.5cc8774199"),
     slot: "charm" as Slot,
     price: 65,
@@ -48,13 +77,142 @@ export const ITEMS = [
     description: t("progression.rules.9fd4817d46"),
   },
 ];
+const branches = [
+  {
+    id: "lamina-assalto",
+    name: "balance.gear.blade",
+    slot: "weapon",
+    path: "damage",
+    attack: 12,
+    hp: -12,
+    speed: 2,
+    defense: -3,
+  },
+  {
+    id: "bastao-guardiao",
+    name: "balance.gear.staff",
+    slot: "weapon",
+    path: "survival",
+    attack: 5,
+    hp: 22,
+    defense: 8,
+    speed: -4,
+  },
+  {
+    id: "selo-canalizador",
+    name: "balance.gear.focus",
+    slot: "weapon",
+    path: "chakra",
+    attack: -2,
+    ninjutsu: 20,
+    chakra: 20,
+    regen: 1,
+  },
+  {
+    id: "traje-assalto",
+    name: "balance.gear.outfit",
+    slot: "armor",
+    path: "damage",
+    attack: 6,
+    hp: 16,
+    speed: 3,
+    defense: -3,
+  },
+  {
+    id: "armadura-guardiao",
+    name: "balance.gear.armor",
+    slot: "armor",
+    path: "survival",
+    hp: 65,
+    defense: 14,
+    speed: -7,
+  },
+  {
+    id: "manto-canalizador",
+    name: "balance.gear.robe",
+    slot: "armor",
+    path: "chakra",
+    hp: 20,
+    chakra: 40,
+    ninjutsu: 10,
+    regen: 1.5,
+  },
+  {
+    id: "talisma-assalto",
+    name: "balance.gear.fang",
+    slot: "charm",
+    path: "damage",
+    attack: 5,
+    speed: 4,
+    chakra: -15,
+    hp: -8,
+  },
+  {
+    id: "talisma-guardiao",
+    name: "balance.gear.ward",
+    slot: "charm",
+    path: "survival",
+    hp: 35,
+    defense: 10,
+    speed: -3,
+  },
+  {
+    id: "talisma-canalizador",
+    name: "balance.gear.seal",
+    slot: "charm",
+    path: "chakra",
+    chakra: 55,
+    regen: 2.5,
+    ninjutsu: 6,
+  },
+] as const;
+for (const tier of [2, 3])
+  for (const branch of branches) {
+    const factor = tier === 2 ? 1 : 1.8;
+    const item: Item = {
+      id: `${branch.id}-${tier}`,
+      name: `${t(branch.name)} ${tier === 2 ? "II" : "III"}`,
+      slot: branch.slot,
+      path: branch.path,
+      tier,
+      level: tier === 2 ? 5 : 12,
+      price: tier === 2 ? 260 : 950,
+      attack: 0,
+      hp: 0,
+      chakra: 0,
+      regen: 0,
+      description: t(
+        branch.path === "damage"
+          ? "balance.gear.damage"
+          : branch.path === "survival"
+            ? "balance.gear.survival"
+            : "balance.gear.chakra",
+      ),
+    };
+    for (const key of [
+      "attack",
+      "hp",
+      "chakra",
+      "regen",
+      "ninjutsu",
+      "speed",
+      "defense",
+    ] as const) {
+      const value = (branch as Partial<Record<typeof key, number>>)[key] || 0;
+      item[key] =
+        key === "regen"
+          ? Math.round(value * factor * 10) / 10
+          : Math.round(value * factor);
+    }
+    ITEMS.push(item);
+  }
 export const STARTER_COLLECTION = ["11000101", "11000211", "11000301"];
 export const RECRUIT_COST = { coins: 60, fragments: 3 };
 export function equipmentBonuses(s: Save) {
   const result = { attack: 0, hp: 0, chakra: 0, regen: 0 };
   for (const [slot, id] of Object.entries(s.equipment || {})) {
     const item = ITEMS.find((i) => i.id === id && i.slot === slot);
-    if (item && (s.inventory[item.id] || 0) > 0)
+    if (item && s.level >= item.level && (s.inventory[item.id] || 0) > 0)
       for (const key of ["attack", "hp", "chakra", "regen"] as const)
         result[key] += item[key];
   }
@@ -65,6 +223,8 @@ export function buyItem(s: Save, id: string) {
   if (!item) throw new Error(t("progression.rules.1a61e522d4"));
   if (s.inventory[id]) throw new Error(t("progression.rules.d4bf50dfbb"));
   if (s.coins < item.price) throw new Error(t("progression.rules.54f856988d"));
+  if (s.level < item.level)
+    throw new Error(t("balance.requireLevel", { level: item.level }));
   s.coins -= item.price;
   s.inventory[id] = 1;
   return item;
@@ -73,6 +233,8 @@ export function equipItem(s: Save, id: string) {
   const item = ITEMS.find((i) => i.id === id);
   if (!item || !s.inventory[id])
     throw new Error(t("progression.rules.f9c528c4c4"));
+  if (s.level < item.level)
+    throw new Error(t("balance.requireLevel", { level: item.level }));
   s.equipment ??= {};
   s.equipment[item.slot] = id;
   syncCharacterProgress(s);

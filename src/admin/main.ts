@@ -298,6 +298,14 @@ async function show(id: string, title: string) {
           node("p", item.description),
           node(
             "p",
+            t("balance.equipmentTier", {
+              tier: item.tier,
+              level: item.level,
+              path: t(`balance.path.${item.path}` as "balance.path.damage"),
+            }),
+          ),
+          node(
+            "p",
             t("admin.main.716ad8ef8f", {
               v0: item.price,
               v1: statusText(item.slot),

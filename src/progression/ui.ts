@@ -11,6 +11,7 @@ import {
 import { runtimeIndex } from "../assets/runtime-index";
 import { getPreferences, toggleFavorite } from "../preferences";
 import { compareEquipment } from "./equipment-comparison";
+import { recruitProfile } from "./recruit-profiles";
 type Context = {
   save: Save;
   onChange: () => void;
@@ -32,6 +33,8 @@ export function installProgression(context: () => Context) {
   let collectionSearch = "",
     collectionSort = "level",
     favoritesOnly = false;
+  let gearSlot = "all",
+    gearPath = "all";
   const element = (tag: string, text: string) => {
     const e = document.createElement(tag);
     e.textContent = text;
@@ -175,8 +178,15 @@ export function installProgression(context: () => Context) {
           save.coins < 25 || p.upgrades >= 10000,
         ),
       );
-      if (!Object.values(CHARACTER_IDS).includes(id))
-        summary.append(element("p", t("progression.ui.593edf69bc")));
+      if (!Object.values(CHARACTER_IDS).includes(id)) {
+        const profile = recruitProfile(id);
+        const details = element(
+          "p",
+          `${t(`balance.profile.${profile.style}`)} · ${t(`balance.trait.${profile.style}`)}`,
+        );
+        details.dataset.recruitProfile = profile.style;
+        summary.append(details, element("p", t("balance.authoredTechnique")));
+      }
       if (id !== heroId)
         summary.append(element("p", t("progression.ui.50268bde1b")));
       content.append(summary);
@@ -234,12 +244,58 @@ export function installProgression(context: () => Context) {
         content.append(card);
       }
     if (selected === "shop" || selected === "inventory") {
+      const controls = element("div", "");
+      controls.className = "library-controls";
+      const slots = document.createElement("select");
+      slots.dataset.gearSlot = "";
+      slots.setAttribute("aria-label", t("balance.allSlots"));
+      for (const [value, label] of [
+        ["all", t("balance.allSlots")],
+        ["weapon", t("state.weapon")],
+        ["armor", t("state.armor")],
+        ["charm", t("state.charm")],
+      ]) {
+        const option = document.createElement("option");
+        option.value = value;
+        option.textContent = label;
+        slots.append(option);
+      }
+      slots.value = gearSlot;
+      slots.onchange = () => {
+        gearSlot = slots.value;
+        void render();
+      };
+      const paths = document.createElement("select");
+      paths.dataset.gearPath = "";
+      paths.setAttribute("aria-label", t("balance.allPaths"));
+      for (const [value, label] of [
+        ["all", t("balance.allPaths")],
+        ["damage", t("balance.path.damage")],
+        ["survival", t("balance.path.survival")],
+        ["chakra", t("balance.path.chakra")],
+      ]) {
+        const option = document.createElement("option");
+        option.value = value;
+        option.textContent = label;
+        paths.append(option);
+      }
+      paths.value = gearPath;
+      paths.onchange = () => {
+        gearPath = paths.value;
+        void render();
+      };
+      controls.append(slots, paths);
+      content.append(controls);
       for (const item of ITEMS.filter(
-        (i) => selected === "shop" || save.inventory[i.id],
+        (i) =>
+          (selected === "shop" || save.inventory[i.id]) &&
+          (gearSlot === "all" || i.slot === gearSlot) &&
+          (gearPath === "all" || i.path === gearPath),
       )) {
         const card = element("article", "");
         card.className = "progress-card";
         const equipped = save.equipment?.[item.slot] === item.id;
+        card.dataset.item = item.id;
         card.append(
           element(
             "h3",
@@ -248,14 +304,37 @@ export function installProgression(context: () => Context) {
           element("p", item.description),
           element(
             "p",
-            t("qol.gearStats", {
-              attack: item.attack,
-              hp: item.hp,
-              chakra: item.chakra,
-              regen: item.regen || 0,
+            (
+              [
+                ["attack", "qol.attack"],
+                ["hp", "qol.hp"],
+                ["chakra", "qol.chakra"],
+                ["regen", "qol.regen"],
+                ["ninjutsu", "progression.combat-stats.338f89bb9f"],
+                ["speed", "progression.combat-stats.7780d60ca0"],
+                ["defense", "balance.defense"],
+              ] as const
+            )
+              .filter(([key]) => item[key])
+              .map(
+                ([key, label]) =>
+                  `${t(label)} ${(item[key] || 0) > 0 ? "+" : ""}${formatNumber(item[key] || 0)}`,
+              )
+              .join(" · "),
+          ),
+          element(
+            "p",
+            t("balance.equipmentTier", {
+              tier: item.tier,
+              level: item.level,
+              path: t(`balance.path.${item.path}`),
             }),
           ),
         );
+        if (save.level < item.level)
+          card.append(
+            element("p", t("balance.previewLevel", { level: item.level })),
+          );
         const delta = compareEquipment(save, item.id);
         const comparison = element(
           "p",
@@ -266,11 +345,15 @@ export function installProgression(context: () => Context) {
                 ["hp", "qol.hp"],
                 ["chakra", "qol.chakra"],
                 ["regen", "qol.regen"],
+                ["skillDamage", "balance.skillDamage"],
+                ["attackRate", "balance.attackRate"],
+                ["moveSpeed", "balance.moveSpeed"],
+                ["defense", "balance.defense"],
               ] as const
             )
               .map(
                 ([key, label]) =>
-                  `${t(label)} ${delta[key] > 0 ? "+" : ""}${formatNumber(delta[key], { maximumFractionDigits: 1 })}`,
+                  `${t(label)} ${delta[key] > 0 ? "+" : ""}${formatNumber(delta[key], { maximumFractionDigits: key === "attackRate" ? 2 : 1 })}`,
               )
               .join(" · "),
           }),
@@ -286,7 +369,9 @@ export function installProgression(context: () => Context) {
               () => {
                 buyItem(save, item.id);
               },
-              !!save.inventory[item.id] || save.coins < item.price,
+              !!save.inventory[item.id] ||
+                save.coins < item.price ||
+                save.level < item.level,
             ),
           );
         else
@@ -296,10 +381,18 @@ export function installProgression(context: () => Context) {
               () => {
                 equipItem(save, item.id);
               },
-              equipped,
+              equipped || save.level < item.level,
             ),
           );
         content.append(card);
+        if (save.level < item.level) {
+          card.querySelector("button")!.title = t("balance.requireLevel", {
+            level: item.level,
+          });
+          card.append(
+            element("p", t("balance.requireLevel", { level: item.level })),
+          );
+        }
         if (
           selected === "shop" &&
           !save.inventory[item.id] &&
@@ -409,6 +502,10 @@ export function installProgression(context: () => Context) {
         card.className = "progress-card";
         card.dataset.characterId = id;
         card.classList.toggle("active-character", id === heroId);
+        if (!Object.values(CHARACTER_IDS).includes(id))
+          card.append(
+            element("p", t(`balance.profile.${recruitProfile(id).style}`)),
+          );
         if (id === heroId) card.append(element("strong", t("qol.active")));
         const favorite = action(
           (getPreferences().characterFavorites.includes(id) ? "★ " : "☆ ") +

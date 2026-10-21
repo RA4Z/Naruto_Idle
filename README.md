@@ -29,6 +29,9 @@ Escolha Naruto, Sasuke azul/branco ou Sakura. A jornada começa na Vila da Folha
 - Personagens possuídos com nível, XP, treinos e equipamento próprios; troca fora de combate. Party adiada.
 - Meus personagens separado do acervo/recrutamento, com busca, favoritos, ordenação e destaque do ativo.
 - Loja/mochila com comparação de equipamento, cinco missões e recrutamento.
+- 22 equipamentos com caminhos de dano, sobrevivência e chakra, graus por nível e filtros por slot/estilo.
+- Recrutas com oito estilos, crescimento e técnicas próprias do idle; inimigos distintos e uma elite identificável por grupo, com recompensas maiores.
+- Dificuldades de caçada selecionáveis em Viagens nos níveis 1/5/12/25, independentes do cenário.
 - Viagens com busca, favoritos, último destino e dificuldade informada.
 - Resumo de combate com tempo ativo, taxas de XP/moedas e comparação por mapa/personagem.
 - Arena local por turnos, modos Nivelado/Jornada e reconexão.
@@ -52,6 +55,7 @@ Document PiP depende de suporte/contexto seguro. No mesmo computador do servidor
 - [Roadmap](docs/ROADMAP.md): entregas e pendências reais.
 - [Estabilidade e QoL](docs/ESTABILIDADE_E_QOL.md): implementação e validação desta etapa.
 - [Traduções](docs/TRADUCOES.md): adicionar textos/idiomas.
+- [Balanceamento](docs/BALANCEAMENTO.md): perfis, técnicas, elites, equipamentos, dificuldades e simulações.
 - [Mapas](docs/MAP_LAYERS.md): formato, navegação e extração.
 - [Originais](docs/EXTRACAO_E_INTEGRACAO_ORIGINAIS.md): roteiro para o computador com o acervo.
 - [README histórico](docs/history/README-2026-10-21.md): investigação inicial, comandos antigos e registros por lote.

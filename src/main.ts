@@ -26,6 +26,8 @@ import { installMiniWindow } from "./mini-window";
 import { localhostTransferUrl } from "./progression/local-transfer";
 import { installProgression } from "./progression/ui";
 import { recruit, STARTER_COLLECTION } from "./progression/rules";
+import { ITEMS } from "./progression/rules";
+import { recruitProfile } from "./progression/recruit-profiles";
 import { strikeDuration } from "./progression/combat-stats";
 import {
   activeCharacterId,
@@ -123,6 +125,12 @@ let worldMaps: WorldMap[];
 const specialAction = () =>
   presentationData.characters[starterCharacter(save) || "recruit"]?.action ||
   "SP_skill1";
+const heroBattleActions = () => [
+  "C_idle",
+  "A_1hit",
+  "C_dead",
+  ...(starterCharacter(save) ? [specialAction()] : []),
+];
 const presentationCharacter = () => starterCharacter(save) || "recruit";
 let cast: {
   hero: EntityManifest;
@@ -347,6 +355,18 @@ const openTravel = installTravel(
     await scene.travel(map);
   },
   () => ({ area: AREAS[save.area], level: save.level }),
+  (index) => {
+    if (
+      !AREAS[index] ||
+      save.level < AREAS[index].level ||
+      scene.hunt.phase !== "explorando" ||
+      scene.loadingActor
+    )
+      return;
+    save.area = index;
+    commit();
+    scene.renderUI();
+  },
 );
 $("maps").onclick = () => void openTravel();
 $("auto-hunt").onclick = () => scene?.toggleHunt();
@@ -797,8 +817,7 @@ class HuntScene extends Phaser.Scene {
       for (const [action, anim] of Object.entries(set)) {
         if (
           mode === "world" ||
-          (initialMap.kind !== "lobby" &&
-            ["C_idle", "A_1hit", specialAction(), "C_dead"].includes(action))
+          (initialMap.kind !== "lobby" && heroBattleActions().includes(action))
         )
           this.load.spritesheet(mode + "-" + action, anim.url, {
             frameWidth: anim.frameWidth,
@@ -1023,6 +1042,14 @@ class HuntScene extends Phaser.Scene {
           presentation: this.presentation.snapshot(),
           actorCache: this.actorCache.snapshot(),
           enemyId: this.enemy.manifest.id,
+          enemyProfile:
+            this.hunt.phase === "explorando"
+              ? this.enemyField.profileFor(this.enemy)
+              : this.hunt.enemy,
+          enemyHp: this.hunt.enemyHp,
+          heroStyle:
+            starterCharacter(save) ||
+            recruitProfile(activeCharacterId(save)).style,
           enemyAnimation: this.enemy.visual.anims.currentAnim?.key,
           enemyScale: this.enemy.visual.scaleX,
           enemyFlipped: this.enemy.visual.flipX,
@@ -1036,6 +1063,8 @@ class HuntScene extends Phaser.Scene {
           enemyVisible: this.enemy.visible,
           enemies: this.enemyField.members.map((m) => ({
             id: m.actor.manifest.id,
+            elite: m.profile.elite,
+            kind: m.profile.kind,
             x: m.actor.x,
             y: m.actor.y,
             alive: m.alive,
@@ -1130,7 +1159,7 @@ class HuntScene extends Phaser.Scene {
           effects: true,
           audio: false,
         });
-        for (const action of ["C_idle", "A_1hit", specialAction(), "C_dead"]) {
+        for (const action of heroBattleActions()) {
           const anim =
             definitions[save.character + "-battle"]?.animations[action];
           if (anim && !this.textures.exists("battle-" + action))
@@ -1241,7 +1270,7 @@ class HuntScene extends Phaser.Scene {
       // can move an encounter into a building or across a fence.
       journal(t("main.b5b540d3b4"));
     }
-    if (event === "attack" || event === "skill") {
+    if (event === "attack" || event === "skill" || event === "technique") {
       this.play(
         event === "skill" ? "battle-" + specialAction() : "battle-A_1hit",
         true,
@@ -1250,7 +1279,7 @@ class HuntScene extends Phaser.Scene {
         String(value),
         this.enemy.x,
         this.enemy.y - 43,
-        event === "skill" ? "#ffcc69" : "#fff3ce",
+        event !== "attack" ? "#ffcc69" : "#fff3ce",
       );
       this.tweens.add({
         targets: this.enemy,
@@ -1287,8 +1316,28 @@ class HuntScene extends Phaser.Scene {
           t("common.jutsuPrefix") +
             presentationData.characters[save.character].name,
         );
+      if (event === "technique")
+        journal(
+          t("balance.techniqueUsed", {
+            name: t(
+              `balance.technique.${recruitProfile(activeCharacterId(save)).style}`,
+            ),
+          }),
+        );
     }
-    if (event === "hurt") {
+    if (event === "heal")
+      this.floating("+" + value, this.hero.x, this.hero.y - 60, "#b8f7a5");
+    if (event === "enemy-windup")
+      journal(t("balance.enemyWindup", { name: this.enemy.manifest.name }));
+    if (event === "enemy-heal")
+      this.floating("+" + value, this.enemy.x, this.enemy.y - 60, "#b8f7a5");
+    if (event === "equipment-drop") {
+      const item = ITEMS.find(
+        (item) => item.id === this.hunt.lastReward.equipment,
+      );
+      if (item) journal(t("balance.equipmentDrop", { name: item.name }));
+    }
+    if (event === "hurt" || event === "enemy-special") {
       this.enemy.play("battle", "A_1hit", true);
       this.presentation.entityAction(
         this.enemy.manifest.id,
@@ -1297,7 +1346,12 @@ class HuntScene extends Phaser.Scene {
           (this.enemy.visual.anims.timeScale || 1),
         "enemy",
       );
-      this.floating("-" + value, this.hero.x, this.hero.y - 53, "#ffc0a3");
+      this.floating(
+        "-" + value,
+        this.hero.x,
+        this.hero.y - 53,
+        event === "enemy-special" ? "#ffc74e" : "#ffc0a3",
+      );
     }
     if (event === "loot") journal(t("main.ce48f03344", { v0: value }));
     if (event === "victory") {
@@ -1305,11 +1359,11 @@ class HuntScene extends Phaser.Scene {
       const defeatedEnemy = this.enemy;
       this.enemyField.defeat(defeatedEnemy);
       session.xp += value;
-      session.coins += AREAS[save.area].coins;
+      session.coins += this.hunt.lastReward.coins;
       session.wins++;
       const segment = sessionSegment();
       segment.xp += value;
-      segment.coins += AREAS[save.area].coins;
+      segment.coins += this.hunt.lastReward.coins;
       segment.wins++;
       this.floating(
         "+" + value + " XP",
@@ -1317,7 +1371,9 @@ class HuntScene extends Phaser.Scene {
         this.hero.y - 61,
         "#c5ffbd",
       );
-      journal(t("main.92450b8e85", { v0: value, v1: AREAS[save.area].coins }));
+      journal(
+        t("main.92450b8e85", { v0: value, v1: this.hunt.lastReward.coins }),
+      );
       this.renderParty();
       this.time.delayedCall(this.lastStrikeDuration * 0.85, () => {
         if (
@@ -1906,7 +1962,7 @@ class HuntScene extends Phaser.Scene {
       ) {
         this.path = [];
         this.destination.setVisible(false);
-        this.hunt.encounter();
+        this.hunt.encounter(this.enemyField.profileFor(this.enemy));
       }
     } else if (
       !blocked &&
@@ -2004,11 +2060,19 @@ class HuntScene extends Phaser.Scene {
     $("auto-hunt").textContent = save.autoHunt
       ? t("main.0ec6283eb1")
       : t("main.15a42e6c7b");
-    $("cast-skill").hidden = this.isLobby || !starterCharacter(save);
+    $("cast-skill").hidden = this.isLobby;
+    $("cast-skill").textContent = starterCharacter(save)
+      ? t("common.jutsuCost")
+      : t("balance.techniqueCost", {
+          name: t(
+            `balance.technique.${recruitProfile(activeCharacterId(save)).style}`,
+          ),
+          cost: st.skillCost,
+        });
     ($("cast-skill") as HTMLButtonElement).disabled =
       save.paused ||
       this.hunt.phase !== "combatendo" ||
-      this.hunt.chakra < 35 ||
+      this.hunt.chakra < st.skillCost ||
       this.hunt.skillCooldown > 0;
     const phase = save.paused
       ? t("common.paused")
@@ -2019,8 +2083,8 @@ class HuntScene extends Phaser.Scene {
       ? t("common.paused")
       : this.hunt.phase !== "combatendo"
         ? t("qol.needCombat")
-        : this.hunt.chakra < 35
-          ? t("qol.needChakra")
+        : this.hunt.chakra < st.skillCost
+          ? t("balance.needChakra", { cost: st.skillCost })
           : this.hunt.skillCooldown > 0
             ? t("qol.cooldown")
             : "";
@@ -2033,8 +2097,7 @@ class HuntScene extends Phaser.Scene {
       skillFeedback.className = "caption";
       $("cast-skill").after(skillFeedback);
     }
-    skillFeedback.hidden =
-      this.isLobby || !starterCharacter(save) || !skillReason;
+    skillFeedback.hidden = this.isLobby || !skillReason;
     skillFeedback.textContent = skillReason;
     let huntStatus = document.getElementById("hunt-status");
     if (!huntStatus) {
@@ -2075,6 +2138,36 @@ class HuntScene extends Phaser.Scene {
       }),
     });
     $("status").append(cadence);
+    if (!this.isLobby) {
+      const profile =
+        this.hunt.phase === "explorando"
+          ? this.enemyField.profileFor(this.enemy)
+          : this.hunt.enemy;
+      const info = document.createElement("p");
+      info.className = "caption enemy-profile";
+      info.dataset.enemyProfile = profile.kind;
+      info.textContent = t("balance.enemySummary", {
+        name: this.enemy.manifest.name,
+        kind: `${profile.elite ? t("balance.elite") + " · " : ""}${t(`balance.enemy.${profile.kind}`)}`,
+        hp: Math.round(AREAS[save.area].enemyHp * profile.hp),
+        defense: profile.defense,
+        ninjutsuDefense: profile.ninjutsuDefense,
+        interval: formatNumber(profile.interval / 1000, {
+          maximumFractionDigits: 2,
+        }),
+        xp: Math.round(AREAS[save.area].xp * profile.xp),
+        coins: Math.round(AREAS[save.area].coins * profile.coins),
+      });
+      if (profile.elite) info.classList.add("elite-profile");
+      if (this.hunt.enemyWindup)
+        info.append(document.createTextNode(" · " + t("balance.warning")));
+      info.append(
+        document.createTextNode(" · " + t(`balance.enemyHint.${profile.kind}`)),
+      );
+      if (profile.elite)
+        info.append(document.createTextNode(" · " + t("balance.eliteHint")));
+      $("status").append(info);
+    }
     const minutes = session.activeMs / 60000;
     $("session").textContent = t("qol.session", {
       minutes: formatNumber(minutes, { maximumFractionDigits: 1 }),

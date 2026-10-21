@@ -127,7 +127,7 @@ try {
   await page.locator(".entity-library [data-close]").click();
   await page.locator("#progression").click();
   await page.locator('[data-tab="shop"]').click();
-  assert.equal(await page.locator("[data-comparison]").count(), 4);
+  assert.equal(await page.locator("[data-comparison]").count(), 22);
   assert.match(
     await page.locator('[data-comparison="kunai-treino"]').innerText(),
     /Ataque 0/,

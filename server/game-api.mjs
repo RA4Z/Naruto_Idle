@@ -1,4 +1,5 @@
 import { createArenaApi } from "./arena.mjs";
+import { ITEMS, QUESTS } from "../src/progression/rules.ts";
 import { randomBytes, createHash, timingSafeEqual } from "node:crypto";
 import { readFile, readdir, stat, writeFile, rename } from "node:fs/promises";
 import { resolve, join, relative, sep, dirname } from "node:path";
@@ -237,7 +238,6 @@ export function createGameApi(
         });
       }
       if (url.pathname === "/api/admin/progression") {
-        const { ITEMS, QUESTS } = await import("../src/progression/rules.ts");
         return json(res, 200, {
           items: ITEMS,
           quests: QUESTS.map(({ progress, ...q }) => q),

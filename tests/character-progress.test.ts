@@ -171,14 +171,14 @@ test("legacy black outfit migrates to blue Sasuke while retaining the archived r
   assert.equal(characterProgress(loaded, IDS.sasuke).upgrades, 4);
 });
 
-test("recruited models can be active and use their own generic stats without a starter jutsu", () => {
+test("recruited models can be active and use their own balanced profiles without inheriting starter jutsus", () => {
   const s = fresh("sakura", 1000);
   s.coins = 60;
   s.inventory.fragmento = 3;
   recruit(s, "11001201");
   selectCharacter(s, "11001201");
   assert.equal(activeCharacterId(s), "11001201");
-  assert.equal(stats(s).maxHp, 120);
+  assert.equal(stats(s).maxHp, 142);
   const loaded = restore(
     { read: () => JSON.stringify(s), write() {} },
     1000,
@@ -199,7 +199,7 @@ test("new recruits start at level one even when the protagonist is highly develo
     upgrades: 0,
     equipment: {},
   });
-  assert.equal(stats(s, "11001201").maxHp, 120);
+  assert.equal(stats(s, "11001201").maxHp, 142);
   assert.ok(stats(s).maxHp > stats(s, "11001201").maxHp);
 });
 

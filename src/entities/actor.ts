@@ -20,7 +20,7 @@ export function actorActions(manifest: EntityManifest, role: ActorRole) {
   return Object.entries(manifest.modes[mode]?.animations || {}).filter(
     ([action]) =>
       role === "enemy"
-        ? ["C_idle", "A_1hit", "C_hurt", "C_dead", "SP_skill1"].includes(action)
+        ? ["C_idle", "A_1hit", "C_hurt", "C_dead"].includes(action)
         : role === "companion"
           ? /^(idle|run)_\d$/.test(action)
           : action === "idle_0",
@@ -264,5 +264,12 @@ export class EntityActor extends Phaser.GameObjects.Container {
   }
   face(left: boolean) {
     this.visual.setFlipX(left);
+  }
+  setCombatLabel(text: string, elite: boolean) {
+    this.nameLabel.setText(text).setColor(elite ? "#ffda76" : "#fff4d7");
+    if (elite)
+      this.add(
+        this.scene.add.ellipse(0, 0, 27, 10).setStrokeStyle(1, 0xffca60, 0.9),
+      );
   }
 }

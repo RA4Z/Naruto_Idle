@@ -85,7 +85,7 @@ try {
   );
   await page.locator("#progression").click();
   await page.locator('[data-tab="shop"]').click();
-  assert.equal(await page.locator("[data-comparison]").count(), 4);
+  assert.equal(await page.locator("[data-comparison]").count(), 22);
   await page.locator(".progression-panel [data-close]").click();
   await page.locator(".accessibility-control").click();
   await page.locator('[data-preference="textSize"]').fill("120");

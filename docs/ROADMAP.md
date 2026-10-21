@@ -8,7 +8,10 @@ Atualizado em 21/10/2026. O [histórico](history/ROADMAP-2026-10-21.md) preserva
 - [x] Troca entre personagens possuídos, progresso individual e party desativada.
 - [x] Sasuke inicial azul/branco 11000211; skills reconstruídas do original. Variante preta reservada.
 - [x] 16 mapas integrados, grade nativa, máscara frontal com alpha, patrulhas, save/reload e viagens.
-- [x] Quatro equipamentos, loja, cinco missões e recrutamento.
+- [x] 22 equipamentos em caminhos de dano/sobrevivência/chakra, graus por nível, filtros, comparação e drops de elites; loja, cinco missões e recrutamento.
+- [x] Oito estilos de recrutas por família, crescimento, técnicas próprias do idle e cobertura de todos os recrutáveis atuais com exploração/combate.
+- [x] Onze modelos inimigos com seis estilos, resistência física/ninjutsu, comportamento, técnicas avisadas, uma elite por grupo e recompensas reais.
+- [x] Dificuldades selecionáveis em Viagens com desbloqueios nos níveis 1/5/12/25. [Regras e validação](BALANCEAMENTO.md).
 - [x] Arena local autoritativa, modos Nivelado/Jornada, reconexão e ações validadas.
 - [x] Admin de personagens/mapas/efeitos/sons/arquivos, prévias de animação em grid e revisão persistente.
 - [x] Carregamento progressivo, retry e três artes originais de loading.
@@ -34,7 +37,7 @@ Detalhes e limites: [Especificação](ESPECIFICACAO.md), [estabilidade/QoL](ESTA
 2. [ ] Recuperar objetos/SWF intermediários com transformações e profundidade individual. Máscara frontal global não encerra esse trabalho; consultar [MAP_LAYERS.md](MAP_LAYERS.md).
 3. [ ] Integrar os 129 conjuntos de mapas restantes com navegação, população, encontros, save e inspeção visual.
 4. [ ] Revisar 31 ações em 30 modelos conforme reports/external-symbol-audit.json; não refazer as skills já corrigidas do Sasuke inicial.
-5. [ ] Integrar demais efeitos/jutsus e áudio dos personagens, balancear recrutas individualmente e ampliar o conteúdo de itens/missões.
+5. [ ] Integrar demais efeitos/jutsus originais e áudio dos personagens e ampliar conteúdo de missões. Refinar os perfis autorais com novos dados de uso; o primeiro balanceamento e a expansão de equipamento já foram implementados.
 6. [ ] Integrar 195 artes de loading restantes e revisar as 71 dicas sem anunciar mecânicas inexistentes.
 7. [ ] Durante a recuperação, registrar conexões, portais e coordenadas originais comprovadas.
 8. [ ] Após a recuperação prioritária, implementar transições físicas entre mapas com destinos e chegadas corretos.
