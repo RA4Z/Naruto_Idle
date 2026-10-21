@@ -12,7 +12,21 @@ import {
   localizeContent,
   formatNumber,
   type MessageKey,
+  resolveInitialLocale,
 } from "../src/i18n/core.ts";
+
+test("first visit follows browser preferences, saved choices win and unsupported languages fall back to English", () => {
+  assert.equal(resolveInitialLocale(null, ["pt-PT"]), "pt-BR");
+  assert.equal(resolveInitialLocale(null, ["en-US"]), "en");
+  assert.equal(resolveInitialLocale(null, ["es-MX"]), "es");
+  assert.equal(resolveInitialLocale(null, ["ES-ar"]), "es");
+  assert.equal(resolveInitialLocale(null, ["fr-FR", "es-ES", "en"]), "es");
+  assert.equal(resolveInitialLocale(null, ["de-DE"]), "en");
+  assert.equal(resolveInitialLocale(null, []), "en");
+  assert.equal(resolveInitialLocale("pt-BR", ["en-US"]), "pt-BR");
+  assert.equal(resolveInitialLocale("es", ["pt-BR"]), "es");
+  assert.equal(resolveInitialLocale("invalid", ["es-ES"]), "es");
+});
 
 test("three languages interpolate, pluralize, format and safely escape text", () => {
   try {

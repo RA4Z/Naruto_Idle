@@ -17,14 +17,39 @@ const catalogs: Record<Locale, Record<string, Message>> = {
   es: spanish,
 };
 export const LANGUAGE_STORAGE_KEY = "folha-idle-language";
-let locale: Locale = "pt-BR";
-try {
-  if (typeof window !== "undefined") {
-    const saved = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
-    if (saved && Object.hasOwn(LOCALES, saved)) locale = saved as Locale;
+export function resolveInitialLocale(
+  saved: string | null,
+  languages: readonly string[],
+): Locale {
+  if (saved && Object.hasOwn(LOCALES, saved)) return saved as Locale;
+  for (const language of languages) {
+    const tag = language.trim().toLowerCase();
+    const exact = Object.keys(LOCALES).find(
+      (supported) => supported.toLowerCase() === tag,
+    );
+    if (exact) return exact as Locale;
+    const base = tag.split("-")[0];
+    const match = Object.keys(LOCALES).find(
+      (supported) => supported.toLowerCase().split("-")[0] === base,
+    );
+    if (match) return match as Locale;
   }
-} catch {
-  /* Browsers may deny storage; the game still works in Portuguese. */
+  return "en";
+}
+let locale: Locale = "pt-BR";
+if (typeof window !== "undefined") {
+  let saved: string | null = null;
+  try {
+    saved = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
+  } catch {
+    /* Browser language detection also works when storage is unavailable. */
+  }
+  locale = resolveInitialLocale(
+    saved,
+    window.navigator.languages?.length
+      ? window.navigator.languages
+      : [window.navigator.language],
+  );
 }
 export const getLocale = () => locale;
 const numberFormatters = new Map<string, Intl.NumberFormat>();

@@ -2,7 +2,7 @@
 
 ## Uso
 
-O seletor **Idioma / Language / Idioma** fica disponível no jogo, no administrador e na arena. Idiomas iniciais: português brasileiro (`pt-BR`, padrão), inglês (`en`) e espanhol (`es`). A escolha fica em `localStorage`, na chave `folha-idle-language`, separada do save da jornada.
+O seletor **Idioma / Language / Idioma** fica disponível no jogo, no administrador e na arena. Idiomas iniciais: português brasileiro (`pt-BR`), inglês (`en`) e espanhol (`es`). No primeiro acesso, usa a lista de idiomas preferidos do navegador, em ordem, aceitando variantes regionais (por exemplo, `pt-PT` usa `pt-BR` e `es-MX` usa `es`). Se nenhum idioma for suportado, usa inglês. A escolha manual fica em `localStorage`, na chave `folha-idle-language`, separada do save da jornada, e tem prioridade nos próximos acessos. A detecção também funciona se o navegador bloquear o armazenamento. O servidor mantém português para seus textos canônicos.
 
 Ao trocar, a interface recarrega para reconstruir também textos de configuração. Se houver uma jornada aberta, o jogo restaura a minijanela, salva o progresso e continua a jornada automaticamente no idioma escolhido. A troca usa o fluxo normal de restauração do jogo, não preserva o fotograma ou um combate parcialmente executado. Não muda IDs, moedas, itens, XP ou atributos por causa da tradução. A mudança de idioma não é enviada a outros jogadores da arena.
 
