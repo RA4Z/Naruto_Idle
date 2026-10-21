@@ -11,6 +11,7 @@ Atualizado em 21/10/2026. Este arquivo descreve o estado vigente. O [histórico 
 5. [Traduções](docs/TRADUCOES.md).
 6. [Balanceamento](docs/BALANCEAMENTO.md): estilos, técnicas, inimigos/elites, equipamentos e dificuldades.
 7. [Backend e Supabase](docs/BACKEND_E_SUPABASE.md): integração de contas/saves, SQL, comandos, limites e bloqueio remoto atual.
+8. [Ativação por outro agente](docs/ATIVACAO_SUPABASE_OUTRO_AGENTE.md): roteiro operacional para o outro computador, credenciais, migrações, SMTP, Vercel e validação real.
 
 ## Produto e código
 

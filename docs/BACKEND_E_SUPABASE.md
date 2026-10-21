@@ -1,5 +1,7 @@
 # Contas e persistência: Supabase
 
+Para o agente que fará a ativação em outro computador, seguir o [roteiro operacional de ativação](ATIVACAO_SUPABASE_OUTRO_AGENTE.md): preparação do `.env` que não acompanha o Git, comandos em ordem, diagnóstico de falhas, testes reais e critérios de conclusão.
+
 ## Estado desta entrega
 
 Primeira etapa de backend: contas por e-mail/senha, recuperação de senha, save por conta, importação explícita, backup local/exportação JSON, sincronização periódica e posse exclusiva entre dispositivos. O jogo local continua disponível sem configurar Supabase.
