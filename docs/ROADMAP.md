@@ -2,7 +2,7 @@
 
 ## Autorização e rotina
 
-O usuário autorizou desenvolvimento contínuo nos resets naturais, mantendo aproximadamente 10% da cota de 5 horas e da cota semanal. Consultar o uso real antes e entre etapas. Não resgatar créditos de reset. Fazer commit e push de cada etapa validada em origin (RA4Z/Naruto_Idle). Não incluir alterações alheias: a exclusão pré-existente de DESIGN_DE_PROGRESSAO.md ainda não pertence a estes commits. Não contratar nem publicar infraestrutura sem nova autorização. Multiplayer local e seu desenvolvimento estão autorizados.
+O usuário autorizou desenvolvimento contínuo nos resets naturais. Autorização atualizada em 20/10/2026: durante noites e madrugadas (18h às 6h, Brasília), pode consumir 100% da janela de cinco horas, chegando a 0% restante; durante o dia manter aproximadamente 10%. A reserva semanal de 10% permanece em todos os horários e prevalece. Salvar checkpoints e publicar etapas testadas antes de esgotar a janela. Consultar o uso real antes e entre etapas. Não resgatar créditos de reset. Fazer commit e push de cada etapa validada em origin (RA4Z/Naruto_Idle). Não incluir alterações alheias: a exclusão pré-existente de DESIGN_DE_PROGRESSAO.md ainda não pertence a estes commits. Não contratar nem publicar infraestrutura sem nova autorização. Multiplayer local e seu desenvolvimento estão autorizados.
 
 ## Consumo da máquina
 

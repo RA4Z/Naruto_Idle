@@ -1,5 +1,13 @@
 # Ponto de continuidade
 
+## Uso noturno e próxima retomada — 20/10/2026
+
+Autorização mais recente: durante noites e madrugadas pode consumir toda a janela de cinco horas, chegando a 0% restante. Aplicar das 18h às 6h no horário de Brasília; durante o dia manter a reserva de aproximadamente 10%. A reserva semanal de 10% continua em todos os horários e prevalece. Não resgatar créditos de reset. Salvar checkpoints e publicar etapas testadas antes de esgotar a janela. Não aumentar concorrência: uma tarefa pesada por vez, um worker e uma página de navegador.
+
+Automação existente Evoluir Naruto Idle RPG atualizada, ACTIVE, sem duplicação: próxima retomada nominal em 21/10/2026 às 01h20 de Brasília; reset real consultado em 20/10 às 22h01: 21/10 às 01h20min39s. Disparo pode anteceder esse horário; nesse caso aguardar em esperas interrompíveis de até 60 s e consultar as cotas novamente. Não prometer mensagem de progresso se nada acionável mudou. Conferir os horários reais a cada retomada.
+
+Última etapa publicada: 19e994c7, doze mapas integrados e 133 conjuntos pendentes. Próximo lote investigado, ainda não implementado: sons originais de ataque/morte dos modelos 19000101, 19000201, 19004301 e 19002301, com carregamento sob demanda e limpeza ao trocar de área. Preservar a exclusão alheia de DESIGN_DE_PROGRESSAO.md. Esta política substitui as reservas de cinco horas mencionadas nas notas históricas abaixo.
+
 ## Primeiro lote de quatro mapas — doze destinos integrados
 
 Concluídos 10010 Floresta do País do Fogo, 10011 Tanzaku, 10020 Deserto do País do Vento e 10015 O Deserto Quente. Conversão serial, um mapa por vez, preservando byte a byte os oito anteriores. Grade e máscara nativas, seis adversários móveis, caminhada, encontros/recompensas, save/reload e retorno validados; populações/regras idle são autorais. Deserto do País do Vento usa região 2. Não inferir região pela ordem do mapa; o teste agora lê a grade real. Total: 12/145 conjuntos, 133 pendentes. Relatório world-expansion-10010-10011-10020-10015.json.
