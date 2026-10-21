@@ -40,6 +40,10 @@ Perda de contexto WebGL interrompe a simulação e reconstrói a cena a partir d
 
 ## Interface e qualidade de vida
 
+- Minimapa navegável por clique/teclado; rotas douradas/ciano e alvo destacado no cenário. Recolhimento automático em janela pequena.
+- Três conjuntos de equipamentos por personagem, prévia dos atributos, validação completa antes de aplicar e persistência no save.
+- Vitória libera exploração após o golpe final (até 700 ms), mantendo a recompensa única e os efeitos de morte/XP. [Detalhes](ESTABILIDADE_E_QOL.md#navegação-e-conjuntos-de-equipamentos).
+
 - Meus personagens com busca, favoritos, ordenação por nível/nome e personagem ativo destacado; acervo/recrutamento em tela separada.
 - Viagens com busca por nome/ID, favoritos, último destino e dificuldade da área.
 - Estados da caçada, indicação de processamento e motivos de indisponibilidade.

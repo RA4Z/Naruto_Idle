@@ -4,6 +4,11 @@ Atualizado em 21/10/2026. O [histórico](history/ROADMAP-2026-10-21.md) preserva
 
 ## Entregas atuais
 
+- [x] Retomada após vitória vinculada à duração do golpe final, sem espera fixa de 1,7 s.
+- [x] Alvo destacado e rota manual/automática desenhada no cenário.
+- [x] Três conjuntos de equipamentos por personagem, com comparação, aplicação validada e persistência.
+- [x] Minimapa navegável por clique/teclado com inimigos, elites, NPCs, portal e câmera. [Funcionamento e manutenção](ESTABILIDADE_E_QOL.md#navegação-e-conjuntos-de-equipamentos).
+
 - [x] Ciclo exploração → encontro → combate no mesmo cenário → XP/loot → retomada; atributos individuais definem dano, vida, chakra e cadência/movimento.
 - [x] Troca entre personagens possuídos, progresso individual e party desativada.
 - [x] Sasuke inicial azul/branco 11000211; skills reconstruídas do original. Variante preta reservada.

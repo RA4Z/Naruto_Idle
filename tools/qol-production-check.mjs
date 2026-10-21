@@ -131,6 +131,15 @@ try {
   assert.equal(
     await page.evaluate(
       () =>
+        window.documentPictureInPicture.window.document.querySelectorAll(
+          ".world-minimap",
+        ).length,
+    ),
+    1,
+  );
+  assert.equal(
+    await page.evaluate(
+      () =>
         window.documentPictureInPicture.window.document.documentElement.style
           .fontSize,
     ),
@@ -186,6 +195,7 @@ try {
     before.coins,
   );
   result.graphicsRecovery = true;
+  assert.equal(await page.locator(".world-minimap").count(), 1);
   await page.setViewportSize({ width: 390, height: 844 });
   await page.locator(".accessibility-control").click();
   await page.locator('[data-preference="textSize"]').fill("150");

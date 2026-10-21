@@ -12,6 +12,13 @@ import { runtimeIndex } from "../assets/runtime-index";
 import { getPreferences, toggleFavorite } from "../preferences";
 import { compareEquipment } from "./equipment-comparison";
 import { recruitProfile } from "./recruit-profiles";
+import {
+  PRESET_IDS,
+  savePreset,
+  applyPreset,
+  presetEquipment,
+  comparePreset,
+} from "./equipment-presets";
 type Context = {
   save: Save;
   onChange: () => void;
@@ -211,6 +218,75 @@ export function installProgression(context: () => Context) {
           ),
           element("p", descriptions[key]),
         );
+        content.append(card);
+      }
+    }
+    if (selected === "presets") {
+      const help = element("p", t("expansion.presetHelp"));
+      help.className = "preset-help";
+      content.append(help);
+      for (const key of PRESET_IDS) {
+        const gear = presetEquipment(save, key);
+        const card = element("article", "");
+        card.className = "progress-card";
+        card.dataset.preset = key;
+        card.append(element("h3", t(`balance.path.${key}`)));
+        const same =
+          gear &&
+          ["weapon", "armor", "charm"].every(
+            (slot) =>
+              (save.equipment as Record<string, string>)?.[slot] ===
+              (gear as Record<string, string>)[slot],
+          );
+        if (same) card.append(element("p", t("common.equipped")));
+        if (gear) {
+          for (const slot of ["weapon", "armor", "charm"] as const)
+            card.append(
+              element(
+                "p",
+                `${t(`state.${slot}`)}: ${ITEMS.find((i) => i.id === gear[slot])?.name || t("expansion.emptySlot")}`,
+              ),
+            );
+          const delta = comparePreset(save, key)!;
+          card.append(
+            element(
+              "p",
+              t("qol.comparison", {
+                values: (
+                  [
+                    ["attack", "qol.attack"],
+                    ["hp", "qol.hp"],
+                    ["chakra", "qol.chakra"],
+                    ["regen", "qol.regen"],
+                    ["skillDamage", "balance.skillDamage"],
+                    ["attackRate", "balance.attackRate"],
+                    ["moveSpeed", "balance.moveSpeed"],
+                    ["defense", "balance.defense"],
+                  ] as const
+                )
+                  .map(
+                    ([value, label]) =>
+                      `${t(label)} ${delta[value] > 0 ? "+" : ""}${formatNumber(delta[value], { maximumFractionDigits: 2 })}`,
+                  )
+                  .join(" · "),
+              }),
+            ),
+          );
+        } else card.append(element("p", t("expansion.presetMissing")));
+        const storeButton = action(
+          t(gear ? "expansion.overwritePreset" : "expansion.savePreset"),
+          () => savePreset(save, key),
+        );
+        storeButton.dataset.savePreset = key;
+        const applyButton = action(
+          t("expansion.applyPreset"),
+          () => applyPreset(save, key, context().canSwitch()),
+          !gear || !context().canSwitch(),
+        );
+        applyButton.dataset.applyPreset = key;
+        card.append(storeButton, applyButton);
+        if (gear && !context().canSwitch())
+          card.append(element("p", t("qol.switchBlocked")));
         content.append(card);
       }
     }
@@ -571,6 +647,7 @@ export function installProgression(context: () => Context) {
     ["attributes", t("progression.ui.d6436ac4f7")],
     ["quests", t("progression.ui.2d1c19f7e3")],
     ["inventory", t("progression.ui.a5aa9d7a87")],
+    ["presets", t("expansion.presets")],
     ["shop", t("progression.ui.70feed55e9")],
     ["collection", t("qol.owned")],
   ]) {

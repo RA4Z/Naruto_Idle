@@ -834,3 +834,50 @@ button:disabled {
     font-size: 0.625rem;
   }
 }
+
+.world-minimap {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 5;
+  width: clamp(150px, 20vw, 230px);
+  max-width: calc(100% - 20px);
+  color: #e5efde;
+  background: #10221aeb;
+  border: 1px solid #73957a;
+  border-radius: 8px;
+  padding: 6px;
+  box-sizing: border-box;
+}
+.world-minimap summary {
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.world-minimap svg {
+  display: block;
+  width: 100%;
+  aspect-ratio: 8 / 5;
+  cursor: crosshair;
+  margin-top: 5px;
+}
+.world-minimap svg:focus-visible {
+  outline: 2px solid #ffdc8b;
+}
+.world-minimap p {
+  font-size: 0.65rem;
+  line-height: 1.35;
+  margin: 5px 0 0;
+}
+.world-minimap p:empty {
+  display: none;
+}
+.world-minimap[data-compact="true"] > :not(summary) {
+  display: none;
+}
+.world-minimap[data-compact="true"] {
+  width: auto;
+}
+.preset-help {
+  grid-column: 1 / -1;
+}

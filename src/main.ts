@@ -1,3 +1,5 @@
+import { Minimap } from "./world/minimap";
+import { RouteOverlay } from "./world/route-overlay";
 import {
   t,
   th,
@@ -832,6 +834,8 @@ class HuntScene extends Phaser.Scene {
   loadingActor = false;
   encounterSequence = 0;
   private autoNavigator = new AutoHuntNavigator<EntityActor>();
+  private minimap?: Minimap;
+  private routeOverlay?: RouteOverlay;
   bars!: Phaser.GameObjects.Graphics;
   groundShadow!: Phaser.GameObjects.Ellipse;
   private footsteps = new FootstepCadence();
@@ -1006,6 +1010,21 @@ class HuntScene extends Phaser.Scene {
     this.bindWorldInput();
     this.renderParty();
     this.bars = this.add.graphics().setDepth(2000);
+    this.routeOverlay = new RouteOverlay(this);
+    this.minimap = new Minimap(canvasHost, (point) => {
+      if (
+        save.paused ||
+        this.loadingActor ||
+        this.hunt.phase !== "explorando" ||
+        document.querySelector("dialog[open]")
+      )
+        return false;
+      return this.walkTo(point);
+    });
+    this.minimap.setMap(this.map, this.navigation.points);
+    const destroyMinimap = () => this.minimap?.destroy();
+    this.events.once("shutdown", destroyMinimap);
+    this.events.once("destroy", destroyMinimap);
     this.hunt.onEvent = (event, value) => this.effect(event, value);
     $("hero-name").textContent = cast.hero.name;
     ($("sound") as HTMLInputElement).checked = save.sound;
@@ -1662,18 +1681,19 @@ class HuntScene extends Phaser.Scene {
   walkTo(point: Point) {
     if (this.hunt.phase !== "explorando") {
       toast(t("main.9693b68fd2"));
-      return;
+      return false;
     }
     const path = this.navigation.path(this.hero, point);
     if (!path.length) {
       this.floating(t("main.463c2c1666"), this.hero.x, this.hero.y - 60);
-      return;
+      return false;
     }
     save.autoHunt = false;
     this.path = path;
     const end = path.at(-1)!;
     this.destination.setPosition(end.x, end.y).setVisible(true);
     this.renderUI();
+    return true;
   }
   resetResidents() {
     this.npcs.forEach((n) => n.destroy());
@@ -1812,6 +1832,7 @@ class HuntScene extends Phaser.Scene {
       this.map = map;
       this.presentation.setMap(map.id);
       this.navigation = new NativeNavigation(grid);
+      this.minimap?.setMap(map, this.navigation.points);
       cast.enemies = pool;
       this.presentation.setActors(
         this.isLobby ? [] : [cast.hero.id, ...pool.map((e) => e.id)],
@@ -2088,7 +2109,45 @@ class HuntScene extends Phaser.Scene {
       this.lastSave = 0;
     }
   }
+  private renderNavigation() {
+    const active = this.hunt.phase === "explorando";
+    const target = this.enemyField.members.find(
+      (m) =>
+        m.alive &&
+        m.actor.visible &&
+        m.actor === this.enemy &&
+        ((!this.isLobby && active && save.autoHunt) ||
+          this.hunt.phase === "combatendo" ||
+          this.hunt.phase === "iniciando combate"),
+    );
+    const path = active && !this.loadingActor ? this.path : [];
+    this.routeOverlay?.update(this.hero, path, target?.actor, !!save.autoHunt);
+    this.minimap?.update({
+      hero: this.hero,
+      path,
+      auto: !!save.autoHunt,
+      enemies: this.enemyField.members
+        .filter((m) => m.alive && m.actor.visible)
+        .map((m) => ({
+          x: m.actor.x,
+          y: m.actor.y,
+          elite: m.profile.elite,
+          name: m.actor.manifest.name,
+        })),
+      npcs: this.npcs.map((n) => ({ x: n.x, y: n.y, name: n.manifest.name })),
+      portal: this.portal,
+      target: target
+        ? {
+            x: target.actor.x,
+            y: target.actor.y,
+            name: target.actor.manifest.name,
+          }
+        : undefined,
+      view: this.cameras.main.worldView,
+    });
+  }
   renderUI() {
+    this.renderNavigation();
     if (this.shownLevel !== undefined && save.level > this.shownLevel)
       this.presentation.ui("levelUp");
     this.shownLevel = save.level;

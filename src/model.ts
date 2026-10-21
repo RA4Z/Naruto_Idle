@@ -1,7 +1,15 @@
 import { IMPLEMENTED_MAP_IDS } from "./config/maps";
 import { recruitProfile } from "./progression/recruit-profiles.ts";
 import { enemyProfile, type EnemyProfile } from "./world/enemy-profiles.ts";
-import { combatStats, damageAfterResistance } from "./progression/combat-stats";
+import {
+  combatStats,
+  damageAfterResistance,
+  strikeDuration,
+} from "./progression/combat-stats";
+import {
+  validPresets,
+  type EquipmentPresets,
+} from "./progression/preset-schema";
 import { ITEMS, QUESTS, STARTER_COLLECTION } from "./progression/rules";
 import {
   CHARACTER_IDS,
@@ -41,6 +49,7 @@ export type Save = {
   soundVolume?: number;
   paused: boolean;
   equipment?: { weapon?: string; armor?: string; charm?: string };
+  equipmentPresets?: EquipmentPresets;
   questClaims?: string[];
   visitedMaps?: string[];
   collection?: string[];
@@ -267,6 +276,11 @@ export function restore(
   s.visitedMaps ??= [s.location || "10001"];
   s.collection ??= [...new Set([...STARTER_COLLECTION, ...(s.partyIds || [])])];
   if (s.activeEntityId && !s.collection.includes(s.activeEntityId)) return null;
+  if (
+    s.equipmentPresets !== undefined &&
+    !validPresets(s.equipmentPresets, s.collection)
+  )
+    return null;
   // Each owned model has a separate record; legacy progress belongs only to the protagonist.
   if (
     s.characterProgress !== undefined &&
@@ -361,6 +375,7 @@ export type Phase =
   | "retomando exploração"
   | "derrota";
 export class Hunt {
+  private lastAttackDuration = 450;
   enemy: EnemyProfile = enemyProfile();
   enemyAttacks = 0;
   enemyWindup = false;
@@ -402,6 +417,10 @@ export class Hunt {
     return true;
   }
   private technique(st: ReturnType<typeof stats>) {
+    this.lastAttackDuration = strikeDuration(
+      !!starterCharacter(this.save),
+      st.interval,
+    );
     this.chakra -= st.skillCost;
     this.skillCooldown = 1200;
     this.guard = st.skillGuard;
@@ -474,6 +493,7 @@ export class Hunt {
         if (special) {
           this.technique(st);
         } else {
+          this.lastAttackDuration = strikeDuration(false, st.interval);
           this.chakra = Math.min(st.maxChakra, this.chakra + 6);
           const damage = damageAfterResistance(st.attack, this.enemy.defense);
           this.enemyHp = Math.max(0, this.enemyHp - damage);
@@ -543,10 +563,14 @@ export class Hunt {
         this.timer = 0;
         this.onEvent("defeat", 0);
       }
-    } else if (this.phase === "recompensas" && this.timer > 1300) {
-      this.phase = "retomando exploração";
+    } else if (
+      this.phase === "recompensas" &&
+      this.timer >= Math.max(180, this.lastAttackDuration)
+    ) {
+      this.phase = "explorando";
       this.timer = 0;
       this.hp = Math.min(st.maxHp, this.hp + st.maxHp * 0.2);
+      this.onEvent("resume", 0);
     } else if (this.phase === "retomando exploração" && this.timer > 400) {
       this.phase = "explorando";
       this.timer = 0;
