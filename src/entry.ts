@@ -2,6 +2,8 @@ import { t, errorText } from "./i18n/core.ts";
 import "./style.css";
 import { installLanguageControl, consumeLanguageResume } from "./i18n/browser";
 import { loadingScreen } from "./loading-screen";
+import { acquireJourney, releaseJourney } from "./journey-lock";
+import { installPreferences } from "./preferences";
 async function boot() {
   if (/^\/admin(?:\/|$)/.test(location.pathname)) await import("./admin/main");
   else if (/^\/arena(?:\/|$)/.test(location.pathname))
@@ -20,12 +22,15 @@ async function boot() {
           "./progression/local-transfer"
         );
         const { LocalProgressStore } = await import("./model");
+        await acquireJourney();
         transferred = acceptLocalhostTransfer(
           address,
           new LocalProgressStore(),
           (previous) => localStorage.setItem(LOCAL_TRANSFER_BACKUP, previous),
         );
+        if (!transferred) releaseJourney();
       } catch (error) {
+        releaseJourney();
         transferError = errorText(error);
       }
     }
@@ -50,6 +55,7 @@ async function boot() {
   }
 }
 installLanguageControl();
+installPreferences();
 const initial = loadingScreen.begin(t("entry.ddc49b1c5f"));
 void boot()
   .then(() => {

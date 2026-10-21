@@ -1,4 +1,5 @@
 import { t } from "../i18n/core.ts";
+import { getPreferences } from "../preferences.ts";
 export type EntityAudioRef = {
   name: string;
   url: string;
@@ -47,6 +48,7 @@ type Voice = {
   owner: string;
   sound: string;
   gain: number;
+  isVoice: boolean;
 };
 export type AudioSchedule = (delay: number, run: () => void) => () => void;
 type FetchActor = (url: string, signal: AbortSignal) => Promise<ActorAudio>;
@@ -186,7 +188,10 @@ export class EntityAudioPlayer {
       ? Math.max(0, Math.min(1, volume))
       : 0;
     for (const voice of this.voices)
-      voice.audio.volume = voice.gain * this.volume;
+      voice.audio.volume =
+        voice.gain *
+        this.volume *
+        (voice.isVoice ? getPreferences().voiceVolume : 1);
     if (changed && !enabled) {
       this.revision++;
       this.controller?.abort();
@@ -332,10 +337,14 @@ export class EntityAudioPlayer {
           owner,
           sound: event.sound,
           gain,
+          isVoice: !!sound.voice,
         };
         voice.audio.preload = "none";
         voice.audio.src = clip.url;
-        voice.audio.volume = gain * this.volume;
+        voice.audio.volume =
+          gain *
+          this.volume *
+          (voice.isVoice ? getPreferences().voiceVolume : 1);
         voice.audio.onended = () => this.release(voice);
         voice.audio.onerror = () => {
           this.failures++;

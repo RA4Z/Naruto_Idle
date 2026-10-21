@@ -9,11 +9,14 @@ import {
   FUTURE_CHARACTERS,
 } from "./character-progress";
 import { runtimeIndex } from "../assets/runtime-index";
+import { getPreferences, toggleFavorite } from "../preferences";
+import { compareEquipment } from "./equipment-comparison";
 type Context = {
   save: Save;
   onChange: () => void;
   switchCharacter: (id: string) => Promise<void>;
   heroId: string;
+  canSwitch: () => boolean;
 };
 export function installProgression(context: () => Context) {
   const dialog = document.createElement("dialog");
@@ -26,6 +29,9 @@ export function installProgression(context: () => Context) {
   let attributeId: string | undefined;
   let selected = "quests",
     version = 0;
+  let collectionSearch = "",
+    collectionSort = "level",
+    favoritesOnly = false;
   const element = (tag: string, text: string) => {
     const e = document.createElement(tag);
     e.textContent = text;
@@ -53,8 +59,11 @@ export function installProgression(context: () => Context) {
       b.textContent = label;
       b.className = "secondary";
       b.disabled = disabled;
+      if (disabled && label !== t("common.equipped")) b.title = label;
       b.onclick = async () => {
         b.disabled = true;
+        b.setAttribute("aria-busy", "true");
+        b.textContent = t("qol.processing");
         try {
           await run();
           onChange();
@@ -63,6 +72,9 @@ export function installProgression(context: () => Context) {
         } catch (e) {
           feedback.textContent = errorText(e);
           b.disabled = false;
+          b.textContent = label;
+        } finally {
+          b.removeAttribute("aria-busy");
         }
       };
       return b;
@@ -236,9 +248,35 @@ export function installProgression(context: () => Context) {
           element("p", item.description),
           element(
             "p",
-            `Ataque +${item.attack} · Vida +${item.hp} · Chakra +${item.chakra}${item.regen ? t("progression.ui.182b9d2e42") + item.regen + "/s" : ""}`,
+            t("qol.gearStats", {
+              attack: item.attack,
+              hp: item.hp,
+              chakra: item.chakra,
+              regen: item.regen || 0,
+            }),
           ),
         );
+        const delta = compareEquipment(save, item.id);
+        const comparison = element(
+          "p",
+          t("qol.comparison", {
+            values: (
+              [
+                ["attack", "qol.attack"],
+                ["hp", "qol.hp"],
+                ["chakra", "qol.chakra"],
+                ["regen", "qol.regen"],
+              ] as const
+            )
+              .map(
+                ([key, label]) =>
+                  `${t(label)} ${delta[key] > 0 ? "+" : ""}${formatNumber(delta[key], { maximumFractionDigits: 1 })}`,
+              )
+              .join(" · "),
+          }),
+        );
+        comparison.dataset.comparison = item.id;
+        card.append(comparison);
         if (selected === "shop")
           card.append(
             action(
@@ -248,7 +286,7 @@ export function installProgression(context: () => Context) {
               () => {
                 buyItem(save, item.id);
               },
-              !!save.inventory[item.id],
+              !!save.inventory[item.id] || save.coins < item.price,
             ),
           );
         else
@@ -262,6 +300,14 @@ export function installProgression(context: () => Context) {
             ),
           );
         content.append(card);
+        if (
+          selected === "shop" &&
+          !save.inventory[item.id] &&
+          save.coins < item.price
+        ) {
+          card.querySelector("button")!.title = t("qol.cannotAfford");
+          card.append(element("p", t("qol.cannotAfford")));
+        }
       }
       if (selected === "inventory") {
         const materials = Object.entries(save.inventory).filter(
@@ -286,13 +332,95 @@ export function installProgression(context: () => Context) {
         .filter((id) => runtime.entities[id])
         .map((id) => ({ id, ...runtime.entities[id] }));
       if (request !== version || !dialog.open) return;
-      for (const id of save.collection || []) {
+      const controls = element("div", "");
+      controls.className = "library-controls";
+      const search = document.createElement("input");
+      search.type = "search";
+      search.value = collectionSearch;
+      search.placeholder = t("qol.search");
+      search.setAttribute("aria-label", t("qol.search"));
+      // Keep focus and cursor while filtering, even though cards are rebuilt.
+      search.oninput = async () => {
+        collectionSearch = search.value;
+        const cursor = search.selectionStart;
+        await render();
+        const next = dialog.querySelector<HTMLInputElement>(
+          "[data-owned-search]",
+        );
+        next?.focus();
+        if (cursor !== null) next?.setSelectionRange(cursor, cursor);
+      };
+      search.dataset.ownedSearch = "";
+      const sort = document.createElement("select");
+      sort.setAttribute("aria-label", t("qol.sortLevel"));
+      for (const [value, label] of [
+        ["level", t("qol.sortLevel")],
+        ["name", t("qol.sortName")],
+      ]) {
+        const option = document.createElement("option");
+        option.value = value;
+        option.textContent = label;
+        sort.append(option);
+      }
+      sort.value = collectionSort;
+      sort.onchange = () => {
+        collectionSort = sort.value;
+        void render();
+      };
+      const favLabel = element("label", t("qol.favoritesOnly"));
+      const fav = document.createElement("input");
+      fav.type = "checkbox";
+      fav.checked = favoritesOnly;
+      fav.onchange = () => {
+        favoritesOnly = fav.checked;
+        void render();
+      };
+      favLabel.prepend(fav);
+      const archiveButton = action(t("qol.archive"), () => {
+        dialog.close();
+        window.dispatchEvent(new Event("open-character-archive"));
+      });
+      archiveButton.dataset.openArchive = "";
+      controls.append(search, sort, favLabel, archiveButton);
+      content.append(controls);
+      const owned = entries
+        .filter(
+          (e) =>
+            !FUTURE_CHARACTERS.has(e.id) &&
+            (!favoritesOnly ||
+              getPreferences().characterFavorites.includes(e.id)) &&
+            `${e.name} ${e.id}`
+              .toLocaleLowerCase()
+              .includes(collectionSearch.toLocaleLowerCase()),
+        )
+        .sort((a, b) =>
+          collectionSort === "level"
+            ? characterProgress(save, b.id).level -
+                characterProgress(save, a.id).level ||
+              a.name.localeCompare(b.name)
+            : a.name.localeCompare(b.name),
+        );
+      if (!owned.length) content.append(element("p", t("qol.noResults")));
+      for (const { id } of owned) {
         if (FUTURE_CHARACTERS.has(id)) continue;
         const e = entries.find((e) => e.id === id);
         if (!e) continue;
         const card = element("article", "");
         card.className = "progress-card";
         card.dataset.characterId = id;
+        card.classList.toggle("active-character", id === heroId);
+        if (id === heroId) card.append(element("strong", t("qol.active")));
+        const favorite = action(
+          (getPreferences().characterFavorites.includes(id) ? "★ " : "☆ ") +
+            t("qol.favorite"),
+          () => toggleFavorite("characterFavorites", id),
+        );
+        favorite.dataset.favoriteCharacter = id;
+        favorite.setAttribute(
+          "aria-pressed",
+          String(getPreferences().characterFavorites.includes(id)),
+        );
+        card.append(favorite);
         const progress = characterProgress(save, id);
         if (e.preview) {
           const img = document.createElement("img");
@@ -330,6 +458,13 @@ export function installProgression(context: () => Context) {
             id === heroId || !e.capabilities.companion || !e.capabilities.enemy,
           ),
         );
+        const switchButton =
+          card.querySelector<HTMLButtonElement>("button:last-child");
+        if (id !== heroId && !context().canSwitch() && switchButton) {
+          switchButton.disabled = true;
+          switchButton.title = t("qol.switchBlocked");
+          card.append(element("p", t("qol.switchBlocked")));
+        }
         content.append(card);
       }
       content.append(element("p", t("progression.ui.62ec09bfd4")));
@@ -340,7 +475,7 @@ export function installProgression(context: () => Context) {
     ["quests", t("progression.ui.2d1c19f7e3")],
     ["inventory", t("progression.ui.a5aa9d7a87")],
     ["shop", t("progression.ui.70feed55e9")],
-    ["collection", t("progression.ui.7c52deaf16")],
+    ["collection", t("qol.owned")],
   ]) {
     const b = document.createElement("button");
     b.className = "secondary";
@@ -353,7 +488,8 @@ export function installProgression(context: () => Context) {
     };
     dialog.querySelector("nav")!.append(b);
   }
-  return () => {
+  return (tab?: string) => {
+    if (tab) selected = tab;
     feedback.textContent = "";
     dialog.showModal();
     void render();

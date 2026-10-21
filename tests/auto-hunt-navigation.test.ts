@@ -5,9 +5,17 @@ import type { NativeNavigation, Point } from "../src/world/navigation.ts";
 
 test("automatic hunt keeps its target aligned with the route and replans when it moves", () => {
   const calls: Point[] = [];
-  const nav = { clear: () => true, path: (_from: Point, to: Point) => { calls.push({ ...to }); return [{ ...to }]; } } as NativeNavigation;
+  const nav = {
+    clear: () => true,
+    path: (_from: Point, to: Point) => {
+      calls.push({ ...to });
+      return [{ ...to }];
+    },
+  } as NativeNavigation;
   const hunt = new AutoHuntNavigator<Point>();
-  const hero = { x: 0, y: 0 }, first = { x: 100, y: 0 }, second = { x: 120, y: 0 };
+  const hero = { x: 0, y: 0 },
+    first = { x: 100, y: 0 },
+    second = { x: 120, y: 0 };
   let state = hunt.update(hero, [first, second], 16, nav);
   assert.equal(state.target, first);
   second.x = 35;
@@ -24,12 +32,86 @@ test("automatic hunt keeps its target aligned with the route and replans when it
 
 test("unreachable targets are skipped and pathfinding retries are throttled", () => {
   let calls = 0;
-  const nav = { clear: () => false, path: (_from: Point, to: Point) => { calls++; return to.x === 50 ? [] : [{ ...to }]; } } as NativeNavigation;
+  const nav = {
+    clear: () => false,
+    path: (_from: Point, to: Point) => {
+      calls++;
+      return to.x === 50 ? [] : [{ ...to }];
+    },
+  } as NativeNavigation;
   const hunt = new AutoHuntNavigator<Point>();
-  const hero = { x: 0, y: 0 }, unreachable = { x: 50, y: 0 }, reachable = { x: 100, y: 0 };
-  assert.equal(hunt.update(hero, [unreachable, reachable], 16, nav).target, undefined);
-  for (let i = 0; i < 20; i++) hunt.update(hero, [unreachable, reachable], 16, nav);
+  const hero = { x: 0, y: 0 },
+    unreachable = { x: 50, y: 0 },
+    reachable = { x: 100, y: 0 };
+  assert.equal(
+    hunt.update(hero, [unreachable, reachable], 16, nav).target,
+    undefined,
+  );
+  for (let i = 0; i < 20; i++)
+    hunt.update(hero, [unreachable, reachable], 16, nav);
   assert.equal(calls, 1);
-  assert.equal(hunt.update(hero, [unreachable, reachable], 200, nav).target, reachable);
+  assert.equal(
+    hunt.update(hero, [unreachable, reachable], 200, nav).target,
+    reachable,
+  );
   assert.equal(calls, 2);
+});
+
+test("a nonempty route that stops outside reachable attack range is rejected", () => {
+  const nav = {
+    clear: () => false,
+    path: () => [{ x: 55, y: 0 }],
+  } as unknown as NativeNavigation;
+  const hunt = new AutoHuntNavigator<Point>();
+  assert.equal(
+    hunt.update({ x: 0, y: 0 }, [{ x: 100, y: 0 }], 16, nav).target,
+    undefined,
+  );
+  assert.equal(hunt.status, "unreachable");
+});
+
+test("a stalled pursuit switches targets and a disappeared enemy enters respawn waiting", () => {
+  const nav = {
+    clear: () => true,
+    path: (_hero: Point, to: Point) => [{ ...to }],
+  } as NativeNavigation;
+  const hunt = new AutoHuntNavigator<Point>();
+  const hero = { x: 0, y: 0 },
+    first = { x: 100, y: 0 },
+    second = { x: 130, y: 0 };
+  hunt.update(hero, [first, second], 16, nav);
+  for (let i = 0; i < 25; i++) hunt.update(hero, [first, second], 100, nav);
+  assert.equal(hunt.update(hero, [first, second], 16, nav).target, second);
+  assert.equal(hunt.update(hero, [], 16, nav).target, undefined);
+  assert.equal(hunt.status, "waiting");
+});
+
+test("a blocked segment triggers a throttled replan and moving targets have a pursuit deadline", () => {
+  let calls = 0,
+    blocked = false;
+  const nav = {
+    clear: () => !blocked,
+    path: (_hero: Point, to: Point) => {
+      calls++;
+      return [{ ...to }];
+    },
+  } as NativeNavigation;
+  const hunt = new AutoHuntNavigator<Point>();
+  const hero = { x: 0, y: 0 },
+    enemy = { x: 100, y: 0 };
+  hunt.update(hero, [enemy], 16, nav);
+  blocked = true;
+  hunt.update(hero, [enemy], 500, nav);
+  assert.equal(calls, 2);
+  blocked = false;
+  let excluded = false;
+  for (let i = 0; i < 210; i++) {
+    hero.x++;
+    enemy.x++;
+    if (!hunt.update(hero, [enemy], 100, nav).target) {
+      excluded = true;
+      break;
+    }
+  }
+  assert.equal(excluded, true);
 });

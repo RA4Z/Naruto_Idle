@@ -97,6 +97,12 @@ export function installMiniWindow(options: MiniWindowOptions) {
     restore;
   function copyStyles(target: Document) {
     target.documentElement.lang = document.documentElement.lang;
+    target.documentElement.style.fontSize =
+      document.documentElement.style.fontSize;
+    target.documentElement.classList.toggle(
+      "reduced-effects",
+      document.documentElement.classList.contains("reduced-effects"),
+    );
     const base = target.createElement("base");
     base.href = document.baseURI;
     target.head.append(base);

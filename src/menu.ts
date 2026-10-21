@@ -1,6 +1,7 @@
 import { t, th } from "./i18n/core.ts";
 import { CHARACTERS, type CharacterId } from "./data";
 import { loadingScreen } from "./loading-screen";
+import { acquireJourney, releaseJourney } from "./journey-lock";
 let engine: Promise<typeof import("./main")> | undefined;
 let version = 0;
 export function installMenu() {
@@ -12,11 +13,17 @@ export function installMenu() {
       () => location.reload(),
       () => {
         version++;
+        releaseJourney();
         loadingScreen.hide();
       },
     );
     stage.update(t("menu.6d1ba3345a"));
     try {
+      await acquireJourney();
+      if (request !== version) {
+        if (version === request + 1) releaseJourney();
+        return;
+      }
       const game = await (engine ??= import("./main").catch((error) => {
         engine = undefined;
         throw error;
@@ -25,6 +32,7 @@ export function installMenu() {
       if (character) await game.startNewJourney(character);
       else await game.continueJourney();
     } catch (error) {
+      if (request === version) releaseJourney();
       stage.fail(error);
     }
   }

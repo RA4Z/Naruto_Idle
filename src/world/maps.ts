@@ -2,6 +2,11 @@ import { t, th, errorText } from "../i18n/core.ts";
 import type { NativeGrid, Point } from "./navigation";
 import { withSceneGeometry } from "./scene-geometry";
 import { runtimeIndex } from "../assets/runtime-index";
+import {
+  getPreferences,
+  toggleFavorite,
+  updatePreferences,
+} from "../preferences";
 export type WorldMap = {
   id: string;
   name: string;
@@ -39,22 +44,48 @@ export async function mapNavigation(map: WorldMap) {
 export function installTravel(
   getCurrent: () => string,
   onChoose: (map: WorldMap) => Promise<void>,
+  getDifficulty?: () => {
+    area: { name: string; level: number };
+    level: number;
+  },
 ) {
   const dialog = document.createElement("dialog");
   dialog.className = "map-library";
-  dialog.innerHTML = `<div class="library-heading"><div><p class="eyebrow">${th("common.travels")}</p><h2>${th("world.maps.9be3dd6e3c")}</h2></div><button class="secondary" data-close>${th("world.maps.0f2bd88ef0")}</button></div><div class="map-grid"></div><p role="status"></p>`;
+  dialog.innerHTML = `<div class="library-heading"><div><p class="eyebrow">${th("common.travels")}</p><h2>${th("world.maps.9be3dd6e3c")}</h2></div><button class="secondary" data-close>${th("world.maps.0f2bd88ef0")}</button></div><div class="library-controls"><input data-map-search type="search" placeholder="${th("qol.search")}" aria-label="${th("qol.search")}"><label><input data-map-favorites type="checkbox">${th("qol.favoritesOnly")}</label></div><p class="caption">${th("qol.sharedDifficulty")}</p><div class="map-grid"></div><p role="status"></p>`;
   document.body.append(dialog);
   dialog
     .querySelector("[data-close]")!
     .addEventListener("click", () => dialog.close());
-  return async () => {
-    dialog.showModal();
+  let busy = false;
+  let renderVersion = 0;
+  const search = dialog.querySelector<HTMLInputElement>("[data-map-search]")!;
+  const favorites = dialog.querySelector<HTMLInputElement>(
+    "[data-map-favorites]",
+  )!;
+  const render = async () => {
+    const request = ++renderVersion;
     const grid = dialog.querySelector(".map-grid")!,
       feedback = dialog.querySelector('[role="status"]')!;
     feedback.textContent = t("world.maps.b06b615999");
     grid.replaceChildren();
     try {
-      for (const map of await listMaps()) {
+      const matches = (await listMaps())
+        .filter(
+          (map) =>
+            `${map.name} ${map.id}`
+              .toLocaleLowerCase()
+              .includes(search.value.toLocaleLowerCase()) &&
+            (!favorites.checked ||
+              getPreferences().mapFavorites.includes(map.id)),
+        )
+        .sort(
+          (a, b) =>
+            Number(getPreferences().mapFavorites.includes(b.id)) -
+            Number(getPreferences().mapFavorites.includes(a.id)),
+        );
+      if (request !== renderVersion || !dialog.open) return;
+      grid.replaceChildren();
+      for (const map of matches) {
         const card = document.createElement("article");
         card.className = "map-card";
         const image = document.createElement("img");
@@ -65,6 +96,38 @@ export function installTravel(
         title.textContent = map.name;
         const text = document.createElement("p");
         text.textContent = map.description;
+        const favorite = document.createElement("button");
+        favorite.className = "secondary";
+        favorite.textContent =
+          (getPreferences().mapFavorites.includes(map.id) ? "★ " : "☆ ") +
+          t("qol.favorite");
+        favorite.dataset.favoriteMap = map.id;
+        favorite.setAttribute(
+          "aria-pressed",
+          String(getPreferences().mapFavorites.includes(map.id)),
+        );
+        favorite.onclick = () => {
+          if (!busy) {
+            toggleFavorite("mapFavorites", map.id);
+            void render();
+          }
+        };
+        if (getPreferences().lastMap === map.id) {
+          const last = document.createElement("strong");
+          last.textContent = t("qol.lastDestination");
+          card.append(last);
+        }
+        if (map.kind !== "lobby" && getDifficulty) {
+          const { area, level } = getDifficulty();
+          const difficulty = document.createElement("p");
+          difficulty.dataset.difficulty = map.id;
+          difficulty.textContent = t("qol.difficulty", {
+            area: area.name,
+            level: area.level,
+            player: level,
+          });
+          card.append(difficulty);
+        }
         const button = document.createElement("button");
         button.dataset.map = map.id;
         button.textContent =
@@ -75,14 +138,22 @@ export function installTravel(
               : t("common.explore");
         button.disabled = map.id === getCurrent();
         button.onclick = async () => {
+          if (busy) return;
+          busy = true;
+          search.disabled = favorites.disabled = true;
+          button.setAttribute("aria-busy", "true");
           dialog.querySelectorAll("button").forEach((b) => (b.disabled = true));
           feedback.textContent = t("world.maps.80bfdbb9d3") + map.name + "…";
           try {
             await onChoose(map);
+            updatePreferences({ lastMap: map.id });
             dialog.close();
           } catch (e) {
             feedback.textContent = errorText(e);
           } finally {
+            busy = false;
+            search.disabled = favorites.disabled = false;
+            button.removeAttribute("aria-busy");
             dialog
               .querySelectorAll("button")
               .forEach((b) => (b.disabled = false));
@@ -93,12 +164,21 @@ export function installTravel(
               });
           }
         };
-        card.append(image, title, text, button);
+        card.append(image, title, text, favorite, button);
         grid.append(card);
       }
-      feedback.textContent = t("world.maps.595a57e23c");
+      feedback.textContent = matches.length
+        ? t("world.maps.595a57e23c")
+        : t("qol.noResults");
     } catch (e) {
       feedback.textContent = errorText(e);
     }
+  };
+  search.oninput = favorites.onchange = () => {
+    if (!busy) void render();
+  };
+  return async () => {
+    dialog.showModal();
+    await render();
   };
 }

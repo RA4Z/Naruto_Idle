@@ -1,5 +1,7 @@
 # Roteiro para o computador com os arquivos originais
 
+Este é o procedimento técnico por categoria/lote, não uma segunda fila de tarefas. O estado e a prioridade vigentes estão em [ROADMAP.md](ROADMAP.md) e [../CONTINUATION.md](../CONTINUATION.md). Já foram auditados os 145 conjuntos de mapas e integrados 16; restam 129. Máscaras nativas e skills do Sasuke azul estão recuperadas; modularidade/SWF intermediário e profundidade por objeto continuam pendentes. Totais históricos abaixo descrevem o momento de cada investigação.
+
 **Atualização técnica dos mapas em 21/10/2026:** ler primeiro [Mapas: formato confirmado, extração e pendências](MAP_LAYERS.md). Esse guia detalha resolução por versão do CDN, blocos de 256 pixels, PNGs frontais virtuais, aplicação de alphaMap, formato binário/projeção da navegação, escala, comandos por lote e validação. A investigação histórica abaixo não deve fazer a IA procurar PNGs frontais físicos inexistentes nem repetir a tentativa de recortar chão. Máscara nativa já foi recuperada; modularidade/SWF intermediário e profundidade por objeto continuam pendentes. Consultar CONTINUATION/ROADMAP para não repetir tarefas já concluídas, inclusive a reconstrução original das skills do Sasuke.
 
 Nota da integração entre computadores: os atlas das duas skills do Sasuke azul 11000211 já foram regenerados do SWF nesta máquina e preservados no merge. Conferir rendererRevision antes de converter; não reaplicar o fallback histórico. A fila atual tem 31 ações/30 modelos, conforme reports/external-symbol-audit.json. O restante deste roteiro continua sendo trabalho futuro, sem disparar extração integral durante o merge.
@@ -28,7 +30,7 @@ Executar uma operação pesada por vez, com um worker e lotes pequenos, explíci
 
 ## 2. Investigar modularidade e profundidade dos mapas
 
-- [ ] Enumerar **todos** os IDs de mapas e variantes, incluindo vilas, interiores, arenas, instâncias e cenários de missões encontrados. Os quatro mapas atuais não são o limite da implementação.
+- [ ] Enumerar **todos** os IDs de mapas e variantes, incluindo vilas, interiores, arenas, instâncias e cenários de missões encontrados. Partir da auditoria dos 145 conjuntos e dos 16 mapas integrados; não limitar o trabalho aos quatro cenários iniciais.
 - [ ] Para cada mapa, procurar `_scene_bg.xml`, `_scene_mg.xml`, `_scene_fg.xml`, `MapInfo.map`, demais configurações de cena e cada dependência externa. Os caminhos históricos são `assets/scene/map/<id>/...`.
 - [ ] Inspecionar imagens, blocos, SWFs, símbolos e bibliotecas compartilhadas, procurando árvores, copas, troncos, cercas, paredes, telhados, pedras, pontes, portões, água e objetos animados separados. Registrar se são objetos independentes, blocos de camada ou uma única imagem achatada.
 - [ ] Recuperar transparência real e as transformações originais: posição, escala, espelhamento, rotação, origem, ordem, dimensões, animação e referências entre arquivos. Não substituir alpha por uma máscara aproximada baseada na cor do chão.

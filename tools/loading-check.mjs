@@ -29,6 +29,7 @@ const fixture = {
 };
 async function pageWithFixture() {
   const context = await browser.newContext({
+    locale: "pt-BR",
     viewport: { width: 1280, height: 900 },
   });
   await context.addInitScript((s) => {

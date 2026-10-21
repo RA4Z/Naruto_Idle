@@ -1,4 +1,6 @@
 import { t } from "../i18n/core.ts";
+import { getPreferences } from "../preferences";
+import { isVoiceSound } from "../audio/mix";
 import { ARENA_FIGHTERS, type ArenaState, type ArenaCharacter } from "./rules";
 import type { AnimationDef, EntityManifest } from "../entities/types";
 import type { PresentationConfig } from "../presentation";
@@ -128,7 +130,16 @@ export class ArenaView {
         const settings = this.settings();
         if (this.destroyed || document.hidden || !settings.enabled) return;
         const audio = new Audio(url);
-        audio.volume = Math.min(1, Math.max(0, settings.volume * cue.volume));
+        const mix = isVoiceSound(
+          cue.sound,
+          this.presentation?.sounds[cue.sound],
+        )
+          ? getPreferences().voiceVolume
+          : 1;
+        audio.volume = Math.min(
+          1,
+          Math.max(0, settings.volume * cue.volume * mix),
+        );
         this.audio.add(audio);
         audio.onended = audio.onerror = () => this.audio.delete(audio);
         void audio.play().catch(() => this.audio.delete(audio));
@@ -259,6 +270,7 @@ export class ArenaView {
       event &&
       elapsed < 1600 &&
       this.presentation &&
+      !getPreferences().reducedEffects &&
       (event.action === "skill" || event.action === "attack")
     ) {
       const character = s.players[event.seat].character,

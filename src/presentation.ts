@@ -1,5 +1,10 @@
 import Phaser from "phaser";
-import { EntityAudioPlayer, type EntityAudioCatalog } from "./audio/entity-audio";
+import { getPreferences } from "./preferences";
+import { isVoiceSound } from "./audio/mix";
+import {
+  EntityAudioPlayer,
+  type EntityAudioCatalog,
+} from "./audio/entity-audio";
 import { SceneAudioPlayer, type SceneAudioCatalog } from "./audio/scene-audio";
 import type { UiCue } from "./audio/ui-cues";
 import type { AnimationDef } from "./entities/types";
@@ -17,7 +22,7 @@ export type PresentationConfig = {
     }
   >;
   effects: Record<string, AnimationDef>;
-  sounds: Record<string, { name: string; urls: string[] }>;
+  sounds: Record<string, { name: string; urls: string[]; voice?: boolean }>;
   music: { url: string };
   sceneAudio?: SceneAudioCatalog;
   entityAudio?: EntityAudioCatalog;
@@ -31,7 +36,9 @@ const effectsFor = (character: string) =>
       ? ["luoxuanwan"]
       : character === "sasuke"
         ? ["qianniao"]
-        : character === "sakura" ? ["zhihuozaishen", "hphuifu"] : []),
+        : character === "sakura"
+          ? ["zhihuozaishen", "hphuifu"]
+          : []),
   ]);
 const soundKey = (id: string, index: number) => `original:${id}:${index}`;
 export function queuePresentation(
@@ -66,7 +73,6 @@ export function queuePresentation(
         !scene.cache.audio.exists(soundKey(id, i)) &&
         scene.load.audio(soundKey(id, i), url),
     );
-
 }
 export class PresentationPlayer {
   private active = new Set<Phaser.GameObjects.Sprite>();
@@ -86,18 +92,24 @@ export class PresentationPlayer {
     private character: string,
     mapId = "10001",
   ) {
-    this.actors = new EntityAudioPlayer(data.entityAudio || {}, (delay, run) => {
-      const timer = scene.time.delayedCall(delay, run);
-      return () => timer.remove();
-    }, (priority = false) => {
-      const playing = scene.sound.getAllPlaying();
-      if (priority && playing.length >= 4) {
-        const protectedIds = new Set(Object.values(data.uiCues || {}));
-        // A death voice may replace an old weapon/footstep, preserving UI results.
-        playing.find(sound => !protectedIds.has(sound.key.split(":")[1]))?.destroy();
-      }
-      return Math.max(0, 4 - scene.sound.getAllPlaying().length);
-    });
+    this.actors = new EntityAudioPlayer(
+      data.entityAudio || {},
+      (delay, run) => {
+        const timer = scene.time.delayedCall(delay, run);
+        return () => timer.remove();
+      },
+      (priority = false) => {
+        const playing = scene.sound.getAllPlaying();
+        if (priority && playing.length >= 4) {
+          const protectedIds = new Set(Object.values(data.uiCues || {}));
+          // A death voice may replace an old weapon/footstep, preserving UI results.
+          playing
+            .find((sound) => !protectedIds.has(sound.key.split(":")[1]))
+            ?.destroy();
+        }
+        return Math.max(0, 4 - scene.sound.getAllPlaying().length);
+      },
+    );
     this.ambience = new SceneAudioPlayer(data.sceneAudio || {}, data.music.url);
     this.ambience.setMap(mapId);
     this.registerEffects();
@@ -140,8 +152,15 @@ export class PresentationPlayer {
     this.scene.sound.volume = volume;
     this.ambience.settings(enabled, music, volume);
   }
-  setActors(ids: string[]) { this.actors.setActors(ids); }
-  entityAction(id: string, action: string, duration: number, owner: "hero" | "enemy") {
+  setActors(ids: string[]) {
+    this.actors.setActors(ids);
+  }
+  entityAction(
+    id: string,
+    action: string,
+    duration: number,
+    owner: "hero" | "enemy",
+  ) {
     this.actors.action(id, action, duration, owner);
   }
   setMap(id: string) {
@@ -162,7 +181,8 @@ export class PresentationPlayer {
       else {
         this.scene.sound.resumeAll();
         const playing = this.scene.sound.getAllPlaying();
-        for (const sound of playing.slice(0, Math.max(0, playing.length - 4))) sound.destroy();
+        for (const sound of playing.slice(0, Math.max(0, playing.length - 4)))
+          sound.destroy();
       }
     }
     this.actors.trim();
@@ -176,7 +196,14 @@ export class PresentationPlayer {
     });
     this.timers.add(timer);
   }
-  private sound(id: string, volume: number, priority = false, allowPaused = false) {
+  private sound(
+    id: string,
+    volume: number,
+    priority = false,
+    allowPaused = false,
+  ) {
+    const isVoice = isVoiceSound(id, this.data.sounds[id]);
+    if (isVoice) volume *= getPreferences().voiceVolume;
     if (!this.enabled || (this.paused && !allowPaused)) return false;
     const entry = this.data.sounds[id];
     if (!entry?.urls.length) return false;
@@ -185,7 +212,9 @@ export class PresentationPlayer {
     if (voices.length + this.actors.snapshot().voices >= 4) {
       if (!priority) return false;
       if (voices.length >= 4) voices[0].destroy();
-      this.actors.trim(Math.max(0, 3 - this.scene.sound.getAllPlaying().length));
+      this.actors.trim(
+        Math.max(0, 3 - this.scene.sound.getAllPlaying().length),
+      );
     }
     const index = Math.floor(Math.random() * entry.urls.length),
       key = soundKey(id, index);
@@ -205,9 +234,11 @@ export class PresentationPlayer {
     // Retriggering a button must not stack its trailing silence or mask a result cue.
     const controls = [this.data.uiCues?.click, this.data.uiCues?.close];
     for (const control of controls)
-      if (control) this.data.sounds[control]?.urls.forEach((_, index) => {
-        for (const voice of this.scene.sound.getAll(soundKey(control, index))) voice.destroy();
-      });
+      if (control)
+        this.data.sounds[control]?.urls.forEach((_, index) => {
+          for (const voice of this.scene.sound.getAll(soundKey(control, index)))
+            voice.destroy();
+        });
     // Dialogs pause the world; their UI feedback remains available when sound is enabled.
     if (this.sound(id, button ? 0.4 : 0.65, !button, true)) {
       if (button) this.lastUiAt = now;
@@ -228,6 +259,7 @@ export class PresentationPlayer {
     const anim = this.data.effects[name];
     if (
       !anim ||
+      getPreferences().reducedEffects ||
       this.active.size >= 10 ||
       !this.scene.anims.exists(effectKey(name))
     )
@@ -311,7 +343,8 @@ export class PresentationPlayer {
       effectsPlayed: this.effectCount,
       cuesPlayed: { ...this.cuesPlayed },
       entityAudio: this.actors.snapshot(),
-      shortVoices: this.scene.sound.getAllPlaying().length + this.actors.snapshot().voices,
+      shortVoices:
+        this.scene.sound.getAllPlaying().length + this.actors.snapshot().voices,
       soundsPlayed: this.soundCount,
       lastSoundAt: this.lastSoundAt,
       audioUnlocked:

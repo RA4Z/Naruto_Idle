@@ -118,6 +118,7 @@ try {
     assert.equal(await page.locator(".progress-card").count(), 4);
     await page.locator(".progression-panel [data-close]").click();
     await page.locator("#library").click();
+    await page.locator("[data-open-archive]").click();
     await page.getByRole("searchbox").fill("11000211");
     await page
       .locator('[data-entity="11000211"] [data-role="companion"]')

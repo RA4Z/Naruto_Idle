@@ -1,3 +1,4 @@
+import { getPreferences } from "../preferences.ts";
 export type SceneAudio = {
   sceneId?: string;
   tracks: string[];
@@ -7,7 +8,24 @@ export type SceneAudio = {
   fadeOutMs?: number;
 };
 export type SceneAudioCatalog = Record<string, SceneAudio>;
-type AudioPort = Pick<HTMLAudioElement, "src" | "preload" | "loop" | "volume" | "paused" | "readyState" | "play" | "pause" | "load" | "removeAttribute" | "onended" | "onerror" | "ontimeupdate" | "currentTime" | "duration">;
+type AudioPort = Pick<
+  HTMLAudioElement,
+  | "src"
+  | "preload"
+  | "loop"
+  | "volume"
+  | "paused"
+  | "readyState"
+  | "play"
+  | "pause"
+  | "load"
+  | "removeAttribute"
+  | "onended"
+  | "onerror"
+  | "ontimeupdate"
+  | "currentTime"
+  | "duration"
+>;
 type Channel = { audio: AudioPort; url: string; failed: boolean };
 export type AudioFactory = () => AudioPort;
 
@@ -38,7 +56,10 @@ export class SceneAudioPlayer {
     this.stop();
     this.mapId = id;
     this.failedTracks.clear();
-    this.config = this.catalog[id] || { tracks: [this.fallback], intervalMs: 0 };
+    this.config = this.catalog[id] || {
+      tracks: [this.fallback],
+      intervalMs: 0,
+    };
     this.sync();
   }
   settings(enabled: boolean, music: boolean, volume: number) {
@@ -47,7 +68,10 @@ export class SceneAudioPlayer {
     const retryMusic = !this.musicEnabled && music;
     this.enabled = enabled;
     this.musicEnabled = music;
-    this.volume = Math.max(0, Math.min(1, Number.isFinite(volume) ? volume : 0));
+    this.volume = Math.max(
+      0,
+      Math.min(1, Number.isFinite(volume) ? volume : 0),
+    );
     if (retry || retryMusic) this.failedTracks.clear();
     this.sync();
   }
@@ -85,14 +109,18 @@ export class SceneAudioPlayer {
     const audio = channel.audio;
     // Browsers may require a later click to unlock playback. A rejected optional
     // audio promise never affects map loading or progression.
-    void audio.play().then(() => {
-      if (this.music?.audio !== audio && this.environment?.audio !== audio) return;
-      this.blocked = false;
-      if (this.disposed || this.paused || !this.enabled) audio.pause();
-    }).catch(() => {
-      if (this.music?.audio === audio || this.environment?.audio === audio)
-        this.blocked = true;
-    });
+    void audio
+      .play()
+      .then(() => {
+        if (this.music?.audio !== audio && this.environment?.audio !== audio)
+          return;
+        this.blocked = false;
+        if (this.disposed || this.paused || !this.enabled) audio.pause();
+      })
+      .catch(() => {
+        if (this.music?.audio === audio || this.environment?.audio === audio)
+          this.blocked = true;
+      });
   }
   private create(url: string, loop: boolean): Channel {
     const audio = this.factory();
@@ -102,10 +130,15 @@ export class SceneAudioPlayer {
     return { audio, url, failed: false };
   }
   private nextMusic() {
-    if (this.disposed || !this.enabled || !this.musicEnabled || this.paused) return;
-    const tracks = this.config?.tracks.filter(url => !this.failedTracks.has(url)) || [];
+    if (this.disposed || !this.enabled || !this.musicEnabled || this.paused)
+      return;
+    const tracks =
+      this.config?.tracks.filter((url) => !this.failedTracks.has(url)) || [];
     if (!tracks.length) return;
-    const url = tracks[Math.min(tracks.length - 1, Math.floor(this.random() * tracks.length))];
+    const url =
+      tracks[
+        Math.min(tracks.length - 1, Math.floor(this.random() * tracks.length))
+      ];
     const channel = this.create(url, false);
     this.music = channel;
     channel.audio.onended = () => {
@@ -123,7 +156,9 @@ export class SceneAudioPlayer {
       this.waiting = true;
       this.sync();
     };
-    channel.audio.ontimeupdate = () => { if (this.music === channel) this.musicVolume(channel); };
+    channel.audio.ontimeupdate = () => {
+      if (this.music === channel) this.musicVolume(channel);
+    };
     this.musicVolume(channel);
     this.resume(channel);
   }
@@ -132,10 +167,18 @@ export class SceneAudioPlayer {
     const remaining = channel.audio.duration - seconds;
     const fadeIn = this.config?.fadeInMs || 0;
     const fadeOut = this.config?.fadeOutMs || 0;
-    const gain = Math.max(0, Math.min(1,
-      fadeIn ? seconds * 1000 / fadeIn : 1,
-      fadeOut && Number.isFinite(remaining) ? remaining * 1000 / fadeOut : 1));
-    channel.audio.volume = this.volume * 0.18 * gain;
+    const gain = Math.max(
+      0,
+      Math.min(
+        1,
+        fadeIn ? (seconds * 1000) / fadeIn : 1,
+        fadeOut && Number.isFinite(remaining)
+          ? (remaining * 1000) / fadeOut
+          : 1,
+      ),
+    );
+    channel.audio.volume =
+      this.volume * getPreferences().musicVolume * 0.18 * gain;
   }
   private sync() {
     if (this.disposed || !this.config) return;
@@ -154,7 +197,8 @@ export class SceneAudioPlayer {
       };
     }
     if (this.environment) {
-      this.environment.audio.volume = this.volume * 0.12;
+      this.environment.audio.volume =
+        this.volume * getPreferences().ambienceVolume * 0.12;
       if (this.paused) this.environment.audio.pause();
       else this.resume(this.environment);
     }
@@ -174,11 +218,14 @@ export class SceneAudioPlayer {
       this.musicVolume(this.music);
       this.resume(this.music);
     } else if (this.waiting && this.timer === undefined) {
-      this.timer = setTimeout(() => {
-        this.timer = undefined;
-        this.waiting = false;
-        this.nextMusic();
-      }, Math.max(0, this.config.intervalMs));
+      this.timer = setTimeout(
+        () => {
+          this.timer = undefined;
+          this.waiting = false;
+          this.nextMusic();
+        },
+        Math.max(0, this.config.intervalMs),
+      );
     } else if (!this.waiting) {
       this.nextMusic();
     }
@@ -190,8 +237,14 @@ export class SceneAudioPlayer {
       musicUrl: this.music?.url,
       musicVolume: this.music?.audio.volume,
       environmentUrl: this.environment?.url,
-      musicPlaying: !!this.music && !this.music.audio.paused && this.music.audio.readyState >= 2,
-      environmentPlaying: !!this.environment && !this.environment.audio.paused && this.environment.audio.readyState >= 2,
+      musicPlaying:
+        !!this.music &&
+        !this.music.audio.paused &&
+        this.music.audio.readyState >= 2,
+      environmentPlaying:
+        !!this.environment &&
+        !this.environment.audio.paused &&
+        this.environment.audio.readyState >= 2,
       musicWaiting: this.waiting,
       playbackBlocked: this.blocked,
       activeElements: Number(!!this.music) + Number(!!this.environment),

@@ -7,6 +7,14 @@ import {
   formatNumber,
 } from "./i18n/core.ts";
 import { NativeForegroundLayer } from "./world/native-foreground";
+import {
+  acquireJourney,
+  assertJourneyOwner,
+  ownsJourney,
+  releaseJourney,
+  writeJourney,
+} from "./journey-lock";
+import { getPreferences } from "./preferences";
 import { foregroundPlan } from "./world/foreground-plan";
 import { probeNativeForeground } from "./world/foreground-diagnostics";
 import { loadingScreen } from "./loading-screen";
@@ -95,7 +103,13 @@ type AnimSet = Record<
 const canvasHost = document.getElementById("canvas")!;
 const $ = (id: string) =>
   id === "canvas" ? canvasHost : document.getElementById(id)!;
-const store = new LocalProgressStore();
+const localStore = new LocalProgressStore();
+const store = {
+  read: () => localStore.read(),
+  write: (value: string) => {
+    writeJourney(value);
+  },
+};
 let save: Save;
 let game: Phaser.Game | undefined;
 let worldReady = false;
@@ -244,11 +258,16 @@ const openLibrary = installLibrary(
   },
   () => new Set(save?.collection || STARTER_COLLECTION),
 );
-$("library").onclick = () => void openLibrary();
+window.addEventListener("open-character-archive", () => void openLibrary());
 const openProgression = installProgression(() => ({
   save,
   heroId: activeCharacterId(save),
   switchCharacter: switchHero,
+  canSwitch: () =>
+    worldReady &&
+    !switchingHero &&
+    !scene.loadingActor &&
+    scene.hunt.phase === "explorando",
   onChange: () => {
     scene.hunt.hp = Math.min(scene.hunt.hp, stats(save).maxHp);
     scene.hunt.chakra = Math.min(scene.hunt.chakra, stats(save).maxChakra);
@@ -257,6 +276,8 @@ const openProgression = installProgression(() => ({
   },
 }));
 $("progression").onclick = () => openProgression();
+$("library").textContent = t("qol.owned");
+$("library").onclick = () => openProgression("collection");
 let switchingHero = false;
 async function switchHero(id: string) {
   if (switchingHero || !worldReady || scene.loadingActor)
@@ -325,6 +346,7 @@ const openTravel = installTravel(
     if (!scene || !game) throw new Error(t("main.f0ca8ca6a9"));
     await scene.travel(map);
   },
+  () => ({ area: AREAS[save.area], level: save.level }),
 );
 $("maps").onclick = () => void openTravel();
 $("auto-hunt").onclick = () => scene?.toggleHunt();
@@ -332,7 +354,21 @@ $("return-lobby").onclick = () =>
   void scene
     .travel(worldMaps.find((m) => m.id === "10001")!)
     .catch((e) => toast(errorText(e)));
-const session = { start: Date.now(), xp: 0, coins: 0, wins: 0 };
+const session = { activeMs: 0, xp: 0, coins: 0, wins: 0, defeats: 0 };
+const sessionSegments = new Map<string, typeof session & { name: string }>();
+function sessionSegment() {
+  const key = `${activeCharacterId(save)}:${scene.map.id}`;
+  if (!sessionSegments.has(key))
+    sessionSegments.set(key, {
+      activeMs: 0,
+      xp: 0,
+      coins: 0,
+      wins: 0,
+      defeats: 0,
+      name: `${cast.hero.name} · ${scene.map.name}`,
+    });
+  return sessionSegments.get(key)!;
+}
 const messages: string[] = [];
 function journal(text: string) {
   messages.unshift(text);
@@ -346,7 +382,7 @@ function journal(text: string) {
   );
 }
 function commit() {
-  if (save && worldReady) {
+  if (save && worldReady && ownsJourney()) {
     if (scene?.hero?.active && scene.map?.id === save.location)
       save.worldPosition = {
         mapId: scene.map.id,
@@ -373,11 +409,14 @@ let startup:
     }
   | undefined;
 export async function startNewJourney(character: CharacterId) {
+  await acquireJourney();
   await start(fresh(character));
 }
 export async function continueJourney() {
+  await acquireJourney();
   const restored = restore(store);
   if (!restored) {
+    releaseJourney();
     loadingScreen.hide();
     toast(t("main.d5234d5425"));
     return;
@@ -392,12 +431,13 @@ export async function continueJourney() {
     );
 }
 async function start(s: Save) {
+  await acquireJourney();
   miniWindow.restore();
   worldReady = false;
   const request = ++launchVersion;
   const stage = loadingScreen.begin(
     t("main.ddc49b1c5f"),
-    () => void start(s).catch(() => {}),
+    () => void start(s).catch((error) => stage.fail(error)),
     () => $("back").click(),
   );
   stage.update(t("main.9a19a0e75a"), 0.05);
@@ -414,6 +454,7 @@ async function start(s: Save) {
       runtimeIndex(),
     ]);
     if (request !== launchVersion) return;
+    assertJourneyOwner();
     presentationData = presentation;
     const startMap =
       maps.find((m) => m.id === s.location) ||
@@ -459,6 +500,7 @@ async function start(s: Save) {
       await new Promise<void>((resolve) => {
         previous.events.once(Phaser.Core.Events.DESTROY, resolve);
         previous.destroy(true);
+        previous.loop.wake();
       });
       if (request !== launchVersion) return;
       game = undefined;
@@ -484,13 +526,16 @@ async function start(s: Save) {
     ) as AnimSet;
     $("menu").hidden = true;
     $("play").hidden = false;
-    session.start = Date.now();
-    session.xp = session.coins = session.wins = 0;
+    if (!recovering && !switchingHero) {
+      session.activeMs = 0;
+      session.xp = session.coins = session.wins = session.defeats = 0;
+      sessionSegments.clear();
+    }
     messages.length = 0;
     await new Promise<void>((resolve, reject) => {
       startup = { version: request, stage, failed: new Set(), resolve, reject };
       game = new Phaser.Game({
-        type: Phaser.AUTO,
+        type: graphicsFallback ? Phaser.CANVAS : Phaser.AUTO,
         parent: "canvas",
         backgroundColor: "#15241e",
         width: $("canvas").clientWidth,
@@ -509,10 +554,12 @@ async function start(s: Save) {
     });
     if (request !== launchVersion) return;
     worldReady = true;
+    bindGraphicsRecovery(game!);
     commit();
     stage.finish();
   } catch (error) {
     if (request === launchVersion) {
+      worldReady = false;
       game?.destroy(true);
       game = undefined;
       $("play").hidden = true;
@@ -523,6 +570,7 @@ async function start(s: Save) {
   }
 }
 $("back").onclick = () => {
+  recovering = false;
   miniWindow.restore();
   launchVersion++;
   startup?.reject(new Error(t("main.942c696ec9")));
@@ -537,6 +585,7 @@ $("back").onclick = () => {
   game?.destroy(true);
   game = undefined;
   worldReady = false;
+  releaseJourney();
   $("play").hidden = true;
   $("menu").hidden = false;
 };
@@ -600,14 +649,95 @@ document.addEventListener(
   },
   { capture: true },
 );
-window.addEventListener("pagehide", commit);
+window.addEventListener("pagehide", () => {
+  commit();
+  releaseJourney();
+  game?.loop.sleep();
+});
 window.addEventListener("before-language-change", () => {
   miniWindow.restore();
   commit();
+  releaseJourney();
 });
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) commit();
+  else if (worldReady && !ownsJourney())
+    window.dispatchEvent(new Event("journey-lock-lost"));
+  else {
+    game?.loop.resetDelta();
+    game?.scale.refresh();
+  }
 });
+window.addEventListener("journey-lock-lost", () => {
+  // Never commit stale in-memory state after another tab acquires the lease.
+  worldReady = false;
+  recovering = false;
+  releaseJourney();
+  launchVersion++;
+  miniWindow.restore();
+  game?.destroy(true);
+  game = undefined;
+  $("play").hidden = true;
+  $("menu").hidden = false;
+  loadingScreen.hide();
+  toast(t("qol.otherTab"));
+});
+window.addEventListener("preferences-change", () => {
+  if (worldReady)
+    scene.presentation.settings(
+      save.sound,
+      save.music || false,
+      save.soundVolume ?? 0.4,
+    );
+});
+let recovering = false;
+let graphicsFallback = false;
+function bindGraphicsRecovery(current: Phaser.Game) {
+  const canvas = current.canvas;
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  let rebuilding = false;
+  const recover = async () => {
+    if (game !== current || !recovering || rebuilding || !ownsJourney()) return;
+    rebuilding = true;
+    if (timer) clearTimeout(timer);
+    try {
+      // Use the committed snapshot, not a partially executed combat or loader.
+      const snapshot = JSON.parse(store.read()!) as Save;
+      await start(snapshot);
+      toast(t("qol.recovered"));
+    } catch {
+      /* The loading overlay exposes a retry and return-to-menu action. */
+    } finally {
+      recovering = false;
+    }
+  };
+  const lost = (event: Event) => {
+    event.preventDefault();
+    if (game !== current || recovering) return;
+    commit();
+    recovering = true;
+    worldReady = false;
+    miniWindow.restore();
+    current.loop.sleep();
+    loadingScreen.begin(
+      t("qol.recovering"),
+      () => void recover(),
+      () => $("back").click(),
+    );
+    // A browser may never restore a GPU context; rebuild with Canvas after timeout.
+    timer = setTimeout(() => {
+      graphicsFallback = true;
+      void recover();
+    }, 4000);
+  };
+  canvas.addEventListener("webglcontextlost", lost);
+  canvas.addEventListener("webglcontextrestored", recover);
+  current.events.once(Phaser.Core.Events.DESTROY, () => {
+    if (timer) clearTimeout(timer);
+    canvas.removeEventListener("webglcontextlost", lost);
+    canvas.removeEventListener("webglcontextrestored", recover);
+  });
+}
 function direction(dx: number, dy: number) {
   return (Math.round(Math.atan2(dy, dx) / (Math.PI / 4)) + 14) % 8;
 }
@@ -1177,6 +1307,10 @@ class HuntScene extends Phaser.Scene {
       session.xp += value;
       session.coins += AREAS[save.area].coins;
       session.wins++;
+      const segment = sessionSegment();
+      segment.xp += value;
+      segment.coins += AREAS[save.area].coins;
+      segment.wins++;
       this.floating(
         "+" + value + " XP",
         this.hero.x,
@@ -1224,6 +1358,8 @@ class HuntScene extends Phaser.Scene {
       this.play("world-idle_0");
     }
     if (event === "defeat") {
+      session.defeats++;
+      sessionSegment().defeats++;
       this.presentation.ui("defeat");
       this.play("battle-C_dead", true);
       this.presentation.play("C_dead", this.hero, this.enemy, 500);
@@ -1664,6 +1800,10 @@ class HuntScene extends Phaser.Scene {
   }
   update(_time: number, delta: number) {
     if (!this.hero) return;
+    if (!ownsJourney()) {
+      window.dispatchEvent(new Event("journey-lock-lost"));
+      return;
+    }
     const walkSpeed = stats(save).moveSpeed;
     const blocked =
       save.paused ||
@@ -1674,6 +1814,10 @@ class HuntScene extends Phaser.Scene {
     this.presentation.pause(blocked);
     this.tweens.timeScale = blocked ? 0 : 1;
     delta = Math.min(delta, 100);
+    if (!blocked) {
+      session.activeMs += delta;
+      if (!this.isLobby) sessionSegment().activeMs += delta;
+    }
     if (blocked) this.hero.anims.pause();
     else this.hero.anims.resume();
     if (!blocked) this.hunt.tick(delta);
@@ -1837,6 +1981,26 @@ class HuntScene extends Phaser.Scene {
       : t("main.ba4dfc88ee");
     $("auto-hunt").hidden = this.isLobby;
     $("return-lobby").hidden = this.isLobby;
+    const travelReason = this.loadingActor
+      ? t("qol.processing")
+      : this.hunt.phase !== "explorando"
+        ? t("main.9c6a33d994")
+        : "";
+    for (const id of ["maps", "return-lobby"]) {
+      const button = $(id) as HTMLButtonElement;
+      button.disabled = !!travelReason;
+      button.title = travelReason;
+      button.setAttribute("aria-description", travelReason);
+    }
+    let travelFeedback = document.getElementById("travel-reason");
+    if (!travelFeedback) {
+      travelFeedback = document.createElement("p");
+      travelFeedback.id = "travel-reason";
+      travelFeedback.className = "caption";
+      $("maps").after(travelFeedback);
+    }
+    travelFeedback.hidden = !travelReason;
+    travelFeedback.textContent = travelReason;
     $("auto-hunt").textContent = save.autoHunt
       ? t("main.0ec6283eb1")
       : t("main.15a42e6c7b");
@@ -1851,6 +2015,49 @@ class HuntScene extends Phaser.Scene {
       : this.isLobby
         ? t("main.7ca4480827")
         : phaseText(this.hunt.phase);
+    const skillReason = save.paused
+      ? t("common.paused")
+      : this.hunt.phase !== "combatendo"
+        ? t("qol.needCombat")
+        : this.hunt.chakra < 35
+          ? t("qol.needChakra")
+          : this.hunt.skillCooldown > 0
+            ? t("qol.cooldown")
+            : "";
+    $("cast-skill").title = skillReason;
+    $("cast-skill").setAttribute("aria-description", skillReason);
+    let skillFeedback = document.getElementById("skill-reason");
+    if (!skillFeedback) {
+      skillFeedback = document.createElement("p");
+      skillFeedback.id = "skill-reason";
+      skillFeedback.className = "caption";
+      $("cast-skill").after(skillFeedback);
+    }
+    skillFeedback.hidden =
+      this.isLobby || !starterCharacter(save) || !skillReason;
+    skillFeedback.textContent = skillReason;
+    let huntStatus = document.getElementById("hunt-status");
+    if (!huntStatus) {
+      huntStatus = document.createElement("p");
+      huntStatus.id = "hunt-status";
+      huntStatus.className = "caption";
+      $("auto-hunt").after(huntStatus);
+    }
+    huntStatus.hidden = this.isLobby || !save.autoHunt;
+    huntStatus.textContent =
+      save.paused || !!document.querySelector("dialog[open]")
+        ? t("common.paused")
+        : this.hunt.phase !== "explorando"
+          ? phaseText(this.hunt.phase)
+          : t(
+              this.autoNavigator.status === "chasing"
+                ? "qol.chasing"
+                : this.autoNavigator.status === "waiting"
+                  ? "qol.waiting"
+                  : this.autoNavigator.status === "unreachable"
+                    ? "qol.unreachable"
+                    : "qol.searching",
+            );
     $("status").innerHTML =
       `<div class="level">${th("main.27617734dd", { v0: save.level })}<span>${phase}</span></div><div class="meter"><i style="width:${(this.hunt.hp / st.maxHp) * 100}%"></i></div><p class="caption">${th("main.daff5c99bc", { v0: Math.ceil(this.hunt.hp), v1: st.maxHp })}</p><div class="meter xp"><i style="width:${pct}%"></i></div><p class="caption">${th("main.9e9fa512af", { v0: save.xp, v1: needed(save.level) })}</p><div class="meter chakra"><i style="width:${(this.hunt.chakra / st.maxChakra) * 100}%"></i></div><p class="caption">${th("main.28e9b6b10b", { v0: Math.floor(this.hunt.chakra), v1: st.maxChakra })}</p><dl><dt>${th("main.c7d55f788a")}</dt><dd>${save.coins}</dd><dt>${th("main.6c05b13ab4")}</dt><dd>${save.kills}</dd><dt>${th("main.ccbaf8a1d3")}</dt><dd>${save.defeats}</dd><dt>${th("main.023b326283")}</dt><dd>${save.inventory.fragmento || 0}</dd></dl>`;
     const cadence = document.createElement("p");
@@ -1868,12 +2075,40 @@ class HuntScene extends Phaser.Scene {
       }),
     });
     $("status").append(cadence);
-    $("session").textContent = t("main.0d7db12c3b", {
-      v0: Math.floor((Date.now() - session.start) / 60000),
-      v1: session.wins,
-      v2: session.xp,
-      v3: session.coins,
+    const minutes = session.activeMs / 60000;
+    $("session").textContent = t("qol.session", {
+      minutes: formatNumber(minutes, { maximumFractionDigits: 1 }),
+      wins: session.wins,
+      defeats: session.defeats,
+      xp: session.xp,
+      coins: session.coins,
+      xpRate: formatNumber(minutes >= 1 / 60 ? session.xp / minutes : 0, {
+        maximumFractionDigits: 1,
+      }),
+      coinRate: formatNumber(minutes >= 1 / 60 ? session.coins / minutes : 0, {
+        maximumFractionDigits: 1,
+      }),
     });
+    for (const segment of [...sessionSegments.values()].slice(-8)) {
+      const minutes = segment.activeMs / 60000;
+      const row = document.createElement("p");
+      row.className = "caption";
+      row.dataset.sessionSegment = "";
+      row.textContent = t("qol.segment", {
+        name: segment.name,
+        minutes: formatNumber(minutes, { maximumFractionDigits: 1 }),
+        wins: segment.wins,
+        defeats: segment.defeats,
+        xpRate: formatNumber(minutes >= 1 / 60 ? segment.xp / minutes : 0, {
+          maximumFractionDigits: 1,
+        }),
+        coinRate: formatNumber(
+          minutes >= 1 / 60 ? segment.coins / minutes : 0,
+          { maximumFractionDigits: 1 },
+        ),
+      });
+      $("session").append(row);
+    }
     miniWindow.sync();
   }
 }
