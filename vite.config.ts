@@ -104,7 +104,17 @@ export default defineConfig({
         "**/public/assets/loading/**",
       ],
     },
-    fs: { deny: ["**/assets-extraidos/**"] },
+    fs: {
+      deny: [
+        ".env",
+        ".env.*",
+        "**/.env",
+        "**/.env.*",
+        "**/.git/**",
+        "*.{crt,pem}",
+        "**/assets-extraidos/**",
+      ],
+    },
   },
   build: {
     rollupOptions: { output: { manualChunks: { phaser: ["phaser"] } } },

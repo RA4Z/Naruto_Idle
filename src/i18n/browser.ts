@@ -49,9 +49,21 @@ export function installLanguageControl() {
     select.append(option);
   }
   select.value = getLocale();
-  select.onchange = () => {
+  select.onchange = async () => {
     // Commit the live game (including PiP) before reloading translated modules.
-    window.dispatchEvent(new Event("before-language-change"));
+    const tasks: Promise<void>[] = [];
+    window.dispatchEvent(
+      new CustomEvent("before-language-change", { detail: { tasks } }),
+    );
+    select.disabled = true;
+    try {
+      await Promise.all(tasks);
+    } catch {
+      select.disabled = false;
+      select.value = getLocale();
+      alert(t("cloud.failure"));
+      return;
+    }
     try {
       const play = document.getElementById("play");
       if (play && !play.hidden && play.querySelector("canvas"))

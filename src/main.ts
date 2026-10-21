@@ -10,10 +10,22 @@ import { NativeForegroundLayer } from "./world/native-foreground";
 import {
   acquireJourney,
   assertJourneyOwner,
-  ownsJourney,
+  ownsJourney as ownsLocalJourney,
   releaseJourney,
   writeJourney,
 } from "./journey-lock";
+import {
+  cloudJourneyOwner,
+  cloudJourneyActive,
+  queueCloudSave,
+  openCloudJourney,
+  closeCloudJourney,
+  restoreGuestCache,
+} from "./cloud/journey";
+import { cloudError } from "./cloud/ui";
+function ownsJourney() {
+  return ownsLocalJourney() && cloudJourneyOwner();
+}
 import { getPreferences } from "./preferences";
 import { foregroundPlan } from "./world/foreground-plan";
 import { probeNativeForeground } from "./world/foreground-diagnostics";
@@ -110,6 +122,7 @@ const store = {
   read: () => localStore.read(),
   write: (value: string) => {
     writeJourney(value);
+    queueCloudSave(value);
   },
 };
 let save: Save;
@@ -430,10 +443,21 @@ let startup:
   | undefined;
 export async function startNewJourney(character: CharacterId) {
   await acquireJourney();
+  if (!cloudJourneyActive()) restoreGuestCache();
   await start(fresh(character));
+}
+export async function startCloudJourney(initial?: Save) {
+  const restored = await openCloudJourney(initial);
+  try {
+    await start(restored.save);
+  } catch (error) {
+    await closeCloudJourney().catch(() => {});
+    throw error;
+  }
 }
 export async function continueJourney() {
   await acquireJourney();
+  if (!cloudJourneyActive()) restoreGuestCache();
   const restored = restore(store);
   if (!restored) {
     releaseJourney();
@@ -589,7 +613,21 @@ async function start(s: Save) {
     throw error;
   }
 }
-$("back").onclick = () => {
+$("back").onclick = async () => {
+  const wasCloud = cloudJourneyActive();
+  if (wasCloud) {
+    miniWindow.restore();
+    commit();
+    game?.loop.sleep();
+    try {
+      await closeCloudJourney();
+    } catch (error) {
+      toast(cloudError(error));
+      game?.loop.wake();
+      return;
+    }
+    worldReady = false;
+  }
   recovering = false;
   miniWindow.restore();
   launchVersion++;
@@ -601,7 +639,7 @@ $("back").onclick = () => {
         __idle?: unknown;
       }
     ).__idle;
-  commit();
+  if (!wasCloud) commit();
   game?.destroy(true);
   game = undefined;
   worldReady = false;
@@ -674,9 +712,23 @@ window.addEventListener("pagehide", () => {
   releaseJourney();
   game?.loop.sleep();
 });
-window.addEventListener("before-language-change", () => {
+window.addEventListener("before-language-change", (event) => {
   miniWindow.restore();
   commit();
+  if (cloudJourneyActive()) {
+    game?.loop.sleep();
+    const task = closeCloudJourney()
+      .then(() => {
+        sessionStorage.setItem("folha-idle-cloud-resume", "1");
+        releaseJourney();
+      })
+      .catch((error) => {
+        game?.loop.wake();
+        throw error;
+      });
+    (event as CustomEvent<{ tasks: Promise<void>[] }>).detail.tasks.push(task);
+    return;
+  }
   releaseJourney();
 });
 document.addEventListener("visibilitychange", () => {
@@ -688,7 +740,7 @@ document.addEventListener("visibilitychange", () => {
     game?.scale.refresh();
   }
 });
-window.addEventListener("journey-lock-lost", () => {
+window.addEventListener("journey-lock-lost", (event) => {
   // Never commit stale in-memory state after another tab acquires the lease.
   worldReady = false;
   recovering = false;
@@ -700,7 +752,11 @@ window.addEventListener("journey-lock-lost", () => {
   $("play").hidden = true;
   $("menu").hidden = false;
   loadingScreen.hide();
-  toast(t("qol.otherTab"));
+  toast(
+    (event as CustomEvent<{ cloud?: boolean }>).detail?.cloud
+      ? t("cloud.lost")
+      : t("qol.otherTab"),
+  );
 });
 window.addEventListener("preferences-change", () => {
   if (worldReady)

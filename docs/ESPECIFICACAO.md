@@ -28,7 +28,9 @@ Máscaras frontais nativas usam transparência recuperada, mas não equivalem a 
 
 Loja/mochila com 22 equipamentos, filtros por slot/caminho e comparação de atributos antes da compra/equipamento; cinco missões persistentes; coleção e recrutamento. Caminhos de dano, sobrevivência e chakra têm ganhos e penalidades; graus II/III exigem nível 5/12 do personagem selecionado. Posse dos quatro itens antigos e seus atributos são preservados. Progresso local versionado em folha-idle-v1. Offline limitado conforme src/config/rules.ts, concedido apenas na caçada ativa e gravado antes de mostrar o resumo; continua como estimativa da dificuldade, sem simular perfis/elites/equipamento.
 
-Apenas uma aba controla a jornada por origem/perfil de navegador. A posse é adquirida antes de restaurar/calcular offline e conferida antes de gravar. Outra aba pode usar menu/admin/arena; não pode iniciar uma segunda jornada. Não é sincronização de contas entre IP, localhost, domínios ou dispositivos.
+Apenas uma aba controla a jornada por origem/perfil de navegador. A posse é adquirida antes de restaurar/calcular offline e conferida antes de gravar. Outra aba pode usar menu/admin/arena; não pode iniciar uma segunda jornada. Essa proteção local não compartilha saves entre origens.
+
+Integração opcional de contas e snapshots Supabase implementada, com ativação remota pendente por bloqueio do gateway. Conta e nuvem no menu oferece cadastro/login/recuperação, importação explícita sem substituir save existente, backup/exportação, revisão/idempotência e posse entre dispositivos. Gravações periódicas a cada 30 s; sair/trocar idioma aguarda confirmação. Snapshot sempre não verificado: a economia e o combate PvE permanecem no cliente. Configuração gratuita, SQL, validação e limites em [BACKEND_E_SUPABASE.md](BACKEND_E_SUPABASE.md).
 
 Perda de contexto WebGL interrompe a simulação e reconstrói a cena a partir do snapshot salvo; sem restauração do contexto, usa Canvas. Não conserva um combate parcialmente executado. Retorno da suspensão limpa o delta do loop, sem simular um salto inteiro de combate.
 
@@ -48,7 +50,7 @@ Português brasileiro, inglês e espanhol. No primeiro acesso, usa o primeiro id
 
 ## Arena e administração
 
-Arena local por turnos com servidor autoritativo, salas por chave, reconexão, chakra, recarga e validação de ações. Modo Nivelado e modo Jornada; este usa snapshot validado do personagem. Sem contas, ranking ou progressão autoritativa do PvE.
+Arena local por turnos com servidor autoritativo, salas por chave, reconexão, chakra, recarga e validação de ações. Modo Nivelado e modo Jornada; este valida a estrutura do snapshot do personagem, sem garantir origem confiável dos atributos. A arena ainda não usa contas Supabase nem resultados persistidos no banco. Sem ranking ou progressão autoritativa do PvE.
 
 Admin autenticado para acervo, revisão, mapas, efeitos, áudio, arquivos e salas. A disponibilidade do frontend na Vercel não implica hospedagem do backend Node.
 

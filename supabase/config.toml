@@ -1,0 +1,22 @@
+project_id = "naruto-idle"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 100
+
+[db]
+port = 54322
+major_version = 17
+
+[auth]
+enabled = true
+site_url = "http://localhost:5178"
+additional_redirect_urls = ["http://localhost:5178", "http://127.0.0.1:5178", "https://naruto-idle.vercel.app"]
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+enable_confirmations = true

@@ -1,5 +1,6 @@
 import type { Save } from "./model";
-// Future server boundary only. No accounts, backend, ranking or multiplayer exist yet.
+// Future authoritative economy boundary. Beta accounts/cloud snapshots are in
+// cloud/; local friendly arena exists, but no ranked economy uses these contracts.
 export interface AccountSession {
   accountId: string;
   expiresAt: number;

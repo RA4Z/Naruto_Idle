@@ -2,9 +2,25 @@ import { t, th } from "./i18n/core.ts";
 import { CHARACTERS, type CharacterId } from "./data";
 import { loadingScreen } from "./loading-screen";
 import { acquireJourney, releaseJourney } from "./journey-lock";
+import { installCloudAccount } from "./cloud/ui";
+import { restoreGuestCache } from "./cloud/journey";
 let engine: Promise<typeof import("./main")> | undefined;
 let version = 0;
+export async function continueCloud(initial?: import("./model").Save) {
+  await acquireJourney();
+  try {
+    const game = await (engine ??= import("./main").catch((error) => {
+      engine = undefined;
+      throw error;
+    }));
+    await game.startCloudJourney(initial);
+  } catch (error) {
+    releaseJourney();
+    throw error;
+  }
+}
 export function installMenu() {
+  installCloudAccount(continueCloud);
   const element = (id: string) => document.getElementById(id)!;
   async function launch(character?: CharacterId) {
     const request = ++version;
@@ -20,6 +36,7 @@ export function installMenu() {
     stage.update(t("menu.6d1ba3345a"));
     try {
       await acquireJourney();
+      restoreGuestCache();
       if (request !== version) {
         if (version === request + 1) releaseJourney();
         return;

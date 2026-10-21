@@ -12,6 +12,8 @@ let releaseNative: (() => void) | undefined;
 let heartbeat: ReturnType<typeof setInterval> | undefined;
 let acquiring: Promise<void> | undefined;
 let db: Promise<IDBDatabase> | undefined;
+let pendingWrite: Promise<void> = Promise.resolve();
+export const flushJourneyWrites = () => pendingWrite;
 function database() {
   return (db ??= new Promise((resolve, reject) => {
     const request = indexedDB.open(NAME, 1);
@@ -91,7 +93,7 @@ export function writeJourney(snapshot: string) {
   if (native) localStorage.setItem("folha-idle-v1", snapshot);
   else {
     const id = owner;
-    void transact(id, false, false, snapshot)
+    pendingWrite = transact(id, false, false, snapshot)
       .then((ok) => {
         if (!ok && owner === id) lost();
       })

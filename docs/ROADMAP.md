@@ -28,6 +28,7 @@ Atualizado em 21/10/2026. O [histórico](history/ROADMAP-2026-10-21.md) preserva
 - [x] Resumo de combate por tempo ativo, vitórias/derrotas e XP/moedas por minuto.
 - [x] Tamanho de texto, redução de efeitos e volumes separados de música, ambiente e vozes.
 - [x] Documentação vigente separada dos registros históricos.
+- [x] Implementação local da integração Supabase: contas, saves opcionais, importação explícita, backup, revisão/idempotência e posse entre dispositivos. [Configuração e limites](BACKEND_E_SUPABASE.md).
 
 Detalhes e limites: [Especificação](ESPECIFICACAO.md), [estabilidade/QoL](ESTABILIDADE_E_QOL.md), [traduções](TRADUCOES.md).
 
@@ -44,10 +45,11 @@ Detalhes e limites: [Especificação](ESPECIFICACAO.md), [estabilidade/QoL](ESTA
 
 ## Melhorias futuras fora deste lote
 
-- [ ] Backup automático/exportação/importação geral do save e auditoria do balanceamento offline (não incluídos no pedido atual).
+- [ ] Restauração por arquivo JSON exportado e auditoria do balanceamento offline. Exportação local e importação explícita para uma conta ainda sem save já estão na integração Supabase.
 - [ ] Expandir diagnósticos administrativos e edição de colisões, itens/missões.
 - [ ] Troca de idioma sem recarregar; hoje salva e restaura a jornada.
-- [ ] Hospedagem externa persistente da arena, contas e sincronização entre dispositivos, se autorizadas.
+- [ ] Ativar a integração Supabase no projeto Lharaz/Naruto Idle: Management API bloqueada pelo McAfee nesta rede. Aplicar migração, confirmar plano Free, configurar SMTP e variáveis públicas da Vercel; validar duas contas/dispositivos reais.
+- [ ] Economia PvE autoritativa e tabelas normalizadas, política para legado não verificado, persistência da arena e hospedagem externa do Node. Contas/snapshots desta beta não habilitam rankings ou comércio confiáveis.
 - [ ] Party, formação e afinidades: adiados expressamente pelo usuário.
 
 ## Rotina de trabalho

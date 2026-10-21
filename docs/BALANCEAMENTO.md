@@ -69,6 +69,10 @@ Perfis e elites aplicam seus modificadores sobre esses valores. As duas primeira
 
 ## Manutenção e verificação
 
+Fechamento em 21/10/2026: passaram 107 testes de domínio e 21 de servidor/assets, verificação das 1.115 chaves nos três idiomas, typecheck e build final. As 2.112 simulações terminaram em vitória ou derrota antes de 60 segundos. Os relatórios de navegador citados abaixo validam também vitória contra elite no desenvolvimento e conjurador/equipamento III no bundle de produção. São amostras de validação, não garantia de equilíbrio perfeito.
+
+As regressões `reports/qol-production-validation.json` e `reports/i18n-browser-validation.json` passaram após o balanceamento, incluindo recuperação real de WebGL, minijanela, troca de personagem, equipamentos, viagem, acessibilidade, idiomas, arena e administração dos 22 itens/cinco missões. A API administrativa passou a importar as regras estaticamente para evitar erro de módulo encerrado no Vite. Servidor temporário e navegadores de teste encerrados; sem deploy.
+
 - Perfis: `src/progression/recruit-profiles.ts`; inimigos: `src/world/enemy-profiles.ts`; fórmulas: `combat-stats.ts`/`model.ts`; itens: `rules.ts`; dificuldades: `src/config/areas.ts`.
 - Textos novos em pt-BR/en/es; aliases dos itens completos permitem traduzir também a API administrativa. Não usar nomes traduzidos como chave de balanceamento.
 - `tests/balance.test.ts` cobre catálogo, variantes, crescimento, técnicas, cura/proteção, resistência física/ninjutsu, elites, recompensas, níveis, saves e arena.

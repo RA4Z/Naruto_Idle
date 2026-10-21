@@ -34,7 +34,7 @@ async function boot() {
         transferError = errorText(error);
       }
     }
-    const { installMenu } = await import("./menu");
+    const { installMenu, continueCloud } = await import("./menu");
     installMenu();
     for (const id of ["new", "continue"]) {
       const button = document.getElementById(id) as HTMLButtonElement | null;
@@ -47,7 +47,13 @@ async function boot() {
       status.textContent = transferError;
       status.hidden = false;
     }
-    if (
+    if (sessionStorage.getItem("folha-idle-cloud-resume")) {
+      sessionStorage.removeItem("folha-idle-cloud-resume");
+      consumeLanguageResume();
+      await continueCloud().catch(() =>
+        document.getElementById("cloud-account")?.click(),
+      );
+    } else if (
       transferred ||
       (consumeLanguageResume() && localStorage.getItem("folha-idle-v1"))
     )

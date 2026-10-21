@@ -4,6 +4,12 @@
   background: #111c18;
   font-synthesis: none;
 }
+.cloud-panel { width: min(580px, 95vw); }
+.cloud-panel label { display: grid; gap: 6px; margin: 14px 0; }
+.cloud-panel input { width: 100%; padding: 10px; background: #13271e; color: #eeeadd; border: 1px solid #54735e; border-radius: 6px; }
+.cloud-panel [data-feedback] { min-height: 2em; }
+#cloud-account { margin: 0; }
+#cloud-status { display: block; font-size: .75rem; min-height: 1.5em; }
 .elite-profile {
   border: 1px solid #b88b36;
   padding: 8px;

@@ -42,7 +42,7 @@ Português, inglês e espanhol. Primeiro acesso usa as preferências do navegado
 
 ## Progresso e estabilidade
 
-O PvE salva localmente no navegador, sem conta ou sincronização entre dispositivos/domínios. Apenas uma aba pode controlar a jornada por origem; menu, acervo e arena continuam acessíveis em outras abas. HTTP LAN usa uma lease transacional quando Web Locks não está disponível. Aba que perde a posse não pode gravar nem continuar simulando.
+O PvE funciona localmente e possui integração opcional com contas/saves Supabase: login, importação explícita, backup e sessão exclusiva entre dispositivos. A ativação remota ainda está bloqueada pelo gateway da rede; configuração e limites em [Backend e Supabase](docs/BACKEND_E_SUPABASE.md). Os snapshots da beta são não verificados; a economia ainda roda no cliente. Apenas uma aba pode controlar a jornada por origem; HTTP LAN usa uma lease transacional quando Web Locks não está disponível. Aba que perde a posse não pode gravar nem continuar simulando.
 
 Perda de contexto WebGL reconstrói o cenário com o snapshot salvo, usando Canvas se o navegador não restaurar a GPU. Minijanela preserva tamanho mínimo do renderizador. Combate parcial não é restaurado.
 
@@ -56,6 +56,7 @@ Document PiP depende de suporte/contexto seguro. No mesmo computador do servidor
 - [Estabilidade e QoL](docs/ESTABILIDADE_E_QOL.md): implementação e validação desta etapa.
 - [Traduções](docs/TRADUCOES.md): adicionar textos/idiomas.
 - [Balanceamento](docs/BALANCEAMENTO.md): perfis, técnicas, elites, equipamentos, dificuldades e simulações.
+- [Backend e Supabase](docs/BACKEND_E_SUPABASE.md): contas, migrações, sincronização, implantação gratuita e economia futura.
 - [Mapas](docs/MAP_LAYERS.md): formato, navegação e extração.
 - [Originais](docs/EXTRACAO_E_INTEGRACAO_ORIGINAIS.md): roteiro para o computador com o acervo.
 - [README histórico](docs/history/README-2026-10-21.md): investigação inicial, comandos antigos e registros por lote.

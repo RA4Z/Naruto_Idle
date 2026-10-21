@@ -10,6 +10,7 @@ Atualizado em 21/10/2026. Este arquivo descreve o estado vigente. O [histórico 
 4. [Mapas e extração](docs/MAP_LAYERS.md) e [integração dos originais](docs/EXTRACAO_E_INTEGRACAO_ORIGINAIS.md).
 5. [Traduções](docs/TRADUCOES.md).
 6. [Balanceamento](docs/BALANCEAMENTO.md): estilos, técnicas, inimigos/elites, equipamentos e dificuldades.
+7. [Backend e Supabase](docs/BACKEND_E_SUPABASE.md): integração de contas/saves, SQL, comandos, limites e bloqueio remoto atual.
 
 ## Produto e código
 
@@ -25,6 +26,7 @@ Atualizado em 21/10/2026. Este arquivo descreve o estado vigente. O [histórico 
 - Jornada exclusiva por origem do navegador: Web Locks ou lease transacional em IndexedDB no HTTP LAN, com conferência de posse antes de gravar/restaurar. Menu e acervo podem abrir em outras abas.
 - QoL: coleção própria separada do acervo, favoritos/busca/nível, comparação real de equipamento, busca/favoritos/última viagem, estado da caçada, explicações de bloqueios e resumo de combate por tempo ativo.
 - Preferências independentes do save: fonte 85–150%, redução de efeitos, volumes de música/ambiente/vozes. Perda de WebGL reconstrói a cena do snapshot salvo; timeout usa Canvas.
+- Supabase opcional implementado localmente: Auth por e-mail, snapshot JSONB por conta, importação sem substituir nuvem, backup/exportação, revisão/idempotência e lease de 120 s entre dispositivos. Sincroniza a cada 30 s e antes de sair/trocar idioma. Snapshot sempre client_unverified; PvE/economia ainda no navegador. Projeto informado: Lharaz/Naruto Idle, gxyxlfytcjvvkmrlalrs. Management API bloqueada por McAfee HTTP 403; nenhuma migração/provisionamento remoto realizado. Credencial privada somente no .env ignorado; setup gratuito preparado, sem deploy.
 
 ## Ambiente e rotina
 
@@ -32,9 +34,13 @@ Raiz atual: C:\Users\robertn\Documents\Naruto_Idle. O acervo histórico D:\Narut
 
 Uma tarefa pesada por vez; suites serializadas, um Chromium e somente uma cena de jogo ativa nos testes. Até seis lotes de verificação por ciclo; encerrar recursos próprios e conferir memória antes de novo ciclo. Extração: até quatro mapas por lote, sempre um de cada vez. Não encerrar processos do usuário, não sobrescrever originais ou alterações alheias; preservar a exclusão pré-existente de DESIGN_DE_PROGRESSAO.md.
 
-A autorização histórica de desenvolvimento contínuo, limites de uso e publicação está preservada no início do [roadmap histórico](docs/history/ROADMAP-2026-10-21.md). A tarefa atual não solicita deploy nem extração. Não declarar teste, publicação ou recuperação de assets sem evidência.
+A autorização histórica de desenvolvimento contínuo, limites de uso e publicação está preservada no início do [roadmap histórico](docs/history/ROADMAP-2026-10-21.md). O pedido atual autoriza integração e provisionamento no Supabase somente no plano gratuito; não inclui contratar hospedagem Node, recursos pagos ou extração. Não declarar teste, publicação, migração remota ou recuperação de assets sem evidência. Provisionamento Supabase permanece bloqueado pelo gateway, conforme docs/BACKEND_E_SUPABASE.md.
 
 ## Validação e retomada
+
+Supabase, etapa local concluída: 114 testes de domínio, 22 servidor/assets/banco, 1.149 chaves PT/EN/ES, typecheck, build e verificação de credenciais no bundle passaram. SQL real em Postgres embarcado; navegador com Auth fictício validou conta, save, exclusividade entre dispositivos e retomada após troca de idioma. Regressão de QoL no bundle final passou. Evidências em reports/cloud-browser-validation.json e reports/qol-production-validation.json; guia docs/BACKEND_E_SUPABASE.md. Servidores 5194/5195 e navegadores encerrados, sem deploy. Próxima ação remota: permitir acesso autorizado à Management API, executar npm run db:setup e npm run db:verify e configurar SMTP/variáveis públicas da Vercel. Token não validado devido ao bloqueio de rede; não pedir que o usuário o publique na conversa.
+
+Balanceamento concluído em 21/10/2026: 107 testes de domínio e 21 de servidor/assets, 1.115 chaves pt-BR/en/es, typecheck e build final passaram. Simulação de 2.112 encontros sem combate acima de 60 segundos; validações dev e produção cobriram elite, recrutas, técnicas genéricas, equipamentos, requisitos individuais, recompensas e persistência. Regressões de QoL/recuperação gráfica e idiomas/admin/arena também passaram. Evidências e limites em docs/BALANCEAMENTO.md e reports/balance-*-validation.json, reports/balance-simulation.json, reports/qol-production-validation.json e reports/i18n-browser-validation.json. Servidor temporário 5194 e navegadores encerrados; sem deploy. O resultado de estabilidade/QoL abaixo pertence à etapa anterior.
 
 Etapa de estabilidade/QoL concluída: 102 testes de domínio, 21 servidor/assets, 1.021 chaves pt-BR/en/es, typecheck e build final passaram. Navegadores dev e bundle compilado validaram os fluxos novos, perda/restauração real WebGL, fallback Canvas e progresso preservado; minijanela extrema, idiomas/admin/arena e loading/retry/cancelamento também passaram. Detalhes, limites e relatórios em docs/ESTABILIDADE_E_QOL.md. Servidor temporário 5194 e navegadores encerrados; sem deploy. Última correção: viagens/retorno ao lobby ficam indisponíveis durante o encontro e explicam o motivo, inclusive na fase de recompensas.
 
