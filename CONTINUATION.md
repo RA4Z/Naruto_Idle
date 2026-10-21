@@ -1,5 +1,15 @@
 # Ponto de continuidade
 
+## Sons originais de quatro modelos — integração validada
+
+Integrados ataque e derrota de 19000101 (marionetes da Areia), 19000201 (longo alcance da Areia), 19004301 (cura da Areia) e 19002301 (samurai). São 13 pacotes e 42 clipes referenciados: 32 novos MP3, 378.094 bytes, mais dez já existentes. Total de runtime: 113 MP3. Fontes: ações XML embutidas nos SWFs, soundConfig.xml e deathSoundConfig.xml; DefineSound preservado sem transcodificação, hashes e símbolos conferidos. Modelos continuam em suas coleções existentes; esta etapa não reclassifica recursos incompletos como personagens padrão.
+
+EntityAudioPlayer busca somente os manifestos do elenco atual, em série e com cancelamento. HTMLAudio descartável evita acumular PCM de todos os inimigos. Eventos acompanham a duração real da animação (ataque inimigo atual: 450 ms); vozes nativas aleatórias usam pesos e UNIQUE_RANDOM evita apenas a repetição imediata, como no player original. Compartilha o teto de quatro sons curtos com Phaser; derrota pode substituir arma/voz anterior, preservando avisos UI. Ataque interrompido cancela sons pendentes. Troca de mapa, mute e encerramento liberam vozes e metadados. Primeira reprodução de um clipe sem cache depende de rede/decodificação; não afirmar sincronismo de amostra. Som só é buscado com áudio habilitado.
+
+Passaram 87 testes de domínio, 21 servidor/assets, typecheck e build (24,95 s; Node 512 MB, threads limitadas). Navegador decodificou/reproduziu os 42 MP3 em série, confirmou ataque/derrota dos quatro inimigos, som do recrutado ativo, um único herói, limite de quatro vozes, limpeza na vila/mute e admin sob demanda. A build compilada também reproduziu sons nativos de herói/adversário, venceu e restaurou progresso/mute. Sem erros/arquivos ausentes; sem servidor extra. Backend HTTP não retestado ao vivo. Relatórios entity-audio-*.json. O teste inicialmente usava o filtro errado da biblioteca e um seletor administrativo incorreto; ambos corrigidos. Navegadores/build encerrados, Vite 5178 preservado.
+
+Extrator retomável tools/recover_entity_audio.py aceita até quatro IDs explícitos, um modelo por vez. Outros modelos, ações, jutsus/efeitos, vozes de mundo, demais sons/músicas, 133 conjuntos de mapas, objetos/camadas, 195 artes e animações grandes continuam pendentes. Próximo bloco: selecionar e recuperar outro lote de até quatro mapas com seus vínculos originais, sem portais nesta etapa. Não incluir a exclusão alheia DESIGN_DE_PROGRESSAO.md.
+
 ## Limite de verificações — atualização de 20/10/2026
 
 Limite atualizado pelo usuário: até SEIS LOTES DE VERIFICAÇÃO POR CICLO, executados UM DE CADA VEZ. Antes de outro ciclo, encerrar os recursos de teste desta execução e conferir processos/memória; reduzir o lote se houver sobrecarga. Substitui o pedido intermediário de quatro verificações. Preparação continua em ATÉ QUATRO MAPAS por lote, um mapa por vez; são limites diferentes.

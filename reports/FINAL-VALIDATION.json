@@ -1,5 +1,5 @@
 {
-  "validatedAt": "2026-10-21T00:45:54.758006+00:00",
+  "validatedAt": "2026-10-21T01:31:11.322630+00:00",
   "catalogue": {
     "discovered": 1466,
     "processed": 1466,
@@ -45,7 +45,7 @@
     "sasuke": "SP_skill1",
     "sakura": "SP_skill2"
   },
-  "audioFiles": 67,
+  "audioFiles": 99,
   "characterOrganization": {
     "entities": 1466,
     "playableAnimationSets": 312,
@@ -116,7 +116,7 @@
       "not externally hosted"
     ]
   },
-  "resourcePolicy": "One heavy task at a time; tests serialized; one browser, lightweight arena clients.",
+  "resourcePolicy": "One heavy task at a time; up to six serial verification batches per cycle; up to four maps per conversion batch, one map at a time; one browser/page.",
   "combatRefinement": {
     "rendererReport": "reports/combat-animation-refinement.json",
     "browserReport": "reports/combat-refinement-browser-validation.json",
@@ -139,8 +139,8 @@
   "latestValidation": {
     "typecheck": "passed",
     "build": "passed",
-    "domainTests": 79,
-    "serverAndDeploymentTests": 20,
+    "domainTests": 87,
+    "serverAndDeploymentTests": 21,
     "pythonTests": 11,
     "arenaBrowser": "passed",
     "characterSelectionBrowser": "passed",
@@ -168,7 +168,10 @@
     "uiAudio": "passed",
     "allVisitedMapsSaveRestore": "passed, all twelve maps in compiled bundle",
     "fourWorldsBrowser": "passed",
-    "fourWorldsCompiledBundle": "passed"
+    "fourWorldsCompiledBundle": "passed",
+    "entityAudioBrowser": "passed",
+    "entityAudioCompiledBundle": "passed",
+    "entityAudioSourceHashes": "passed"
   },
   "nativeForeground": {
     "maps": [
@@ -251,12 +254,31 @@
     "report": "reports/ui-audio-recovery.json",
     "maxShortVoices": 4
   },
-  "publicMp3Files": 81,
+  "publicMp3Files": 113,
   "saveVisitedMaps": {
     "legacyFixedCapRemoved": true,
     "limit": "number of integrated destinations",
     "duplicatesRejected": true,
     "allEightReloaded": true,
     "allTwelveReloaded": true
+  },
+  "entityAudio": {
+    "models": [
+      "19000101",
+      "19000201",
+      "19004301",
+      "19002301"
+    ],
+    "packages": 13,
+    "clips": 42,
+    "newMp3Files": 32,
+    "state": "integrated-tested",
+    "report": "reports/entity-audio-recovery.json",
+    "browser": "reports/entity-audio-browser-validation.json",
+    "compiledBundle": "reports/entity-audio-production-validation.json",
+    "sharedShortVoicesMax": 4,
+    "loadPolicy": "current cast only; serial metadata; disposable HTMLAudio; no accumulated decoded PCM",
+    "firstColdPlayback": "network/decoder latency possible",
+    "remainingModelsAndActions": "pending"
   }
 }

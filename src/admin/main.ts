@@ -85,6 +85,9 @@ async function show(id: string, title: string) {
   root
     .querySelectorAll<HTMLButtonElement>("[data-section]")
     .forEach((b) => b.classList.toggle("active", b.dataset.section === id));
+  content.querySelectorAll("audio").forEach(audio => {
+    audio.pause(); audio.removeAttribute("src"); audio.load();
+  });
   content.replaceChildren(node("p", "Carregando…"));
   try {
     if (id === "overview") {
@@ -164,6 +167,34 @@ async function show(id: string, title: string) {
             card.append(audio);
           }
           grid.append(card);
+        }
+        for (const [modelId, ref] of Object.entries<any>(data.entityAudio || {})) {
+          const entry = node("article", undefined, "admin-card");
+          entry.dataset.entityAudio = modelId;
+          entry.append(node("h3", ref.name), node("p", "Modelo " + modelId + " · Ataque e derrota originais"));
+          const button = node("button", "Carregar sons deste modelo", "secondary");
+          button.onclick = async () => {
+            button.disabled = true;
+            try {
+              const response = await fetch(ref.url, { signal: AbortSignal.timeout(15000) });
+              if (!response.ok) throw new Error("Falha ao carregar sons");
+              const model = await response.json();
+              if (request !== generation) return;
+              for (const [sid, sound] of Object.entries<any>(model.sounds)) {
+                entry.append(node("p", "Pacote " + sid));
+                for (const clip of sound.clips) {
+                  const preview = node("audio");
+                  preview.controls = true; preview.preload = "none"; preview.src = clip.url;
+                  preview.onplay = () => document.querySelectorAll("audio").forEach(other => { if (other !== preview) other.pause(); });
+                  entry.append(preview);
+                }
+              }
+              button.remove();
+            } catch {
+              button.disabled = false; button.textContent = "Tentar carregar novamente";
+            }
+          };
+          entry.append(button); grid.append(entry);
         }
         const card = node("article", undefined, "admin-card");
         card.append(node("h3", "Música principal"));

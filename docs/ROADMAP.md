@@ -19,6 +19,8 @@ Limite atualizado pelo usuário: até SEIS LOTES DE VERIFICAÇÃO POR CICLO, exe
 
 - [x] Primeiro lote de quatro: 10010/10011/10020/10015, total 12 mapas, 133 conjuntos pendentes. Treze músicas/ambientes e onze cenas vinculadas; build restaurou os doze destinos visitados. Todos os processos pesados executados em série.
 
+- [x] Sons de ataque/derrota de quatro modelos (19000101/19000201/19004301/19002301): 32 MP3 novos, 42 clipes compartilhados, eventos nativos por quadro, carregamento serial sob demanda, teto compartilhado de quatro sons e limpeza testada. Herói recrutado e quatro inimigos verificados no dev e no dist; 87 testes de domínio e 21 servidor/assets. Outros modelos/ações/efeitos continuam pendentes.
+
 ## Recuperação atual do acervo
 
 - [x] Inventário do CDN: 57.496 arquivos físicos, hashes retomáveis, 75 extras e duplicatas preservadas; outras raízes históricas seguem pendentes.

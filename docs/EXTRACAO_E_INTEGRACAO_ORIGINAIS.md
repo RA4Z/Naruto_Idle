@@ -8,6 +8,10 @@ Pedido do usuário em 20/10/2026: procurar modularidade nos mapas e implementar 
 
 Antes de trabalhar, ler `CONTINUATION.md`, `docs/ROADMAP.md`, este roteiro e `docs/MAP_LAYERS.md`. As decisões atuais prevalecem sobre as notas históricas. A cópia deste computador não contém o acervo bruto; o caminho histórico no outro computador é `D:\Naruto Idle\Naruto_Idle`. Confirmar o caminho real ao retomar, sem presumir que a letra da unidade ou a pasta do projeto sejam iguais.
 
+## Lote de áudio por modelo — validado em 20/10/2026
+
+19000101/19000201/19004301/19002301: ataque e morte recuperados de ações embutidas e deathSoundConfig.xml, com pacotes soundConfig.xml e símbolos DefineSound. 13 pacotes, 42 clipes, 32 novos; originais preservados. Manifestos public/assets/audio/entities/<id>.json referenciados por presentation.entityAudio. Uso real no combate, carregamento serial de metadados e vozes HTMLAudio descartáveis; duração nativa escalada para a animação idle. Admin possui prévias sob demanda. Testes, build e navegador dev/dist aprovados em reports/entity-audio-*.json. Outros modelos/ações e demais categorias seguem pendentes.
+
 ## 1. Preparar e inventariar o acervo completo
 
 - [ ] Atualizar a cópia do projeto com as alterações recentes antes de converter, preservando trabalho local e saves de teste. Não partir de uma versão anterior à troca de personagem e às correções de carregamento.

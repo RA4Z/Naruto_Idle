@@ -2,6 +2,8 @@
 
 Protótipo local de um jogo **novo**, em Phaser 3 e TypeScript. As regras de combate, progressão, drops e progresso offline são próprias. Os arquivos ActionScript do jogo anterior não são usados como motor ou regras deste projeto.
 
+Sons originais de ataque e derrota estão integrados para quatro modelos da Areia/samurai, além dos protagonistas: carregam só para o elenco atual com som habilitado, usam os eventos das animações e compartilham o limite de quatro sons curtos. As prévias desses modelos ficam em **Admin → Sons e músicas**, carregadas ao solicitar. Outros modelos e jutsus individuais seguem em recuperação.
+
 ## Jogar
 
 Requisitos usados nesta máquina: Windows, Node.js **24.14.1**, npm **11.11.0**. Versões do projeto: Phaser **3.90.0**, TypeScript **5.9.3**, Vite **7.1.12**. O `package-lock.json` fixa as dependências da instalação validada.

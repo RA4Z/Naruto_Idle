@@ -529,6 +529,7 @@ class HuntScene extends Phaser.Scene {
       presentationCharacter(),
       this.map.id,
     );
+    this.presentation.setActors(this.isLobby ? [] : [cast.hero.id, ...cast.enemies.map(e => e.id)]);
     this.presentation.settings(
       save.sound,
       save.music || false,
@@ -875,6 +876,7 @@ class HuntScene extends Phaser.Scene {
         yoyo: true,
       });
       this.enemy.play("battle", "C_hurt", true);
+      this.presentation.entityAction(this.enemy.manifest.id, "C_hurt", 1, "enemy");
       this.lastStrikeDuration =
         strikeDuration(event === "skill", stats(save).interval);
       this.presentation.play(
@@ -883,11 +885,15 @@ class HuntScene extends Phaser.Scene {
         this.enemy,
         this.lastStrikeDuration,
       );
+      if (!starterCharacter(save))
+        this.presentation.entityAction(cast.hero.id, "A_1hit", this.lastStrikeDuration, "hero");
       if (event === "skill")
         journal("Jutsu · " + presentationData.characters[save.character].name);
     }
     if (event === "hurt") {
       this.enemy.play("battle", "A_1hit", true);
+      this.presentation.entityAction(this.enemy.manifest.id, "A_1hit",
+        (this.enemy.visual.anims.currentAnim?.duration || 450) / (this.enemy.visual.anims.timeScale || 1), "enemy");
       this.floating("-" + value, this.hero.x, this.hero.y - 53, "#ffc0a3");
     }
     if (event === "loot") journal(`Drop · Fragmento de treino ×${value}`);
@@ -910,6 +916,8 @@ class HuntScene extends Phaser.Scene {
         if (!defeatedEnemy.active || !this.enemyField.members.some((member) => member.actor === defeatedEnemy && !member.alive)) return;
         defeatedEnemy.play("battle", "C_dead", true);
         const death = defeatedEnemy.manifest.modes.battle?.animations.C_dead;
+        this.presentation.entityAction(defeatedEnemy.manifest.id, "C_dead",
+          ((death?.timeline?.length || death?.frames || 1) * 1000) / (death?.fps || 24), "enemy");
         this.tweens.add({
           targets: defeatedEnemy,
           alpha: 0,
@@ -929,6 +937,7 @@ class HuntScene extends Phaser.Scene {
       this.presentation.ui("defeat");
       this.play("battle-C_dead", true);
       this.presentation.play("C_dead", this.hero, this.enemy, 500);
+      if (!starterCharacter(save)) this.presentation.entityAction(cast.hero.id, "C_dead", 500, "hero");
       journal("Derrota: recuperação por 3 segundos, sem perda do inventário.");
       commit();
     }
@@ -1006,6 +1015,7 @@ class HuntScene extends Phaser.Scene {
         this.standbyEnemy.use(manifest, role);
         save.enemyId = id;
         cast.enemies = [manifest];
+        this.presentation.setActors(this.isLobby ? [] : [cast.hero.id, manifest.id]);
         this.enemyField.mapId = "";
         this.placeEnemy();
       } else if (role === "companion") {
@@ -1249,6 +1259,7 @@ class HuntScene extends Phaser.Scene {
       this.presentation.setMap(map.id);
       this.navigation = new NativeNavigation(grid);
       cast.enemies = pool;
+      this.presentation.setActors(this.isLobby ? [] : [cast.hero.id, ...pool.map(e => e.id)]);
       const spawn = this.navigation.nearest(map.spawn)!;
       this.background
         .setTexture("map-" + map.id)

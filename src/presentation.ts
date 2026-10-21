@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import { EntityAudioPlayer, type EntityAudioCatalog } from "./audio/entity-audio";
 import { SceneAudioPlayer, type SceneAudioCatalog } from "./audio/scene-audio";
 import type { UiCue } from "./audio/ui-cues";
 import type { AnimationDef } from "./entities/types";
@@ -19,6 +20,7 @@ export type PresentationConfig = {
   sounds: Record<string, { name: string; urls: string[] }>;
   music: { url: string };
   sceneAudio?: SceneAudioCatalog;
+  entityAudio?: EntityAudioCatalog;
   uiCues?: Partial<Record<UiCue, string>>;
 };
 const effectKey = (name: string) => "effect:" + name;
@@ -70,6 +72,7 @@ export class PresentationPlayer {
   private active = new Set<Phaser.GameObjects.Sprite>();
   private timers = new Set<Phaser.Time.TimerEvent>();
   private ambience: SceneAudioPlayer;
+  private actors: EntityAudioPlayer;
   private paused = false;
   private enabled = false;
   private lastSoundAt = -100;
@@ -83,6 +86,18 @@ export class PresentationPlayer {
     private character: string,
     mapId = "10001",
   ) {
+    this.actors = new EntityAudioPlayer(data.entityAudio || {}, (delay, run) => {
+      const timer = scene.time.delayedCall(delay, run);
+      return () => timer.remove();
+    }, (priority = false) => {
+      const playing = scene.sound.getAllPlaying();
+      if (priority && playing.length >= 4) {
+        const protectedIds = new Set(Object.values(data.uiCues || {}));
+        // A death voice may replace an old weapon/footstep, preserving UI results.
+        playing.find(sound => !protectedIds.has(sound.key.split(":")[1]))?.destroy();
+      }
+      return Math.max(0, 4 - scene.sound.getAllPlaying().length);
+    });
     this.ambience = new SceneAudioPlayer(data.sceneAudio || {}, data.music.url);
     this.ambience.setMap(mapId);
     this.registerEffects();
@@ -93,6 +108,7 @@ export class PresentationPlayer {
       this.timers.forEach((t) => t.remove());
       this.active.forEach((s) => s.destroy());
       this.ambience.dispose();
+      this.actors.dispose();
     };
     scene.events.once("shutdown", dispose);
     scene.events.once("destroy", dispose);
@@ -119,9 +135,14 @@ export class PresentationPlayer {
   }
   settings(enabled: boolean, music: boolean, volume: number) {
     this.enabled = enabled;
+    this.actors.settings(enabled, volume);
     this.scene.sound.mute = !enabled;
     this.scene.sound.volume = volume;
     this.ambience.settings(enabled, music, volume);
+  }
+  setActors(ids: string[]) { this.actors.setActors(ids); }
+  entityAction(id: string, action: string, duration: number, owner: "hero" | "enemy") {
+    this.actors.action(id, action, duration, owner);
   }
   setMap(id: string) {
     this.ambience.setMap(id);
@@ -134,6 +155,7 @@ export class PresentationPlayer {
   }
   pause(paused: boolean) {
     this.ambience.pause(paused);
+    this.actors.pause(paused);
     if (this.paused !== paused) {
       this.paused = paused;
       if (paused) this.scene.sound.pauseAll();
@@ -143,6 +165,7 @@ export class PresentationPlayer {
         for (const sound of playing.slice(0, Math.max(0, playing.length - 4))) sound.destroy();
       }
     }
+    this.actors.trim();
     for (const sprite of this.active)
       paused ? sprite.anims.pause() : sprite.anims.resume();
   }
@@ -159,9 +182,10 @@ export class PresentationPlayer {
     if (!entry?.urls.length) return false;
     // Four short voices plus the two independently streamed ambience/music layers.
     const voices = this.scene.sound.getAllPlaying();
-    if (voices.length >= 4) {
+    if (voices.length + this.actors.snapshot().voices >= 4) {
       if (!priority) return false;
-      voices[0].destroy();
+      if (voices.length >= 4) voices[0].destroy();
+      this.actors.trim(Math.max(0, 3 - this.scene.sound.getAllPlaying().length));
     }
     const index = Math.floor(Math.random() * entry.urls.length),
       key = soundKey(id, index);
@@ -286,7 +310,8 @@ export class PresentationPlayer {
       })),
       effectsPlayed: this.effectCount,
       cuesPlayed: { ...this.cuesPlayed },
-      shortVoices: this.scene.sound.getAllPlaying().length,
+      entityAudio: this.actors.snapshot(),
+      shortVoices: this.scene.sound.getAllPlaying().length + this.actors.snapshot().voices,
       soundsPlayed: this.soundCount,
       lastSoundAt: this.lastSoundAt,
       audioUnlocked:
