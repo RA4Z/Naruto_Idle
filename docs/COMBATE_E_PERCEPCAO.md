@@ -1,5 +1,15 @@
 # Combate em grupo e percepção
 
+## Revisão do combate dinâmico — 22/10/2026
+
+- Aproximação em grupo valida o alcance **e** a passagem livre no fim da rota. Um ponto distribuído atrás de uma parede não é mais aceito apenas porque existe caminho até ele; nesse caso a perseguição tenta a posição do jogador. A implementação compartilhada está em `src/world/melee.ts`. Os seis pontos mantêm a distribuição em terreno livre, sem atravessar colisões.
+- Se o alvo selecionado abandonar a perseguição, o foco automático prioriza um sobrevivente já ao alcance, preservando retirada, vida e relógios. A seleção manual continua respeitada enquanto aquele inimigo permanecer no combate.
+- A pose de combate parada acompanha o lado do alvo; golpes e reações dos inimigos voltam-se para o jogador. Efeitos de dano usam o ator identificado pelo evento, mesmo com múltiplos participantes.
+- Pedir repetidamente a mesma animação em `EntityActor.play` preserva quadro, origem e reprodução. Isso evita deslocamentos nos atlas compactos que possuem `frameOrigins`; `tick` continua aplicando a origem do quadro atual. Pedidos com `force` reiniciam a ação normalmente.
+- Reaparecer inicia outra `incarnation`, cancela tweens antigos e restaura transparência, ângulo e contador de bloqueio. As duas etapas atrasadas da morte conferem a instância e sua vida antes de ocultar o ator. Um novo alerta manual também limpa o bloqueio da perseguição anterior.
+
+Regressões em `tests/melee-approach.test.ts`, `tests/enemy-field.test.ts` e `tests/combat-retreat.test.ts`: passagem estreita, parede sólida, seis posições, percurso sem atravessar colisões, preferência de alvo, origem por quadro, pausa/reaparecimento e novo alerta. O teste de `EnemyField`/`EntityActor` executa as classes de produção com uma interface gráfica simulada; **não renderiza WebGL**. O navegador estava indisponível nesta revisão, portanto a aparência e a integração autenticada completa ainda exigem conferência manual no jogo. As validações históricas de navegador abaixo pertencem às etapas anteriores.
+
 O jogador concentra ataques básicos e técnicas em um único alvo. Outros inimigos podem detectá-lo, aproximar-se e entrar no mesmo combate. Cada integrante tem vida, intervalo de ataque, resistência, preparação de especial e orçamento de cura próprios. Modelos repetidos são instâncias diferentes: o identificador é `<mapa>:<posição no grupo>`, não o ID do asset.
 
 Clique no sprite de um inimigo para persegui-lo durante a exploração. No combate, clique no inimigo ou no botão correspondente da lista de alvos. Selecionar outro oponente conserva a vida dos dois e todos os relógios; não concede outro golpe inicial. Pode-se atrair deliberadamente um inimigo próximo e visível clicando nele durante a luta. Inimigos fora do alcance aproximam-se, mas não causam nem recebem dano até haver distância e passagem válidas. O jogador pode mover/fugir clicando no chão/minimapa ou usando WASD/setas, com assistência leve do teclado. Inimigos próximos continuam atacando durante a retirada; selecionar um oponente retoma os golpes do jogador. [Movimento e regras de fuga](MOVIMENTO_E_PROGRESSAO_DA_CONTA.md).

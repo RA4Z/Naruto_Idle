@@ -470,7 +470,8 @@ export class Hunt {
   leave(id: string) {
     this.opponents.delete(id);
     if (id !== this.targetId) return;
-    const next = this.livingOpponents[0];
+    const next =
+      this.livingOpponents.find((foe) => foe.inRange) || this.livingOpponents[0];
     if (next) this.selectTarget(next.id, false);
     else if (
       ["iniciando combate", "combatendo", "recompensas"].includes(this.phase)

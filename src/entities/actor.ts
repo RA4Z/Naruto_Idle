@@ -230,6 +230,9 @@ export class EntityActor extends Phaser.GameObjects.Container {
     if (!anim) return;
     const key = actorKey(this.manifest.id, mode, chosen);
     if (!this.scene.anims.exists(key)) return;
+    // Patrol/chase request the same pose each frame. Its current frame origin
+    // is maintained by tick(); resetting it to frame zero makes compact atlases jump.
+    if (!force && this.visual.anims.currentAnim?.key === key) return;
     this.activeDefinition = anim;
     // Battle sprites face the opponent via flipX; world sprites already have
     // their own eight directional frames and must not inherit that mirror.
@@ -245,11 +248,9 @@ export class EntityActor extends Phaser.GameObjects.Container {
           anim.rigScale,
         ),
       );
-    if (force || this.visual.anims.currentAnim?.key !== key) {
-      this.visual.play(key);
-      this.visual.anims.timeScale =
-        chosen === "A_1hit" ? this.visual.anims.currentAnim!.duration / 450 : 1;
-    }
+    this.visual.play(key);
+    this.visual.anims.timeScale =
+      chosen === "A_1hit" ? this.visual.anims.currentAnim!.duration / 450 : 1;
   }
   tick(paused: boolean) {
     if (this.activeDefinition)

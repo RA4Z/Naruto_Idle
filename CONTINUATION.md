@@ -1,5 +1,9 @@
 # Ponto de continuidade — estado atual
 
+## Revisão de 22/10: polimentos e regressões do combate dinâmico
+
+Rotas dos perseguidores agora exigem que o destino permita ataque sem obstáculos (`world/melee.ts`), com alternativa até o jogador quando o ponto ao redor fica atrás de uma parede. Ao perder o alvo, a troca automática prioriza inimigo em alcance sem reiniciar cadência. Pose parada acompanha o lado do alvo; dano/reação usam o ator do evento. `EntityActor.play` deixa de reaplicar origem do primeiro quadro quando a animação já está em andamento, corrigindo saltos em atlas compactos. Reaparecimento cancela tweens antigos e invalida callbacks de morte pela `incarnation`; novo alerta limpa o timeout anterior. Regressões exercitam as classes reais com limite gráfico simulado, além de regras e rotas. Validação: 314 testes TypeScript, 8 da arena, tipos, 1.278 mensagens nos três idiomas e build aprovados. Navegador indisponível nesta sessão: não anunciar validação visual/WebGL ou fluxo autenticado completo. Detalhes e testes em [Combate e percepção](docs/COMBATE_E_PERCEPCAO.md).
+
 ## Atualização de 22/10: fuga, assistência de teclado e conta sem teto de nível
 
 Refinamento posterior: parar de se mover remove a suspensão dos golpes automaticamente, mantendo o alvo selecionado. O ninja aguarda alcance/passagem válidos e então ataca pela cadência existente, sem novo clique; outro perseguidor próximo não troca essa mira. `Hunt.updateMovement` recebe movimento real a cada quadro antes do cálculo de alcance/golpes. Dezoito testes de retirada/grupo, tipos e traduções passaram; fixture confirmou ausência de golpes fora do alcance e retomada automática quando o alvo se aproxima.

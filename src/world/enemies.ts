@@ -3,6 +3,7 @@ import { t } from "../i18n/core.ts";
 import { visionDebugEnabled } from "../admin/debug-state";
 import { enemyProfile, type EnemyProfile } from "./enemy-profiles";
 import { EntityActor } from "../entities/actor";
+import { meleeApproach, meleeReachable } from "./melee";
 import type { EntityManifest } from "../entities/types";
 import {
   NativeNavigation,
@@ -26,6 +27,7 @@ export type Mob = {
   alive: boolean;
   respawn: number;
   sequence: number;
+  incarnation: number;
   direction: number;
   heading: Point;
   awareness: Awareness;
@@ -96,6 +98,7 @@ export class EnemyField {
         alive: true,
         respawn: 0,
         sequence: i * 23 + 1,
+        incarnation: 0,
         direction: 0,
         heading: { x: 0, y: 1 },
         awareness: freshAwareness(),
@@ -126,11 +129,7 @@ export class EnemyField {
     return this.member(actor)?.profile || enemyProfile(actor.manifest.id);
   }
   inRange(m: Mob, hero: Point, nav: NativeNavigation) {
-    return (
-      m.alive &&
-      Math.hypot(m.actor.x - hero.x, m.actor.y - hero.y) < 28 &&
-      nav.clear(m.actor, hero)
-    );
+    return m.alive && meleeReachable(m.actor, hero, nav);
   }
   alert(actor: EntityActor) {
     const m = this.member(actor);
@@ -138,6 +137,7 @@ export class EnemyField {
       m.awareness = { alerted: true, returning: false, unseenMs: 0 };
       m.path = [];
       m.repathMs = 0;
+      m.stuckMs = 0;
     }
   }
   defeat(actor: EntityActor) {
@@ -177,11 +177,14 @@ export class EnemyField {
       if (!mob.alive) {
         mob.respawn -= delta;
         if (mob.respawn <= 0) {
+          mob.incarnation++;
+          this.scene.tweens.killTweensOf(actor);
           mob.alive = true;
           mob.awareness = freshAwareness();
           mob.heading = { x: 0, y: 1 };
           mob.path = [];
           mob.repathMs = 0;
+          mob.stuckMs = 0;
           actor
             .setPosition(mob.home.x, mob.home.y)
             .setVisible(true)
@@ -220,13 +223,12 @@ export class EnemyField {
           continue;
         }
         if (mob.repathMs <= 0) {
-          const angle = (this.members.indexOf(mob) * Math.PI) / 3;
-          const slot = nav.nearest({
-            x: hero.x + Math.cos(angle) * 21,
-            y: hero.y + Math.sin(angle) * 21,
-          });
-          mob.path = slot ? nav.path(actor, slot) : [];
-          if (!mob.path.length) mob.path = nav.path(actor, hero);
+          mob.path = meleeApproach(
+            actor,
+            hero,
+            this.members.indexOf(mob),
+            nav,
+          );
           mob.repathMs = 400;
         }
       } else if (mob.awareness.returning) {

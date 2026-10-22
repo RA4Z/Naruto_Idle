@@ -1425,19 +1425,20 @@ class HuntScene extends Phaser.Scene {
       );
       this.floating(
         String(value),
-        this.enemy.x,
-        this.enemy.y - 43,
+        source.x,
+        source.y - 43,
         event !== "attack" ? "#ffcc69" : "#fff3ce",
       );
       this.tweens.add({
-        targets: this.enemy,
+        targets: source,
         angle: 5,
         duration: 60,
         yoyo: true,
       });
-      this.enemy.play("battle", "C_hurt", true);
+      source.play("battle", "C_hurt", true);
+      source.face(this.hero.x < source.x);
       this.presentation.entityAction(
-        this.enemy.manifest.id,
+        source.manifest.id,
         "C_hurt",
         1,
         "enemy",
@@ -1449,7 +1450,7 @@ class HuntScene extends Phaser.Scene {
       this.presentation.play(
         event === "skill" ? "SP_skill1" : "A_1hit",
         this.hero,
-        this.enemy,
+        source,
         this.lastStrikeDuration,
       );
       if (!starterCharacter(save))
@@ -1487,6 +1488,7 @@ class HuntScene extends Phaser.Scene {
     }
     if (event === "hurt" || event === "enemy-special") {
       source.play("battle", "A_1hit", true);
+      source.face(this.hero.x < source.x);
       this.presentation.entityAction(
         source.manifest.id,
         "A_1hit",
@@ -1504,6 +1506,12 @@ class HuntScene extends Phaser.Scene {
     if (event === "loot") journal(t("main.ce48f03344", { v0: value }));
     if (event === "victory") {
       const defeatedEnemy = source;
+      const defeatedMob = this.enemyField.member(defeatedEnemy);
+      const incarnation = defeatedMob?.incarnation;
+      const stillDefeated = () =>
+        !!defeatedMob && defeatedEnemy.active &&
+        this.enemyField.member(defeatedEnemy) === defeatedMob &&
+        defeatedMob.incarnation === incarnation && !defeatedMob.alive;
       this.enemyField.defeat(defeatedEnemy);
       session.xp += value;
       session.coins += this.hunt.lastReward.coins;
@@ -1523,13 +1531,7 @@ class HuntScene extends Phaser.Scene {
       );
       this.renderParty();
       this.time.delayedCall(this.lastStrikeDuration * 0.85, () => {
-        if (
-          !defeatedEnemy.active ||
-          !this.enemyField.members.some(
-            (member) => member.actor === defeatedEnemy && !member.alive,
-          )
-        )
-          return;
+        if (!stillDefeated()) return;
         defeatedEnemy.play("battle", "C_dead", true);
         const death = defeatedEnemy.manifest.modes.battle?.animations.C_dead;
         this.presentation.entityAction(
@@ -1548,7 +1550,7 @@ class HuntScene extends Phaser.Scene {
           ),
           duration: 400,
           onComplete: () => {
-            if (defeatedEnemy.active)
+            if (stillDefeated())
               defeatedEnemy.setVisible(false).setAlpha(1);
           },
         });
@@ -2276,6 +2278,12 @@ class HuntScene extends Phaser.Scene {
       } else if (this.hunt.phase === "explorando") this.play("world-idle_" + this.lastFacing);
       else if (!this.hero.anims.isPlaying || this.hero.anims.currentAnim?.key.startsWith("world-"))
         this.play("battle-C_idle");
+      if (
+        distance <= 0.01 &&
+        this.hunt.enemyHp > 0 &&
+        this.hero.anims.currentAnim?.key === "battle-C_idle"
+      )
+        this.hero.setFlipX(this.enemy.x < this.hero.x);
       if (!this.path.length) this.destination.setVisible(false);
       if (
         !this.isLobby &&

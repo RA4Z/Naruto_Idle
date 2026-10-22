@@ -134,3 +134,18 @@ test("stationary resumption cannot reset cooldowns or override pause/defeat", ()
   h.updateMovement(false);
   assert.equal(h.phase, "derrota");
 });
+
+test("losing the selected pursuer prioritizes a foe in melee without resetting cooldowns", () => {
+  const h = new Hunt(fresh("sasuke"), () => 1);
+  h.encounter(durable(), "selected");
+  h.join("distant", durable(), false);
+  h.join("nearby", durable(), true);
+  h.tick(100);
+  const clock = h.playerClock, foe = { ...h.opponents.get("nearby")! };
+  h.leave("selected");
+  assert.equal(h.targetId, "nearby");
+  assert.equal(h.playerClock, clock);
+  assert.deepEqual(h.opponents.get("nearby"), foe);
+  assert.equal(h.save.kills, 0);
+  assert.equal(h.phase, "combatendo");
+});
