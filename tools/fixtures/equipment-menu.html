@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Equipment workshop QA</title>
+<link rel="stylesheet" href="/src/style.css">
+<style>body{padding:20px;background:#10211b}#qa-state{font-size:12px;color:#d8e2d6}</style>
+<button id="open">Open equipment</button>
+<button id="shop">Open shop</button>
+<button id="combat">Toggle combat</button>
+<p id="qa-state"></p>
+<script type="module">
+  import { installProgression } from '/src/progression/ui.ts';
+  import { fresh } from '/src/model.ts';
+  import { syncCharacterProgress,characterProgress,activeCharacterId,selectCharacter } from '/src/progression/character-progress.ts';
+  // Isolated fixture: only in-memory sample data; no account or cloud writes.
+  const save=fresh('naruto');save.level=5;save.coins=2000;
+  save.inventory={'kunai-treino':1,'colete-shinobi':1,'amuleto-chakra':1,'headband-shinobi-1':1,'scroll-shinobi-1':1};
+  syncCharacterProgress(save);
+  let combat=false;
+  const show=()=>document.querySelector('#qa-state').textContent=JSON.stringify({active:activeCharacterId(save),coins:save.coins,combat,sasuke:characterProgress(save,'11000211').equipment,naruto:save.equipment});
+  const open=installProgression(()=>({save,heroId:activeCharacterId(save),canSwitch:()=>!combat,switchCharacter:async(id)=>{if(combat)throw Error('Combat'); selectCharacter(save,id);show();},onChange:show}));
+  document.querySelector('#open').onclick=()=>open('equipment');
+  document.querySelector('#shop').onclick=()=>open('shop');
+  document.querySelector('#combat').onclick=()=>{combat=!combat;show();};
+  show();
+</script>

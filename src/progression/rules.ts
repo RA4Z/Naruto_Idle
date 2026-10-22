@@ -1,7 +1,20 @@
 import { t } from "../i18n/core.ts";
 import type { Save } from "../model";
-import { syncCharacterProgress } from "./character-progress.ts";
-export type Slot = "weapon" | "armor" | "charm";
+import { equipmentCopies } from "./equipment-ownership";
+import {
+  syncCharacterProgress,
+  characterProgress,
+  activeCharacterId,
+  FUTURE_CHARACTERS,
+} from "./character-progress.ts";
+export const EQUIPMENT_SLOTS = [
+  "headband",
+  "weapon",
+  "armor",
+  "scroll",
+  "charm",
+] as const;
+export type Slot = (typeof EQUIPMENT_SLOTS)[number];
 export type Item = {
   id: string;
   name: string;
@@ -206,6 +219,25 @@ for (const tier of [2, 3])
     }
     ITEMS.push(item);
   }
+for (const tier of [1, 2, 3]) {
+  for (const slot of ["headband", "scroll"] as const) {
+    ITEMS.push({
+      id: `${slot}-shinobi-${tier}`,
+      name: `${t(`gear.item.${slot}`)} ${["I", "II", "III"][tier - 1]}`,
+      slot,
+      tier,
+      level: [1, 5, 12][tier - 1],
+      price: [60, 240, 850][tier - 1],
+      attack: 0,
+      hp: slot === "headband" ? [16, 36, 64][tier - 1] : 0,
+      chakra: slot === "scroll" ? [5, 12, 22][tier - 1] : 0,
+      ninjutsu: slot === "scroll" ? [4, 9, 16][tier - 1] : 0,
+      regen: 0,
+      path: slot === "headband" ? "survival" : "chakra",
+      description: t(`gear.description.${slot}`),
+    });
+  }
+}
 export const STARTER_COLLECTION = ["11000101", "11000211", "11000301"];
 export const RECRUIT_COST = { coins: 60, fragments: 3 };
 export function equipmentBonuses(s: Save) {
@@ -218,27 +250,113 @@ export function equipmentBonuses(s: Save) {
   }
   return result;
 }
-export function buyItem(s: Save, id: string) {
+export function buyItem(
+  s: Save,
+  id: string,
+  characterId = activeCharacterId(s),
+) {
   const item = ITEMS.find((i) => i.id === id);
   if (!item) throw new Error(t("progression.rules.1a61e522d4"));
-  if (s.inventory[id]) throw new Error(t("progression.rules.d4bf50dfbb"));
+  if ((s.inventory[id] || 0) >= Number.MAX_SAFE_INTEGER)
+    throw new Error(t("gear.quantityLimit"));
   if (s.coins < item.price) throw new Error(t("progression.rules.54f856988d"));
-  if (s.level < item.level)
+  if (characterProgress(s, characterId).level < item.level)
     throw new Error(t("balance.requireLevel", { level: item.level }));
   s.coins -= item.price;
-  s.inventory[id] = 1;
+  s.inventory[id] = (s.inventory[id] || 0) + 1;
   return item;
 }
-export function equipItem(s: Save, id: string) {
+export function equipItem(
+  s: Save,
+  id: string,
+  characterId = activeCharacterId(s),
+  allowed = true,
+) {
+  if (!allowed) throw new Error(t("qol.switchBlocked"));
+  if (FUTURE_CHARACTERS.has(characterId))
+    throw new Error(t("gear.unavailable"));
+  const progress = characterProgress(s, characterId);
   const item = ITEMS.find((i) => i.id === id);
   if (!item || !s.inventory[id])
     throw new Error(t("progression.rules.f9c528c4c4"));
-  if (s.level < item.level)
+  if (progress.level < item.level)
     throw new Error(t("balance.requireLevel", { level: item.level }));
-  s.equipment ??= {};
-  s.equipment[item.slot] = id;
-  syncCharacterProgress(s);
+  if (equipmentCopies(s, id, characterId).available < 1)
+    throw new Error(t("gear.copyInUse"));
+  progress.equipment[item.slot] = id;
+  if (characterId === activeCharacterId(s)) {
+    s.equipment = { ...progress.equipment };
+    syncCharacterProgress(s);
+  }
   return item;
+}
+export function unequipItem(
+  s: Save,
+  slot: Slot,
+  characterId = activeCharacterId(s),
+  allowed = true,
+) {
+  if (!allowed) throw new Error(t("qol.switchBlocked"));
+  if (!EQUIPMENT_SLOTS.includes(slot) || FUTURE_CHARACTERS.has(characterId))
+    throw new Error(t("gear.unavailable"));
+  const progress = characterProgress(s, characterId);
+  delete progress.equipment[slot];
+  if (characterId === activeCharacterId(s)) {
+    s.equipment = { ...progress.equipment };
+    syncCharacterProgress(s);
+  }
+}
+/** Validate a replacement on a draft: even legacy roster initialization must not
+ * modify the live save if either character cannot receive the exchanged item.
+ */
+export function validateEquipmentReplacement(
+  s: Save,
+  id: string,
+  from: string,
+  to = activeCharacterId(s),
+  allowed = true,
+) {
+  if (!allowed) throw new Error(t("qol.switchBlocked"));
+  if (from === to || FUTURE_CHARACTERS.has(from) || FUTURE_CHARACTERS.has(to))
+    throw new Error(t("gear.unavailable"));
+  const draft = structuredClone(s);
+  const source = characterProgress(draft, from);
+  const target = characterProgress(draft, to);
+  const item = ITEMS.find((i) => i.id === id);
+  if (!item || !s.inventory[id] || source.equipment[item.slot] !== id)
+    throw new Error(t("gear.copyChanged"));
+  if (target.level < item.level)
+    throw new Error(t("balance.requireLevel", { level: item.level }));
+  const outgoingId = target.equipment[item.slot];
+  const outgoing = outgoingId
+    ? ITEMS.find((i) => i.id === outgoingId && i.slot === item.slot)
+    : undefined;
+  if (outgoingId && (!outgoing || !s.inventory[outgoingId]))
+    throw new Error(t("gear.copyChanged"));
+  if (outgoing && source.level < outgoing.level)
+    throw new Error(t("gear.swapRequireLevel", { level: outgoing.level }));
+  return { item, outgoing };
+}
+
+export function replaceEquipment(
+  s: Save,
+  id: string,
+  from: string,
+  to = activeCharacterId(s),
+  allowed = true,
+) {
+  const result = validateEquipmentReplacement(s, id, from, to, allowed);
+  const source = characterProgress(s, from);
+  const target = characterProgress(s, to);
+  target.equipment[result.item.slot] = id;
+  if (result.outgoing) source.equipment[result.item.slot] = result.outgoing.id;
+  else delete source.equipment[result.item.slot];
+  const active = activeCharacterId(s);
+  if (active === from || active === to) {
+    s.equipment = { ...(active === from ? source : target).equipment };
+    syncCharacterProgress(s);
+  }
+  return result;
 }
 export function recruit(s: Save, id: string) {
   if (id === "11000201") throw new Error(t("progression.rules.5d62a61688"));

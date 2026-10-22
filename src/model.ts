@@ -15,6 +15,7 @@ import {
   type EquipmentPresets,
 } from "./progression/preset-schema";
 import { ITEMS, QUESTS, STARTER_COLLECTION } from "./progression/rules";
+import { reconcileEquipmentCopies } from "./progression/equipment-ownership";
 import {
   CHARACTER_IDS,
   activeCharacterId,
@@ -52,7 +53,7 @@ export type Save = {
   music?: boolean;
   soundVolume?: number;
   paused: boolean;
-  equipment?: { weapon?: string; armor?: string; charm?: string };
+  equipment?: import("./progression/preset-schema").Equipment;
   equipmentPresets?: EquipmentPresets;
   questClaims?: string[];
   visitedMaps?: string[];
@@ -124,8 +125,8 @@ export function reward(s: Save, random = Math.random, enemy = enemyProfile()) {
         Math.floor(random() * (d.max - d.min + 1));
   if (random() < 0.18)
     s.inventory["chakra-shard"] = (s.inventory["chakra-shard"] || 0) + 1;
-  if (random() < 0.02 && !s.inventory["kunai-treino"])
-    s.inventory["kunai-treino"] = 1;
+  if (random() < 0.02)
+    s.inventory["kunai-treino"] = (s.inventory["kunai-treino"] || 0) + 1;
   let equipment: string | undefined;
   if (enemy.elite && random() < 0.25) {
     const unlockedTier = s.level >= 12 ? 3 : s.level >= 5 ? 2 : 1;
@@ -133,7 +134,7 @@ export function reward(s: Save, random = Math.random, enemy = enemyProfile()) {
       AREAS[s.area].level >= 12 ? 3 : AREAS[s.area].level >= 5 ? 2 : 1;
     const tier = Math.min(unlockedTier, difficultyTier);
     const candidates = ITEMS.filter(
-      (item) => item.tier === tier && !s.inventory[item.id],
+      (item) => item.tier === tier,
     );
     const item =
       candidates[
@@ -143,7 +144,7 @@ export function reward(s: Save, random = Math.random, enemy = enemyProfile()) {
         )
       ];
     if (item) {
-      s.inventory[item.id] = 1;
+      s.inventory[item.id] = (s.inventory[item.id] || 0) + 1;
       equipment = item.id;
     }
   }
@@ -338,6 +339,7 @@ export function restore(
   )
     s.collection.push(CHARACTER_IDS.sasuke);
   syncCharacterProgress(s);
+  reconcileEquipmentCopies(s);
   if (AREAS[s.area].level > s.level) s.area = 0;
   s.location ??= "10001";
   s.partyIds ??= [];

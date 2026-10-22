@@ -7,7 +7,7 @@ import {
   claimQuest,
   recruit,
 } from "../src/progression/rules.ts";
-test("shop purchases and equipment change actual combat attributes without duplicate purchases", () => {
+test("shop purchases add copies while equipment bonuses apply only once", () => {
   const s = fresh("naruto");
   s.coins = 200;
   const base = stats(s);
@@ -15,8 +15,10 @@ test("shop purchases and equipment change actual combat attributes without dupli
   equipItem(s, "kunai-treino");
   assert.equal(s.coins, 155);
   assert.equal(stats(s).attack, base.attack + 3);
-  assert.throws(() => buyItem(s, "kunai-treino"));
-  assert.equal(s.coins, 155);
+  buyItem(s, "kunai-treino");
+  assert.equal(s.coins, 110);
+  assert.equal(s.inventory["kunai-treino"], 2);
+  assert.equal(stats(s).attack, base.attack + 3);
   buyItem(s, "amuleto-chakra");
   equipItem(s, "amuleto-chakra");
   assert.equal(stats(s).maxChakra, 135);

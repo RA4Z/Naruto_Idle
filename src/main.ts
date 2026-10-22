@@ -304,8 +304,14 @@ const openProgression = installProgression(() => ({
   },
 }));
 $("progression").onclick = () => openProgression();
+const equipmentMenuButton = document.createElement("button");
+equipmentMenuButton.id = "equipment-menu";
+equipmentMenuButton.className = "secondary";
+equipmentMenuButton.textContent = t("gear.characters");
+equipmentMenuButton.onclick = () => { miniWindow.restore(); openProgression("equipment"); };
+$("progression").before(equipmentMenuButton);
 $("library").textContent = t("qol.owned");
-$("library").onclick = () => openProgression("collection");
+$("library").onclick = () => openProgression("equipment");
 let switchingHero = false;
 async function switchHero(id: string) {
   if (switchingHero || !worldReady || scene.loadingActor)

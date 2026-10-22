@@ -1,11 +1,17 @@
 import { stats, type Save } from "../model.ts";
 import { ITEMS } from "./rules.ts";
+import { selectCharacter } from "./character-progress.ts";
 
-export function compareEquipment(save: Save, itemId: string) {
+export function compareEquipment(
+  save: Save,
+  itemId: string,
+  characterId?: string,
+) {
   const item = ITEMS.find((entry) => entry.id === itemId);
   if (!item) throw new Error("Unknown item");
   // Simulate ownership for shop previews without purchasing or mutating the save.
   const preview = structuredClone(save);
+  if (characterId) selectCharacter(preview, characterId);
   preview.level = Math.max(preview.level, item.level);
   const before = stats(structuredClone(preview));
   preview.inventory[item.id] = Math.max(1, preview.inventory[item.id] || 0);

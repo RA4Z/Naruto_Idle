@@ -4,6 +4,7 @@ import type { WorldMap } from "../world/maps";
 export type RuntimeEntry = {
   name: string;
   preview?: string;
+  portrait?: string;
   variant?: string;
   url: string;
   capabilities: Partial<Record<ActorRole, boolean>>;

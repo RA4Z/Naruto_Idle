@@ -4,6 +4,9 @@ Atualizado em 21/10/2026. O [histórico](history/ROADMAP-2026-10-21.md) preserva
 
 ## Entregas atuais
 
+- [x] Menu de equipamentos por personagem: seleção em grid, retrato central, cinco slots, loja/inventário, comparação e remoção. 28 itens, com bandanas/pergaminhos em três graus. Progresso individual, conjuntos e saves preservados. [Guia](EQUIPAMENTOS.md).
+- [x] Equipamentos por cópia: uma unidade por personagem, compra/drop de unidades adicionais, indicação de cópias livres/ocupadas, validação atômica de conjuntos e correção de duplicações nos saves antigos ao carregar.
+
 - [x] Novo acesso assume a sessão imediatamente, encerrando a jornada anterior sem esperar dois minutos. Migração de transferência aplicada ao Supabase Free; proteção contra escrita antiga preservada.
 - [x] Minimapa circular no canto superior esquerdo; movimento sinalizado pelo destino, sem linhas sobre o cenário/minimapa.
 

@@ -164,8 +164,8 @@ test("enemy specials are telegraphed and elites have proportionate rewards witho
 });
 
 test("equipment paths trade damage, health and chakra; tiers unlock per character and remain save-compatible", () => {
-  assert.equal(ITEMS.length, 22);
-  assert.equal(new Set(ITEMS.map((i) => i.id)).size, 22);
+  assert.equal(ITEMS.length, 28);
+  assert.equal(new Set(ITEMS.map((i) => i.id)).size, 28);
   const s = fresh("naruto");
   s.coins = 10000;
   s.level = 4;

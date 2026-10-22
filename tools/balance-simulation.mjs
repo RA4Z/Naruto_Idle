@@ -4,7 +4,7 @@ import { fresh, Hunt, stats } from "../src/model.ts";
 import { AREAS } from "../src/config/areas.ts";
 import { selectCharacter } from "../src/progression/character-progress.ts";
 import { enemyProfile } from "../src/world/enemy-profiles.ts";
-import { ITEMS } from "../src/progression/rules.ts";
+import { ITEMS, EQUIPMENT_SLOTS } from "../src/progression/rules.ts";
 const heroes = [
   "11000101",
   "11000211",
@@ -42,7 +42,7 @@ for (const id of heroes)
           );
           const tier = level >= 12 ? 3 : level >= 5 ? 2 : 1;
           if (path !== "none")
-            for (const slot of ["weapon", "armor", "charm"]) {
+            for (const slot of EQUIPMENT_SLOTS) {
               const item = ITEMS.find(
                 (i) => i.slot === slot && i.path === path && i.tier === tier,
               );

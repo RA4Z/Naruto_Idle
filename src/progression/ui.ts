@@ -1,5 +1,13 @@
 import { t, th, errorText, formatNumber } from "../i18n/core.ts";
-import { ITEMS, QUESTS, buyItem, equipItem, claimQuest } from "./rules";
+import {
+  ITEMS,
+  QUESTS,
+  buyItem,
+  equipItem,
+  claimQuest,
+  EQUIPMENT_SLOTS,
+} from "./rules";
+import { renderEquipmentMenu, type EquipmentMenuState } from "./equipment-menu";
 import { addXp, stats, needed, type Save } from "../model";
 import { ATTRIBUTE_LABELS } from "./combat-stats";
 import {
@@ -35,7 +43,9 @@ export function installProgression(context: () => Context) {
     .querySelector("[data-close]")!
     .addEventListener("click", () => dialog.close());
   let attributeId: string | undefined;
-  let selected = "quests",
+  const equipmentState: EquipmentMenuState = { shop: false };
+  const shopState: EquipmentMenuState = { shop: true };
+  let selected = "equipment",
     version = 0;
   let collectionSearch = "",
     collectionSort = "level",
@@ -57,6 +67,17 @@ export function installProgression(context: () => Context) {
     );
     const content = dialog.querySelector("[data-content]")!;
     content.replaceChildren();
+    content.classList.toggle(
+      "gear-workshop",
+      selected === "equipment" || selected === "shop",
+    );
+    dialog.querySelector("h2")!.textContent = t(
+      selected === "shop"
+        ? "gear.shop"
+        : selected === "equipment"
+          ? "gear.characters"
+          : "common.bagProgress",
+    );
     dialog
       .querySelectorAll<HTMLButtonElement>("[data-tab]")
       .forEach((b) => b.classList.toggle("active", b.dataset.tab === selected));
@@ -89,6 +110,27 @@ export function installProgression(context: () => Context) {
       };
       return b;
     };
+    if (selected === "equipment" || selected === "shop") {
+      const state = selected === "shop" ? shopState : equipmentState;
+      const runtime =
+        selected === "shop" ? { entities: {} } : await runtimeIndex();
+      if (request !== version || !dialog.open) return;
+      renderEquipmentMenu(content as HTMLElement, {
+        save,
+        heroId,
+        entries: runtime.entities,
+        state,
+        switchCharacter: (id) => context().switchCharacter(id),
+        allowed: () => context().canSwitch(),
+        changed: onChange,
+        rerender: () => {
+          void render();
+        },
+        feedback: (message) => {
+          feedback.textContent = message;
+        },
+      });
+    }
     if (selected === "attributes") {
       const runtime = await runtimeIndex();
       const entries = (save.collection || [])
@@ -233,14 +275,14 @@ export function installProgression(context: () => Context) {
         card.append(element("h3", t(`balance.path.${key}`)));
         const same =
           gear &&
-          ["weapon", "armor", "charm"].every(
+          EQUIPMENT_SLOTS.every(
             (slot) =>
               (save.equipment as Record<string, string>)?.[slot] ===
               (gear as Record<string, string>)[slot],
           );
         if (same) card.append(element("p", t("common.equipped")));
         if (gear) {
-          for (const slot of ["weapon", "armor", "charm"] as const)
+          for (const slot of EQUIPMENT_SLOTS)
             card.append(
               element(
                 "p",
@@ -319,7 +361,7 @@ export function installProgression(context: () => Context) {
         );
         content.append(card);
       }
-    if (selected === "shop" || selected === "inventory") {
+    if (["inventory"].includes(selected)) {
       const controls = element("div", "");
       controls.className = "library-controls";
       const slots = document.createElement("select");
@@ -330,6 +372,8 @@ export function installProgression(context: () => Context) {
         ["weapon", t("state.weapon")],
         ["armor", t("state.armor")],
         ["charm", t("state.charm")],
+        ["headband", t("state.headband")],
+        ["scroll", t("state.scroll")],
       ]) {
         const option = document.createElement("option");
         option.value = value;
@@ -439,14 +483,11 @@ export function installProgression(context: () => Context) {
         if (selected === "shop")
           card.append(
             action(
-              save.inventory[item.id]
-                ? t("progression.ui.0dd8617e2b")
-                : t("progression.ui.370bf0579c", { v0: item.price }),
+              t("progression.ui.370bf0579c", { v0: item.price }),
               () => {
                 buyItem(save, item.id);
               },
-              !!save.inventory[item.id] ||
-                save.coins < item.price ||
+              save.coins < item.price ||
                 save.level < item.level,
             ),
           );
@@ -455,9 +496,9 @@ export function installProgression(context: () => Context) {
             action(
               equipped ? t("common.equipped") : t("progression.ui.82ed3d66ab"),
               () => {
-                equipItem(save, item.id);
+                equipItem(save, item.id, heroId, context().canSwitch());
               },
-              equipped || save.level < item.level,
+              equipped || save.level < item.level || !context().canSwitch(),
             ),
           );
         content.append(card);
@@ -471,7 +512,6 @@ export function installProgression(context: () => Context) {
         }
         if (
           selected === "shop" &&
-          !save.inventory[item.id] &&
           save.coins < item.price
         ) {
           card.querySelector("button")!.title = t("qol.cannotAfford");
@@ -644,12 +684,8 @@ export function installProgression(context: () => Context) {
     }
   }
   for (const [id, name] of [
-    ["attributes", t("progression.ui.d6436ac4f7")],
-    ["quests", t("progression.ui.2d1c19f7e3")],
-    ["inventory", t("progression.ui.a5aa9d7a87")],
-    ["presets", t("expansion.presets")],
+    ["equipment", t("gear.characters")],
     ["shop", t("progression.ui.70feed55e9")],
-    ["collection", t("qol.owned")],
   ]) {
     const b = document.createElement("button");
     b.className = "secondary";
@@ -664,6 +700,7 @@ export function installProgression(context: () => Context) {
   }
   return (tab?: string) => {
     if (tab) selected = tab;
+    if (selected === "equipment") equipmentState.character = undefined;
     feedback.textContent = "";
     dialog.showModal();
     void render();

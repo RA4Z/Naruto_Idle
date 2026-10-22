@@ -26,6 +26,7 @@ const entities = Object.fromEntries(
     {
       name: e.name,
       preview: e.preview,
+      portrait: e.portrait || undefined,
       variant: e.variant,
       url: e.manifestUrl || `/assets/characters/${e.slug}/manifest.json`,
       capabilities: e.capabilities,

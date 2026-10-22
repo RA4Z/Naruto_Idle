@@ -2,6 +2,7 @@ import type { Save } from "../model";
 import { stats } from "../model";
 import { activeCharacterId, syncCharacterProgress } from "./character-progress";
 import { ITEMS } from "./rules";
+import { equipmentCopies } from "./equipment-ownership";
 import { PRESET_IDS, type PresetId } from "./preset-schema";
 export { PRESET_IDS } from "./preset-schema";
 import { t } from "../i18n/core";
@@ -26,6 +27,8 @@ export function applyPreset(s: Save, key: PresetId, allowed: boolean) {
       throw new Error(t("expansion.presetUnavailable"));
     if (s.level < item.level)
       throw new Error(t("balance.requireLevel", { level: item.level }));
+    if (equipmentCopies(s, item.id, activeCharacterId(s)).available < 1)
+      throw new Error(t("gear.copyInUse"));
   }
   s.equipment = { ...equipment };
   syncCharacterProgress(s);
