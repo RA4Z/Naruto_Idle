@@ -1,0 +1,94 @@
+{
+  "modelsWithAdditionalActions": 16,
+  "additionalActions": 861,
+  "additionalBodyFramesCompared": 9279,
+  "completedTruncatedSpecials": 2,
+  "completeSpecialFramesCompared": 198,
+  "reservedSasukePreserved": true,
+  "preparedNativeEffects": 16,
+  "nativeLayers": 18,
+  "nativeFramesCompared": 1071,
+  "effectOriginalsAudited": 2003,
+  "modelsAudited": 1466,
+  "modelsWithExactSkillBindings": 700,
+  "pendingPreparedTimelineLengthMismatches": 0,
+  "unpreparedActionOrMarkerNames": 81013,
+  "deferredEffects": {
+    "2005": {
+      "id": "2005",
+      "definition": {
+        "id": "2005",
+        "type": "0",
+        "target": "1",
+        "color": "",
+        "maxAlpha": "",
+        "ninjaAlpha": "",
+        "res": "assets/battle/effect/DaJiTeXiao.swf",
+        "frontAction": "d1",
+        "backAction": ""
+      },
+      "reason": "ValueError: Bitmap action needs faithful feature adapter: ['blendMode']",
+      "state": "not-substituted"
+    },
+    "2030": {
+      "id": "2030",
+      "definition": {
+        "id": "2030",
+        "name": "治活再生",
+        "type": "0",
+        "target": "0",
+        "color": "",
+        "maxAlpha": "",
+        "ninjaAlpha": "",
+        "res": "assets/battle/effect/zhihuozaishen.swf",
+        "frontAction": "effect",
+        "backAction": "",
+        "refPointName": "skillEffectPoint"
+      },
+      "reason": "ValueError: Bitmap action needs faithful feature adapter: ['blendMode', 'filename']",
+      "state": "not-substituted"
+    },
+    "2016": {
+      "id": "2016",
+      "definition": {
+        "id": "2016",
+        "name": "治活再生术",
+        "type": "0",
+        "target": "1",
+        "color": "",
+        "maxAlpha": "",
+        "ninjaAlpha": "",
+        "res": "assets/battle/effect/hphuifu.swf",
+        "frontAction": "effect_battle_addhp",
+        "backAction": ""
+      },
+      "reason": "ValueError: Bitmap action needs faithful feature adapter: ['blendMode']",
+      "state": "not-substituted"
+    }
+  },
+  "bodyFeatureDependencies": {
+    "11001301": [
+      "C_entry: tween-interpolation",
+      "C_entry_1: tween-interpolation"
+    ],
+    "11001601": [
+      "C_callup_dead: blendMode"
+    ]
+  },
+  "runtimeIntegratedNativeEffects": [
+    "2015 for Naruto11000101 SP_skill1"
+  ],
+  "scope": "Other original bindings are source-reviewed in admin, not announced as completed world-combat integrations. No original files, real account, cloud database, save schema, recruitment gate or balance changed.",
+  "validation": {
+    "typescriptTests": 333,
+    "pythonTests": 16,
+    "i18nKeys": 1292,
+    "languages": 3,
+    "assetFilesChecked": 24720,
+    "nativeAtlasAllFrames": true,
+    "webglAndCanvasPreviews": true,
+    "productionBuild": true,
+    "bundleSecretsCheck": true,
+    "postBuildTargetedTests": 18
+  }
+}

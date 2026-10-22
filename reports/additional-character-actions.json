@@ -1,0 +1,6844 @@
+{
+  "version": 1,
+  "models": {
+    "11000101": {
+      "name": "Naruto",
+      "manifest": "/assets/characters/naruto-kid/manifest.json",
+      "source": {
+        "path": "assets/battle/role/left/11000101.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 360971,
+        "sha256": "94914d35d92d01d732320e9e82837e4d2f85b34491a763386ae8dd0ae536a2f7",
+        "sourceKind": "exported-inventory"
+      },
+      "added": [
+        {
+          "action": "C_entry",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "C_exeunt",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "C_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air1",
+          "status": "ready",
+          "frames": 30,
+          "uniqueFrames": 29,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land1",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 14,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair1",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback3",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback4",
+          "status": "ready",
+          "frames": 5,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback5",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_callup",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_twitch",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air1",
+          "status": "ready",
+          "frames": 29,
+          "uniqueFrames": 28,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        }
+      ],
+      "deferred": [],
+      "markers": [
+        {
+          "action": "C_defaultDefencePoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "D_HPSite",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "-149"
+            }
+          ]
+        }
+      ],
+      "existingActionsPreserved": true,
+      "mechanicalUnlocksChanged": false
+    },
+    "11000211": {
+      "name": "Sasuke",
+      "manifest": "/assets/characters/sasuke-11000211/manifest.json",
+      "source": {
+        "path": "assets/battle/role/left/11000211.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 282332,
+        "sha256": "09b06b257131cb718f36510151af270b75acd8973bb6484a48acc7cca02b94dd",
+        "sourceKind": "exported-inventory"
+      },
+      "added": [
+        {
+          "action": "A_2hit",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 7,
+          "externalEffects": []
+        },
+        {
+          "action": "A_3hit",
+          "status": "ready",
+          "frames": 32,
+          "uniqueFrames": 18,
+          "externalEffects": []
+        },
+        {
+          "action": "C_beatback_dead",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_entry",
+          "status": "ready",
+          "frames": 12,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "C_exeunt",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_1",
+          "status": "ready",
+          "frames": 10,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_2",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_stend_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air1",
+          "status": "ready",
+          "frames": 30,
+          "uniqueFrames": 29,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land1",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 14,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_stand",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 10,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair1",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback3",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback4",
+          "status": "ready",
+          "frames": 5,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback5",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_stand",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 4,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_twitch",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air1",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit1",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit2",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit3",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit5",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 15,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit6",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit7",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit8",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit9",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_land",
+          "status": "ready",
+          "frames": 22,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air1",
+          "status": "ready",
+          "frames": 29,
+          "uniqueFrames": 28,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit4",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "SP_skill3",
+          "status": "partial",
+          "frames": 32,
+          "uniqueFrames": 7,
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        {
+          "action": "SP_skill4",
+          "status": "partial",
+          "frames": 36,
+          "uniqueFrames": 27,
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        {
+          "action": "SP_skill5",
+          "status": "partial",
+          "frames": 55,
+          "uniqueFrames": 10,
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        {
+          "action": "c_land_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        }
+      ],
+      "deferred": [],
+      "markers": [
+        {
+          "action": "C_defaultAttackPoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "C_defaultDefencePoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "D_HPSite",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "-148"
+            }
+          ]
+        }
+      ],
+      "existingActionsPreserved": true,
+      "mechanicalUnlocksChanged": false
+    },
+    "11000701": {
+      "name": "Ino",
+      "manifest": "/assets/characters/ino-11000701/manifest.json",
+      "source": {
+        "path": "assets/battle/role/left/11000701.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 293920,
+        "sha256": "ea57efc9ccfe8d5d7460ab57623fe5378e366badda0a1caf257a98c7a248677d",
+        "sourceKind": "exported-inventory"
+      },
+      "added": [
+        {
+          "action": "A_2hit",
+          "status": "ready",
+          "frames": 25,
+          "uniqueFrames": 16,
+          "externalEffects": []
+        },
+        {
+          "action": "A_3hit",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "C_beatback_dead",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_entry",
+          "status": "ready",
+          "frames": 13,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "C_entry_1",
+          "status": "ready",
+          "frames": 13,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "C_exeunt",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "C_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_1",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_standup",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_stend_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air1",
+          "status": "ready",
+          "frames": 30,
+          "uniqueFrames": 29,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land1",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 14,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_stand",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 10,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair1",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback3",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback4",
+          "status": "ready",
+          "frames": 5,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback5",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_stand",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_twitch",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air1",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit1",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit2",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit3",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit5",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 15,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit6",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit7",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit8",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit9",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_land",
+          "status": "ready",
+          "frames": 22,
+          "uniqueFrames": 14,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air1",
+          "status": "ready",
+          "frames": 29,
+          "uniqueFrames": 28,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit4",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "c_land_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        }
+      ],
+      "deferred": [],
+      "markers": [
+        {
+          "action": "C_defaultAttackPoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "C_defaultDefencePoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "D_HPSite",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "-148"
+            }
+          ]
+        }
+      ],
+      "existingActionsPreserved": true,
+      "mechanicalUnlocksChanged": false
+    },
+    "11000801": {
+      "name": "Shikamaru",
+      "manifest": "/assets/characters/shikamaru-11000801/manifest.json",
+      "source": {
+        "path": "assets/battle/role/left/11000801.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 275483,
+        "sha256": "a76904b2b3e45fa685315cb48b754fa11f3bcc2237a5db47497edd86a1eeda0a",
+        "sourceKind": "exported-inventory"
+      },
+      "added": [
+        {
+          "action": "A_2hit",
+          "status": "ready",
+          "frames": 15,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "A_3hit",
+          "status": "ready",
+          "frames": 28,
+          "uniqueFrames": 14,
+          "externalEffects": []
+        },
+        {
+          "action": "C_beatback_dead",
+          "status": "ready",
+          "frames": 26,
+          "uniqueFrames": 10,
+          "externalEffects": []
+        },
+        {
+          "action": "C_dead1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_entry",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 7,
+          "externalEffects": []
+        },
+        {
+          "action": "C_exeunt",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "C_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_1",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_standup",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_stend_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air1",
+          "status": "ready",
+          "frames": 30,
+          "uniqueFrames": 29,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land1",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 14,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_stand",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 10,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair1",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback3",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback4",
+          "status": "ready",
+          "frames": 5,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback5",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_stand",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_twitch",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air1",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit1",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit2",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit3",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit5",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 15,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit6",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit7",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit8",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit9",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_land",
+          "status": "ready",
+          "frames": 22,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air1",
+          "status": "ready",
+          "frames": 29,
+          "uniqueFrames": 28,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit4",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "J_影子模仿术（持续）",
+          "status": "ready",
+          "frames": 10,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "J_影子模仿术（收）",
+          "status": "ready",
+          "frames": 15,
+          "uniqueFrames": 4,
+          "externalEffects": []
+        },
+        {
+          "action": "J_影子模仿术（起）",
+          "status": "ready",
+          "frames": 23,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "SP_skill3",
+          "status": "ready",
+          "frames": 13,
+          "uniqueFrames": 7,
+          "externalEffects": []
+        },
+        {
+          "action": "SP_skill4",
+          "status": "ready",
+          "frames": 37,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "c_land_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        }
+      ],
+      "deferred": [],
+      "markers": [
+        {
+          "action": "C_defaultAttackPoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "C_defaultDefencePoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "D_HPSite",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "-149"
+            }
+          ]
+        }
+      ],
+      "existingActionsPreserved": true,
+      "mechanicalUnlocksChanged": false
+    },
+    "11000301": {
+      "name": "Sakura",
+      "manifest": "/assets/characters/sakura-kid/manifest.json",
+      "source": {
+        "path": "assets/battle/role/left/11000301.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 270814,
+        "sha256": "74132fabe53f861216b1c8410daf4d731cb55cdf2a25fbb25465cac298d95292",
+        "sourceKind": "exported-inventory"
+      },
+      "added": [
+        {
+          "action": "C_entry",
+          "status": "ready",
+          "frames": 12,
+          "uniqueFrames": 7,
+          "externalEffects": []
+        },
+        {
+          "action": "C_entry_1",
+          "status": "ready",
+          "frames": 12,
+          "uniqueFrames": 7,
+          "externalEffects": []
+        },
+        {
+          "action": "C_exeunt",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "C_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air1",
+          "status": "ready",
+          "frames": 30,
+          "uniqueFrames": 29,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land1",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 14,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair1",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback3",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback4",
+          "status": "ready",
+          "frames": 5,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback5",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_twitch",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air1",
+          "status": "ready",
+          "frames": 29,
+          "uniqueFrames": 28,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        }
+      ],
+      "deferred": [],
+      "markers": [
+        {
+          "action": "C_defaultDefencePoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "D_HPSite",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "-161"
+            }
+          ]
+        }
+      ],
+      "existingActionsPreserved": true,
+      "mechanicalUnlocksChanged": false
+    },
+    "11000901": {
+      "name": "Choji",
+      "manifest": "/assets/characters/choji-11000901/manifest.json",
+      "source": {
+        "path": "assets/battle/role/left/11000901.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 368737,
+        "sha256": "a03e397aa23757948027baccd4d48655533c4268055b065df16bfd7fa339da38",
+        "sourceKind": "exported-inventory"
+      },
+      "added": [
+        {
+          "action": "A_2hit",
+          "status": "partial",
+          "frames": 28,
+          "uniqueFrames": 17,
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        {
+          "action": "A_3hit",
+          "status": "partial",
+          "frames": 45,
+          "uniqueFrames": 25,
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        {
+          "action": "C_beatback_dead",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_dead1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_dead1_stand",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_entry",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 9,
+          "externalEffects": []
+        },
+        {
+          "action": "C_exeunt",
+          "status": "ready",
+          "frames": 10,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "C_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_2",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_2_stand",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_standup",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_stend_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air1",
+          "status": "ready",
+          "frames": 30,
+          "uniqueFrames": 29,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land1",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 14,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_stand",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 10,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair1",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback3",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback4",
+          "status": "ready",
+          "frames": 5,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback5",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_stand",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_twitch",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air1",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit1",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit2",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit3",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit5",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 15,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit6",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit7",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit8",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit9",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_land",
+          "status": "ready",
+          "frames": 22,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air1",
+          "status": "ready",
+          "frames": 29,
+          "uniqueFrames": 28,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit4",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "SP_skill3",
+          "status": "ready",
+          "frames": 35,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "c_land_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        }
+      ],
+      "deferred": [],
+      "markers": [
+        {
+          "action": "C_defaultAttackPoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "C_defaultDefencePoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "D_HPSite",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "-148"
+            }
+          ]
+        }
+      ],
+      "existingActionsPreserved": true,
+      "mechanicalUnlocksChanged": false
+    },
+    "11001401": {
+      "name": "Temari",
+      "manifest": "/assets/characters/temari-11001401/manifest.json",
+      "source": {
+        "path": "assets/battle/role/left/11001401.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 445185,
+        "sha256": "20041d0760406654949ecbf34b2bc24435f47158e17c734ba4e77f8b2a288336",
+        "sourceKind": "exported-inventory"
+      },
+      "added": [
+        {
+          "action": "A_2hit",
+          "status": "ready",
+          "frames": 28,
+          "uniqueFrames": 17,
+          "externalEffects": []
+        },
+        {
+          "action": "A_3hit",
+          "status": "ready",
+          "frames": 39,
+          "uniqueFrames": 23,
+          "externalEffects": []
+        },
+        {
+          "action": "C_beatback_dead",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_dead1",
+          "status": "ready",
+          "frames": 17,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_entry",
+          "status": "ready",
+          "frames": 15,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "C_exeunt",
+          "status": "ready",
+          "frames": 13,
+          "uniqueFrames": 4,
+          "externalEffects": []
+        },
+        {
+          "action": "C_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_1",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_2",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_standup",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_stend_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air1",
+          "status": "ready",
+          "frames": 30,
+          "uniqueFrames": 29,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land1",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 14,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_stand",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 10,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair1",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback3",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback4",
+          "status": "ready",
+          "frames": 5,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback5",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_stand",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_twitch",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air1",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit1",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit2",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit3",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit5",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 15,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit6",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit7",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit8",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit9",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_land",
+          "status": "ready",
+          "frames": 22,
+          "uniqueFrames": 13,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air1",
+          "status": "ready",
+          "frames": 29,
+          "uniqueFrames": 28,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit4",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "SP_skill3",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 4,
+          "externalEffects": []
+        },
+        {
+          "action": "c_land_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        }
+      ],
+      "deferred": [],
+      "markers": [
+        {
+          "action": "C_defaultAttackPoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "C_defaultDefencePoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "D_HPSite",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "-168"
+            }
+          ]
+        }
+      ],
+      "existingActionsPreserved": true,
+      "mechanicalUnlocksChanged": false
+    },
+    "11001501": {
+      "name": "Kankuro",
+      "manifest": "/assets/characters/kankuro-11001501/manifest.json",
+      "source": {
+        "path": "assets/battle/role/left/11001501.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 356758,
+        "sha256": "363fcfd7db162cc1276cffc2ea7dc2ab7b2fc44dab33dd4b59018a7a05269fb3",
+        "sourceKind": "exported-inventory"
+      },
+      "added": [
+        {
+          "action": "C_beatback_dead",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_dead1",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_entry",
+          "status": "ready",
+          "frames": 12,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "C_exeunt",
+          "status": "ready",
+          "frames": 10,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "C_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_2",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 4,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_2",
+          "status": "ready",
+          "frames": 5,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_standup",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_stend_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air1",
+          "status": "ready",
+          "frames": 30,
+          "uniqueFrames": 29,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land1",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 14,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_stand",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 10,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair1",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback3",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback4",
+          "status": "ready",
+          "frames": 5,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback5",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_stand",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_twitch",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air1",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit1",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit2",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit3",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit5",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 15,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit6",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit7",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit8",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit9",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_land",
+          "status": "ready",
+          "frames": 22,
+          "uniqueFrames": 13,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air1",
+          "status": "ready",
+          "frames": 29,
+          "uniqueFrames": 28,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit4",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "c_land_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        }
+      ],
+      "deferred": [],
+      "markers": [
+        {
+          "action": "C_defaultAttackPoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "C_defaultDefencePoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "D_HPSite",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "-148"
+            }
+          ]
+        }
+      ],
+      "existingActionsPreserved": true,
+      "mechanicalUnlocksChanged": false
+    },
+    "11001201": {
+      "name": "Hinata",
+      "manifest": "/assets/characters/hinata-11001201/manifest.json",
+      "source": {
+        "path": "assets/battle/role/left/11001201.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 294654,
+        "sha256": "5c6c072da086e0e016cb85e083f792033474b93c9cae56f361e2d0c0fd4c309a",
+        "sourceKind": "exported-inventory"
+      },
+      "added": [
+        {
+          "action": "A_2hit",
+          "status": "ready",
+          "frames": 29,
+          "uniqueFrames": 10,
+          "externalEffects": []
+        },
+        {
+          "action": "A_3hit",
+          "status": "ready",
+          "frames": 42,
+          "uniqueFrames": 16,
+          "externalEffects": []
+        },
+        {
+          "action": "C_dead1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_entry",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "C_entry_1",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "C_exeunt",
+          "status": "ready",
+          "frames": 11,
+          "uniqueFrames": 4,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_1",
+          "status": "ready",
+          "frames": 15,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_2",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air1",
+          "status": "ready",
+          "frames": 30,
+          "uniqueFrames": 29,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land1",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 14,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_stand",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 10,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair1",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback3",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback4",
+          "status": "ready",
+          "frames": 5,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback5",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_stand",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_twitch",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air1",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit1",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit2",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit3",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit5",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 15,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit6",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit7",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit8",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit9",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_land",
+          "status": "ready",
+          "frames": 22,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air1",
+          "status": "ready",
+          "frames": 29,
+          "uniqueFrames": 28,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit4",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "SP_skill1_1",
+          "status": "ready",
+          "frames": 38,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "SP_skill3",
+          "status": "partial",
+          "frames": 20,
+          "uniqueFrames": 12,
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        }
+      ],
+      "completedClippedActions": [],
+      "deferred": [],
+      "markers": [
+        {
+          "action": "C_defaultAttackPoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "C_defaultDefencePoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "D_HPSite",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "-148"
+            }
+          ]
+        }
+      ],
+      "existingActionsPreserved": true,
+      "mechanicalUnlocksChanged": false
+    },
+    "11001301": {
+      "name": "Gaara",
+      "manifest": "/assets/characters/gaara-11001301/manifest.json",
+      "source": {
+        "path": "assets/battle/role/left/11001301.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 423366,
+        "sha256": "bca0f8cde1e528d485c66733c636ef77a4fa3baa9b404e3ae3551e89ace576b8",
+        "sourceKind": "exported-inventory"
+      },
+      "added": [
+        {
+          "action": "A_2hit",
+          "status": "ready",
+          "frames": 21,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "A_3hit",
+          "status": "ready",
+          "frames": 44,
+          "uniqueFrames": 18,
+          "externalEffects": []
+        },
+        {
+          "action": "C_dead1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_exeunt",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_1",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 4,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_2",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "SP_bati",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "SP_skill3",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 4,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air1",
+          "status": "ready",
+          "frames": 30,
+          "uniqueFrames": 29,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land1",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 14,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_stand",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 10,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair1",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback3",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback4",
+          "status": "ready",
+          "frames": 5,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback5",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_stand",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_twitch",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air1",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit1",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit2",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit3",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit5",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 15,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit6",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit7",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit8",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit9",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_land",
+          "status": "ready",
+          "frames": 22,
+          "uniqueFrames": 14,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air1",
+          "status": "ready",
+          "frames": 29,
+          "uniqueFrames": 28,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit4",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        }
+      ],
+      "completedClippedActions": [],
+      "deferred": [
+        {
+          "action": "C_entry",
+          "reason": "requires-native-feature-adapter",
+          "features": [
+            "tween-interpolation"
+          ]
+        },
+        {
+          "action": "C_entry_1",
+          "reason": "requires-native-feature-adapter",
+          "features": [
+            "tween-interpolation"
+          ]
+        }
+      ],
+      "markers": [
+        {
+          "action": "C_defaultAttackPoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "C_defaultDefencePoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "D_HPSite",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "-163"
+            }
+          ]
+        },
+        {
+          "action": "SP_skill4",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "270",
+              "y": "0",
+              "name": "skillEffectPoint"
+            }
+          ]
+        }
+      ],
+      "existingActionsPreserved": true,
+      "mechanicalUnlocksChanged": false
+    },
+    "11000501": {
+      "name": "Neji",
+      "manifest": "/assets/characters/neji-11000501/manifest.json",
+      "source": {
+        "path": "assets/battle/role/left/11000501.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 321518,
+        "sha256": "c35480b03589e9b87483da2eba338541c5926f5c4ee6bd633d05c2f722e0c01d",
+        "sourceKind": "exported-inventory"
+      },
+      "added": [
+        {
+          "action": "A_2hit",
+          "status": "ready",
+          "frames": 17,
+          "uniqueFrames": 10,
+          "externalEffects": []
+        },
+        {
+          "action": "A_3hit",
+          "status": "ready",
+          "frames": 28,
+          "uniqueFrames": 21,
+          "externalEffects": []
+        },
+        {
+          "action": "C_air_stand",
+          "status": "ready",
+          "frames": 13,
+          "uniqueFrames": 7,
+          "externalEffects": []
+        },
+        {
+          "action": "C_beatback_dead",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_entry",
+          "status": "ready",
+          "frames": 10,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "C_entry_1",
+          "status": "ready",
+          "frames": 10,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "C_exeunt",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "C_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_1",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 4,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_2",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_standup",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_stend_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air1",
+          "status": "ready",
+          "frames": 30,
+          "uniqueFrames": 29,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land1",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 14,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_stand",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 10,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair1",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback3",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback4",
+          "status": "ready",
+          "frames": 5,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback5",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_stand",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_twitch",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air1",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit1",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit2",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit3",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit5",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 15,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit6",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit7",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit8",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit9",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_land",
+          "status": "ready",
+          "frames": 22,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air1",
+          "status": "ready",
+          "frames": 29,
+          "uniqueFrames": 28,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit4",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "SP_skill3",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 4,
+          "externalEffects": []
+        },
+        {
+          "action": "c_beatback_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "c_land_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        }
+      ],
+      "completedClippedActions": [],
+      "deferred": [],
+      "markers": [
+        {
+          "action": "C_defaultAttackPoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "C_defaultDefencePoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "D_HPSite",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "-152"
+            }
+          ]
+        }
+      ],
+      "existingActionsPreserved": true,
+      "mechanicalUnlocksChanged": false
+    },
+    "11000601": {
+      "name": "Tenten",
+      "manifest": "/assets/characters/tenten-11000601/manifest.json",
+      "source": {
+        "path": "assets/battle/role/left/11000601.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 355812,
+        "sha256": "5a14fe2adeec9ec10cb1b1f611ff21c3585ca2c357b7be25ac3568ac33f02f01",
+        "sourceKind": "exported-inventory"
+      },
+      "added": [
+        {
+          "action": "A_2hit",
+          "status": "ready",
+          "frames": 29,
+          "uniqueFrames": 19,
+          "externalEffects": []
+        },
+        {
+          "action": "A_3hit",
+          "status": "ready",
+          "frames": 43,
+          "uniqueFrames": 27,
+          "externalEffects": []
+        },
+        {
+          "action": "C_beatback_dead",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_entry",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "C_exeunt",
+          "status": "ready",
+          "frames": 11,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "C_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_1",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_2",
+          "status": "ready",
+          "frames": 11,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_standup",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_stend_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air1",
+          "status": "ready",
+          "frames": 30,
+          "uniqueFrames": 29,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land1",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 14,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_stand",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 10,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair1",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback3",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback4",
+          "status": "ready",
+          "frames": 5,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback5",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_stand",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_twitch",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air1",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit1",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit2",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit3",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit5",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 15,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit6",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit7",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit8",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit9",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_land",
+          "status": "ready",
+          "frames": 22,
+          "uniqueFrames": 14,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air1",
+          "status": "ready",
+          "frames": 29,
+          "uniqueFrames": 28,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit4",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "SP_skill3",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "c_land_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        }
+      ],
+      "completedClippedActions": [],
+      "deferred": [],
+      "markers": [
+        {
+          "action": "C_defaultAttackPoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "C_defaultDefencePoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "D_HPSite",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "-148"
+            }
+          ]
+        }
+      ],
+      "existingActionsPreserved": true,
+      "mechanicalUnlocksChanged": false
+    },
+    "11000401": {
+      "name": "Lee",
+      "manifest": "/assets/para-revisao/animacoes-incompletas/lee-11000401/manifest.json",
+      "source": {
+        "path": "assets/battle/role/left/11000401.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 298151,
+        "sha256": "ae9de36dd8b33ac55d1a59dda8d31921026767e2638e0756037c01d9ed2eb968",
+        "sourceKind": "exported-inventory"
+      },
+      "added": [
+        {
+          "action": "A_3hit",
+          "status": "ready",
+          "frames": 24,
+          "uniqueFrames": 21,
+          "externalEffects": []
+        },
+        {
+          "action": "A_5hit",
+          "status": "ready",
+          "frames": 46,
+          "uniqueFrames": 41,
+          "externalEffects": []
+        },
+        {
+          "action": "C_beatback_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_dead1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_entry",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "C_exeunt",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "C_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_1",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_3",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_1",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_3",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_1",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_2",
+          "status": "ready",
+          "frames": 12,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_standup",
+          "status": "ready",
+          "frames": 5,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_stend_dead",
+          "status": "ready",
+          "frames": 28,
+          "uniqueFrames": 10,
+          "externalEffects": []
+        },
+        {
+          "action": "C_stendup",
+          "status": "ready",
+          "frames": 5,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air1",
+          "status": "ready",
+          "frames": 30,
+          "uniqueFrames": 29,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land1",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 14,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_stand",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 10,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair1",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback3",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback4",
+          "status": "ready",
+          "frames": 5,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback5",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_stand",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_twitch",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air1",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit1",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit2",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit3",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit5",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 15,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit6",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit7",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit8",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit9",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_land",
+          "status": "ready",
+          "frames": 22,
+          "uniqueFrames": 13,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air1",
+          "status": "ready",
+          "frames": 29,
+          "uniqueFrames": 28,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit4",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "SP_biaolianhua",
+          "status": "partial",
+          "frames": 44,
+          "uniqueFrames": 14,
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        {
+          "action": "SP_lilianhua",
+          "status": "ready",
+          "frames": 25,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "c_land_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        }
+      ],
+      "completedClippedActions": [],
+      "deferred": [],
+      "markers": [
+        {
+          "action": "C_defaultAttackPoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "14",
+              "y": "1"
+            }
+          ]
+        },
+        {
+          "action": "C_defaultDefencePoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "1"
+            }
+          ]
+        },
+        {
+          "action": "D_HPSite",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "-150"
+            }
+          ]
+        }
+      ],
+      "existingActionsPreserved": true,
+      "mechanicalUnlocksChanged": false
+    },
+    "11001001": {
+      "name": "Kiba",
+      "manifest": "/assets/characters/kiba-11001001/manifest.json",
+      "source": {
+        "path": "assets/battle/role/left/11001001.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 318201,
+        "sha256": "917fdf1b6ec5e9ea85ad4084c186b013dfe841ad357b463a594a3a63a6b687cc",
+        "sourceKind": "exported-inventory"
+      },
+      "added": [
+        {
+          "action": "A_2hit",
+          "status": "ready",
+          "frames": 34,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "A_3hit",
+          "status": "ready",
+          "frames": 58,
+          "uniqueFrames": 44,
+          "externalEffects": []
+        },
+        {
+          "action": "C_beatback_dead",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_dead1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_dead_1",
+          "status": "ready",
+          "frames": 20,
+          "uniqueFrames": 10,
+          "externalEffects": []
+        },
+        {
+          "action": "C_entry",
+          "status": "ready",
+          "frames": 12,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "C_entry_1",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 10,
+          "externalEffects": []
+        },
+        {
+          "action": "C_exeunt",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "C_idle_1",
+          "status": "ready",
+          "frames": 22,
+          "uniqueFrames": 6,
+          "externalEffects": []
+        },
+        {
+          "action": "C_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_1",
+          "status": "ready",
+          "frames": 10,
+          "uniqueFrames": 7,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_2",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_3",
+          "status": "ready",
+          "frames": 17,
+          "uniqueFrames": 10,
+          "externalEffects": []
+        },
+        {
+          "action": "C_standup",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_stend_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air1",
+          "status": "ready",
+          "frames": 30,
+          "uniqueFrames": 29,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land1",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 14,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_stand",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 10,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair1",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback3",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback4",
+          "status": "ready",
+          "frames": 5,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback5",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_stand",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_twitch",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air1",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit1",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit2",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit3",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit5",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 15,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit6",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit7",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit8",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit9",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_land",
+          "status": "ready",
+          "frames": 22,
+          "uniqueFrames": 13,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air1",
+          "status": "ready",
+          "frames": 29,
+          "uniqueFrames": 28,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit4",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "SP_skill3",
+          "status": "ready",
+          "frames": 12,
+          "uniqueFrames": 7,
+          "externalEffects": []
+        },
+        {
+          "action": "c_land_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        }
+      ],
+      "completedClippedActions": [],
+      "deferred": [],
+      "markers": [
+        {
+          "action": "C_defaultAttackPoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "C_defaultDefencePoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "D_HPSite",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "-148"
+            }
+          ]
+        }
+      ],
+      "existingActionsPreserved": true,
+      "mechanicalUnlocksChanged": false
+    },
+    "11001101": {
+      "name": "Shino",
+      "manifest": "/assets/characters/shino-11001101/manifest.json",
+      "source": {
+        "path": "assets/battle/role/left/11001101.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 306620,
+        "sha256": "ec3242b2e60b3c242d024d9f8856c284c80752a60994d44a89eb3b96ffd99a1b",
+        "sourceKind": "exported-inventory"
+      },
+      "added": [
+        {
+          "action": "A_2hit",
+          "status": "ready",
+          "frames": 31,
+          "uniqueFrames": 15,
+          "externalEffects": []
+        },
+        {
+          "action": "A_3hit",
+          "status": "ready",
+          "frames": 50,
+          "uniqueFrames": 21,
+          "externalEffects": []
+        },
+        {
+          "action": "C_beatback_dead",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_entry",
+          "status": "ready",
+          "frames": 13,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "C_exeunt",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "C_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_1",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_standup",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_stend_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air1",
+          "status": "ready",
+          "frames": 30,
+          "uniqueFrames": 29,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land1",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 14,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_stand",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 10,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair1",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback3",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback4",
+          "status": "ready",
+          "frames": 5,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback5",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_stand",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_twitch",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air1",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit1",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit2",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit3",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit5",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 15,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit6",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit7",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit8",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit9",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_land",
+          "status": "ready",
+          "frames": 22,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air1",
+          "status": "ready",
+          "frames": 29,
+          "uniqueFrames": 28,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit4",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "c_dead",
+          "status": "ready",
+          "frames": 27,
+          "uniqueFrames": 7,
+          "externalEffects": []
+        },
+        {
+          "action": "c_land_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        }
+      ],
+      "completedClippedActions": [],
+      "deferred": [],
+      "markers": [
+        {
+          "action": "C_defaultAttackPoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "C_defaultDefencePoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "D_HPSite",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "-166"
+            }
+          ]
+        }
+      ],
+      "existingActionsPreserved": true,
+      "mechanicalUnlocksChanged": false
+    },
+    "11001601": {
+      "name": "Kakashi",
+      "manifest": "/assets/characters/kakashi-11001601/manifest.json",
+      "source": {
+        "path": "assets/battle/role/left/11001601.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 408117,
+        "sha256": "7ea83f6c9558c25beb941036fd4697661bd8c093b06c46e20ca060be07622cd9",
+        "sourceKind": "exported-inventory"
+      },
+      "added": [
+        {
+          "action": "A_2hit",
+          "status": "ready",
+          "frames": 29,
+          "uniqueFrames": 7,
+          "externalEffects": []
+        },
+        {
+          "action": "A_3hit",
+          "status": "partial",
+          "frames": 60,
+          "uniqueFrames": 27,
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        {
+          "action": "C_beatback_dead",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_dead1",
+          "status": "ready",
+          "frames": 22,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_entry",
+          "status": "ready",
+          "frames": 15,
+          "uniqueFrames": 7,
+          "externalEffects": []
+        },
+        {
+          "action": "C_entry_1",
+          "status": "ready",
+          "frames": 15,
+          "uniqueFrames": 7,
+          "externalEffects": []
+        },
+        {
+          "action": "C_exeunt",
+          "status": "ready",
+          "frames": 13,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "C_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run1_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_1",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_run2_3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_1",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_skillIdle_2",
+          "status": "ready",
+          "frames": 21,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "C_standup",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "C_stend_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air1",
+          "status": "ready",
+          "frames": 30,
+          "uniqueFrames": 29,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_land1",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 14,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_stand",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 10,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_air_upair1",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback1",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback2",
+          "status": "ready",
+          "frames": 3,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback3",
+          "status": "ready",
+          "frames": 19,
+          "uniqueFrames": 8,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback4",
+          "status": "ready",
+          "frames": 5,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_beatback5",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_callup",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_land",
+          "status": "ready",
+          "frames": 16,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_stand",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_land_twitch",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_air1",
+          "status": "ready",
+          "frames": 14,
+          "uniqueFrames": 11,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit1",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit2",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit3",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit4",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit5",
+          "status": "ready",
+          "frames": 18,
+          "uniqueFrames": 15,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit6",
+          "status": "ready",
+          "frames": 6,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit7",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit8",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_behit9",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "D_stand_land",
+          "status": "ready",
+          "frames": 22,
+          "uniqueFrames": 12,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air",
+          "status": "ready",
+          "frames": 8,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air1",
+          "status": "ready",
+          "frames": 29,
+          "uniqueFrames": 28,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_air2",
+          "status": "ready",
+          "frames": 40,
+          "uniqueFrames": 26,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit1",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit2",
+          "status": "ready",
+          "frames": 9,
+          "uniqueFrames": 5,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit3",
+          "status": "ready",
+          "frames": 2,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "D_upair_behit4",
+          "status": "ready",
+          "frames": 1,
+          "uniqueFrames": 1,
+          "externalEffects": []
+        },
+        {
+          "action": "SP_skill3",
+          "status": "ready",
+          "frames": 73,
+          "uniqueFrames": 19,
+          "externalEffects": []
+        },
+        {
+          "action": "SP_skill4",
+          "status": "ready",
+          "frames": 38,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "SP_skill4_1",
+          "status": "ready",
+          "frames": 7,
+          "uniqueFrames": 3,
+          "externalEffects": []
+        },
+        {
+          "action": "SP_skill4_2",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        },
+        {
+          "action": "SP_skill5",
+          "status": "partial",
+          "frames": 18,
+          "uniqueFrames": 8,
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        {
+          "action": "SP_skill6",
+          "status": "partial",
+          "frames": 18,
+          "uniqueFrames": 8,
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        {
+          "action": "SP_skill7",
+          "status": "partial",
+          "frames": 92,
+          "uniqueFrames": 8,
+          "externalEffects": [
+            "yingzi(1).png"
+          ]
+        },
+        {
+          "action": "c_land_dead",
+          "status": "ready",
+          "frames": 4,
+          "uniqueFrames": 2,
+          "externalEffects": []
+        }
+      ],
+      "completedClippedActions": [],
+      "deferred": [
+        {
+          "action": "C_callup_dead",
+          "reason": "requires-native-feature-adapter",
+          "features": [
+            "blendMode"
+          ]
+        }
+      ],
+      "markers": [
+        {
+          "action": "C_defaultAttackPoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "C_defaultDefencePoint",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "0"
+            }
+          ]
+        },
+        {
+          "action": "D_HPSite",
+          "kind": "anchor-or-no-local-bitmap",
+          "points": [
+            {
+              "x": "0",
+              "y": "-163"
+            }
+          ]
+        }
+      ],
+      "existingActionsPreserved": true,
+      "mechanicalUnlocksChanged": false
+    }
+  }
+}

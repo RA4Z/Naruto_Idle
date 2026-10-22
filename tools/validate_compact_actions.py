@@ -27,13 +27,14 @@ def render(elements, images, assets, symbols, box):
  return canvas
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--source',required=True);args=p.parse_args();archive=OriginalArchive(args.source);rows=[];previews=[]
+ global ROOT
+ p=argparse.ArgumentParser();p.add_argument('--source',required=True);p.add_argument('--project',type=Path,default=ROOT);p.add_argument('--revision',default='external-symbol-compact-frame-origin-v2');p.add_argument('--expected',type=int,default=31);p.add_argument('--report',default='compact-animation-validation');p.add_argument('--all-frames',action='store_true');p.add_argument('--no-contact',action='store_true');args=p.parse_args();ROOT=args.project.resolve();archive=OriginalArchive(args.source);rows=[];previews=[]
  catalog=json.loads((ROOT/'public/assets/catalog/entities.json').read_text(encoding='utf-8'))['entities']
  for entry in catalog:
   mp=ROOT/'public'/entry['manifestUrl'].lstrip('/');manifest=json.loads(mp.read_text(encoding='utf-8'))
   for mode,data in manifest.get('modes',{}).items():
    for name,definition in data['animations'].items():
-    if definition.get('rendererRevision')!='external-symbol-compact-frame-origin-v2':continue
+    if definition.get('rendererRevision')!=args.revision:continue
     evidence=definition['sourceEvidence'];assert archive.record(evidence['path'])==evidence
     root,assets,images,symbols,_=read_actions(archive.path(evidence['path']),32000000,{name})
     action=next(a for a in root.findall('action') if a.get('name')==name);layers=action.findall('layer')
@@ -41,7 +42,7 @@ def main():
     timeline=definition['timeline'];assert len(timeline)==duration;assert definition['fps']==float(root.get('frameRate','24'))
     w,h=definition['frameWidth'],definition['frameHeight'];origins=definition['frameOrigins'];assert len(origins)==definition['frames']
     extreme=max(range(len(origins)),key=lambda i:abs(origins[i][0])+abs(origins[i][1]))
-    probes=sorted({0,duration//2,duration-1,timeline.index(extreme)})
+    probes=list(range(duration)) if args.all_frames else sorted({0,duration//2,duration-1,timeline.index(extreme)})
     path=ROOT/'public'/definition['url'].lstrip('/')
     with Image.open(path) as sheet:
      assert max(sheet.size)<=8192 and sheet.width*sheet.height<=16000000
@@ -68,13 +69,14 @@ def main():
        actual.save(ROOT/'reports/compact-probe-actual.png');expected.save(ROOT/'reports/compact-probe-source.png')
        diff=ImageChops.difference(actual,expected);print({'id':entry['id'],'frame':time,'diffExtrema':diff.getextrema(),'channelBounds':[c.getbbox() for c in diff.split()]},flush=True)
        raise AssertionError(f'{entry["id"]}/{name}/{time}: pixels or ground offset differ')
-      if time==duration//2:
+      if time==duration//2 and not args.no_contact:
        preview=expected.crop(expected.getbbox()) if expected.getbbox() else expected;preview.thumbnail((210,170))
        tile=Image.new('RGBA',(250,220),'#1e2634');tile.alpha_composite(preview,((250-preview.width)//2,30+(170-preview.height)//2));ImageDraw.Draw(tile).text((6,4),entry['id']+' '+name,fill='white');previews.append(tile)
     rows.append({'id':entry['id'],'mode':mode,'action':name,'timingAndTimelineMatch':True,'groundOffsetsAndPixelsMatch':True,'sampledTimelineFrames':probes,'sourceHashesPreserved':True,'atlasSha256':hashlib.sha256(path.read_bytes()).hexdigest(),'externalEffectsUnresolved':definition.get('externalEffects',[])})
     print(entry['id']+' '+name+' source probes verified',flush=True)
- assert len(rows)==31,len(rows)
- write_json(ROOT/'reports/compact-animation-validation.json',{'actions':rows,'count':len(rows),'scope':'RGBA probes in independent source coordinate canvas; no claim of complete external-effect reconstruction'})
+ assert len(rows)==args.expected,len(rows)
+ write_json(ROOT/('reports/'+args.report+'.json'),{'actions':rows,'count':len(rows),'sampledFrames':sum(len(r['sampledTimelineFrames']) for r in rows),'allTimelineFrames':args.all_frames,'scope':'RGBA probes in independent source coordinate canvas; no claim of complete external-effect reconstruction'})
+ if args.no_contact:return
  contact=Image.new('RGBA',(1000,math.ceil(len(previews)/4)*220),'#1e2634')
  for i,tile in enumerate(previews):contact.alpha_composite(tile,((i%4)*250,(i//4)*220))
  contact.convert('RGB').save(ROOT/'reports/compact-animation-contact.jpg',quality=90)

@@ -1,5 +1,14 @@
 # Roadmap consolidado
 
+## Extração validada em 22/10 — personagens/efeitos
+
+- [x] 861 ações adicionais/16 modelos, com 9.279 quadros comparados; especiais completos de Naruto (98 quadros) e Sasuke reservado (100 quadros), preservando a reserva da variante preta.
+- [x] 16 efeitos/18 camadas/1.071 quadros nativos preparados e validados. Atlas variáveis sem redução de resolução; compatibilidade dos anteriores preservada.
+- [x] Rasengan integrado ao relógio/origem do corpo; espelhamento das origens corrigido; prévias dos demais efeitos no admin e vínculos originais por ID.
+- [ ] Completar blends/tweens/cor, resolver sombra/pontos externos e adaptar os estágios originais antes de integrar os demais jutsus ao mundo. Inventário ainda possui 81.013 nomes de ações/marcações não preparados; não são todos clipes únicos.
+
+Detalhes, critérios, evidências e reprodução: [Personagens e efeitos nativos](PERSONAGENS_E_EFEITOS_NATIVOS.md). Esta entrega não encerra a recuperação de todo o acervo.
+
 Atualizado em 21/10/2026. O [histórico](history/ROADMAP-2026-10-21.md) preserva cronologia, autorizações e relatórios. Esta lista prevalece sobre seus itens antigos.
 
 ## Entregas atuais

@@ -2,6 +2,10 @@ export type ActorRole = "npc" | "enemy" | "companion";
 export type ActorMode = "world" | "battle";
 export type AnimationDef = {
   url: string;
+  packedAtlasUrl?: string;
+  frameSizes?: [number, number][];
+  sourceBounds?: [number, number, number, number];
+  sourcePixelScale?: number;
   frameWidth: number;
   frameHeight: number;
   frames: number;

@@ -1,4 +1,5 @@
 import { t } from "../i18n/core.ts";
+import { queueAnimation, animationFrames } from "./animation-texture";
 import { animationOrigin } from "./animation-origin";
 import { loadSceneAssets } from "../assets/scene-loader";
 import Phaser from "phaser";
@@ -39,11 +40,7 @@ export function queueActor(
     const key = actorKey(manifest.id, mode, action);
     if (scene.textures.exists(key) || pending.has(key)) continue;
     pending.add(key);
-    scene.load.spritesheet(key, anim.url, {
-      frameWidth: anim.frameWidth,
-      frameHeight: anim.frameHeight,
-      endFrame: anim.frames - 1,
-    });
+    queueAnimation(scene, key, anim);
   }
 }
 export function registerActor(
@@ -57,9 +54,7 @@ export function registerActor(
     if (scene.anims.exists(key) || !scene.textures.exists(key)) continue;
     scene.anims.create({
       key,
-      frames: (
-        anim.timeline || Array.from({ length: anim.frames }, (_, i) => i)
-      ).map((frame) => ({ key, frame })),
+      frames: animationFrames(key, anim),
       frameRate: anim.fps,
       repeat: action.includes("idle") || action.startsWith("run_") ? -1 : 0,
     });
@@ -239,7 +234,7 @@ export class EntityActor extends Phaser.GameObjects.Container {
     if (resetWorldMirror(mode, this.visual.anims.currentAnim?.key))
       this.visual.setFlipX(false);
     this.visual
-      .setOrigin(...animationOrigin(anim, 0))
+      .setOrigin(...animationOrigin(anim, 0, this.visual.flipX))
       .setScale(
         actorVisualScale(
           this.manifest.id,
@@ -255,7 +250,7 @@ export class EntityActor extends Phaser.GameObjects.Container {
   tick(paused: boolean) {
     if (this.activeDefinition)
       this.visual.setOrigin(
-        ...animationOrigin(this.activeDefinition, this.visual.frame.name),
+        ...animationOrigin(this.activeDefinition, this.visual.frame.name, this.visual.flipX),
       );
     this.setDepth(this.y);
     if (paused) this.visual.anims.pause();
@@ -272,6 +267,8 @@ export class EntityActor extends Phaser.GameObjects.Container {
   }
   face(left: boolean) {
     this.visual.setFlipX(left);
+    if (this.activeDefinition)
+      this.visual.setOrigin(...animationOrigin(this.activeDefinition, this.visual.frame.name, left));
   }
   setCombatLabel(text: string, elite: boolean) {
     this.nameLabel.setText(text).setColor(elite ? "#ffda76" : "#fff4d7");

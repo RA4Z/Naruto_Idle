@@ -1,3 +1,5 @@
+import { frameRectangle, type PackedAtlas } from "../entities/animation-texture";
+import { mountNativeEffectReview, type NativeEffectEntry } from "../effects/native-review";
 import { animationOrigin } from "../entities/animation-origin";
 import {
   t,
@@ -286,6 +288,27 @@ async function show(id: string, title: string) {
           card.append(button);
           grid.append(card);
         }
+      if (id === "effects") {
+        const response = await fetch("/assets/effects/native/index.json");
+        if (request !== generation) return;
+        if (response.ok) {
+          const native = await response.json();
+          if (request !== generation) return;
+          for (const entry of Object.values(native.effects) as NativeEffectEntry[]) {
+            const card = node("article", undefined, "admin-card");
+            card.dataset.nativeEffect = entry.id;
+            card.append(node("h3", t("native.review.title") + " · " + entry.id),
+              node("p", entry.definition.res), node("p", t("native.review.warning")));
+            const button = node("button", t("native.review.open"), "secondary");
+            button.onclick = () => {
+              const dialog = modal(t("native.review.title") + " · " + entry.id);
+              const dispose = mountNativeEffectReview(dialog, entry);
+              dialog.addEventListener("close", dispose, { once: true });
+            };
+            card.append(button); grid.prepend(card);
+          }
+        }
+      }
       content.append(grid);
     } else if (id === "progression") {
       const data = await api("progression");
@@ -651,6 +674,7 @@ function animationDialog(title: string, modes: any, manifest?: any) {
     raf = 0,
     token = 0,
     lastDraw = 0;
+  const atlases = new WeakMap<HTMLImageElement, PackedAtlas>();
   const buttons: HTMLButtonElement[] = [],
     thumbnails: HTMLCanvasElement[] = [];
   const visible = new Set<number>(),
@@ -669,8 +693,7 @@ function animationDialog(title: string, modes: any, manifest?: any) {
     const timeline = anim.timeline?.length
       ? anim.timeline
       : Array.from({ length: anim.frames }, (_, i) => i);
-    const cols = Math.floor(img.width / anim.frameWidth);
-    if (!timeline.length || !cols || !anim.frameHeight) return;
+    if (!timeline.length || !anim.frameHeight) return;
     const frame =
       timeline[
         Math.floor(((time - began) / 1000) * anim.fps) % timeline.length
@@ -679,15 +702,12 @@ function animationDialog(title: string, modes: any, manifest?: any) {
       2,
       62 / Math.max(1, entry.reference || anim.frameHeight),
     );
-    const w = anim.frameWidth * scale,
-      h = anim.frameHeight * scale;
+    const rect = frameRectangle(anim, frame, img.width, atlases.get(img));
+    const w = rect.w * scale, h = rect.h * scale;
     ctx.clearRect(0, 0, thumb.width, thumb.height);
     ctx.drawImage(
       img,
-      (frame % cols) * anim.frameWidth,
-      Math.floor(frame / cols) * anim.frameHeight,
-      anim.frameWidth,
-      anim.frameHeight,
+      rect.x, rect.y, rect.w, rect.h,
       thumb.width / 2 - w * animationOrigin(anim, frame)[0],
       thumb.height * 0.875 - h * animationOrigin(anim, frame)[1],
       w,
@@ -698,6 +718,11 @@ function animationDialog(title: string, modes: any, manifest?: any) {
     const img = new Image();
     img.src = actions[index].anim.url;
     await img.decode();
+    if (actions[index].anim.packedAtlasUrl) {
+      const response = await fetch(actions[index].anim.packedAtlasUrl);
+      if (!response.ok) throw new Error(t("native.review.failed"));
+      atlases.set(img, await response.json());
+    }
     return img;
   };
   const pump = () => {
@@ -787,10 +812,8 @@ function animationDialog(title: string, modes: any, manifest?: any) {
     const request = ++token,
       entry = actions[index];
     image = undefined;
-    const im = new Image();
-    im.src = entry.anim.url;
     try {
-      await im.decode();
+      const im = await load(index);
       if (request !== token || !dialog.open) return;
       image = im;
       start = performance.now();
@@ -828,19 +851,16 @@ function animationDialog(title: string, modes: any, manifest?: any) {
         timeline[
           Math.floor(((time - start) / 1000) * anim.fps) % timeline.length
         ];
-      const cols = image.width / anim.frameWidth,
-        scale =
+      const scale =
           Math.min(2, 220 / Math.max(1, reference || anim.frameHeight)) *
           Number(zoom.value),
-        w = anim.frameWidth * scale,
-        h = anim.frameHeight * scale;
+        rect = frameRectangle(anim, frame, image.width, atlases.get(image)),
+        w = rect.w * scale,
+        h = rect.h * scale;
       ctx.imageSmoothingEnabled = true;
       ctx.drawImage(
         image,
-        (frame % cols) * anim.frameWidth,
-        Math.floor(frame / cols) * anim.frameHeight,
-        anim.frameWidth,
-        anim.frameHeight,
+        rect.x, rect.y, rect.w, rect.h,
         280 - w * animationOrigin(anim, frame)[0],
         350 - h * animationOrigin(anim, frame)[1],
         w,

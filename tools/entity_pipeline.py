@@ -133,9 +133,11 @@ def convert(path,folder,url,mode,only=None,frame_limits=None,pixel_budget=None,s
    if abs(det)<1e-9:continue
    tx=float(el.get('x','0'))+a*float(asset.get('x','0'))+b*float(asset.get('y','0'));ty=float(el.get('y','0'))+c*float(asset.get('x','0'))+d*float(asset.get('y','0'))
    opacity=float(el.get('alpha','1'));elements[id(el)]=(image,a,b,c,d,det,tx,ty,opacity)
-   unsupported.update(set(el.attrib)-{'assetId','x','y','alpha','scaleX','scaleY','rotation'})
+   unsupported.update(set(el.attrib)-{'assetId','x','y','alpha','scaleX','scaleY','rotation'}-({'blendMode'} if el.get('blendMode')=='normal' else set()))
    for u,v in [(0,0),(image.width,0),(0,image.height),(image.width,image.height)]:
     x=a*u+b*v+tx;y=c*u+d*v+ty;bounds=[min(bounds[0],x),min(bounds[1],y),max(bounds[2],x),max(bounds[3],y)]
+  if any(f.get('tween')=='true' and any(id(e) in elements for e in f.findall('element')) for f in action.iter('frame')):
+   unsupported.add('tween-interpolation')
   if not elements:issues.append({'action':name,'reason':'no-resolved-bitmaps','missing':sorted(missing)});continue
   left,top=math.floor(bounds[0])-2,math.floor(bounds[1])-2;w=math.ceil(bounds[2])-left+2;h=math.ceil(bounds[3])-top+2
   if not compact and (w>2048 or h>2048):issues.append({'action':name,'reason':'canvas-too-large','size':[w,h]});continue

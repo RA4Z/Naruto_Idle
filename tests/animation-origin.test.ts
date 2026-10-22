@@ -23,3 +23,11 @@ test("legacy and invalid optional origins fall back without changing the animati
     legacy.origin,
   );
 });
+
+// The mirrored crop must retain the native ground point, including origins outside 0..1.
+test("mirrored compact poses use mirrored registration rather than reflecting around each crop", () => {
+  const action = { origin: [.2,.9] as [number,number], frameOrigins: [[-2.5,1.4]] as [number,number][] };
+  assert.deepEqual(animationOrigin(action,0,true),[3.5,1.4]);
+  assert.deepEqual(animationOrigin(action,8,true),[.8,.9]);
+  assert.deepEqual(animationOrigin(action,0,false),[-2.5,1.4]);
+});

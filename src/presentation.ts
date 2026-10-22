@@ -1,4 +1,6 @@
 import Phaser from "phaser";
+import { queueAnimation, animationFrames } from "./entities/animation-texture";
+import { NativeEffectPlayer, nativeEffectKey, type NativeSkillBinding } from "./effects/native-player";
 import { getPreferences } from "./preferences";
 import { isVoiceSound } from "./audio/mix";
 import {
@@ -22,6 +24,7 @@ export type PresentationConfig = {
     }
   >;
   effects: Record<string, AnimationDef>;
+  nativeSkills?: Record<string, NativeSkillBinding>;
   sounds: Record<string, { name: string; urls: string[]; voice?: boolean }>;
   music: { url: string };
   sceneAudio?: SceneAudioCatalog;
@@ -51,13 +54,13 @@ export function queuePresentation(
     ([name]) =>
       options.effects &&
       effectsFor(character).has(name) &&
+      !(data.nativeSkills?.[character] && name === "luoxuanwan") &&
       !scene.textures.exists(effectKey(name)),
   ))
-    scene.load.spritesheet(effectKey(name), anim.url, {
-      frameWidth: anim.frameWidth,
-      frameHeight: anim.frameHeight,
-      endFrame: anim.frames - 1,
-    });
+    queueAnimation(scene, effectKey(name), anim);
+  const native = data.nativeSkills?.[character];
+  if (options.effects && native && !scene.textures.exists(nativeEffectKey(native)))
+    queueAnimation(scene, nativeEffectKey(native), native.animation);
   if (!options.audio) return;
   const ids = new Set(
     Object.values(data.characters[character]?.actions || {})
@@ -80,6 +83,7 @@ export class PresentationPlayer {
   private timers = new Set<Phaser.Time.TimerEvent>();
   private ambience: SceneAudioPlayer;
   private actors: EntityAudioPlayer;
+  private native: NativeEffectPlayer;
   private paused = false;
   private enabled = false;
   private lastSoundAt = -100;
@@ -95,6 +99,7 @@ export class PresentationPlayer {
     private character: string,
     mapId = "10001",
   ) {
+    this.native = new NativeEffectPlayer(scene);
     this.actors = new EntityAudioPlayer(
       data.entityAudio || {},
       (delay, run) => {
@@ -124,6 +129,7 @@ export class PresentationPlayer {
       this.active.forEach((s) => s.destroy());
       this.ambience.dispose();
       this.actors.dispose();
+      this.native.dispose();
       this.stopFootsteps();
     };
     scene.events.once("shutdown", dispose);
@@ -142,9 +148,7 @@ export class PresentationPlayer {
       )
         scene.anims.create({
           key: effectKey(name),
-          frames: (
-            anim.timeline || Array.from({ length: anim.frames }, (_, i) => i)
-          ).map((frame) => ({ key: effectKey(name), frame })),
+          frames: animationFrames(effectKey(name), anim),
           frameRate: anim.fps,
           repeat: 0,
         });
@@ -298,7 +302,7 @@ export class PresentationPlayer {
     if (
       !anim ||
       getPreferences().reducedEffects ||
-      this.active.size >= 10 ||
+      this.active.size + this.native.snapshot().active >= 10 ||
       !this.scene.anims.exists(effectKey(name))
     )
       return undefined;
@@ -328,9 +332,13 @@ export class PresentationPlayer {
     hero: { x: number; y: number },
     enemy: { x: number; y: number },
     duration: number,
+    sourceModelId?: string,
   ) {
     const events = this.data.characters[this.character]?.actions[action] || [];
-    const end = Math.max(duration, ...events.map((e) => e.time + 80));
+    const native = this.data.nativeSkills?.[this.character];
+    const nativeHero = action === "SP_skill1" && native && sourceModelId === native.modelId && "anims" in hero;
+    const bodyDuration = nativeHero ? (hero as Phaser.GameObjects.Sprite).anims.currentAnim?.duration : undefined;
+    const end = bodyDuration || Math.max(duration, ...events.map((e) => e.time + 80));
     // Delayed impact effects must stay at the position of this strike even if
     // the target resumes moving before the callback runs.
     const impact = { x: enemy.x, y: enemy.y };
@@ -344,6 +352,12 @@ export class PresentationPlayer {
         this.effect("DaJiTeXiao", impact.x, impact.y - 5, 30, 250, flip),
       );
     if (action !== "SP_skill1" || !this.data.characters[this.character]) return;
+    if (nativeHero && native) {
+      if (!getPreferences().reducedEffects && this.active.size < 10)
+        this.native.play(hero as Phaser.GameObjects.Sprite, native);
+      else this.native.clear();
+      return;
+    }
     if (this.character === "sakura") {
       this.effect("zhihuozaishen", hero.x, hero.y - 17, 50, duration);
       this.effect("hphuifu", hero.x, hero.y + 2, 26, duration);
@@ -372,7 +386,8 @@ export class PresentationPlayer {
   }
   snapshot() {
     return {
-      activeEffects: this.active.size,
+      activeEffects: this.active.size + this.native.snapshot().active,
+      nativeEffect: this.native.snapshot(),
       effectFrames: [...this.active].map((sprite) => ({
         frame: sprite.anims.currentFrame?.index,
         x: sprite.x,

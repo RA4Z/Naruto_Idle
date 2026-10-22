@@ -1,3 +1,4 @@
+import { queueAnimation, animationFrames } from "./entities/animation-texture";
 import { Minimap } from "./world/minimap";
 import { canMoveInPhase } from "./world/combat-movement";
 import { syncPursuers } from "./world/combat-sync";
@@ -98,17 +99,7 @@ import { EnemyField } from "./world/enemies";
 import { visionRadius } from "./world/awareness";
 import { AREAS, COMBAT, type CharacterId } from "./data";
 import { Hunt, fresh, restore, stats, needed, type Save } from "./model";
-type Anim = {
-  url: string;
-  frameWidth: number;
-  frameHeight: number;
-  frames: number;
-  fps: number;
-  timeline?: number[];
-  rigScale?: number;
-  origin: [number, number];
-  status: string;
-};
+type Anim = AnimationDef;
 type AnimSet = Record<
   string,
   {
@@ -891,11 +882,7 @@ class HuntScene extends Phaser.Scene {
           (initialMap.kind === "adventure" &&
             heroBattleActions().includes(action))
         )
-          this.load.spritesheet(mode + "-" + action, anim.url, {
-            frameWidth: anim.frameWidth,
-            frameHeight: anim.frameHeight,
-            endFrame: anim.frames - 1,
-          });
+          queueAnimation(this, mode + "-" + action, anim);
       }
     }
   }
@@ -953,9 +940,7 @@ class HuntScene extends Phaser.Scene {
         if (this.textures.exists(key))
           this.anims.create({
             key,
-            frames: (
-              anim.timeline || Array.from({ length: anim.frames }, (_, i) => i)
-            ).map((frame) => ({ key, frame })),
+            frames: animationFrames(key, anim),
             frameRate: anim.fps,
             repeat: mode === "world" || action === "C_idle" ? -1 : 0,
           });
@@ -1274,9 +1259,7 @@ class HuntScene extends Phaser.Scene {
       if (!this.textures.exists(key) || this.anims.exists(key)) continue;
       this.anims.create({
         key,
-        frames: (
-          anim.timeline || Array.from({ length: anim.frames }, (_, i) => i)
-        ).map((frame) => ({ key, frame })),
+        frames: animationFrames(key, anim),
         frameRate: anim.fps,
         repeat: action === "C_idle" ? -1 : 0,
       });
@@ -1296,11 +1279,7 @@ class HuntScene extends Phaser.Scene {
           const anim =
             definitions[save.character + "-battle"]?.animations[action];
           if (anim && !this.textures.exists("battle-" + action))
-            this.load.spritesheet("battle-" + action, anim.url, {
-              frameWidth: anim.frameWidth,
-              frameHeight: anim.frameHeight,
-              endFrame: anim.frames - 1,
-            });
+            queueAnimation(this, "battle-" + action, anim);
         }
       },
       () => this.combatReady,
@@ -1348,7 +1327,7 @@ class HuntScene extends Phaser.Scene {
       const definition = cast.hero.modes[mode];
       const animation = definition?.animations[action];
       this.activeHeroAnimation = animation;
-      if (animation) this.hero.setOrigin(...animationOrigin(animation, 0));
+      if (animation) this.hero.setOrigin(...animationOrigin(animation, 0, key.startsWith("battle-") && this.enemy.x < this.hero.x));
       this.hero.setScale(
         actorVisualScale(
           cast.hero.id,
@@ -1373,6 +1352,11 @@ class HuntScene extends Phaser.Scene {
             : 1;
       this.lastAnim = key;
     }
+  }
+  private faceHero(left: boolean) {
+    this.hero.setFlipX(left);
+    if (this.activeHeroAnimation)
+      this.hero.setOrigin(...animationOrigin(this.activeHeroAnimation, this.hero.frame.name, left));
   }
   floating(text: string, x: number, y: number, color = "#fff3ce") {
     const t = this.add
@@ -1399,7 +1383,7 @@ class HuntScene extends Phaser.Scene {
       (id ? this.enemyField.byId(id)?.actor : undefined) || this.enemy;
     if (event === "target") {
       this.enemy = source;
-      if (!this.hunt.retreating) this.hero.setFlipX(source.x < this.hero.x);
+      if (!this.hunt.retreating) this.faceHero(source.x < this.hero.x);
       source.face(this.hero.x < source.x);
     }
     if (event === "disengage") {
@@ -1454,6 +1438,7 @@ class HuntScene extends Phaser.Scene {
         this.hero,
         source,
         this.lastStrikeDuration,
+        cast.hero.id,
       );
       if (!starterCharacter(save))
         this.presentation.entityAction(
@@ -2179,7 +2164,7 @@ class HuntScene extends Phaser.Scene {
     if (!this.hero) return;
     if (this.activeHeroAnimation)
       this.hero.setOrigin(
-        ...animationOrigin(this.activeHeroAnimation, this.hero.frame.name),
+        ...animationOrigin(this.activeHeroAnimation, this.hero.frame.name, this.hero.flipX),
       );
     if (!ownsJourney()) {
       window.dispatchEvent(new Event("journey-lock-lost"));
@@ -2293,7 +2278,7 @@ class HuntScene extends Phaser.Scene {
         this.hunt.enemyHp > 0 &&
         this.hero.anims.currentAnim?.key === "battle-C_idle"
       )
-        this.hero.setFlipX(this.enemy.x < this.hero.x);
+        this.faceHero(this.enemy.x < this.hero.x);
       if (!this.path.length) this.destination.setVisible(false);
       if (
         !this.isLobby &&
