@@ -1,63 +1,38 @@
 {
-  "availableOriginalArtworks": 198,
-  "integratedArtworks": 3,
-  "remainingArtworks": 195,
+  "availableOriginalArtworks": 197,
+  "integratedArtworks": 197,
+  "remainingArtworks": 0,
   "images": [
     {
-      "id": "6",
-      "url": "/assets/loading/6.jpg",
-      "width": 1400,
-      "height": 900,
+      "id": "232",
+      "url": "/assets/loading/232.jpg",
+      "width": 1397,
+      "height": 897,
+      "format": "JPEG",
       "source": {
-        "path": "assets/loading/6.jpg",
-        "tag": "PT_NarutoAlpha6.00Build300",
-        "bytes": 230655,
-        "sha256": "177bafe03e870f1d3e6de1f6058a99f8807e7434f0fda7aabe5e7c8a9a2425cc"
+        "path": "assets/loading/232.jpg",
+        "tag": "PT_NarutoAlpha9.35Build301",
+        "bytes": 265219,
+        "sha256": "c3ce92f4b64b9455af27ab3c5d9595cedfc4853f428b3aa8e2f62b29b5c8216d",
+        "sourceKind": "exported-inventory"
       }
     },
     {
-      "id": "14",
-      "url": "/assets/loading/14.jpg",
+      "id": "1400",
+      "url": "/assets/loading/1400.jpg",
       "width": 1397,
       "height": 897,
+      "format": "JPEG",
       "source": {
-        "path": "assets/loading/14.jpg",
+        "path": "assets/loading/1400.jpg",
         "tag": "PT_NarutoAlpha6.00Build300",
-        "bytes": 96403,
-        "sha256": "f1845c7674415c134191db3ff7e443422ba4355a4273ec355669e5d20b791ec0"
-      }
-    },
-    {
-      "id": "22",
-      "url": "/assets/loading/22.jpg",
-      "width": 1397,
-      "height": 897,
-      "source": {
-        "path": "assets/loading/22.jpg",
-        "tag": "PT_NarutoAlpha6.00Build300",
-        "bytes": 502461,
-        "sha256": "3ceabf853f98fe585f49372f3d4993090d2584c2396b549a5abb0c080c59979f"
+        "bytes": 525099,
+        "sha256": "5b7c16ff2c66b58393ebbcc374b0b895e6feb4a75c29ec8904d34cd0fef722ba",
+        "sourceKind": "exported-inventory"
       }
     }
   ],
   "sourceTipsForReview": 71,
   "originalGameplayTipsDisplayed": false,
-  "state": "tested",
-  "validatedAt": "2026-10-20T22:11:51.597527+00:00",
-  "validation": {
-    "domainTests": 64,
-    "serverTests": 17,
-    "pythonTests": 11,
-    "typecheck": "passed",
-    "build": "passed",
-    "browserOriginalArtCycle": "passed",
-    "optionalArtFailure": "passed",
-    "productionArtCycle": "passed",
-    "productionFirstFrameMs": 6804,
-    "productionTravelVictory": "passed",
-    "lfsImagesAndAudioChecked": 21696,
-    "initialAssetRequests": 33,
-    "initialAssetBytes": 4383612,
-    "baselineReductionPercent": 76
-  }
+  "state": "integrated-awaiting-tests"
 }

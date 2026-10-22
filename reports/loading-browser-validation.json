@@ -1,0 +1,40 @@
+{
+  "stage": "loading-art-recovery",
+  "availableImages": 197,
+  "additionalRecoveredImages": 194,
+  "sourceConfigurationFiles": 1,
+  "formats": {
+    "JPEG": 194,
+    "PNG": 3
+  },
+  "sourceBytes": 165437903,
+  "fullImageDecodeAndSourceHashValidated": 197,
+  "browserDecodedImages": 197,
+  "browserErrorsObserved": [],
+  "visualReview": "All 197 thumbnails inspected in four contact sheets; selected 14 Portuguese character backgrounds and preserved three previous IDs. Other banners remain cataloged for review.",
+  "activeSelection": 17,
+  "browserTool": "Codex in-app browser, local dev-only QA page using actual loadingScreen component",
+  "renderedSampleBeforeSelection": "9.jpg; actual overlay, progress, cancel and image background inspected; no account or journey opened",
+  "tests": {
+    "runtimeAssets": {
+      "pass": 4,
+      "fail": 0
+    },
+    "typecheck": "passed",
+    "i18n": "1209 keys / 3 languages passed",
+    "productionBuild": "passed, 42.80 seconds",
+    "bundleSecretsAndFixtureCheck": "passed"
+  },
+  "tips": {
+    "reviewOnly": 71,
+    "originalGameplayTipsDisplayed": false
+  },
+  "sourceUnmodified": true,
+  "limits": [
+    "197 browser decodes are not a responsive visual inspection of every banner.",
+    "Source banners contain baked-in text and campaign artwork; extraction does not implement their mechanics or events.",
+    "Other effects, voices, UI resources and per-object map depth remain pending."
+  ],
+  "state": "validated",
+  "renderedFinalSelectionSample": "139.jpg; 197 catalog images /17 runtime URLs; actual overlay, progress and cancel; no errors"
+}

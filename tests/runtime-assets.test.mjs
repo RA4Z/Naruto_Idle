@@ -61,13 +61,24 @@ test("native foreground runtime derives losslessly from the recovered mask and k
  }
 });
 
-test("loading artwork keeps original JPEG bytes and matching provenance",async()=>{
+test("loading artwork keeps original image bytes, correct format URLs and matching provenance",async()=>{
  const catalog=JSON.parse(await readFile("public/assets/loading/index.json","utf8"));
  assert.ok(catalog.images.length>0);
  for(const image of catalog.images){
-  const bytes=await readFile("public"+image.url);assert.equal(bytes.subarray(0,3).toString("hex"),"ffd8ff");
+  const bytes=await readFile("public"+image.url);
+  if(image.url.endsWith('.png'))assert.equal(bytes.subarray(0,8).toString('hex'),'89504e470d0a1a0a');
+  else {assert.ok(image.url.endsWith('.jpg'));assert.equal(bytes.subarray(0,3).toString("hex"),"ffd8ff");}
   assert.equal(createHash("sha256").update(bytes).digest("hex"),image.source.sha256);
  }
  const tips=JSON.parse(await readFile("public/assets/loading/source-tips-review.json","utf8"));
  assert.ok(tips.tips.every(t=>t.status==="review-only"));
+ const selection=JSON.parse(await readFile("public/assets/loading/selection.json","utf8"));
+ assert.ok(selection.activeIds.length>3 && selection.activeIds.length<catalog.images.length);
+ assert.equal(new Set(selection.activeIds).size,selection.activeIds.length);
+ const generated=await readFile("src/config/loading-art.ts","utf8");
+ const urls=JSON.parse(generated.match(/^export const LOADING_ART_URLS = (.+) as const;/)[1]);
+ assert.deepEqual(urls,selection.activeIds.map(id=>{
+  const image=catalog.images.find(image=>image.id===id);assert.ok(image);return image.url;
+ }));
+ assert.ok(!selection.activeIds.includes('1400'),'old version announcements stay outside runtime rotation');
 });

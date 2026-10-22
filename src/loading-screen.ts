@@ -9,7 +9,7 @@ const progress = document.getElementById(
 const retry = document.getElementById("loading-retry") as HTMLButtonElement;
 const cancel = document.getElementById("loading-cancel") as HTMLButtonElement;
 let version = 0;
-let artworkCycle = 0;
+let artworkCycle = Math.floor(Math.random() * LOADING_ART_URLS.length);
 export const loadingScreen = {
   begin(
     label: string,

@@ -27,7 +27,8 @@ def main():
     'extractionState':'preserved-previous-stage' if m['id'] not in specs else 'converted-runtime-integrated-technical-validation',
     'currentPixelValidation':proof.get(m['id']),
     'contentState':'previous-idle-rules' if m['id'] not in specs else 'authored-hunt' if m['kind']=='adventure' else 'safe-exploration-narrative-pending'} for m in maps],
-  'remaining':['Per-object/middleground SWF depth','Narrative campaigns, encounters and local population for recovered safe scenery','21 scenery identities','Shared external effects/shadows recorded per action','Other character voices/effects, UI resources and 195 loading artworks'],
+  'loadingStageReport':'loading-art-validation.json',
+  'remaining':['Per-object/middleground SWF depth','Narrative campaigns, encounters and local population for recovered safe scenery','21 scenery identities','Shared external effects/shadows recorded per action','Other character voices/effects and UI resources; loading images completed separately'],
   'limits':['Technical coverage of every map is not visual playtesting of every passage.','31 source-pixel checks sample 124 timeline frames; they are not Flash-player comparisons of all frames.','External-effect partial status is preserved.','No real account, remote database or paid service was modified.']}
  (ROOT/'reports/delivery-integration-summary.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
  print(json.dumps({key:report[key] for key in ['maps','newMaps','sourcePixelValidatedNewMaps','reconstructedActions','sourceFrameProbes','tests']}))

@@ -24,7 +24,7 @@ Atualizado em 21/10/2026. O [histórico](history/ROADMAP-2026-10-21.md) preserva
 - [x] Dificuldades selecionáveis em Viagens com desbloqueios nos níveis 1/5/12/25. [Regras e validação](BALANCEAMENTO.md).
 - [x] Arena local autoritativa, modos Nivelado/Jornada, reconexão e ações validadas.
 - [x] Admin de personagens/mapas/efeitos/sons/arquivos, prévias de animação em grid e revisão persistente.
-- [x] Carregamento progressivo, retry e três artes originais de loading.
+- [x] Carregamento progressivo, retry e 197 artes originais recuperadas, com seleção separada de 17 fundos revisados, sob demanda.
 - [x] Minijanela com proteção de tamanho mínimo; Document PiP em contexto compatível e alternativa interna explícita.
 - [x] PT/EN/ES, manutenção centralizada, detecção inicial do navegador, fallback inglês e preferência manual persistente.
 - [x] Site Vercel funcional conforme confirmação do usuário; antiga falha de imagens encerrada.
@@ -51,7 +51,7 @@ Detalhes e limites: [Especificação](ESPECIFICACAO.md), [estabilidade/QoL](ESTA
 3. [ ] Completar conteúdo narrativo, habitantes e encontros apropriados dos mapas recuperados. Extração/viagem/navegação dos 145 conjuntos concluídas; exploração segura não equivale a campanha implementada. Identificar contexto de 21 cenários e conferir visualmente cada missão quando for implementada.
 4. [x] Reconstruir as 31 ações em 30 modelos da fila externa, com namespace correto, origem por quadro e verificação independente de pixels/tempo/deslocamento. As skills já corrigidas do Sasuke inicial foram preservadas; efeitos externos compartilhados continuam explícitos em cada manifesto.
 5. [ ] Integrar demais efeitos/jutsus originais e áudio dos personagens e ampliar conteúdo de missões. Refinar os perfis autorais com novos dados de uso; o primeiro balanceamento e a expansão de equipamento já foram implementados.
-6. [ ] Integrar 195 artes de loading restantes e revisar as 71 dicas sem anunciar mecânicas inexistentes.
+6. [x] Recuperar todas as 197 imagens reais de loading (194 adicionais; cfg.xml não é imagem), validar bytes/decodificação e selecionar 17 fundos. As outras artes e as 71 dicas permanecem em revisão de conteúdo, sem publicar anúncios antigos ou regras inexistentes.
 7. [ ] Durante a recuperação, registrar conexões, portais e coordenadas originais comprovadas.
 8. [ ] Após a recuperação prioritária, implementar transições físicas entre mapas com destinos e chegadas corretos.
 

@@ -1,0 +1,6 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Conferência local do carregamento</title>
+<link rel="stylesheet" href="/src/style.css">
+<div id="game-loading" class="game-loading" role="status" aria-live="polite" aria-busy="true" hidden>
+<div class="loading-content"><p class="eyebrow">CAMINHO DA FOLHA · CONFERÊNCIA LOCAL</p><h1 id="loading-title">Preparando sua jornada</h1><p id="loading-message">Carregando…</p><progress id="loading-progress" max="1" aria-label="Progresso do carregamento"></progress><p class="loading-tip">Prévia do componente real. Nenhuma jornada é aberta.</p><div class="actions"><button id="loading-retry" hidden>Tentar novamente</button><button id="loading-cancel" class="secondary" hidden>Fechar prévia</button></div></div></div>
+<div id="app"><main style="max-width:960px;margin:32px auto"><h1>Artes de carregamento</h1><p>Conferência local dos arquivos originais. Verificação sequencial, sem pré-carregar a galeria no jogo.</p><button id="verify">Verificar todas as imagens</button> <button id="preview">Abrir o carregamento real</button><output id="result" style="display:block;padding:18px" role="status"></output><div id="samples" style="display:flex;flex-wrap:wrap;gap:12px"></div></main></div>
+<script type="module" src="./loading-art.ts"></script></html>
