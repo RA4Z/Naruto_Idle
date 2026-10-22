@@ -1949,7 +1949,7 @@ class HuntScene extends Phaser.Scene {
       this.enemyField.reset(
         this.map.id,
         cast.enemies,
-        this.hero,
+        this.map.spawn,
         this.navigation,
         this.isLobby,
       );

@@ -4,6 +4,7 @@ import { visionDebugEnabled } from "../admin/debug-state";
 import { enemyProfile, type EnemyProfile } from "./enemy-profiles";
 import { EntityActor } from "../entities/actor";
 import { meleeApproach, meleeReachable } from "./melee";
+import { mapEnemyHomes } from "./spawn";
 import type { EntityManifest } from "../entities/types";
 import {
   NativeNavigation,
@@ -49,7 +50,7 @@ export class EnemyField {
   reset(
     mapId: string,
     pool: EntityManifest[],
-    hero: Point,
+    entry: Point,
     nav: NativeNavigation,
     safe: boolean,
   ) {
@@ -57,26 +58,10 @@ export class EnemyField {
     this.members = [];
     this.mapId = mapId;
     this.zones.clear();
-    if (safe) return;
-    const candidates = nav
-      .pointsWithin(hero, 320)
-      .filter((p) => Math.hypot(p.x - hero.x, p.y - hero.y) > 85);
-    for (let i = 0; i < 6; i++) {
-      const sorted = candidates
-        .map((p) => ({
-          p,
-          score: this.members.length
-            ? Math.min(
-                ...this.members.map((m) =>
-                  Math.hypot(m.home.x - p.x, m.home.y - p.y),
-                ),
-              )
-            : 180 - Math.abs(Math.hypot(p.x - hero.x, p.y - hero.y) - 115),
-        }))
-        .sort((a, b) => b.score - a.score);
-      const home =
-          sorted[Math.min(i * 3, sorted.length - 1)]?.p ||
-          nav.points[(i * 179) % nav.points.length],
+    if (safe || !pool.length) return;
+    const homes = mapEnemyHomes(mapId, nav, entry);
+    for (let i = 0; i < homes.length; i++) {
+      const home = homes[i],
         manifest = pool[i % pool.length];
       const actor = new EntityActor(
           this.scene,

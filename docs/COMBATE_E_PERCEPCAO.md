@@ -62,3 +62,10 @@ As zonas ficam invisíveis por padrão, inclusive no servidor de administrador. 
 `tests/group-combat.test.ts` cobre percepção, memória, vários atacantes, troca, alcance, pausa, mortes, recompensas, comandos e rotas sem metadados cíclicos dos atores. `tools/group-combat-check.mjs` usa Vite em 5194 e valida o jogo renderizado; `tools/admin-console-check.mjs` testa o servidor normal e, com `--admin`, o servidor iniciado por `npm run admin -- --port 5194`. Relatórios em `reports/group-combat-validation.json` e `reports/admin-console-*-validation.json`.
 
 Combate parcial continua transitório: recarregar ou recuperar WebGL reconstrói a cena a partir da jornada salva, sem conservar HP/relógios dos oponentes. O cálculo offline continua estimado, sem simular percepção ou confrontos em grupo. A arena PvP mantém suas regras próprias de duelo.
+
+
+## Spawn ao entrar ou retomar o mapa — 22/10
+
+`mapEnemyHomes`, em `src/world/spawn.ts`, recebe a entrada canônica do mapa. Ordena a grade, encontra o componente alcançável por conexões livres e escolhe até seis pontos distintos por distância máxima entre origens, com semente estável do ID do mapa. Exclui um raio de 85 unidades da entrada quando há espaço. Posição salva do jogador não participa da escolha. `src/main.ts` passa `map.spawn`, e `EnemyField.reset` mantém cada posição como `mob.home`, inclusive no reaparecimento após morte. Mapas seguros ou sem inimigos não criam atores.
+
+A regressão reproduziu o confinamento ao raio320 antes do ajuste. Agora cobre a classe real, os mapas de aventura, reconexão, componente desconectado, mapas pequenos e reaparecimento. 337 testes TS, tipos/build/segredos aprovados. A fixture `/tools/qa/enemy-spawn.html` usa mapa10005 e a classe real sem carregar conta/save; alternar os botões de retomada preservou todas as seis origens no navegador. A geometria de colisão continua sendo a grade/polígonos: a imagem do cenário não acrescenta barreiras automaticamente. Não foi testada uma sessão autenticada real.

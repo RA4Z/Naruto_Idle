@@ -1,5 +1,11 @@
 # Ponto de continuidade — estado atual
 
+## Correção de 22/10: spawn independente da posição salva
+
+O relato do portão foi reproduzido: `EnemyField.reset` selecionava apenas pontos a até 320 unidades do jogador salvo. As seis origens agora são determinadas pelo mapa e pela entrada canônica, distribuídas no componente navegável alcançável, sem depender de onde o jogador saiu. Evita ilhas isoladas, repetições e entrada segura de 85 unidades; mapas pequenos usam somente os pontos disponíveis. Patrulha, perseguição, recompensas e respawn de 12 s preservados.
+
+Validação: regressão falhou antes da correção; 337 testes TS passaram depois, incluindo todos os mapas de aventura, reconexão, paredes, mapa mínimo e respawn na origem. Tipos, build e segredos aprovados. Prévia isolada `/tools/qa/enemy-spawn.html` confirmou seis origens idênticas ao alternar retomada no portão/outro canto da floresta10005. Usa a classe real e navegação original; sem conta/save/banco real. Relatório `reports/enemy-spawn-validation.json` e detalhes em `docs/COMBATE_E_PERCEPCAO.md`.
+
 ## Atualização de 22/10: personagens e efeitos nativos
 
 Recuperadas 861 ações adicionais de 16 modelos, com todos os 9.279 quadros comparados; completados Naruto SP_skill1 (24→98) e Sasuke preto reservado SP_skill1 (38→100), com mais 198 quadros verificados. Extração não altera recrutamento nem a reserva: inicial continua Sasuke azul `11000211`. Preparados 16 efeitos em 18 camadas, 1.071 quadros sem reduzir resolução, recompostos integralmente dos atlas públicos contra hashes RGBA nativos. Configuração exata de habilidades encontrada para 700 modelos; inventário completo de 1.466 modelos e 2.003 SWFs de efeitos em reports/character-effect-inventory.json.gz.

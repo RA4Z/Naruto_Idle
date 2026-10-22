@@ -291,3 +291,30 @@ test("stopping a pursuit preserves battle actions and defeat suppression stops w
   field.update(100, nav, hero, new Set(), false, true);
   assert.ok(mob.actor.visual.anims.currentAnim?.key.includes(":world:idle_"));
 });
+
+
+test("enemy homes cover the map when entering at a corner and remain stable on relog", () => {
+  const nav = new NativeNavigation({ sourceWidth:1200,sourceHeight:1200,columns:80,rows:80,cellWidth:20,cellHeight:20,unitsPerSourcePixel:1,
+    cells:Array.from({length:6400},(_,i)=>[i%80,Math.floor(i/80)] as [number,number]) });
+  const entry=nav.nearest({x:1160,y:310})!;
+  const field=new EnemyField(scene() as never);
+  field.reset("forest",[manifest],entry,nav,false);
+  const homes=field.members.map(m=>({...m.home}));
+  assert.equal(homes.length,6);
+  assert.ok(Math.max(...homes.map(p=>p.x))-Math.min(...homes.map(p=>p.x))>800,"enemies must not be confined to a 320-unit radius around the entrance");
+  assert.ok(Math.max(...homes.map(p=>p.y))-Math.min(...homes.map(p=>p.y))>700,"enemies must cover the rest of the map");
+  for(const savedPosition of [{x:40,y:500},{x:1100,y:1000}]) {
+    field.nearest(savedPosition);
+    field.reset("forest",[manifest],entry,nav,false);
+    assert.deepEqual(field.members.map(m=>m.home),homes);
+  }
+  const mob=field.members[0],home={...mob.home};field.defeat(mob.actor);
+  field.update(12001,nav,{x:1100,y:1000},new Set(),false);
+  assert.deepEqual({x:mob.actor.x,y:mob.actor.y},home);
+});
+
+test("safe maps and empty enemy pools never spawn an invalid actor", () => {
+  const {nav,hero}=setup();const field=new EnemyField(scene() as never);
+  field.reset("empty",[],hero,nav,false);assert.equal(field.members.length,0);
+  field.reset("safe",[manifest],hero,nav,true);assert.equal(field.members.length,0);
+});
