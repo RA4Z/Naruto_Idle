@@ -1,0 +1,86 @@
+{
+  "id": "300153",
+  "name": "Por Trás do Monte Myoboku",
+  "kind": "lobby",
+  "background": "/assets/maps/300153/background.png",
+  "foreground": "/assets/maps/300153/foreground.png",
+  "thumbnail": "/assets/maps/300153/thumbnail.jpg",
+  "navigation": "/assets/maps/300153/navigation.json",
+  "width": 1171.875,
+  "height": 781.25,
+  "spawn": {
+    "x": 554.6875,
+    "y": 436.1979166666667
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/300153/",
+  "sourceScene": {
+    "id": "2015020",
+    "mapId": "300153",
+    "time": "1",
+    "type": "1",
+    "name": "Por Trás do Monte Myoboku",
+    "minLevel": null,
+    "worldMapId": "2015020",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "ab26364c83860af848483f02b10c2fa5baaf8d9380455fd60f3b465ed0d1c2a6",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015020",
+      "mapId": "300153",
+      "time": "1",
+      "type": "1",
+      "name": "Por Trás do Monte Myoboku",
+      "minLevel": null,
+      "worldMapId": "2015020",
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 150,
+    "foregroundTiles": 135,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 135,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 2629566,
+      "dimensions": [
+        3600,
+        2400
+      ],
+      "sha256": "581ed4e3019724f0012931ae6e363e2c487eea2a2d6c731a0c4d48956da6a373",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300153/foreground.webp",
+        "sourceSha256": "581ed4e3019724f0012931ae6e363e2c487eea2a2d6c731a0c4d48956da6a373",
+        "originalBytes": 5217854,
+        "bytes": 3420646,
+        "width": 3600,
+        "height": 2400,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300153/native-alpha.png",
+    "width": 3600,
+    "height": 2400,
+    "sha256": "15d4fcb9edfa0b51fb8853c9b4681f8489c96c1751d78b4a68bace035a0f8fa9"
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "id": "400001",
+  "name": "Cenário 400001",
+  "kind": "exploration",
+  "background": "/assets/maps/400001/background.png",
+  "foreground": "/assets/maps/400001/foreground.png",
+  "thumbnail": "/assets/maps/400001/thumbnail.jpg",
+  "navigation": "/assets/maps/400001/navigation.json",
+  "width": 976.5625,
+  "height": 976.5625,
+  "spawn": {
+    "x": 488.28125,
+    "y": 542.3177083333334
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: Aldeia da Folha Sob Ataque do Nove Caudas; Captura da Cobra Gigante (Aldeia da Folha); Captura de Manda (Aldeia da Folha); outras registradas no manifesto.",
+  "source": "assets/scene/map/400001/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "400001",
+    "name": "Cenário 400001",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "216ecf9dcb1f198d758215c07f88d9f485f29957ebdcc4f588caab9ae80fc2a3",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "1602001",
+      "mapId": "400001",
+      "time": "1",
+      "type": "6",
+      "name": "Aldeia da Folha Sob Ataque do Nove Caudas",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1605001",
+      "mapId": "400001",
+      "time": "1",
+      "type": "10",
+      "name": "Captura da Cobra Gigante (Aldeia da Folha)",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1605002",
+      "mapId": "400001",
+      "time": "1",
+      "type": "10",
+      "name": "Captura de Manda (Aldeia da Folha)",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1605003",
+      "mapId": "400001",
+      "time": "1",
+      "type": "10",
+      "name": "Captura de Gamabunta (Aldeia da Folha)",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1605004",
+      "mapId": "400001",
+      "time": "1",
+      "type": "10",
+      "name": "Captura de Katsuyu (Aldeia da Folha)",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1605011",
+      "mapId": "400001",
+      "time": "1",
+      "type": "20",
+      "name": null,
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1605012",
+      "mapId": "400001",
+      "time": "1",
+      "type": "20",
+      "name": null,
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1605013",
+      "mapId": "400001",
+      "time": "1",
+      "type": "20",
+      "name": null,
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1605014",
+      "mapId": "400001",
+      "time": "1",
+      "type": "20",
+      "name": null,
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1605015",
+      "mapId": "400001",
+      "time": "1",
+      "type": "20",
+      "name": "Captura da Cobra Gigante (Aldeia da Folha)",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1605016",
+      "mapId": "400001",
+      "time": "1",
+      "type": "20",
+      "name": "Captura de Manda (Aldeia da Folha)",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1605017",
+      "mapId": "400001",
+      "time": "1",
+      "type": "20",
+      "name": "Captura de Gamabunta (Aldeia da Folha)",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1605018",
+      "mapId": "400001",
+      "time": "1",
+      "type": "20",
+      "name": "Captura de Katsuyu (Aldeia da Folha)",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1605019",
+      "mapId": "400001",
+      "time": "1",
+      "type": "20",
+      "name": "Captura de Manda (Aldeia da Folha)",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 144,
+    "foregroundTiles": 53,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 53,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 475452,
+      "dimensions": [
+        3000,
+        3000
+      ],
+      "sha256": "7e90fe011c82f98817b195d14e6e9fe2d24c708296efd8c589b64de227d62950",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/400001/foreground.webp",
+        "sourceSha256": "7e90fe011c82f98817b195d14e6e9fe2d24c708296efd8c589b64de227d62950",
+        "originalBytes": 906762,
+        "bytes": 466498,
+        "width": 3000,
+        "height": 3000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/400001/native-alpha.png",
+    "width": 3000,
+    "height": 3000,
+    "sha256": "b1f9336955c0d4fa49b414b65f8f13c1baaf2398e4f892d666cbbfe706e29b42"
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "id": "10039",
+  "name": "Caverna Misteriosa",
+  "kind": "adventure",
+  "background": "/assets/maps/10039/background.png",
+  "foreground": "/assets/maps/10039/foreground.png",
+  "thumbnail": "/assets/maps/10039/thumbnail.jpg",
+  "navigation": "/assets/maps/10039/navigation.json",
+  "width": 618.4895833333334,
+  "height": 716.1458333333334,
+  "spawn": {
+    "x": 309.2447916666667,
+    "y": 392.2526041666667
+  },
+  "enemies": [
+    "19000301",
+    "19000701"
+  ],
+  "description": "Explore a área original recuperada. Encontros adaptados para o idle.",
+  "source": "assets/scene/map/10039/",
+  "sourceScene": {
+    "id": "2015012",
+    "mapId": "10039",
+    "time": "1",
+    "type": "1",
+    "name": "Caverna Misteriosa",
+    "minLevel": null,
+    "worldMapId": "2015012",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "8d195f1185d131358c5edbf6fd2e592fbd30f94cec61ced5a1d9fbcc0e498753",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "1007998",
+      "mapId": "10039",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Caverna Misteriosa",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2015012",
+      "mapId": "10039",
+      "time": "1",
+      "type": "1",
+      "name": "Caverna Misteriosa",
+      "minLevel": null,
+      "worldMapId": "2015012",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2123998",
+      "mapId": "10039",
+      "time": "1",
+      "type": "2",
+      "name": "Fase da Caverna Misteriosa",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2521002",
+      "mapId": "10039",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Shinobi Marionete dos Quatro Símbolos",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2999001",
+      "mapId": "10039",
+      "time": "1",
+      "type": "2",
+      "name": "[Shinobi Marionete dos Quatro Símbolos (Água)] Caverna Misteriosa",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2999002",
+      "mapId": "10039",
+      "time": "1",
+      "type": "2",
+      "name": "Fase da Caverna Misteriosa",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Authored idle-RPG encounters, not original story rules.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 72,
+    "foregroundTiles": 19,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 19,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 233928,
+      "dimensions": [
+        1900,
+        2200
+      ],
+      "sha256": "f5192c10a8ea8abf9c18f33b451bf7608f3c16367788342a07bb2a9c87c0069d",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/10039/foreground.webp",
+        "sourceSha256": "f5192c10a8ea8abf9c18f33b451bf7608f3c16367788342a07bb2a9c87c0069d",
+        "originalBytes": 290613,
+        "bytes": 145324,
+        "width": 1900,
+        "height": 2200,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/10039/native-alpha.png",
+    "width": 1900,
+    "height": 2200,
+    "sha256": "3c028b844c43e3ea890ecee14167712107e1eebec0932ac1230131265e852b91"
+  }
+}

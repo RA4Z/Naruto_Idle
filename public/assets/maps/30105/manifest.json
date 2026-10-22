@@ -1,0 +1,91 @@
+{
+  "id": "30105",
+  "name": "Cenário 30105",
+  "kind": "exploration",
+  "background": "/assets/maps/30105/background.png",
+  "foreground": "/assets/maps/30105/foreground.png",
+  "thumbnail": "/assets/maps/30105/thumbnail.jpg",
+  "navigation": "/assets/maps/30105/navigation.json",
+  "width": 618.4895833333334,
+  "height": 520.8333333333334,
+  "spawn": {
+    "x": 309.2447916666667,
+    "y": 288.0859375
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Competição de Treino; Primeiro Campo de Batalha do Exame Chuunin.",
+  "source": "assets/scene/map/30105/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30105",
+    "name": "Cenário 30105",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "c4773d0031344a561e8cf803274c905df62752c7c29272c979f91ee1edfbd0d4",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2125001",
+      "mapId": "30105",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Competição de Treino",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "4012001",
+      "mapId": "30105",
+      "time": "1",
+      "type": "2",
+      "name": "Primeiro Campo de Batalha do Exame Chuunin",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 56,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 0,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": true,
+      "alphaLevels": [
+        0
+      ],
+      "nontransparentPixels": 0,
+      "dimensions": [
+        1900,
+        1600
+      ],
+      "sha256": "72edcd2a3100c12cfb6dc2608baad86412cca22a236fb2ef8db677c85b02ad9a",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30105/foreground.webp",
+        "sourceSha256": "72edcd2a3100c12cfb6dc2608baad86412cca22a236fb2ef8db677c85b02ad9a",
+        "originalBytes": 11877,
+        "bytes": 166,
+        "width": 1900,
+        "height": 1600,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30105/native-alpha.png",
+    "width": 1900,
+    "height": 1600,
+    "sha256": "bd50ba0cfaab0da226add353ab4b498b8075dc4126085a00bcbbc9f2af13c04e"
+  }
+}

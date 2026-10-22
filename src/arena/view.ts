@@ -1,4 +1,5 @@
 import { t } from "../i18n/core.ts";
+import { animationOrigin } from "../entities/animation-origin";
 import { getPreferences } from "../preferences";
 import { isVoiceSound } from "../audio/mix";
 import { ARENA_FIGHTERS, type ArenaState, type ArenaCharacter } from "./rules";
@@ -180,8 +181,8 @@ export class ArenaView {
       Math.floor(frame / cols) * a.frameHeight,
       a.frameWidth,
       a.frameHeight,
-      -w * (a.origin?.[0] ?? 0.5),
-      -h * (a.origin?.[1] ?? 1),
+      -w * animationOrigin(a, frame)[0],
+      -h * animationOrigin(a, frame)[1],
       w,
       h,
     );

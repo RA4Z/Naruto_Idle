@@ -1,0 +1,84 @@
+{
+  "id": "30074",
+  "name": "Uma Faixa de Céu",
+  "kind": "lobby",
+  "background": "/assets/maps/30074/background.png",
+  "foreground": "/assets/maps/30074/foreground.png",
+  "thumbnail": "/assets/maps/30074/thumbnail.jpg",
+  "navigation": "/assets/maps/30074/navigation.json",
+  "width": 488.28125,
+  "height": 390.625,
+  "spawn": {
+    "x": 244.140625,
+    "y": 216.47135416666666
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/30074/",
+  "sourceScene": {
+    "id": "2015010",
+    "mapId": "30074",
+    "time": "1",
+    "type": "1",
+    "name": "Uma Faixa de Céu",
+    "minLevel": null,
+    "worldMapId": "2015010",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "4cedd9ebe75cf139b4465ca98b3365898355ed066bb5515df934058f72908d61",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015010",
+      "mapId": "30074",
+      "time": "1",
+      "type": "1",
+      "name": "Uma Faixa de Céu",
+      "minLevel": null,
+      "worldMapId": "2015010",
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 30,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 0,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": true,
+      "alphaLevels": [
+        0
+      ],
+      "nontransparentPixels": 0,
+      "dimensions": [
+        1500,
+        1200
+      ],
+      "sha256": "3653ff49de3a4f3a5ae07164ce922fe5855697f7bf312aa2ec04dbd10c16191f",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30074/foreground.webp",
+        "sourceSha256": "3653ff49de3a4f3a5ae07164ce922fe5855697f7bf312aa2ec04dbd10c16191f",
+        "originalBytes": 7058,
+        "bytes": 116,
+        "width": 1500,
+        "height": 1200,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30074/native-alpha.png",
+    "width": 1500,
+    "height": 1200,
+    "sha256": "d24a722304cb0c98344b4f21a726f8599af7808111263366a60832e0d34aa08a"
+  }
+}

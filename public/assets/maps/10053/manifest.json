@@ -1,0 +1,84 @@
+{
+  "id": "10053",
+  "name": "Norte da Aldeia da Folha (À noite)",
+  "kind": "lobby",
+  "background": "/assets/maps/10053/background.png",
+  "foreground": "/assets/maps/10053/foreground.png",
+  "thumbnail": "/assets/maps/10053/thumbnail.jpg",
+  "navigation": "/assets/maps/10053/navigation.json",
+  "width": 878.90625,
+  "height": 1074.21875,
+  "spawn": {
+    "x": 470.703125,
+    "y": 655.2734375
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/10053/",
+  "sourceScene": {
+    "id": "2015015",
+    "mapId": "10053",
+    "time": "3",
+    "type": "1",
+    "name": "Norte da Aldeia da Folha (À noite)",
+    "minLevel": null,
+    "worldMapId": "2015015",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "4a58d571f45bd2a94a1e5c46ca64daf9a03cb1dfa10b7b42bbb33b6d6cefe8ef",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015015",
+      "mapId": "10053",
+      "time": "3",
+      "type": "1",
+      "name": "Norte da Aldeia da Folha (À noite)",
+      "minLevel": null,
+      "worldMapId": "2015015",
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 143,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 0,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": true,
+      "alphaLevels": [
+        0
+      ],
+      "nontransparentPixels": 0,
+      "dimensions": [
+        2700,
+        3300
+      ],
+      "sha256": "c4eb1a28c086171d1267b70ba5e22578198b50ac66171f4b7dfc0e46164dbdb4",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/10053/foreground.webp",
+        "sourceSha256": "c4eb1a28c086171d1267b70ba5e22578198b50ac66171f4b7dfc0e46164dbdb4",
+        "originalBytes": 34669,
+        "bytes": 414,
+        "width": 2700,
+        "height": 3300,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/10053/native-alpha.png",
+    "width": 2700,
+    "height": 3300,
+    "sha256": "0836b29d117140f6b4780cac16caa445c0b3f4f227b33f1729cbb5033a4efddd"
+  }
+}

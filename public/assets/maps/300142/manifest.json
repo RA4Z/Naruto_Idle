@@ -1,0 +1,86 @@
+{
+  "id": "300142",
+  "name": "Reduto do Nagato",
+  "kind": "lobby",
+  "background": "/assets/maps/300142/background.png",
+  "foreground": "/assets/maps/300142/foreground.png",
+  "thumbnail": "/assets/maps/300142/thumbnail.jpg",
+  "navigation": "/assets/maps/300142/navigation.json",
+  "width": 488.28125,
+  "height": 390.625,
+  "spawn": {
+    "x": 244.140625,
+    "y": 216.47135416666666
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/300142/",
+  "sourceScene": {
+    "id": "2015023",
+    "mapId": "300142",
+    "time": "1",
+    "type": "1",
+    "name": "Reduto do Nagato",
+    "minLevel": null,
+    "worldMapId": "2015023",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "f6cdee96ecfe8794da19009da30a7cd5e5354fa607f106f543fdb6149d10e4dc",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015023",
+      "mapId": "300142",
+      "time": "1",
+      "type": "1",
+      "name": "Reduto do Nagato",
+      "minLevel": null,
+      "worldMapId": "2015023",
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 30,
+    "foregroundTiles": 10,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 10,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 151041,
+      "dimensions": [
+        1500,
+        1200
+      ],
+      "sha256": "6e042c68ec54b212f26d1d8957c3fd4940d0209a04c21519044c6169db90990a",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300142/foreground.webp",
+        "sourceSha256": "6e042c68ec54b212f26d1d8957c3fd4940d0209a04c21519044c6169db90990a",
+        "originalBytes": 147027,
+        "bytes": 73448,
+        "width": 1500,
+        "height": 1200,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300142/native-alpha.png",
+    "width": 1500,
+    "height": 1200,
+    "sha256": "74b9eeafb065ba7c8b1c1575ef298f05794d3632c3846331c4451ee68e44f654"
+  }
+}

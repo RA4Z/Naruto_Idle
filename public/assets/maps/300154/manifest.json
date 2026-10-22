@@ -1,0 +1,103 @@
+{
+  "id": "300154",
+  "name": "Cenário 300154",
+  "kind": "exploration",
+  "background": "/assets/maps/300154/background.png",
+  "foreground": "/assets/maps/300154/foreground.png",
+  "thumbnail": "/assets/maps/300154/thumbnail.jpg",
+  "navigation": "/assets/maps/300154/navigation.json",
+  "width": 813.8020833333334,
+  "height": 976.5625,
+  "spawn": {
+    "x": 406.9010416666667,
+    "y": 541.3411458333334
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Uma Nova Missão; Exterior da Aldeia da Chuva; Infiltrar a Aldeia da Chuva.",
+  "source": "assets/scene/map/300154/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "300154",
+    "name": "Cenário 300154",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "d72d667b0a57feb4f0578196391ca7e508107fe0662d9e650149891b61f8cbe8",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2731001",
+      "mapId": "300154",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Uma Nova Missão",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1700024",
+      "mapId": "300154",
+      "time": "1",
+      "type": "14",
+      "name": "Exterior da Aldeia da Chuva",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2790001",
+      "mapId": "300154",
+      "time": "1",
+      "type": "2",
+      "name": "Infiltrar a Aldeia da Chuva",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 120,
+    "foregroundTiles": 87,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 87,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 1876361,
+      "dimensions": [
+        2500,
+        3000
+      ],
+      "sha256": "0f1f9806126905d6d84cc0b95d4bca2d77b2dcf209cda2d7c417a403290ef896",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300154/foreground.webp",
+        "sourceSha256": "0f1f9806126905d6d84cc0b95d4bca2d77b2dcf209cda2d7c417a403290ef896",
+        "originalBytes": 2639094,
+        "bytes": 1451896,
+        "width": 2500,
+        "height": 3000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300154/native-alpha.png",
+    "width": 2500,
+    "height": 3000,
+    "sha256": "5d0a95fc7c609e9c48d2e1498b395a74950681f81d1e7487cd34080052260ef3"
+  }
+}

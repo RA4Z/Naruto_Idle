@@ -1,0 +1,83 @@
+{
+  "id": "30011",
+  "name": "Cenário 30011",
+  "kind": "exploration",
+  "background": "/assets/maps/30011/background.png",
+  "foreground": "/assets/maps/30011/foreground.png",
+  "thumbnail": "/assets/maps/30011/thumbnail.jpg",
+  "navigation": "/assets/maps/30011/navigation.json",
+  "width": 1171.875,
+  "height": 781.25,
+  "spawn": {
+    "x": 585.9375,
+    "y": 420.5729166666667
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Campo de Treino Anbu 3.",
+  "source": "assets/scene/map/30011/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30011",
+    "name": "Cenário 30011",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "58346d75b5e9746d846a923a997085c470b611bd84569ff62d2cb28529c9d43a",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2024001",
+      "mapId": "30011",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Campo de Treino Anbu 3",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 150,
+    "foregroundTiles": 40,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 40,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 545436,
+      "dimensions": [
+        3600,
+        2400
+      ],
+      "sha256": "8b821e1ff62b9105a20e32c9ef1d361caa23c2e6c3b0e7e7f96278db2c3657c4",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30011/foreground.webp",
+        "sourceSha256": "8b821e1ff62b9105a20e32c9ef1d361caa23c2e6c3b0e7e7f96278db2c3657c4",
+        "originalBytes": 488733,
+        "bytes": 260040,
+        "width": 3600,
+        "height": 2400,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30011/native-alpha.png",
+    "width": 3600,
+    "height": 2400,
+    "sha256": "8558c467115486ae588eaf39b5f44013eb54c8edde7af2a02137f6898e7de513"
+  }
+}

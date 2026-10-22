@@ -5,6 +5,7 @@ import argparse, hashlib, json, re, zlib
 from pathlib import Path
 from datetime import datetime, timezone
 import xml.etree.ElementTree as ET
+from original_archive import OriginalArchive
 
 def digest(data):
     return hashlib.sha256(data).hexdigest()
@@ -18,13 +19,9 @@ def write_json(path, value):
 def recover(source, target, ids):
     if source.resolve() == target.resolve() or source.resolve() in target.resolve().parents:
         raise ValueError("Source archive and project must be separate")
-    lookup={r["path"]:r for r in json.loads((source/"recovery/resource-manifest.json").read_text(encoding="utf-8"))["assets"]}
+    archive=OriginalArchive(source);lookup=archive.rows
     def path(name):
-        row=lookup[name]
-        candidate=source/"recovered-web/cdn"/row["tag"]/name
-        if not candidate.resolve().is_relative_to((source/"recovered-web/cdn").resolve()):
-            raise ValueError("Source escapes archive")
-        return candidate
+        return archive.path(name)
     config_hashes={}
     def xml(name):
         data=path(name).read_bytes();config_hashes[name]=digest(data)
@@ -58,7 +55,7 @@ def recover(source, target, ids):
             if not dest.exists():dest.write_bytes(data)
             if digest(original.read_bytes())!=sha or digest(dest.read_bytes())!=sha:
                 raise ValueError("Source or destination hash changed")
-            index["files"][url]={"source":name,"sourceTag":lookup[name]["tag"],"sha256":sha,"bytes":len(data),"status":"integrated"}
+            index["files"][url]={"source":name,"sourceTag":lookup[name]["tag"],"sha256":sha,"bytes":len(data),"status":"integrated","sourceKind":"exported-inventory" if archive.delivery else "original-cdn"}
             copied.append(name)
             return url
         tracks=list(dict.fromkeys(copy(n) for n in row.get("bgMusics","").split(",") if n.strip()))

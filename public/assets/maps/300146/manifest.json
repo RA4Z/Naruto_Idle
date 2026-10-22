@@ -1,0 +1,126 @@
+{
+  "id": "300146",
+  "name": "Alto da Aldeia da Chuva",
+  "kind": "lobby",
+  "background": "/assets/maps/300146/background.png",
+  "foreground": "/assets/maps/300146/foreground.png",
+  "thumbnail": "/assets/maps/300146/thumbnail.jpg",
+  "navigation": "/assets/maps/300146/navigation.json",
+  "width": 651.0416666666666,
+  "height": 488.28125,
+  "spawn": {
+    "x": 356.7708333333333,
+    "y": 337.2395833333333
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/300146/",
+  "sourceScene": {
+    "id": "2015017",
+    "mapId": "300146",
+    "time": "1",
+    "type": "1",
+    "name": "Alto da Aldeia da Chuva",
+    "minLevel": null,
+    "worldMapId": "2015016",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "4d3475ac5bc0f2c7bf7c2b9c8fe6723d51208ff9e90d223f83e7b74faf858c5a",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015017",
+      "mapId": "300146",
+      "time": "1",
+      "type": "1",
+      "name": "Alto da Aldeia da Chuva",
+      "minLevel": null,
+      "worldMapId": "2015016",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2741001",
+      "mapId": "300146",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] O Momento do Combate",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2746001",
+      "mapId": "300146",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Luta de Invocações",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2781001",
+      "mapId": "300146",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Último Teste",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1700022",
+      "mapId": "300146",
+      "time": "1",
+      "type": "14",
+      "name": "Aldeia da Chuva",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 48,
+    "foregroundTiles": 5,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 5,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 17935,
+      "dimensions": [
+        2000,
+        1500
+      ],
+      "sha256": "50dec62151c53ba5fffa9b7a0aa3175864bb8c9d310e5ae4fdaf08597bd0aa80",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300146/foreground.webp",
+        "sourceSha256": "50dec62151c53ba5fffa9b7a0aa3175864bb8c9d310e5ae4fdaf08597bd0aa80",
+        "originalBytes": 46288,
+        "bytes": 19846,
+        "width": 2000,
+        "height": 1500,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300146/native-alpha.png",
+    "width": 2000,
+    "height": 1500,
+    "sha256": "698fc0c41da071046788b51804277fe53fa1a95d50169914260c2657e9721097"
+  }
+}

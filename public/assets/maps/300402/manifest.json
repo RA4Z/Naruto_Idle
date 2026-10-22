@@ -1,0 +1,83 @@
+{
+  "id": "300402",
+  "name": "Cenário 300402",
+  "kind": "exploration",
+  "background": "/assets/maps/300402/background.png",
+  "foreground": "/assets/maps/300402/foreground.png",
+  "thumbnail": "/assets/maps/300402/thumbnail.jpg",
+  "navigation": "/assets/maps/300402/navigation.json",
+  "width": 423.1770833333333,
+  "height": 520.8333333333334,
+  "spawn": {
+    "x": 211.58854166666666,
+    "y": 284.8307291666667
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: Minas.",
+  "source": "assets/scene/map/300402/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "300402",
+    "name": "Cenário 300402",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "21e97231a7c4e511d0a499c9065165845f631e84bab9f7f48133b07714aa5727",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2015098",
+      "mapId": "300402",
+      "time": "1",
+      "type": "13",
+      "name": "Minas",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 42,
+    "foregroundTiles": 10,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 10,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 65764,
+      "dimensions": [
+        1300,
+        1600
+      ],
+      "sha256": "e106b1017794d11ece279722cacd10ebd5e20d8281dfdb6e10d4e730ea7bf98b",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300402/foreground.webp",
+        "sourceSha256": "e106b1017794d11ece279722cacd10ebd5e20d8281dfdb6e10d4e730ea7bf98b",
+        "originalBytes": 85841,
+        "bytes": 42416,
+        "width": 1300,
+        "height": 1600,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300402/native-alpha.png",
+    "width": 1300,
+    "height": 1600,
+    "sha256": "ab8ebde6b1d9ad678c833c1114902920d4639a3c48d02c673e758e13992d6a24"
+  }
+}

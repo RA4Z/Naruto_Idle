@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-22",
+  "environment": "Local Auth fixture + embedded PostgreSQL; one Phaser scene at a time; CUA in-app browser",
+  "realAccountsTouched": false,
+  "remoteDatabaseChanges": false,
+  "developmentGameplay": {
+    "starter": "11000211",
+    "safeTravelFromEmptyKonohaEnemyPool": true,
+    "rainVillageRendered": true,
+    "minimapRouteDefined": true,
+    "scenario10002Travel": true,
+    "scenario10002ExitReloadResume": true,
+    "unidentified30052Travel": true,
+    "safeSceneryDoesNotAwardGoldOrXp": true,
+    "safeSceneryDoesNotCloneKonohaResidents": true,
+    "cave10039Encounters": true,
+    "multipleOpponents": true,
+    "manualJutsuChakraConsumption": true,
+    "victories": 2,
+    "gainedXp": 42,
+    "gainedCoins": 14,
+    "returnedToKonohaAndClosedJourney": true
+  },
+  "compiledGameplay": {
+    "bundle": "assets-extraidos/qa-prod-delivery",
+    "productionMode": true,
+    "configuration": "Only public Auth URL/key replaced by local fixture; canonical public assets served by local static server; final dist built separately without fixture settings",
+    "loginAndResume": true,
+    "konohaToRainVillage": true,
+    "safeArrivalMessage": true,
+    "noInventedResidentsOrEnemies": true,
+    "goldPreserved": 500,
+    "closedJourney": true,
+    "consoleErrorsObservedAfterGameplay": []
+  },
+  "animations": {
+    "browserDecodedAtlases": 31,
+    "dimensionsAndFrameOriginsPassed": 31,
+    "webglPreviews": ["11004931/SP_skill1", "11006601/SP_skill2", "11003431/SP_skill2"],
+    "canvasPreviews": ["11004431/SP_skill1"],
+    "canvasConsoleErrorsObserved": [],
+    "sourcePixelComparison": "compact-animation-validation.json"
+  },
+  "devServerProtection": {
+    "projectIndex": 200,
+    "qaPage": 200,
+    "envExample": 403,
+    "gitHead": 403,
+    "privateExtractionFile": 403,
+    "note": "Nonexistent /.env falls through to HTML; existing protected paths remain denied. Parent folder called assets-extraidos no longer blocks the project itself."
+  },
+  "screenshots": ["delivery-map.png", "delivery-combat.png", "delivery-animation.png", "delivery-animation-canvas.png", "delivery-production-map.png"],
+  "limits": [
+    "Screenshots are local ignored evidence; canonical assets, code and JSON reports are tracked.",
+    "Every map has technical navigation/persistence coverage; not every passage of all 145 maps was visually playtested.",
+    "All 31 atlas files were decoded; complete animation playback was visually sampled, not individually reviewed for every frame of every action.",
+    "9 new scene-audio mappings passed hashes and lifecycle tests; not every track was listened to in the browser.",
+    "No timing or FPS benchmark is claimed from background in-app tabs.",
+    "SMTP, real device tests and Vercel deployment were not part of this fixture run."
+  ]
+}

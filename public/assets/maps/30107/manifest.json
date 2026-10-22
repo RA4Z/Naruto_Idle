@@ -1,0 +1,91 @@
+{
+  "id": "30107",
+  "name": "Cenário 30107",
+  "kind": "exploration",
+  "background": "/assets/maps/30107/background.png",
+  "foreground": "/assets/maps/30107/foreground.png",
+  "thumbnail": "/assets/maps/30107/thumbnail.jpg",
+  "navigation": "/assets/maps/30107/navigation.json",
+  "width": 488.28125,
+  "height": 292.96875,
+  "spawn": {
+    "x": 244.140625,
+    "y": 164.38802083333334
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: Pousada em Tanzaku; [Fase] A Crise de Naruto.",
+  "source": "assets/scene/map/30107/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30107",
+    "name": "Cenário 30107",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "c46b5ec90b570dcf4eb8730461fc19b8e18308b0c9ff4043a3790b58e14b0cd7",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "1701001",
+      "mapId": "30107",
+      "time": "1",
+      "type": "3",
+      "name": "Pousada em Tanzaku",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2416002",
+      "mapId": "30107",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] A Crise de Naruto",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 24,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 0,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": true,
+      "alphaLevels": [
+        0
+      ],
+      "nontransparentPixels": 0,
+      "dimensions": [
+        1500,
+        900
+      ],
+      "sha256": "13da9a8eaf70ef075569cec4ff114b2bd29fda2599d91633302e38715fa7ecaa",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30107/foreground.webp",
+        "sourceSha256": "13da9a8eaf70ef075569cec4ff114b2bd29fda2599d91633302e38715fa7ecaa",
+        "originalBytes": 5314,
+        "bytes": 98,
+        "width": 1500,
+        "height": 900,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30107/native-alpha.png",
+    "width": 1500,
+    "height": 900,
+    "sha256": "bf192748cfa5ff2cd10492f047c64b2fbc7aee1c69cb23729e29a2b065b6bead"
+  }
+}

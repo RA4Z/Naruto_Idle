@@ -1,0 +1,123 @@
+{
+  "id": "10100",
+  "name": "Cenário 10100",
+  "kind": "exploration",
+  "background": "/assets/maps/10100/background.png",
+  "foreground": "/assets/maps/10100/foreground.png",
+  "thumbnail": "/assets/maps/10100/thumbnail.jpg",
+  "navigation": "/assets/maps/10100/navigation.json",
+  "width": 878.90625,
+  "height": 1171.875,
+  "spawn": {
+    "x": 543.6197916666666,
+    "y": 691.7317708333334
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Aldeia da Folha À Noite; [Fase] Visitar Naruto; [Fase] Plano no Escuro; outras registradas no manifesto.",
+  "source": "assets/scene/map/10100/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "10100",
+    "name": "Cenário 10100",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "05dddf2cc18baea54e886846cfc209a70f94590f1bcde538c9eab6ba51fc27ed",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2028001",
+      "mapId": "10100",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Aldeia da Folha À Noite",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2126001",
+      "mapId": "10100",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Visitar Naruto",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2876001",
+      "mapId": "10100",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Plano no Escuro",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "4001001",
+      "mapId": "10100",
+      "time": "3",
+      "type": "2",
+      "name": "Terraço do Hospital da Aldeia da Folha à Noite",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "4061001",
+      "mapId": "10100",
+      "time": "3",
+      "type": "2",
+      "name": "Terraço do Hospital da Aldeia da Folha à Noite",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 165,
+    "foregroundTiles": 19,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 19,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 182097,
+      "dimensions": [
+        2700,
+        3600
+      ],
+      "sha256": "576b6b1ea81b11837473b512b99765083d950168279c574f5ca10fa088d3336b",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/10100/foreground.webp",
+        "sourceSha256": "576b6b1ea81b11837473b512b99765083d950168279c574f5ca10fa088d3336b",
+        "originalBytes": 500814,
+        "bytes": 291386,
+        "width": 2700,
+        "height": 3600,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/10100/native-alpha.png",
+    "width": 2700,
+    "height": 3600,
+    "sha256": "23f2af5a32d4c980e178e5ab5145b191625e7d2383e6ead6561627e2efd44219"
+  }
+}

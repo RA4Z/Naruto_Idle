@@ -1,0 +1,83 @@
+{
+  "id": "30048",
+  "name": "Cenário 30048",
+  "kind": "exploration",
+  "background": "/assets/maps/30048/background.png",
+  "foreground": "/assets/maps/30048/foreground.png",
+  "thumbnail": "/assets/maps/30048/thumbnail.jpg",
+  "navigation": "/assets/maps/30048/navigation.json",
+  "width": 1171.875,
+  "height": 781.25,
+  "spawn": {
+    "x": 585.9375,
+    "y": 420.5729166666667
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui.",
+  "source": "assets/scene/map/30048/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30048",
+    "name": "Cenário 30048",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "118410a289d965c2547d8bb29fb6af3e9a6c9d6805db1cfe3ef4dc3862089227",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "4",
+      "mapId": "30048",
+      "time": "1",
+      "type": "1",
+      "name": null,
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 150,
+    "foregroundTiles": 102,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 102,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 1914650,
+      "dimensions": [
+        3600,
+        2400
+      ],
+      "sha256": "2f0ea81927285c2a2cebb3382a3a79c1031626d67ff7176cbbc2e72a5539e763",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30048/foreground.webp",
+        "sourceSha256": "2f0ea81927285c2a2cebb3382a3a79c1031626d67ff7176cbbc2e72a5539e763",
+        "originalBytes": 3589615,
+        "bytes": 2214064,
+        "width": 3600,
+        "height": 2400,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30048/native-alpha.png",
+    "width": 3600,
+    "height": 2400,
+    "sha256": "797ac0d52bd3bd967cf778fab505d1ddf4f13038a739f32f417728b201962c02"
+  }
+}

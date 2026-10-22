@@ -1,0 +1,83 @@
+{
+  "id": "30022",
+  "name": "Cenário 30022",
+  "kind": "exploration",
+  "background": "/assets/maps/30022/background.png",
+  "foreground": "/assets/maps/30022/foreground.png",
+  "thumbnail": "/assets/maps/30022/thumbnail.jpg",
+  "navigation": "/assets/maps/30022/navigation.json",
+  "width": 813.8020833333334,
+  "height": 976.5625,
+  "spawn": {
+    "x": 396.484375,
+    "y": 525.7161458333334
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Verificação do Treinamento.",
+  "source": "assets/scene/map/30022/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30022",
+    "name": "Cenário 30022",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "332617e395c7a3721b5b945ab6487472c770b91b4022f400b2dd676c83c21e30",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2057001",
+      "mapId": "30022",
+      "time": "2",
+      "type": "2",
+      "name": "[Fase] Verificação do Treinamento",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 120,
+    "foregroundTiles": 61,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 61,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 631918,
+      "dimensions": [
+        2500,
+        3000
+      ],
+      "sha256": "10fbc28481fddd4a28d67bd3529f48cf8732f079f2c7012bfbdeca9c24bff418",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30022/foreground.webp",
+        "sourceSha256": "10fbc28481fddd4a28d67bd3529f48cf8732f079f2c7012bfbdeca9c24bff418",
+        "originalBytes": 1797939,
+        "bytes": 1218276,
+        "width": 2500,
+        "height": 3000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30022/native-alpha.png",
+    "width": 2500,
+    "height": 3000,
+    "sha256": "90bf4a2c85cdeb41f1a89fe2491a3df3a25615e77674e0211150aa1889322841"
+  }
+}

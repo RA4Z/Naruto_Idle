@@ -1,0 +1,83 @@
+{
+  "id": "300401",
+  "name": "Cenário 300401",
+  "kind": "exploration",
+  "background": "/assets/maps/300401/background.png",
+  "foreground": "/assets/maps/300401/foreground.png",
+  "thumbnail": "/assets/maps/300401/thumbnail.jpg",
+  "navigation": "/assets/maps/300401/navigation.json",
+  "width": 846.3541666666666,
+  "height": 683.59375,
+  "spawn": {
+    "x": 423.1770833333333,
+    "y": 376.953125
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: Jardim.",
+  "source": "assets/scene/map/300401/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "300401",
+    "name": "Cenário 300401",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "b4f6f41f2ac31a92e614339ea23925e7e096bfb76b9e9590cc6cda08d5bd2b9a",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2015099",
+      "mapId": "300401",
+      "time": "1",
+      "type": "11",
+      "name": "Jardim",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 99,
+    "foregroundTiles": 30,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 30,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 263604,
+      "dimensions": [
+        2600,
+        2100
+      ],
+      "sha256": "e599cfbb86209f6323f5d68236b5b5372f3b16ddb3ed8fd4f02a83fc071fd3f9",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300401/foreground.webp",
+        "sourceSha256": "e599cfbb86209f6323f5d68236b5b5372f3b16ddb3ed8fd4f02a83fc071fd3f9",
+        "originalBytes": 702481,
+        "bytes": 443446,
+        "width": 2600,
+        "height": 2100,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300401/native-alpha.png",
+    "width": 2600,
+    "height": 2100,
+    "sha256": "d1d76bfc4d96c8bba9814b2af702914a0dcb6ea231e389a0a269e1dbf17899b9"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "id": "10002",
+  "name": "Cenário 10002",
+  "kind": "exploration",
+  "background": "/assets/maps/10002/background.png",
+  "foreground": "/assets/maps/10002/foreground.png",
+  "thumbnail": "/assets/maps/10002/thumbnail.jpg",
+  "navigation": "/assets/maps/10002/navigation.json",
+  "width": 976.5625,
+  "height": 976.5625,
+  "spawn": {
+    "x": 488.28125,
+    "y": 542.3177083333334
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Formação Ino-Shika-Cho; [Fase] Itachi Uchiha; [Fase] Lâminas do Vento.",
+  "source": "assets/scene/map/10002/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "10002",
+    "name": "Cenário 10002",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "7deb3f41b4c938e60cba9950fa2e9581520611747054269bd9f75b8967a70d5e",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2027001",
+      "mapId": "10002",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Formação Ino-Shika-Cho",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2406001",
+      "mapId": "10002",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Itachi Uchiha",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2604001",
+      "mapId": "10002",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Lâminas do Vento",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 144,
+    "foregroundTiles": 125,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 125,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 2347071,
+      "dimensions": [
+        3000,
+        3000
+      ],
+      "sha256": "d194cd6f18edf316a16c66a5c54464c89df7060037d89e1ac5ca8eaf9023abd3",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/10002/foreground.webp",
+        "sourceSha256": "d194cd6f18edf316a16c66a5c54464c89df7060037d89e1ac5ca8eaf9023abd3",
+        "originalBytes": 5804803,
+        "bytes": 3730960,
+        "width": 3000,
+        "height": 3000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/10002/native-alpha.png",
+    "width": 3000,
+    "height": 3000,
+    "sha256": "cab55e1abdc12a2ecfbd122b7de520bbd4ec1503a3e48492aa9b8b915dc5e6b5"
+  }
+}

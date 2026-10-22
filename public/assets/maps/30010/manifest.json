@@ -1,0 +1,133 @@
+{
+  "id": "30010",
+  "name": "Cenário 30010",
+  "kind": "exploration",
+  "background": "/assets/maps/30010/background.png",
+  "foreground": "/assets/maps/30010/foreground.png",
+  "thumbnail": "/assets/maps/30010/thumbnail.jpg",
+  "navigation": "/assets/maps/30010/navigation.json",
+  "width": 716.1458333333334,
+  "height": 553.3854166666666,
+  "spawn": {
+    "x": 358.0729166666667,
+    "y": 305.3385416666667
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Campo de Treino Anbu; [Fase] Campo de Treino Anbu 2; [Fase] Treino do Corpo; outras registradas no manifesto.",
+  "source": "assets/scene/map/30010/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30010",
+    "name": "Cenário 30010",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "2244137226fdf22eb18fe631a58c48006805a42ab264a4bf17f62ee0d99d80d5",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2003001",
+      "mapId": "30010",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Campo de Treino Anbu",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2018001",
+      "mapId": "30010",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Campo de Treino Anbu",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2020001",
+      "mapId": "30010",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Campo de Treino Anbu 2",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2022001",
+      "mapId": "30010",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Campo de Treino Anbu",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2601001",
+      "mapId": "30010",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Treino do Corpo",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2711001",
+      "mapId": "30010",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Combate no Genjutsu",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 63,
+    "foregroundTiles": 29,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 29,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 373383,
+      "dimensions": [
+        2200,
+        1700
+      ],
+      "sha256": "b2cb8f67086b729ab2c3eb3a7fa87ffaec9799e0f1a68325588de9834ef184ff",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30010/foreground.webp",
+        "sourceSha256": "b2cb8f67086b729ab2c3eb3a7fa87ffaec9799e0f1a68325588de9834ef184ff",
+        "originalBytes": 340513,
+        "bytes": 199040,
+        "width": 2200,
+        "height": 1700,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30010/native-alpha.png",
+    "width": 2200,
+    "height": 1700,
+    "sha256": "9e6596cb16e623d1823b9cb1810e17bc1c1d6a2da72fb77d310655b08075f3ee"
+  }
+}

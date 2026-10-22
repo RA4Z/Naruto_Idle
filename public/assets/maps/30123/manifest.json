@@ -1,0 +1,111 @@
+{
+  "id": "30123",
+  "name": "Cenário 30123",
+  "kind": "exploration",
+  "background": "/assets/maps/30123/background.png",
+  "foreground": "/assets/maps/30123/foreground.png",
+  "thumbnail": "/assets/maps/30123/thumbnail.jpg",
+  "navigation": "/assets/maps/30123/navigation.json",
+  "width": 488.28125,
+  "height": 423.1770833333333,
+  "spawn": {
+    "x": 244.140625,
+    "y": 237.3046875
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Hora do Reencontro; [Fase] Nascimento da serpente; Base de Orochimaru.",
+  "source": "assets/scene/map/30123/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30123",
+    "name": "Cenário 30123",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "97856c4400ae21c786851d0c405fcc26cb3e72c4c720fd1d38343c10a4562e6c",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2559001",
+      "mapId": "30123",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Hora do Reencontro",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3054001",
+      "mapId": "30123",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Nascimento da serpente",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "4042001",
+      "mapId": "30123",
+      "time": "1",
+      "type": "2",
+      "name": "Base de Orochimaru",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1700020",
+      "mapId": "30123",
+      "time": "1",
+      "type": "14",
+      "name": "Base de Orochimaru",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 36,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 0,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": true,
+      "alphaLevels": [
+        0
+      ],
+      "nontransparentPixels": 0,
+      "dimensions": [
+        1500,
+        1300
+      ],
+      "sha256": "59f847802e08e6a8706d0b1f7d943f94ec15760c375432b0ea8622c93aa24fad",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30123/foreground.webp",
+        "sourceSha256": "59f847802e08e6a8706d0b1f7d943f94ec15760c375432b0ea8622c93aa24fad",
+        "originalBytes": 7640,
+        "bytes": 122,
+        "width": 1500,
+        "height": 1300,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30123/native-alpha.png",
+    "width": 1500,
+    "height": 1300,
+    "sha256": "4e361b6294b50d79525a6fb032b191811ea3cb804ae92022b47bf39e820109a8"
+  }
+}

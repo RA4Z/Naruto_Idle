@@ -1,0 +1,119 @@
+{
+  "id": "300169",
+  "name": "Floresta dos Corvos",
+  "kind": "adventure",
+  "background": "/assets/maps/300169/background.png",
+  "foreground": "/assets/maps/300169/foreground.png",
+  "thumbnail": "/assets/maps/300169/thumbnail.jpg",
+  "navigation": "/assets/maps/300169/navigation.json",
+  "width": 813.8020833333334,
+  "height": 976.5625,
+  "spawn": {
+    "x": 406.9010416666667,
+    "y": 541.3411458333334
+  },
+  "enemies": [
+    "19000301",
+    "19000701"
+  ],
+  "description": "Explore a área original recuperada. Encontros adaptados para o idle.",
+  "source": "assets/scene/map/300169/",
+  "sourceScene": {
+    "id": "2015005",
+    "mapId": "300169",
+    "time": "1",
+    "type": "1",
+    "name": "Floresta dos Corvos",
+    "minLevel": null,
+    "worldMapId": "2015005",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "25ea1e9476e4a41def6beeaff980490201e7c0d05036aa72d66927af96b3750e",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015005",
+      "mapId": "300169",
+      "time": "1",
+      "type": "1",
+      "name": "Floresta dos Corvos",
+      "minLevel": null,
+      "worldMapId": "2015005",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2553001",
+      "mapId": "300169",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Luta Simulada",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2716001",
+      "mapId": "300169",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] A Tarefa de Itachi",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1700018",
+      "mapId": "300169",
+      "time": "1",
+      "type": "14",
+      "name": "Floresta dos Corvos",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Authored idle-RPG encounters, not original story rules.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 120,
+    "foregroundTiles": 88,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 88,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 2009718,
+      "dimensions": [
+        2500,
+        3000
+      ],
+      "sha256": "80c2268693e32c3d68cacbaaf2083de39e86ee696f341d271fff54edfba448a7",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300169/foreground.webp",
+        "sourceSha256": "80c2268693e32c3d68cacbaaf2083de39e86ee696f341d271fff54edfba448a7",
+        "originalBytes": 4951743,
+        "bytes": 3352994,
+        "width": 2500,
+        "height": 3000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300169/native-alpha.png",
+    "width": 2500,
+    "height": 3000,
+    "sha256": "de5ec246118164ca6c9db790981f155a1f58d477e79d0780417dbeb054962671"
+  }
+}

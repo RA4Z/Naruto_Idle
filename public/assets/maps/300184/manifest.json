@@ -1,0 +1,98 @@
+{
+  "id": "300184",
+  "name": "Ponte Samurai",
+  "kind": "adventure",
+  "background": "/assets/maps/300184/background.png",
+  "foreground": "/assets/maps/300184/foreground.png",
+  "thumbnail": "/assets/maps/300184/thumbnail.jpg",
+  "navigation": "/assets/maps/300184/navigation.json",
+  "width": 976.5625,
+  "height": 846.3541666666666,
+  "spawn": {
+    "x": 571.6145833333334,
+    "y": 292.3177083333333
+  },
+  "enemies": [
+    "19002301"
+  ],
+  "description": "Explore a área original recuperada. Encontros adaptados para o idle.",
+  "source": "assets/scene/map/300184/",
+  "sourceScene": {
+    "id": "2015028",
+    "mapId": "300184",
+    "time": "1",
+    "type": "1",
+    "name": "Ponte Samurai",
+    "minLevel": null,
+    "worldMapId": "2015028",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "1a0c76820a83ce309db42e86f38908cdca1795b1d930921796bdf81e3a718973",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015028",
+      "mapId": "300184",
+      "time": "1",
+      "type": "1",
+      "name": "Ponte Samurai",
+      "minLevel": null,
+      "worldMapId": "2015028",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2941001",
+      "mapId": "300184",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Amizade e Traição",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Authored idle-RPG encounters, not original story rules.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 132,
+    "foregroundTiles": 20,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 20,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 310688,
+      "dimensions": [
+        3000,
+        2600
+      ],
+      "sha256": "7ec8107af84657bd9e2ba580944ac8c8ec577e829c4d964424e94cebe2387d61",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300184/foreground.webp",
+        "sourceSha256": "7ec8107af84657bd9e2ba580944ac8c8ec577e829c4d964424e94cebe2387d61",
+        "originalBytes": 584574,
+        "bytes": 307626,
+        "width": 3000,
+        "height": 2600,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300184/native-alpha.png",
+    "width": 3000,
+    "height": 2600,
+    "sha256": "e0317e0acc5459aaa4b3c9b2cfb8bdc2db49d35e254c9d5fca53a538e0df65f0"
+  }
+}

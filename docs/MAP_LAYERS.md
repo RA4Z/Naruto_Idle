@@ -1,10 +1,10 @@
 # Mapas: formato confirmado, extração e pendências
 
-Este é o guia técnico atual para extração dos mapas. Ler junto com [o roteiro geral](EXTRACAO_E_INTEGRACAO_ORIGINAIS.md) e conferir os scripts citados antes de executar. As seções atuais prevalecem sobre o histórico ao final. Em 21/10/2026 há 16 destinos integrados de 145 conjuntos identificados; consultar o catálogo e a auditoria para obter o total após novos lotes.
+Este é o guia técnico atual para extração dos mapas. Ler junto com [o roteiro geral](EXTRACAO_E_INTEGRACAO_ORIGINAIS.md) e conferir os scripts citados antes de executar. As seções atuais prevalecem sobre o histórico ao final. Os 145 conjuntos estão preparados/acessíveis por Viagens; 90 cenários de fase/a identificar permitem exploração segura, sem campanhas prontas. Conteúdo narrativo e profundidade por objeto seguem pendentes. Estado, conversores da entrega versionada e validações em [INTEGRACAO_ACERVO_ENTREGUE.md](INTEGRACAO_ACERVO_ENTREGUE.md).
 
 ## Onde procurar e como resolver os arquivos
 
-`--source` recebe a **raiz do acervo**, que contém `recovery/resource-manifest.json` e `recovered-web/cdn`, não a pasta de um mapa nem a pasta do projeto Phaser. O caminho histórico é `D:\Naruto Idle\Naruto_Idle`; a disponibilidade depende da máquina. Nesta cópia em `C:\Users\robertn\Documents\Naruto_Idle`, esse caminho histórico não está disponível. Confirmar o caminho real no computador com os originais.
+`--source` recebe a **raiz do acervo**, não a pasta de um mapa nem a pasta do projeto Phaser. São aceitos `recovery/resource-manifest.json`/`recovered-web/cdn` ou o pacote entregue `manifestos/inventory.json` com arquivos em `<categoria>/<versão>/<caminho lógico>`. O inventário fixa a versão, sem escolher diretórios por suposição. Confirmar os caminhos reais ao retomar.
 
 `tools/original_archive.py` resolve cada caminho lógico pelo campo `tag` do manifesto: `<acervo>/recovered-web/cdn/<tag>/<caminho>`. Não escolher uma versão de CDN por suposição. `raw()` lê os bytes originais e `data()` tenta descompressão zlib, retornando o bruto se não for zlib; arquivos de metadados podem precisar dessa descompressão antes de interpretar XML ou navegação. Hashes de procedência são calculados sobre os bytes brutos.
 

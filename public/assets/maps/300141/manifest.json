@@ -1,0 +1,83 @@
+{
+  "id": "300141",
+  "name": "Cenário 300141",
+  "kind": "exploration",
+  "background": "/assets/maps/300141/background.png",
+  "foreground": "/assets/maps/300141/foreground.png",
+  "thumbnail": "/assets/maps/300141/thumbnail.jpg",
+  "navigation": "/assets/maps/300141/navigation.json",
+  "width": 976.5625,
+  "height": 976.5625,
+  "spawn": {
+    "x": 477.8645833333333,
+    "y": 537.109375
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: A tumba dos Uchiha.",
+  "source": "assets/scene/map/300141/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "300141",
+    "name": "Cenário 300141",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "65bd18fea07fa2548801227afcc4faa8af677e31140a52b2ffb86d6faf146f17",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "1700025",
+      "mapId": "300141",
+      "time": "1",
+      "type": "14",
+      "name": "A tumba dos Uchiha",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 144,
+    "foregroundTiles": 81,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 81,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 1380415,
+      "dimensions": [
+        3000,
+        3000
+      ],
+      "sha256": "7e2ae890c3d99bd0da60dad988ca3db19beba21fd9ce5cb4e79a8a8f9c5fe873",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300141/foreground.webp",
+        "sourceSha256": "7e2ae890c3d99bd0da60dad988ca3db19beba21fd9ce5cb4e79a8a8f9c5fe873",
+        "originalBytes": 3449461,
+        "bytes": 2217170,
+        "width": 3000,
+        "height": 3000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300141/native-alpha.png",
+    "width": 3000,
+    "height": 3000,
+    "sha256": "079d17c04126c8a09d3f0e665f3d8dfa5cd907d8d600cc8a650db3d1de8c5f3b"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "id": "30073",
+  "name": "Sul da Aldeia da Areia",
+  "kind": "lobby",
+  "background": "/assets/maps/30073/background.png",
+  "foreground": "/assets/maps/30073/foreground.png",
+  "thumbnail": "/assets/maps/30073/thumbnail.jpg",
+  "navigation": "/assets/maps/30073/navigation.json",
+  "width": 976.5625,
+  "height": 976.5625,
+  "spawn": {
+    "x": 519.53125,
+    "y": 537.109375
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/30073/",
+  "sourceScene": {
+    "id": "2015009",
+    "mapId": "30073",
+    "time": "1",
+    "type": "1",
+    "name": "Sul da Aldeia da Areia",
+    "minLevel": null,
+    "worldMapId": "2015009",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "f4de7b46128cf6d4f6870e28804d82d13026e8b19111a877f69dc33ea466ff64",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015009",
+      "mapId": "30073",
+      "time": "1",
+      "type": "1",
+      "name": "Sul da Aldeia da Areia",
+      "minLevel": null,
+      "worldMapId": "2015009",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2516001",
+      "mapId": "30073",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Chiyo",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1700030",
+      "mapId": "30073",
+      "time": "1",
+      "type": "14",
+      "name": "Aldeia da Areia",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 144,
+    "foregroundTiles": 79,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 79,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 916998,
+      "dimensions": [
+        3000,
+        3000
+      ],
+      "sha256": "f4cf0d6d64519177b426c60a11974e1e11737c26a432391f3888f4c94822402f",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30073/foreground.webp",
+        "sourceSha256": "f4cf0d6d64519177b426c60a11974e1e11737c26a432391f3888f4c94822402f",
+        "originalBytes": 1626676,
+        "bytes": 893556,
+        "width": 3000,
+        "height": 3000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30073/native-alpha.png",
+    "width": 3000,
+    "height": 3000,
+    "sha256": "130e30f4154309a766e04d1fb7131f5ff4886e1f6c4ff520fca6007f035117ad"
+  }
+}

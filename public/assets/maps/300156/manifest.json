@@ -1,0 +1,81 @@
+{
+  "id": "300156",
+  "name": "Cenário 300156",
+  "kind": "exploration",
+  "background": "/assets/maps/300156/background.png",
+  "foreground": "/assets/maps/300156/foreground.png",
+  "thumbnail": "/assets/maps/300156/thumbnail.jpg",
+  "navigation": "/assets/maps/300156/navigation.json",
+  "width": 683.59375,
+  "height": 846.3541666666666,
+  "spawn": {
+    "x": 331.3802083333333,
+    "y": 485.3515625
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Fim da Dor.",
+  "source": "assets/scene/map/300156/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "300156",
+    "name": "Cenário 300156",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "f5f98a442ec23542cfad40b2cb83304eb045d25e74fb0bd3c4ef1e86deea2c5f",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2866001",
+      "mapId": "300156",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Fim da Dor",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 99,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 0,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": true,
+      "alphaLevels": [
+        0
+      ],
+      "nontransparentPixels": 0,
+      "dimensions": [
+        2100,
+        2600
+      ],
+      "sha256": "3b3eb1143e5806436ce8c40eaef1db249939fa9719f236bcba63747787e52dbe",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300156/foreground.webp",
+        "sourceSha256": "3b3eb1143e5806436ce8c40eaef1db249939fa9719f236bcba63747787e52dbe",
+        "originalBytes": 21271,
+        "bytes": 268,
+        "width": 2100,
+        "height": 2600,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300156/native-alpha.png",
+    "width": 2100,
+    "height": 2600,
+    "sha256": "55638c35b046d3b36c0046a1d3328c8bd3c5af5f436f663ffaafd4bab4f9d6b9"
+  }
+}

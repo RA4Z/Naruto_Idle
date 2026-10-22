@@ -1,0 +1,133 @@
+{
+  "id": "30016",
+  "name": "Cenário 30016",
+  "kind": "exploration",
+  "background": "/assets/maps/30016/background.png",
+  "foreground": "/assets/maps/30016/foreground.png",
+  "thumbnail": "/assets/maps/30016/thumbnail.jpg",
+  "navigation": "/assets/maps/30016/navigation.json",
+  "width": 813.8020833333334,
+  "height": 976.5625,
+  "spawn": {
+    "x": 406.9010416666667,
+    "y": 541.3411458333334
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Cassarola de Coelho Deliciosa; [Fase] Captura de Coelhos; [Fase] Rasengan; outras registradas no manifesto.",
+  "source": "assets/scene/map/30016/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30016",
+    "name": "Cenário 30016",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "734599509617110a9b9858903a9db989c65d895078f1aa591ad4f10a2b14e299",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2001001",
+      "mapId": "30016",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Cassarola de Coelho Deliciosa",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2056001",
+      "mapId": "30016",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Captura de Coelhos",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2056002",
+      "mapId": "30016",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Captura de Coelhos",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2431001",
+      "mapId": "30016",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Rasengan",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2456001",
+      "mapId": "30016",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] A Crise de Neji",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2726001",
+      "mapId": "30016",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Encontrando o Time Taka",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 120,
+    "foregroundTiles": 85,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 85,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 1729083,
+      "dimensions": [
+        2500,
+        3000
+      ],
+      "sha256": "bf4eb15a217a93392f42256254b24eb8a0a7c0eb24475fa4f557010507b882cf",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30016/foreground.webp",
+        "sourceSha256": "bf4eb15a217a93392f42256254b24eb8a0a7c0eb24475fa4f557010507b882cf",
+        "originalBytes": 4092329,
+        "bytes": 2791956,
+        "width": 2500,
+        "height": 3000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30016/native-alpha.png",
+    "width": 2500,
+    "height": 3000,
+    "sha256": "0b276d95fd34e225f01c8aed1a9819eacc72607066770321d1acde968e2442bd"
+  }
+}

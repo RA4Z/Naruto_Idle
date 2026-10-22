@@ -15,7 +15,7 @@ def main():
    assets={a.get('id') for a in root.findall('asset')}
    for action in root.findall('action'):
     name=action.get('name');prepared=data.get('animations',{}).get(name)
-    if not prepared or prepared.get('rendererRevision')=='external-symbol-namespace-v1':continue
+    if not prepared or prepared.get('rendererRevision') in {'external-symbol-namespace-v1','external-symbol-compact-frame-origin-v2'}:continue
     external=[e.get('extname') for e in action.iter('element') if e.get('extname') and e.get('assetId') in assets]
     if external:rows.append({'id':entry['id'],'name':entry['name'],'mode':mode,'action':name,'external':sorted(set(external))})
  report={'policy':'sequential metadata only; no regeneration','xmlScanned':scanned,'actionsPendingReview':len(rows),'modelsPendingReview':len({r['id'] for r in rows}),'pending':rows}

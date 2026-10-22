@@ -1,0 +1,122 @@
+{
+  "id": "30009",
+  "name": "Cenário 30009",
+  "kind": "exploration",
+  "background": "/assets/maps/30009/background.png",
+  "foreground": "/assets/maps/30009/foreground.png",
+  "thumbnail": "/assets/maps/30009/thumbnail.jpg",
+  "navigation": "/assets/maps/30009/navigation.json",
+  "width": 651.0416666666666,
+  "height": 488.28125,
+  "spawn": {
+    "x": 325.5208333333333,
+    "y": 269.53125
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Floresta 2 À Noite; Recuperar o Pergaminho de Selamento; [História Paralela] Floresta 2 à Noite; outras registradas no manifesto.",
+  "source": "assets/scene/map/30009/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30009",
+    "name": "Cenário 30009",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "773f613e6043c32dcf91e7398f5a1e2fc4b97850f2d6db7bd50d5ae3ae28ca3e",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2025001",
+      "mapId": "30009",
+      "time": "3",
+      "type": "2",
+      "name": "[Fase] Floresta 2 À Noite",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2025002",
+      "mapId": "30009",
+      "time": "3",
+      "type": "2",
+      "name": "[Fase] Floresta 2 À Noite",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2032002",
+      "mapId": "30009",
+      "time": "3",
+      "type": "2",
+      "name": "Recuperar o Pergaminho de Selamento",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "9001001",
+      "mapId": "30009",
+      "time": "3",
+      "type": "9",
+      "name": "[História Paralela] Floresta 2 à Noite",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": "11000301"
+    },
+    {
+      "id": "9001002",
+      "mapId": "30009",
+      "time": "3",
+      "type": "9",
+      "name": "[História Paralela] Cenário Geral",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 48,
+    "foregroundTiles": 38,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 38,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85
+      ],
+      "nontransparentPixels": 585129,
+      "dimensions": [
+        2000,
+        1500
+      ],
+      "sha256": "01f9c08193d6220cfc212ae00f367d6b23af4b385da437b95f320997a3c89a6c",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30009/foreground.webp",
+        "sourceSha256": "01f9c08193d6220cfc212ae00f367d6b23af4b385da437b95f320997a3c89a6c",
+        "originalBytes": 1361680,
+        "bytes": 832954,
+        "width": 2000,
+        "height": 1500,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30009/native-alpha.png",
+    "width": 2000,
+    "height": 1500,
+    "sha256": "c61392ca92dfe182d5fc5f6a1ed2361d926e7f2524b97165e61d09fc71286494"
+  }
+}

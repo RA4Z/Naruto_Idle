@@ -1,0 +1,136 @@
+{
+  "id": "30119",
+  "name": "Templo do Fogo",
+  "kind": "lobby",
+  "background": "/assets/maps/30119/background.png",
+  "foreground": "/assets/maps/30119/foreground.png",
+  "thumbnail": "/assets/maps/30119/thumbnail.jpg",
+  "navigation": "/assets/maps/30119/navigation.json",
+  "width": 1139.3229166666667,
+  "height": 813.8020833333334,
+  "spawn": {
+    "x": 538.4114583333334,
+    "y": 475.5859375
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/30119/",
+  "sourceScene": {
+    "id": "2034001",
+    "mapId": "30119",
+    "time": "1",
+    "type": "1",
+    "name": "Templo do Fogo",
+    "minLevel": null,
+    "worldMapId": "2034001",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "e1faf5635828abbc6527a1eefa662faa6a23655dcd34293bc0c2191124e42115",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2034001",
+      "mapId": "30119",
+      "time": "1",
+      "type": "1",
+      "name": "Templo do Fogo",
+      "minLevel": null,
+      "worldMapId": "2034001",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2605001",
+      "mapId": "30119",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Pistas",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2606001",
+      "mapId": "30119",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Imortal",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2607001",
+      "mapId": "30119",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Combate Desesperado",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3053002",
+      "mapId": "30119",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Vinda da Akatsuki",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1700014",
+      "mapId": "30119",
+      "time": "1",
+      "type": "14",
+      "name": "Templo do Fogo",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 140,
+    "foregroundTiles": 88,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 88,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 2025568,
+      "dimensions": [
+        3500,
+        2500
+      ],
+      "sha256": "a802edc7ea182c9c1e3374550b15b17aecbb7b69cf2a7de26b40f235dfa52ffe",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30119/foreground.webp",
+        "sourceSha256": "a802edc7ea182c9c1e3374550b15b17aecbb7b69cf2a7de26b40f235dfa52ffe",
+        "originalBytes": 4765168,
+        "bytes": 3130160,
+        "width": 3500,
+        "height": 2500,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30119/native-alpha.png",
+    "width": 3500,
+    "height": 2500,
+    "sha256": "5c8ff3247c6c8cbec335fb2a61f895df3aaa51fc3f4ff4b375a3a2cb6d18411a"
+  }
+}

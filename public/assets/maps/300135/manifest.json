@@ -1,0 +1,113 @@
+{
+  "id": "300135",
+  "name": "Cenário 300135",
+  "kind": "exploration",
+  "background": "/assets/maps/300135/background.png",
+  "foreground": "/assets/maps/300135/foreground.png",
+  "thumbnail": "/assets/maps/300135/thumbnail.jpg",
+  "navigation": "/assets/maps/300135/navigation.json",
+  "width": 976.5625,
+  "height": 976.5625,
+  "spawn": {
+    "x": 488.28125,
+    "y": 542.3177083333334
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Resgatando os Feridos; [Fase] Combate na Aldeia; [Fase] A Chegada de Pain.",
+  "source": "assets/scene/map/300135/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "300135",
+    "name": "Cenário 300135",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "8355d205b938f57e501d40e4fe997206091733406beccc39843fa905179639e0",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2311001",
+      "mapId": "300135",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Resgatando os Feridos",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2331001",
+      "mapId": "300135",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Combate na Aldeia",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2801001",
+      "mapId": "300135",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] A Chegada de Pain",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2816001",
+      "mapId": "300135",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Resgatando os Feridos",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 144,
+    "foregroundTiles": 80,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 80,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 1200762,
+      "dimensions": [
+        3000,
+        3000
+      ],
+      "sha256": "26fee36c7f7151e09f26c2fd78d2fc93002db5ba1af2a003a5ee045363506394",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300135/foreground.webp",
+        "sourceSha256": "26fee36c7f7151e09f26c2fd78d2fc93002db5ba1af2a003a5ee045363506394",
+        "originalBytes": 2205396,
+        "bytes": 1267556,
+        "width": 3000,
+        "height": 3000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300135/native-alpha.png",
+    "width": 3000,
+    "height": 3000,
+    "sha256": "0cdff96f9136724be67be4de3b2f61abbf98bd700ddc7d43bf7c35d443b4d271"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "30034",
+  "name": "Cenário 30034",
+  "kind": "exploration",
+  "background": "/assets/maps/30034/background.png",
+  "foreground": "/assets/maps/30034/foreground.png",
+  "thumbnail": "/assets/maps/30034/thumbnail.jpg",
+  "navigation": "/assets/maps/30034/navigation.json",
+  "width": 423.1770833333333,
+  "height": 325.5208333333333,
+  "spawn": {
+    "x": 211.58854166666666,
+    "y": 180.6640625
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: Arquibancada da Arena.",
+  "source": "assets/scene/map/30034/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30034",
+    "name": "Cenário 30034",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "1a4e6412c9ae8c747c321a7bf54d597a1505777cad9d29fc944449c3ac73ccf9",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "1601002",
+      "mapId": "30034",
+      "time": "1",
+      "type": "3",
+      "name": "Arquibancada da Arena",
+      "minLevel": null,
+      "worldMapId": "1601003",
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 24,
+    "foregroundTiles": 7,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 7,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 42429,
+      "dimensions": [
+        1300,
+        1000
+      ],
+      "sha256": "9eda9654dd6f1b8a82d26b035188ef0cb277c003349d02f64fa8895c34d95116",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30034/foreground.webp",
+        "sourceSha256": "9eda9654dd6f1b8a82d26b035188ef0cb277c003349d02f64fa8895c34d95116",
+        "originalBytes": 77204,
+        "bytes": 42770,
+        "width": 1300,
+        "height": 1000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30034/native-alpha.png",
+    "width": 1300,
+    "height": 1000,
+    "sha256": "b0163d6319c2618a6c19d837a5bbca3650200e878d5caffa3c19154f4e10a795"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "10026",
+  "name": "Cenário 10026",
+  "kind": "exploration",
+  "background": "/assets/maps/10026/background.png",
+  "foreground": "/assets/maps/10026/foreground.png",
+  "thumbnail": "/assets/maps/10026/thumbnail.jpg",
+  "navigation": "/assets/maps/10026/navigation.json",
+  "width": 1041.6666666666667,
+  "height": 911.4583333333333,
+  "spawn": {
+    "x": 531.25,
+    "y": 489.5833333333333
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Bandidos.",
+  "source": "assets/scene/map/10026/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "10026",
+    "name": "Cenário 10026",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "8202449c06fe2e9b39c2a32a615ef20a870af5e620f9fb260f04cd24d11c3c02",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2061001",
+      "mapId": "10026",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Bandidos",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 143,
+    "foregroundTiles": 98,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 98,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 1229773,
+      "dimensions": [
+        3200,
+        2800
+      ],
+      "sha256": "0cee3cc4310141acdd21841c94123b1b970f85b1ed27543033780cdcc4d5b235",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/10026/foreground.webp",
+        "sourceSha256": "0cee3cc4310141acdd21841c94123b1b970f85b1ed27543033780cdcc4d5b235",
+        "originalBytes": 3020134,
+        "bytes": 1809242,
+        "width": 3200,
+        "height": 2800,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/10026/native-alpha.png",
+    "width": 3200,
+    "height": 2800,
+    "sha256": "ab4f46174e8ece9e423c09c827cd2dda5f82b2767c656fb8dc0ae9b041384987"
+  }
+}

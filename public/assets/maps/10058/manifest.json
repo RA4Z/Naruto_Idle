@@ -1,0 +1,86 @@
+{
+  "id": "10058",
+  "name": "Este da Aldeia da Folha",
+  "kind": "lobby",
+  "background": "/assets/maps/10058/background.png",
+  "foreground": "/assets/maps/10058/foreground.png",
+  "thumbnail": "/assets/maps/10058/thumbnail.jpg",
+  "navigation": "/assets/maps/10058/navigation.json",
+  "width": 976.5625,
+  "height": 976.5625,
+  "spawn": {
+    "x": 457.03125,
+    "y": 505.859375
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/10058/",
+  "sourceScene": {
+    "id": "2015001",
+    "mapId": "10058",
+    "time": "1",
+    "type": "1",
+    "name": "Este da Aldeia da Folha",
+    "minLevel": null,
+    "worldMapId": "2015001",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "6aa96b249a2b6223aa9729077bb8544c7495c21e822ab88c9e8677a411afbee2",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015001",
+      "mapId": "10058",
+      "time": "1",
+      "type": "1",
+      "name": "Este da Aldeia da Folha",
+      "minLevel": null,
+      "worldMapId": "2015001",
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 144,
+    "foregroundTiles": 89,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 89,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 1046453,
+      "dimensions": [
+        3000,
+        3000
+      ],
+      "sha256": "1944901177ad64f5711b6b9193e0a569c889b564488bf8077e4b0e8ef3b39f25",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/10058/foreground.webp",
+        "sourceSha256": "1944901177ad64f5711b6b9193e0a569c889b564488bf8077e4b0e8ef3b39f25",
+        "originalBytes": 2893490,
+        "bytes": 2005510,
+        "width": 3000,
+        "height": 3000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/10058/native-alpha.png",
+    "width": 3000,
+    "height": 3000,
+    "sha256": "28dffddf5214ebddaf43ecc877bfca369e9b7fdf188c87ef8f7446eb64f08904"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "id": "300177",
+  "name": "Cenário 300177",
+  "kind": "exploration",
+  "background": "/assets/maps/300177/background.png",
+  "foreground": "/assets/maps/300177/foreground.png",
+  "thumbnail": "/assets/maps/300177/thumbnail.jpg",
+  "navigation": "/assets/maps/300177/navigation.json",
+  "width": 976.5625,
+  "height": 976.5625,
+  "spawn": {
+    "x": 488.28125,
+    "y": 542.3177083333334
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: 组队大逃杀战场; Arena de Batalha de Grupos.",
+  "source": "assets/scene/map/300177/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "300177",
+    "name": "Cenário 300177",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "c44ee0d30be08a229cf16f6672a66e4bd2065a117155fa2574729a929b747fe5",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "1603001",
+      "mapId": "300177",
+      "time": "1",
+      "type": "7",
+      "name": "组队大逃杀战场",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1603002",
+      "mapId": "300177",
+      "time": "1",
+      "type": "22",
+      "name": "Arena de Batalha de Grupos",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 144,
+    "foregroundTiles": 62,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 62,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 877199,
+      "dimensions": [
+        3000,
+        3000
+      ],
+      "sha256": "6b04f8bd4fd604a556ce65c2af4016d8b392c2093fbfae75478d94e597d6c710",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300177/foreground.webp",
+        "sourceSha256": "6b04f8bd4fd604a556ce65c2af4016d8b392c2093fbfae75478d94e597d6c710",
+        "originalBytes": 2136545,
+        "bytes": 1418494,
+        "width": 3000,
+        "height": 3000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300177/native-alpha.png",
+    "width": 3000,
+    "height": 3000,
+    "sha256": "ccbb175c586a0738c44e72a18e46a42f268e6cf3aea8f931a01944f51cf50445"
+  }
+}

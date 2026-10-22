@@ -1,0 +1,111 @@
+{
+  "id": "99999",
+  "name": "Cenário 99999",
+  "kind": "exploration",
+  "background": "/assets/maps/99999/background.png",
+  "foreground": "/assets/maps/99999/foreground.png",
+  "thumbnail": "/assets/maps/99999/thumbnail.jpg",
+  "navigation": "/assets/maps/99999/navigation.json",
+  "width": 1171.875,
+  "height": 781.25,
+  "spawn": {
+    "x": 585.9375,
+    "y": 430.9895833333333
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui.",
+  "source": "assets/scene/map/99999/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "99999",
+    "name": "Cenário 99999",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "584046ac792d9fdf98ee0f6502af5700faa4298926efcbfa2fa3207e69283aaa",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2102001",
+      "mapId": "99999",
+      "time": "1",
+      "type": "2",
+      "name": null,
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2222001",
+      "mapId": "99999",
+      "time": "1",
+      "type": "2",
+      "name": null,
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2993001",
+      "mapId": "99999",
+      "time": "1",
+      "type": "2",
+      "name": null,
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2994001",
+      "mapId": "99999",
+      "time": "1",
+      "type": "2",
+      "name": null,
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 150,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 0,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": true,
+      "alphaLevels": [
+        0
+      ],
+      "nontransparentPixels": 0,
+      "dimensions": [
+        3600,
+        2400
+      ],
+      "sha256": "39c5546d21741cf9f631e03231252b1e0833c26df47eced7515c2b3fc46b71ff",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/99999/foreground.webp",
+        "sourceSha256": "39c5546d21741cf9f631e03231252b1e0833c26df47eced7515c2b3fc46b71ff",
+        "originalBytes": 33621,
+        "bytes": 402,
+        "width": 3600,
+        "height": 2400,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/99999/native-alpha.png",
+    "width": 3600,
+    "height": 2400,
+    "sha256": "8dcd471845923818d439a693cea44b0f093cf3f967fda9a1cb5860c6d1a1d148"
+  }
+}

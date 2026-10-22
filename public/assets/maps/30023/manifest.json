@@ -1,0 +1,183 @@
+{
+  "id": "30023",
+  "name": "Cenário 30023",
+  "kind": "exploration",
+  "background": "/assets/maps/30023/background.png",
+  "foreground": "/assets/maps/30023/foreground.png",
+  "thumbnail": "/assets/maps/30023/thumbnail.jpg",
+  "navigation": "/assets/maps/30023/navigation.json",
+  "width": 976.5625,
+  "height": 488.28125,
+  "spawn": {
+    "x": 488.28125,
+    "y": 271.484375
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] A Batalha na Ponte; [Fase] Proteção da Ponte; 再不斩组队副本; outras registradas no manifesto.",
+  "source": "assets/scene/map/30023/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30023",
+    "name": "Cenário 30023",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "96504589079d470ed74221ea71c50b9e3ec0a18c359ae237baaff707fffaf9b7",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2002001",
+      "mapId": "30023",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] A Batalha na Ponte",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2054001",
+      "mapId": "30023",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Proteção da Ponte",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2059001",
+      "mapId": "30023",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] A Batalha na Ponte",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2220002",
+      "mapId": "30023",
+      "time": "1",
+      "type": "2",
+      "name": "再不斩组队副本",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3002001",
+      "mapId": "30023",
+      "time": "2",
+      "type": "2",
+      "name": "A Batalha na Ponte",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3021001",
+      "mapId": "30023",
+      "time": "2",
+      "type": "2",
+      "name": "A Batalha na Ponte",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3022001",
+      "mapId": "30023",
+      "time": "2",
+      "type": "2",
+      "name": "A Batalha na Ponte",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3023001",
+      "mapId": "30023",
+      "time": "2",
+      "type": "2",
+      "name": "A Batalha na Ponte",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3024001",
+      "mapId": "30023",
+      "time": "2",
+      "type": "2",
+      "name": "A Batalha na Ponte",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3050001",
+      "mapId": "30023",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] A Batalha na Ponte",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1700003",
+      "mapId": "30023",
+      "time": "1",
+      "type": "14",
+      "name": "A ponte do País das Ondas",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 72,
+    "foregroundTiles": 23,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 23,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 227383,
+      "dimensions": [
+        3000,
+        1500
+      ],
+      "sha256": "4b95b1b8f7ebc643f5e45ab2790fecf8f24e94fc7752d8634be000c5e3c398cd",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30023/foreground.webp",
+        "sourceSha256": "4b95b1b8f7ebc643f5e45ab2790fecf8f24e94fc7752d8634be000c5e3c398cd",
+        "originalBytes": 496263,
+        "bytes": 271624,
+        "width": 3000,
+        "height": 1500,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30023/native-alpha.png",
+    "width": 3000,
+    "height": 1500,
+    "sha256": "ed362997de869e4bcbdef4f30da2596baf3d0624c0c17c0133df18a0a1342c8c"
+  }
+}

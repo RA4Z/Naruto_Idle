@@ -1,4 +1,5 @@
 import { t } from "../i18n/core.ts";
+import { animationOrigin } from "./animation-origin";
 import { loadSceneAssets } from "../assets/scene-loader";
 import Phaser from "phaser";
 import type {
@@ -174,6 +175,7 @@ export class ActorAssetCache {
   }
 }
 export class EntityActor extends Phaser.GameObjects.Container {
+  private activeDefinition?: AnimationDef;
   visual: Phaser.GameObjects.Sprite;
   private nameLabel: Phaser.GameObjects.Text;
   manifest: EntityManifest;
@@ -228,12 +230,13 @@ export class EntityActor extends Phaser.GameObjects.Container {
     if (!anim) return;
     const key = actorKey(this.manifest.id, mode, chosen);
     if (!this.scene.anims.exists(key)) return;
+    this.activeDefinition = anim;
     // Battle sprites face the opponent via flipX; world sprites already have
     // their own eight directional frames and must not inherit that mirror.
     if (resetWorldMirror(mode, this.visual.anims.currentAnim?.key))
       this.visual.setFlipX(false);
     this.visual
-      .setOrigin(...anim.origin)
+      .setOrigin(...animationOrigin(anim, 0))
       .setScale(
         actorVisualScale(
           this.manifest.id,
@@ -249,6 +252,10 @@ export class EntityActor extends Phaser.GameObjects.Container {
     }
   }
   tick(paused: boolean) {
+    if (this.activeDefinition)
+      this.visual.setOrigin(
+        ...animationOrigin(this.activeDefinition, this.visual.frame.name),
+      );
     this.setDepth(this.y);
     if (paused) this.visual.anims.pause();
     else this.visual.anims.resume();

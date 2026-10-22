@@ -15,10 +15,20 @@ Atualizado em 21/10/2026. Este arquivo descreve o estado vigente. O [histórico 
 
 ## Produto e código
 
+### Integração de 21–22/10: mapas e fila de animações
+
+Os 145 conjuntos foram preparados; 129 novos têm validação integral do alpha, igualdade RGBA do WebP frontal e hashes preservados. Viagens distingue mundo/legado, cenários de fases e cenários sem identificação; estes últimos não anunciam campanhas/recompensas prontas. As 31 ações pendentes em 30 modelos foram reconstruídas em atlas compactos com origem por quadro; 124 amostras conferidas independentemente no espaço do SWF. A auditoria de namespaces agora tem zero pendências; externalEffects parcial continua explícito.
+
+Validação: 274 testes de domínio, 25 de servidor/assets e oito Python passaram; typecheck e 1.209 mensagens em três idiomas aprovados. Navegador validou caminhada/viagens, retomada do cenário 10002 após reload, cenário 30052, dois oponentes/duas vitórias/jutsus na caverna 10039 e retorno à Folha. Os 31 atlas decodificaram no navegador; amostras WebGL e Canvas passaram. Uma compilação local separada com Auth fictício validou Konoha → Chuva; o dist final é gerado separadamente sem essa configuração. Relatórios: delivery-integration-summary.json, delivery-browser-validation.json, compact-animation-validation.json e alpha-delivery-*.json em reports/. Documentação: [INTEGRACAO_ACERVO_ENTREGUE.md](docs/INTEGRACAO_ACERVO_ENTREGUE.md).
+
+Os erros encontrados na inspeção foram corrigidos: viagem entre áreas seguras com roster vazio; inicialização/restauração de cenários seguros; NPCs da Folha fora de Konoha; rótulos/mensagens de área segura; glob privado do Vite que bloqueava o projeto quando a pasta ancestral se chamava assets-extraidos. Proteções de credenciais e intermediários permanecem ativas. Nenhum banco/conta real foi alterado. Não usar fixtures, snapshots antigos de localStorage ou bundles de QA na publicação.
+
+O usuário pediu continuidade de **toda a extração**, não apenas este lote. Próximo passo concreto após registrar/enviar esta etapa: 195 artes de loading restantes, depois demais efeitos/áudio/interface e dependências reais dos modelos bloqueados. Conteúdo narrativo e profundidade por objeto continuam separados de simples extração. Git local autorizado com autor Felipe <fegugelmin@gmail.com>; não trocar URL do origin nem usar a identidade dos commits antigos.
+
 - Phaser 3.90, TypeScript 5.9, Vite 7.1.12; frontend em src/, API local em server/.
 - Novo jogo escolhe Naruto 11000101, Sasuke azul/branco 11000211 ou Sakura 11000301. Sasuke preto 11000201 permanece reservado. Skills do Sasuke azul foram regeneradas do original, sem o fallback histórico.
 - Um personagem controlado por vez. Nível, XP, treino e equipamento individuais; XP online/offline somente do ativo. Party continua adiada.
-- 16 mapas funcionais de 145 conjuntos identificados; 129 restantes. Navegação nativa, patrulhas, encontros, recompensas, viagens e persistência.
+- 145 conjuntos preparados e acessíveis por Viagens (129 novos nesta integração). Catálogo: 55 destinos do mundo/legado, 69 cenários de fases e 21 a identificar. Os 90 cenários das duas últimas categorias permitem caminhada segura; não executam campanhas/recompensas originais. Os 16 destinos anteriores e suas regras foram preservados. Novos encontros de caça são adaptações explícitas; habitantes não são inventados em outras vilas.
 - Máscaras frontais nativas recuperadas. Profundidade por objeto/SWF intermediário ainda pendente. Não reativar recortes opacos de background.jpg.
 - 22 equipamentos em três caminhos e três graus, cinco missões, recrutamento, jutsus dos iniciais, loja, coleção e arena local autoritativa. Recrutas têm oito estilos por família, crescimento e técnicas genéricas autorais, sem herdar jutsus de outros modelos. Todos os recrutáveis atuais com exploração/combate têm família configurada.
 - Onze modelos inimigos dos mapas têm perfis de caçador/brutamontes/assassino/blindado/conjurador/curandeiro; uma elite por grupo de seis, identificação dourada e recompensas próprias. Cura inimiga limitada a três usos por encontro. Dificuldades selecionáveis em Viagens nos níveis 1/5/12/25; graus de equipamento I/II/III exigem nível 1/5/12. Drop de elite limitado pelo nível e pela dificuldade.
@@ -70,4 +80,4 @@ Etapa de estabilidade/QoL concluída: 102 testes de domínio, 21 servidor/assets
 
 Consultar docs/ESTABILIDADE_E_QOL.md e reports/qol-validation.json para o resultado desta etapa. Os relatórios anteriores de mapas, animações, loading, arena e i18n continuam em reports/. Não confundir contagens históricas de testes com execução atual.
 
-Próximas prioridades de conteúdo: recuperação dos originais em lotes; 31 ações/30 modelos da auditoria externa; objetos modulares e profundidade; demais mapas, sons, efeitos e artes. Portais originais ficam após a recuperação prioritária, usando ligações e coordenadas comprovadas.
+Prioridades após a integração do acervo entregue: cenários narrativos/populações/encontros apropriados dos mapas recuperados; objetos modulares e profundidade; símbolos externos específicos, demais sons, efeitos e artes. As 31 ações/30 modelos da fila externa foram reconstruídas e conferidas em pixels/tempo/origem; externalEffects continua explícito quando depende de recursos compartilhados. Portais originais ficam após a recuperação prioritária, usando ligações e coordenadas comprovadas. Ver docs/INTEGRACAO_ACERVO_ENTREGUE.md para os estados e limites desta entrega.

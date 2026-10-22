@@ -1,0 +1,116 @@
+{
+  "id": "300189",
+  "name": "Campo de Batalha: Os Sete Espadachins Ninja",
+  "kind": "lobby",
+  "background": "/assets/maps/300189/background.png",
+  "foreground": "/assets/maps/300189/foreground.png",
+  "thumbnail": "/assets/maps/300189/thumbnail.jpg",
+  "navigation": "/assets/maps/300189/navigation.json",
+  "width": 1074.21875,
+  "height": 748.6979166666666,
+  "spawn": {
+    "x": 485.02604166666663,
+    "y": 471.0286458333333
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/300189/",
+  "sourceScene": {
+    "id": "2015035",
+    "mapId": "300189",
+    "time": "1",
+    "type": "1",
+    "name": "Campo de Batalha: Os Sete Espadachins Ninja",
+    "minLevel": null,
+    "worldMapId": "2015035",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "7c5e8362e6d3c3c2a816a1b1c432713dc0aea1e58eb1474c9e9738a78834d37a",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015035",
+      "mapId": "300189",
+      "time": "1",
+      "type": "1",
+      "name": "Campo de Batalha: Os Sete Espadachins Ninja",
+      "minLevel": null,
+      "worldMapId": "2015035",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2982001",
+      "mapId": "300189",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Inimigo do Destino",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2985001",
+      "mapId": "300189",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Os Sete Espadachins Ninja II",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1700015",
+      "mapId": "300189",
+      "time": "1",
+      "type": "14",
+      "name": "Floresta de Coníferas",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 117,
+    "foregroundTiles": 43,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 43,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 329033,
+      "dimensions": [
+        3300,
+        2300
+      ],
+      "sha256": "d9bb3a35fb10b6c10d97573dc33a4f9b203862a77aa968d5dc97280f0e2ae297",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300189/foreground.webp",
+        "sourceSha256": "d9bb3a35fb10b6c10d97573dc33a4f9b203862a77aa968d5dc97280f0e2ae297",
+        "originalBytes": 954738,
+        "bytes": 639210,
+        "width": 3300,
+        "height": 2300,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300189/native-alpha.png",
+    "width": 3300,
+    "height": 2300,
+    "sha256": "4d870a9b32367d1d6ff885c6ecedfaf081a78122b5b0d6793ca09101ddb2e594"
+  }
+}

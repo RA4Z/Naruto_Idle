@@ -1,0 +1,86 @@
+{
+  "id": "30077",
+  "name": "Sala da Base de Orochimaru",
+  "kind": "lobby",
+  "background": "/assets/maps/30077/background.png",
+  "foreground": "/assets/maps/30077/foreground.png",
+  "thumbnail": "/assets/maps/30077/thumbnail.jpg",
+  "navigation": "/assets/maps/30077/navigation.json",
+  "width": 358.0729166666667,
+  "height": 325.5208333333333,
+  "spawn": {
+    "x": 179.03645833333334,
+    "y": 176.10677083333334
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/30077/",
+  "sourceScene": {
+    "id": "2015014",
+    "mapId": "30077",
+    "time": "1",
+    "type": "1",
+    "name": "Sala da Base de Orochimaru",
+    "minLevel": null,
+    "worldMapId": "2015014",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "31160c0edebe4f4ebf02e642142bc694459be5bd2ef48db3aef2388296ea45bb",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015014",
+      "mapId": "30077",
+      "time": "1",
+      "type": "1",
+      "name": "Sala da Base de Orochimaru",
+      "minLevel": null,
+      "worldMapId": "2015014",
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 20,
+    "foregroundTiles": 8,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 8,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 91208,
+      "dimensions": [
+        1100,
+        1000
+      ],
+      "sha256": "1f462dd3f72bc0f736c10f71e29c56eaa0b8e32639ecf44f1943c3dd6058611b",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30077/foreground.webp",
+        "sourceSha256": "1f462dd3f72bc0f736c10f71e29c56eaa0b8e32639ecf44f1943c3dd6058611b",
+        "originalBytes": 73808,
+        "bytes": 41234,
+        "width": 1100,
+        "height": 1000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30077/native-alpha.png",
+    "width": 1100,
+    "height": 1000,
+    "sha256": "9b0a5913fb5d6c008029653e0ae049b2a7f085fe9a9116e146778c1e214d59db"
+  }
+}

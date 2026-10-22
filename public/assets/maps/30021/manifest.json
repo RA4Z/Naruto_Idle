@@ -1,0 +1,139 @@
+{
+  "id": "30021",
+  "name": "Floresta do País das Ondas",
+  "kind": "adventure",
+  "background": "/assets/maps/30021/background.png",
+  "foreground": "/assets/maps/30021/foreground.png",
+  "thumbnail": "/assets/maps/30021/thumbnail.jpg",
+  "navigation": "/assets/maps/30021/navigation.json",
+  "width": 813.8020833333334,
+  "height": 976.5625,
+  "spawn": {
+    "x": 396.484375,
+    "y": 525.7161458333334
+  },
+  "enemies": [
+    "19000301",
+    "19000701"
+  ],
+  "description": "Explore a área original recuperada. Encontros adaptados para o idle.",
+  "source": "assets/scene/map/30021/",
+  "sourceScene": {
+    "id": "1006001",
+    "mapId": "30021",
+    "time": "1",
+    "type": "1",
+    "name": "Floresta do País das Ondas",
+    "minLevel": null,
+    "worldMapId": "1006001",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "332617e395c7a3721b5b945ab6487472c770b91b4022f400b2dd676c83c21e30",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "1006001",
+      "mapId": "30021",
+      "time": "1",
+      "type": "1",
+      "name": "Floresta do País das Ondas",
+      "minLevel": null,
+      "worldMapId": "1006001",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2053001",
+      "mapId": "30021",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] O demônio Zabuza",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2055001",
+      "mapId": "30021",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Exercício de Grupos",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2060001",
+      "mapId": "30021",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Treino Solitário",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2461001",
+      "mapId": "30021",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Combate contra Sakon e Ukon",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1700002",
+      "mapId": "30021",
+      "time": "1",
+      "type": "14",
+      "name": "Rio da Floresta",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Authored idle-RPG encounters, not original story rules.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 120,
+    "foregroundTiles": 61,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 61,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 631918,
+      "dimensions": [
+        2500,
+        3000
+      ],
+      "sha256": "20d2bc2de5e7e3836d58e6917aee3d78e401e0acfb641b2b65b64912dca1769d",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30021/foreground.webp",
+        "sourceSha256": "20d2bc2de5e7e3836d58e6917aee3d78e401e0acfb641b2b65b64912dca1769d",
+        "originalBytes": 1814228,
+        "bytes": 1195080,
+        "width": 2500,
+        "height": 3000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30021/native-alpha.png",
+    "width": 2500,
+    "height": 3000,
+    "sha256": "90bf4a2c85cdeb41f1a89fe2491a3df3a25615e77674e0211150aa1889322841"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "id": "300188",
+  "name": "Base da Unidade de Comando",
+  "kind": "lobby",
+  "background": "/assets/maps/300188/background.png",
+  "foreground": "/assets/maps/300188/foreground.png",
+  "thumbnail": "/assets/maps/300188/thumbnail.jpg",
+  "navigation": "/assets/maps/300188/navigation.json",
+  "width": 748.6979166666666,
+  "height": 716.1458333333334,
+  "spawn": {
+    "x": 291.015625,
+    "y": 255.53385416666666
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/300188/",
+  "sourceScene": {
+    "id": "2015034",
+    "mapId": "300188",
+    "time": "1",
+    "type": "1",
+    "name": "Base da Unidade de Comando",
+    "minLevel": null,
+    "worldMapId": "2015034",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "df6b2046c47cb23beb73c6886a8e852053d36afd42c732ee0794e2da18c4e4d4",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015034",
+      "mapId": "300188",
+      "time": "1",
+      "type": "1",
+      "name": "Base da Unidade de Comando",
+      "minLevel": null,
+      "worldMapId": "2015034",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2981001",
+      "mapId": "300188",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Verdadeira Arte",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1700016",
+      "mapId": "300188",
+      "time": "1",
+      "type": "14",
+      "name": "Base da Unidade de Comando",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 81,
+    "foregroundTiles": 24,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 24,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 161211,
+      "dimensions": [
+        2300,
+        2200
+      ],
+      "sha256": "004a155dc46698987fef43e06e563129e8c058ed1d6e2be935df835ed4eb2fd9",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300188/foreground.webp",
+        "sourceSha256": "004a155dc46698987fef43e06e563129e8c058ed1d6e2be935df835ed4eb2fd9",
+        "originalBytes": 476068,
+        "bytes": 302998,
+        "width": 2300,
+        "height": 2200,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300188/native-alpha.png",
+    "width": 2300,
+    "height": 2200,
+    "sha256": "4c508ccad98f8056930d12b7fea6f46cb7cd025e3efff8a1b45e4fbf6508287a"
+  }
+}

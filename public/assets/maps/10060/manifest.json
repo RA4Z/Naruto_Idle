@@ -1,0 +1,86 @@
+{
+  "id": "10060",
+  "name": "Oeste da Aldeia da Folha",
+  "kind": "lobby",
+  "background": "/assets/maps/10060/background.png",
+  "foreground": "/assets/maps/10060/foreground.png",
+  "thumbnail": "/assets/maps/10060/thumbnail.jpg",
+  "navigation": "/assets/maps/10060/navigation.json",
+  "width": 878.90625,
+  "height": 1171.875,
+  "spawn": {
+    "x": 439.453125,
+    "y": 639.6484375
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/10060/",
+  "sourceScene": {
+    "id": "2015004",
+    "mapId": "10060",
+    "time": "1",
+    "type": "1",
+    "name": "Oeste da Aldeia da Folha",
+    "minLevel": null,
+    "worldMapId": "2015004",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "281a9220488afd797ced75879a4624f4a2d7106520989f26b1bc5f81d497a500",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015004",
+      "mapId": "10060",
+      "time": "1",
+      "type": "1",
+      "name": "Oeste da Aldeia da Folha",
+      "minLevel": null,
+      "worldMapId": "2015004",
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 165,
+    "foregroundTiles": 75,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 75,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 685285,
+      "dimensions": [
+        2700,
+        3600
+      ],
+      "sha256": "5ba4510d634d1d6db38bfc5d73f7750cc65f3610c09109c7c58efe195f3d6794",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/10060/foreground.webp",
+        "sourceSha256": "5ba4510d634d1d6db38bfc5d73f7750cc65f3610c09109c7c58efe195f3d6794",
+        "originalBytes": 1836055,
+        "bytes": 1229424,
+        "width": 2700,
+        "height": 3600,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/10060/native-alpha.png",
+    "width": 2700,
+    "height": 3600,
+    "sha256": "77ad650dfb4bcf1df8246b33b9f84be17ca1f3d2be0e6aac86a9ce3401419ff0"
+  }
+}

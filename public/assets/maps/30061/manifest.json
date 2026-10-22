@@ -1,0 +1,93 @@
+{
+  "id": "30061",
+  "name": "Cenário 30061",
+  "kind": "exploration",
+  "background": "/assets/maps/30061/background.png",
+  "foreground": "/assets/maps/30061/foreground.png",
+  "thumbnail": "/assets/maps/30061/thumbnail.jpg",
+  "navigation": "/assets/maps/30061/navigation.json",
+  "width": 488.28125,
+  "height": 325.5208333333333,
+  "spawn": {
+    "x": 244.140625,
+    "y": 174.8046875
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: Terraço do Hospital; [Fase] Declaração de Guerra ao Naruto.",
+  "source": "assets/scene/map/30061/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30061",
+    "name": "Cenário 30061",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "77360be0a8c6f67d1d35689851946f6dd57e758fc616447787a358f532b93020",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "1501003",
+      "mapId": "30061",
+      "time": "1",
+      "type": "3",
+      "name": "Terraço do Hospital",
+      "minLevel": null,
+      "worldMapId": "1501001",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2446001",
+      "mapId": "30061",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Declaração de Guerra ao Naruto",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 24,
+    "foregroundTiles": 11,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 11,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 106183,
+      "dimensions": [
+        1500,
+        1000
+      ],
+      "sha256": "23b2d173c4c834be429b7881088b33f1376744df28291fee7264f7ef67802c59",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30061/foreground.webp",
+        "sourceSha256": "23b2d173c4c834be429b7881088b33f1376744df28291fee7264f7ef67802c59",
+        "originalBytes": 337918,
+        "bytes": 217236,
+        "width": 1500,
+        "height": 1000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30061/native-alpha.png",
+    "width": 1500,
+    "height": 1000,
+    "sha256": "2d67f9c793e4490707d2d21c75cbd36f18cffea9c68301c988def4c9394f4f7c"
+  }
+}

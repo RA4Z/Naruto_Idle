@@ -1,0 +1,91 @@
+{
+  "id": "30102",
+  "name": "Cenário 30102",
+  "kind": "exploration",
+  "background": "/assets/maps/30102/background.png",
+  "foreground": "/assets/maps/30102/foreground.png",
+  "thumbnail": "/assets/maps/30102/thumbnail.jpg",
+  "navigation": "/assets/maps/30102/navigation.json",
+  "width": 423.1770833333333,
+  "height": 325.5208333333333,
+  "spawn": {
+    "x": 211.58854166666666,
+    "y": 162.43489583333334
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: Sala de Aula (3); Sala do Exame Chuunin.",
+  "source": "assets/scene/map/30102/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30102",
+    "name": "Cenário 30102",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "f02ba0f901c9f332f4181b76791af415767893dc5299a9ef08cbe832dade3b3f",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "1502004",
+      "mapId": "30102",
+      "time": "1",
+      "type": "3",
+      "name": "Sala de Aula (3)",
+      "minLevel": null,
+      "worldMapId": "1502001",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2114001",
+      "mapId": "30102",
+      "time": "1",
+      "type": "2",
+      "name": "Sala do Exame Chuunin",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 24,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 0,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": true,
+      "alphaLevels": [
+        0
+      ],
+      "nontransparentPixels": 0,
+      "dimensions": [
+        1300,
+        1000
+      ],
+      "sha256": "5b70fcf297424741665148109395070c9094a96629ebbbb2c8ebb75fc1bfe42e",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30102/foreground.webp",
+        "sourceSha256": "5b70fcf297424741665148109395070c9094a96629ebbbb2c8ebb75fc1bfe42e",
+        "originalBytes": 5119,
+        "bytes": 94,
+        "width": 1300,
+        "height": 1000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30102/native-alpha.png",
+    "width": 1300,
+    "height": 1000,
+    "sha256": "2e5372a3aa34cd613f6f3551a6fd429fde1de7fcfd1b90eeefbd6eae4723b635"
+  }
+}

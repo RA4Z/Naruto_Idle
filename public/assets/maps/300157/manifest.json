@@ -1,0 +1,91 @@
+{
+  "id": "300157",
+  "name": "Cenário 300157",
+  "kind": "exploration",
+  "background": "/assets/maps/300157/background.png",
+  "foreground": "/assets/maps/300157/foreground.png",
+  "thumbnail": "/assets/maps/300157/thumbnail.jpg",
+  "navigation": "/assets/maps/300157/navigation.json",
+  "width": 651.0416666666666,
+  "height": 651.0416666666666,
+  "spawn": {
+    "x": 325.5208333333333,
+    "y": 363.28125
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [测试用]跨服战场; [Fase] Ódio e Entendimento.",
+  "source": "assets/scene/map/300157/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "300157",
+    "name": "Cenário 300157",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "b360db8df4c2079381a2d906fc2c1c8a05aca027270f26eef8f10b4fd240933b",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "1600099",
+      "mapId": "300157",
+      "time": "1",
+      "type": "2",
+      "name": "[测试用]跨服战场",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2856001",
+      "mapId": "300157",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Ódio e Entendimento",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 64,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 0,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": true,
+      "alphaLevels": [
+        0
+      ],
+      "nontransparentPixels": 0,
+      "dimensions": [
+        2000,
+        2000
+      ],
+      "sha256": "6502f42283a772653138800a6221021356e134850dc829677ab6a629ca4853bf",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300157/foreground.webp",
+        "sourceSha256": "6502f42283a772653138800a6221021356e134850dc829677ab6a629ca4853bf",
+        "originalBytes": 15599,
+        "bytes": 208,
+        "width": 2000,
+        "height": 2000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300157/native-alpha.png",
+    "width": 2000,
+    "height": 2000,
+    "sha256": "53d6418216656d301602296904319ec20f91d39c26a75e12e09010540075e0ef"
+  }
+}

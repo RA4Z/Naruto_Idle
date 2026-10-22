@@ -1,0 +1,81 @@
+{
+  "id": "30062",
+  "name": "Cenário 30062",
+  "kind": "exploration",
+  "background": "/assets/maps/30062/background.png",
+  "foreground": "/assets/maps/30062/foreground.png",
+  "thumbnail": "/assets/maps/30062/thumbnail.jpg",
+  "navigation": "/assets/maps/30062/navigation.json",
+  "width": 325.5208333333333,
+  "height": 211.58854166666666,
+  "spawn": {
+    "x": 162.76041666666666,
+    "y": 111.328125
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: Hall do Primeiro Piso do Hospital.",
+  "source": "assets/scene/map/30062/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30062",
+    "name": "Cenário 30062",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "0307403050902b712e660c66d67df7808fb47b8bfe8af45534811b5a56d1d464",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "1501001",
+      "mapId": "30062",
+      "time": "1",
+      "type": "3",
+      "name": "Hall do Primeiro Piso do Hospital",
+      "minLevel": null,
+      "worldMapId": "1501001",
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 12,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 0,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": true,
+      "alphaLevels": [
+        0
+      ],
+      "nontransparentPixels": 0,
+      "dimensions": [
+        1000,
+        650
+      ],
+      "sha256": "f283709a4aea015afe078407fee498594dd8b7185c43771c0064919e4f3b3cd2",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30062/foreground.webp",
+        "sourceSha256": "f283709a4aea015afe078407fee498594dd8b7185c43771c0064919e4f3b3cd2",
+        "originalBytes": 2600,
+        "bytes": 66,
+        "width": 1000,
+        "height": 650,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30062/native-alpha.png",
+    "width": 1000,
+    "height": 650,
+    "sha256": "addab7b62827a18971995289f43fc21d62bdbdf33f6059f67fc9d67a17795771"
+  }
+}

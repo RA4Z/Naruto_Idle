@@ -1,0 +1,104 @@
+{
+  "id": "300181",
+  "name": "Exterior da Arena",
+  "kind": "lobby",
+  "background": "/assets/maps/300181/background.png",
+  "foreground": "/assets/maps/300181/foreground.png",
+  "thumbnail": "/assets/maps/300181/thumbnail.jpg",
+  "navigation": "/assets/maps/300181/navigation.json",
+  "width": 878.90625,
+  "height": 651.0416666666666,
+  "spawn": {
+    "x": 439.453125,
+    "y": 358.3984375
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/300181/",
+  "sourceScene": {
+    "id": "2015026",
+    "mapId": "300181",
+    "time": "1",
+    "type": "1",
+    "name": "Exterior da Arena",
+    "minLevel": null,
+    "worldMapId": "2015027",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "176444e502cdacbf34666fc9712350c114e77a8466ee3e2884d170d3e6477e75",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015026",
+      "mapId": "300181",
+      "time": "1",
+      "type": "1",
+      "name": "Exterior da Arena",
+      "minLevel": null,
+      "worldMapId": "2015027",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2921001",
+      "mapId": "300181",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Tempestade de Relâmpago",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2926001",
+      "mapId": "300181",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Time Taka",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 88,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 0,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": true,
+      "alphaLevels": [
+        0
+      ],
+      "nontransparentPixels": 0,
+      "dimensions": [
+        2700,
+        2000
+      ],
+      "sha256": "537a3dfdbb3aece0eb49fe8e9f3d2a47d4b41a002e269b5fc5361825657e3433",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300181/foreground.webp",
+        "sourceSha256": "537a3dfdbb3aece0eb49fe8e9f3d2a47d4b41a002e269b5fc5361825657e3433",
+        "originalBytes": 21038,
+        "bytes": 268,
+        "width": 2700,
+        "height": 2000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300181/native-alpha.png",
+    "width": 2700,
+    "height": 2000,
+    "sha256": "fde41ba3e5785c78861eb421ba14ce5a1c1e70ff83099e0f246ab8dc68681d96"
+  }
+}

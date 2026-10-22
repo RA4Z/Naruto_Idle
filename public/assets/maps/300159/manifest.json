@@ -1,0 +1,83 @@
+{
+  "id": "300159",
+  "name": "Cenário 300159",
+  "kind": "exploration",
+  "background": "/assets/maps/300159/background.png",
+  "foreground": "/assets/maps/300159/foreground.png",
+  "thumbnail": "/assets/maps/300159/thumbnail.jpg",
+  "navigation": "/assets/maps/300159/navigation.json",
+  "width": 976.5625,
+  "height": 618.4895833333334,
+  "spawn": {
+    "x": 467.44791666666663,
+    "y": 427.734375
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] As Profundezas da Memória.",
+  "source": "assets/scene/map/300159/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "300159",
+    "name": "Cenário 300159",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "03ba89ce59003c79bd1e38267f3356036962e596564bc5a15124e7f7f31d17bb",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2826001",
+      "mapId": "300159",
+      "time": "3",
+      "type": "2",
+      "name": "[Fase] As Profundezas da Memória",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 96,
+    "foregroundTiles": 73,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 73,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 633049,
+      "dimensions": [
+        3000,
+        1900
+      ],
+      "sha256": "619f44b14ad4ff117330545748968200d06fdfc8e86c3f61ae0dbedcd16751e2",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300159/foreground.webp",
+        "sourceSha256": "619f44b14ad4ff117330545748968200d06fdfc8e86c3f61ae0dbedcd16751e2",
+        "originalBytes": 998755,
+        "bytes": 504900,
+        "width": 3000,
+        "height": 1900,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300159/native-alpha.png",
+    "width": 3000,
+    "height": 1900,
+    "sha256": "4310caf3bf2c42ef06749f919305b481dc002444e8ff9fb4337c481bcc8823e6"
+  }
+}

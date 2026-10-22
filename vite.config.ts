@@ -1,10 +1,15 @@
 import { createGameApi } from "./server/game-api.mjs";
-import { defineConfig } from "vite";
+import { defineConfig, normalizePath } from "vite";
 import { createReadStream } from "node:fs";
 import { stat } from "node:fs/promises";
 import { resolve, sep, extname } from "node:path";
 import { fileURLToPath } from "node:url";
 const publicRoot = fileURLToPath(new URL("./public/", import.meta.url));
+// Match this project's private outputs, not an identically named ancestor.
+const privateExtractionGlob =
+  normalizePath(
+    fileURLToPath(new URL("./assets-extraidos/", import.meta.url)),
+  ) + "**";
 export default defineConfig({
   define: {
     "import.meta.env.ADMIN_CONSOLE": JSON.stringify(
@@ -97,7 +102,7 @@ export default defineConfig({
   server: {
     watch: {
       ignored: [
-        "**/assets-extraidos/**",
+        privateExtractionGlob,
         "**/reports/**",
         "**/tools/**",
         "**/public/assets/characters/**",
@@ -117,7 +122,7 @@ export default defineConfig({
         "**/.env.*",
         "**/.git/**",
         "*.{crt,pem}",
-        "**/assets-extraidos/**",
+        privateExtractionGlob,
       ],
     },
   },

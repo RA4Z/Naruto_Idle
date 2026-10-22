@@ -1,0 +1,108 @@
+{
+  "id": "300183",
+  "name": "Portão do País do Ferro",
+  "kind": "adventure",
+  "background": "/assets/maps/300183/background.png",
+  "foreground": "/assets/maps/300183/foreground.png",
+  "thumbnail": "/assets/maps/300183/thumbnail.jpg",
+  "navigation": "/assets/maps/300183/navigation.json",
+  "width": 781.25,
+  "height": 585.9375,
+  "spawn": {
+    "x": 390.625,
+    "y": 320.3125
+  },
+  "enemies": [
+    "19002301"
+  ],
+  "description": "Explore a área original recuperada. Encontros adaptados para o idle.",
+  "source": "assets/scene/map/300183/",
+  "sourceScene": {
+    "id": "2015025",
+    "mapId": "300183",
+    "time": "1",
+    "type": "1",
+    "name": "Portão do País do Ferro",
+    "minLevel": null,
+    "worldMapId": "2015025",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "7c6a1ae18c705e03b341149959e09ffb3ec89c0677002f630800744eeb5b430f",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015025",
+      "mapId": "300183",
+      "time": "1",
+      "type": "1",
+      "name": "Portão do País do Ferro",
+      "minLevel": null,
+      "worldMapId": "2015025",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2916001",
+      "mapId": "300183",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Guarda do País do Ferro",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2931001",
+      "mapId": "300183",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Kekkei Genkai Duplo",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Authored idle-RPG encounters, not original story rules.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 80,
+    "foregroundTiles": 47,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 47,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 1094760,
+      "dimensions": [
+        2400,
+        1800
+      ],
+      "sha256": "7743557d840e219eb2981dcccd65154c4406f319cca6de7afe7183edcf622896",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300183/foreground.webp",
+        "sourceSha256": "7743557d840e219eb2981dcccd65154c4406f319cca6de7afe7183edcf622896",
+        "originalBytes": 1814828,
+        "bytes": 1107638,
+        "width": 2400,
+        "height": 1800,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300183/native-alpha.png",
+    "width": 2400,
+    "height": 1800,
+    "sha256": "1e7e932e10eabeffdb6b1b29372a8ec537104100b2c78b569f8d4d472bfddb0f"
+  }
+}

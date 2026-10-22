@@ -1,0 +1,130 @@
+{
+  "policy": "one map at a time; explicit IDs; existing entries and original files preserved",
+  "maps": [
+    {
+      "id": "300157",
+      "state": "integrated-awaiting-tests",
+      "sourceScene": {
+        "id": null,
+        "mapId": "300157",
+        "name": "Cenário 300157",
+        "type": null,
+        "identity": "scenario-reference"
+      },
+      "sources": [
+        {
+          "path": "assets/scene/map/300157/MapInfo.map",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 17031,
+          "sha256": "b360db8df4c2079381a2d906fc2c1c8a05aca027270f26eef8f10b4fd240933b",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300157/_scene_bg.xml",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 545,
+          "sha256": "5b08c06d448c4575fdc0170582730ac3574e909b92e68bd9d4dc724022b55866",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "config/world/SceneCFG.xml",
+          "tag": "PT_NarutoAlpha9.31Build300",
+          "bytes": 6805,
+          "sha256": "efea068f921282d9f13cbede5e1da18df6a354072432491a397cc830cc78426a",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300157/ImgItem/0595f77037a2610139b619a6cde61edc.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 587,
+          "sha256": "69b5757cfdd2c947b17ae152a09a9dde7b419d04994a94ea9afd106e3dd45d13",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300157/ImgItem/6a58fb0a40158fe4cb8e6dded2cb4e18.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 646,
+          "sha256": "a92b7f48588123779fe338d81a33bd6ad59be49bfa6b8251764c454854439488",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300157/ImgItem/ae87e51940e8476f4b49d5136e845d8c.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 718,
+          "sha256": "2ada7e3f1a70a12010809482b132db0970c81ae0c2e307026e3d2911f31aa113",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300157/ImgItem/e6de5b210e1d505228c548fa91025c8b.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 646,
+          "sha256": "8daf74718842667987ee1129fdcc28954b27302735cdf7fe207368efc46a18d7",
+          "sourceKind": "exported-inventory"
+        }
+      ],
+      "foreground": {
+        "id": "300157",
+        "state": "integrated-awaiting-browser-validation",
+        "foreground": {
+          "method": "native-alpha-map-and-original-tile-rectangles-v1",
+          "foregroundRects": 0,
+          "opaqueGroundCutouts": false,
+          "emptyNativeLayer": true,
+          "alphaLevels": [
+            0
+          ],
+          "nontransparentPixels": 0,
+          "dimensions": [
+            2000,
+            2000
+          ],
+          "sha256": "6502f42283a772653138800a6221021356e134850dc829677ab6a629ca4853bf",
+          "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+          "limits": [
+            "Native global translucent front layer; not per-object Y sorting.",
+            "Middleground SWF objects require a separate conversion."
+          ],
+          "optimizedRuntime": {
+            "url": "/assets/maps/300157/foreground.webp",
+            "sourceSha256": "6502f42283a772653138800a6221021356e134850dc829677ab6a629ca4853bf",
+            "originalBytes": 15599,
+            "bytes": 208,
+            "width": 2000,
+            "height": 2000,
+            "lossless": true
+          }
+        },
+        "sources": [
+          {
+            "path": "assets/scene/map/300157/_scene_bg.xml",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 545,
+            "sha256": "5b08c06d448c4575fdc0170582730ac3574e909b92e68bd9d4dc724022b55866",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300157/_scene_fg.xml",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 49,
+            "sha256": "1d41dcf5ba1de4b4d92b00b18789113af9aa14f87a8b5248dce8c621f4b8a9a7",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300157/alphaMap.png",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 607,
+            "sha256": "53d6418216656d301602296904319ec20f91d39c26a75e12e09010540075e0ef",
+            "sourceKind": "exported-inventory"
+          }
+        ],
+        "virtualPngReferences": 0,
+        "missingForegroundDependencies": []
+      },
+      "limits": [
+        "Middleground animation pending",
+        "No per-object Y sorting",
+        "Enemy roster and idle rules are authored, not copied"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "id": "1604001",
+  "name": "Cenário 1604001",
+  "kind": "exploration",
+  "background": "/assets/maps/1604001/background.png",
+  "foreground": "/assets/maps/1604001/foreground.png",
+  "thumbnail": "/assets/maps/1604001/thumbnail.jpg",
+  "navigation": "/assets/maps/1604001/navigation.json",
+  "width": 455.72916666666663,
+  "height": 292.96875,
+  "spawn": {
+    "x": 227.86458333333331,
+    "y": 162.109375
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: Cidade Tanzaku À Noite.",
+  "source": "assets/scene/map/1604001/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "1604001",
+    "name": "Cenário 1604001",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "e5b0055d9efd4631ffbfb74591f36f7ab859b90a934d137c09ec1c68179ffa3a",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "1604001",
+      "mapId": "1604001",
+      "time": "2",
+      "type": "8",
+      "name": "Cidade Tanzaku À Noite",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 24,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 0,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": true,
+      "alphaLevels": [
+        0
+      ],
+      "nontransparentPixels": 0,
+      "dimensions": [
+        1400,
+        900
+      ],
+      "sha256": "ac514ceb529cafce9db26724e7a56a6385a4601dd3b6007c44988ed476dfd15b",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/1604001/foreground.webp",
+        "sourceSha256": "ac514ceb529cafce9db26724e7a56a6385a4601dd3b6007c44988ed476dfd15b",
+        "originalBytes": 4965,
+        "bytes": 92,
+        "width": 1400,
+        "height": 900,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/1604001/native-alpha.png",
+    "width": 1400,
+    "height": 900,
+    "sha256": "0070b8b5b9e8442ba7dbb0c9624dc3421e51168afec1b511ab0425dfa7ca0071"
+  }
+}

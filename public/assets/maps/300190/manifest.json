@@ -1,0 +1,93 @@
+{
+  "id": "300190",
+  "name": "Cenário 300190",
+  "kind": "exploration",
+  "background": "/assets/maps/300190/background.png",
+  "foreground": "/assets/maps/300190/foreground.png",
+  "thumbnail": "/assets/maps/300190/thumbnail.jpg",
+  "navigation": "/assets/maps/300190/navigation.json",
+  "width": 1074.21875,
+  "height": 748.6979166666666,
+  "spawn": {
+    "x": 485.02604166666663,
+    "y": 471.0286458333333
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Estilo Calor, Heroína da Areia; [Fase] Os Sete Espadachins Ninja I.",
+  "source": "assets/scene/map/300190/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "300190",
+    "name": "Cenário 300190",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "7c5e8362e6d3c3c2a816a1b1c432713dc0aea1e58eb1474c9e9738a78834d37a",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2983001",
+      "mapId": "300190",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Estilo Calor, Heroína da Areia",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2984001",
+      "mapId": "300190",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Os Sete Espadachins Ninja I",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 117,
+    "foregroundTiles": 43,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 43,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 329033,
+      "dimensions": [
+        3300,
+        2300
+      ],
+      "sha256": "44fc155c0c01523317e28409efc074971dc29e0288deed27cdb20f5382167dac",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300190/foreground.webp",
+        "sourceSha256": "44fc155c0c01523317e28409efc074971dc29e0288deed27cdb20f5382167dac",
+        "originalBytes": 649524,
+        "bytes": 330096,
+        "width": 3300,
+        "height": 2300,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300190/native-alpha.png",
+    "width": 3300,
+    "height": 2300,
+    "sha256": "4d870a9b32367d1d6ff885c6ecedfaf081a78122b5b0d6793ca09101ddb2e594"
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "policy": "one map at a time; explicit IDs; existing entries and original files preserved",
+  "maps": [
+    {
+      "id": "30060",
+      "state": "integrated-awaiting-tests",
+      "sourceScene": {
+        "id": null,
+        "mapId": "30060",
+        "name": "Cenário 30060",
+        "type": null,
+        "identity": "scenario-reference"
+      },
+      "sources": [
+        {
+          "path": "assets/scene/map/30060/MapInfo.map",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 2635,
+          "sha256": "db1a3a2610c4e244798b8f89a0eed97aeca77457c03f05dabf08cd304645850f",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/30060/_scene_bg.xml",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 364,
+          "sha256": "e375cd2a00a1bc110d9ad074f670ba334e2aa79433223708c28fbb6c98fc6540",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "config/world/SceneCFG.xml",
+          "tag": "PT_NarutoAlpha9.31Build300",
+          "bytes": 6805,
+          "sha256": "efea068f921282d9f13cbede5e1da18df6a354072432491a397cc830cc78426a",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/30060/ImgItem/0655c52ecb45ac61cde136d2b9cf66a2.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 1106,
+          "sha256": "9e590dcb5f4acea025c3f2ce20f68e9b3c1cb029ef12280197f293b4733cffc5",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/30060/ImgItem/0d03e1997271b20fa3aacfd06dc0f2ad.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 14468,
+          "sha256": "e63a7a2c02a49aa4a475edf959fead0cce14ea5fd61a7f5eec9355f83567479c",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/30060/ImgItem/832c3ddb044e12df7c508c14705a598b.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 4517,
+          "sha256": "19368c35c9fd78bee9e596b91099097c23ab68ed8f37beffe32142a57eb851e0",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/30060/ImgItem/a60266e76ad5db38d4938c837fc56904.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 11261,
+          "sha256": "da0d2441e2555bae0cd5dafb3e492791944f314205cbfddb46b93f95b42c5987",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/30060/ImgItem/a98a697f82cebf6afb861024b8909b25.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 16708,
+          "sha256": "c30cb62f7581d218fdfc4f2ab117df6e864028581ee1531499245f1695ad957a",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/30060/ImgItem/be551613eea7c4d48aca2b34c1b65962.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 3986,
+          "sha256": "75f4949ac6c6b1c13f6e80d1e6b4c0f8f15647b163099d2c052d1b243988d42b",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/30060/ImgItem/f968925535a2b5f181654c05f06da6cf.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 3328,
+          "sha256": "042a181855ebc3b35c9da113b7c6724deb0330ba90d5479d4771ef63a994efcb",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/30060/ImgItem/fa05fdd07348fb58f38b3aa9cd271966.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 2747,
+          "sha256": "a3193e7dccf21478ec05b7a5bfc0ca5a481e7135c6a6903b7d76cd321998ec5e",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/30060/ImgItem/fde4ad1e6a42e694120b26860b2cfe7d.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 10521,
+          "sha256": "bf67999e6aecabce5add9d64a9dde57c35563f8489448469a9b5770c3a05dfe1",
+          "sourceKind": "exported-inventory"
+        }
+      ],
+      "foreground": {
+        "id": "30060",
+        "state": "integrated-awaiting-browser-validation",
+        "foreground": {
+          "method": "native-alpha-map-and-original-tile-rectangles-v1",
+          "foregroundRects": 7,
+          "opaqueGroundCutouts": false,
+          "emptyNativeLayer": false,
+          "alphaLevels": [
+            0,
+            85,
+            170
+          ],
+          "nontransparentPixels": 14943,
+          "dimensions": [
+            600,
+            600
+          ],
+          "sha256": "4604010dbd5f6ba5b407b197c627e70a98bf1e8be25163cc0194c1170031770c",
+          "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+          "limits": [
+            "Native global translucent front layer; not per-object Y sorting.",
+            "Middleground SWF objects require a separate conversion."
+          ],
+          "optimizedRuntime": {
+            "url": "/assets/maps/30060/foreground.webp",
+            "sourceSha256": "4604010dbd5f6ba5b407b197c627e70a98bf1e8be25163cc0194c1170031770c",
+            "originalBytes": 45701,
+            "bytes": 27178,
+            "width": 600,
+            "height": 600,
+            "lossless": true
+          }
+        },
+        "sources": [
+          {
+            "path": "assets/scene/map/30060/_scene_bg.xml",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 364,
+            "sha256": "e375cd2a00a1bc110d9ad074f670ba334e2aa79433223708c28fbb6c98fc6540",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/30060/_scene_fg.xml",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 409,
+            "sha256": "afcf251deca3bb72101b0925a3d3b8f28ca0f573c492c1a97218e95496291c71",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/30060/alphaMap.png",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 1194,
+            "sha256": "8e5290c5fb7c57b81a8fd9dbc85b91ac0c55fec5b84ee3c84be6aef7997184fc",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/30060/ImgItem/0d03e1997271b20fa3aacfd06dc0f2ad.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 14468,
+            "sha256": "e63a7a2c02a49aa4a475edf959fead0cce14ea5fd61a7f5eec9355f83567479c",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/30060/ImgItem/832c3ddb044e12df7c508c14705a598b.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 4517,
+            "sha256": "19368c35c9fd78bee9e596b91099097c23ab68ed8f37beffe32142a57eb851e0",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/30060/ImgItem/a60266e76ad5db38d4938c837fc56904.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 11261,
+            "sha256": "da0d2441e2555bae0cd5dafb3e492791944f314205cbfddb46b93f95b42c5987",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/30060/ImgItem/a98a697f82cebf6afb861024b8909b25.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 16708,
+            "sha256": "c30cb62f7581d218fdfc4f2ab117df6e864028581ee1531499245f1695ad957a",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/30060/ImgItem/be551613eea7c4d48aca2b34c1b65962.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 3986,
+            "sha256": "75f4949ac6c6b1c13f6e80d1e6b4c0f8f15647b163099d2c052d1b243988d42b",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/30060/ImgItem/f968925535a2b5f181654c05f06da6cf.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 3328,
+            "sha256": "042a181855ebc3b35c9da113b7c6724deb0330ba90d5479d4771ef63a994efcb",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/30060/ImgItem/fde4ad1e6a42e694120b26860b2cfe7d.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 10521,
+            "sha256": "bf67999e6aecabce5add9d64a9dde57c35563f8489448469a9b5770c3a05dfe1",
+            "sourceKind": "exported-inventory"
+          }
+        ],
+        "virtualPngReferences": 7,
+        "missingForegroundDependencies": []
+      },
+      "limits": [
+        "Middleground animation pending",
+        "No per-object Y sorting",
+        "Enemy roster and idle rules are authored, not copied"
+      ]
+    }
+  ]
+}

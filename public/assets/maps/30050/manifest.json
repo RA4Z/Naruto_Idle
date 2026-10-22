@@ -1,0 +1,143 @@
+{
+  "id": "30050",
+  "name": "Cenário 30050",
+  "kind": "exploration",
+  "background": "/assets/maps/30050/background.png",
+  "foreground": "/assets/maps/30050/foreground.png",
+  "thumbnail": "/assets/maps/30050/thumbnail.jpg",
+  "navigation": "/assets/maps/30050/navigation.json",
+  "width": 976.5625,
+  "height": 976.5625,
+  "spawn": {
+    "x": 488.28125,
+    "y": 531.9010416666666
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: Guerra dos Sannin; [Fase] A Orientação de Jiraiya; [Fase] A Direção de Tsunade; outras registradas no manifesto.",
+  "source": "assets/scene/map/30050/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30050",
+    "name": "Cenário 30050",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "6372a387e283200f1d85c47db7b74172b7b728152033484dadee6653867ad48f",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2050001",
+      "mapId": "30050",
+      "time": "1",
+      "type": "2",
+      "name": "Guerra dos Sannin",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2421001",
+      "mapId": "30050",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] A Orientação de Jiraiya",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2436001",
+      "mapId": "30050",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] A Direção de Tsunade",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2441001",
+      "mapId": "30050",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Guerra dos Sannin",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2471001",
+      "mapId": "30050",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] A Aparição de Kimimaro",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2476001",
+      "mapId": "30050",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] A Última Batalha",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "4051001",
+      "mapId": "30050",
+      "time": "1",
+      "type": "2",
+      "name": "Campo de Combate da Guerra dos Sannin",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 144,
+    "foregroundTiles": 88,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 88,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 1246921,
+      "dimensions": [
+        3000,
+        3000
+      ],
+      "sha256": "0d9a5d1717159283781747396ea3c041f81a59ce923961f71ab5adc1c55f9b97",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30050/foreground.webp",
+        "sourceSha256": "0d9a5d1717159283781747396ea3c041f81a59ce923961f71ab5adc1c55f9b97",
+        "originalBytes": 3031698,
+        "bytes": 2030016,
+        "width": 3000,
+        "height": 3000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30050/native-alpha.png",
+    "width": 3000,
+    "height": 3000,
+    "sha256": "4a0d2b11e79ea060abfc90dda383d7976843d9c36c99f6f521566097d49551e7"
+  }
+}

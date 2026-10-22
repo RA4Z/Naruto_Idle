@@ -1,0 +1,123 @@
+{
+  "id": "10004",
+  "name": "Cenário 10004",
+  "kind": "exploration",
+  "background": "/assets/maps/10004/background.png",
+  "foreground": "/assets/maps/10004/foreground.png",
+  "thumbnail": "/assets/maps/10004/thumbnail.jpg",
+  "navigation": "/assets/maps/10004/navigation.json",
+  "width": 878.90625,
+  "height": 1074.21875,
+  "spawn": {
+    "x": 470.703125,
+    "y": 655.2734375
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] A Equipe de Konohamaru; [Fase] Reencontro; [Fase] Marca do Silêncio; outras registradas no manifesto.",
+  "source": "assets/scene/map/10004/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "10004",
+    "name": "Cenário 10004",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "4a58d571f45bd2a94a1e5c46ca64daf9a03cb1dfa10b7b42bbb33b6d6cefe8ef",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2030001",
+      "mapId": "10004",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] A Equipe de Konohamaru",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2551001",
+      "mapId": "10004",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Reencontro",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2901001",
+      "mapId": "10004",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Marca do Silêncio",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2906001",
+      "mapId": "10004",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Vontade Inquebrável",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3052001",
+      "mapId": "10004",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Teste Jounin",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 143,
+    "foregroundTiles": 68,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 68,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 1479417,
+      "dimensions": [
+        2700,
+        3300
+      ],
+      "sha256": "dbb94954fcf68cdffdd445cd0f22d47822a09a58a226e253378a04985a6cf174",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/10004/foreground.webp",
+        "sourceSha256": "dbb94954fcf68cdffdd445cd0f22d47822a09a58a226e253378a04985a6cf174",
+        "originalBytes": 3565416,
+        "bytes": 2323086,
+        "width": 2700,
+        "height": 3300,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/10004/native-alpha.png",
+    "width": 2700,
+    "height": 3300,
+    "sha256": "7743b6add87b263ed2095b0108321bffad585cae90466366092306bb7368ba33"
+  }
+}

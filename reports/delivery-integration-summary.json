@@ -1,0 +1,1355 @@
+{
+  "stage": "maps-and-pending-animation-queue",
+  "maps": 145,
+  "newMaps": 129,
+  "sourcePixelValidatedNewMaps": 129,
+  "collections": {
+    "world": 55,
+    "scenario": 69,
+    "unidentified": 21
+  },
+  "kinds": {
+    "lobby": 31,
+    "adventure": 24,
+    "exploration": 90
+  },
+  "reconstructedActions": 31,
+  "models": 30,
+  "sourceFrameProbes": 124,
+  "duplicateNamespaceQueueRemaining": 0,
+  "tests": {
+    "domain": {
+      "tests": 274,
+      "pass": 274,
+      "fail": 0
+    },
+    "server": {
+      "tests": 25,
+      "pass": 25,
+      "fail": 0
+    }
+  },
+  "pythonTestsPassed": 8,
+  "browserReport": "delivery-browser-validation.json",
+  "details": "../docs/INTEGRACAO_ACERVO_ENTREGUE.md",
+  "destinations": [
+    {
+      "id": "10001",
+      "name": "Vila da Folha",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "preserved-previous-stage",
+      "currentPixelValidation": null,
+      "contentState": "previous-idle-rules"
+    },
+    {
+      "id": "10005",
+      "name": "Floresta da Folha",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "preserved-previous-stage",
+      "currentPixelValidation": null,
+      "contentState": "previous-idle-rules"
+    },
+    {
+      "id": "10006",
+      "name": "Campo de Treinamento da Folha",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "preserved-previous-stage",
+      "currentPixelValidation": null,
+      "contentState": "previous-idle-rules"
+    },
+    {
+      "id": "10008",
+      "name": "País das Ondas",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "preserved-previous-stage",
+      "currentPixelValidation": null,
+      "contentState": "previous-idle-rules"
+    },
+    {
+      "id": "10007",
+      "name": "Costa Verde",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "preserved-previous-stage",
+      "currentPixelValidation": null,
+      "contentState": "previous-idle-rules"
+    },
+    {
+      "id": "10009",
+      "name": "A Floresta da Morte",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "preserved-previous-stage",
+      "currentPixelValidation": null,
+      "contentState": "previous-idle-rules"
+    },
+    {
+      "id": "30008",
+      "name": "Profundezas da Floresta da Folha",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "preserved-previous-stage",
+      "currentPixelValidation": null,
+      "contentState": "previous-idle-rules"
+    },
+    {
+      "id": "300131",
+      "name": "Ponte Tenchi",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "preserved-previous-stage",
+      "currentPixelValidation": null,
+      "contentState": "previous-idle-rules"
+    },
+    {
+      "id": "10010",
+      "name": "Floresta do País do Fogo",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "preserved-previous-stage",
+      "currentPixelValidation": null,
+      "contentState": "previous-idle-rules"
+    },
+    {
+      "id": "10011",
+      "name": "Tanzaku",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "preserved-previous-stage",
+      "currentPixelValidation": null,
+      "contentState": "previous-idle-rules"
+    },
+    {
+      "id": "10020",
+      "name": "Deserto do País do Vento",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "preserved-previous-stage",
+      "currentPixelValidation": null,
+      "contentState": "previous-idle-rules"
+    },
+    {
+      "id": "10015",
+      "name": "O Deserto Quente",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "preserved-previous-stage",
+      "currentPixelValidation": null,
+      "contentState": "previous-idle-rules"
+    },
+    {
+      "id": "10012",
+      "name": "Em Baixo do Vale do Fim",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "preserved-previous-stage",
+      "currentPixelValidation": null,
+      "contentState": "previous-idle-rules"
+    },
+    {
+      "id": "10013",
+      "name": "No Topo do Vale do Fim",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "preserved-previous-stage",
+      "currentPixelValidation": null,
+      "contentState": "previous-idle-rules"
+    },
+    {
+      "id": "10016",
+      "name": "Caniôn do País dos Rios",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "preserved-previous-stage",
+      "currentPixelValidation": null,
+      "contentState": "previous-idle-rules"
+    },
+    {
+      "id": "10021",
+      "name": "Barreira dos Cinco Selos",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "preserved-previous-stage",
+      "currentPixelValidation": null,
+      "contentState": "previous-idle-rules"
+    },
+    {
+      "id": "10003",
+      "name": "Oeste da Aldeia da Folha",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-10003-10039-10053-10058.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "10039",
+      "name": "Caverna Misteriosa",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-10003-10039-10053-10058.json",
+      "contentState": "authored-hunt"
+    },
+    {
+      "id": "10053",
+      "name": "Norte da Aldeia da Folha (À noite)",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-10003-10039-10053-10058.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "10058",
+      "name": "Este da Aldeia da Folha",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-10003-10039-10053-10058.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "10059",
+      "name": "Sul da Aldeia da Folha",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-10059-10060-10061-300140.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "10060",
+      "name": "Oeste da Aldeia da Folha",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-10059-10060-10061-300140.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "10061",
+      "name": "Norte da Aldeia da Folha",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-10059-10060-10061-300140.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300140",
+      "name": "Entorno da Base de Orochimaru",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-10059-10060-10061-300140.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300142",
+      "name": "Reduto do Nagato",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300142-300145-300146-300147.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300145",
+      "name": "Aldeia Oculta da Chuva",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300142-300145-300146-300147.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300146",
+      "name": "Alto da Aldeia da Chuva",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300142-300145-300146-300147.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300147",
+      "name": "Corredor da Aldeia da Chuva",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300142-300145-300146-300147.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300148",
+      "name": "Litoral da Aldeia da Chuva",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300148-30015-300152-300153.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30015",
+      "name": "Penhasco da Folha",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300148-30015-300152-300153.json",
+      "contentState": "authored-hunt"
+    },
+    {
+      "id": "300152",
+      "name": "Lago do Monte Myoboku",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300148-30015-300152-300153.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300153",
+      "name": "Por Trás do Monte Myoboku",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300148-30015-300152-300153.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300158",
+      "name": "Sala da Divisão de Inteligência",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300158-300169-300179-300180.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300169",
+      "name": "Floresta dos Corvos",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300158-300169-300179-300180.json",
+      "contentState": "authored-hunt"
+    },
+    {
+      "id": "300179",
+      "name": "Campo de Neve no País de Ferro",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300158-300169-300179-300180.json",
+      "contentState": "authored-hunt"
+    },
+    {
+      "id": "300180",
+      "name": "Vale das Nuvens e Relâmpago",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300158-300169-300179-300180.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300181",
+      "name": "Exterior da Arena",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300181-300182-300183-300184.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300182",
+      "name": "Local da Cúpula dos Cinco Kage",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300181-300182-300183-300184.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300183",
+      "name": "Portão do País do Ferro",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300181-300182-300183-300184.json",
+      "contentState": "authored-hunt"
+    },
+    {
+      "id": "300184",
+      "name": "Ponte Samurai",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300181-300182-300183-300184.json",
+      "contentState": "authored-hunt"
+    },
+    {
+      "id": "300185",
+      "name": "Aldeia da Nuvem",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300185-300187-300188-300189.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300187",
+      "name": "Ilha Tartaruga",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300185-300187-300188-300189.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300188",
+      "name": "Base da Unidade de Comando",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300185-300187-300188-300189.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300189",
+      "name": "Campo de Batalha: Os Sete Espadachins Ninja",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300185-300187-300188-300189.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30021",
+      "name": "Floresta do País das Ondas",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30021-30029-30072-30073.json",
+      "contentState": "authored-hunt"
+    },
+    {
+      "id": "30029",
+      "name": "Profundezas da Floresta da Morte",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30021-30029-30072-30073.json",
+      "contentState": "authored-hunt"
+    },
+    {
+      "id": "30072",
+      "name": "Norte da Aldeia da Areia",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30021-30029-30072-30073.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30073",
+      "name": "Sul da Aldeia da Areia",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30021-30029-30072-30073.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30074",
+      "name": "Uma Faixa de Céu",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30074-30077-30078-30079.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30077",
+      "name": "Sala da Base de Orochimaru",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30074-30077-30078-30079.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30078",
+      "name": "Base de Orochimaru",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30074-30077-30078-30079.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30079",
+      "name": "Base de Orochimaru",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30074-30077-30078-30079.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30113",
+      "name": "Floresta das Árvores Mortas",
+      "kind": "adventure",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30113-30119-30126-10002.json",
+      "contentState": "authored-hunt"
+    },
+    {
+      "id": "30119",
+      "name": "Templo do Fogo",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30113-30119-30126-10002.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30126",
+      "name": "Cave Base da Akatsuki",
+      "kind": "lobby",
+      "collection": "world",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30113-30119-30126-10002.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "10002",
+      "name": "Cenário 10002",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30113-30119-30126-10002.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "10004",
+      "name": "Cenário 10004",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-10004-10026-10036-10100.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "10026",
+      "name": "Cenário 10026",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-10004-10026-10036-10100.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "10036",
+      "name": "Cenário 10036",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-10004-10026-10036-10100.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "10100",
+      "name": "Cenário 10100",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-10004-10026-10036-10100.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "1604001",
+      "name": "Cenário 1604001",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-1604001-30005-30006-30007.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30005",
+      "name": "Cenário 30005",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-1604001-30005-30006-30007.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30006",
+      "name": "Cenário 30006",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-1604001-30005-30006-30007.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30007",
+      "name": "Cenário 30007",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-1604001-30005-30006-30007.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30009",
+      "name": "Cenário 30009",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30009-30010-30011-300132.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30010",
+      "name": "Cenário 30010",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30009-30010-30011-300132.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30011",
+      "name": "Cenário 30011",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30009-30010-30011-300132.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300132",
+      "name": "Cenário 300132",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30009-30010-30011-300132.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300135",
+      "name": "Cenário 300135",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300135-300136-300137-30014.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300136",
+      "name": "Cenário 300136",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300135-300136-300137-30014.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300137",
+      "name": "Cenário 300137",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300135-300136-300137-30014.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30014",
+      "name": "Cenário 30014",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300135-300136-300137-30014.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300141",
+      "name": "Cenário 300141",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300141-300150-300154-300155.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300150",
+      "name": "Cenário 300150",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300141-300150-300154-300155.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300154",
+      "name": "Cenário 300154",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300141-300150-300154-300155.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300155",
+      "name": "Cenário 300155",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300141-300150-300154-300155.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300156",
+      "name": "Cenário 300156",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300156-300157-300159-30016.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300157",
+      "name": "Cenário 300157",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300156-300157-300159-30016.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300159",
+      "name": "Cenário 300159",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300156-300157-300159-30016.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30016",
+      "name": "Cenário 30016",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300156-300157-300159-30016.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300166",
+      "name": "Cenário 300166",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300166-300171-300177-300186.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300171",
+      "name": "Cenário 300171",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300166-300171-300177-300186.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300177",
+      "name": "Cenário 300177",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300166-300171-300177-300186.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300186",
+      "name": "Cenário 300186",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300166-300171-300177-300186.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300190",
+      "name": "Cenário 300190",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300190-300195-30022-30023.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300195",
+      "name": "Cenário 300195",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300190-300195-30022-30023.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30022",
+      "name": "Cenário 30022",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300190-300195-30022-30023.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30023",
+      "name": "Cenário 30023",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300190-300195-30022-30023.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30024",
+      "name": "Cenário 30024",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30024-30027-300301-300302.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30027",
+      "name": "Cenário 30027",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30024-30027-300301-300302.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300301",
+      "name": "Cenário 300301",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30024-30027-300301-300302.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300302",
+      "name": "Cenário 300302",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30024-30027-300301-300302.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30033",
+      "name": "Cenário 30033",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30033-30034-30035-30036.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30034",
+      "name": "Cenário 30034",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30033-30034-30035-30036.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30035",
+      "name": "Cenário 30035",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30033-30034-30035-30036.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30036",
+      "name": "Cenário 30036",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30033-30034-30035-30036.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30037",
+      "name": "Cenário 30037",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30037-300401-300402-30043.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300401",
+      "name": "Cenário 300401",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30037-300401-300402-30043.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300402",
+      "name": "Cenário 300402",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30037-300401-300402-30043.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30043",
+      "name": "Cenário 30043",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30037-300401-300402-30043.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30048",
+      "name": "Cenário 30048",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30048-30050-30060-30061.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30050",
+      "name": "Cenário 30050",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30048-30050-30060-30061.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30060",
+      "name": "Cenário 30060",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30048-30050-30060-30061.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30061",
+      "name": "Cenário 30061",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30048-30050-30060-30061.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30062",
+      "name": "Cenário 30062",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30062-30071-30099-30100.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30071",
+      "name": "Cenário 30071",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30062-30071-30099-30100.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30099",
+      "name": "Cenário 30099",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30062-30071-30099-30100.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30100",
+      "name": "Cenário 30100",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30062-30071-30099-30100.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30101",
+      "name": "Cenário 30101",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30101-30102-30105-30107.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30102",
+      "name": "Cenário 30102",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30101-30102-30105-30107.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30105",
+      "name": "Cenário 30105",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30101-30102-30105-30107.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30107",
+      "name": "Cenário 30107",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30101-30102-30105-30107.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30108",
+      "name": "Cenário 30108",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30108-30109-30111-30123.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30109",
+      "name": "Cenário 30109",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30108-30109-30111-30123.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30111",
+      "name": "Cenário 30111",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30108-30109-30111-30123.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30123",
+      "name": "Cenário 30123",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30108-30109-30111-30123.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30150",
+      "name": "Cenário 30150",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30150-30151-30152-30153.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30151",
+      "name": "Cenário 30151",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30150-30151-30152-30153.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30152",
+      "name": "Cenário 30152",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30150-30151-30152-30153.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30153",
+      "name": "Cenário 30153",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30150-30151-30152-30153.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "400001",
+      "name": "Cenário 400001",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-400001-500001-500002-99999.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "500001",
+      "name": "Cenário 500001",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-400001-500001-500002-99999.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "500002",
+      "name": "Cenário 500002",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-400001-500001-500002-99999.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "99999",
+      "name": "Cenário 99999",
+      "kind": "exploration",
+      "collection": "scenario",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-400001-500001-500002-99999.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "10017",
+      "name": "Cenário não identificado 10017",
+      "kind": "exploration",
+      "collection": "unidentified",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-10017-10054-10055-10056.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "10054",
+      "name": "Cenário não identificado 10054",
+      "kind": "exploration",
+      "collection": "unidentified",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-10017-10054-10055-10056.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "10055",
+      "name": "Cenário não identificado 10055",
+      "kind": "exploration",
+      "collection": "unidentified",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-10017-10054-10055-10056.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "10056",
+      "name": "Cenário não identificado 10056",
+      "kind": "exploration",
+      "collection": "unidentified",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-10017-10054-10055-10056.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "10057",
+      "name": "Cenário não identificado 10057",
+      "kind": "exploration",
+      "collection": "unidentified",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-10057-11001-30001-30002.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "11001",
+      "name": "Cenário não identificado 11001",
+      "kind": "exploration",
+      "collection": "unidentified",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-10057-11001-30001-30002.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30001",
+      "name": "Cenário não identificado 30001",
+      "kind": "exploration",
+      "collection": "unidentified",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-10057-11001-30001-30002.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30002",
+      "name": "Cenário não identificado 30002",
+      "kind": "exploration",
+      "collection": "unidentified",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-10057-11001-30001-30002.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30003",
+      "name": "Cenário não identificado 30003",
+      "kind": "exploration",
+      "collection": "unidentified",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30003-300167-300175-300191.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300167",
+      "name": "Cenário não identificado 300167",
+      "kind": "exploration",
+      "collection": "unidentified",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30003-300167-300175-300191.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300175",
+      "name": "Cenário não identificado 300175",
+      "kind": "exploration",
+      "collection": "unidentified",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30003-300167-300175-300191.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300191",
+      "name": "Cenário não identificado 300191",
+      "kind": "exploration",
+      "collection": "unidentified",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30003-300167-300175-300191.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "300192",
+      "name": "Cenário não identificado 300192",
+      "kind": "exploration",
+      "collection": "unidentified",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300192-30028-30030-30032.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30028",
+      "name": "Cenário não identificado 30028",
+      "kind": "exploration",
+      "collection": "unidentified",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300192-30028-30030-30032.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30030",
+      "name": "Cenário não identificado 30030",
+      "kind": "exploration",
+      "collection": "unidentified",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300192-30028-30030-30032.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30032",
+      "name": "Cenário não identificado 30032",
+      "kind": "exploration",
+      "collection": "unidentified",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-300192-30028-30030-30032.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30039",
+      "name": "Cenário não identificado 30039",
+      "kind": "exploration",
+      "collection": "unidentified",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30039-30041-30042-30051.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30041",
+      "name": "Cenário não identificado 30041",
+      "kind": "exploration",
+      "collection": "unidentified",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30039-30041-30042-30051.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30042",
+      "name": "Cenário não identificado 30042",
+      "kind": "exploration",
+      "collection": "unidentified",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30039-30041-30042-30051.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30051",
+      "name": "Cenário não identificado 30051",
+      "kind": "exploration",
+      "collection": "unidentified",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30039-30041-30042-30051.json",
+      "contentState": "safe-exploration-narrative-pending"
+    },
+    {
+      "id": "30052",
+      "name": "Cenário não identificado 30052",
+      "kind": "exploration",
+      "collection": "unidentified",
+      "extractionState": "converted-runtime-integrated-technical-validation",
+      "currentPixelValidation": "alpha-delivery-30052.json",
+      "contentState": "safe-exploration-narrative-pending"
+    }
+  ],
+  "remaining": [
+    "Per-object/middleground SWF depth",
+    "Narrative campaigns, encounters and local population for recovered safe scenery",
+    "21 scenery identities",
+    "Shared external effects/shadows recorded per action",
+    "Other character voices/effects, UI resources and 195 loading artworks"
+  ],
+  "limits": [
+    "Technical coverage of every map is not visual playtesting of every passage.",
+    "31 source-pixel checks sample 124 timeline frames; they are not Flash-player comparisons of all frames.",
+    "External-effect partial status is preserved.",
+    "No real account, remote database or paid service was modified."
+  ]
+}

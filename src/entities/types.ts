@@ -8,6 +8,7 @@ export type AnimationDef = {
   timeline?: number[];
   fps: number;
   origin: [number, number];
+  frameOrigins?: [number, number][];
   status: string;
   externalEffects?: string[];
   rigScale?: number;

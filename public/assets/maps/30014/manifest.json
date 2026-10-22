@@ -1,0 +1,93 @@
+{
+  "id": "30014",
+  "name": "Cenário 30014",
+  "kind": "exploration",
+  "background": "/assets/maps/30014/background.png",
+  "foreground": "/assets/maps/30014/foreground.png",
+  "thumbnail": "/assets/maps/30014/thumbnail.jpg",
+  "navigation": "/assets/maps/30014/navigation.json",
+  "width": 651.0416666666666,
+  "height": 651.0416666666666,
+  "spawn": {
+    "x": 325.5208333333333,
+    "y": 363.28125
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Combate contra o Time Dez; Campo de Treinamento à Noite.",
+  "source": "assets/scene/map/30014/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30014",
+    "name": "Cenário 30014",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "ff8d4fcc614634db89beedae1d0fc6879a2a5d314716e38e36eb2f706350f044",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2361001",
+      "mapId": "30014",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Combate contra o Time Dez",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "4002001",
+      "mapId": "30014",
+      "time": "3",
+      "type": "2",
+      "name": "Campo de Treinamento à Noite",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 64,
+    "foregroundTiles": 43,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 43,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 637736,
+      "dimensions": [
+        2000,
+        2000
+      ],
+      "sha256": "0127a62b9545317528ef2ebd08760e7ebeb431f7890d6cfa58b2f11a394e9b15",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30014/foreground.webp",
+        "sourceSha256": "0127a62b9545317528ef2ebd08760e7ebeb431f7890d6cfa58b2f11a394e9b15",
+        "originalBytes": 1560762,
+        "bytes": 955076,
+        "width": 2000,
+        "height": 2000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30014/native-alpha.png",
+    "width": 2000,
+    "height": 2000,
+    "sha256": "a74acbf106dc3e3eda3df62188a3391386ea70a227c2d6d6997fb76749e55cef"
+  }
+}

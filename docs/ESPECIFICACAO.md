@@ -16,7 +16,7 @@ Vitalidade, força, ninjutsu, velocidade, chakra, controle e resistência determ
 
 ## Mundo e combate
 
-Há 16 mapas integrados. O jogador anda por clique ou WASD/setas sobre a grade nativa de MapInfo.map. Encontros acontecem por proximidade com linha de passagem válida; combate ocorre no mesmo cenário, trocando as animações de exploração/combate.
+Há 145 conjuntos preparados e acessíveis por Viagens. O jogador anda por clique ou WASD/setas sobre a grade nativa de MapInfo.map. O catálogo separa 55 destinos do mundo/legado, 69 cenários de fases e 21 a identificar. Os 90 cenários das duas últimas categorias permitem exploração segura, sem campanhas ou recompensas originais implementadas. Nos destinos de caça, encontros acontecem por proximidade com linha de passagem válida; combate ocorre no mesmo cenário, trocando as animações de exploração/combate. Moradores padrão da Folha ficam em Konoha; outros locais aguardam elencos/contextos confirmados.
 
 Ataques são automáticos; os iniciais possuem jutsu manual com chakra e recarga. Vitória concede XP, moedas e loot; derrota retorna à recuperação. Caçada automática escolhe alvos alcançáveis, recalcula rotas alteradas, descarta caminhos que não chegam ao alcance, detecta falta de movimento e limita a duração da perseguição. Sem inimigos vivos, aguarda respawn.
 

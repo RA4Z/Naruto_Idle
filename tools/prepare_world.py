@@ -79,7 +79,11 @@ def scene_name(archive,ident):
     root=ET.fromstring(archive.data('config/world/SceneCFG.xml'))
     rows=[{c.tag:c.text for c in n} for n in root.findall('row')]
     matches=[n for n in rows if n.get('mapId')==ident and n.get('type')=='1' and n.get('name')]
-    if not matches: raise ValueError('No confirmed original world scene name: '+ident)
+    if not matches:
+        spec=SPECS[ident]
+        if spec.get('collection') not in ('scenario','unidentified'):
+            raise ValueError('No confirmed original world scene name: '+ident)
+        return {'id':None,'mapId':ident,'name':spec['name'],'type':None,'identity':'scenario-reference' if spec.get('sourceScenes') else 'unidentified'}
     return matches[0]
 
 def spawn_point(nav):
@@ -109,12 +113,13 @@ def prepare(archive,ident):
     intermediate=PROJECT/'assets-extraidos/mapas'/ident;intermediate.mkdir(parents=True,exist_ok=True)
     (intermediate/'MapInfo.map').write_bytes(raw)
     spec=SPECS[ident]
-    manifest={'id':ident,'name':scene['name'],'kind':spec['kind'],'background':f'/assets/maps/{ident}/background.png',
+    manifest={'id':ident,'name':spec.get('name',scene['name']),'kind':spec['kind'],'background':f'/assets/maps/{ident}/background.png',
               'foreground':f'/assets/maps/{ident}/foreground.png','thumbnail':f'/assets/maps/{ident}/thumbnail.jpg',
               'navigation':f'/assets/maps/{ident}/navigation.json','width':width/SCALE,'height':height/SCALE,
               'spawn':spawn_point(nav),'enemies':spec['enemies'],'description':spec['description'],'source':prefix,
               'sourceScene':scene,'navigationSha256':hashlib.sha256(raw).hexdigest(),
-              'populationPolicy':'Six patrolling enemies; authored idle-RPG roster using recovered eligible models, not original encounter rules.',
+              'collection':spec.get('collection','world'),'sourceScenes':spec.get('sourceScenes',[scene]),
+              'populationPolicy':'Authored idle-RPG encounters, not original story rules.' if spec['enemies'] else 'Safe exploration only; original mission/encounters are not implemented.',
               'spawnPolicy':'Authored point in the primary native walkable region, nearest the map center.',
               'layers':{'backgroundTiles':len(tiles),'foregroundTiles':0,'animatedMiddleground':'available in originals; pending conversion'}}
     (folder/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
@@ -128,7 +133,13 @@ def prepare(archive,ident):
                      'limits':['Middleground animation pending','No per-object Y sorting','Enemy roster and idle rules are authored, not copied']}
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--source',required=True);ap.add_argument('--ids',required=True);ap.add_argument('--limit',type=int,default=4);ap.add_argument('--refresh',action='store_true');args=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--source',required=True);ap.add_argument('--ids',required=True);ap.add_argument('--limit',type=int,default=4);ap.add_argument('--refresh',action='store_true');ap.add_argument('--specs');args=ap.parse_args()
+    if args.specs:
+        additions=json.loads(Path(args.specs).read_text(encoding='utf-8-sig'))
+        for ident,spec in additions.items():
+            if not ident.isdigit() or spec.get('kind') not in ('lobby','adventure','exploration') or not isinstance(spec.get('enemies'),list):
+                raise SystemExit('Invalid explicit map specification: '+ident)
+            if ident not in SPECS:SPECS[ident]=spec
     ids=args.ids.split(',')
     if not 1<=len(ids)<=args.limit<=4 or len(set(ids))!=len(ids) or any(i not in SPECS for i in ids):raise SystemExit('Use one explicit batch of up to four configured IDs')
     archive=OriginalArchive(args.source)
@@ -150,6 +161,9 @@ def main():
         manifest,row=prepare(archive,ident);manifests[ident]=manifest;rows.append(row);print(json.dumps({'id':ident,'name':manifest['name'],'spawn':manifest['spawn']},ensure_ascii=True),flush=True)
     index['maps']=[manifests.pop(m['id'],m) for m in index['maps']]+list(manifests.values())
     write_json(index_path,index)
+    # The restored-save allowlist follows the canonical index in the same batch.
+    implemented=PROJECT/'src/config/maps.ts'
+    implemented.write_text('// Maps with native navigation and prepared runtime assets.\nexport const IMPLEMENTED_MAP_IDS: readonly string[] = '+json.dumps([m['id'] for m in index['maps']])+';\n',encoding='utf-8')
     report={'policy':'one map at a time; explicit IDs; existing entries and original files preserved','maps':rows}
     (PROJECT/('reports/world-expansion-'+('-'.join(ids))+'.json')).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 if __name__=='__main__':main()

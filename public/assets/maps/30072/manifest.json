@@ -1,0 +1,86 @@
+{
+  "id": "30072",
+  "name": "Norte da Aldeia da Areia",
+  "kind": "lobby",
+  "background": "/assets/maps/30072/background.png",
+  "foreground": "/assets/maps/30072/foreground.png",
+  "thumbnail": "/assets/maps/30072/thumbnail.jpg",
+  "navigation": "/assets/maps/30072/navigation.json",
+  "width": 976.5625,
+  "height": 976.5625,
+  "spawn": {
+    "x": 529.9479166666666,
+    "y": 625.6510416666666
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/30072/",
+  "sourceScene": {
+    "id": "2015008",
+    "mapId": "30072",
+    "time": "1",
+    "type": "1",
+    "name": "Norte da Aldeia da Areia",
+    "minLevel": null,
+    "worldMapId": "2015009",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "b6904cdac848cdae70f28c40567e31f30346c5221ab5ecef8473baa4d074b41c",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015008",
+      "mapId": "30072",
+      "time": "1",
+      "type": "1",
+      "name": "Norte da Aldeia da Areia",
+      "minLevel": null,
+      "worldMapId": "2015009",
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 144,
+    "foregroundTiles": 93,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 93,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 1106513,
+      "dimensions": [
+        3000,
+        3000
+      ],
+      "sha256": "7db661e3d247355e625cd39c7246ab2ba367ca017fad0b45601c83a3a9471ee5",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30072/foreground.webp",
+        "sourceSha256": "7db661e3d247355e625cd39c7246ab2ba367ca017fad0b45601c83a3a9471ee5",
+        "originalBytes": 2052895,
+        "bytes": 1203632,
+        "width": 3000,
+        "height": 3000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30072/native-alpha.png",
+    "width": 3000,
+    "height": 3000,
+    "sha256": "f857bd8f144448481f9fa1dfca98884c0f2e0bfecef41c9e58679a330c0948df"
+  }
+}

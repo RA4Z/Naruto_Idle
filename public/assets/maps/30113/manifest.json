@@ -1,0 +1,169 @@
+{
+  "id": "30113",
+  "name": "Floresta das Árvores Mortas",
+  "kind": "adventure",
+  "background": "/assets/maps/30113/background.png",
+  "foreground": "/assets/maps/30113/foreground.png",
+  "thumbnail": "/assets/maps/30113/thumbnail.jpg",
+  "navigation": "/assets/maps/30113/navigation.json",
+  "width": 1171.875,
+  "height": 781.25,
+  "spawn": {
+    "x": 565.1041666666666,
+    "y": 462.2395833333333
+  },
+  "enemies": [
+    "19000301",
+    "19000701"
+  ],
+  "description": "Explore a área original recuperada. Encontros adaptados para o idle.",
+  "source": "assets/scene/map/30113/",
+  "sourceScene": {
+    "id": "2033001",
+    "mapId": "30113",
+    "time": "1",
+    "type": "1",
+    "name": "Floresta das Árvores Mortas",
+    "minLevel": null,
+    "worldMapId": "2033001",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "e44158c5017df1b8b80e4136e91f668bc9075f5b544a04823525d90c4cda6e3c",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2033001",
+      "mapId": "30113",
+      "time": "1",
+      "type": "1",
+      "name": "Floresta das Árvores Mortas",
+      "minLevel": null,
+      "worldMapId": "2033001",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2637001",
+      "mapId": "30113",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Floresta das Árvores Mortas",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2638001",
+      "mapId": "30113",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Hidan e Kakuzu",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2639001",
+      "mapId": "30113",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] O Combate de Shikamaru",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2640001",
+      "mapId": "30113",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Segredo maligno",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2641001",
+      "mapId": "30113",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] O Nascimento de um novo Jutsu",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2761001",
+      "mapId": "30113",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Buscando Pistas no Pó",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3053001",
+      "mapId": "30113",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Vinda da Akatsuki",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1700013",
+      "mapId": "30113",
+      "time": "1",
+      "type": "14",
+      "name": "Floresta das Árvores Mortas",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Authored idle-RPG encounters, not original story rules.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 150,
+    "foregroundTiles": 119,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 119,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 1736617,
+      "dimensions": [
+        3600,
+        2400
+      ],
+      "sha256": "1dec77f16a2673fc9096006c9777a157aad3a38179e65287f78409729173a1d5",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30113/foreground.webp",
+        "sourceSha256": "1dec77f16a2673fc9096006c9777a157aad3a38179e65287f78409729173a1d5",
+        "originalBytes": 3713736,
+        "bytes": 2260964,
+        "width": 3600,
+        "height": 2400,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30113/native-alpha.png",
+    "width": 3600,
+    "height": 2400,
+    "sha256": "5dbeb8ae075aef3e023436d03cb86a55d12eb05770172abc8dfb8d1d1ba48235"
+  }
+}

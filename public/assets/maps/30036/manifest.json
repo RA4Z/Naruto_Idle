@@ -1,0 +1,81 @@
+{
+  "id": "30036",
+  "name": "Cenário 30036",
+  "kind": "exploration",
+  "background": "/assets/maps/30036/background.png",
+  "foreground": "/assets/maps/30036/foreground.png",
+  "thumbnail": "/assets/maps/30036/thumbnail.jpg",
+  "navigation": "/assets/maps/30036/navigation.json",
+  "width": 781.25,
+  "height": 585.9375,
+  "spawn": {
+    "x": 390.625,
+    "y": 320.3125
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Uma Vontade Herdada.",
+  "source": "assets/scene/map/30036/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30036",
+    "name": "Cenário 30036",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "d48a074557d8d5050580000eee41674c95fe31beed20d3bee04335831cc07fec",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2336001",
+      "mapId": "30036",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Uma Vontade Herdada",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 80,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 0,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": true,
+      "alphaLevels": [
+        0
+      ],
+      "nontransparentPixels": 0,
+      "dimensions": [
+        2400,
+        1800
+      ],
+      "sha256": "95c16c4c1ad064d31c0cfee5f507c5eababd10b69558ce847eeea6a54915f94e",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30036/foreground.webp",
+        "sourceSha256": "95c16c4c1ad064d31c0cfee5f507c5eababd10b69558ce847eeea6a54915f94e",
+        "originalBytes": 16852,
+        "bytes": 220,
+        "width": 2400,
+        "height": 1800,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30036/native-alpha.png",
+    "width": 2400,
+    "height": 1800,
+    "sha256": "eeb61c6bb9c5228a558cf45bb164d02ad52a013799b5add0edb78c7bc048e70a"
+  }
+}

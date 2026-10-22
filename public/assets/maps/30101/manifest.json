@@ -1,0 +1,94 @@
+{
+  "id": "30101",
+  "name": "Cenário 30101",
+  "kind": "exploration",
+  "background": "/assets/maps/30101/background.png",
+  "foreground": "/assets/maps/30101/foreground.png",
+  "thumbnail": "/assets/maps/30101/thumbnail.jpg",
+  "navigation": "/assets/maps/30101/navigation.json",
+  "width": 325.5208333333333,
+  "height": 227.86458333333331,
+  "spawn": {
+    "x": 167.96875,
+    "y": 137.36979166666666
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: Sala de Aula (2); [Fase] Sasuke Uchiha.",
+  "source": "assets/scene/map/30101/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30101",
+    "name": "Cenário 30101",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "001f2bc56f1228d80b160d091cf976c44778aedba4f7572278b9b4ecc95a5311",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "1502003",
+      "mapId": "30101",
+      "time": "1",
+      "type": "3",
+      "name": "Sala de Aula (2)",
+      "minLevel": null,
+      "worldMapId": "1502001",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2031001",
+      "mapId": "30101",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Sasuke Uchiha",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 12,
+    "foregroundTiles": 2,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 2,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170,
+        255
+      ],
+      "nontransparentPixels": 405,
+      "dimensions": [
+        1000,
+        700
+      ],
+      "sha256": "c6039061d6705f28f6abda7078f9a1e9a3988917743ba6900916b216cfedb208",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30101/foreground.webp",
+        "sourceSha256": "c6039061d6705f28f6abda7078f9a1e9a3988917743ba6900916b216cfedb208",
+        "originalBytes": 4532,
+        "bytes": 1336,
+        "width": 1000,
+        "height": 700,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30101/native-alpha.png",
+    "width": 1000,
+    "height": 700,
+    "sha256": "5304d7e89cd7034e0ecaf5ed92dfe9887a8b1bac09cfc8d6a9b4b9c4b81bb5c9"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "id": "30027",
+  "name": "Cenário 30027",
+  "kind": "exploration",
+  "background": "/assets/maps/30027/background.png",
+  "foreground": "/assets/maps/30027/foreground.png",
+  "thumbnail": "/assets/maps/30027/thumbnail.jpg",
+  "navigation": "/assets/maps/30027/navigation.json",
+  "width": 813.8020833333334,
+  "height": 651.0416666666666,
+  "spawn": {
+    "x": 417.3177083333333,
+    "y": 327.7994791666667
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Duelo de Clones; [Fase] Última Chance; [Fase] Tigre Correndo; outras registradas no manifesto.",
+  "source": "assets/scene/map/30027/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30027",
+    "name": "Cenário 30027",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "b3987fd87c7ac1e1ddab4b7cda7e3079f48b02fec7bcbab974f865608471d62b",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2118001",
+      "mapId": "30027",
+      "time": "3",
+      "type": "2",
+      "name": "[Fase] Duelo de Clones",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2120001",
+      "mapId": "30027",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Última Chance",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2122001",
+      "mapId": "30027",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Tigre Correndo",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2466001",
+      "mapId": "30027",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] A Interceptação de Tayuya",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 80,
+    "foregroundTiles": 62,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 62,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 972346,
+      "dimensions": [
+        2500,
+        2000
+      ],
+      "sha256": "1d76b1b1749652b6330dd9c5f2df83838b0205b60e5c3f0f17aa8f25b4ae04db",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30027/foreground.webp",
+        "sourceSha256": "1d76b1b1749652b6330dd9c5f2df83838b0205b60e5c3f0f17aa8f25b4ae04db",
+        "originalBytes": 2281000,
+        "bytes": 1513478,
+        "width": 2500,
+        "height": 2000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30027/native-alpha.png",
+    "width": 2500,
+    "height": 2000,
+    "sha256": "24cb32b27ebbb50d1be790e624b0e65d8866c1eb6241eef98b90fd7a45d9a9da"
+  }
+}

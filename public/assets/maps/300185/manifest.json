@@ -1,0 +1,116 @@
+{
+  "id": "300185",
+  "name": "Aldeia da Nuvem",
+  "kind": "lobby",
+  "background": "/assets/maps/300185/background.png",
+  "foreground": "/assets/maps/300185/foreground.png",
+  "thumbnail": "/assets/maps/300185/thumbnail.jpg",
+  "navigation": "/assets/maps/300185/navigation.json",
+  "width": 813.8020833333334,
+  "height": 1074.21875,
+  "spawn": {
+    "x": 573.5677083333334,
+    "y": 708.0078125
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/300185/",
+  "sourceScene": {
+    "id": "2015030",
+    "mapId": "300185",
+    "time": "1",
+    "type": "1",
+    "name": "Aldeia da Nuvem",
+    "minLevel": null,
+    "worldMapId": "2015030",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "91799ac1e62edb5f3a244e76439f22287c14d78239c5b95346c4ae02d21c82e8",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015030",
+      "mapId": "300185",
+      "time": "1",
+      "type": "1",
+      "name": "Aldeia da Nuvem",
+      "minLevel": null,
+      "worldMapId": "2015030",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2951001",
+      "mapId": "300185",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Segunda Unidade",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2961001",
+      "mapId": "300185",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Terceira Unidade",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2966001",
+      "mapId": "300185",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Quarta Unidade",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 130,
+    "foregroundTiles": 44,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 44,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 757343,
+      "dimensions": [
+        2500,
+        3300
+      ],
+      "sha256": "cb75839faaf98d186dabb2e0d50aa195a3c5fbf5deb6336d9a8a69e0041393aa",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300185/foreground.webp",
+        "sourceSha256": "cb75839faaf98d186dabb2e0d50aa195a3c5fbf5deb6336d9a8a69e0041393aa",
+        "originalBytes": 1279881,
+        "bytes": 754714,
+        "width": 2500,
+        "height": 3300,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300185/native-alpha.png",
+    "width": 2500,
+    "height": 3300,
+    "sha256": "f084e125f4c79dd4df185926210245dd1b6026e0f8fe4a366c1c759e4dc1cfeb"
+  }
+}

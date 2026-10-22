@@ -1,4 +1,5 @@
 import { Minimap } from "./world/minimap";
+import { animationOrigin } from "./entities/animation-origin";
 import { RouteOverlay } from "./world/route-overlay";
 import {
   t,
@@ -71,7 +72,7 @@ import {
   registerActor,
 } from "./entities/actor";
 import { installLibrary } from "./entities/library";
-import type { EntityManifest, ActorRole } from "./entities/types";
+import type { EntityManifest, ActorRole, AnimationDef } from "./entities/types";
 import { actorScale, CAMERA_ZOOM } from "./navigation";
 import {
   NativeNavigation,
@@ -91,14 +92,7 @@ import { Residents } from "./world/residents";
 import { EnemyField } from "./world/enemies";
 import { visionRadius } from "./world/awareness";
 import { AREAS, type CharacterId } from "./data";
-import {
-  Hunt,
-  fresh,
-  restore,
-  stats,
-  needed,
-  type Save,
-} from "./model";
+import { Hunt, fresh, restore, stats, needed, type Save } from "./model";
 type Anim = {
   url: string;
   frameWidth: number;
@@ -165,7 +159,7 @@ const miniWindow = installMiniWindow({
           v2: save.paused
             ? t("common.paused")
             : scene.isLobby
-              ? t("main.5c0b464698")
+              ? scene.map.name
               : phaseText(scene.hunt.phase),
           v3: Math.ceil(scene.hunt.hp),
           v4: stats(save).maxHp,
@@ -183,7 +177,9 @@ const miniWindow = installMiniWindow({
         target.hostname = "localhost";
         target.hash = "";
         location.assign(target.origin + target.pathname);
-      } catch (error) { toast(cloudError(error)); }
+      } catch (error) {
+        toast(cloudError(error));
+      }
     })();
   },
 });
@@ -468,7 +464,8 @@ export async function continueJourney() {
   await startCloudJourney();
 }
 async function start(s: Save) {
-  if (!cloudJourneyActive() || !cloudJourneyOwner()) throw new Error("AUTH_REQUIRED");
+  if (!cloudJourneyActive() || !cloudJourneyOwner())
+    throw new Error("AUTH_REQUIRED");
   await acquireJourney();
   miniWindow.restore();
   worldReady = false;
@@ -507,7 +504,7 @@ async function start(s: Save) {
         mapNavigation(startMap),
         entityCatalog.get(activeCharacterId(s)),
         Promise.all(
-          (startMap.kind === "lobby"
+          (startMap.kind !== "adventure"
             ? []
             : s.enemyId
               ? [s.enemyId]
@@ -523,7 +520,7 @@ async function start(s: Save) {
       ]);
     if (request !== launchVersion) return;
     const enemies = enemyModels.filter((m): m is EntityManifest => !!m);
-    if (startMap.kind !== "lobby" && !enemies.length)
+    if (startMap.kind === "adventure" && !enemies.length)
       throw new Error(t("main.9298b997a2"));
     const npcs = residentModels.filter((m): m is EntityManifest => !!m);
     const party = partyModels.filter((m): m is EntityManifest => !!m);
@@ -731,8 +728,7 @@ document.addEventListener("visibilitychange", () => {
   if (document.hidden) {
     commit();
     void flushCloudSave().catch(() => {});
-  }
-  else if (worldReady && !ownsJourney())
+  } else if (worldReady && !ownsJourney())
     window.dispatchEvent(new Event("journey-lock-lost"));
   else {
     game?.loop.resetDelta();
@@ -824,6 +820,7 @@ class HuntScene extends Phaser.Scene {
   private shownLevel?: number;
   hunt!: Hunt;
   hero!: Phaser.GameObjects.Sprite;
+  private activeHeroAnimation?: AnimationDef;
   enemy!: EntityActor;
   npcs: EntityActor[] = [];
   actorCache!: ActorAssetCache;
@@ -863,7 +860,7 @@ class HuntScene extends Phaser.Scene {
       foregroundPlan(initialMap, this.game.renderer.type === Phaser.WEBGL).url,
     );
     queuePresentation(this, presentationData, presentationCharacter(), {
-      effects: initialMap.kind !== "lobby",
+      effects: initialMap.kind === "adventure",
       audio: false,
     });
     for (const manifest of cast.enemies) {
@@ -878,7 +875,8 @@ class HuntScene extends Phaser.Scene {
       for (const [action, anim] of Object.entries(set)) {
         if (
           mode === "world" ||
-          (initialMap.kind !== "lobby" && heroBattleActions().includes(action))
+          (initialMap.kind === "adventure" &&
+            heroBattleActions().includes(action))
         )
           this.load.spritesheet(mode + "-" + action, anim.url, {
             frameWidth: anim.frameWidth,
@@ -895,7 +893,7 @@ class HuntScene extends Phaser.Scene {
       return;
     }
     scene = this;
-    this.combatReady = initialMap.kind !== "lobby";
+    this.combatReady = initialMap.kind === "adventure";
     this.map = initialMap;
     this.navigation = new NativeNavigation(initialNavigation);
     const savedPosition =
@@ -1031,9 +1029,11 @@ class HuntScene extends Phaser.Scene {
       (save.soundVolume ?? 0.4) * 100,
     );
     journal(
-      this.isLobby
+      this.map.id === "10001"
         ? t("main.7b721e9774")
-        : t("common.explorePrefix") + this.map.name + t("common.optionalHunt"),
+        : t("common.explorePrefix") +
+            this.map.name +
+            (this.isLobby ? "" : t("common.optionalHunt")),
     );
     this.events.once("shutdown", () => {
       if (import.meta.env.DEV && scene === this)
@@ -1334,7 +1334,8 @@ class HuntScene extends Phaser.Scene {
       const action = key.slice(mode.length + 1);
       const definition = cast.hero.modes[mode];
       const animation = definition?.animations[action];
-      if (animation) this.hero.setOrigin(...animation.origin);
+      this.activeHeroAnimation = animation;
+      if (animation) this.hero.setOrigin(...animationOrigin(animation, 0));
       this.hero.setScale(
         actorVisualScale(
           cast.hero.id,
@@ -1812,7 +1813,8 @@ class HuntScene extends Phaser.Scene {
     }
   }
   get isLobby() {
-    return this.map.kind === "lobby";
+    // Recovered scenario scenery can be visited without inventing its mission.
+    return this.map.kind !== "adventure";
   }
   map!: WorldMap;
   navigation!: NativeNavigation;
@@ -1893,7 +1895,7 @@ class HuntScene extends Phaser.Scene {
         ? this.party.members.map((m) => m.manifest.id)
         : cast.party.map((m) => m.id),
     );
-    if (this.isLobby)
+    if (this.map.id === "10001")
       this.npcs = cast.npcs
         .filter((m) => m.id !== cast.hero.id && !partyIds.has(m.id))
         .map((manifest, i) => {
@@ -2006,10 +2008,11 @@ class HuntScene extends Phaser.Scene {
     try {
       const grid = await mapNavigation(map);
       if (!this.sys.isActive()) return;
-      if (map.kind !== "lobby") await this.ensureCombat();
-      const pool = map.enemies.length
-        ? await Promise.all(map.enemies.map((id) => entityCatalog.get(id)))
-        : cast.enemies;
+      if (map.kind === "adventure") await this.ensureCombat();
+      const pool =
+        map.kind === "adventure"
+          ? await Promise.all(map.enemies.map((id) => entityCatalog.get(id)))
+          : [];
       if (!this.sys.isActive()) return;
       await this.loadMapImages(map);
       if (!this.sys.isActive()) return;
@@ -2045,7 +2048,7 @@ class HuntScene extends Phaser.Scene {
         this.hunt.hp = stats(save).maxHp;
         this.hunt.chakra = stats(save).maxChakra;
       }
-      this.enemy.use(pool[0], "enemy");
+      this.enemy.use(pool[0] || cast.hero, "enemy");
       this.enemy.angle = 0;
       this.resetResidents();
       this.placeEnemy();
@@ -2062,9 +2065,11 @@ class HuntScene extends Phaser.Scene {
       for (const key of ["map-" + old.id, "map-" + old.id + "-foreground"])
         if (this.textures.exists(key)) this.textures.remove(key);
       journal(
-        this.isLobby
+        this.map.id === "10001"
           ? t("main.b037a2c5a9")
-          : t("common.travelPrefix") + map.name + t("common.exploreFreely"),
+          : this.isLobby
+            ? t("maps.safeArrival", { name: map.name })
+            : t("common.travelPrefix") + map.name + t("common.exploreFreely"),
       );
       stage.finish();
     } catch (error) {
@@ -2129,6 +2134,10 @@ class HuntScene extends Phaser.Scene {
   }
   update(_time: number, delta: number) {
     if (!this.hero) return;
+    if (this.activeHeroAnimation)
+      this.hero.setOrigin(
+        ...animationOrigin(this.activeHeroAnimation, this.hero.frame.name),
+      );
     if (!ownsJourney()) {
       window.dispatchEvent(new Event("journey-lock-lost"));
       return;
@@ -2365,9 +2374,14 @@ class HuntScene extends Phaser.Scene {
       ? t("main.960cc636c1")
       : t("main.cd25ee5b1d");
     $("world-name").textContent = this.map.name;
-    $("world-help").textContent = this.isLobby
-      ? t("main.ab8ef7e487")
-      : t("main.ba4dfc88ee");
+    $("world-help").textContent =
+      this.map.kind === "exploration"
+        ? t("maps.explorationOnly")
+        : this.isLobby && this.map.id !== "10001"
+          ? t("maps.safeExploration")
+          : this.isLobby
+            ? t("main.ab8ef7e487")
+            : t("main.ba4dfc88ee");
     if (!this.isLobby) $("world-help").textContent += " " + t("stealth.help");
     $("auto-hunt").hidden = this.isLobby;
     $("return-lobby").hidden = this.isLobby;
@@ -2412,7 +2426,9 @@ class HuntScene extends Phaser.Scene {
     const phase = save.paused
       ? t("common.paused")
       : this.isLobby
-        ? t("main.7ca4480827")
+        ? this.map.id === "10001"
+          ? t("main.7ca4480827")
+          : t("common.explore")
         : phaseText(this.hunt.phase);
     const skillReason = save.paused
       ? t("common.paused")

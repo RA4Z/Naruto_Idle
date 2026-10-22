@@ -1,0 +1,106 @@
+{
+  "id": "30079",
+  "name": "Base de Orochimaru",
+  "kind": "lobby",
+  "background": "/assets/maps/30079/background.png",
+  "foreground": "/assets/maps/30079/foreground.png",
+  "thumbnail": "/assets/maps/30079/thumbnail.jpg",
+  "navigation": "/assets/maps/30079/navigation.json",
+  "width": 1171.875,
+  "height": 781.25,
+  "spawn": {
+    "x": 585.9375,
+    "y": 430.9895833333333
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/30079/",
+  "sourceScene": {
+    "id": "2015011",
+    "mapId": "30079",
+    "time": "1",
+    "type": "1",
+    "name": "Base de Orochimaru",
+    "minLevel": null,
+    "worldMapId": "2015011",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "8db5d3cf698c51ebe30f688c3bccd83640aeb9450d1d1a1b3c7b4f1a8b6a08b3",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015011",
+      "mapId": "30079",
+      "time": "1",
+      "type": "1",
+      "name": "Base de Orochimaru",
+      "minLevel": null,
+      "worldMapId": "2015011",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2558001",
+      "mapId": "30079",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Traição",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2706001",
+      "mapId": "30079",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] O Fim de Orochimaru",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 150,
+    "foregroundTiles": 38,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 38,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 440314,
+      "dimensions": [
+        3600,
+        2400
+      ],
+      "sha256": "778a106d3bdda39c9cd5914da90d243e6949885b513e104a7ea1bd9937d60eec",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30079/foreground.webp",
+        "sourceSha256": "778a106d3bdda39c9cd5914da90d243e6949885b513e104a7ea1bd9937d60eec",
+        "originalBytes": 372310,
+        "bytes": 200738,
+        "width": 3600,
+        "height": 2400,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30079/native-alpha.png",
+    "width": 3600,
+    "height": 2400,
+    "sha256": "10a40c811b727877601d96e2437f8bf240ccfc808f677e57a7aee551aa07d54e"
+  }
+}

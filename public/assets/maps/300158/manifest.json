@@ -1,0 +1,84 @@
+{
+  "id": "300158",
+  "name": "Sala da Divisão de Inteligência",
+  "kind": "lobby",
+  "background": "/assets/maps/300158/background.png",
+  "foreground": "/assets/maps/300158/foreground.png",
+  "thumbnail": "/assets/maps/300158/thumbnail.jpg",
+  "navigation": "/assets/maps/300158/navigation.json",
+  "width": 618.4895833333334,
+  "height": 390.625,
+  "spawn": {
+    "x": 309.2447916666667,
+    "y": 215.16927083333334
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/300158/",
+  "sourceScene": {
+    "id": "2015022",
+    "mapId": "300158",
+    "time": "1",
+    "type": "1",
+    "name": "Sala da Divisão de Inteligência",
+    "minLevel": null,
+    "worldMapId": "2015022",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "6ea55af3de2d567797ef5d32808a9ff427530929e0b65c7157c6c1920f88542d",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015022",
+      "mapId": "300158",
+      "time": "1",
+      "type": "1",
+      "name": "Sala da Divisão de Inteligência",
+      "minLevel": null,
+      "worldMapId": "2015022",
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 40,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 0,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": true,
+      "alphaLevels": [
+        0
+      ],
+      "nontransparentPixels": 0,
+      "dimensions": [
+        1900,
+        1200
+      ],
+      "sha256": "6a64b7571fc9d7ad18ff149f70226b5ffb9e3f6fc96bd4969c7cfe8527ee1d81",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300158/foreground.webp",
+        "sourceSha256": "6a64b7571fc9d7ad18ff149f70226b5ffb9e3f6fc96bd4969c7cfe8527ee1d81",
+        "originalBytes": 8932,
+        "bytes": 136,
+        "width": 1900,
+        "height": 1200,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300158/native-alpha.png",
+    "width": 1900,
+    "height": 1200,
+    "sha256": "992eb8e12f5dec65efb52c5954f4679aa2baf60764ad4995da718ef4e2246f8b"
+  }
+}

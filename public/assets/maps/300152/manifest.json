@@ -1,0 +1,96 @@
+{
+  "id": "300152",
+  "name": "Lago do Monte Myoboku",
+  "kind": "lobby",
+  "background": "/assets/maps/300152/background.png",
+  "foreground": "/assets/maps/300152/foreground.png",
+  "thumbnail": "/assets/maps/300152/thumbnail.jpg",
+  "navigation": "/assets/maps/300152/navigation.json",
+  "width": 1171.875,
+  "height": 781.25,
+  "spawn": {
+    "x": 585.9375,
+    "y": 420.5729166666667
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/300152/",
+  "sourceScene": {
+    "id": "2015021",
+    "mapId": "300152",
+    "time": "1",
+    "type": "1",
+    "name": "Lago do Monte Myoboku",
+    "minLevel": null,
+    "worldMapId": "2015020",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "6130429b6b71ecb51355fcd0e0aec3fd438510174228af7af05fe4adee2e7081",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015021",
+      "mapId": "300152",
+      "time": "1",
+      "type": "1",
+      "name": "Lago do Monte Myoboku",
+      "minLevel": null,
+      "worldMapId": "2015020",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2766001",
+      "mapId": "300152",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Início do Treinamento",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 150,
+    "foregroundTiles": 48,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 48,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 548667,
+      "dimensions": [
+        3600,
+        2400
+      ],
+      "sha256": "2bf9e2b111fd653761fa8b4084376ad072b00bd5e9099d23ad18f96fbb28873d",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300152/foreground.webp",
+        "sourceSha256": "2bf9e2b111fd653761fa8b4084376ad072b00bd5e9099d23ad18f96fbb28873d",
+        "originalBytes": 1311004,
+        "bytes": 831422,
+        "width": 3600,
+        "height": 2400,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300152/native-alpha.png",
+    "width": 3600,
+    "height": 2400,
+    "sha256": "d117b66a47a97811bc1544792c22e4a49e88d9d1510edf273d9a87a4a053bf46"
+  }
+}

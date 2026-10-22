@@ -1,0 +1,136 @@
+{
+  "id": "300140",
+  "name": "Entorno da Base de Orochimaru",
+  "kind": "lobby",
+  "background": "/assets/maps/300140/background.png",
+  "foreground": "/assets/maps/300140/foreground.png",
+  "thumbnail": "/assets/maps/300140/thumbnail.jpg",
+  "navigation": "/assets/maps/300140/navigation.json",
+  "width": 846.3541666666666,
+  "height": 716.1458333333334,
+  "spawn": {
+    "x": 423.1770833333333,
+    "y": 408.203125
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/300140/",
+  "sourceScene": {
+    "id": "2015007",
+    "mapId": "300140",
+    "time": "1",
+    "type": "1",
+    "name": "Entorno da Base de Orochimaru",
+    "minLevel": null,
+    "worldMapId": "2015007",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "a95b5c38c37ae201d0d21fc81f4257ac6a9db76d5a877bbdba3666c775437e81",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015007",
+      "mapId": "300140",
+      "time": "1",
+      "type": "1",
+      "name": "Entorno da Base de Orochimaru",
+      "minLevel": null,
+      "worldMapId": "2015007",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2557001",
+      "mapId": "300140",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] A Base de Orochimaru",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2656001",
+      "mapId": "300140",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Deidara",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2661001",
+      "mapId": "300140",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] A Aparição de Tobi",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2666001",
+      "mapId": "300140",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Combate de Vida ou Morte",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1700019",
+      "mapId": "300140",
+      "time": "1",
+      "type": "14",
+      "name": "Entorno da Base de Orochimaru",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 99,
+    "foregroundTiles": 54,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 54,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 810072,
+      "dimensions": [
+        2600,
+        2200
+      ],
+      "sha256": "73795185ab84dd69b31ed4781e4e4f014462de36f1794810f34cedfad2e35c99",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300140/foreground.webp",
+        "sourceSha256": "73795185ab84dd69b31ed4781e4e4f014462de36f1794810f34cedfad2e35c99",
+        "originalBytes": 1393760,
+        "bytes": 818068,
+        "width": 2600,
+        "height": 2200,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300140/native-alpha.png",
+    "width": 2600,
+    "height": 2200,
+    "sha256": "e0a65820fb8e715928d258939eeee08305599b81d5a3a3d79313d3deb190a71d"
+  }
+}

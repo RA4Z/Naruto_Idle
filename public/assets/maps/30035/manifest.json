@@ -1,0 +1,113 @@
+{
+  "id": "30035",
+  "name": "Cenário 30035",
+  "kind": "exploration",
+  "background": "/assets/maps/30035/background.png",
+  "foreground": "/assets/maps/30035/foreground.png",
+  "thumbnail": "/assets/maps/30035/thumbnail.jpg",
+  "navigation": "/assets/maps/30035/navigation.json",
+  "width": 1041.6666666666667,
+  "height": 618.4895833333334,
+  "spawn": {
+    "x": 520.8333333333334,
+    "y": 338.5416666666667
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: Local do Exame Chuunin; [Fase] Repelindo o Ataque; [Fase] Treino Jounin; outras registradas no manifesto.",
+  "source": "assets/scene/map/30035/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30035",
+    "name": "Cenário 30035",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "409b0177d317b8c382ba96c1b755222938c860c7a1cd262722ee2c15669ad2cd",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "1601003",
+      "mapId": "30035",
+      "time": "1",
+      "type": "3",
+      "name": "Local do Exame Chuunin",
+      "minLevel": null,
+      "worldMapId": "1601003",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2301001",
+      "mapId": "30035",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Repelindo o Ataque",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2366001",
+      "mapId": "30035",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Treino Jounin",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "4033001",
+      "mapId": "30035",
+      "time": "1",
+      "type": "2",
+      "name": "Segundo Campo de Batalha do Exame Chuunin",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 104,
+    "foregroundTiles": 29,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 29,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 449298,
+      "dimensions": [
+        3200,
+        1900
+      ],
+      "sha256": "bc11aff0159752d6e4908ca154a317ec2a7ed745580b91aa4490215af76f647b",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30035/foreground.webp",
+        "sourceSha256": "bc11aff0159752d6e4908ca154a317ec2a7ed745580b91aa4490215af76f647b",
+        "originalBytes": 867237,
+        "bytes": 528822,
+        "width": 3200,
+        "height": 1900,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30035/native-alpha.png",
+    "width": 3200,
+    "height": 1900,
+    "sha256": "de0c8700d3d846d4daa7bfd7a7d07d5a6ef9f81573b1764c7d972b6d093dafd2"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "300186",
+  "name": "Cenário 300186",
+  "kind": "exploration",
+  "background": "/assets/maps/300186/background.png",
+  "foreground": "/assets/maps/300186/foreground.png",
+  "thumbnail": "/assets/maps/300186/thumbnail.jpg",
+  "navigation": "/assets/maps/300186/navigation.json",
+  "width": 390.625,
+  "height": 260.4166666666667,
+  "spawn": {
+    "x": 195.3125,
+    "y": 147.13541666666666
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: Escritório do Raikage.",
+  "source": "assets/scene/map/300186/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "300186",
+    "name": "Cenário 300186",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "cfcc581d8ca9c19c5f7d365c9dbef807a6c69b638ce33483a49426db1f531f84",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2015031",
+      "mapId": "300186",
+      "time": "1",
+      "type": "3",
+      "name": "Escritório do Raikage",
+      "minLevel": null,
+      "worldMapId": "2015030",
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 20,
+    "foregroundTiles": 6,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 6,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 14793,
+      "dimensions": [
+        1200,
+        800
+      ],
+      "sha256": "599d81b514bfe771c4499cb5344a95cef5d3c00585f0913ff38a2b43fdb9d82c",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300186/foreground.webp",
+        "sourceSha256": "599d81b514bfe771c4499cb5344a95cef5d3c00585f0913ff38a2b43fdb9d82c",
+        "originalBytes": 29397,
+        "bytes": 14888,
+        "width": 1200,
+        "height": 800,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300186/native-alpha.png",
+    "width": 1200,
+    "height": 800,
+    "sha256": "775a3d444c5588e213144e4e83d0e3cca3af7ae72dc936e296df41bc5fadaac2"
+  }
+}

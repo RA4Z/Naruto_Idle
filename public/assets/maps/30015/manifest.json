@@ -1,0 +1,209 @@
+{
+  "id": "30015",
+  "name": "Penhasco da Folha",
+  "kind": "adventure",
+  "background": "/assets/maps/30015/background.png",
+  "foreground": "/assets/maps/30015/foreground.png",
+  "thumbnail": "/assets/maps/30015/thumbnail.jpg",
+  "navigation": "/assets/maps/30015/navigation.json",
+  "width": 813.8020833333334,
+  "height": 976.5625,
+  "spawn": {
+    "x": 386.0677083333333,
+    "y": 541.3411458333334
+  },
+  "enemies": [
+    "19000301",
+    "19000701"
+  ],
+  "description": "Explore a área original recuperada. Encontros adaptados para o idle.",
+  "source": "assets/scene/map/30015/",
+  "sourceScene": {
+    "id": "1005001",
+    "mapId": "30015",
+    "time": "2",
+    "type": "1",
+    "name": "Penhasco da Folha",
+    "minLevel": null,
+    "worldMapId": "1005001",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "ed0a85f1e804ec9f0f03e944088418e1280d59b9d029978571910e88d60b0513",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "1005001",
+      "mapId": "30015",
+      "time": "2",
+      "type": "1",
+      "name": "Penhasco da Folha",
+      "minLevel": null,
+      "worldMapId": "1005001",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2016001",
+      "mapId": "30015",
+      "time": "2",
+      "type": "2",
+      "name": "[Fase] Perseguição a Gaara",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2128001",
+      "mapId": "30015",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Treino de Vida ou Morte",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2220003",
+      "mapId": "30015",
+      "time": "2",
+      "type": "2",
+      "name": "我爱罗组队副本",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2326001",
+      "mapId": "30015",
+      "time": "2",
+      "type": "2",
+      "name": "[Fase] Perseguição a Gaara",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3001001",
+      "mapId": "30015",
+      "time": "2",
+      "type": "2",
+      "name": "Perseguição a Gaara",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3011001",
+      "mapId": "30015",
+      "time": "2",
+      "type": "2",
+      "name": "Perseguição a Gaara",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3012001",
+      "mapId": "30015",
+      "time": "2",
+      "type": "2",
+      "name": "Perseguição a Gaara",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3013001",
+      "mapId": "30015",
+      "time": "2",
+      "type": "2",
+      "name": "Perseguição a Gaara",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3014001",
+      "mapId": "30015",
+      "time": "2",
+      "type": "2",
+      "name": "Perseguição a Gaara",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3015001",
+      "mapId": "30015",
+      "time": "2",
+      "type": "2",
+      "name": "Perseguição a Gaara",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3051001",
+      "mapId": "30015",
+      "time": "2",
+      "type": "2",
+      "name": "[Fase] Perseguição a Gaara",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1700008",
+      "mapId": "30015",
+      "time": "1",
+      "type": "14",
+      "name": "Penhasco da Folha",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Authored idle-RPG encounters, not original story rules.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 120,
+    "foregroundTiles": 72,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 72,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 1217320,
+      "dimensions": [
+        2500,
+        3000
+      ],
+      "sha256": "98193be0db94e242256f2c210e3c14787ff0cb69f0b4d5f7cd1073b0e0fc3bf5",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30015/foreground.webp",
+        "sourceSha256": "98193be0db94e242256f2c210e3c14787ff0cb69f0b4d5f7cd1073b0e0fc3bf5",
+        "originalBytes": 3040288,
+        "bytes": 2133494,
+        "width": 2500,
+        "height": 3000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30015/native-alpha.png",
+    "width": 2500,
+    "height": 3000,
+    "sha256": "d6212994768cab1ac3367f1919f6dc65005466d2d4a85504482d39363cd75626"
+  }
+}

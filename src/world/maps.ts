@@ -11,7 +11,9 @@ import {
 export type WorldMap = {
   id: string;
   name: string;
-  kind: "lobby" | "adventure";
+  kind: "lobby" | "adventure" | "exploration";
+  collection?: "world" | "scenario" | "unidentified";
+  sourceScenes?: { name?: string | null }[];
   background: string;
   foreground: string;
   nativeAlpha?: {
@@ -64,6 +66,24 @@ export function installTravel(
   const favorites = dialog.querySelector<HTMLInputElement>(
     "[data-map-favorites]",
   )!;
+  const collection = document.createElement("select");
+  collection.dataset.mapCollection = "";
+  collection.setAttribute("aria-label", t("maps.collection"));
+  for (const [value, key] of [
+    ["world", "maps.world"],
+    ["scenario", "maps.scenarios"],
+    ["unidentified", "maps.unidentified"],
+    ["all", "maps.all"],
+  ] as const) {
+    const option = document.createElement("option");
+    option.value = value;
+    option.textContent = t(key);
+    collection.append(option);
+  }
+  collection.onchange = () => {
+    if (!busy) void render();
+  };
+  dialog.querySelector(".library-controls")!.append(collection);
   const difficulty = document.createElement("select");
   difficulty.dataset.difficultyPicker = "";
   difficulty.setAttribute("aria-label", t("balance.difficulty"));
@@ -86,7 +106,9 @@ export function installTravel(
       const matches = (await listMaps())
         .filter(
           (map) =>
-            `${map.name} ${map.id}`
+            (collection.value === "all" ||
+              (map.collection || "world") === collection.value) &&
+            `${map.name} ${map.id} ${(map.sourceScenes || []).map((s) => s.name || "").join(" ")}`
               .toLocaleLowerCase()
               .includes(search.value.toLocaleLowerCase()) &&
             (!favorites.checked ||
@@ -131,7 +153,7 @@ export function installTravel(
           last.textContent = t("qol.lastDestination");
           card.append(last);
         }
-        if (map.kind !== "lobby" && getDifficulty) {
+        if (map.kind === "adventure" && getDifficulty) {
           const { area, level } = getDifficulty();
           const difficulty = document.createElement("p");
           difficulty.dataset.difficulty = map.id;
@@ -147,14 +169,14 @@ export function installTravel(
         button.textContent =
           map.id === getCurrent()
             ? t("world.maps.dbe19f7fd8")
-            : map.kind === "lobby"
+            : map.id === "10001"
               ? t("world.maps.6b91bfdb4a")
               : t("common.explore");
         button.disabled = map.id === getCurrent();
         button.onclick = async () => {
           if (busy) return;
           busy = true;
-          search.disabled = favorites.disabled = true;
+          search.disabled = favorites.disabled = collection.disabled = true;
           button.setAttribute("aria-busy", "true");
           dialog.querySelectorAll("button").forEach((b) => (b.disabled = true));
           feedback.textContent = t("world.maps.80bfdbb9d3") + map.name + "…";
@@ -166,7 +188,7 @@ export function installTravel(
             feedback.textContent = errorText(e);
           } finally {
             busy = false;
-            search.disabled = favorites.disabled = false;
+            search.disabled = favorites.disabled = collection.disabled = false;
             button.removeAttribute("aria-busy");
             dialog
               .querySelectorAll("button")
@@ -182,7 +204,7 @@ export function installTravel(
         grid.append(card);
       }
       feedback.textContent = matches.length
-        ? t("world.maps.595a57e23c")
+        ? t("maps.catalogHint")
         : t("qol.noResults");
     } catch (e) {
       feedback.textContent = errorText(e);

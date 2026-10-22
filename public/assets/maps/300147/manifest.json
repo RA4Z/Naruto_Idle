@@ -1,0 +1,96 @@
+{
+  "id": "300147",
+  "name": "Corredor da Aldeia da Chuva",
+  "kind": "lobby",
+  "background": "/assets/maps/300147/background.png",
+  "foreground": "/assets/maps/300147/foreground.png",
+  "thumbnail": "/assets/maps/300147/thumbnail.jpg",
+  "navigation": "/assets/maps/300147/navigation.json",
+  "width": 651.0416666666666,
+  "height": 390.625,
+  "spawn": {
+    "x": 325.5208333333333,
+    "y": 217.44791666666666
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/300147/",
+  "sourceScene": {
+    "id": "2015018",
+    "mapId": "300147",
+    "time": "1",
+    "type": "1",
+    "name": "Corredor da Aldeia da Chuva",
+    "minLevel": null,
+    "worldMapId": "2015016",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "88631ded2cd0bfb617667b35f3cfcb9123d86d938092d0811fa47f8819e1e65a",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015018",
+      "mapId": "300147",
+      "time": "1",
+      "type": "1",
+      "name": "Corredor da Aldeia da Chuva",
+      "minLevel": null,
+      "worldMapId": "2015016",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2751001",
+      "mapId": "300147",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Três Pains",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 40,
+    "foregroundTiles": 23,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 23,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 441570,
+      "dimensions": [
+        2000,
+        1200
+      ],
+      "sha256": "ba07f23400574b1fdaac4064adfa3a49628e15cae9f537f536cb74984ca7084e",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300147/foreground.webp",
+        "sourceSha256": "ba07f23400574b1fdaac4064adfa3a49628e15cae9f537f536cb74984ca7084e",
+        "originalBytes": 98478,
+        "bytes": 49604,
+        "width": 2000,
+        "height": 1200,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300147/native-alpha.png",
+    "width": 2000,
+    "height": 1200,
+    "sha256": "964e433d8ee02572d2364724fd3afd7e033250e5f994a16279f5eb512280ffee"
+  }
+}

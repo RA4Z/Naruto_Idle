@@ -1,0 +1,111 @@
+{
+  "id": "30099",
+  "name": "Cenário 30099",
+  "kind": "exploration",
+  "background": "/assets/maps/30099/background.png",
+  "foreground": "/assets/maps/30099/foreground.png",
+  "thumbnail": "/assets/maps/30099/thumbnail.jpg",
+  "navigation": "/assets/maps/30099/navigation.json",
+  "width": 520.8333333333334,
+  "height": 260.4166666666667,
+  "spawn": {
+    "x": 260.4166666666667,
+    "y": 135.41666666666666
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: Corredor da Academia; Corredor do Segundo Piso da Academia; [Fase] Rock Lee vs. Sasuke.",
+  "source": "assets/scene/map/30099/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30099",
+    "name": "Cenário 30099",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "bff3135ce5d6f4044857666d94a0539770e0783aee0350d46d1490646efa2ee9",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "1502001",
+      "mapId": "30099",
+      "time": "1",
+      "type": "3",
+      "name": "Corredor da Academia",
+      "minLevel": null,
+      "worldMapId": "1502001",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1502005",
+      "mapId": "30099",
+      "time": "1",
+      "type": "3",
+      "name": "Corredor do Segundo Piso da Academia",
+      "minLevel": null,
+      "worldMapId": "1502001",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2113001",
+      "mapId": "30099",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Rock Lee vs. Sasuke",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2115001",
+      "mapId": "30099",
+      "time": "1",
+      "type": "2",
+      "name": "Corredor da Academia",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 28,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 0,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": true,
+      "alphaLevels": [
+        0
+      ],
+      "nontransparentPixels": 0,
+      "dimensions": [
+        1600,
+        800
+      ],
+      "sha256": "5ac1de4ebc7b9f4edfd194c16ac08dcd610571a8109d4745454f5a73f05cdf72",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30099/foreground.webp",
+        "sourceSha256": "5ac1de4ebc7b9f4edfd194c16ac08dcd610571a8109d4745454f5a73f05cdf72",
+        "originalBytes": 5042,
+        "bytes": 94,
+        "width": 1600,
+        "height": 800,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30099/native-alpha.png",
+    "width": 1600,
+    "height": 800,
+    "sha256": "eaa1303799a031426f4d3a9a9751529a1cc76f883ad0d4bda3b0a6bd625087ac"
+  }
+}

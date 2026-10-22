@@ -1,0 +1,114 @@
+{
+  "id": "300180",
+  "name": "Vale das Nuvens e Relâmpago",
+  "kind": "lobby",
+  "background": "/assets/maps/300180/background.png",
+  "foreground": "/assets/maps/300180/foreground.png",
+  "thumbnail": "/assets/maps/300180/thumbnail.jpg",
+  "navigation": "/assets/maps/300180/navigation.json",
+  "width": 683.59375,
+  "height": 813.8020833333334,
+  "spawn": {
+    "x": 362.6302083333333,
+    "y": 459.3098958333333
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/300180/",
+  "sourceScene": {
+    "id": "2015029",
+    "mapId": "300180",
+    "time": "1",
+    "type": "1",
+    "name": "Vale das Nuvens e Relâmpago",
+    "minLevel": null,
+    "worldMapId": "2015029",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "d2cb1c050f0a1cb2b5bceafdd534d0fa8c6af7d93712db866c35e08a5e472098",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015029",
+      "mapId": "300180",
+      "time": "1",
+      "type": "1",
+      "name": "Vale das Nuvens e Relâmpago",
+      "minLevel": null,
+      "worldMapId": "2015029",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2946001",
+      "mapId": "300180",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Primeira Unidade",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2971001",
+      "mapId": "300180",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Estratégia para a Grande Guerra",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2976001",
+      "mapId": "300180",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] A Força dos Kages",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 90,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 0,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": true,
+      "alphaLevels": [
+        0
+      ],
+      "nontransparentPixels": 0,
+      "dimensions": [
+        2100,
+        2500
+      ],
+      "sha256": "b9b7a60ad013ef11d53d3a53938c435dd1da7be285c0bf94d85ba97d8a679e7f",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300180/foreground.webp",
+        "sourceSha256": "b9b7a60ad013ef11d53d3a53938c435dd1da7be285c0bf94d85ba97d8a679e7f",
+        "originalBytes": 20457,
+        "bytes": 260,
+        "width": 2100,
+        "height": 2500,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300180/native-alpha.png",
+    "width": 2100,
+    "height": 2500,
+    "sha256": "597c387cc3da83c27127dbd2d9e7981b6b4418857722a924b0f2881fc7a86667"
+  }
+}

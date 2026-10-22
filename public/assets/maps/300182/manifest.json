@@ -1,0 +1,96 @@
+{
+  "id": "300182",
+  "name": "Local da Cúpula dos Cinco Kage",
+  "kind": "lobby",
+  "background": "/assets/maps/300182/background.png",
+  "foreground": "/assets/maps/300182/foreground.png",
+  "thumbnail": "/assets/maps/300182/thumbnail.jpg",
+  "navigation": "/assets/maps/300182/navigation.json",
+  "width": 651.0416666666666,
+  "height": 585.9375,
+  "spawn": {
+    "x": 325.5208333333333,
+    "y": 321.6145833333333
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/300182/",
+  "sourceScene": {
+    "id": "2015027",
+    "mapId": "300182",
+    "time": "1",
+    "type": "1",
+    "name": "Local da Cúpula dos Cinco Kage",
+    "minLevel": null,
+    "worldMapId": "2015027",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "65b80bdea584383ec83a143a3df31e11febad012a4d46289ae3be191a4ea9af7",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015027",
+      "mapId": "300182",
+      "time": "1",
+      "type": "1",
+      "name": "Local da Cúpula dos Cinco Kage",
+      "minLevel": null,
+      "worldMapId": "2015027",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3056001",
+      "mapId": "300182",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Cúpula dos Cinco Kage",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 64,
+    "foregroundTiles": 28,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 28,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 233913,
+      "dimensions": [
+        2000,
+        1800
+      ],
+      "sha256": "625ee1517c1a51b0d4a0df85c0295018c36cf31a0ca66d9801268ae62e120694",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300182/foreground.webp",
+        "sourceSha256": "625ee1517c1a51b0d4a0df85c0295018c36cf31a0ca66d9801268ae62e120694",
+        "originalBytes": 271340,
+        "bytes": 147806,
+        "width": 2000,
+        "height": 1800,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300182/native-alpha.png",
+    "width": 2000,
+    "height": 1800,
+    "sha256": "fcfd79479fc4cdfa2e4cfae2421c4a7c8e971c7882c687993054e2734c9a5767"
+  }
+}

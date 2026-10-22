@@ -1,0 +1,93 @@
+{
+  "id": "30071",
+  "name": "Cenário 30071",
+  "kind": "exploration",
+  "background": "/assets/maps/30071/background.png",
+  "foreground": "/assets/maps/30071/foreground.png",
+  "thumbnail": "/assets/maps/30071/thumbnail.jpg",
+  "navigation": "/assets/maps/30071/navigation.json",
+  "width": 976.5625,
+  "height": 976.5625,
+  "spawn": {
+    "x": 477.8645833333333,
+    "y": 505.859375
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Tornando-se Kazekage; Aldeia da Areia (À Noite).",
+  "source": "assets/scene/map/30071/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30071",
+    "name": "Cenário 30071",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "ef084deb3d1eef081e17f1b95f9892cf470ae6deef40ca5ec8b5d77712d7a946",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2506001",
+      "mapId": "30071",
+      "time": "3",
+      "type": "2",
+      "name": "[Fase] Tornando-se Kazekage",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "4041001",
+      "mapId": "30071",
+      "time": "3",
+      "type": "2",
+      "name": "Aldeia da Areia (À Noite)",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 144,
+    "foregroundTiles": 60,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 60,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 49611,
+      "dimensions": [
+        3000,
+        3000
+      ],
+      "sha256": "11fb8cd5b3ec4bba4d783282658f08ff7e8d2017f43601d58cc2badb67f11764",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30071/foreground.webp",
+        "sourceSha256": "11fb8cd5b3ec4bba4d783282658f08ff7e8d2017f43601d58cc2badb67f11764",
+        "originalBytes": 197635,
+        "bytes": 92574,
+        "width": 3000,
+        "height": 3000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30071/native-alpha.png",
+    "width": 3000,
+    "height": 3000,
+    "sha256": "5cd09db7850bee8f2eab94e9eaac8cd55150d6ec1ac73bddcea0de780b9fb7f9"
+  }
+}

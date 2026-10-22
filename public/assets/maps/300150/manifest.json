@@ -1,0 +1,111 @@
+{
+  "id": "300150",
+  "name": "Cenário 300150",
+  "kind": "exploration",
+  "background": "/assets/maps/300150/background.png",
+  "foreground": "/assets/maps/300150/foreground.png",
+  "thumbnail": "/assets/maps/300150/thumbnail.jpg",
+  "navigation": "/assets/maps/300150/navigation.json",
+  "width": 651.0416666666666,
+  "height": 651.0416666666666,
+  "spawn": {
+    "x": 325.5208333333333,
+    "y": 363.28125
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Lutando Lado a Lado; [Fase] Ataque após Ataque; [Fase] Destruição do Selo; outras registradas no manifesto.",
+  "source": "assets/scene/map/300150/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "300150",
+    "name": "Cenário 300150",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "37d8110ca30afd93118074e4df0691f673dcfda1203459ff36006fc1422e8da0",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2841001",
+      "mapId": "300150",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Lutando Lado a Lado",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2846001",
+      "mapId": "300150",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Ataque após Ataque",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2851001",
+      "mapId": "300150",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Destruição do Selo",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3055001",
+      "mapId": "300150",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Ciclo de renascimentos",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 64,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 0,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": true,
+      "alphaLevels": [
+        0
+      ],
+      "nontransparentPixels": 0,
+      "dimensions": [
+        2000,
+        2000
+      ],
+      "sha256": "6502f42283a772653138800a6221021356e134850dc829677ab6a629ca4853bf",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300150/foreground.webp",
+        "sourceSha256": "6502f42283a772653138800a6221021356e134850dc829677ab6a629ca4853bf",
+        "originalBytes": 15599,
+        "bytes": 208,
+        "width": 2000,
+        "height": 2000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300150/native-alpha.png",
+    "width": 2000,
+    "height": 2000,
+    "sha256": "53d6418216656d301602296904319ec20f91d39c26a75e12e09010540075e0ef"
+  }
+}

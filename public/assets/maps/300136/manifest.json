@@ -1,0 +1,104 @@
+{
+  "id": "300136",
+  "name": "Cenário 300136",
+  "kind": "exploration",
+  "background": "/assets/maps/300136/background.png",
+  "foreground": "/assets/maps/300136/foreground.png",
+  "thumbnail": "/assets/maps/300136/thumbnail.jpg",
+  "navigation": "/assets/maps/300136/navigation.json",
+  "width": 878.90625,
+  "height": 1171.875,
+  "spawn": {
+    "x": 439.453125,
+    "y": 639.6484375
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Interceptação dos Ninjas da Areia; [Fase] Avante Konoha!; [Fase] Luta Feroz!Kakashi!.",
+  "source": "assets/scene/map/300136/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "300136",
+    "name": "Cenário 300136",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "662500fb15061fbeb3319b49425c5f4d327098a92b3332dcdf553f415d96b515",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2306001",
+      "mapId": "300136",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Interceptação dos Ninjas da Areia",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2806001",
+      "mapId": "300136",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Avante Konoha!",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2811001",
+      "mapId": "300136",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Luta Feroz!Kakashi!",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 165,
+    "foregroundTiles": 110,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 110,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170,
+        255
+      ],
+      "nontransparentPixels": 1792466,
+      "dimensions": [
+        2700,
+        3600
+      ],
+      "sha256": "5dc7f2872d56c4687f1b0b70407189290ab9073851eedcf47b5f00f8096f039c",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300136/foreground.webp",
+        "sourceSha256": "5dc7f2872d56c4687f1b0b70407189290ab9073851eedcf47b5f00f8096f039c",
+        "originalBytes": 3179145,
+        "bytes": 1858568,
+        "width": 2700,
+        "height": 3600,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300136/native-alpha.png",
+    "width": 2700,
+    "height": 3600,
+    "sha256": "50b9c480bcd18b3e0e34a42e082ff46dc1ff47c8a885344bae724d774701d5aa"
+  }
+}

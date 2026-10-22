@@ -1,0 +1,103 @@
+{
+  "id": "300137",
+  "name": "Cenário 300137",
+  "kind": "exploration",
+  "background": "/assets/maps/300137/background.png",
+  "foreground": "/assets/maps/300137/foreground.png",
+  "thumbnail": "/assets/maps/300137/thumbnail.jpg",
+  "navigation": "/assets/maps/300137/navigation.json",
+  "width": 878.90625,
+  "height": 1074.21875,
+  "spawn": {
+    "x": 460.2864583333333,
+    "y": 660.4817708333334
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] A Paz Futura; [Fase] Quebrando Barreiras; [Fase] A Crença de Tsunade.",
+  "source": "assets/scene/map/300137/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "300137",
+    "name": "Cenário 300137",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "4db0d26191095d5afd3d044a924772b65ccba776009eecbf45dee09d1d41afdc",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2821001",
+      "mapId": "300137",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] A Paz Futura",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2831001",
+      "mapId": "300137",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Quebrando Barreiras",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2836001",
+      "mapId": "300137",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] A Crença de Tsunade",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 143,
+    "foregroundTiles": 50,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 50,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 917006,
+      "dimensions": [
+        2700,
+        3300
+      ],
+      "sha256": "c4a27014b4a84d3b399ca37281e5e82f9cedbf79c9cdd120206d35a2e376ba50",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300137/foreground.webp",
+        "sourceSha256": "c4a27014b4a84d3b399ca37281e5e82f9cedbf79c9cdd120206d35a2e376ba50",
+        "originalBytes": 1862862,
+        "bytes": 1117004,
+        "width": 2700,
+        "height": 3300,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300137/native-alpha.png",
+    "width": 2700,
+    "height": 3300,
+    "sha256": "020c2da0b2b1a1aac30f436c8225e2505fe37e384bb0f864f36709ce1dc99f11"
+  }
+}

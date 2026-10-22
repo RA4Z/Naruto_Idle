@@ -1,0 +1,996 @@
+{
+  "policy": "one map at a time; explicit IDs; existing entries and original files preserved",
+  "maps": [
+    {
+      "id": "300183",
+      "state": "integrated-awaiting-tests",
+      "sourceScene": {
+        "id": "2015025",
+        "mapId": "300183",
+        "time": "1",
+        "type": "1",
+        "name": "Portão do País do Ferro",
+        "minLevel": null,
+        "worldMapId": "2015025",
+        "replaceSelfNinja": null
+      },
+      "sources": [
+        {
+          "path": "assets/scene/map/300183/MapInfo.map",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 21320,
+          "sha256": "7c6a1ae18c705e03b341149959e09ffb3ec89c0677002f630800744eeb5b430f",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/_scene_bg.xml",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 2232,
+          "sha256": "6e36568ffb1edac4acc5815fd3154d38779b3a0eb9b576acf913dd30ee0af111",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "config/world/SceneCFG.xml",
+          "tag": "PT_NarutoAlpha9.31Build300",
+          "bytes": 6805,
+          "sha256": "efea068f921282d9f13cbede5e1da18df6a354072432491a397cc830cc78426a",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/0748912c472ade07d1ab0c08121b9881.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 2650,
+          "sha256": "d7b4d263257925cdb91f3b6cf1832fe0e82d3fdb51a1ef398dc19d552db7b282",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/0b0854ac47d4f58e7436f6d1d74cceac.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 10101,
+          "sha256": "a94f574c1816ee75f8f43a543e3be72179ae0713fa660638a9ad2c339ca5f43d",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/0d78d5bb9975220c86525c2213fa02db.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 562,
+          "sha256": "6aabda2b8914184cbf6dc6ec64ccacb611a833433c12601c4996ff4ab1128e63",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/0fc978d29f298cd46bf0dc07274c7bef.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 7918,
+          "sha256": "3444fc1cd65467151433f841889d22edf5960cb99f4be383ed1751fc9c400fcd",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/142f708a8416090fedd6d9eb33126a92.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 7776,
+          "sha256": "4e48abeb16116b69db9d2df1d43266961c0ec95d13d51774e4bf9b858316f3d3",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/15fe11c6a57bc8e8f45ad26bc89b2fb4.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 7569,
+          "sha256": "d1569d0d5ef631ac59dd7bd05cf6f8ffde0d4d925dce210c900640f2e9f25fde",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/181d0bfb0b7a0b0e78b7f0f399c5d1b0.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 7266,
+          "sha256": "bc718a928466b130e7e6152dd62810e9f0784bf08a060a9770968a5dc8ea222d",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/18834b1eaf91bf14d21c30d0e967cc7c.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 1186,
+          "sha256": "6e44c207312c8c7b77da3d05898f23deb1ca44b5acca6101bb1cbb78ae14a5c3",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/1dbeedc2dde35cd677301c1260e2199e.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 8953,
+          "sha256": "5cd2b7ee8d10bda88ec01a86920267f18caf8bc8dcae507108f978cc09adbef3",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/1dc88bca30bfb0326c06fc12da6e27a6.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 6799,
+          "sha256": "0bfe4e42664558fe9fc452ffd25fbc383f406dc58f22ff50559486f9fdcee6b8",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/24d74a2edc4e997f2dc66e80d0694853.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 8868,
+          "sha256": "d9e0f8931c410d5f810855f95eae63efafa75b33531814e0c080b43705c8295c",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/25c02632fdfa6eda1c66a6080596f3e3.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 11714,
+          "sha256": "1f3338f14f77557c38edcd7ee659dac8a75f0ae994e3e8e66fb5be6df2317a4b",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/2638d4e214e58f9fa18c35cc04cf4305.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 7548,
+          "sha256": "273d35223e6c4cd3777f56e02aa4dffea48641763ac8176c2ebd2f569a9c235d",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/33e2328f241b6479587241b04be92de1.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 7199,
+          "sha256": "dbdd47745ad2f78e0ef68f9a39f90f101377590d4da50dc48f9a7198592b2f80",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/340fadc2a6321712d0e57375461664b8.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 7862,
+          "sha256": "de408c478add07ea2fb12d7533000fd31f2633a5af38dfa83091bbe108bbee40",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/3514cb197d79e15ebccdc5b04563a6a7.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 15040,
+          "sha256": "17c6747c5e73fbfcb7783e026e7902a1d09e10be84075dab86858ba4a6223906",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/402ebfd4a9c20db67aa38af987904b9d.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 3558,
+          "sha256": "b3214ab3e7001d36a25102c3bbc62c68673a120851cc2d72cbcb87013708eda8",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/437e40825bb579f9a0929e482e9f4ef5.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 7540,
+          "sha256": "0f0421cb772b8b1ad17c830f2da57d019754b8c1dab92ddaf437d570f0207a4d",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/45df0185fb62d7821213ec5c801a2ef3.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 7941,
+          "sha256": "72aac10ffbbda700e3d2eba4b8737243a04a64f34fea4d4f280dc6a2aa03db45",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/46cad69d67b995d908155703ca008184.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 11782,
+          "sha256": "07fb5b5d59242911f2c61db316ac482dd3be41dbafe37b9674394c239f19249f",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/47f1470e54be7fcf12510e20d4e856d7.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 5471,
+          "sha256": "7ba29f2cbb9dd1cf1addcae69f00c37a78384311d07c12b92f6109c400ab9c16",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/4927a03ff9f8910cefe28d0ca2c35f46.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 6581,
+          "sha256": "4b0ecd1556c84033ee981ea3b4294e7ef69292a90e691133dc9338ac0f84109d",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/4bac58f8e4323f580d24f81c6f88aefc.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 24310,
+          "sha256": "2b6b6efd8734369fcd19e4be5d4e5f24665805a3817e3bfbd7d2242d8ec79c18",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/4fe2ffb8c8970f8930995cdf68feb019.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 7046,
+          "sha256": "27d2dd1927ec0fa6215eef9b0bcc25de390540e5313bd84474568bfc1dee661b",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/5044f2177858335a4bba0ceaa6f622c9.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 9981,
+          "sha256": "ce375ba0b8c1ed628f335caf670b6310fc2370f5705a45ab0c05865f53269a71",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/53274c0e7763c00cb551325dc9be2b25.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 6003,
+          "sha256": "ec3be672e9a584b3374199ff6acd470c555411b61103d021af221da82c20a981",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/53297cb2754b1b61a4fe3de643d5c73b.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 8232,
+          "sha256": "815883c03fc2839e5742ffa6e16a74d428c95306f8a942bc909a150010c8610b",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/56eaeb2e51b20e6030a5b26c75b6eb62.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 872,
+          "sha256": "bf5d0df30001b519cd406f8a39c98458e4af0316c1abad471e5f59f617df4f2c",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/58fc1d688cce9ff1a801751e1ab571fd.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 6810,
+          "sha256": "8d5f8855fe954f30ad876a66a1e5878650761fd531960b15dc0a345bbbfebb93",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/5c9c4aa07deb60b84ec6a342b4d39bce.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 6244,
+          "sha256": "36b1c24ea29172d8f3a02fb524a63690782983bd0acceb224cae2f1235d30cf0",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/5eb0573264cbfa7164816751d53d4dfc.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 14568,
+          "sha256": "02a6113777e4e079866039ae28a0dc96cc204349ee739a800d34a6ca93b09ffd",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/64f7ecaba8cbb8079cd8d5f7f142987c.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 10550,
+          "sha256": "97e6953dbeb71387d8f5a9a3b0ac8ddeda0b7e42dbffa85410cb9e2ba84e5b8b",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/6c2b8186afe493c335caad115a1f580b.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 9616,
+          "sha256": "7391e59d2af66717f35cac5ed73221c930c64c1dee589c2b1b005d853ffd4b59",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/743dbe20166920524953030b9cdd68cc.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 11204,
+          "sha256": "0cead7ac2486f5cba16f769dc515e64d971ede7f1734b18b621418e31d7b0f30",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/7512cd3bc876dc2aa6ffa0c26066b428.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 10934,
+          "sha256": "ab6a758988a5c45f45ed54487fb32b2b211f47f276262f85d81acedf0116a1e8",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/81d78ae66c438c34785d2714143e9a48.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 7351,
+          "sha256": "4bf0d211b119c90981074fa4f388900751c7c7a2111f68ef65cd6b0af90556e4",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/83587583b11c181a665fa655089e1397.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 11520,
+          "sha256": "654eea1a1387e53fd020eba805dfa8cd39945f72ec62f8a6b05b98353287405f",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/844c96f16e2a26c483edb17059118380.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 10602,
+          "sha256": "1b4eecfa989f6962a8c898e4ab7491c6a086c5f999bcbec5a2c2686c809a69d7",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/87ea51e5d2415d624a4d6f24432ded2a.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 6481,
+          "sha256": "6ab19496d0512843ad562a92fc992f98573c40943f2b58d9045cbc976e548764",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/8878845dfacb90a438c04c999a093a7f.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 6533,
+          "sha256": "f3ebf1b37ac2be41087397c226be830352e214f99e99d94f5b4a306df0f67fd8",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/88fb389c3da24e2b728d8d4e647b832e.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 6891,
+          "sha256": "68ad34142af03a72f5d043dfde60578f290c1376632db7298fdbade4c27d6653",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/8c8cfbdb7f0099b0dd319d1f4eed0d25.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 1238,
+          "sha256": "9cca2b6f751464ca643e08db13890c50765d9c117c186b227a63548ab132139d",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/8dd5158db3f94e96bf962133771ec69a.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 5632,
+          "sha256": "8f5535214b17c52b40724e08e1b6c0d352117c1bbde4e4bfd68375be19d5334b",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/94f3d1aed4470978b5042aad25e31108.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 6161,
+          "sha256": "10ae64d09260ee117c3545f5f07642b3cda9579a58eeebe135dd7ad797b60181",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/968badb3d25ee883d1d5068a8c672601.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 26190,
+          "sha256": "5406fe791109b8ad2369f16e4cf1d23b8b6ae3289056bad649b55485deea86f4",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/983a01d972783cd554c82317678ebdc6.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 7245,
+          "sha256": "b3ea7b22be0e2434b891799cc9f17d9d1162aae110b81d1a414ce253021203a2",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/99fa5a904b90a5fc3594c271ce6ba838.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 8011,
+          "sha256": "c51656e4a00664ae14d0d85f86d524dcc5e680a838316f8f9b179b6a517da977",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/9ba069d405c58c133e65076013cb1319.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 7006,
+          "sha256": "bc8a72ec028510fc146bd7d844cef15dd2d5367c63a7d126443409ae6aafa5aa",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/9e6459d10e9ed02db0de1a0387a0c335.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 8913,
+          "sha256": "a3511c658e16cdbeaf2887d96890e0f1d70d1c02990f2b55e5b5410eab23b8ef",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/a3e9a9a4d9ed16a7e7da6fd08920e059.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 6983,
+          "sha256": "3d951931acbf2582d96cb1775f0eb8552975e0b1089a5a1aae530d6f0b36c1c2",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/a83cee6e4e0ae7283dcb7c78165c8579.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 25658,
+          "sha256": "ffd037061b561fb5671b40b129956f3e0fe309149d8a424f0bdba680cff64efc",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/ae7b1e6851c2f648da0c0abac4e39a3e.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 9623,
+          "sha256": "f7f63a4e0828d88fd799dbb00c563ec1c668a7dacd73ed588fb429892a367fe3",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/b1be155e5b115271469b1c3ce99da9f2.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 8460,
+          "sha256": "b01cde8bd28fc05b8aa5a56dede796c70964c5b84517f19cef8db6fb7a6a1f62",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/b4f71a5ae06340f15137874a6a9bbf20.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 574,
+          "sha256": "286edf6f6767d93897f7d35d51d0dd9e2afe58bd726faf06bbae14d383fc2a15",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/b637b326b36ce0146d912eb0840ed791.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 10932,
+          "sha256": "0c376b47b9455218b9fd3a60308266b9180e055962b06451dc7ee0f4dbdbd51a",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/b8b7977638bb25e198dbe8f730379868.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 654,
+          "sha256": "414abea98fbfc1315df1ca2a60ba20184326a0d0d985cd6ad609bb5f3a1492ac",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/b9fa560e9b524e8b5ff5b577eee9e6c8.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 9787,
+          "sha256": "9674e80b69502c9c8c6eb5b7f35470dea1cd372ab614b88d1c559c739013033c",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/bd0425ab07b4238265e50b119592275c.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 668,
+          "sha256": "c8087bf5ecab53a1df69a4422dc335ccc40e829bee5217046768a35f30559fa3",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/c16d8399c268dcf4a9ccc2482bf57336.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 6453,
+          "sha256": "5f70322fc2e2b69132951a1d4f4c6a377756495a644de8305502d7b775fbc044",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/c41d0291e93be204706d94a07ceb389d.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 5027,
+          "sha256": "9c057911ac67089f2be199eb189749f904d8a947ce17e3399dcbfd5624fc6cd8",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/ca7907dcb01bfc75763682eeea10eca0.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 8742,
+          "sha256": "e71e2c04531bb8c4d80acad0114cffe629adf979b478550742a65e7a48ce67b6",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/cb23e70d14cf92529ced4e7cc215db58.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 7577,
+          "sha256": "6c44b2468badc0de04f8bc0ad95c173762e8ff0031593821d8611395a3253adc",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/cc457f81cc430df28b17e7da34880fdd.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 666,
+          "sha256": "4b52a7b3699b2f214e725a2abfb847db3316a4a04ffda093ebbe39ba5fc7e8e6",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/cf338c07bf95d9ccec05460ce9404851.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 16300,
+          "sha256": "60fa9faf419797ab02aed6ad6e6ff5e51d0625eefbc6e309c8572bdf268439ac",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/d3b574df845a2e79203cae9068327d99.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 13159,
+          "sha256": "fb3c5f5a1f20f49f7a6098cc59b6c9c3c997aefa36a47b7065f3dbd1dc9d5afa",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/d4ffb5e19c7915ea8a274a205d7016b4.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 7605,
+          "sha256": "8994d4c94c6dcccd2106c4f9d1436811bfc1fb2869e060a745a82c3edb0ba93b",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/d7e39aa0705520e34b095735fc12626f.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 1258,
+          "sha256": "8c3f433424de24cf36be9fb5521d78b03882b90581907433a9314d950a285488",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/d92ee5404c28ff7a56e26010a8056dab.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 7647,
+          "sha256": "a4e908310e35d03c38bd5c651edd7cc1690358ab0e3805c6145bfa03f682f317",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/d92f7cf94da176abcdac68119b977c32.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 8440,
+          "sha256": "c55199f284b9a04a90e172ad5c18faff648fcf930800cde221aa4b17de86fd42",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/dd091e86a888054c9b75d74e00a01e27.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 11311,
+          "sha256": "e52eacd5ae6add38d52674ee740bd9a15e920199da1277d2948e3b8b7bca43af",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/de93a9aa19e87f0ecf028716491448a9.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 1832,
+          "sha256": "9aa9d8bebf68cf748bf1d30bc3e765b69769b13c9c959eaa4386a0f219468179",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/dee3723e09bcd14ea046a86fb569a52a.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 11504,
+          "sha256": "4ce60ad44b61c2727dcf680e2c75f9b30d4dcc125721b85d0a14446ce0cdc962",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/e788dfeeab58f8280a6a31551695238e.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 7655,
+          "sha256": "52dde592889bbca95bbaab02bc2cb28d4c28d8bb6f07013e7d93ac5ecd461bb0",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/ea4e65745d63b0feba00015130ac2887.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 13860,
+          "sha256": "887dae326bb4acb1bb98985a97366d49fcd835e5ba6bf1718898888bfebb8306",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/f2ae564e3b44764a131dc42af39d9eea.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 10976,
+          "sha256": "6a85f239561c94247625adec563a07123305fa1a2b262caaf9eaf40a8c3b3ca8",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/f3aa37f92a9bb0b6db2fc870676fe6b4.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 7616,
+          "sha256": "a2b1b63d6b6e06609dac867747964488c1acd7d4c37969dabf6bf9da736fa480",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/f53366662dabd593ab81bbeebb4d1d54.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 7103,
+          "sha256": "c12cc81956aca9d4b0ede2fac7d3065eb6cf376921a56df661ded5b48c46088a",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/f5605c7d9685f92fede4c94bbc5f4fcc.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 717,
+          "sha256": "e29ce131c43a38f73b15a0e9eae15a1a93d3a369c89917416c8938b33dc59546",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/f732f84306c72c794a94f08149a04c3c.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 9008,
+          "sha256": "d38fa1c3c7b57020c6501c148831f99b2ca9f1b21fa65c40a0dbf620c320b143",
+          "sourceKind": "exported-inventory"
+        },
+        {
+          "path": "assets/scene/map/300183/ImgItem/fd9efaa2452f5e7f7de6dc0c4e4731cf.jpg",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 9059,
+          "sha256": "9df0c98ce5789b45890e390ba13f828479f545ba951971303d97cc257b76271a",
+          "sourceKind": "exported-inventory"
+        }
+      ],
+      "foreground": {
+        "id": "300183",
+        "state": "integrated-awaiting-browser-validation",
+        "foreground": {
+          "method": "native-alpha-map-and-original-tile-rectangles-v1",
+          "foregroundRects": 47,
+          "opaqueGroundCutouts": false,
+          "emptyNativeLayer": false,
+          "alphaLevels": [
+            0,
+            85,
+            170
+          ],
+          "nontransparentPixels": 1094760,
+          "dimensions": [
+            2400,
+            1800
+          ],
+          "sha256": "7743557d840e219eb2981dcccd65154c4406f319cca6de7afe7183edcf622896",
+          "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+          "limits": [
+            "Native global translucent front layer; not per-object Y sorting.",
+            "Middleground SWF objects require a separate conversion."
+          ],
+          "optimizedRuntime": {
+            "url": "/assets/maps/300183/foreground.webp",
+            "sourceSha256": "7743557d840e219eb2981dcccd65154c4406f319cca6de7afe7183edcf622896",
+            "originalBytes": 1814828,
+            "bytes": 1107638,
+            "width": 2400,
+            "height": 1800,
+            "lossless": true
+          }
+        },
+        "sources": [
+          {
+            "path": "assets/scene/map/300183/_scene_bg.xml",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 2232,
+            "sha256": "6e36568ffb1edac4acc5815fd3154d38779b3a0eb9b576acf913dd30ee0af111",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/_scene_fg.xml",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 1692,
+            "sha256": "62136ac6320713fc9e85442ff5b78955597e4f1a903ab423d79c043df2322617",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/alphaMap.png",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 27739,
+            "sha256": "1e7e932e10eabeffdb6b1b29372a8ec537104100b2c78b569f8d4d472bfddb0f",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/0748912c472ade07d1ab0c08121b9881.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 2650,
+            "sha256": "d7b4d263257925cdb91f3b6cf1832fe0e82d3fdb51a1ef398dc19d552db7b282",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/0fc978d29f298cd46bf0dc07274c7bef.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 7918,
+            "sha256": "3444fc1cd65467151433f841889d22edf5960cb99f4be383ed1751fc9c400fcd",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/142f708a8416090fedd6d9eb33126a92.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 7776,
+            "sha256": "4e48abeb16116b69db9d2df1d43266961c0ec95d13d51774e4bf9b858316f3d3",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/15fe11c6a57bc8e8f45ad26bc89b2fb4.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 7569,
+            "sha256": "d1569d0d5ef631ac59dd7bd05cf6f8ffde0d4d925dce210c900640f2e9f25fde",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/18834b1eaf91bf14d21c30d0e967cc7c.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 1186,
+            "sha256": "6e44c207312c8c7b77da3d05898f23deb1ca44b5acca6101bb1cbb78ae14a5c3",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/1dbeedc2dde35cd677301c1260e2199e.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 8953,
+            "sha256": "5cd2b7ee8d10bda88ec01a86920267f18caf8bc8dcae507108f978cc09adbef3",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/24d74a2edc4e997f2dc66e80d0694853.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 8868,
+            "sha256": "d9e0f8931c410d5f810855f95eae63efafa75b33531814e0c080b43705c8295c",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/25c02632fdfa6eda1c66a6080596f3e3.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 11714,
+            "sha256": "1f3338f14f77557c38edcd7ee659dac8a75f0ae994e3e8e66fb5be6df2317a4b",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/2638d4e214e58f9fa18c35cc04cf4305.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 7548,
+            "sha256": "273d35223e6c4cd3777f56e02aa4dffea48641763ac8176c2ebd2f569a9c235d",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/33e2328f241b6479587241b04be92de1.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 7199,
+            "sha256": "dbdd47745ad2f78e0ef68f9a39f90f101377590d4da50dc48f9a7198592b2f80",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/340fadc2a6321712d0e57375461664b8.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 7862,
+            "sha256": "de408c478add07ea2fb12d7533000fd31f2633a5af38dfa83091bbe108bbee40",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/3514cb197d79e15ebccdc5b04563a6a7.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 15040,
+            "sha256": "17c6747c5e73fbfcb7783e026e7902a1d09e10be84075dab86858ba4a6223906",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/402ebfd4a9c20db67aa38af987904b9d.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 3558,
+            "sha256": "b3214ab3e7001d36a25102c3bbc62c68673a120851cc2d72cbcb87013708eda8",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/437e40825bb579f9a0929e482e9f4ef5.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 7540,
+            "sha256": "0f0421cb772b8b1ad17c830f2da57d019754b8c1dab92ddaf437d570f0207a4d",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/45df0185fb62d7821213ec5c801a2ef3.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 7941,
+            "sha256": "72aac10ffbbda700e3d2eba4b8737243a04a64f34fea4d4f280dc6a2aa03db45",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/46cad69d67b995d908155703ca008184.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 11782,
+            "sha256": "07fb5b5d59242911f2c61db316ac482dd3be41dbafe37b9674394c239f19249f",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/4bac58f8e4323f580d24f81c6f88aefc.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 24310,
+            "sha256": "2b6b6efd8734369fcd19e4be5d4e5f24665805a3817e3bfbd7d2242d8ec79c18",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/4fe2ffb8c8970f8930995cdf68feb019.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 7046,
+            "sha256": "27d2dd1927ec0fa6215eef9b0bcc25de390540e5313bd84474568bfc1dee661b",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/5044f2177858335a4bba0ceaa6f622c9.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 9981,
+            "sha256": "ce375ba0b8c1ed628f335caf670b6310fc2370f5705a45ab0c05865f53269a71",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/53297cb2754b1b61a4fe3de643d5c73b.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 8232,
+            "sha256": "815883c03fc2839e5742ffa6e16a74d428c95306f8a942bc909a150010c8610b",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/56eaeb2e51b20e6030a5b26c75b6eb62.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 872,
+            "sha256": "bf5d0df30001b519cd406f8a39c98458e4af0316c1abad471e5f59f617df4f2c",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/58fc1d688cce9ff1a801751e1ab571fd.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 6810,
+            "sha256": "8d5f8855fe954f30ad876a66a1e5878650761fd531960b15dc0a345bbbfebb93",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/5eb0573264cbfa7164816751d53d4dfc.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 14568,
+            "sha256": "02a6113777e4e079866039ae28a0dc96cc204349ee739a800d34a6ca93b09ffd",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/6c2b8186afe493c335caad115a1f580b.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 9616,
+            "sha256": "7391e59d2af66717f35cac5ed73221c930c64c1dee589c2b1b005d853ffd4b59",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/743dbe20166920524953030b9cdd68cc.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 11204,
+            "sha256": "0cead7ac2486f5cba16f769dc515e64d971ede7f1734b18b621418e31d7b0f30",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/83587583b11c181a665fa655089e1397.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 11520,
+            "sha256": "654eea1a1387e53fd020eba805dfa8cd39945f72ec62f8a6b05b98353287405f",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/844c96f16e2a26c483edb17059118380.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 10602,
+            "sha256": "1b4eecfa989f6962a8c898e4ab7491c6a086c5f999bcbec5a2c2686c809a69d7",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/8c8cfbdb7f0099b0dd319d1f4eed0d25.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 1238,
+            "sha256": "9cca2b6f751464ca643e08db13890c50765d9c117c186b227a63548ab132139d",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/968badb3d25ee883d1d5068a8c672601.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 26190,
+            "sha256": "5406fe791109b8ad2369f16e4cf1d23b8b6ae3289056bad649b55485deea86f4",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/99fa5a904b90a5fc3594c271ce6ba838.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 8011,
+            "sha256": "c51656e4a00664ae14d0d85f86d524dcc5e680a838316f8f9b179b6a517da977",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/9ba069d405c58c133e65076013cb1319.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 7006,
+            "sha256": "bc8a72ec028510fc146bd7d844cef15dd2d5367c63a7d126443409ae6aafa5aa",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/9e6459d10e9ed02db0de1a0387a0c335.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 8913,
+            "sha256": "a3511c658e16cdbeaf2887d96890e0f1d70d1c02990f2b55e5b5410eab23b8ef",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/a83cee6e4e0ae7283dcb7c78165c8579.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 25658,
+            "sha256": "ffd037061b561fb5671b40b129956f3e0fe309149d8a424f0bdba680cff64efc",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/ae7b1e6851c2f648da0c0abac4e39a3e.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 9623,
+            "sha256": "f7f63a4e0828d88fd799dbb00c563ec1c668a7dacd73ed588fb429892a367fe3",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/b1be155e5b115271469b1c3ce99da9f2.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 8460,
+            "sha256": "b01cde8bd28fc05b8aa5a56dede796c70964c5b84517f19cef8db6fb7a6a1f62",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/b8b7977638bb25e198dbe8f730379868.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 654,
+            "sha256": "414abea98fbfc1315df1ca2a60ba20184326a0d0d985cd6ad609bb5f3a1492ac",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/b9fa560e9b524e8b5ff5b577eee9e6c8.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 9787,
+            "sha256": "9674e80b69502c9c8c6eb5b7f35470dea1cd372ab614b88d1c559c739013033c",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/ca7907dcb01bfc75763682eeea10eca0.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 8742,
+            "sha256": "e71e2c04531bb8c4d80acad0114cffe629adf979b478550742a65e7a48ce67b6",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/cc457f81cc430df28b17e7da34880fdd.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 666,
+            "sha256": "4b52a7b3699b2f214e725a2abfb847db3316a4a04ffda093ebbe39ba5fc7e8e6",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/cf338c07bf95d9ccec05460ce9404851.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 16300,
+            "sha256": "60fa9faf419797ab02aed6ad6e6ff5e51d0625eefbc6e309c8572bdf268439ac",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/d3b574df845a2e79203cae9068327d99.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 13159,
+            "sha256": "fb3c5f5a1f20f49f7a6098cc59b6c9c3c997aefa36a47b7065f3dbd1dc9d5afa",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/d7e39aa0705520e34b095735fc12626f.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 1258,
+            "sha256": "8c3f433424de24cf36be9fb5521d78b03882b90581907433a9314d950a285488",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/dee3723e09bcd14ea046a86fb569a52a.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 11504,
+            "sha256": "4ce60ad44b61c2727dcf680e2c75f9b30d4dcc125721b85d0a14446ce0cdc962",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/e788dfeeab58f8280a6a31551695238e.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 7655,
+            "sha256": "52dde592889bbca95bbaab02bc2cb28d4c28d8bb6f07013e7d93ac5ecd461bb0",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/ea4e65745d63b0feba00015130ac2887.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 13860,
+            "sha256": "887dae326bb4acb1bb98985a97366d49fcd835e5ba6bf1718898888bfebb8306",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/f732f84306c72c794a94f08149a04c3c.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 9008,
+            "sha256": "d38fa1c3c7b57020c6501c148831f99b2ca9f1b21fa65c40a0dbf620c320b143",
+            "sourceKind": "exported-inventory"
+          },
+          {
+            "path": "assets/scene/map/300183/ImgItem/fd9efaa2452f5e7f7de6dc0c4e4731cf.jpg",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 9059,
+            "sha256": "9df0c98ce5789b45890e390ba13f828479f545ba951971303d97cc257b76271a",
+            "sourceKind": "exported-inventory"
+          }
+        ],
+        "virtualPngReferences": 47,
+        "missingForegroundDependencies": []
+      },
+      "limits": [
+        "Middleground animation pending",
+        "No per-object Y sorting",
+        "Enemy roster and idle rules are authored, not copied"
+      ]
+    }
+  ]
+}

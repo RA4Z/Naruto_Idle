@@ -1,0 +1,108 @@
+{
+  "id": "300179",
+  "name": "Campo de Neve no País de Ferro",
+  "kind": "adventure",
+  "background": "/assets/maps/300179/background.png",
+  "foreground": "/assets/maps/300179/foreground.png",
+  "thumbnail": "/assets/maps/300179/thumbnail.jpg",
+  "navigation": "/assets/maps/300179/navigation.json",
+  "width": 1171.875,
+  "height": 781.25,
+  "spawn": {
+    "x": 585.9375,
+    "y": 430.9895833333333
+  },
+  "enemies": [
+    "19002301"
+  ],
+  "description": "Explore a área original recuperada. Encontros adaptados para o idle.",
+  "source": "assets/scene/map/300179/",
+  "sourceScene": {
+    "id": "2015024",
+    "mapId": "300179",
+    "time": "1",
+    "type": "1",
+    "name": "Campo de Neve no País de Ferro",
+    "minLevel": null,
+    "worldMapId": "2015024",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "2774b79f6fff8a6ceff7451d7a511e52d9f48c68ec5fa36446ede89ba5019ea4",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015024",
+      "mapId": "300179",
+      "time": "1",
+      "type": "1",
+      "name": "Campo de Neve no País de Ferro",
+      "minLevel": null,
+      "worldMapId": "2015024",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2911001",
+      "mapId": "300179",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] A Força da \"Raiz\"",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2936001",
+      "mapId": "300179",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Nome Balança Dupla",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Authored idle-RPG encounters, not original story rules.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 150,
+    "foregroundTiles": 107,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 107,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 2198655,
+      "dimensions": [
+        3600,
+        2400
+      ],
+      "sha256": "255007c5ec1545e3b5ca09490e221f5fbbed200437a575b3788af492d8ad3c35",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300179/foreground.webp",
+        "sourceSha256": "255007c5ec1545e3b5ca09490e221f5fbbed200437a575b3788af492d8ad3c35",
+        "originalBytes": 5485199,
+        "bytes": 3397180,
+        "width": 3600,
+        "height": 2400,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300179/native-alpha.png",
+    "width": 3600,
+    "height": 2400,
+    "sha256": "103c14b784555c606e5e2ad5bf0ee6a81c0908a6ea5239b6390d23508ce7e314"
+  }
+}

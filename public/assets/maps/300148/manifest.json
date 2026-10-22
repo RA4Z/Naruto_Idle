@@ -1,0 +1,106 @@
+{
+  "id": "300148",
+  "name": "Litoral da Aldeia da Chuva",
+  "kind": "lobby",
+  "background": "/assets/maps/300148/background.png",
+  "foreground": "/assets/maps/300148/foreground.png",
+  "thumbnail": "/assets/maps/300148/thumbnail.jpg",
+  "navigation": "/assets/maps/300148/navigation.json",
+  "width": 813.8020833333334,
+  "height": 683.59375,
+  "spawn": {
+    "x": 302.734375,
+    "y": 374.6744791666667
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/300148/",
+  "sourceScene": {
+    "id": "2015019",
+    "mapId": "300148",
+    "time": "1",
+    "type": "1",
+    "name": "Litoral da Aldeia da Chuva",
+    "minLevel": null,
+    "worldMapId": "2015016",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "167095818728c9d85a0ebcc8b54a9dfcda28be0b24cbbe8122661021d875b359",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015019",
+      "mapId": "300148",
+      "time": "1",
+      "type": "1",
+      "name": "Litoral da Aldeia da Chuva",
+      "minLevel": null,
+      "worldMapId": "2015016",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2756001",
+      "mapId": "300148",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] O Épico de Jiraiya",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "1700023",
+      "mapId": "300148",
+      "time": "1",
+      "type": "14",
+      "name": "Exterior da Aldeia da Chuva",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 90,
+    "foregroundTiles": 9,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 9,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 21780,
+      "dimensions": [
+        2500,
+        2100
+      ],
+      "sha256": "fc845851d38e0c74c4cf1d8a3f001c7cf2b7b8b49663e82c8abaa0203062505b",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300148/foreground.webp",
+        "sourceSha256": "fc845851d38e0c74c4cf1d8a3f001c7cf2b7b8b49663e82c8abaa0203062505b",
+        "originalBytes": 81414,
+        "bytes": 34484,
+        "width": 2500,
+        "height": 2100,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300148/native-alpha.png",
+    "width": 2500,
+    "height": 2100,
+    "sha256": "d80b2ad66da2aa1096a595b76e6c7297b017cf9cc2e80766983a5e7da8d4134d"
+  }
+}

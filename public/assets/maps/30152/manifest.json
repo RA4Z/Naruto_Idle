@@ -1,0 +1,81 @@
+{
+  "id": "30152",
+  "name": "Cenário 30152",
+  "kind": "exploration",
+  "background": "/assets/maps/30152/background.png",
+  "foreground": "/assets/maps/30152/foreground.png",
+  "thumbnail": "/assets/maps/30152/thumbnail.jpg",
+  "navigation": "/assets/maps/30152/navigation.json",
+  "width": 911.4583333333333,
+  "height": 813.8020833333334,
+  "spawn": {
+    "x": 466.1458333333333,
+    "y": 438.8020833333333
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: 3° andar do Local de Teste.",
+  "source": "assets/scene/map/30152/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30152",
+    "name": "Cenário 30152",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "59d0fb8daa5583a47c25c637e2eabdeb211de3d7e7fb838e8cd1fb6794eba527",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "1610003",
+      "mapId": "30152",
+      "time": "1",
+      "type": "15",
+      "name": "3° andar do Local de Teste",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 110,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 0,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": true,
+      "alphaLevels": [
+        0
+      ],
+      "nontransparentPixels": 0,
+      "dimensions": [
+        2800,
+        2500
+      ],
+      "sha256": "3e312e0cbd737f2df2e7ff1e7009076732a370ca92874f3264d800f2dc5a462a",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30152/foreground.webp",
+        "sourceSha256": "3e312e0cbd737f2df2e7ff1e7009076732a370ca92874f3264d800f2dc5a462a",
+        "originalBytes": 27252,
+        "bytes": 334,
+        "width": 2800,
+        "height": 2500,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30152/native-alpha.png",
+    "width": 2800,
+    "height": 2500,
+    "sha256": "e4ed69bd78052eec6f3bafe8f8ef9b373b7f199b05ab78ef5880be567018c8c8"
+  }
+}

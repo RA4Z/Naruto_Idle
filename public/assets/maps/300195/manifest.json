@@ -1,0 +1,83 @@
+{
+  "id": "300195",
+  "name": "Cenário 300195",
+  "kind": "exploration",
+  "background": "/assets/maps/300195/background.png",
+  "foreground": "/assets/maps/300195/foreground.png",
+  "thumbnail": "/assets/maps/300195/thumbnail.jpg",
+  "navigation": "/assets/maps/300195/navigation.json",
+  "width": 1171.875,
+  "height": 781.25,
+  "spawn": {
+    "x": 554.6875,
+    "y": 436.1979166666667
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Segunda Etapa do Treinamento.",
+  "source": "assets/scene/map/300195/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "300195",
+    "name": "Cenário 300195",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "25304af46464c30666f1b8f68f516e6f86c90831df65e90f21edfd1a401e739c",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2771001",
+      "mapId": "300195",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Segunda Etapa do Treinamento",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 150,
+    "foregroundTiles": 121,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 121,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 2130052,
+      "dimensions": [
+        3600,
+        2400
+      ],
+      "sha256": "37fe9cce90ff20caa285c5910f936c187f10cc611d939257048d3798eb7c9c42",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300195/foreground.webp",
+        "sourceSha256": "37fe9cce90ff20caa285c5910f936c187f10cc611d939257048d3798eb7c9c42",
+        "originalBytes": 4418069,
+        "bytes": 2927282,
+        "width": 3600,
+        "height": 2400,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300195/native-alpha.png",
+    "width": 3600,
+    "height": 2400,
+    "sha256": "dc04d5574153ac4ff94b725555e5f71e46fee29836aee4647d3ac405b212490d"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "id": "30024",
+  "name": "Cenário 30024",
+  "kind": "exploration",
+  "background": "/assets/maps/30024/background.png",
+  "foreground": "/assets/maps/30024/foreground.png",
+  "thumbnail": "/assets/maps/30024/thumbnail.jpg",
+  "navigation": "/assets/maps/30024/navigation.json",
+  "width": 976.5625,
+  "height": 488.28125,
+  "spawn": {
+    "x": 488.28125,
+    "y": 271.484375
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: Ponte do País das Ondas À Noite; Ponte do País das Ondas à Noite.",
+  "source": "assets/scene/map/30024/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30024",
+    "name": "Cenário 30024",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "96504589079d470ed74221ea71c50b9e3ec0a18c359ae237baaff707fffaf9b7",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2062001",
+      "mapId": "30024",
+      "time": "3",
+      "type": "2",
+      "name": "Ponte do País das Ondas À Noite",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "4022001",
+      "mapId": "30024",
+      "time": "3",
+      "type": "2",
+      "name": "Ponte do País das Ondas à Noite",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 72,
+    "foregroundTiles": 23,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 23,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 227383,
+      "dimensions": [
+        3000,
+        1500
+      ],
+      "sha256": "c8db20fb76f6228735740c8b8fc7aed259120285e736de307a1a6d9690efc4a9",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30024/foreground.webp",
+        "sourceSha256": "c8db20fb76f6228735740c8b8fc7aed259120285e736de307a1a6d9690efc4a9",
+        "originalBytes": 412383,
+        "bytes": 215392,
+        "width": 3000,
+        "height": 1500,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30024/native-alpha.png",
+    "width": 3000,
+    "height": 1500,
+    "sha256": "ed362997de869e4bcbdef4f30da2596baf3d0624c0c17c0133df18a0a1342c8c"
+  }
+}

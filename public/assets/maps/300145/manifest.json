@@ -1,0 +1,96 @@
+{
+  "id": "300145",
+  "name": "Aldeia Oculta da Chuva",
+  "kind": "lobby",
+  "background": "/assets/maps/300145/background.png",
+  "foreground": "/assets/maps/300145/foreground.png",
+  "thumbnail": "/assets/maps/300145/thumbnail.jpg",
+  "navigation": "/assets/maps/300145/navigation.json",
+  "width": 976.5625,
+  "height": 618.4895833333334,
+  "spawn": {
+    "x": 488.28125,
+    "y": 344.4010416666667
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/300145/",
+  "sourceScene": {
+    "id": "2015016",
+    "mapId": "300145",
+    "time": "1",
+    "type": "1",
+    "name": "Aldeia Oculta da Chuva",
+    "minLevel": null,
+    "worldMapId": "2015016",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "7d9d3a0f193a67e685f2bb30cbd9898003c28603e4788aa311214bca95c27bf9",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015016",
+      "mapId": "300145",
+      "time": "1",
+      "type": "1",
+      "name": "Aldeia Oculta da Chuva",
+      "minLevel": null,
+      "worldMapId": "2015016",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2736001",
+      "mapId": "300145",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Em Busca de Jiraiya",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 96,
+    "foregroundTiles": 38,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 38,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 95135,
+      "dimensions": [
+        3000,
+        1900
+      ],
+      "sha256": "87fb2d199fb6a9f46060f0b6533f62b9661675807ec3c6bd1248cbbc78b2c53b",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300145/foreground.webp",
+        "sourceSha256": "87fb2d199fb6a9f46060f0b6533f62b9661675807ec3c6bd1248cbbc78b2c53b",
+        "originalBytes": 347749,
+        "bytes": 192606,
+        "width": 3000,
+        "height": 1900,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300145/native-alpha.png",
+    "width": 3000,
+    "height": 1900,
+    "sha256": "493457b0f90836a944f700ea0c9ad58628cb71f58159bab11cc2b395e87e7c60"
+  }
+}

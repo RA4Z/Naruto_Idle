@@ -1,0 +1,83 @@
+{
+  "id": "300166",
+  "name": "Cenário 300166",
+  "kind": "exploration",
+  "background": "/assets/maps/300166/background.png",
+  "foreground": "/assets/maps/300166/foreground.png",
+  "thumbnail": "/assets/maps/300166/thumbnail.jpg",
+  "navigation": "/assets/maps/300166/navigation.json",
+  "width": 1171.875,
+  "height": 781.25,
+  "spawn": {
+    "x": 585.9375,
+    "y": 420.5729166666667
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Desafio da Invocação.",
+  "source": "assets/scene/map/300166/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "300166",
+    "name": "Cenário 300166",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "6130429b6b71ecb51355fcd0e0aec3fd438510174228af7af05fe4adee2e7081",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2776001",
+      "mapId": "300166",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Desafio da Invocação",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 150,
+    "foregroundTiles": 48,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 48,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 541355,
+      "dimensions": [
+        3600,
+        2400
+      ],
+      "sha256": "e3a42a4525d873bdab33b36000f8d433a343366bce949c64ff9463aed810fdf8",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300166/foreground.webp",
+        "sourceSha256": "e3a42a4525d873bdab33b36000f8d433a343366bce949c64ff9463aed810fdf8",
+        "originalBytes": 1140804,
+        "bytes": 707064,
+        "width": 3600,
+        "height": 2400,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300166/native-alpha.png",
+    "width": 3600,
+    "height": 2400,
+    "sha256": "02fb5c5e0aa548a4f2af6f5adb3e228cb033ee56c3d5cb7af7c0ff92c7cefe8c"
+  }
+}

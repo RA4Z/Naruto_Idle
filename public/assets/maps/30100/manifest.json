@@ -1,0 +1,83 @@
+{
+  "id": "30100",
+  "name": "Cenário 30100",
+  "kind": "exploration",
+  "background": "/assets/maps/30100/background.png",
+  "foreground": "/assets/maps/30100/foreground.png",
+  "thumbnail": "/assets/maps/30100/thumbnail.jpg",
+  "navigation": "/assets/maps/30100/navigation.json",
+  "width": 325.5208333333333,
+  "height": 227.86458333333331,
+  "spawn": {
+    "x": 162.76041666666666,
+    "y": 121.74479166666666
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: Sala de Aula (1).",
+  "source": "assets/scene/map/30100/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30100",
+    "name": "Cenário 30100",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "561d657c6782407631695fe9c074797d2e26c59fe95586623e4c8a7ae6bc0966",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "1502002",
+      "mapId": "30100",
+      "time": "1",
+      "type": "3",
+      "name": "Sala de Aula (1)",
+      "minLevel": null,
+      "worldMapId": "1502001",
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 12,
+    "foregroundTiles": 2,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 2,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 1158,
+      "dimensions": [
+        1000,
+        700
+      ],
+      "sha256": "efe26cd50d1179fbf47acb3f98b4c56c847bfc3b0a77113614f5c294fb67f3d1",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30100/foreground.webp",
+        "sourceSha256": "efe26cd50d1179fbf47acb3f98b4c56c847bfc3b0a77113614f5c294fb67f3d1",
+        "originalBytes": 6823,
+        "bytes": 3376,
+        "width": 1000,
+        "height": 700,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30100/native-alpha.png",
+    "width": 1000,
+    "height": 700,
+    "sha256": "a05dc10821bd1097ab00940ae921d53e9f6ebf66e0b0f850d0a158f40116b32a"
+  }
+}

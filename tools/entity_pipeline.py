@@ -29,13 +29,25 @@ def lossless(payload,alpha):
  if fmt==3:count=payload[pos]+1;pos+=1
  b=zlib.decompress(payload[pos:]);pixels=[]
  if fmt==3:
-  channels=4 if alpha else 3;palette=[tuple(b[i*channels:i*channels+channels]) for i in range(count)];offset=count*channels;stride=(w+3)&~3
-  for y in range(h):
-   for x in range(w):
-    p=palette[b[offset+y*stride+x]];pixels.append(p if alpha else (*p,255))
- elif fmt==5:
-  for a,r,g,blue in struct.iter_unpack('BBBB',b[:w*h*4]):pixels.append((r,g,blue,a if alpha else 255))
- elif fmt==4 and not alpha:
+  channels=4 if alpha else 3;stride=(w+3)&~3;offset=count*channels
+  image=Image.frombytes('P',(w,h),b[offset:offset+stride*h],'raw','P',stride)
+  palette=bytearray()
+  for i in range(count):
+   r,g,blue=b[i*channels:i*channels+3];a=b[i*channels+3] if alpha else 255
+   palette.extend((min(255,(r*255+a//2)//a),min(255,(g*255+a//2)//a),min(255,(blue*255+a//2)//a),a) if a else (0,0,0,0))
+  image.putpalette(bytes(palette),rawmode='RGBA')
+  return ident,image.convert('RGBA')
+ if fmt==5:
+  image=Image.frombytes('RGBA',(w,h),b[:w*h*4],'raw','ARGB')
+  if not alpha:image.putalpha(255);return ident,image
+  pixels=bytearray(image.tobytes())
+  for i in range(0,len(pixels),4):
+   a=pixels[i+3]
+   if a==0:pixels[i:i+3]=b'\x00\x00\x00'
+   elif a<255:
+    for channel in range(3):pixels[i+channel]=min(255,(pixels[i+channel]*255+a//2)//a)
+  return ident,Image.frombytes('RGBA',(w,h),bytes(pixels))
+ if fmt==4 and not alpha:
   stride=(w*2+3)&~3
   for y in range(h):
    for x in range(w):
@@ -85,7 +97,7 @@ def read_actions(path,max_image_pixels=None,only_actions=None,frame_limits=None)
   images[ident]=im
  return root,assets,images,symbols,xml
 
-def convert(path,folder,url,mode,only=None,frame_limits=None,pixel_budget=None,source_pixel_budget=None):
+def convert(path,folder,url,mode,only=None,frame_limits=None,pixel_budget=None,source_pixel_budget=None,compact=False):
  root,assets,images,symbols,xml=read_actions(path,max_image_pixels=source_pixel_budget,only_actions=only,frame_limits=frame_limits);folder.mkdir(parents=True,exist_ok=True);(folder/'actions.xml').write_bytes(xml)
  if frame_limits:
   import copy
@@ -126,8 +138,8 @@ def convert(path,folder,url,mode,only=None,frame_limits=None,pixel_budget=None,s
     x=a*u+b*v+tx;y=c*u+d*v+ty;bounds=[min(bounds[0],x),min(bounds[1],y),max(bounds[2],x),max(bounds[3],y)]
   if not elements:issues.append({'action':name,'reason':'no-resolved-bitmaps','missing':sorted(missing)});continue
   left,top=math.floor(bounds[0])-2,math.floor(bounds[1])-2;w=math.ceil(bounds[2])-left+2;h=math.ceil(bounds[3])-top+2
-  if w>2048 or h>2048:issues.append({'action':name,'reason':'canvas-too-large','size':[w,h]});continue
-  if pixel_budget is not None:
+  if not compact and (w>2048 or h>2048):issues.append({'action':name,'reason':'canvas-too-large','size':[w,h]});continue
+  if pixel_budget is not None and not compact:
    signatures=set()
    for time in range(end):
     visible=[]
@@ -136,7 +148,8 @@ def convert(path,folder,url,mode,only=None,frame_limits=None,pixel_budget=None,s
      if active:visible.extend(el for el in active[-1].findall('element') if id(el) in elements)
     signatures.add(tuple(tuple(sorted(el.attrib.items())) for el in visible))
    if w*h*len(signatures)>pixel_budget:issues.append({'action':name,'reason':'canvas-pixel-budget-exceeded','estimatedPixels':w*h*len(signatures)});continue
-  cache={};frames=[];timeline=[];frame_bounds=[]
+  cache={};frames=[];timeline=[];frame_bounds=[];frame_positions=[];allocated=0;failed=None
+  if compact and (max(w,h)>8192 or w*h>16000000):issues.append({'action':name,'reason':'temporary-canvas-budget-exceeded','size':[w,h]});continue
   for time in range(end):
    visible=[]
    for layer in layers:
@@ -144,16 +157,34 @@ def convert(path,folder,url,mode,only=None,frame_limits=None,pixel_budget=None,s
     if active:visible.extend(el for el in active[-1].findall('element') if id(el) in elements)
    signature=tuple(tuple(sorted(el.attrib.items())) for el in visible)
    if signature not in cache:
-    frame=Image.new('RGBA',(w,h))
+    fl,ft,fw,fh=left,top,w,h
+    # Use the original shared coordinate canvas before cropping. Re-basing the
+    # affine rasterizer for each pose changes subpixel interpolation slightly.
+    # Only retained frames/atlases are compact; the one temporary canvas is bounded.
+    frame=Image.new('RGBA',(fw,fh))
     for el in visible:
-     image,a,b,c,d,det,tx,ty,opacity=elements[id(el)];tx-=left;ty-=top
-     transformed=image.transform((w,h),Image.Transform.AFFINE,(d/det,-b/det,(-d*tx+b*ty)/det,-c/det,a/det,(c*tx-a*ty)/det),Image.Resampling.BICUBIC)
+     image,a,b,c,d,det,tx,ty,opacity=elements[id(el)];tx-=fl;ty-=ft
+     transformed=image.transform((fw,fh),Image.Transform.AFFINE,(d/det,-b/det,(-d*tx+b*ty)/det,-c/det,a/det,(c*tx-a*ty)/det),Image.Resampling.BICUBIC)
      if opacity!=1:transformed.putalpha(transformed.getchannel('A').point(lambda v:round(v*opacity)))
      frame.alpha_composite(transformed)
-    cache[signature]=len(frames);frames.append(frame);frame_bounds.append(frame.getbbox())
+    if compact:
+     bbox=frame.getbbox()
+     if bbox:frame=frame.crop(bbox);fl+=bbox[0];ft+=bbox[1]
+     else:frame=Image.new('RGBA',(1,1));fl=ft=0
+     allocated+=frame.width*frame.height
+     if pixel_budget is not None and allocated>pixel_budget:failed={'action':name,'reason':'compact-pixel-budget-exceeded','estimatedPixels':allocated};break
+    cache[signature]=len(frames);frames.append(frame);frame_bounds.append(frame.getbbox());frame_positions.append((fl,ft))
    timeline.append(cache[signature])
+  if failed:issues.append(failed);continue
+  if compact:
+   w=max(f.width for f in frames);h=max(f.height for f in frames)
+   if pixel_budget is not None and w*h*len(frames)>pixel_budget:issues.append({'action':name,'reason':'compact-atlas-budget-exceeded','estimatedPixels':w*h*len(frames)});continue
   cols=min(8,max(1,8192//w),len(frames));rows=(len(frames)+cols-1)//cols
+  if compact:
+   layouts=[(c,(len(frames)+c-1)//c) for c in range(1,min(8,8192//w,len(frames))+1) if ((len(frames)+c-1)//c)*h<=8192]
+   if layouts:cols,rows=min(layouts,key=lambda cr:(cr[0]*cr[1],abs(cr[0]*w-cr[1]*h)))
   if rows*h>8192:issues.append({'action':name,'reason':'texture-exceeds-8192'});continue
+  if compact and pixel_budget is not None and cols*w*rows*h>pixel_budget:issues.append({'action':name,'reason':'padded-atlas-budget-exceeded','estimatedPixels':cols*w*rows*h});continue
   sheet=Image.new('RGBA',(cols*w,rows*h))
   for i,frame in enumerate(frames):sheet.alpha_composite(frame,((i%cols)*w,(i//cols)*h))
   safeName=name.strip() if re.fullmatch(r'[A-Za-z0-9_-]+',name.strip()) else 'action-'+hashlib.sha256(name.encode()).hexdigest()[:12]
@@ -164,6 +195,10 @@ def convert(path,folder,url,mode,only=None,frame_limits=None,pixel_budget=None,s
   height=max(1,round(sum(b[3]-b[1] for b in boxes)/len(boxes)))
   external=sorted(set(el.get('extname') for el in action.iter() if el.get('extname')))
   animations[name]={'url':url+'/'+filename,'frameWidth':w,'frameHeight':h,'frames':len(frames),'timeline':timeline,'fps':fps,'origin':[-left/w,-top/h],'referenceHeight':height,'status':'partial' if missing or unsupported or external else 'ready','externalEffects':external}
+  if compact:
+   animations[name]['frameOrigins']=[[-x/w,-y/h] for x,y in frame_positions]
+   animations[name]['origin']=animations[name]['frameOrigins'][0]
+   animations[name]['frameLayout']='compact-ground-origins-v1'
   if missing or unsupported or external:issues.append({'action':name,'missing':sorted(missing),'unsupported':sorted(unsupported),'externalEffects':external})
  if not animations:raise ValueError('No supported actions rendered; '+str(issues[:2]))
  idle=next((animations[k] for k in ['idle_0','C_idle','stand'] if k in animations),next(iter(animations.values())))

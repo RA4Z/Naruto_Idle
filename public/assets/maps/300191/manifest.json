@@ -1,0 +1,72 @@
+{
+  "id": "300191",
+  "name": "Cenário não identificado 300191",
+  "kind": "exploration",
+  "background": "/assets/maps/300191/background.png",
+  "foreground": "/assets/maps/300191/foreground.png",
+  "thumbnail": "/assets/maps/300191/thumbnail.jpg",
+  "navigation": "/assets/maps/300191/navigation.json",
+  "width": 1074.21875,
+  "height": 878.90625,
+  "spawn": {
+    "x": 537.109375,
+    "y": 486.6536458333333
+  },
+  "enemies": [],
+  "description": "Cenário original sem nome/contexto confirmado. Exploração segura, sem recompensas ou missão inventada.",
+  "source": "assets/scene/map/300191/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "300191",
+    "name": "Cenário não identificado 300191",
+    "type": null,
+    "identity": "unidentified"
+  },
+  "navigationSha256": "536e972499d9cf447d0ed666e3419b66c1e06b5d98bfc659d59914be7a997362",
+  "collection": "unidentified",
+  "sourceScenes": [],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 143,
+    "foregroundTiles": 45,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 45,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 390486,
+      "dimensions": [
+        3300,
+        2700
+      ],
+      "sha256": "f4a4debce57a42182b0a8bee8420031ec31e346c88a3d2cdd0ce56270fbc69e1",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300191/foreground.webp",
+        "sourceSha256": "f4a4debce57a42182b0a8bee8420031ec31e346c88a3d2cdd0ce56270fbc69e1",
+        "originalBytes": 570390,
+        "bytes": 277370,
+        "width": 3300,
+        "height": 2700,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300191/native-alpha.png",
+    "width": 3300,
+    "height": 2700,
+    "sha256": "8bb25d0bcf2cf49427da705755c10971f2f3814d6a23b03e0777c41ebb2776c0"
+  }
+}

@@ -17,7 +17,7 @@ Atualizado em 21/10/2026. O [histórico](history/ROADMAP-2026-10-21.md) preserva
 - [x] Ciclo exploração → encontro → combate no mesmo cenário → XP/loot → retomada; atributos individuais definem dano, vida, chakra e cadência/movimento.
 - [x] Troca entre personagens possuídos, progresso individual e party desativada.
 - [x] Sasuke inicial azul/branco 11000211; skills reconstruídas do original. Variante preta reservada.
-- [x] 16 mapas integrados, grade nativa, máscara frontal com alpha, patrulhas, save/reload e viagens.
+- [x] 145 conjuntos preparados com grade nativa, máscara frontal com alpha, câmera, caminhada, save/reload e viagens. Os 16 anteriores conservam suas regras; novos cenários têm exploração segura explícita, sem anunciar campanhas prontas.
 - [x] 22 equipamentos em caminhos de dano/sobrevivência/chakra, graus por nível, filtros, comparação e drops de elites; loja, cinco missões e recrutamento.
 - [x] Oito estilos de recrutas por família, crescimento, técnicas próprias do idle e cobertura de todos os recrutáveis atuais com exploração/combate.
 - [x] Onze modelos inimigos com seis estilos, resistência física/ninjutsu, comportamento, técnicas avisadas, uma elite por grupo e recompensas reais.
@@ -48,8 +48,8 @@ Detalhes e limites: [Especificação](ESPECIFICACAO.md), [estabilidade/QoL](ESTA
 
 1. [ ] Extrair, organizar e integrar os demais recursos do acervo, com uso real no jogo e validação por lote: mapas/camadas/objetos, personagens/animações, jutsus/efeitos, áudio e interface. Seguir [o roteiro dos originais](EXTRACAO_E_INTEGRACAO_ORIGINAIS.md).
 2. [ ] Recuperar objetos/SWF intermediários com transformações e profundidade individual. Máscara frontal global não encerra esse trabalho; consultar [MAP_LAYERS.md](MAP_LAYERS.md).
-3. [ ] Integrar os 129 conjuntos de mapas restantes com navegação, população, encontros, save e inspeção visual.
-4. [ ] Revisar 31 ações em 30 modelos conforme reports/external-symbol-audit.json; não refazer as skills já corrigidas do Sasuke inicial.
+3. [ ] Completar conteúdo narrativo, habitantes e encontros apropriados dos mapas recuperados. Extração/viagem/navegação dos 145 conjuntos concluídas; exploração segura não equivale a campanha implementada. Identificar contexto de 21 cenários e conferir visualmente cada missão quando for implementada.
+4. [x] Reconstruir as 31 ações em 30 modelos da fila externa, com namespace correto, origem por quadro e verificação independente de pixels/tempo/deslocamento. As skills já corrigidas do Sasuke inicial foram preservadas; efeitos externos compartilhados continuam explícitos em cada manifesto.
 5. [ ] Integrar demais efeitos/jutsus originais e áudio dos personagens e ampliar conteúdo de missões. Refinar os perfis autorais com novos dados de uso; o primeiro balanceamento e a expansão de equipamento já foram implementados.
 6. [ ] Integrar 195 artes de loading restantes e revisar as 71 dicas sem anunciar mecânicas inexistentes.
 7. [ ] Durante a recuperação, registrar conexões, portais e coordenadas originais comprovadas.

@@ -1,0 +1,83 @@
+{
+  "id": "300302",
+  "name": "Cenário 300302",
+  "kind": "exploration",
+  "background": "/assets/maps/300302/background.png",
+  "foreground": "/assets/maps/300302/foreground.png",
+  "thumbnail": "/assets/maps/300302/thumbnail.jpg",
+  "navigation": "/assets/maps/300302/navigation.json",
+  "width": 1139.3229166666667,
+  "height": 813.8020833333334,
+  "spawn": {
+    "x": 569.6614583333334,
+    "y": 449.5442708333333
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: Base da Guilda.",
+  "source": "assets/scene/map/300302/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "300302",
+    "name": "Cenário 300302",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "3abf55fb268b4f0c2f75d22100a85b35084977d90ff2be0294d6988df3676231",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "1600006",
+      "mapId": "300302",
+      "time": "1",
+      "type": "5",
+      "name": "Base da Guilda",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 140,
+    "foregroundTiles": 31,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 31,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 274971,
+      "dimensions": [
+        3500,
+        2500
+      ],
+      "sha256": "80862eb660d6131ee6b6988e37fa5a6ed44afda2c8f5fd502728f99276466b59",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300302/foreground.webp",
+        "sourceSha256": "80862eb660d6131ee6b6988e37fa5a6ed44afda2c8f5fd502728f99276466b59",
+        "originalBytes": 617745,
+        "bytes": 369426,
+        "width": 3500,
+        "height": 2500,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300302/native-alpha.png",
+    "width": 3500,
+    "height": 2500,
+    "sha256": "3a7a72d53d73e5cf220d396a3450f50ef8607c4985b94edee7b5cec0deac4a1d"
+  }
+}

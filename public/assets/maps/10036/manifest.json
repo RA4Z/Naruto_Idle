@@ -1,0 +1,83 @@
+{
+  "id": "10036",
+  "name": "Cenário 10036",
+  "kind": "exploration",
+  "background": "/assets/maps/10036/background.png",
+  "foreground": "/assets/maps/10036/foreground.png",
+  "thumbnail": "/assets/maps/10036/thumbnail.jpg",
+  "navigation": "/assets/maps/10036/navigation.json",
+  "width": 292.96875,
+  "height": 211.58854166666666,
+  "spawn": {
+    "x": 146.484375,
+    "y": 119.46614583333333
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: Escritório do Hokage.",
+  "source": "assets/scene/map/10036/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "10036",
+    "name": "Cenário 10036",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "03ff0245021315b432f645b317faad68092618cc309f4a67b727a5fe68d07b44",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "1500001",
+      "mapId": "10036",
+      "time": "1",
+      "type": "3",
+      "name": "Escritório do Hokage",
+      "minLevel": null,
+      "worldMapId": "1500001",
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 12,
+    "foregroundTiles": 2,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 2,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 13605,
+      "dimensions": [
+        900,
+        650
+      ],
+      "sha256": "f47b961f8678144b6f7b2d3421d14382f9c94745b7e04f02daebeff6467b2d2a",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/10036/foreground.webp",
+        "sourceSha256": "f47b961f8678144b6f7b2d3421d14382f9c94745b7e04f02daebeff6467b2d2a",
+        "originalBytes": 45527,
+        "bytes": 28590,
+        "width": 900,
+        "height": 650,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/10036/native-alpha.png",
+    "width": 900,
+    "height": 650,
+    "sha256": "d69b122481a05994ea19542e522fadeed819fa9d5f22fa1f43909454cfc9f980"
+  }
+}

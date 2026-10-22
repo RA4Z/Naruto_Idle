@@ -1,0 +1,126 @@
+{
+  "id": "300187",
+  "name": "Ilha Tartaruga",
+  "kind": "lobby",
+  "background": "/assets/maps/300187/background.png",
+  "foreground": "/assets/maps/300187/foreground.png",
+  "thumbnail": "/assets/maps/300187/thumbnail.jpg",
+  "navigation": "/assets/maps/300187/navigation.json",
+  "width": 976.5625,
+  "height": 748.6979166666666,
+  "spawn": {
+    "x": 540.3645833333334,
+    "y": 380.859375
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/300187/",
+  "sourceScene": {
+    "id": "2015033",
+    "mapId": "300187",
+    "time": "1",
+    "type": "1",
+    "name": "Ilha Tartaruga",
+    "minLevel": null,
+    "worldMapId": "2015033",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "38e983da24fa7e2ff9480508d78fe4fe1b3b31f9d39bb122d712c9bad56c522e",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015033",
+      "mapId": "300187",
+      "time": "1",
+      "type": "1",
+      "name": "Ilha Tartaruga",
+      "minLevel": null,
+      "worldMapId": "2015033",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2977001",
+      "mapId": "300187",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] A Estranha Besta vs. O Monstro",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2978001",
+      "mapId": "300187",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Prisão de Água",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2979001",
+      "mapId": "300187",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Regresso do Artista",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2980001",
+      "mapId": "300187",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Kabuto Cobra",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 108,
+    "foregroundTiles": 37,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 37,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 356130,
+      "dimensions": [
+        3000,
+        2300
+      ],
+      "sha256": "a137d7ed6360156d92c61480a5a5012e756437a1700d09d87eb617b88c9361eb",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300187/foreground.webp",
+        "sourceSha256": "a137d7ed6360156d92c61480a5a5012e756437a1700d09d87eb617b88c9361eb",
+        "originalBytes": 950907,
+        "bytes": 597112,
+        "width": 3000,
+        "height": 2300,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300187/native-alpha.png",
+    "width": 3000,
+    "height": 2300,
+    "sha256": "90932f78468c01d57c96c47daa95e0cc99029b1dc8b5a4c995891dca86e120b4"
+  }
+}

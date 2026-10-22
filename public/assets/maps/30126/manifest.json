@@ -1,0 +1,107 @@
+{
+  "id": "30126",
+  "name": "Cave Base da Akatsuki",
+  "kind": "lobby",
+  "background": "/assets/maps/30126/background.png",
+  "foreground": "/assets/maps/30126/foreground.png",
+  "thumbnail": "/assets/maps/30126/thumbnail.jpg",
+  "navigation": "/assets/maps/30126/navigation.json",
+  "width": 585.9375,
+  "height": 455.72916666666663,
+  "spawn": {
+    "x": 292.96875,
+    "y": 254.55729166666666
+  },
+  "enemies": [],
+  "description": "Área original recuperada para exploração segura. Sem encontros de missão configurados.",
+  "source": "assets/scene/map/30126/",
+  "sourceScene": {
+    "id": "2015013",
+    "mapId": "30126",
+    "time": "1",
+    "type": "1",
+    "name": "Cave Base da Akatsuki",
+    "minLevel": null,
+    "worldMapId": "2015013",
+    "replaceSelfNinja": null
+  },
+  "navigationSha256": "b91611981d554e208852d0f9c08525c39e43598ebabfd51825a58c222224f69b",
+  "collection": "world",
+  "sourceScenes": [
+    {
+      "id": "2015013",
+      "mapId": "30126",
+      "time": "1",
+      "type": "1",
+      "name": "Cave Base da Akatsuki",
+      "minLevel": null,
+      "worldMapId": "2015013",
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2531001",
+      "mapId": "30126",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Sasori da Areia Vermelha",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2536001",
+      "mapId": "30126",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Mestres de Bonecos contra Mestres de Bonecos",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 48,
+    "foregroundTiles": 13,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 13,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170,
+        255
+      ],
+      "nontransparentPixels": 209069,
+      "dimensions": [
+        1800,
+        1400
+      ],
+      "sha256": "d834b15af732a7d12a626ef013f4e5c3388ae59688f6b90fe87e888568bc57e2",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30126/foreground.webp",
+        "sourceSha256": "d834b15af732a7d12a626ef013f4e5c3388ae59688f6b90fe87e888568bc57e2",
+        "originalBytes": 189561,
+        "bytes": 103906,
+        "width": 1800,
+        "height": 1400,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30126/native-alpha.png",
+    "width": 1800,
+    "height": 1400,
+    "sha256": "b9237ba7b012064cb6ad68e3ece6a3a87b79e21239ef6717d6f417c9e19cc5d0"
+  }
+}

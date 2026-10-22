@@ -1,0 +1,93 @@
+{
+  "id": "30007",
+  "name": "Cenário 30007",
+  "kind": "exploration",
+  "background": "/assets/maps/30007/background.png",
+  "foreground": "/assets/maps/30007/foreground.png",
+  "thumbnail": "/assets/maps/30007/thumbnail.jpg",
+  "navigation": "/assets/maps/30007/navigation.json",
+  "width": 976.5625,
+  "height": 976.5625,
+  "spawn": {
+    "x": 488.28125,
+    "y": 563.1510416666666
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Floresta À Noite; [Fase] Expulsão dos Lobos.",
+  "source": "assets/scene/map/30007/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30007",
+    "name": "Cenário 30007",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "07f44512d1849ef4f8e31cea8811bdefa196e112325844be7418d69e2bea5ea1",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2021001",
+      "mapId": "30007",
+      "time": "3",
+      "type": "2",
+      "name": "[Fase] Floresta À Noite",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2026001",
+      "mapId": "30007",
+      "time": "3",
+      "type": "2",
+      "name": "[Fase] Expulsão dos Lobos",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 144,
+    "foregroundTiles": 102,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 102,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 1855593,
+      "dimensions": [
+        3000,
+        3000
+      ],
+      "sha256": "e3eebcb5f86a740721fbc91831a19c89dbfaec0fe9ced3650033bc8498d92b8c",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30007/foreground.webp",
+        "sourceSha256": "e3eebcb5f86a740721fbc91831a19c89dbfaec0fe9ced3650033bc8498d92b8c",
+        "originalBytes": 4441376,
+        "bytes": 2844596,
+        "width": 3000,
+        "height": 3000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30007/native-alpha.png",
+    "width": 3000,
+    "height": 3000,
+    "sha256": "0da0a75d5a6247313cd0b78d25d02d5dd37241bb830d8ee074b9538990a90a11"
+  }
+}

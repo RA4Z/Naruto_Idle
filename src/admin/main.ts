@@ -1,3 +1,4 @@
+import { animationOrigin } from "../entities/animation-origin";
 import {
   t,
   th,
@@ -687,8 +688,8 @@ function animationDialog(title: string, modes: any, manifest?: any) {
       Math.floor(frame / cols) * anim.frameHeight,
       anim.frameWidth,
       anim.frameHeight,
-      thumb.width / 2 - w * (anim.origin?.[0] ?? 0.5),
-      thumb.height * 0.875 - h * (anim.origin?.[1] ?? 1),
+      thumb.width / 2 - w * animationOrigin(anim, frame)[0],
+      thumb.height * 0.875 - h * animationOrigin(anim, frame)[1],
       w,
       h,
     );
@@ -840,8 +841,8 @@ function animationDialog(title: string, modes: any, manifest?: any) {
         Math.floor(frame / cols) * anim.frameHeight,
         anim.frameWidth,
         anim.frameHeight,
-        280 - w * (anim.origin?.[0] ?? 0.5),
-        350 - h * (anim.origin?.[1] ?? 1),
+        280 - w * animationOrigin(anim, frame)[0],
+        350 - h * animationOrigin(anim, frame)[1],
         w,
         h,
       );

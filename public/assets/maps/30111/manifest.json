@@ -1,0 +1,151 @@
+{
+  "id": "30111",
+  "name": "Cenário 30111",
+  "kind": "exploration",
+  "background": "/assets/maps/30111/background.png",
+  "foreground": "/assets/maps/30111/foreground.png",
+  "thumbnail": "/assets/maps/30111/thumbnail.jpg",
+  "navigation": "/assets/maps/30111/navigation.json",
+  "width": 651.0416666666666,
+  "height": 260.4166666666667,
+  "spawn": {
+    "x": 325.5208333333333,
+    "y": 144.53125
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: 鼬组队副本; [Fase] A Crise de Naruto; [Fase] Treino da Mente; outras registradas no manifesto.",
+  "source": "assets/scene/map/30111/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30111",
+    "name": "Cenário 30111",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "d4c5b8f914274b737f8493e227acb21bf85a1b6de26eff7adaba6bbca4d7cf28",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2220001",
+      "mapId": "30111",
+      "time": "2",
+      "type": "2",
+      "name": "鼬组队副本",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2416001",
+      "mapId": "30111",
+      "time": "2",
+      "type": "2",
+      "name": "[Fase] A Crise de Naruto",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2602001",
+      "mapId": "30111",
+      "time": "2",
+      "type": "2",
+      "name": "[Fase] Treino da Mente",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3003001",
+      "mapId": "30111",
+      "time": "2",
+      "type": "2",
+      "name": "Itachi Uchiha",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3031001",
+      "mapId": "30111",
+      "time": "2",
+      "type": "2",
+      "name": "Itachi Uchiha",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3032001",
+      "mapId": "30111",
+      "time": "2",
+      "type": "2",
+      "name": "Itachi Uchiha",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3033001",
+      "mapId": "30111",
+      "time": "2",
+      "type": "2",
+      "name": "Itachi Uchiha",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "3034001",
+      "mapId": "30111",
+      "time": "2",
+      "type": "2",
+      "name": "Itachi Uchiha",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 32,
+    "foregroundTiles": 0,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 0,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": true,
+      "alphaLevels": [
+        0
+      ],
+      "nontransparentPixels": 0,
+      "dimensions": [
+        2000,
+        800
+      ],
+      "sha256": "61b6e7b46c8bd5f6b2ef80ee7a9bdcaeabc1015123707d664e02fa2e6d879a94",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30111/foreground.webp",
+        "sourceSha256": "61b6e7b46c8bd5f6b2ef80ee7a9bdcaeabc1015123707d664e02fa2e6d879a94",
+        "originalBytes": 6282,
+        "bytes": 106,
+        "width": 2000,
+        "height": 800,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30111/native-alpha.png",
+    "width": 2000,
+    "height": 800,
+    "sha256": "ff6e445a2fd8709f289f5f95e52abbdb2e72802e8f7dbc04b5101a75d9dd71e2"
+  }
+}

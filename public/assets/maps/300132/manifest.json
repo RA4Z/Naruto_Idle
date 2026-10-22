@@ -1,0 +1,103 @@
+{
+  "id": "300132",
+  "name": "Cenário 300132",
+  "kind": "exploration",
+  "background": "/assets/maps/300132/background.png",
+  "foreground": "/assets/maps/300132/foreground.png",
+  "thumbnail": "/assets/maps/300132/thumbnail.jpg",
+  "navigation": "/assets/maps/300132/navigation.json",
+  "width": 846.3541666666666,
+  "height": 651.0416666666666,
+  "spawn": {
+    "x": 423.1770833333333,
+    "y": 356.1197916666667
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: [Fase] Ponte Tenchi; [Fase] A Quarta Cauda; [Fase] Naruto Explode.",
+  "source": "assets/scene/map/300132/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "300132",
+    "name": "Cenário 300132",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "1054b83f186a64abf054d7de18562d0d8311a0964bd9c9da54f59eca1912b934",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2554001",
+      "mapId": "300132",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Ponte Tenchi",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2555001",
+      "mapId": "300132",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] A Quarta Cauda",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2556001",
+      "mapId": "300132",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Naruto Explode",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 88,
+    "foregroundTiles": 46,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 46,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 779181,
+      "dimensions": [
+        2600,
+        2000
+      ],
+      "sha256": "76d293a81975eeaa0a9d957db92cf69ad2622b584d1a6455e7dab7d28e33bb13",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/300132/foreground.webp",
+        "sourceSha256": "76d293a81975eeaa0a9d957db92cf69ad2622b584d1a6455e7dab7d28e33bb13",
+        "originalBytes": 2020608,
+        "bytes": 1385894,
+        "width": 2600,
+        "height": 2000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/300132/native-alpha.png",
+    "width": 2600,
+    "height": 2000,
+    "sha256": "d6714ac76ce9a9ed91730c1ecc16d55728e68f224d92874e4d0b1c33a3e3b227"
+  }
+}

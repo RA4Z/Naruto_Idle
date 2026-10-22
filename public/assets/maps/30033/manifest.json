@@ -1,0 +1,93 @@
+{
+  "id": "30033",
+  "name": "Cenário 30033",
+  "kind": "exploration",
+  "background": "/assets/maps/30033/background.png",
+  "foreground": "/assets/maps/30033/foreground.png",
+  "thumbnail": "/assets/maps/30033/thumbnail.jpg",
+  "navigation": "/assets/maps/30033/navigation.json",
+  "width": 813.8020833333334,
+  "height": 651.0416666666666,
+  "spawn": {
+    "x": 406.9010416666667,
+    "y": 353.8411458333333
+  },
+  "enemies": [],
+  "description": "Exploração do cenário original; a missão original não é executada aqui. Referências: A Floresta da Morte 4; [Fase] Guerra pelo Pergaminho.",
+  "source": "assets/scene/map/30033/",
+  "sourceScene": {
+    "id": null,
+    "mapId": "30033",
+    "name": "Cenário 30033",
+    "type": null,
+    "identity": "scenario-reference"
+  },
+  "navigationSha256": "8ac70705b413187e937e8c43260dbf35b3151095c0cf301dfd1089bee81db4c9",
+  "collection": "scenario",
+  "sourceScenes": [
+    {
+      "id": "2116002",
+      "mapId": "30033",
+      "time": "2",
+      "type": "2",
+      "name": "A Floresta da Morte 4",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    },
+    {
+      "id": "2119001",
+      "mapId": "30033",
+      "time": "1",
+      "type": "2",
+      "name": "[Fase] Guerra pelo Pergaminho",
+      "minLevel": null,
+      "worldMapId": null,
+      "replaceSelfNinja": null
+    }
+  ],
+  "populationPolicy": "Safe exploration only; original mission/encounters are not implemented.",
+  "spawnPolicy": "Authored point in the primary native walkable region, nearest the map center.",
+  "layers": {
+    "backgroundTiles": 80,
+    "foregroundTiles": 53,
+    "animatedMiddleground": "available in originals; pending conversion",
+    "nativeForeground": {
+      "method": "native-alpha-map-and-original-tile-rectangles-v1",
+      "foregroundRects": 53,
+      "opaqueGroundCutouts": false,
+      "emptyNativeLayer": false,
+      "alphaLevels": [
+        0,
+        85,
+        170
+      ],
+      "nontransparentPixels": 1033483,
+      "dimensions": [
+        2500,
+        2000
+      ],
+      "sha256": "14034d95cf9534c3fe3986f0dd36ec6e8f384b84d8c7f7f961179b4d6d9e4825",
+      "reference": "map/images/MapTile.as processImageRender: BitmapData.copyPixels with alphaBitmapData",
+      "limits": [
+        "Native global translucent front layer; not per-object Y sorting.",
+        "Middleground SWF objects require a separate conversion."
+      ],
+      "optimizedRuntime": {
+        "url": "/assets/maps/30033/foreground.webp",
+        "sourceSha256": "14034d95cf9534c3fe3986f0dd36ec6e8f384b84d8c7f7f961179b4d6d9e4825",
+        "originalBytes": 2022129,
+        "bytes": 1241120,
+        "width": 2500,
+        "height": 2000,
+        "lossless": true
+      }
+    }
+  },
+  "nativeAlpha": {
+    "url": "/assets/maps/30033/native-alpha.png",
+    "width": 2500,
+    "height": 2000,
+    "sha256": "9d97eb39359adf5fe55267ef77b937f45ccd309025c65d34f0a5cf0c3ef835f1"
+  }
+}
