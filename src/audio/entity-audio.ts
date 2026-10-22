@@ -278,8 +278,10 @@ export class EntityAudioPlayer {
     action: string,
     duration: number,
     owner: "hero" | "enemy",
+    instanceId?: string,
   ) {
-    this.clearOwner(owner);
+    const channel = instanceId ? `${owner}:${instanceId}` : owner;
+    this.clearOwner(channel);
     if (
       !this.enabled ||
       this.paused ||
@@ -294,11 +296,14 @@ export class EntityAudioPlayer {
     if (!model || !events) return;
     const end = model.durations[action];
     const pending = new Set<() => void>();
-    this.pending.set(owner, pending);
+    this.pending.set(channel, pending);
     for (const event of events) {
       const cancel = this.schedule((event.time * duration) / end, () => {
+        // Timer cancellation may race with dispatch. An old action cannot
+        // play a stale clip or remove the newer action's pending channel.
+        if (this.pending.get(channel) !== pending) return;
         pending.delete(cancel);
-        if (!pending.size) this.pending.delete(owner);
+        if (!pending.size) this.pending.delete(channel);
         if (!this.enabled || this.paused || this.disposed) return;
         const sound = model.sounds[event.sound];
         const death = action === "C_dead";
@@ -334,7 +339,7 @@ export class EntityAudioPlayer {
         );
         const voice: Voice = {
           audio: this.factory(),
-          owner,
+          owner: channel,
           sound: event.sound,
           gain,
           isVoice: !!sound.voice,
@@ -357,7 +362,7 @@ export class EntityAudioPlayer {
           id,
           action,
           sound: event.sound,
-          owner,
+          owner: channel,
           url: clip.url,
         };
       });

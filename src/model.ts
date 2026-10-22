@@ -631,18 +631,28 @@ export class Hunt {
   ) {
     // Out-of-range attackers keep a capped clock, never accumulate a burst.
     foe.clock = Math.min(foe.profile.interval, foe.clock + ms);
-    if (!foe.inRange || this.hp <= 0) return;
+    if (!foe.inRange || this.hp <= 0) {
+      foe.windup = false;
+      foe.windupMs = 0;
+      return;
+    }
     const e = foe.profile;
     const special =
       e.specialEvery > 0 && (foe.attacks + 1) % e.specialEvery === 0;
-    if (special && !foe.windup && foe.clock >= e.interval - 300) {
-      foe.windup = true;
-      this.onEvent("enemy-windup", 0, foe.id);
+    if (special && foe.clock >= e.interval - COMBAT.enemyWindupMs) {
+      if (!foe.windup) {
+        foe.windup = true;
+        foe.windupMs = 0;
+        this.onEvent("enemy-windup", 0, foe.id);
+      } else foe.windupMs += ms;
+      // A clock filled while chasing must not skip the visible reaction window.
+      if (foe.windupMs < COMBAT.enemyWindupMs) return;
     }
     if (foe.clock < e.interval) return;
     foe.clock -= e.interval;
     foe.attacks++;
     foe.windup = false;
+    foe.windupMs = 0;
     if (special && e.heal && foe.healsLeft > 0 && foe.hp < foe.maxHp) {
       foe.healsLeft--;
       const heal = Math.min(foe.maxHp - foe.hp, Math.round(foe.maxHp * e.heal));
@@ -708,6 +718,10 @@ export class Hunt {
       for (const foe of this.livingOpponents) this.tickOpponent(foe, ms, st);
       if (this.hp <= 0) {
         this.retreating = false;
+        for (const foe of this.opponents.values()) {
+          foe.windup = false;
+          foe.windupMs = 0;
+        }
         this.save.defeats++;
         this.phase = "derrota";
         this.timer = 0;

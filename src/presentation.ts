@@ -165,8 +165,9 @@ export class PresentationPlayer {
     action: string,
     duration: number,
     owner: "hero" | "enemy",
+    instanceId?: string,
   ) {
-    this.actors.action(id, action, duration, owner);
+    this.actors.action(id, action, duration, owner, instanceId);
   }
   setMap(id: string) {
     this.stopFootsteps();

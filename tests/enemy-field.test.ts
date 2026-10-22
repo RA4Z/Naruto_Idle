@@ -249,3 +249,45 @@ test("deliberately re-alerting a returning foe clears its previous stuck timeout
   assert.equal(mob.awareness.alerted, true);
   assert.equal(mob.awareness.returning, false);
 });
+
+test("an alerted or returning enemy with no route stops its running pose", () => {
+  for (const state of ["alerted", "returning"] as const) {
+    const { field, mob, nav, hero } = setup();
+    mob.actor.play("world", "run_0");
+    if (state === "returning") mob.home.x += 40;
+    mob.awareness[state] = true;
+    nav.path = () => [];
+    field.update(100, nav, hero, new Set(), false);
+    assert.ok(mob.actor.visual.anims.currentAnim?.key.includes(":world:idle_"));
+    assert.equal(mob.actor.x, 230);
+    assert.equal(mob.actor.y, 98);
+  }
+});
+
+test("a stationary target reuses a valid pursuit route while a moving target invalidates it", () => {
+  const { field, mob, nav, hero } = setup();
+  const path = nav.path.bind(nav);
+  let calls = 0;
+  nav.path = (...args) => {
+    calls++;
+    return path(...args);
+  };
+  field.alert(mob.actor);
+  for (let i = 0; i < 6; i++) field.update(100, nav, hero, new Set(), false);
+  assert.equal(calls, 1);
+  hero.y = 80;
+  for (let i = 0; i < 4; i++) field.update(100, nav, hero, new Set(), false);
+  assert.ok(calls >= 2);
+});
+
+test("stopping a pursuit preserves battle actions and defeat suppression stops world running", () => {
+  const { field, mob, nav, hero } = setup();
+  field.alert(mob.actor);
+  nav.path = () => [];
+  mob.actor.play("battle", "A_1hit");
+  field.update(100, nav, hero, new Set(), false);
+  assert.ok(mob.actor.visual.anims.currentAnim?.key.endsWith(":A_1hit"));
+  mob.actor.play("world", "run_0");
+  field.update(100, nav, hero, new Set(), false, true);
+  assert.ok(mob.actor.visual.anims.currentAnim?.key.includes(":world:idle_"));
+});

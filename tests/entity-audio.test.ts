@@ -165,6 +165,48 @@ test("replacement action cancels stale events; same model hero and enemy have in
   assert.equal(s.player.snapshot().lastPlayed?.action, "C_dead");
   s.player.dispose();
 });
+
+test("two enemies using the same model have independent action and interruption channels", async () => {
+  const s = setup();
+  s.player.setActors(["19000101"]);
+  s.player.settings(true, 0.4);
+  await tick();
+  s.player.action("19000101", "A_1hit", 500, "enemy", "map:one");
+  s.player.action("19000101", "A_1hit", 500, "enemy", "map:two");
+  s.flush();
+  assert.equal(s.clips.length, 2);
+  assert.equal(s.player.snapshot().voices, 2);
+  s.player.action("19000101", "C_hurt", 1, "enemy", "map:one");
+  assert.equal(s.clips[0].released, true);
+  assert.equal(s.clips[1].released, false);
+  s.player.action("19000101", "A_1hit", 500, "enemy", "map:one");
+  const stale = s.jobs.at(-1)!;
+  s.player.action("19000101", "C_dead", 500, "enemy", "map:one");
+  stale.run(); // A callback already dispatched by a scheduler must still be inert.
+  assert.equal(s.clips.length, 2);
+  assert.equal(s.player.snapshot().pending, 1);
+  s.flush();
+  assert.equal(s.player.snapshot().lastPlayed?.action, "C_dead");
+  s.player.dispose();
+  assert.equal(s.player.snapshot().voices, 0);
+  assert.equal(s.player.snapshot().pending, 0);
+});
+
+test("instance channels still obey the shared voice limit and mute cancels every enemy", async () => {
+  const s = setup();
+  s.player.setActors(["19000101"]);
+  s.player.settings(true, 0.4);
+  await tick();
+  for (let i = 0; i < 6; i++)
+    s.player.action("19000101", "A_1hit", 500, "enemy", `map:${i}`);
+  s.flush();
+  assert.equal(s.player.snapshot().voices, 4);
+  assert.equal(s.player.snapshot().dropped, 2);
+  s.player.settings(false, 0.4);
+  assert.equal(s.player.snapshot().voices, 0);
+  assert.ok(s.clips.every((clip) => clip.released));
+  s.player.dispose();
+});
 test("four shared voices, package limits, priority trimming, pause and mute release correctly", async () => {
   const data = model();
   data.actions.A_1hit = Array.from({ length: 6 }, () => ({

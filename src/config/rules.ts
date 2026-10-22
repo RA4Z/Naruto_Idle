@@ -8,6 +8,7 @@ export const COMBAT = {
   preparationMs: 0,
   firstAttackMs: 0,
   firstEnemyAttackMs: 220,
+  enemyWindupMs: 300,
   specialEvery: 3,
   enemyInterval: 1450,
 };

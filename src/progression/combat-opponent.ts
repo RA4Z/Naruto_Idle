@@ -7,6 +7,7 @@ export type CombatOpponent = {
   clock: number;
   attacks: number;
   windup: boolean;
+  windupMs: number;
   healsLeft: number;
   inRange: boolean;
   rewarded: boolean;
@@ -25,6 +26,7 @@ export function combatOpponent(
     clock: Math.max(0, profile.interval - opening),
     attacks: 0,
     windup: false,
+    windupMs: 0,
     healsLeft: 3,
     inRange: true,
     rewarded: false,

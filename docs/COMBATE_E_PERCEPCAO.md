@@ -1,5 +1,14 @@
 # Combate em grupo e percepção
 
+## Segunda revisão — avisos, áudio e custo de perseguição
+
+- Especiais exigem ao menos `COMBAT.enemyWindupMs` (300 ms) de simulação ativa depois do aviso. Encher o relógio fora do alcance não permite avisar e atingir no mesmo quadro. Sair do alcance/passagem cancela a preparação, voltar exige novo aviso; pausa congela a contagem, troca de alvo não interfere no relógio do inimigo e derrota limpa todos os avisos. Uma barra âmbar abaixo da vida e o título do botão do alvo indicam a preparação. Ataques básicos conservam sua cadência anterior.
+- Áudio usa um canal por **instância de inimigo**, com ID `<mapa>:<posição>`, em vez de um único canal para todos. Sofrer dano/morrer cancela somente a ação daquele ator; dois modelos iguais não se silenciam. Callbacks antigos conferem a ação vigente antes de emitir som. Permanecem o teto global de quatro vozes e os limites por pacote, pausa, mute e descarte.
+- `world/combat-sync.ts` publica primeiro o alcance de todos os perseguidores e remove os demais desistentes antes de substituir o alvo que saiu. A escolha passa a considerar o quadro atual, sem focar temporariamente outro inimigo que também estava desistindo; alvo manual válido e cadência continuam preservados.
+- Perseguidores reaproveitam a rota enquanto o jogador não se desloca mais de oito unidades e o destino ainda permite ataque. A checagem continua a cada 400 ms; rota consumida, jogador movido ou destino bloqueado forçam novo cálculo. Inimigos imóveis por falta de caminho ou pela derrota do jogador deixam a animação de corrida sem cancelar ações de batalha.
+
+Regressões novas: `combat-windup.test.ts`, `combat-sync.test.ts` e extensões de `entity-audio.test.ts`/`enemy-field.test.ts`. Antes das correções, cinco cenários falharam reproduzindo os defeitos e a busca repetida; após a correção passam também os cenários de canais simultâneos, descarte de callback atrasado, limite global, pausa, cura e derrota. Suíte completa: 324 testes TypeScript e oito da arena aprovados, além dos tipos e das 1.278 mensagens nos três idiomas. Testes de perseguição contam chamadas reais ao cálculo de caminhos, sem alegar medição de FPS. O navegador continua indisponível nesta etapa; barra/tooltip e integração visual exigem conferência manual. Estado de preparação é transitório e não altera o formato do save.
+
 ## Revisão do combate dinâmico — 22/10/2026
 
 - Aproximação em grupo valida o alcance **e** a passagem livre no fim da rota. Um ponto distribuído atrás de uma parede não é mais aceito apenas porque existe caminho até ele; nesse caso a perseguição tenta a posição do jogador. A implementação compartilhada está em `src/world/melee.ts`. Os seis pontos mantêm a distribuição em terreno livre, sem atravessar colisões.

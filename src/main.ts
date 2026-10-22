@@ -1,5 +1,6 @@
 import { Minimap } from "./world/minimap";
 import { canMoveInPhase } from "./world/combat-movement";
+import { syncPursuers } from "./world/combat-sync";
 import { KeyboardNavigator } from "./world/keyboard-navigation";
 import { ensureAccountProgress } from "./progression/account-progress";
 import { renderAccountProgress } from "./progression/account-progress-ui";
@@ -95,7 +96,7 @@ import { ExplorationParty } from "./world/party";
 import { Residents } from "./world/residents";
 import { EnemyField } from "./world/enemies";
 import { visionRadius } from "./world/awareness";
-import { AREAS, type CharacterId } from "./data";
+import { AREAS, COMBAT, type CharacterId } from "./data";
 import { Hunt, fresh, restore, stats, needed, type Save } from "./model";
 type Anim = {
   url: string;
@@ -1442,6 +1443,7 @@ class HuntScene extends Phaser.Scene {
         "C_hurt",
         1,
         "enemy",
+        id,
       );
       this.lastStrikeDuration = strikeDuration(
         event === "skill",
@@ -1495,6 +1497,7 @@ class HuntScene extends Phaser.Scene {
         (source.visual.anims.currentAnim?.duration || 450) /
           (source.visual.anims.timeScale || 1),
         "enemy",
+        id,
       );
       this.floating(
         "-" + value,
@@ -1540,6 +1543,7 @@ class HuntScene extends Phaser.Scene {
           ((death?.timeline?.length || death?.frames || 1) * 1000) /
             (death?.fps || 24),
           "enemy",
+          id,
         );
         this.tweens.add({
           targets: defeatedEnemy,
@@ -1601,12 +1605,16 @@ class HuntScene extends Phaser.Scene {
   }
   private syncEncounters() {
     if (this.isLobby) return;
-    for (const foe of this.hunt.livingOpponents) {
-      const mob = this.enemyField.byId(foe.id);
-      if (!mob?.alive || !mob.awareness.alerted) this.hunt.leave(foe.id);
-      else
-        foe.inRange = this.enemyField.inRange(mob, this.hero, this.navigation);
-    }
+    syncPursuers(this.hunt, (id) => {
+      const mob = this.enemyField.byId(id);
+      if (!mob) return;
+      const engaged = mob.alive && mob.awareness.alerted;
+      return {
+        engaged,
+        inRange:
+          engaged && this.enemyField.inRange(mob, this.hero, this.navigation),
+      };
+    });
     if (this.hunt.phase === "explorando") {
       const ready = this.enemyField.members.filter(
         (m) =>
@@ -1724,7 +1732,9 @@ class HuntScene extends Phaser.Scene {
         String(foe.id === this.hunt.targetId),
       );
       button.disabled = save.paused || this.loadingActor;
-      button.title = t(foe.inRange ? "stealth.choose" : "stealth.approaching");
+      button.title = foe.windup
+        ? t("balance.enemyWindup", { name: actor.manifest.name })
+        : t(foe.inRange ? "stealth.choose" : "stealth.approaching");
     }
   }
   bindNpc(npc: EntityActor) {
@@ -2351,6 +2361,17 @@ class HuntScene extends Phaser.Scene {
           .fillRect(actor.x - 12, actor.y + 4, 24, 3)
           .fillStyle(foe.id === this.hunt.targetId ? 0x72e5ef : 0xe69878)
           .fillRect(actor.x - 12, actor.y + 4, (24 * foe.hp) / foe.maxHp, 3);
+        if (foe.windup)
+          this.bars
+            .fillStyle(0x14211b)
+            .fillRect(actor.x - 12, actor.y + 9, 24, 2)
+            .fillStyle(0xffc74e)
+            .fillRect(
+              actor.x - 12,
+              actor.y + 9,
+              24 * Math.min(1, foe.windupMs / COMBAT.enemyWindupMs),
+              2,
+            );
       }
     }
     this.minimap?.follow(this.hero);

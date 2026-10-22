@@ -32,6 +32,7 @@ export type Mob = {
   heading: Point;
   awareness: Awareness;
   repathMs: number;
+  pursuitDestination?: Point;
   stuckMs: number;
   profile: EnemyProfile;
 };
@@ -194,7 +195,10 @@ export class EnemyField {
         }
         continue;
       }
-      if (suppress) continue;
+      if (suppress) {
+        this.stopLocomotion(mob);
+        continue;
+      }
       const was = mob.awareness.alerted;
       updateAwareness(
         mob.awareness,
@@ -223,12 +227,22 @@ export class EnemyField {
           continue;
         }
         if (mob.repathMs <= 0) {
-          mob.path = meleeApproach(
-            actor,
-            hero,
-            this.members.indexOf(mob),
-            nav,
-          );
+          const end = mob.path.at(-1),
+            previous = mob.pursuitDestination;
+          if (
+            !end ||
+            !previous ||
+            Math.hypot(hero.x - previous.x, hero.y - previous.y) > 8 ||
+            !meleeReachable(end, hero, nav)
+          ) {
+            mob.path = meleeApproach(
+              actor,
+              hero,
+              this.members.indexOf(mob),
+              nav,
+            );
+            mob.pursuitDestination = { x: hero.x, y: hero.y };
+          }
           mob.repathMs = 400;
         }
       } else if (mob.awareness.returning) {
@@ -265,12 +279,15 @@ export class EnemyField {
           actor.face(dx < 0);
           actor.play("battle", "C_idle");
         }
-      } else if (mob.awareness.alerted) {
-        mob.stuckMs += delta;
-        if (mob.stuckMs >= SIGHT.stuckMs) {
-          mob.awareness = { alerted: false, returning: true, unseenMs: 0 };
-          mob.path = [];
-          mob.repathMs = 0;
+      } else {
+        this.stopLocomotion(mob);
+        if (mob.awareness.alerted) {
+          mob.stuckMs += delta;
+          if (mob.stuckMs >= SIGHT.stuckMs) {
+            mob.awareness = { alerted: false, returning: true, unseenMs: 0 };
+            mob.path = [];
+            mob.repathMs = 0;
+          }
         }
       }
     }
@@ -283,6 +300,10 @@ export class EnemyField {
         ? "idle_" + m.direction
         : "C_idle",
     );
+  }
+  private stopLocomotion(m: Mob) {
+    if (m.actor.visual.anims.currentAnim?.key.includes(":world:run_"))
+      this.idle(m);
   }
   private drawZones() {
     const g = this.zones;

@@ -108,6 +108,10 @@ test("enemy armor distinguishes physical attacks from ninjutsu and healer action
   healer.playerClock = -10000;
   const hp = healer.hp;
   healer.tick(10);
+  assert.equal(healer.enemyWindup, true);
+  assert.equal(healer.enemyHp, healer.enemyMax - 1);
+  healer.tick(250);
+  healer.tick(50);
   assert.equal(healer.enemyHp, healer.enemyMax);
   assert.equal(healer.hp, hp);
   assert.equal(healer.enemyHealsLeft, 2);
@@ -116,6 +120,8 @@ test("enemy armor distinguishes physical attacks from ninjutsu and healer action
   healer.enemyAttacks = 5;
   healer.enemyClock = healer.enemy.interval - 10;
   healer.tick(10);
+  healer.tick(250);
+  healer.tick(50);
   assert.equal(healer.enemyHp, healer.enemyMax - 5);
   assert.ok(healer.hp < hp);
 });
