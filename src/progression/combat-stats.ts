@@ -145,7 +145,6 @@ export function validateArenaLoadout(input: unknown): CombatLoadout {
   if (
     !Number.isSafeInteger(s.level) ||
     (s.level as number) < 1 ||
-    (s.level as number) > 100 ||
     !Number.isSafeInteger(s.upgrades) ||
     (s.upgrades as number) < 0 ||
     (s.upgrades as number) > 10000

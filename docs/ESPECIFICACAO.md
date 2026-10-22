@@ -12,6 +12,8 @@ Novo jogo permite Naruto 11000101, Sasuke azul/branco 11000211 ou Sakura 1100030
 
 O jogador controla um personagem possuído por vez e pode trocá-lo fora de combate. Nível, XP, treinos e equipamento pertencem a cada personagem; somente o ativo recebe XP online/offline. Party não está disponível nesta versão.
 
+A conta possui nível/XP próprios e recebe o mesmo XP novo do ninja ativo, inclusive de missões e progresso offline. Conta e personagens não têm teto de nível e usam a mesma curva de XP em cada nível. Saves antigos iniciam a conta no progresso do ninja possuído mais avançado; trocar ninja não muda o nível da conta. [Contrato e validação](MOVIMENTO_E_PROGRESSAO_DA_CONTA.md).
+
 Vitalidade, força, ninjutsu, velocidade, chakra, controle e resistência determinam os valores derivados. Velocidade afeta movimento e intervalo de ataques; limites ficam em src/progression/combat-stats.ts. Recrutas têm perfis por família em oito estilos, crescimento próprio e técnicas genéricas autorais, sem herdar jutsu de outro modelo. A tabela cobre os recrutáveis atuais com exploração/combate. Detalhes em [BALANCEAMENTO.md](BALANCEAMENTO.md).
 
 ## Mundo e combate
@@ -20,9 +22,11 @@ Há 145 conjuntos preparados e acessíveis por Viagens. O jogador anda por cliqu
 
 Ataques são automáticos; os iniciais possuem jutsu manual com chakra e recarga. Vitória concede XP, moedas e loot; derrota retorna à recuperação. Caçada automática escolhe alvos alcançáveis, recalcula rotas alteradas, descarta caminhos que não chegam ao alcance, detecta falta de movimento e limita a duração da perseguição. Sem inimigos vivos, aguarda respawn.
 
+Durante o combate, clique no chão/minimapa ou use WASD/setas para mover/fugir. O deslocamento suspende os golpes do jogador, mas mantém dano dos inimigos em alcance e sua perseguição. Parar deixa o ninja pronto para atacar automaticamente o alvo selecionado quando ele entrar no alcance, sem novo clique e sem reiniciar a cadência. Selecionar um inimigo também retoma os ataques. Teclado possui ajuste local para deslizar por colisões e alinhar passagens estreitas, respeitando velocidade/obstáculos. [Detalhes](MOVIMENTO_E_PROGRESSAO_DA_CONTA.md).
+
 A seleção da caçada compara o comprimento do percurso navegável até o alcance de ataque, e não apenas distância em linha reta. A cada 500 ms reavalia inimigos vivos; troca o alvo quando economiza pelo menos 24 unidades de percurso e 25% do percurso atual. Um inimigo já em alcance tem prioridade sobre uma perseguição ainda distante. Pequenas oscilações de patrulha não provocam troca, e um alvo inacessível é descartado sem aguardar outro ciclo para avaliar os restantes. Reutiliza caminhos válidos e evita buscar rotas de candidatos cuja distância mínima já não pode melhorar a escolha.
 
-O primeiro golpe acontece no próprio encontro; os seguintes respeitam a velocidade individual. O inimigo pode responder após 220 ms de simulação ativa. Mundo aberto não toca vinhetas de início/vitória/derrota. Passos seguem movimento real com intervalo mínimo e um canal, interrompido ao parar, pausar ou entrar em combate; demais ações/vozes e som de nível continuam disponíveis.
+O primeiro golpe acontece no próprio encontro quando o jogador está lutando; os seguintes respeitam a velocidade individual, inclusive ao retomar depois da fuga. O inimigo pode responder após 220 ms de simulação ativa. Mundo aberto não toca vinhetas de início/vitória/derrota. Passos seguem movimento real com intervalo mínimo e um canal, interrompido ao parar ou pausar; continuam durante deslocamento de fuga. Demais ações/vozes e som de nível continuam disponíveis.
 
 A dificuldade vem da área escolhida, não do ID do mapa. Viagens permitem escolher dificuldades de nível 1/5/12/25 e mostram o nível do personagem. Onze modelos inimigos têm perfis próprios de resistência, cadência e comportamento; um dos seis inimigos de cada grupo é elite, identificado por estrela/rótulo dourado e anel. Elites têm recompensas maiores e chance de equipamento limitada por nível/dificuldade. Cura inimiga pode ocorrer até três vezes por encontro. Não inventar portais entre mapas sem dados comprovados.
 

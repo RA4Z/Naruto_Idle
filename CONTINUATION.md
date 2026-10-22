@@ -1,5 +1,13 @@
 # Ponto de continuidade — estado atual
 
+## Atualização de 22/10: fuga, assistência de teclado e conta sem teto de nível
+
+Refinamento posterior: parar de se mover remove a suspensão dos golpes automaticamente, mantendo o alvo selecionado. O ninja aguarda alcance/passagem válidos e então ataca pela cadência existente, sem novo clique; outro perseguidor próximo não troca essa mira. `Hunt.updateMovement` recebe movimento real a cada quadro antes do cálculo de alcance/golpes. Dezoito testes de retirada/grupo, tipos e traduções passaram; fixture confirmou ausência de golpes fora do alcance e retomada automática quando o alvo se aproxima.
+
+Movimento deixa de ser exclusivo da exploração. Clique no chão/minimapa ou WASD/setas suspende os golpes próprios sem apagar os perseguidores; alcance é atualizado após mover, e inimigos próximos continuam batendo. Escolher um inimigo retoma ataques sem reiniciar cadência; perder um perseguidor não cancela retirada dos demais. Caminhos são preservados ao terminar o encontro. `KeyboardNavigator` faz alinhamentos locais/deslizamento com orçamento de busca, sem atravessar colisões ou exceder velocidade.
+
+Save ganha `accountLevel`/`accountXp`, mesma função `needed` dos ninjas; vitórias, missões e offline concedem XP aos dois via `addXp`. Migração sem campos usa o ninja mais avançado, não soma um histórico inexistente e ignora o Sasuke reservado. Removido o teto 100 de personagens/conta, restauração e loadouts Jornada. HUD e mensagens PT/EN/ES. Nenhuma migração SQL necessária. Regras, arquivos, pesquisa de referência e limites da validação em [Movimento e progressão](docs/MOVIMENTO_E_PROGRESSAO_DA_CONTA.md). 304 testes TS e 8 da arena passaram; fixture em RAM validou núcleo/UI, sem teste autenticado completo do mundo Phaser.
+
 ## Atualização de 22/10: balões e troca de equipamentos
 
 Detalhes de equipamentos/loja abrem em balão nativo junto ao card, sem painel fixo. Clique fora/Escape/Fechar dispensam o balão; Escape mantém o menu. Cópias alheias oferecem **Substituir**, com prévia do item devolvido ou do slot que ficará vazio. `validateEquipmentReplacement`/`replaceEquipment` em `rules.ts` validam os dois ninjas antes da troca atômica no mesmo slot, inclusive nível do dono anterior para receber o item devolvido. Sem custo, sem duplicar cópias, sem mexer em presets; campos legados sincronizados quando o ativo participa. Permissão de combate é verificada no clique. Este fluxo substitui o bloqueio anterior que exigia desequipar manualmente o outro ninja. Ver [Equipamentos](docs/EQUIPAMENTOS.md).

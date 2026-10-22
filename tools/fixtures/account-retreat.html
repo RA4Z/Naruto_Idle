@@ -1,0 +1,67 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Account and retreat QA</title>
+<link rel="stylesheet" href="/src/style.css">
+<style>body{padding:24px;max-width:850px;margin:auto}button{margin:4px}#qa-state{white-space:pre-wrap;overflow-wrap:anywhere}</style>
+<h1>Account and retreat QA</h1>
+<p>Isolated core/UI fixture. No authentication, cloud writes or full Phaser world.</p>
+<section id="qa-account" class="account-progress"></section>
+<button id="award">Award 80 XP</button>
+<button id="switch">Switch to Sasuke</button>
+<button id="encounter">Start encounter</button>
+<button id="retreat">Retreat</button>
+<button id="range">Leave melee range</button>
+<button id="stop">Stop moving</button>
+<button id="near">Target enters range</button>
+<button id="tick">Advance 2 seconds</button>
+<button id="resume">Resume attacking</button>
+<h2>Keyboard doorway assistance</h2>
+<button id="steer">Move right through doorway</button>
+<p id="qa-steering"></p>
+<canvas id="steering" width="350" height="160" style="background:#233329;max-width:100%"></canvas>
+<pre id="qa-state"></pre>
+<script type="module">
+  import { fresh, Hunt, addXp } from '/src/model.ts';
+  import { selectCharacter } from '/src/progression/character-progress.ts';
+  import { enemyProfile } from '/src/world/enemy-profiles.ts';
+  import { canMoveInPhase } from '/src/world/combat-movement.ts';
+  import { renderAccountProgress } from '/src/progression/account-progress-ui.ts';
+  import { NativeNavigation } from '/src/world/navigation.ts';
+  import { KeyboardNavigator } from '/src/world/keyboard-navigation.ts';
+  const save = fresh('naruto');
+  const hunt = new Hunt(save, () => 1);
+  const show = () => {
+    renderAccountProgress(document.querySelector('#qa-account'), save);
+    document.querySelector('#qa-state').textContent = JSON.stringify({
+      accountLevel: save.accountLevel, accountXp: save.accountXp,
+      character: save.character, level: save.level, xp: save.xp,
+      phase: hunt.phase, retreating: hunt.retreating, canMove: canMoveInPhase(hunt.phase),
+      hp: hunt.hp, attacks: hunt.attacks, kills: save.kills,
+    }, null, 2);
+  };
+  const action = (id, run) => document.getElementById(id).onclick = () => { run(); show(); };
+  action('award', () => addXp(save, 80));
+  action('switch', () => selectCharacter(save, '11000211'));
+  action('encounter', () => hunt.encounter({ ...enemyProfile(), hp:10000, attack:0.1 }, 'foe'));
+  action('retreat', () => hunt.retreat());
+  action('range', () => { for (const foe of hunt.livingOpponents) foe.inRange = false; });
+  action('stop', () => hunt.updateMovement(false));
+  action('near', () => { for (const foe of hunt.livingOpponents) foe.inRange = true; });
+  action('tick', () => { for (let i=0;i<20;i++) hunt.tick(100); });
+  action('resume', () => { for (const foe of hunt.livingOpponents) foe.inRange = true; hunt.selectTarget('foe'); });
+  const rectangle = (x,y,w,h) => [{x,y},{x:x+w,y},{x:x+w,y:y+h},{x,y:y+h}];
+  const nav = new NativeNavigation({sourceWidth:400,sourceHeight:400,columns:40,rows:40,cellWidth:10,cellHeight:10,unitsPerSourcePixel:1,cells:Array.from({length:1600},(_,n)=>[n%40,Math.floor(n/40)]),obstacles:[rectangle(190,-100,10,205),rectangle(190,119,10,200)]});
+  const keyboard = new KeyboardNavigator();
+  let point = {x:170,y:98}, plain={...point};
+  function drawSteering() {
+    const ctx=document.querySelector('#steering').getContext('2d');
+    ctx.clearRect(0,0,350,160); ctx.fillStyle='#786f50';
+    ctx.fillRect(120,0,20,70);ctx.fillRect(120,98,20,62);
+    for(const [p,color] of [[plain,'#888'],[point,'#d9ca81']]) {ctx.fillStyle=color;ctx.beginPath();ctx.arc((p.x-130)*2,(p.y-70)*2,5,0,Math.PI*2);ctx.fill();}
+    document.querySelector('#qa-steering').textContent=JSON.stringify({assisted:point,ordinary:plain});
+  }
+  document.querySelector('#steer').onclick=()=>{for(let i=0;i<85;i++){point=keyboard.move(point,1,0,100,16,nav);plain=nav.move(plain,1.6,0);}drawSteering();};
+  drawSteering();
+  show();
+</script>

@@ -171,10 +171,7 @@ export function installProgression(context: () => Context) {
           "p",
           t("progression.ui.20cb1676ce", {
             v0: p.level,
-            v1:
-              p.level >= 100
-                ? t("progression.ui.f20408d1c9")
-                : t("progression.ui.29612b2ab1", {
+            v1: t("progression.ui.29612b2ab1", {
                     v0: p.xp,
                     v1: needed(p.level),
                   }),
@@ -647,10 +644,7 @@ export function installProgression(context: () => Context) {
             "p",
             t("progression.ui.20cb1676ce", {
               v0: progress.level,
-              v1:
-                progress.level >= 100
-                  ? t("progression.ui.f20408d1c9")
-                  : t("progression.ui.29612b2ab1", {
+              v1: t("progression.ui.29612b2ab1", {
                       v0: progress.xp,
                       v1: needed(progress.level),
                     }),

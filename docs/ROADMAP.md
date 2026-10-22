@@ -4,6 +4,9 @@ Atualizado em 21/10/2026. O [histórico](history/ROADMAP-2026-10-21.md) preserva
 
 ## Entregas atuais
 
+- [x] Fuga por clique/teclado sem parar a perseguição, ataques inimigos por alcance e retomada manual dos golpes. Assistência leve de teclado para colisões e passagens estreitas. [Regras](MOVIMENTO_E_PROGRESSAO_DA_CONTA.md).
+- [x] Nível/XP da conta separados dos ninjas, mesma curva e recompensas, migração de saves e progressão de conta/personagens sem teto de nível, incluindo compatibilidade com o PvP Jornada.
+
 - [x] Menu de equipamentos por personagem: seleção em grid, retrato central, cinco slots, loja/inventário, comparação e remoção. 28 itens, com bandanas/pergaminhos em três graus. Progresso individual, conjuntos e saves preservados. [Guia](EQUIPAMENTOS.md).
 - [x] Equipamentos por cópia: uma unidade por personagem, compra/drop de unidades adicionais, indicação de cópias livres/ocupadas, validação atômica de conjuntos e correção de duplicações nos saves antigos ao carregar.
 

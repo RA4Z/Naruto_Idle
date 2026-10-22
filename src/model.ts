@@ -17,6 +17,11 @@ import {
 import { ITEMS, QUESTS, STARTER_COLLECTION } from "./progression/rules";
 import { reconcileEquipmentCopies } from "./progression/equipment-ownership";
 import {
+  addAccountXp,
+  ensureAccountProgress,
+  validAccountProgress,
+} from "./progression/account-progress";
+import {
   CHARACTER_IDS,
   activeCharacterId,
   characterProgress,
@@ -42,6 +47,8 @@ export type Save = {
   characterProgress?: Record<string, CharacterProgress>;
   level: number;
   xp: number;
+  accountLevel?: number;
+  accountXp?: number;
   coins: number;
   inventory: Record<string, number>;
   area: number;
@@ -76,6 +83,8 @@ export const fresh = (character: CharacterId, now = Date.now()): Save => ({
   activeEntityId: CHARACTER_IDS[character],
   level: 1,
   xp: 0,
+  accountLevel: 1,
+  accountXp: 0,
   coins: 0,
   inventory: {},
   area: 0,
@@ -97,7 +106,9 @@ export const fresh = (character: CharacterId, now = Date.now()): Save => ({
   ),
 });
 export function addXp(s: Save, xp: number) {
+  ensureAccountProgress(s);
   addCharacterXp(s, xp);
+  addAccountXp(s, xp);
 }
 export function stats(s: Save, id = activeCharacterId(s)) {
   const character = (Object.keys(CHARACTER_IDS) as CharacterId[]).find(
@@ -116,7 +127,7 @@ export function reward(s: Save, random = Math.random, enemy = enemyProfile()) {
   const coins = Math.max(1, Math.round(a.coins * enemy.coins)),
     xp = Math.max(1, Math.round(a.xp * enemy.xp));
   s.coins += coins;
-  addCharacterXp(s, xp);
+  addXp(s, xp);
   for (const d of LOOT)
     if (random() < d.chance)
       s.inventory[d.id] =
@@ -133,9 +144,7 @@ export function reward(s: Save, random = Math.random, enemy = enemyProfile()) {
     const difficultyTier =
       AREAS[s.area].level >= 12 ? 3 : AREAS[s.area].level >= 5 ? 2 : 1;
     const tier = Math.min(unlockedTier, difficultyTier);
-    const candidates = ITEMS.filter(
-      (item) => item.tier === tier,
-    );
+    const candidates = ITEMS.filter((item) => item.tier === tier);
     const item =
       candidates[
         Math.min(
@@ -167,7 +176,6 @@ export function restore(
       !Number.isFinite(s.lastSaved) ||
       !Number.isFinite(s.level) ||
       s.level < 1 ||
-      s.level > 100 ||
       !Number.isFinite(s.coins) ||
       s.coins < 0 ||
       !Number.isFinite(s.xp) ||
@@ -185,6 +193,7 @@ export function restore(
     !Object.hasOwn(CHARACTERS, s.character) ||
     !Number.isSafeInteger(s.level) ||
     !Number.isSafeInteger(s.xp) ||
+    !validAccountProgress(s) ||
     s.upgrades > 10000 ||
     ![s.upgrades, s.kills, s.defeats].every(
       (n) => Number.isSafeInteger(n) && n >= 0,
@@ -292,7 +301,6 @@ export function restore(
           Array.isArray(p) ||
           !Number.isSafeInteger(p.level) ||
           p.level < 1 ||
-          p.level > 100 ||
           !Number.isSafeInteger(p.xp) ||
           p.xp < 0 ||
           !Number.isSafeInteger(p.upgrades) ||
@@ -340,6 +348,7 @@ export function restore(
     s.collection.push(CHARACTER_IDS.sasuke);
   syncCharacterProgress(s);
   reconcileEquipmentCopies(s);
+  ensureAccountProgress(s);
   if (AREAS[s.area].level > s.level) s.area = 0;
   s.location ??= "10001";
   s.partyIds ??= [];
@@ -358,7 +367,7 @@ export function restore(
   const a = AREAS[s.area];
   const xp = Math.floor(wins * a.xp * OFFLINE.fraction),
     coins = Math.floor(wins * a.coins * OFFLINE.fraction);
-  addCharacterXp(s, xp);
+  addXp(s, xp);
   s.coins += coins;
   s.lastSaved = now;
   // Commit before showing the summary: reloading cannot claim this interval twice.
@@ -425,7 +434,7 @@ export class Hunt {
   get livingOpponents() {
     return [...this.opponents.values()].filter((e) => e.hp > 0);
   }
-  selectTarget(id: string) {
+  selectTarget(id: string, resumeAttacks = true) {
     const next = this.opponents.get(id);
     if (
       this.save.paused ||
@@ -435,6 +444,9 @@ export class Hunt {
     )
       return false;
     this.targetId = id;
+    if (resumeAttacks && this.retreating) {
+      this.retreating = false;
+    }
     this.phase = "combatendo";
     this.onEvent("target", 0, id);
     return true;
@@ -452,16 +464,19 @@ export class Hunt {
     foe.inRange = inRange;
     this.opponents.set(id, foe);
     this.onEvent("join", 0, id);
-    if (this.enemyHp <= 0) this.selectTarget(id);
+    if (this.enemyHp <= 0) this.selectTarget(id, false);
     return true;
   }
   leave(id: string) {
     this.opponents.delete(id);
     if (id !== this.targetId) return;
     const next = this.livingOpponents[0];
-    if (next) this.selectTarget(next.id);
-    else if (this.phase === "combatendo") {
+    if (next) this.selectTarget(next.id, false);
+    else if (
+      ["iniciando combate", "combatendo", "recompensas"].includes(this.phase)
+    ) {
       this.phase = "explorando";
+      this.retreating = false;
       this.onEvent("disengage", 0);
     }
   }
@@ -471,6 +486,27 @@ export class Hunt {
     coins: 0,
   };
   phase: Phase = "explorando";
+  retreating = false;
+  /** A stationary fighter remains ready for the selected target. Movement only
+   * suspends strikes while it actually happens; it never resets their clock.
+   */
+  updateMovement(moving: boolean) {
+    if (
+      this.save.paused ||
+      !["iniciando combate", "combatendo", "recompensas"].includes(this.phase)
+    )
+      return;
+    this.retreating = moving;
+  }
+  retreat() {
+    if (
+      this.save.paused ||
+      !["iniciando combate", "combatendo", "recompensas"].includes(this.phase)
+    )
+      return false;
+    this.retreating = true;
+    return true;
+  }
   hp: number;
   chakra: number;
   skillCooldown = 0;
@@ -489,6 +525,7 @@ export class Hunt {
   castSkill() {
     if (
       this.phase !== "combatendo" ||
+      this.retreating ||
       this.save.paused ||
       this.enemyHp <= 0 ||
       !this.target.inRange ||
@@ -528,9 +565,14 @@ export class Hunt {
       this.targetId,
     );
   }
-  encounter(profile: EnemyProfile = enemyProfile(), id = "primary") {
+  encounter(
+    profile: EnemyProfile = enemyProfile(),
+    id = "primary",
+    retreating = false,
+  ) {
     if (this.phase !== "explorando" || this.save.paused) return false;
     this.opponents.clear();
+    this.retreating = retreating;
     this.targetId = id;
     this.opponents.set(
       id,
@@ -574,7 +616,7 @@ export class Hunt {
     if (this.enemyHp <= 0) {
       const next =
         this.livingOpponents.find((e) => e.inRange) || this.livingOpponents[0];
-      if (next) this.selectTarget(next.id);
+      if (next) this.selectTarget(next.id, false);
       else {
         this.phase = "recompensas";
         this.timer = 0;
@@ -641,6 +683,7 @@ export class Hunt {
       this.playerClock = Math.min(st.interval, this.playerClock + ms);
       if (
         this.playerClock >= st.interval &&
+        !this.retreating &&
         this.target.inRange &&
         this.enemyHp > 0
       ) {
@@ -663,6 +706,7 @@ export class Hunt {
       if (this.phase !== "combatendo") return;
       for (const foe of this.livingOpponents) this.tickOpponent(foe, ms, st);
       if (this.hp <= 0) {
+        this.retreating = false;
         this.save.defeats++;
         this.phase = "derrota";
         this.timer = 0;
@@ -673,6 +717,7 @@ export class Hunt {
       this.timer >= Math.max(180, this.lastAttackDuration)
     ) {
       this.phase = "explorando";
+      this.retreating = false;
       this.timer = 0;
       this.hp = Math.min(st.maxHp, this.hp + st.maxHp * 0.2);
       this.onEvent("resume", 0);

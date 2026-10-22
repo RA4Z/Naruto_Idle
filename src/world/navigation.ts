@@ -134,7 +134,7 @@ export class NativeNavigation {
         return false;
     return true;
   }
-  path(from: Point, requested: Point, snap = 36): Point[] {
+  path(from: Point, requested: Point, snap = 36, maxVisited = Infinity): Point[] {
     const start = this.nearest(from, 20),
       end = this.nearest(requested, snap);
     if (!start || !end) return [];
@@ -183,6 +183,7 @@ export class NativeNavigation {
       if (closed.has(id)) continue;
       if (id === goal) break;
       closed.add(id);
+      if (closed.size > maxVisited) return [];
       const x = id % this.grid.columns,
         y = Math.floor(id / this.grid.columns),
         cost = costs.get(id)! + 1;

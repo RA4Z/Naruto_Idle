@@ -79,13 +79,12 @@ export function characterProgress(
 }
 export function addCharacterXp(s: Save, xp: number, id = activeCharacterId(s)) {
   const p = characterProgress(s, id);
-  if (!Number.isFinite(xp) || xp <= 0 || p.level >= 100) return;
+  if (!Number.isSafeInteger(Math.floor(xp)) || xp <= 0) return;
   p.xp += Math.floor(xp);
-  while (p.level < 100 && p.xp >= needed(p.level)) {
+  while (p.xp >= needed(p.level)) {
     p.xp -= needed(p.level);
     p.level++;
   }
-  if (p.level === 100) p.xp = 0;
   if (id === activeCharacterId(s)) {
     s.level = p.level;
     s.xp = p.xp;

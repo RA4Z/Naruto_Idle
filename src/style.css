@@ -939,6 +939,10 @@ button:disabled {
 .account-card [data-feedback] { margin: 14px 0 0; font-size: .85rem; color: #f3d394; line-height: 1.5; overflow-wrap: anywhere; }
 .account-card [data-feedback]:empty { display: none; }
 .account-actions, .account-identity { display: grid; gap: 12px; }
+.account-progress { padding: 12px; margin: 10px 0 16px; background: #223429; border: 1px solid #a5ad6a33; border-radius: 8px; }
+.account-progress p { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; margin: 0 0 9px; }
+.account-progress strong { color: #e6ca83; font-size: .85rem; }
+.account-progress span { color: #b3c3ac; font-size: .7rem; }
 .account-identity strong { font-size: 1.25rem; color: #f4cd8c; }
 .account-identity span { overflow-wrap: anywhere; font-size: .85rem; color: #b9ccbb; }
 @media (max-width: 860px) {

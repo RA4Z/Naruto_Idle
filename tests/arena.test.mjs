@@ -316,13 +316,15 @@ test("journey duel rejects unknown equipment, invalid slots, forged raw stats an
   for (const bad of [
     { ...good, attack: 9999 },
     { ...good, level: -1 },
-    { ...good, level: 101 },
+    { ...good, level: 1.5 },
     { ...good, upgrades: Infinity },
     { ...good, equipment: { weapon: "colete-shinobi" } },
     { ...good, equipment: { armor: "hacked" } },
   ])
     rejects(() => a.create("naruto", undefined, "journey", bad), 400);
   rejects(() => a.create("naruto", undefined, "hacked", good), 400);
+  const highLevel = a.create("naruto", undefined, "journey", { ...good, level: 1001 });
+  assert.equal(highLevel.room.players[0].loadout.level, 1001);
 });
 
 test("journey Sakura healing uses her derived vitality and ninjutsu", () => {

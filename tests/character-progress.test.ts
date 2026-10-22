@@ -203,10 +203,10 @@ test("new recruits start at level one even when the protagonist is highly develo
   assert.ok(stats(s).maxHp > stats(s, "11001201").maxHp);
 });
 
-test("invalid individual progress is rejected and the level cap stops XP growth", () => {
+test("invalid individual progress is rejected while character levels can grow beyond 100", () => {
   for (const extra of [
     { level: 0 },
-    { level: 101 },
+    { level: 1.5 },
     { xp: -1 },
     { upgrades: 10001 },
     { equipment: { weapon: "unknown" } },
@@ -217,13 +217,13 @@ test("invalid individual progress is rejected and the level cap stops XP growth"
   }
   const s = fresh("naruto");
   const p = characterProgress(s, IDS.sasuke);
-  p.level = 99;
-  p.xp = needed(99) - 1;
-  addCharacterXp(s, 10000, IDS.sasuke);
-  assert.equal(p.level, 100);
+  p.level = 100;
+  p.xp = needed(100) - 1;
+  addCharacterXp(s, 1, IDS.sasuke);
+  assert.equal(p.level, 101);
   assert.equal(p.xp, 0);
   addCharacterXp(s, 10000, IDS.sasuke);
-  assert.equal(p.xp, 0);
+  assert.equal(p.xp, 10000);
   syncCharacterProgress(s);
   assert.equal(s.characterProgress![IDS.naruto].level, 1);
 });
