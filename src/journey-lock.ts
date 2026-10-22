@@ -1,15 +1,12 @@
 import { t } from "./i18n/core.ts";
 import { runtimeProgress } from "./cloud/runtime-progress";
 
-// Web Locks survive background throttling. On insecure LAN origins an IndexedDB
-// transaction arbitrates a fenced lease; an expired owner can never write again.
+// Transactions serialize takeovers; a synchronous fence blocks former owners.
+// Local ownership needs no expiry because a new tab always replaces it. The
+// remote lease remains authoritative across devices and expires on disconnection.
 const NAME = "folha-idle-journey";
 const FENCE = NAME + "-owner";
-const TTL = 20000;
 let owner = "";
-let expires = 0;
-let native = false;
-let releaseNative: (() => void) | undefined;
 let heartbeat: ReturnType<typeof setInterval> | undefined;
 let acquiring: Promise<void> | undefined;
 let db: Promise<IDBDatabase> | undefined;
@@ -24,21 +21,15 @@ function database() {
     };
   }));
 }
-async function transact(
-  id: string,
-  release = false,
-  renew = false,
-) {
-  const databaseHandle = await database();
+async function transact(id: string, release = false, renew = false) {
+  const handle = await database();
   return new Promise<boolean>((resolve, reject) => {
-    const tx = databaseHandle.transaction("lease", "readwrite");
+    const tx = handle.transaction("lease", "readwrite");
     const store = tx.objectStore("lease");
     let accepted = false;
     const request = store.get("active");
     request.onsuccess = () => {
-      const previous = request.result as
-        | { id: string; until: number }
-        | undefined;
+      const previous = request.result as { id: string } | undefined;
       if (release) {
         if (previous?.id === id) {
           store.delete("active");
@@ -46,19 +37,13 @@ async function transact(
             localStorage.removeItem(FENCE);
         }
       } else if (
-        renew
-          ? owner === id &&
-            previous?.id === id &&
-            previous.until > Date.now() &&
-            localStorage.getItem(FENCE) === id
-          : !previous ||
-            previous.until <= Date.now() ||
-            !localStorage.getItem(FENCE)
+        !renew ||
+        (owner === id &&
+          previous?.id === id &&
+          localStorage.getItem(FENCE) === id)
       ) {
-        const until = Date.now() + TTL;
-        store.put({ id, until }, "active");
+        store.put({ id }, "active");
         localStorage.setItem(FENCE, id);
-        expires = until;
         accepted = true;
       }
     };
@@ -69,9 +54,8 @@ async function transact(
 }
 export function ownsJourney() {
   if (!owner) return false;
-  if (native) return true;
   try {
-    return Date.now() < expires && localStorage.getItem(FENCE) === owner;
+    return localStorage.getItem(FENCE) === owner;
   } catch {
     return false;
   }
@@ -93,41 +77,22 @@ export function acquireJourney(): Promise<void> {
     const id = Array.from(crypto.getRandomValues(new Uint32Array(4)), (n) =>
       n.toString(16),
     ).join("-");
-    if (navigator.locks) {
-      await new Promise<void>((resolve, reject) => {
-        void navigator.locks
-          .request(NAME, { ifAvailable: true }, async (lock) => {
-            if (!lock) {
-              reject(new Error(t("qol.otherTab")));
-              return;
-            }
-            native = true;
-            owner = id;
-            await new Promise<void>((release) => {
-              releaseNative = release;
-              resolve();
-            });
-          })
-          .catch(reject);
-      });
-    } else {
-      if (!(await transact(id))) throw new Error(t("qol.otherTab"));
-      native = false;
-      owner = id;
-      heartbeat = setInterval(() => {
-        if (!ownsJourney()) {
-          lost();
-          return;
-        }
-        void transact(id, false, true)
-          .then((ok) => {
-            if (!ok && owner === id) lost();
-          })
-          .catch(() => {
-            if (owner === id) lost();
-          });
-      }, 4000);
-    }
+    if (!(await transact(id))) throw new Error(t("qol.otherTab"));
+    owner = id;
+    assertJourneyOwner();
+    heartbeat = setInterval(() => {
+      if (!ownsJourney()) {
+        lost();
+        return;
+      }
+      void transact(id, false, true)
+        .then((ok) => {
+          if (!ok && owner === id) lost();
+        })
+        .catch(() => {
+          if (owner === id) lost();
+        });
+    }, 4000);
   })().finally(() => {
     acquiring = undefined;
   }));
@@ -135,23 +100,21 @@ export function acquireJourney(): Promise<void> {
 export function releaseJourney() {
   const previous = owner;
   owner = "";
-  if (!native && previous) {
+  if (previous) {
     try {
       if (localStorage.getItem(FENCE) === previous)
         localStorage.removeItem(FENCE);
     } catch {
-      /* Lease expires if storage becomes unavailable. */
+      /* A new tab can still take over explicitly. */
     }
   }
   if (heartbeat) clearInterval(heartbeat);
   heartbeat = undefined;
-  if (releaseNative) releaseNative();
-  else if (previous) void transact(previous, true).catch(() => {});
-  releaseNative = undefined;
+  if (previous) void transact(previous, true).catch(() => {});
 }
 if (typeof window !== "undefined") {
   window.addEventListener("storage", (event) => {
-    if (event.key === FENCE && owner && !native && !ownsJourney()) lost();
+    if (event.key === FENCE && owner && !ownsJourney()) lost();
   });
   window.addEventListener("pageshow", (event) => {
     if (event.persisted) {

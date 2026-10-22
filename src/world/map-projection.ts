@@ -4,10 +4,11 @@ export function mapProjection(
   height: number,
   viewWidth = 320,
   viewHeight = 200,
+  padding = 8,
 ) {
   const scale = Math.min(
-    (viewWidth - 16) / Math.max(1, width),
-    (viewHeight - 16) / Math.max(1, height),
+    (viewWidth - padding * 2) / Math.max(1, width),
+    (viewHeight - padding * 2) / Math.max(1, height),
   );
   const x = (viewWidth - width * scale) / 2,
     y = (viewHeight - height * scale) / 2;

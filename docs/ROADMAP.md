@@ -4,6 +4,9 @@ Atualizado em 21/10/2026. O [histórico](history/ROADMAP-2026-10-21.md) preserva
 
 ## Entregas atuais
 
+- [x] Novo acesso assume a sessão imediatamente, encerrando a jornada anterior sem esperar dois minutos. Migração de transferência aplicada ao Supabase Free; proteção contra escrita antiga preservada.
+- [x] Minimapa circular no canto superior esquerdo; movimento sinalizado pelo destino, sem linhas sobre o cenário/minimapa.
+
 - [x] Login sem mínimo visual de senha, e-mail identificado como credencial para autofill, apelido separado e persistência do progresso só no Supabase. Importação/backup local removidos; criação inicial pelo servidor e RPC legada sem importação de JSON. Economia por comandos autoritativos continua pendente.
 
 - [x] Combate PvE com múltiplos atacantes, alvo trocável por clique e continuação entre inimigos sem reiniciar seus atributos/relógios.

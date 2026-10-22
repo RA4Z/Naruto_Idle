@@ -60,15 +60,16 @@ try {
     );
     if (!p) throw Error("No destination");
     const map = (await listMaps()).find((m) => m.id === "10001");
-    return { ...mapProjection(map.width, map.height).project(p), world: p };
+    return { ...mapProjection(map.width, map.height, 240, 240, 38).project(p), world: p };
   });
   const box = await svg.boundingBox();
   await page.mouse.click(
-    box.x + (dest.x * box.width) / 320,
-    box.y + (dest.y * box.height) / 200,
+    box.x + (dest.x * box.width) / 240,
+    box.y + (dest.y * box.height) / 240,
   );
   await page.waitForFunction(() => window.__idle.snapshot().path.length > 0);
-  assert.equal(await page.locator("[data-route]").count(), 1);
+  assert.equal(await page.locator("[data-destination]").count(), 1);
+  assert.equal(await page.locator("[data-route]").count(), 0);
   await page.waitForFunction(
     (p) =>
       Math.hypot(

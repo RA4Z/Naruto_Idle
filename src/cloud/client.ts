@@ -37,7 +37,7 @@ export async function rpc(
 }
 export const transport: CloudTransport = {
   claim: (lease: string, initial?: Save) =>
-    rpc("game_open", { p_lease: lease, p_character: initial?.character ?? null }),
+    rpc("game_takeover", { p_lease: lease, p_character: initial?.character ?? null }),
   commit: (lease, revision, request, snapshot) =>
     rpc("game_commit", {
       p_lease: lease,

@@ -1,0 +1,46 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Session and minimap QA</title>
+<link rel="stylesheet" href="/src/style.css">
+<style>
+  body { padding: 20px; }
+  #test-host { position: relative; height: 560px; max-width: 1000px; background: #20372a url('/assets/maps/10001/thumbnail.jpg') center/cover; margin-top: 15px; }
+</style>
+<h1>Session and minimap QA</h1>
+<button id="take">Take session</button>
+<button id="write">Try write</button>
+<button id="release">Close session</button>
+<button id="compact">Small window</button>
+<p id="ownership" role="status">No session</p>
+<p id="result"></p>
+<div id="test-host"></div>
+<script type="module">
+  // Isolated visual/ownership fixture; no Auth client, account or cloud writes.
+  import { Minimap } from '/src/world/minimap.ts';
+  import { acquireJourney, ownsJourney, writeJourney, releaseJourney } from '/src/journey-lock.ts';
+  const status = document.querySelector('#ownership');
+  document.querySelector('#take').onclick = async () => {
+    await acquireJourney(); status.textContent = ownsJourney() ? 'Session active' : 'Session replaced';
+  };
+  window.addEventListener('journey-lock-lost', () => status.textContent = 'Session replaced');
+  document.querySelector('#release').onclick = () => { releaseJourney(); status.textContent = 'Session closed'; };
+  document.querySelector('#write').onclick = () => {
+    try { writeJourney('{}'); document.querySelector('#result').textContent = 'Write accepted'; }
+    catch { document.querySelector('#result').textContent = 'Stale write rejected'; }
+  };
+  const host = document.querySelector('#test-host');
+  document.querySelector('#compact').onclick = () => {
+    host.style.width = host.style.width ? '' : '320px';
+    host.style.height = host.style.width ? '200px' : '560px';
+  };
+  const { maps } = await (await fetch('/assets/maps/index.json')).json();
+  const map = maps.find(m => m.id === '10001');
+  const state = {
+    hero: {x: map.width/2, y: map.height/2},
+    enemies: [{x:map.width*.6,y:map.height*.55,elite:true,name:'Elite'}],
+    npcs: [{x:map.width*.3,y:map.height*.4,name:'NPC'}],
+    path: [], auto: false, view: {x:0,y:0,width:map.width/2,height:map.height/2},
+  };
+  const minimap = new Minimap(host, p => {state.path = [p]; return true;});
+  minimap.setMap(map, []); minimap.update(state);
+</script>

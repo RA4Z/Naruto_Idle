@@ -26,7 +26,7 @@ const node = <K extends keyof SVGElementTagNameMap>(
 export class Minimap {
   private panel = document.createElement("details");
   private svg = node("svg", {
-    viewBox: "0 0 320 200",
+    viewBox: "0 0 240 240",
     tabindex: 0,
     role: "button",
     "aria-label": t("expansion.minimapControl"),
@@ -48,10 +48,22 @@ export class Minimap {
     this.panel.open = true;
     const summary = document.createElement("summary");
     summary.textContent = t("expansion.minimap");
+    const north = node("text", {
+      x: 120,
+      y: 19,
+      "text-anchor": "middle",
+      fill: "#ffdc8b",
+      "font-size": 12,
+      "font-weight": 700,
+      "aria-hidden": "true",
+    });
+    north.textContent = "N";
     this.svg.append(this.base, this.moving);
+    this.svg.append(north);
     const help = document.createElement("p");
     help.className = "minimap-help";
     help.textContent = t("expansion.minimapHelp");
+    this.svg.setAttribute("title", help.textContent);
     const legend = document.createElement("p");
     legend.className = "minimap-legend";
     legend.textContent = t("expansion.legend");
@@ -76,9 +88,12 @@ export class Minimap {
       event.stopPropagation();
       this.svg.focus();
       const rect = this.svg.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) * 240) / rect.width;
+      const y = ((event.clientY - rect.top) * 240) / rect.height;
+      if (Math.hypot(x - 120, y - 120) > 116) return;
       const point = this.projection.unproject({
-        x: ((event.clientX - rect.left) * 320) / rect.width,
-        y: ((event.clientY - rect.top) * 200) / rect.height,
+        x,
+        y,
       });
       if (point) this.go(point);
     });
@@ -151,17 +166,26 @@ export class Minimap {
     this.svg.dataset.mapId = map.id;
     this.base.replaceChildren();
     this.moving.replaceChildren();
-    this.projection = mapProjection(map.width, map.height);
+    // Fit the entire map inside the circle, including its corners.
+    this.projection = mapProjection(map.width, map.height, 240, 240, 38);
     const p = this.projection;
     this.base.append(
-      node("rect", { x: 0, y: 0, width: 320, height: 200, fill: "#10211a" }),
+      node("circle", { cx: 120, cy: 120, r: 117, fill: "#10211a" }),
+      node("circle", {
+        cx: 120,
+        cy: 120,
+        r: 108,
+        fill: "none",
+        stroke: "#c6aa65",
+        opacity: 0.3,
+      }),
       node("image", {
         href: map.thumbnail,
         x: p.x,
         y: p.y,
         width: p.width,
         height: p.height,
-        opacity: 0.65,
+        opacity: 0.9,
       }),
     );
     // One SVG path for the native walkable grid. No thousands of DOM markers.
@@ -212,21 +236,20 @@ export class Minimap {
         }),
       );
     }
-    if (state.path.length)
+    if (state.path.length) {
+      const q = project(state.path.at(-1)!);
       this.moving.append(
-        node("polyline", {
-          "data-route": "true",
-          points: [state.hero, ...state.path]
-            .map((p) => {
-              const q = project(p);
-              return `${q.x},${q.y}`;
-            })
-            .join(" "),
+        node("circle", {
+          "data-destination": "true",
+          cx: q.x,
+          cy: q.y,
+          r: 5,
           fill: "none",
           stroke: state.auto ? "#72e5ef" : "#ffdc8b",
           "stroke-width": 2,
         }),
       );
+    }
     for (const enemy of state.enemies)
       dot(enemy, enemy.elite ? "#ffc85e" : "#ef8072", 3, enemy.name);
     for (const npc of state.npcs) dot(npc, "#a5e994", 3, npc.name);

@@ -838,26 +838,33 @@ button:disabled {
 .world-minimap {
   position: absolute;
   top: 10px;
-  right: 10px;
+  left: 10px;
   z-index: 5;
-  width: clamp(150px, 20vw, 230px);
+  width: clamp(150px, 18vw, 210px);
   max-width: calc(100% - 20px);
   color: #e5efde;
-  background: #10221aeb;
-  border: 1px solid #73957a;
-  border-radius: 8px;
-  padding: 6px;
+  background: linear-gradient(160deg, #152b22ed, #0c1915e8);
+  border: 1px solid #a48b51;
+  border-radius: 18px;
+  padding: 9px;
+  box-shadow: 0 6px 24px #0006, inset 0 1px #f5d58c22;
   box-sizing: border-box;
 }
 .world-minimap summary {
   cursor: pointer;
   font-size: 0.8rem;
   font-weight: bold;
+  color: #efd59a;
 }
 .world-minimap svg {
   display: block;
   width: 100%;
-  aspect-ratio: 8 / 5;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid #bba16a;
+  box-sizing: border-box;
+  background: #10211a;
+  box-shadow: 0 0 0 3px #0c1712, 0 0 0 4px #bba16a55;
   cursor: crosshair;
   margin-top: 5px;
 }
@@ -870,6 +877,10 @@ button:disabled {
   margin: 5px 0 0;
 }
 .world-minimap p:empty {
+  display: none;
+}
+.world-minimap .minimap-help,
+.world-minimap .minimap-legend {
   display: none;
 }
 .world-minimap[data-compact="true"] > :not(summary) {

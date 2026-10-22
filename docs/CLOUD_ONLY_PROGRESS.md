@@ -11,6 +11,8 @@ Atualizado em 21/10/2026. Substitui os fluxos antigos de save local, importaçã
 
 ## Banco
 
+Atualização de 22/10/2026: migração `202610220001_session_takeover` aplicada ao projeto Free. A entrada do cliente usa `game_takeover`, que transfere a posse imediatamente para o novo acesso e retorna o último snapshot/revisão. Escritas, heartbeat e liberação da sessão antiga não afetam a nova. A aba antiga detecta a perda em sua próxima requisição; o intervalo de verificação agora é cinco segundos (substitui os 30 segundos citados abaixo), sujeito a suspensão/throttling do navegador. Uma sessão suspensa só descobre a troca ao voltar a executar; o banco já rejeita suas gravações desde a transferência. Alterações não sincronizadas antes da troca podem ser perdidas. `game_open` e `game_claim` permanecem para compatibilidade com versões antigas, sem permitir importação.
+
 Migração `202610210003_cloud_only_progress`: `game_open` recebe lease e personagem inicial opcional. O banco cria a jornada com nível 1, moedas/XP zero, inventário vazio e registros dos três iniciais. Uma jornada existente não é substituída. A função antiga `game_claim` rejeita todo JSON (`IMPORT_DISABLED`) e só permite retomada sem payload. RLS e exclusividade continuam em vigor.
 
 Autossave agrupa alterações em até aproximadamente um segundo; heartbeat a cada 30 segundos. Sair pelo menu e trocar idioma aguardam a sincronização. Fechar/ocultar tenta enviar com keepalive quando o tamanho permite. Não há garantia de entrega em queda de rede/processo: a retomada usa apenas a última gravação confirmada pelo Supabase.

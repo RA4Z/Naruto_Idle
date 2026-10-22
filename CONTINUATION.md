@@ -1,5 +1,13 @@
 # Ponto de continuidade — estado atual
 
+## Atualização de 22/10: transferência de sessão e minimapa
+
+Ao entrar na jornada, o novo acesso assume a sessão. Migração `202610220001_session_takeover` aplicada ao Supabase Free e permissões conferidas por `db:verify`: `game_takeover` serializa a troca no mesmo registro do save, preserva snapshot/revisão e impede escrita/heartbeat/liberação pela lease antiga. O cliente verifica a posse remota a cada cinco segundos; a sessão anterior volta ao menu ao detectar perda. Último progresso sincronizado é a fonte da retomada; alterações ainda não enviadas não podem ser mescladas. Nenhuma conta/save de usuário foi alterado durante a validação remota de esquema.
+
+A trava entre abas agora usa transação IndexedDB e token síncrono em localStorage, com tomada imediata e sem espera por timeout. Substitui os registros anteriores sobre bloqueio com Web Locks/lease local de 20 s. No navegador, duas abas da fixture confirmaram substituição da antiga, nova ativa e rejeição de escrita antiga. Fixture isolada: `/tools/fixtures/session-minimap.html` no Vite, sem Auth ou gravação de nuvem. Testes SQL locais cobrem transferência de volta, isolamento, rollback de falha e liberação antiga sem afetar a nova.
+
+Minimapa circular no canto superior esquerdo, moldura dourada, indicadores preservados e projeção dos cantos inteiros dentro do círculo. Clique/teclado mantidos; mapa e minimapa mostram destino, sem linha de rota. Validado por testes de projeção/renderização e fixture do navegador (clique, teclado e ausência de linhas). Captura de screenshot indisponível por timeout; não houve teste completo autenticado em dois dispositivos físicos. Suíte cloud: 13 testes; navegação/destino: dez testes; tipos e 1.209 mensagens PT/EN/ES aprovados.
+
 Atualizado em 21/10/2026. Este arquivo descreve o estado vigente. O [histórico de implementação](docs/history/CONTINUATION-2026-10-21.md) preserva decisões e evidências antigas, inclusive soluções provisórias já substituídas; não usá-lo como fila de tarefas.
 
 ## Ordem de leitura

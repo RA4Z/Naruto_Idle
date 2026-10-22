@@ -10,11 +10,6 @@ export class RouteOverlay {
     g.clear();
     const color = auto ? 0x72e5ef : 0xffdc8b;
     if (path.length) {
-      g.lineStyle(1.5, color, 0.65);
-      g.beginPath();
-      g.moveTo(hero.x, hero.y);
-      for (const point of path) g.lineTo(point.x, point.y);
-      g.strokePath();
       const end = path.at(-1)!;
       g.lineStyle(1, color, 0.9).strokeEllipse(end.x, end.y, 12, 6);
     }
