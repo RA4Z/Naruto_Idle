@@ -1,0 +1,233 @@
+{
+  "version": 1,
+  "id": "11008561",
+  "name": "Itachi Uchiha",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11008561.swf",
+    "tag": "PT_NarutoAlpha7.77Build300",
+    "bytes": 2515616,
+    "sha256": "9e9a44e23796839ebebaccf69bde3be4f28103902e3dcd9e445fdb4449ba4784",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 2,
+        "time": 83.33333333333333,
+        "sound": "2520",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 5,
+        "time": 208.33333333333334,
+        "sound": "2514",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2513",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 8,
+        "time": 333.3333333333333,
+        "sound": "284",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 2416.6666666666665,
+    "C_dead": 625.0
+  },
+  "sounds": {
+    "2513": {
+      "source": {
+        "path": "assets/sound/swf/s2513.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 24948,
+        "sha256": "8b927769344f10a5b893e4c4abb0ea3b4ea329128333a9864ad05a7a3e535256",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "宇智波鼬[新中国风]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2513/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "1b5840d42d583f76dc81264c7e0efbbcf21a726e7fdb468ed71fa65447adc08e",
+          "bytes": 28002,
+          "sampleCount": 77184,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "宇智波鼬[新中国风]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2514": {
+      "source": {
+        "path": "assets/sound/swf/s2514.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 42814,
+        "sha256": "061dee40b53922bd78b76484c6d353645b61696065eb371f7fc0f9d9e37656fd",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "天照·分身爆破",
+      "group": "宇智波鼬[新中国风]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2514/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "d32ac86bc40ec750822356d47a0a30ebef593c3bd04754c8b30e2bd4440cc311",
+          "bytes": 44302,
+          "sampleCount": 122112,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "宇智波鼬[新中国风]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2520": {
+      "source": {
+        "path": "assets/sound/swf/s2520.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 39907,
+        "sha256": "337108a99ffa2aa20e960df78b0d0ac3c577e4ff7f3f1c7092ad8157e512eced",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "天照·分身爆破Vo",
+      "group": "宇智波鼬[新中国风]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2520/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "e4a91ab79f82265dfbc7c16f984b495d661fb440d0004a348fe95f32a4dd16da",
+          "bytes": 28002,
+          "sampleCount": 77184,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2520/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "1b6f420ff94bfa64d153e3e6c46e2cbbe4b8e3d0c0221d3ae040aa888cdb41a9",
+          "bytes": 23404,
+          "sampleCount": 64512,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "宇智波鼬[新中国风]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "284": {
+      "source": {
+        "path": "assets/sound/swf/s284.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 9720,
+        "sha256": "a2bac3e0ab86ebad0d79f972d7b8d0445273292d22b50105e6b6a6d2f984dee2",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "cloth1",
+      "group": "摩擦",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/284/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "dd4de7eb33f86822437ae428b75f7a578bfb3ff47fd112b90c52612c88aa313a",
+          "bytes": 3865,
+          "sampleCount": 12096,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/284/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "dee11fa10c9675ef226a42ce0a68ab2ce1a9bb312d8e2a11a37d2f534bab654f",
+          "bytes": 3316,
+          "sampleCount": 10368,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/284/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "ea5f18605ab203a2ae98d023f02d7d7844a90ef2dce5563794ad23daf9bec966",
+          "bytes": 3682,
+          "sampleCount": 11520,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "摩擦",
+        "战斗技能"
+      ],
+      "voice": false
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

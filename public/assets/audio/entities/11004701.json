@@ -1,0 +1,279 @@
+{
+  "version": 1,
+  "id": "11004701",
+  "name": "Moegi",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11004701.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 329969,
+    "sha256": "1a17466e43cca11701e73ae9da3964390daaa23e907d4eb32c5141ec07139789",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 11,
+        "time": 458.3333333333333,
+        "sound": "765",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 11,
+        "time": 458.3333333333333,
+        "sound": "752",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "768",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 13,
+        "time": 541.6666666666666,
+        "sound": "757",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 750.0,
+    "C_dead": 958.3333333333334
+  },
+  "sounds": {
+    "752": {
+      "source": {
+        "path": "assets/sound/swf/s752.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 8764,
+        "sha256": "16dc98edb086f13b8c0f0a9dfc7656883a8acaf0f4d582b20a4106abfb4227fe",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "萌黄_A_1hit",
+      "group": "萌黄",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 2,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/752/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "d2b4d8bd624a15998dd4e45cf1c7be6dc69cc4560906a0bbf1cb9a5416732d95",
+          "bytes": 7548,
+          "sampleCount": 20736,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/752/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "b6b7aa07520ca6a8dc0bcb31cfa19b75c7d7866bcd79b3a200c36ebb71785ca0",
+          "bytes": 10056,
+          "sampleCount": 27648,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "萌黄",
+        "木叶丸 萌黄 乌冬  动作音效",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "757": {
+      "source": {
+        "path": "assets/sound/swf/s757.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 26002,
+        "sha256": "00e318ae61689862fb44281b24b814e8809a9cd75b94b15542604b57f544843c",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "萌黄_C_dead",
+      "group": "萌黄",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 2,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/757/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "a09ea06d2e00e929b59a9fcddf4677a1bbbcb6866267d46a05cce096c8cc0e13",
+          "bytes": 35552,
+          "sampleCount": 97920,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/757/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "4274d9eed2ae5ada982cdb98211fb2761d39ff9d0c281f98d4f3a39ff28f48ad",
+          "bytes": 13818,
+          "sampleCount": 38016,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "萌黄",
+        "木叶丸 萌黄 乌冬  动作音效",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "765": {
+      "source": {
+        "path": "assets/sound/swf/s765.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 20900,
+        "sha256": "a600fb2d77632f02bfd86bb52ff6b8bd957e3c4e7437568c4526c903174535f8",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "攻击 ",
+      "group": "萌黄",
+      "method": 2,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/765/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "1ea74cc1e31e9a5f3ab968060e6a1d172425a92c0de5067ea1003e628b201ef8",
+          "bytes": 5876,
+          "sampleCount": 16128,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/765/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "3c604764285c601a22b108b8db3208ef548dc5223558588ffddbc8c996b4b0b0",
+          "bytes": 8802,
+          "sampleCount": 24192,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/765/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "dd6bf97160d8c8692ca4106216474f4283258d679d72a1261c25810c09b6a64a",
+          "bytes": 5458,
+          "sampleCount": 14976,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/765/4.mp3",
+          "symbolId": 4,
+          "itemId": "4",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "190232e0151c6db6950bf62059f7c68a79e51080d2e9faf9b4c9fb6ab5a9427a",
+          "bytes": 5458,
+          "sampleCount": 14976,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "萌黄",
+        "voice"
+      ],
+      "voice": true
+    },
+    "768": {
+      "source": {
+        "path": "assets/sound/swf/s768.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 49109,
+        "sha256": "4eca4a96dc5033cd485d1db391c291257a957bff465a15c3c4c11038e0345758",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "萌黄-死亡",
+      "group": "萌黄",
+      "method": 2,
+      "volume": 1.0,
+      "maxPlayback": 3,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/768/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "658fdb3ecc7d558afbb8af95b614ecd55030793a0743b813c844b2c07f7e8e27",
+          "bytes": 20505,
+          "sampleCount": 56448,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/768/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "2ec81259a512d830c14466727f798561b8ec290da41b7d72eba8cceb38ca279b",
+          "bytes": 17161,
+          "sampleCount": 47232,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/768/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "ab9c432e4e08afbcb0f66a65e34c5c1010d77ad55377f3bc732d08d3b5f8335e",
+          "bytes": 17161,
+          "sampleCount": 47232,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "萌黄",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

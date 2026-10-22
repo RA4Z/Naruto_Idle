@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "id": "11001691",
+  "name": "Kakashi",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11001691.swf",
+    "tag": "PT_NarutoAlpha8.99Build303",
+    "bytes": 1738452,
+    "sha256": "024a03f3c3d8efa28d190a7c5f805eb8a7e77c6adfb1a29ee2d9603b18e14de6",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 1,
+        "time": 41.666666666666664,
+        "sound": "3520",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "3528",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "3519",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1333.3333333333333,
+    "C_dead": 541.6666666666666
+  },
+  "sounds": {
+    "3519": {
+      "source": {
+        "path": "assets/sound/swf/s3519.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 61753,
+        "sha256": "428f86f9d2348c4a1e89111390bbc97a465c93985e2f9852920367ef8089a157",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "卡卡西[六代火影]",
+      "method": 2,
+      "volume": 0.71,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3519/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "487d8a33bde3d08e763a243a0bbe4463422da4c163ed74d4cc0b8e669bbce8dd",
+          "bytes": 64365,
+          "sampleCount": 77184,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "卡卡西[六代火影]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3520": {
+      "source": {
+        "path": "assets/sound/swf/s3520.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 26404,
+        "sha256": "075211c9b3429247dc907a44402f0c634c11680c851901b7876d304f3eddf7e5",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "卡卡西[六代火影]---雷刃乱舞_1",
+      "group": "卡卡西[六代火影]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3520/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "e522b534d5e02bdd22d6e1997811793041dace95da1c8e514641bf814e8560c6",
+          "bytes": 39488,
+          "sampleCount": 47232,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "卡卡西[六代火影]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3528": {
+      "source": {
+        "path": "assets/sound/swf/s3528.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 12173,
+        "sha256": "458e3abeae6ae43533f099c6ff9ba012b71de18bf9684231ab4ccb024f93a8f7",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "卡卡西[六代火影]---雷刃乱舞YY_1",
+      "group": "卡卡西[六代火影]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3528/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "bea2a4485c458bd33a3419b336a7e435989d5e03779d46c3359a9d7b31fe628b",
+          "bytes": 13485,
+          "sampleCount": 16128,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "卡卡西[六代火影]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

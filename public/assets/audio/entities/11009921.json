@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "id": "11009921",
+  "name": "Mu",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11009921.swf",
+    "tag": "PT_NarutoAlpha8.39Build300",
+    "bytes": 2235923,
+    "sha256": "fd618608ecddfdecb7ab90673313aebf4e13d33baad1d744e95d9caa2bb2f1b2",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 0,
+        "time": 0.0,
+        "sound": "3036",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 2,
+        "time": 83.33333333333333,
+        "sound": "3029",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "3028",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1250.0,
+    "C_dead": 458.3333333333333
+  },
+  "sounds": {
+    "3028": {
+      "source": {
+        "path": "assets/sound/swf/s3028.swf",
+        "tag": "PT_NarutoAlpha8.11Build300",
+        "bytes": 20184,
+        "sha256": "0ad107e49d6c0dfd0af00f71dc2d42217d9a53f835535aa3fb30eacc119dd39f",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "无[二代土影]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3028/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "2139643d113ecd198347f102efc6da5900477823896bdbded7060f301ba69902",
+          "bytes": 25076,
+          "sampleCount": 69120,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "无[二代土影]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3029": {
+      "source": {
+        "path": "assets/sound/swf/s3029.swf",
+        "tag": "PT_NarutoAlpha8.11Build300",
+        "bytes": 12787,
+        "sha256": "6de663acdabe24347d3ac3279b1f7d3ca4ec6db356e8d76de640073578afff05",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "土遁·刚隶式·地均1",
+      "group": "无[二代土影]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3029/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "9f7978c06c9eb893e2dd10aa970f02cc97034eb4ef36571045b842ba60fe0a8b",
+          "bytes": 15463,
+          "sampleCount": 42624,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "无[二代土影]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3036": {
+      "source": {
+        "path": "assets/sound/swf/s3036.swf",
+        "tag": "PT_NarutoAlpha8.11Build300",
+        "bytes": 31513,
+        "sha256": "657a7502024238ecc589c394d40c087be9d1b3bb78b093b5a68c1849fea4e712",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "土遁·刚隶式·地均yy",
+      "group": "无[二代土影]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3036/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "27e1d3f7c5f149001cbabf0aff9e7b12d9957d5cf357c3bc63743a15463fd301",
+          "bytes": 16299,
+          "sampleCount": 44928,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/3036/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "79caf1091fa092ae2c20d15a00114ed091245ac5190ceb915c8383cbc72d9359",
+          "bytes": 7522,
+          "sampleCount": 20736,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/3036/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "61637da2183a7285e892fc06644a7c6778ada7d01722e2516bd873d067cc19b2",
+          "bytes": 16299,
+          "sampleCount": 44928,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "无[二代土影]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

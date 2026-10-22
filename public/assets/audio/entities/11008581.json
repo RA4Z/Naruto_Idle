@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "id": "11008581",
+  "name": "Recurso 11008581",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11008581.swf",
+    "tag": "PT_NarutoAlpha9.17Build302",
+    "bytes": 1056509,
+    "sha256": "fa07afff6f402a148335379c17d20d6f1aa2371a2241f85be8cf224f19d64768",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 0,
+        "time": 0.0,
+        "sound": "3921",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 9,
+        "time": 375.0,
+        "sound": "3939",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "3920",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 2125.0,
+    "C_dead": 1083.3333333333333
+  },
+  "sounds": {
+    "3920": {
+      "source": {
+        "path": "assets/sound/swf/s3920.swf",
+        "tag": "PT_NarutoAlpha8.83Build300",
+        "bytes": 44342,
+        "sha256": "ac00c90b8c6b7191e83ed4b1edb7d8b94895950da0fab40b16997f59f5e4d5e3",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "宇智波鼬[忍者之路]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3920/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "82329af0c1a65c3db1d23d4e3033c08387d153f897262ee94bd964c097cac193",
+          "bytes": 45556,
+          "sampleCount": 125568,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "宇智波鼬[忍者之路]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3921": {
+      "source": {
+        "path": "assets/sound/swf/s3921.swf",
+        "tag": "PT_NarutoAlpha8.83Build300",
+        "bytes": 50306,
+        "sha256": "115bebf1a6409a7fa6aab1f7f1dfdfc4ac5acb7fa865a302aa5654c4c6e37a5e",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "宇智波鼬[忍者之路]---幻术·写轮眼",
+      "group": "宇智波鼬[忍者之路]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3921/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "bc2d4040957a021b96076c0b2d305e5eddff06691e96c70cd3a77453ae64d9fe",
+          "bytes": 57677,
+          "sampleCount": 158976,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "宇智波鼬[忍者之路]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3939": {
+      "source": {
+        "path": "assets/sound/swf/s3939.swf",
+        "tag": "PT_NarutoAlpha8.83Build300",
+        "bytes": 27127,
+        "sha256": "f02efd7cf9b51cc785b3a8540c6100f834d5eb791acdfde99e786125358226f2",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "幻术·写轮眼YY_1",
+      "group": "宇智波鼬[忍者之路]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3939/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "24ac188b69d4a9ca3adc93749ccbee25493ffd10e200d300ccc1f3a5c6deca7f",
+          "bytes": 28420,
+          "sampleCount": 78336,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "宇智波鼬[忍者之路]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

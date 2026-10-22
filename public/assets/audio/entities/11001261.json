@@ -1,0 +1,244 @@
+{
+  "version": 1,
+  "id": "11001261",
+  "name": "Hinata",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11001261.swf",
+    "tag": "PT_NarutoAlpha7.06Build300",
+    "bytes": 1049951,
+    "sha256": "9b6d7977f5ec96916b50b89fd4bc87aa02eefb7a639604cc647dc1025f2987c2",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "1883",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "1912",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "140",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "1911",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 791.6666666666666,
+    "C_dead": 791.6666666666666
+  },
+  "sounds": {
+    "140": {
+      "source": {
+        "path": "assets/sound/swf/s140.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 45211,
+        "sha256": "f67f40a8d955550bfbb03cd90c3653869a32c8745efa5412f5efc856765d7c83",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "pym_shoot",
+      "group": "skill2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/140/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 20.0,
+          "enabled": true,
+          "sha256": "f8cc79f83595f0e8a302c64fbffad4c3260398596d491bb1d4cb439583269466",
+          "bytes": 10056,
+          "sampleCount": 27648,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/140/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 20.0,
+          "enabled": true,
+          "sha256": "819a5d01d272143b7ed89b10544749ae2163a648789b40600151effc6d83fce2",
+          "bytes": 11728,
+          "sampleCount": 32256,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/140/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 20.0,
+          "enabled": true,
+          "sha256": "8f3fa087eb6a089b5354e0dddce4a9048c53e76ce35d5cc193722ca264fdced0",
+          "bytes": 12146,
+          "sampleCount": 33408,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/140/4.mp3",
+          "symbolId": 4,
+          "itemId": "4",
+          "weight": 20.0,
+          "enabled": true,
+          "sha256": "6552da3d9eb65ea75a28480988ce773bd174ac453dd2dc40044f13c296d003c4",
+          "bytes": 9638,
+          "sampleCount": 26496,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/140/5.mp3",
+          "symbolId": 5,
+          "itemId": "5",
+          "weight": 20.0,
+          "enabled": true,
+          "sha256": "45e5358ee98870d5fb0653f1e864e6cf41cc98deca2c00394fd8f90791090c00",
+          "bytes": 12982,
+          "sampleCount": 35712,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "skill2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "1883": {
+      "source": {
+        "path": "assets/sound/swf/s1883.swf",
+        "tag": "PT_NarutoAlpha6.93Build300",
+        "bytes": 15543,
+        "sha256": "22476e3aa4c9a816829ceb02672b3c2bfa7576f972ede214d3409a5a65a2ffa0",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "A_1hit",
+      "group": "雏田婚纱",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/1883/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "6f838bddd1a27396eb49e82a4a29cf33b43d30f3b370974d6cbb347a4813e0ce",
+          "bytes": 17135,
+          "sampleCount": 47232,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "雏田婚纱",
+        "voice"
+      ],
+      "voice": true
+    },
+    "1911": {
+      "source": {
+        "path": "assets/sound/swf/s1911.swf",
+        "tag": "PT_NarutoAlpha6.93Build300",
+        "bytes": 39900,
+        "sha256": "f69597b2301a62e2693f27de04d57d6d0e0a4294ae3d4e6caa22fd177d97be10",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "雏田婚纱",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/1911/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "e299c64d4a5737cc26f1a642733496ca4c069f15d5758e0817dfa73e9cad67b4",
+          "bytes": 40608,
+          "sampleCount": 170496,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "雏田婚纱",
+        "voice"
+      ],
+      "voice": true
+    },
+    "1912": {
+      "source": {
+        "path": "assets/sound/swf/s1912.swf",
+        "tag": "PT_NarutoAlpha6.93Build300",
+        "bytes": 3288,
+        "sha256": "9a707f69ac3871bde9a3173da85e56a3d0df20431381236f090eb2c5c6ce266c",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "柔步华尔兹21001261",
+      "group": "雏田婚纱",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/1912/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "b8b8acf939994358a52162e1baf536f911e28083a92a8f8181d76701dacfee35",
+          "bytes": 5997,
+          "sampleCount": 11520,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "雏田婚纱",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

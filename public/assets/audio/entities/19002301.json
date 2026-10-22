@@ -7,20 +7,23 @@
     "path": "assets/battle/role/left/19002301.swf",
     "tag": "PT_NarutoAlpha6.00Build300",
     "bytes": 292550,
-    "sha256": "b255b1235febcb5f8a4452d50974b6644fa2e8e8f78deb5e6ad347dbad0d794d"
+    "sha256": "b255b1235febcb5f8a4452d50974b6644fa2e8e8f78deb5e6ad347dbad0d794d",
+    "sourceKind": "exported-inventory"
   },
   "sourceConfigs": [
     {
       "path": "assets/sound/soundConfig.xml",
       "tag": "PT_NarutoAlpha9.06Build300",
       "bytes": 67819,
-      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318"
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
     },
     {
       "path": "assets/sound/deathSoundConfig.xml",
       "tag": "PT_NarutoAlpha9.06Build300",
       "bytes": 2908,
-      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3"
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
     }
   ],
   "actions": {
@@ -60,7 +63,8 @@
         "path": "assets/sound/swf/s10.swf",
         "tag": "PT_NarutoAlpha6.00Build300",
         "bytes": 14490,
-        "sha256": "a8d5077d06edb7f2d1780863d7277221f22055ef66422872ed40abc459ea221a"
+        "sha256": "a8d5077d06edb7f2d1780863d7277221f22055ef66422872ed40abc459ea221a",
+        "sourceKind": "exported-inventory"
       },
       "sourceName": "attack2",
       "group": "attack",
@@ -91,6 +95,10 @@
           "seekSamples": 0
         }
       ],
+      "sourceGroups": [
+        "attack",
+        "战斗技能"
+      ],
       "voice": false
     },
     "587": {
@@ -98,7 +106,8 @@
         "path": "assets/sound/swf/s587.swf",
         "tag": "PT_NarutoAlpha6.00Build300",
         "bytes": 49819,
-        "sha256": "09ed346a02ca7407963b1e88855b86544f2ecf1e874dc19b7895aa827e207d07"
+        "sha256": "09ed346a02ca7407963b1e88855b86544f2ecf1e874dc19b7895aa827e207d07",
+        "sourceKind": "exported-inventory"
       },
       "sourceName": "男青年1-死亡",
       "group": "男青年1",
@@ -140,6 +149,10 @@
           "seekSamples": 0
         }
       ],
+      "sourceGroups": [
+        "男青年1",
+        "voice"
+      ],
       "voice": true
     },
     "590": {
@@ -147,7 +160,8 @@
         "path": "assets/sound/swf/s590.swf",
         "tag": "PT_NarutoAlpha6.00Build300",
         "bytes": 22290,
-        "sha256": "92628c560c51fffbf40cc57695fc1e3a1760ee6acc398a4088dd8a50f76d1fec"
+        "sha256": "92628c560c51fffbf40cc57695fc1e3a1760ee6acc398a4088dd8a50f76d1fec",
+        "sourceKind": "exported-inventory"
       },
       "sourceName": "短攻击",
       "group": "男青年1",
@@ -222,8 +236,14 @@
           "seekSamples": 0
         }
       ],
+      "sourceGroups": [
+        "男青年1",
+        "voice"
+      ],
       "voice": true
     }
   },
-  "adaptation": "Native frame timing scaled to idle action duration; death mapping starts at death animation; at most four shared short voices. Other actions remain pending."
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
 }

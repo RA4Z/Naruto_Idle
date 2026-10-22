@@ -1,0 +1,244 @@
+{
+  "version": 1,
+  "id": "11002161",
+  "name": "Orochimaru",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11002161.swf",
+    "tag": "PT_NarutoAlpha7.24Build301",
+    "bytes": 891692,
+    "sha256": "34a8749669715f5a686a95770c2cb398bfb0630fd037c8dc734c041051f6f1c5",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 0,
+        "time": 0.0,
+        "sound": "2052",
+        "volume": 0.86,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "2057",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2050",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 3,
+        "time": 125.0,
+        "sound": "286",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 750.0,
+    "C_dead": 375.0
+  },
+  "sounds": {
+    "2050": {
+      "source": {
+        "path": "assets/sound/swf/s2050.swf",
+        "tag": "PT_NarutoAlpha6.93Build300",
+        "bytes": 23926,
+        "sha256": "8053c6f08df727848351b50b6f350e1ebb71697e60921ddef7671864c497398b",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "大蛇丸[忍界大战]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2050/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "53cabcbf4f490d1bd1f69e93acadc738abd17b7afdf9b768b1d8b932be0c94cf",
+          "bytes": 24504,
+          "sampleCount": 94464,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "大蛇丸[忍界大战]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2052": {
+      "source": {
+        "path": "assets/sound/swf/s2052.swf",
+        "tag": "PT_NarutoAlpha6.93Build300",
+        "bytes": 50781,
+        "sha256": "9d1f8e59ba702e67a89a60139974da9b7d1d9b8bbeac617b3e4b8dea4ca4a873",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "剑之舞21002162",
+      "group": "大蛇丸[忍界大战]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2052/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "c7bc35ae57a058950028a408af393f4f5d6954c7efda9e6ee508b6808e072fe4",
+          "bytes": 17376,
+          "sampleCount": 57600,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2052/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "199b0d42e480ebc879e7112a500ba6f9de3df374ff4c7f6588a779d2f2d50fe6",
+          "bytes": 18480,
+          "sampleCount": 63360,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2052/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "04a4489c65ee26b214dab8d55f8305cd306d8095204d80bb7d0d823592c4a938",
+          "bytes": 18912,
+          "sampleCount": 82944,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "大蛇丸[忍界大战]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2057": {
+      "source": {
+        "path": "assets/sound/swf/s2057.swf",
+        "tag": "PT_NarutoAlpha6.93Build300",
+        "bytes": 17892,
+        "sha256": "f90ebc91c41d18b8829a485faba366054462730164fcda38336c4c69a79f915c",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "A_1hit",
+      "group": "大蛇丸[忍界大战]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2057/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "7ec0e7271c9f9bc2078bc4e432e1a1e7f15c3ede6840e90c00889c337082173d",
+          "bytes": 18807,
+          "sampleCount": 51840,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "大蛇丸[忍界大战]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "286": {
+      "source": {
+        "path": "assets/sound/swf/s286.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 11143,
+        "sha256": "b791fd779c675d843bd726f50d7f8d683ad24c4a58a630ac67d9db5c041b299f",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "cloth3",
+      "group": "摩擦",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/286/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "b79023e8fc5afa2a0658287edb80e6379c25d71b0cb582d130e133d4a2b94638",
+          "bytes": 3682,
+          "sampleCount": 11520,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/286/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "244a6c6528564bec29cfeb67f3f6850fe17d23a1afd8969aef72a6afa2661b50",
+          "bytes": 2768,
+          "sampleCount": 8640,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/286/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "63aa49655dd0391572514ff9a6263599189880c723163be502259bdb0f2ac571",
+          "bytes": 6059,
+          "sampleCount": 19008,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "摩擦",
+        "战斗技能"
+      ],
+      "voice": false
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

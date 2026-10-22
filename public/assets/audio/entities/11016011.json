@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "id": "11016011",
+  "name": "Ni",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11016011.swf",
+    "tag": "PT_NarutoAlpha9.17Build302",
+    "bytes": 1881997,
+    "sha256": "e454c817f35d7ddd7c5bd545ae555b6a23f1effaf9169744844f27cef8089470",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 7,
+        "time": 291.6666666666667,
+        "sound": "3833",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 13,
+        "time": 541.6666666666666,
+        "sound": "3839",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "3832",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 2666.6666666666665,
+    "C_dead": 750.0
+  },
+  "sounds": {
+    "3832": {
+      "source": {
+        "path": "assets/sound/swf/s3832.swf",
+        "tag": "PT_NarutoAlpha8.83Build300",
+        "bytes": 50575,
+        "sha256": "02ecd5e4755da3d69766efaa5065fd0176fafc22ac6884ba9073d39f7cbf81d7",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "贰[火之意志继承者]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3832/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "f7518a58c57b0abfc3458bb81358e010c4f55427804c5f96672f6f80eaeb2f32",
+          "bytes": 101888,
+          "sampleCount": 122112,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "贰[火之意志继承者]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3833": {
+      "source": {
+        "path": "assets/sound/swf/s3833.swf",
+        "tag": "PT_NarutoAlpha8.83Build300",
+        "bytes": 59771,
+        "sha256": "39113045fe76b48d4b648aefdeee60e276956f9e601903b33169c0c31b5c9a22",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "贰[火之意志继承者]---体术攻击_1",
+      "group": "贰[火之意志继承者]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3833/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "bd95b8f7b6b2ae43c4e26bf0a2a6547fd65e9377e4be2959d309a8a33eaa71a6",
+          "bytes": 75968,
+          "sampleCount": 91008,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "贰[火之意志继承者]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3839": {
+      "source": {
+        "path": "assets/sound/swf/s3839.swf",
+        "tag": "PT_NarutoAlpha8.83Build300",
+        "bytes": 27437,
+        "sha256": "76cd2990ab05be0e734a2806f853bddf92322b699aa8e7173bd1ead783385b1a",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "贰[火之意志继承者]---体术攻击_YY_1",
+      "group": "贰[火之意志继承者]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3839/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "00576593d1b3fcbd1664138341b6cec6a15dd6b874d4f494c6eadda65b1723d0",
+          "bytes": 74048,
+          "sampleCount": 88704,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "贰[火之意志继承者]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

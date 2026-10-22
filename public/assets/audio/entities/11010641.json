@@ -1,0 +1,244 @@
+{
+  "version": 1,
+  "id": "11010641",
+  "name": "Kushina Uzumaki",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11010641.swf",
+    "tag": "PT_NarutoAlpha7.28Build300",
+    "bytes": 505958,
+    "sha256": "818317d2831373f5e0002831337f7c19b09ed74780c7e64153c5a7bddc4693df",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 3,
+        "time": 125.0,
+        "sound": "2126",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 6,
+        "time": 250.0,
+        "sound": "2129",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2125",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 11,
+        "time": 458.3333333333333,
+        "sound": "285",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1208.3333333333333,
+    "C_dead": 1041.6666666666667
+  },
+  "sounds": {
+    "2125": {
+      "source": {
+        "path": "assets/sound/swf/s2125.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 21781,
+        "sha256": "3f994864b8574d735b4776bcb94c77f6d3d0967714d138dac89a8524ec6aa0b9",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "漩涡玖辛奈[泳装]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2125/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "127cc8b73f52481f679bf537101f17cf35532f79957539f8b1c26ce81ffd60bf",
+          "bytes": 22392,
+          "sampleCount": 92160,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "漩涡玖辛奈[泳装]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2126": {
+      "source": {
+        "path": "assets/sound/swf/s2126.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 31018,
+        "sha256": "8b2155a121a87505eb170e88cc8cf5d126bbd73e71616e0566bfa705b56ae960",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "影分身之术21010641",
+      "group": "漩涡玖辛奈[泳装]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2126/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "29ef7052947d3d112df2390b20b31a79a6c2fd1b564060a5074a25be551a5711",
+          "bytes": 11136,
+          "sampleCount": 33408,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2126/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "282062b7aac350aa5d2c50a475d302e55e642d85481f7fbbf22201ac404b16ac",
+          "bytes": 9072,
+          "sampleCount": 33408,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2126/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "8f32cb25dab899a2a67149b5db74ab0de9f970d8ef9cd0f5ad37b055e6146622",
+          "bytes": 12864,
+          "sampleCount": 44928,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "漩涡玖辛奈[泳装]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2129": {
+      "source": {
+        "path": "assets/sound/swf/s2129.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 22487,
+        "sha256": "032e27d2fe5b6242a645920299949a5b26723acea37335acd41b4707042c8eac",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "影分身之术",
+      "group": "漩涡玖辛奈[泳装]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2129/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "decc73344d737dfba3fa9df2602237358d2df22dca59081f8b3e46bbe145697e",
+          "bytes": 25494,
+          "sampleCount": 70272,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "漩涡玖辛奈[泳装]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "285": {
+      "source": {
+        "path": "assets/sound/swf/s285.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 8314,
+        "sha256": "ee3d9ccdaf99340163254df95d0a7fe6fa0027e3fbe90be66c91e38af0f6e221",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "cloth2",
+      "group": "摩擦",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/285/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "d047194c49fd71454015cdac45018f3d1bc2e297ef3ebf0063c5ea1f7ec3111d",
+          "bytes": 2585,
+          "sampleCount": 8064,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/285/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "fd7c064cf63aca92bb6f5744df17318bc405ad1aa6db76129fd2ee59d6b76fc0",
+          "bytes": 2951,
+          "sampleCount": 9216,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/285/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "39178379f546e85efd0ddc2ac43243886f6fa34d64abfa208ed7d7a3a937e76a",
+          "bytes": 4048,
+          "sampleCount": 12672,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "摩擦",
+        "战斗技能"
+      ],
+      "voice": false
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

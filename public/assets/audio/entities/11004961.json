@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "id": "11004961",
+  "name": "Deidara",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11004961.swf",
+    "tag": "PT_NarutoAlpha8.01Build301",
+    "bytes": 764877,
+    "sha256": "de2ca68b0d3c0406e7add4461e9882e50b84670098c7029214f7071127d8e634",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 9,
+        "time": 375.0,
+        "sound": "2777",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 11,
+        "time": 458.3333333333333,
+        "sound": "2773",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": []
+  },
+  "durations": {
+    "A_1hit": 1458.3333333333333,
+    "C_dead": 750.0
+  },
+  "sounds": {
+    "2773": {
+      "source": {
+        "path": "assets/sound/swf/s2773.swf",
+        "tag": "PT_NarutoAlpha7.79Build300",
+        "bytes": 25115,
+        "sha256": "1e86a7f94b83dd587e3ca6ccbd3025c39eb5d920a41c59d362032d8ca9239918",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "C1·黏土蜘蛛\n",
+      "group": "迪达拉起爆粘土",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2773/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "e6b8ba437a546499e0f7a65f498f52cf1b3e986da455bcc50e21c86087b970a5",
+          "bytes": 25912,
+          "sampleCount": 71424,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "迪达拉起爆粘土",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2777": {
+      "source": {
+        "path": "assets/sound/swf/s2777.swf",
+        "tag": "PT_NarutoAlpha7.79Build300",
+        "bytes": 10743,
+        "sha256": "eb6a30962877719323df3ecb780b23ba2b4c5267e4ee98529f9b790c3d35aac7",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "C1·黏土蜘蛛语音",
+      "group": "迪达拉起爆粘土",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2777/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "0141ef0ec04469506773e230b55bbb630327f6e091d4bef1b8b463fb7e075922",
+          "bytes": 11328,
+          "sampleCount": 35712,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "迪达拉起爆粘土",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

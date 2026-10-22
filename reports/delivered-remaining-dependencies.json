@@ -1,0 +1,263 @@
+{
+  "scope": "Fresh checks of specific empty files, disguised container and remaining attack/death packages; existing blocked-model issues preserved, not newly proven irrecoverable.",
+  "sourceHashesPreserved": true,
+  "emptySources": [
+    {
+      "source": {
+        "path": "assets/rumorPlot/plotimg/214315.jpg",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sourceKind": "exported-inventory"
+      },
+      "state": "empty-delivered-source",
+      "required": "A nonempty original from another verified source; no generated replacement"
+    },
+    {
+      "source": {
+        "path": "assets/rumorPlot/plotimg/213065.jpg",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sourceKind": "exported-inventory"
+      },
+      "state": "empty-delivered-source",
+      "required": "A nonempty original from another verified source; no generated replacement"
+    }
+  ],
+  "disguisedContainer": {
+    "source": {
+      "path": "assets/user/userHead.bmp",
+      "tag": "PT_NarutoAlpha6.00Build300",
+      "bytes": 2354,
+      "sha256": "26088cd44cb49a9bd9e091a39247439ec1ac8d501ffb52c01e9d6cdc06a8c21f",
+      "sourceKind": "exported-inventory"
+    },
+    "format": "SWF obfuscated as BMP",
+    "tagCounts": {
+      "69": 1,
+      "77": 1,
+      "64": 1,
+      "63": 1,
+      "65": 1,
+      "9": 1,
+      "41": 1,
+      "43": 1,
+      "82": 1,
+      "76": 1,
+      "1": 1,
+      "0": 1
+    },
+    "embeddedVisualTags": 0,
+    "hasActionScript": true,
+    "policy": "Static tag inspection only. No ActionScript executed. Do not claim that a generic static renderer recovers an avatar when no visual tags are embedded."
+  },
+  "soundConfig": {
+    "path": "assets/sound/soundConfig.xml",
+    "tag": "PT_NarutoAlpha9.06Build300",
+    "bytes": 67819,
+    "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+    "sourceKind": "exported-inventory"
+  },
+  "missingSoundPackages": {
+    "871": {
+      "models": [
+        "11001401"
+      ],
+      "events": 1,
+      "packageInDeliveredConfig": false,
+      "reason": "KeyError: '871'"
+    },
+    "540": {
+      "models": [
+        "11001411",
+        "11001421",
+        "11001461",
+        "11001471"
+      ],
+      "events": 4,
+      "packageInDeliveredConfig": false,
+      "reason": "KeyError: '540'"
+    },
+    "536": {
+      "models": [
+        "11001431"
+      ],
+      "events": 1,
+      "packageInDeliveredConfig": false,
+      "reason": "KeyError: '536'"
+    },
+    "541": {
+      "models": [
+        "11001431",
+        "11001451",
+        "11001461",
+        "11001471"
+      ],
+      "events": 4,
+      "packageInDeliveredConfig": false,
+      "reason": "KeyError: '541'"
+    },
+    "539": {
+      "models": [
+        "11001451"
+      ],
+      "events": 1,
+      "packageInDeliveredConfig": false,
+      "reason": "KeyError: '539'"
+    }
+  },
+  "canonicalBlockedModels": [
+    {
+      "id": "26900909",
+      "name": "Central de Pesquisa Básica",
+      "manifest": "/assets/para-revisao/npcs-inimigos-e-cenario/central-de-pesquisa-basica-26900909/manifest.json",
+      "recordedIssues": [
+        {
+          "mode": "world",
+          "error": "No supported actions rendered; [{'action': 'idle_0', 'reason': 'invalid-frame-count'}]"
+        }
+      ],
+      "state": "canonical-issue-not-reclassified",
+      "nextStep": "Inspect the specific source/actions/dependencies in a bounded batch; placeholder or transparent models must not receive invented pixels"
+    },
+    {
+      "id": "91000500",
+      "name": "Estátua Melhor Ninja",
+      "manifest": "/assets/para-revisao/npcs-inimigos-e-cenario/estatua-melhor-ninja-91000500/manifest.json",
+      "recordedIssues": [
+        {
+          "mode": "world",
+          "error": "Audited idle is entirely transparent in the recovered source; disabled rather than spawning an invisible NPC."
+        }
+      ],
+      "state": "canonical-issue-not-reclassified",
+      "nextStep": "Inspect the specific source/actions/dependencies in a bounded batch; placeholder or transparent models must not receive invented pixels"
+    },
+    {
+      "id": "00000000",
+      "name": "Recurso 00000000",
+      "manifest": "/assets/para-revisao/sem-identificacao/recurso-00000000-00000000/manifest.json",
+      "recordedIssues": [
+        {
+          "mode": "battle",
+          "error": "No supported actions rendered; [{'action': 'C_idle', 'reason': 'no-resolved-bitmaps', 'missing': []}, {'action': 'C_dead', 'reason': 'no-resolved-bitmaps', 'missing': []}]"
+        }
+      ],
+      "state": "canonical-issue-not-reclassified",
+      "nextStep": "Inspect the specific source/actions/dependencies in a bounded batch; placeholder or transparent models must not receive invented pixels"
+    },
+    {
+      "id": "10000398",
+      "name": "Recurso 10000398",
+      "manifest": "/assets/para-revisao/sem-identificacao/recurso-10000398-10000398/manifest.json",
+      "recordedIssues": [
+        {
+          "mode": "world",
+          "error": "No supported actions rendered; [{'action': 'idle_0', 'reason': 'no-resolved-bitmaps', 'missing': ['0']}, {'action': 'idle_1', 'reason': 'no-resolved-bitmaps', 'missing': ['0']}]"
+        }
+      ],
+      "state": "canonical-issue-not-reclassified",
+      "nextStep": "Inspect the specific source/actions/dependencies in a bounded batch; placeholder or transparent models must not receive invented pixels"
+    },
+    {
+      "id": "10000901",
+      "name": "Recurso 10000901",
+      "manifest": "/assets/para-revisao/sem-identificacao/recurso-10000901-10000901/manifest.json",
+      "recordedIssues": [
+        {
+          "mode": "battle",
+          "error": "No supported actions rendered; []"
+        }
+      ],
+      "state": "canonical-issue-not-reclassified",
+      "nextStep": "Inspect the specific source/actions/dependencies in a bounded batch; placeholder or transparent models must not receive invented pixels"
+    },
+    {
+      "id": "111",
+      "name": "Recurso 111",
+      "manifest": "/assets/para-revisao/sem-identificacao/recurso-111-111/manifest.json",
+      "recordedIssues": [
+        {
+          "mode": "battle",
+          "error": "No supported actions rendered; []"
+        }
+      ],
+      "state": "canonical-issue-not-reclassified",
+      "nextStep": "Inspect the specific source/actions/dependencies in a bounded batch; placeholder or transparent models must not receive invented pixels"
+    },
+    {
+      "id": "11900823",
+      "name": "Recurso 11900823",
+      "manifest": "/assets/para-revisao/sem-identificacao/recurso-11900823-11900823/manifest.json",
+      "recordedIssues": [
+        {
+          "mode": "world",
+          "error": "No supported actions rendered; []"
+        }
+      ],
+      "state": "canonical-issue-not-reclassified",
+      "nextStep": "Inspect the specific source/actions/dependencies in a bounded batch; placeholder or transparent models must not receive invented pixels"
+    },
+    {
+      "id": "19004611",
+      "name": "Recurso 19004611",
+      "manifest": "/assets/para-revisao/sem-identificacao/recurso-19004611-19004611/manifest.json",
+      "recordedIssues": [
+        {
+          "mode": "battle",
+          "error": "No supported actions rendered; [{'action': 'C_dead', 'reason': 'no-resolved-bitmaps', 'missing': ['0', '15', '17', '18', '19']}, {'action': 'C_idle', 'reason': 'no-resolved-bitmaps', 'missing': ['20']}]"
+        }
+      ],
+      "state": "canonical-issue-not-reclassified",
+      "nextStep": "Inspect the specific source/actions/dependencies in a bounded batch; placeholder or transparent models must not receive invented pixels"
+    },
+    {
+      "id": "91100001",
+      "name": "Recurso 91100001",
+      "manifest": "/assets/para-revisao/sem-identificacao/recurso-91100001-91100001/manifest.json",
+      "recordedIssues": [
+        {
+          "mode": "world",
+          "error": "No supported actions rendered; [{'action': 'idle_0', 'reason': 'no-resolved-bitmaps', 'missing': []}]"
+        }
+      ],
+      "state": "canonical-issue-not-reclassified",
+      "nextStep": "Inspect the specific source/actions/dependencies in a bounded batch; placeholder or transparent models must not receive invented pixels"
+    },
+    {
+      "id": "91100002",
+      "name": "火焰2020",
+      "manifest": "/assets/para-revisao/npcs-inimigos-e-cenario/2020-91100002/manifest.json",
+      "recordedIssues": [
+        {
+          "mode": "world",
+          "error": "No supported actions rendered; [{'action': 'idle_0', 'reason': 'no-resolved-bitmaps', 'missing': []}]"
+        }
+      ],
+      "state": "canonical-issue-not-reclassified",
+      "nextStep": "Inspect the specific source/actions/dependencies in a bounded batch; placeholder or transparent models must not receive invented pixels"
+    },
+    {
+      "id": "91100051",
+      "name": "铁球2",
+      "manifest": "/assets/para-revisao/npcs-inimigos-e-cenario/2-91100051/manifest.json",
+      "recordedIssues": [
+        {
+          "mode": "world",
+          "error": "No supported actions rendered; [{'action': 'idle_0', 'reason': 'no-resolved-bitmaps', 'missing': []}]"
+        }
+      ],
+      "state": "canonical-issue-not-reclassified",
+      "nextStep": "Inspect the specific source/actions/dependencies in a bounded batch; placeholder or transparent models must not receive invented pixels"
+    }
+  ],
+  "stillPending": [
+    "Shared external effects/shadows and jutsu presentation",
+    "Other action/world voices",
+    "Remaining UI resources and their usable integration",
+    "Per-object/middleground map depth and original physical links",
+    "Narrative context and encounters; extraction is not campaign implementation"
+  ],
+  "completeArchiveExtraction": false
+}

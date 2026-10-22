@@ -1,0 +1,338 @@
+{
+  "version": 1,
+  "id": "11006501",
+  "name": "Pain: Deva",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11006501.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 497518,
+    "sha256": "0556b15945f2dd3ce8c3e7ddbbab8e3a2f9c50655481553f9053ca8a3f7c769f",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 5,
+        "time": 208.33333333333334,
+        "sound": "92",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 5,
+        "time": 208.33333333333334,
+        "sound": "93",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 5,
+        "time": 208.33333333333334,
+        "sound": "47",
+        "volume": 0.8,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "890",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 2,
+        "time": 83.33333333333333,
+        "sound": "284",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 500.0,
+    "C_dead": 166.66666666666666
+  },
+  "sounds": {
+    "284": {
+      "source": {
+        "path": "assets/sound/swf/s284.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 9720,
+        "sha256": "a2bac3e0ab86ebad0d79f972d7b8d0445273292d22b50105e6b6a6d2f984dee2",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "cloth1",
+      "group": "摩擦",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/284/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "dd4de7eb33f86822437ae428b75f7a578bfb3ff47fd112b90c52612c88aa313a",
+          "bytes": 3865,
+          "sampleCount": 12096,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/284/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "dee11fa10c9675ef226a42ce0a68ab2ce1a9bb312d8e2a11a37d2f534bab654f",
+          "bytes": 3316,
+          "sampleCount": 10368,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/284/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "ea5f18605ab203a2ae98d023f02d7d7844a90ef2dce5563794ad23daf9bec966",
+          "bytes": 3682,
+          "sampleCount": 11520,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "摩擦",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "47": {
+      "source": {
+        "path": "assets/sound/swf/s47.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 27932,
+        "sha256": "0f728b91cbe6c403199e7cd1d924cca1f45317fe595893a3f62bb4e02ba745ea",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "02_Meat1",
+      "group": "hit",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/47/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "f5e108548ebdfc37f683599fffb390e1ef9760acc53ae964086cf797320d0364",
+          "bytes": 7966,
+          "sampleCount": 21888,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/47/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "4d561a390a2c769a78c00df46c82d1b50893d2519050381b6103041a38047fc8",
+          "bytes": 8802,
+          "sampleCount": 24192,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/47/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "ae0b1505f3571e634ddbf64ee386067ecb21fa75dcbdefd4e0260989edbf6527",
+          "bytes": 7966,
+          "sampleCount": 21888,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/47/4.mp3",
+          "symbolId": 4,
+          "itemId": "4",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "fbcb7f55f78c01d1ae8f83c84c0f4353e9d9b3b192192b061b14958606a31ce6",
+          "bytes": 7966,
+          "sampleCount": 21888,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "hit",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "890": {
+      "source": {
+        "path": "assets/sound/swf/s890.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 23784,
+        "sha256": "18951e3d8c28751cc9269a8ecfc2a2a4f4eb3e5c746b87b6f07f92ffae279f7a",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "死亡",
+      "group": "佩恩天道",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/890/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "38ca2a3a3e184cc77c3a791828ffb3d0314cc157476a2f0ec5b351b0e9cb2c1a",
+          "bytes": 25437,
+          "sampleCount": 70272,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "佩恩天道",
+        "voice"
+      ],
+      "voice": true
+    },
+    "92": {
+      "source": {
+        "path": "assets/sound/swf/s92.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 13234,
+        "sha256": "0ce0c7001d982d1242f76b1a110ef48b86f8aefb0240e84fc2bc6a5aa9cf7e9b",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "woosh2",
+      "group": "weapon",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/92/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "d4e82aecaaf5447f3d0d6b7e9a2c79cfc5a5682d159b01232af62e00efe46f82",
+          "bytes": 5184,
+          "sampleCount": 13824,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/92/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "2c48faff70bd4323e314abaf3b0fcb3f64edd602a6def4f5bf87862c1bad06b0",
+          "bytes": 6437,
+          "sampleCount": 17280,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/92/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "db3427e704df19f7234fe0a51db0578c3f0bcca36afe777516bdaeacef4e21f9",
+          "bytes": 5184,
+          "sampleCount": 13824,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "weapon",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "93": {
+      "source": {
+        "path": "assets/sound/swf/s93.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 12685,
+        "sha256": "d10efea6ca0d3717c55d7cfab1b9a44f88d5502c58afdd294bc0a5946bb52004",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "woosh3",
+      "group": "weapon",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/93/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "dd6cb16efa479994997097b36c4aa59d92b954c3fc60acaade483527e9c58750",
+          "bytes": 5184,
+          "sampleCount": 13824,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/93/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "8d48d5bd9e58579841956511079c58b56815a3f772ed066b4e9be4c7b6e1cf59",
+          "bytes": 5601,
+          "sampleCount": 14976,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/93/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "f9b20cccaf5d9d310672222cdd364da9899766ccdf0b72939ef10a716794121f",
+          "bytes": 5601,
+          "sampleCount": 14976,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "weapon",
+        "战斗技能"
+      ],
+      "voice": false
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

@@ -1,0 +1,239 @@
+{
+  "version": 1,
+  "id": "11016611",
+  "name": "Recurso 11016611",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11016611.swf",
+    "tag": "PT_NarutoAlpha9.17Build302",
+    "bytes": 2929260,
+    "sha256": "f91606bc7bf969444ef25e32ec42ff2e5a622b9cf8f64af3ccb8d7264c38aa55",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 0,
+        "time": 0.0,
+        "sound": "3900",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 1,
+        "time": 41.666666666666664,
+        "sound": "3892",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 34,
+        "time": 1416.6666666666667,
+        "sound": "3901",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0.0,
+        "sound": "3896",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "3891",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 2750.0,
+    "C_dead": 1000.0
+  },
+  "sounds": {
+    "3891": {
+      "source": {
+        "path": "assets/sound/swf/s3891.swf",
+        "tag": "PT_NarutoAlpha8.83Build300",
+        "bytes": 74594,
+        "sha256": "21be79b48daf1d5bb67515dc3038295ccdfa55f035f94cc2d09f7b99ea663d20",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "宇智波斑[忍者之路]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3891/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "f9777f3999c330406ee746b41673db26224cffd0d1594c320ede783f8b6d48e9",
+          "bytes": 77805,
+          "sampleCount": 93312,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "宇智波斑[忍者之路]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3892": {
+      "source": {
+        "path": "assets/sound/swf/s3892.swf",
+        "tag": "PT_NarutoAlpha8.83Build300",
+        "bytes": 80722,
+        "sha256": "57b84e6da0430072a03e9716f7497bb4fadf4f445f138afc26bfc7527fe4c123",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "宇智波斑[忍者之路]---神威·转移（表现1）",
+      "group": "宇智波斑[忍者之路]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3892/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "6c64685681998b79adefd93c7036caa36bf5b8683bd1f782b36215d79846c6a9",
+          "bytes": 103808,
+          "sampleCount": 124416,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "宇智波斑[忍者之路]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3896": {
+      "source": {
+        "path": "assets/sound/swf/s3896.swf",
+        "tag": "PT_NarutoAlpha8.83Build300",
+        "bytes": 48191,
+        "sha256": "4f02e9fe9f72e1430cd6bdd31b55337b14a25c5de59620674b788b7a49f4bcc7",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "宇智波斑[忍者之路]---入场动作",
+      "group": "宇智波斑[忍者之路]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3896/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "e254c906b2d5e3810297d371ce5a1f82fa768d3b6c20c7ba9b6c0a25fa3c561b",
+          "bytes": 68288,
+          "sampleCount": 81792,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "宇智波斑[忍者之路]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3900": {
+      "source": {
+        "path": "assets/sound/swf/s3900.swf",
+        "tag": "PT_NarutoAlpha8.83Build300",
+        "bytes": 36522,
+        "sha256": "62c6bb91efecb8ace0e98ec120330bbbd7e0f13c787207e477a8d495e1df6f34",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "宇智波斑[忍者之路]---神威·转移（表现1）_YY1",
+      "group": "宇智波斑[忍者之路]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3900/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "e0dcde78fd3775169cc6edb1d0da09cfe90d07978ea446bb63f76f39523ceeb2",
+          "bytes": 38445,
+          "sampleCount": 46080,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "宇智波斑[忍者之路]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3901": {
+      "source": {
+        "path": "assets/sound/swf/s3901.swf",
+        "tag": "PT_NarutoAlpha8.83Build300",
+        "bytes": 26223,
+        "sha256": "1dc7e3ea3c2baa853263480123e8cc461602d7b32fdadab9d8605651aadf4adf",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "宇智波斑[忍者之路]---神威·转移（表现1）_YY2",
+      "group": "宇智波斑[忍者之路]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3901/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "be8037660602beabd076a358dab6acee398957728e0ab216333ee3cbf4dc3ba7",
+          "bytes": 27885,
+          "sampleCount": 33408,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "宇智波斑[忍者之路]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

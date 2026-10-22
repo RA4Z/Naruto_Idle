@@ -1,0 +1,283 @@
+{
+  "version": 1,
+  "id": "11000501",
+  "name": "Neji",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11000501.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 321518,
+    "sha256": "c35480b03589e9b87483da2eba338541c5926f5c4ee6bd633d05c2f722e0c01d",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 3,
+        "time": 125.0,
+        "sound": "943",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 3,
+        "time": 125.0,
+        "sound": "190",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 3,
+        "time": 125.0,
+        "sound": "149",
+        "volume": 0.26,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 3,
+        "time": 125.0,
+        "sound": "93",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "352",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 833.3333333333334,
+    "C_dead": 208.33333333333334
+  },
+  "sounds": {
+    "149": {
+      "source": {
+        "path": "assets/sound/swf/s149.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 68289,
+        "sha256": "2bd493ebb4f2e4a2a4e02fe1253a7ac4c47d7bce9561e6d4132537050e07051a",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "shan",
+      "group": "skill2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/149/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "184ea53645c72f65c7356ab4364fb3448aad0ad71069c6683ce9f9ab16088d81",
+          "bytes": 26356,
+          "sampleCount": 72576,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/149/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "fb1318b412a51aff930c0a9cc6d5b4e6349dfacc305611ebeb03ad1aa0a52fc5",
+          "bytes": 23849,
+          "sampleCount": 65664,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/149/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "80a7bdbdb271a48a51b372131dcfb9f87b1b8b3e448e68e544688cdb92e328c5",
+          "bytes": 25938,
+          "sampleCount": 71424,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "skill2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "190": {
+      "source": {
+        "path": "assets/sound/swf/s190.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 3308,
+        "sha256": "ef8577ff2fcd18b769c435d4f9b693f1d66d563cc9427c00685c29bfadd78665",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "punch_swing攻击_挥拳",
+      "group": "素材",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/190/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "95793a410926bded029ed59d07545c7ac45367000067f3cd651d9e1d9700573b",
+          "bytes": 4205,
+          "sampleCount": 11520,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "素材",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "352": {
+      "source": {
+        "path": "assets/sound/swf/s352.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 23938,
+        "sha256": "9c50ee3154778f8770d0d46980ece4ccc4a2e1c9908ec532f0de203a756e127d",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "日向宁次-少年-死亡",
+      "group": "日向宁次",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/352/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "cbb560f48440cbd4bd4b0c13069c8f6cfae3c6b5681309b4ab7069dc64b527f1",
+          "bytes": 24985,
+          "sampleCount": 74880,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "日向宁次",
+        "voice"
+      ],
+      "voice": true
+    },
+    "93": {
+      "source": {
+        "path": "assets/sound/swf/s93.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 12685,
+        "sha256": "d10efea6ca0d3717c55d7cfab1b9a44f88d5502c58afdd294bc0a5946bb52004",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "woosh3",
+      "group": "weapon",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/93/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "dd6cb16efa479994997097b36c4aa59d92b954c3fc60acaade483527e9c58750",
+          "bytes": 5184,
+          "sampleCount": 13824,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/93/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "8d48d5bd9e58579841956511079c58b56815a3f772ed066b4e9be4c7b6e1cf59",
+          "bytes": 5601,
+          "sampleCount": 14976,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/93/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "f9b20cccaf5d9d310672222cdd364da9899766ccdf0b72939ef10a716794121f",
+          "bytes": 5601,
+          "sampleCount": 14976,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "weapon",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "943": {
+      "source": {
+        "path": "assets/sound/swf/s943.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 4091,
+        "sha256": "b21a8453a0a4e4ec178a42069e90d504e453104f6180837e69f4b3cc47456308",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "少年宁次-攻击",
+      "group": "日向宁次",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/943/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "e4e01c9cb9181bcefc007a9f1465a5ddc7406a51f1a428482479a253aacb879b",
+          "bytes": 6419,
+          "sampleCount": 11520,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "日向宁次",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

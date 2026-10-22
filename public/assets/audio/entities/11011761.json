@@ -1,0 +1,200 @@
+{
+  "version": 1,
+  "id": "11011761",
+  "name": "Madara Uchiha",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11011761.swf",
+    "tag": "PT_NarutoAlpha8.72Build301",
+    "bytes": 3204950,
+    "sha256": "1b92e5f887f625a998bddbcf3fbbc6fc2454d44ae78a7e8dfa83785d2d4b767a",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 3,
+        "time": 125.0,
+        "sound": "3486",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 19,
+        "time": 791.6666666666666,
+        "sound": "3498",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0.0,
+        "sound": "3492",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "3485",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 2416.6666666666665,
+    "C_dead": 1250.0
+  },
+  "sounds": {
+    "3485": {
+      "source": {
+        "path": "assets/sound/swf/s3485.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 99459,
+        "sha256": "0e88d53a62d896e6d6390218b3a2c939dd3411cd07fbecf5659f91f592f15652",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "宇智波斑[月之眼]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3485/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "d8e32ea4c9cd28166785044d75a030a91ba0acfa057b9c0ddf55680276cd42bc",
+          "bytes": 103725,
+          "sampleCount": 124416,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "宇智波斑[月之眼]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3486": {
+      "source": {
+        "path": "assets/sound/swf/s3486.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 89642,
+        "sha256": "0385190f0c99e8adbe919e923c662e1467bb8eded887fc88b623bd641dd33847",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "宇智波斑[月之眼]---阴遁·转雷_1",
+      "group": "宇智波斑[月之眼]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3486/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "cd5098ae5a3c9011ac7fc44393e1fee394fc3bf447fee32f6fbec45fafcfb439",
+          "bytes": 126848,
+          "sampleCount": 152064,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "宇智波斑[月之眼]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3492": {
+      "source": {
+        "path": "assets/sound/swf/s3492.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 62600,
+        "sha256": "3c6c7d8d93d06d8006b06f18191b7d5173e273030810490948ced217c7abedb0",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "宇智波斑[月之眼]---战败动作（战斗内）",
+      "group": "宇智波斑[月之眼]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3492/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "8af017fab4f1f224f4230092f268317a983c79705222c3e0379e21d48f655848",
+          "bytes": 84608,
+          "sampleCount": 101376,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "宇智波斑[月之眼]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3498": {
+      "source": {
+        "path": "assets/sound/swf/s3498.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 40401,
+        "sha256": "b6f66c54eea6d29dcd8df12e90baa406a592898b5b72343e15cdf9aa75081358",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "宇智波斑[月之眼]---阴遁·转雷_1YY",
+      "group": "宇智波斑[月之眼]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3498/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "2816688e6d846b5bb7e66b00eb05e43fbe4b92729be5af82b1979523e4a48a1f",
+          "bytes": 60525,
+          "sampleCount": 72576,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "宇智波斑[月之眼]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

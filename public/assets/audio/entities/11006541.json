@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "id": "11006541",
+  "name": "Yahiko",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11006541.swf",
+    "tag": "PT_NarutoAlpha7.22Build301",
+    "bytes": 453105,
+    "sha256": "c170df43bb54fc2c0d10f687a4b2b8630269fbae657f24f24604842a53a3f35a",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 10,
+        "time": 416.6666666666667,
+        "sound": "2252",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 27,
+        "time": 1125.0,
+        "sound": "195",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": []
+  },
+  "durations": {
+    "A_1hit": 1541.6666666666667,
+    "C_dead": 833.3333333333334
+  },
+  "sounds": {
+    "195": {
+      "source": {
+        "path": "assets/sound/swf/s195.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 4052,
+        "sha256": "814fbf85a13daf5aae94874ef000e97b5081a81d354244d66bbfbe4f41f9d4a1",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "默认脚步声_走01",
+      "group": "脚步",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/195/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "fe285a138a54b07c37f23de00d71e2bc434b6f6218f4173e73a3cebfab14c087",
+          "bytes": 4587,
+          "sampleCount": 12672,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "脚步",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "2252": {
+      "source": {
+        "path": "assets/sound/swf/s2252.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 9859,
+        "sha256": "8601cca42c62f10120b18b425069a5f1f82aecb10987a82e02c65e60a8ec28f9",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "体术攻击1",
+      "group": "弥彦[青蛙小队]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2252/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "57b1836b27f050356e4bb26a13a5c608872f391ce36f63587bfc5910a293e430",
+          "bytes": 10448,
+          "sampleCount": 28800,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "弥彦[青蛙小队]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

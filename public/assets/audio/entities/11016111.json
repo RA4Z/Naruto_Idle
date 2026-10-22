@@ -1,0 +1,261 @@
+{
+  "version": 1,
+  "id": "11016111",
+  "name": "Hiruko",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11016111.swf",
+    "tag": "PT_NarutoAlpha9.14Build301",
+    "bytes": 1717730,
+    "sha256": "08e6095e9a2316fd1bd9913763ac877f93747855c4c637e316e7f18c2cee3abb",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 0,
+        "time": 0.0,
+        "sound": "3815",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 1,
+        "time": 41.666666666666664,
+        "sound": "3808",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 14,
+        "time": 583.3333333333334,
+        "sound": "3816",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "3807",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 6,
+        "time": 250.0,
+        "sound": "170",
+        "volume": 0.67,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1541.6666666666667,
+    "C_dead": 1083.3333333333333
+  },
+  "sounds": {
+    "170": {
+      "source": {
+        "path": "assets/sound/swf/s170.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 17579,
+        "sha256": "9dfedc22265a78e932df148531723a1b9f9322b1d4b5d9526ca22a009c4997e3",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "fall_mini",
+      "group": "down2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/170/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "75e5103d093765e7907da173e4ffe46469c4a00f1ce1d88510111e693b5762d6",
+          "bytes": 7130,
+          "sampleCount": 19584,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/170/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "eea7136bc40b76e07908dcd674850f51b0cda5b1144b54c3e9c68d7e93d6dc03",
+          "bytes": 6294,
+          "sampleCount": 17280,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/170/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "bd478824f5ba20e72cacac12977129282f2cc1026b7e0358bad10ec6e42eaa57",
+          "bytes": 7548,
+          "sampleCount": 20736,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "down2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "3807": {
+      "source": {
+        "path": "assets/sound/swf/s3807.swf",
+        "tag": "PT_NarutoAlpha8.73Build300",
+        "bytes": 33199,
+        "sha256": "81e95167078c44c6f911b980665dfdf9f1c696e8e53067e3d2938704daf03bb6",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "卑留呼[火之意志继承者]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3807/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "c9fd7dfdbbe3f77fdff7842b8bf8115aa24276e6ea4070b398c9b4a375435ad5",
+          "bytes": 81728,
+          "sampleCount": 97920,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "卑留呼[火之意志继承者]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3808": {
+      "source": {
+        "path": "assets/sound/swf/s3808.swf",
+        "tag": "PT_NarutoAlpha8.73Build300",
+        "bytes": 44072,
+        "sha256": "7885680d8a09a878a0a9f39229b55eea604a81a7b15f6280903c57ba7b02ceb5",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "卑留呼[火之意志继承者]_体术攻击_1",
+      "group": "卑留呼[火之意志继承者]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3808/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "a648cb3fb9b83323d016ae4d9f22c2c184ade233f01ded4d31bd06540efc0ac7",
+          "bytes": 54848,
+          "sampleCount": 65664,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "卑留呼[火之意志继承者]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3815": {
+      "source": {
+        "path": "assets/sound/swf/s3815.swf",
+        "tag": "PT_NarutoAlpha8.73Build300",
+        "bytes": 22377,
+        "sha256": "13f340b025f12ded0e84e0bedb2a12622927bcd9c4ea0a65241d3e3006ec99e7",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "卑留呼[火之意志继承者]_体术攻击1_YY_1",
+      "group": "卑留呼[火之意志继承者]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3815/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "d98237383ba3fdbea223f1b9af9a0a9a3868bf521d72359323eb130563f11809",
+          "bytes": 65408,
+          "sampleCount": 78336,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "卑留呼[火之意志继承者]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3816": {
+      "source": {
+        "path": "assets/sound/swf/s3816.swf",
+        "tag": "PT_NarutoAlpha8.73Build300",
+        "bytes": 18890,
+        "sha256": "a8736316d7bd543cd8c95f75ec75fd590007e3578a9701d11f91fe123e3325fc",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "卑留呼[火之意志继承者]_体术攻击1_YY_2",
+      "group": "卑留呼[火之意志继承者]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3816/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "fbba3c22eb5a374e3b7ec414fd2d3f9651f101392fd5e28b28e18e724a78624b",
+          "bytes": 65408,
+          "sampleCount": 78336,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "卑留呼[火之意志继承者]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

@@ -1,0 +1,172 @@
+{
+  "version": 1,
+  "id": "11010821",
+  "name": "Recurso 11010821",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11010821.swf",
+    "tag": "PT_NarutoAlpha9.16Build302",
+    "bytes": 1735256,
+    "sha256": "1cfd7acbb84897028e50376623fe4a79156cbd5eef92251729cd5144bd806926",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 2,
+        "time": 83.33333333333333,
+        "sound": "4019",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 3,
+        "time": 125.0,
+        "sound": "4025",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "4018",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 791.6666666666666,
+    "C_dead": 958.3333333333334
+  },
+  "sounds": {
+    "4018": {
+      "source": {
+        "path": "assets/sound/swf/s4018.swf",
+        "tag": "PT_NarutoAlpha9.06Build300",
+        "bytes": 111677,
+        "sha256": "940d3fd9be89b4e28b6b86074c89605ffde9bd68f1cfa4d6b6e25b1fc92e330c",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "帕库拉[泳装]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/4018/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "5b3e8f83790e9bb47501a9cc790c6c02664439f871943627829b2c89fa963541",
+          "bytes": 85568,
+          "sampleCount": 102528,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/4018/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "2e02de91011bc92915b8b77e0f55635baa1c8e9e0ea4fb19cfa0c26bfef8b291",
+          "bytes": 106688,
+          "sampleCount": 127872,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "帕库拉[泳装]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "4019": {
+      "source": {
+        "path": "assets/sound/swf/s4019.swf",
+        "tag": "PT_NarutoAlpha9.06Build300",
+        "bytes": 16213,
+        "sha256": "c4073275add4d26e65cbc235ca53f2894abd2af3d054e1502bfd3613719fd1d0",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "帕库拉[泳装]---体术攻击1",
+      "group": "帕库拉[泳装]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/4019/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "afb13a01fe56ad7dd257831a7d85ca02afcca9c9d6e5576bc2497821ce44b83e",
+          "bytes": 22208,
+          "sampleCount": 26496,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "帕库拉[泳装]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "4025": {
+      "source": {
+        "path": "assets/sound/swf/s4025.swf",
+        "tag": "PT_NarutoAlpha9.06Build300",
+        "bytes": 9127,
+        "sha256": "b961ffdc2c2b80e401aa584c13a55f5ef6e0354e247516f2ffb57f46f0b88a6e",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "帕库拉[泳装]---体术攻击1YY",
+      "group": "帕库拉[泳装]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/4025/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "f32636a78d1695f1fcf4a3a3ed2b7165a7674feeee00d5f3f80ac60881d6133e",
+          "bytes": 34688,
+          "sampleCount": 41472,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "帕库拉[泳装]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

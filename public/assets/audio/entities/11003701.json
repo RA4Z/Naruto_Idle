@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "id": "11003701",
+  "name": "Mizuki",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11003701.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 459957,
+    "sha256": "20de265583eba0b1c1d1bca05daa810726128d3a2ea9df29250511bfd8e454ed",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 7,
+        "time": 291.6666666666667,
+        "sound": "93",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 7,
+        "time": 291.6666666666667,
+        "sound": "190",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": []
+  },
+  "durations": {
+    "A_1hit": 666.6666666666666,
+    "C_dead": 416.6666666666667
+  },
+  "sounds": {
+    "190": {
+      "source": {
+        "path": "assets/sound/swf/s190.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 3308,
+        "sha256": "ef8577ff2fcd18b769c435d4f9b693f1d66d563cc9427c00685c29bfadd78665",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "punch_swing攻击_挥拳",
+      "group": "素材",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/190/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "95793a410926bded029ed59d07545c7ac45367000067f3cd651d9e1d9700573b",
+          "bytes": 4205,
+          "sampleCount": 11520,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "素材",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "93": {
+      "source": {
+        "path": "assets/sound/swf/s93.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 12685,
+        "sha256": "d10efea6ca0d3717c55d7cfab1b9a44f88d5502c58afdd294bc0a5946bb52004",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "woosh3",
+      "group": "weapon",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/93/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "dd6cb16efa479994997097b36c4aa59d92b954c3fc60acaade483527e9c58750",
+          "bytes": 5184,
+          "sampleCount": 13824,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/93/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "8d48d5bd9e58579841956511079c58b56815a3f772ed066b4e9be4c7b6e1cf59",
+          "bytes": 5601,
+          "sampleCount": 14976,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/93/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "f9b20cccaf5d9d310672222cdd364da9899766ccdf0b72939ef10a716794121f",
+          "bytes": 5601,
+          "sampleCount": 14976,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "weapon",
+        "战斗技能"
+      ],
+      "voice": false
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

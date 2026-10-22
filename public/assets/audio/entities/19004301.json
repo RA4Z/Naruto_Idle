@@ -7,20 +7,23 @@
     "path": "assets/battle/role/left/19004301.swf",
     "tag": "PT_NarutoAlpha6.00Build300",
     "bytes": 245037,
-    "sha256": "0e61c0ea36f6431191bd3a827171d57d480e1b2f0bc651b1a4504afb05ef470e"
+    "sha256": "0e61c0ea36f6431191bd3a827171d57d480e1b2f0bc651b1a4504afb05ef470e",
+    "sourceKind": "exported-inventory"
   },
   "sourceConfigs": [
     {
       "path": "assets/sound/soundConfig.xml",
       "tag": "PT_NarutoAlpha9.06Build300",
       "bytes": 67819,
-      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318"
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
     },
     {
       "path": "assets/sound/deathSoundConfig.xml",
       "tag": "PT_NarutoAlpha9.06Build300",
       "bytes": 2908,
-      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3"
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
     }
   ],
   "actions": {
@@ -74,7 +77,8 @@
         "path": "assets/sound/swf/s134.swf",
         "tag": "PT_NarutoAlpha6.00Build300",
         "bytes": 96984,
-        "sha256": "9b05fe1ffcecb9a5a4d7e728ce9603adceee9553c276f9a2d61baa60086a7c5a"
+        "sha256": "9b05fe1ffcecb9a5a4d7e728ce9603adceee9553c276f9a2d61baa60086a7c5a",
+        "sourceKind": "exported-inventory"
       },
       "sourceName": "du_hit",
       "group": "skill2",
@@ -149,6 +153,10 @@
           "seekSamples": 0
         }
       ],
+      "sourceGroups": [
+        "skill2",
+        "战斗技能"
+      ],
       "voice": false
     },
     "149": {
@@ -156,7 +164,8 @@
         "path": "assets/sound/swf/s149.swf",
         "tag": "PT_NarutoAlpha6.00Build300",
         "bytes": 68289,
-        "sha256": "2bd493ebb4f2e4a2a4e02fe1253a7ac4c47d7bce9561e6d4132537050e07051a"
+        "sha256": "2bd493ebb4f2e4a2a4e02fe1253a7ac4c47d7bce9561e6d4132537050e07051a",
+        "sourceKind": "exported-inventory"
       },
       "sourceName": "shan",
       "group": "skill2",
@@ -198,6 +207,10 @@
           "seekSamples": 0
         }
       ],
+      "sourceGroups": [
+        "skill2",
+        "战斗技能"
+      ],
       "voice": false
     },
     "190": {
@@ -205,7 +218,8 @@
         "path": "assets/sound/swf/s190.swf",
         "tag": "PT_NarutoAlpha6.00Build300",
         "bytes": 3308,
-        "sha256": "ef8577ff2fcd18b769c435d4f9b693f1d66d563cc9427c00685c29bfadd78665"
+        "sha256": "ef8577ff2fcd18b769c435d4f9b693f1d66d563cc9427c00685c29bfadd78665",
+        "sourceKind": "exported-inventory"
       },
       "sourceName": "punch_swing攻击_挥拳",
       "group": "素材",
@@ -225,6 +239,10 @@
           "seekSamples": 0
         }
       ],
+      "sourceGroups": [
+        "素材",
+        "战斗技能"
+      ],
       "voice": false
     },
     "22": {
@@ -232,7 +250,8 @@
         "path": "assets/sound/swf/s22.swf",
         "tag": "PT_NarutoAlpha6.00Build300",
         "bytes": 12958,
-        "sha256": "d8122102f024d9afdd0b6986a7df1c4df2dd1024f048a9740447b39292287b17"
+        "sha256": "d8122102f024d9afdd0b6986a7df1c4df2dd1024f048a9740447b39292287b17",
+        "sourceKind": "exported-inventory"
       },
       "sourceName": "Swords_att_null_02",
       "group": "audio_action",
@@ -263,6 +282,10 @@
           "seekSamples": 0
         }
       ],
+      "sourceGroups": [
+        "audio_action",
+        "战斗技能"
+      ],
       "voice": false
     },
     "585": {
@@ -270,7 +293,8 @@
         "path": "assets/sound/swf/s585.swf",
         "tag": "PT_NarutoAlpha6.00Build300",
         "bytes": 65498,
-        "sha256": "27f32babc8c1ff8dfba1e210fec8886c76776a712ada7ea1645c18c8fea076e1"
+        "sha256": "27f32babc8c1ff8dfba1e210fec8886c76776a712ada7ea1645c18c8fea076e1",
+        "sourceKind": "exported-inventory"
       },
       "sourceName": "萝莉-死亡",
       "group": "萝莉",
@@ -323,8 +347,14 @@
           "seekSamples": 0
         }
       ],
+      "sourceGroups": [
+        "萝莉",
+        "voice"
+      ],
       "voice": true
     }
   },
-  "adaptation": "Native frame timing scaled to idle action duration; death mapping starts at death animation; at most four shared short voices. Other actions remain pending."
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
 }

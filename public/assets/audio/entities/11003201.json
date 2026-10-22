@@ -1,0 +1,305 @@
+{
+  "version": 1,
+  "id": "11003201",
+  "name": "Kisame Hoshigaki",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11003201.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 711710,
+    "sha256": "8f2279a31554c52f29af6176e1a782381299f023cbf8a6f5798797f0122db1a3",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 6,
+        "time": 250.0,
+        "sound": "971",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 6,
+        "time": 250.0,
+        "sound": "22",
+        "volume": 0.67,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 6,
+        "time": 250.0,
+        "sound": "47",
+        "volume": 0.61,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 6,
+        "time": 250.0,
+        "sound": "92",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "523",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1083.3333333333333,
+    "C_dead": 541.6666666666666
+  },
+  "sounds": {
+    "22": {
+      "source": {
+        "path": "assets/sound/swf/s22.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 12958,
+        "sha256": "d8122102f024d9afdd0b6986a7df1c4df2dd1024f048a9740447b39292287b17",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "Swords_att_null_02",
+      "group": "audio_action",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/22/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "b30dc432dbc128a3dc6f99cf6b04900970b05bd68aba3cef9ced921dbefc567a",
+          "bytes": 8109,
+          "sampleCount": 21888,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/22/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "ac85b40ff66b74f983bbd4084c2eef5f48df3764a0cd08ca3e60baa67ac8362e",
+          "bytes": 7273,
+          "sampleCount": 19584,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "audio_action",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "47": {
+      "source": {
+        "path": "assets/sound/swf/s47.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 27932,
+        "sha256": "0f728b91cbe6c403199e7cd1d924cca1f45317fe595893a3f62bb4e02ba745ea",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "02_Meat1",
+      "group": "hit",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/47/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "f5e108548ebdfc37f683599fffb390e1ef9760acc53ae964086cf797320d0364",
+          "bytes": 7966,
+          "sampleCount": 21888,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/47/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "4d561a390a2c769a78c00df46c82d1b50893d2519050381b6103041a38047fc8",
+          "bytes": 8802,
+          "sampleCount": 24192,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/47/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "ae0b1505f3571e634ddbf64ee386067ecb21fa75dcbdefd4e0260989edbf6527",
+          "bytes": 7966,
+          "sampleCount": 21888,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/47/4.mp3",
+          "symbolId": 4,
+          "itemId": "4",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "fbcb7f55f78c01d1ae8f83c84c0f4353e9d9b3b192192b061b14958606a31ce6",
+          "bytes": 7966,
+          "sampleCount": 21888,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "hit",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "523": {
+      "source": {
+        "path": "assets/sound/swf/s523.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 54857,
+        "sha256": "b127ae342d537cc740c58306c0e4575764c87f52588a80af020d0f9a3140f454",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "干柿鬼鲛-死亡",
+      "group": "干柿鬼鲛",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/523/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "47d4cff8058a578800b459a27ce48c82a303775b571bbc073f3ea891f59f5fac",
+          "bytes": 65689,
+          "sampleCount": 196992,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "干柿鬼鲛",
+        "voice"
+      ],
+      "voice": true
+    },
+    "92": {
+      "source": {
+        "path": "assets/sound/swf/s92.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 13234,
+        "sha256": "0ce0c7001d982d1242f76b1a110ef48b86f8aefb0240e84fc2bc6a5aa9cf7e9b",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "woosh2",
+      "group": "weapon",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/92/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "d4e82aecaaf5447f3d0d6b7e9a2c79cfc5a5682d159b01232af62e00efe46f82",
+          "bytes": 5184,
+          "sampleCount": 13824,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/92/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "2c48faff70bd4323e314abaf3b0fcb3f64edd602a6def4f5bf87862c1bad06b0",
+          "bytes": 6437,
+          "sampleCount": 17280,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/92/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "db3427e704df19f7234fe0a51db0578c3f0bcca36afe777516bdaeacef4e21f9",
+          "bytes": 5184,
+          "sampleCount": 13824,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "weapon",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "971": {
+      "source": {
+        "path": "assets/sound/swf/s971.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 3102,
+        "sha256": "1e74636c4101e99b0d7ceb60ee5cb38731536686c3684daa37ff362dbfb79a28",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "鬼鲛-攻击",
+      "group": "干柿鬼鲛",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/971/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "9e8ee5c61a424b0b4ea4ab15b0c96ac20bfddc67ab183605cfa5ccb7863aa8f5",
+          "bytes": 3753,
+          "sampleCount": 10368,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "干柿鬼鲛",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

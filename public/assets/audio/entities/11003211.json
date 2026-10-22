@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "id": "11003211",
+  "name": "Kisame Hoshigaki",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11003211.swf",
+    "tag": "PT_NarutoAlpha7.73Build302",
+    "bytes": 955279,
+    "sha256": "ee5aadc6b711fa1425f2c55ca42bed0a12813d750d4b431a242ed2c01d1813e9",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "1937",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ],
+    "A_1hit": []
+  },
+  "durations": {
+    "C_dead": 875.0,
+    "A_1hit": 3041.6666666666665
+  },
+  "sounds": {
+    "1937": {
+      "source": {
+        "path": "assets/sound/swf/s1937.swf",
+        "tag": "PT_NarutoAlpha6.93Build300",
+        "bytes": 13910,
+        "sha256": "b5f1b056bd36ce2d2e1bee54a25fd06bb73881a6f37e28a265d3647363d228e0",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "干柿鬼鲛[鲛肌融合]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/1937/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "b32a6df46af6ceb87dff03a1004321881c21e817188a338a214202a0ac16ee72",
+          "bytes": 14496,
+          "sampleCount": 55296,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "干柿鬼鲛[鲛肌融合]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

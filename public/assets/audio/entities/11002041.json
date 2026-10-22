@@ -1,0 +1,216 @@
+{
+  "version": 1,
+  "id": "11002041",
+  "name": "Kabuto",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11002041.swf",
+    "tag": "PT_NarutoAlpha6.61Build300",
+    "bytes": 854918,
+    "sha256": "9441357f9ff7c262901c2fc36b52005120ab0f03ea561589ba01dbbeed2c9a06",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 5,
+        "time": 208.33333333333334,
+        "sound": "97",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "499",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "114",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1583.3333333333333,
+    "C_dead": 541.6666666666666
+  },
+  "sounds": {
+    "114": {
+      "source": {
+        "path": "assets/sound/swf/s114.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 22838,
+        "sha256": "83657bec2b2d11d149579a51a3b739a484d0f4729bfb12d0f3bf711bbbefd6e7",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "jump_down3",
+      "group": "down",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/114/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "2882f3285fed57df3d4bf74b0cbd4cb9c6b18dec885fb844af5c33bf105067bc",
+          "bytes": 13818,
+          "sampleCount": 38016,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/114/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "5784b0b4acbbc7b9ef756a1a72526ba855776d279afc789f912d479f6f051f07",
+          "bytes": 11728,
+          "sampleCount": 32256,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "down",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "499": {
+      "source": {
+        "path": "assets/sound/swf/s499.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 19408,
+        "sha256": "d27a439006d598899165e8c774979f097d760f2f7795e193685d1f85f30c79bf",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "药师兜-死亡",
+      "group": "药师兜",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/499/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "09fb74788a74943d57da6a40bbdcea850663cccf5193342e8d90bc44abb64563",
+          "bytes": 22681,
+          "sampleCount": 67968,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "药师兜",
+        "voice"
+      ],
+      "voice": true
+    },
+    "97": {
+      "source": {
+        "path": "assets/sound/swf/s97.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 32684,
+        "sha256": "680ce0b3147026927711548811f1e459e404f413104b94599e286cd4a7d2e5aa",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "woosh5",
+      "group": "weapon",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/97/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 20.0,
+          "enabled": true,
+          "sha256": "88662bfc1262f5ab16c253eb4e47b80e22c3016cefb4d4bc50d0e8173f3b8848",
+          "bytes": 9781,
+          "sampleCount": 26496,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/97/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 20.0,
+          "enabled": true,
+          "sha256": "c4f115f90f4b985462d5da2260b9e0e16198d6e8586a62d988b203214521bb2a",
+          "bytes": 8109,
+          "sampleCount": 21888,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/97/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 20.0,
+          "enabled": true,
+          "sha256": "a228ede2120506c3ed811a6e4f2f3daad3178f92ee4d6b3938e1adcd1327a6f5",
+          "bytes": 8109,
+          "sampleCount": 21888,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/97/4.mp3",
+          "symbolId": 4,
+          "itemId": "4",
+          "weight": 20.0,
+          "enabled": true,
+          "sha256": "89ee1589b9034c7f803c8dc3e3813049162b2e407513c198eca58c9c6c6be178",
+          "bytes": 7691,
+          "sampleCount": 20736,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/97/5.mp3",
+          "symbolId": 5,
+          "itemId": "5",
+          "weight": 20.0,
+          "enabled": true,
+          "sha256": "5b04bb8a8a3c6eeb31acbbb4f98edc87e24f8e57ba8a16bdfa9ae2cf7ae55dd5",
+          "bytes": 7691,
+          "sampleCount": 20736,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "weapon",
+        "战斗技能"
+      ],
+      "voice": false
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

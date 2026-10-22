@@ -1,0 +1,255 @@
+{
+  "version": 1,
+  "id": "11002181",
+  "name": "Orochimaru",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11002181.swf",
+    "tag": "PT_NarutoAlpha7.87Build300",
+    "bytes": 791267,
+    "sha256": "1776b2ae8f75c938e3ca92c0a4c2f9f08dec2ba077d02270edeaa4d1b81cea9a",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "2835",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 5,
+        "time": 208.33333333333334,
+        "sound": "2830",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2829",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 3,
+        "time": 125.0,
+        "sound": "286",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 916.6666666666666,
+    "C_dead": 458.3333333333333
+  },
+  "sounds": {
+    "2829": {
+      "source": {
+        "path": "assets/sound/swf/s2829.swf",
+        "tag": "PT_NarutoAlpha7.79Build300",
+        "bytes": 24928,
+        "sha256": "94dce1dda339a1d9634a97cf505688f3ac8a5ef630bb88615d597640ba939002",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "大蛇丸[少年]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2829/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "5b97c58567e6e199915c139948d2a7737cb84a36390a09dd94145ed755b55c32",
+          "bytes": 27166,
+          "sampleCount": 74880,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2829/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "77f07dfef3b3056828ff32b098eb12356370e82762811ea47c838f04ad1c57e5",
+          "bytes": 10009,
+          "sampleCount": 29952,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "大蛇丸[少年]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2830": {
+      "source": {
+        "path": "assets/sound/swf/s2830.swf",
+        "tag": "PT_NarutoAlpha7.79Build300",
+        "bytes": 15529,
+        "sha256": "60fabbc1d3eff4fdb3a189e40a9c34ed3d7ae2496dab285cadbecd552115510c",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "潜影蛇手1",
+      "group": "大蛇丸[少年]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2830/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "8ffb093f158ed3cb2723f63c3f8894080f7d2ef9ff40155e25cb6beb7a58dea5",
+          "bytes": 17135,
+          "sampleCount": 47232,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "大蛇丸[少年]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2835": {
+      "source": {
+        "path": "assets/sound/swf/s2835.swf",
+        "tag": "PT_NarutoAlpha7.79Build300",
+        "bytes": 47620,
+        "sha256": "c9c8bfa5a96538291abbad36fdf89bca86e85f1ffa004e1d195387643771efa5",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "潜影蛇手YY",
+      "group": "大蛇丸[少年]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2835/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "25f52457d67940b5256e137a9b9036c450e185c1bd8031002ed571564f08d9fb",
+          "bytes": 20061,
+          "sampleCount": 55296,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2835/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "e0baf7ebfc1d877c8de36c9bfcbfd6431fd3bc6ca8411765176a24d8aec5ce72",
+          "bytes": 20061,
+          "sampleCount": 55296,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2835/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "182b2772fd9f1975a89f3358967eb3bc158072ad063f2c9d3ba4d2fad13a7782",
+          "bytes": 14627,
+          "sampleCount": 40320,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "大蛇丸[少年]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "286": {
+      "source": {
+        "path": "assets/sound/swf/s286.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 11143,
+        "sha256": "b791fd779c675d843bd726f50d7f8d683ad24c4a58a630ac67d9db5c041b299f",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "cloth3",
+      "group": "摩擦",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/286/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "b79023e8fc5afa2a0658287edb80e6379c25d71b0cb582d130e133d4a2b94638",
+          "bytes": 3682,
+          "sampleCount": 11520,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/286/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "244a6c6528564bec29cfeb67f3f6850fe17d23a1afd8969aef72a6afa2661b50",
+          "bytes": 2768,
+          "sampleCount": 8640,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/286/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "63aa49655dd0391572514ff9a6263599189880c723163be502259bdb0f2ac571",
+          "bytes": 6059,
+          "sampleCount": 19008,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "摩擦",
+        "战斗技能"
+      ],
+      "voice": false
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

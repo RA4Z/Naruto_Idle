@@ -1,0 +1,268 @@
+{
+  "version": 1,
+  "id": "11004601",
+  "name": "Udon",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11004601.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 269014,
+    "sha256": "5eddad4083fb4c4f7c8886356ef0ac55b53b64c4f2fce27721533ef8d9a59c54",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 6,
+        "time": 250.0,
+        "sound": "695",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 6,
+        "time": 250.0,
+        "sound": "758",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "698",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 0,
+        "time": 0.0,
+        "sound": "763",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 625.0,
+    "C_dead": 541.6666666666666
+  },
+  "sounds": {
+    "695": {
+      "source": {
+        "path": "assets/sound/swf/s695.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 33092,
+        "sha256": "6cf6d34dc88976d57cd0223838e2da52fd63ec7b56a578e0c2df93a0f1dc054e",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "攻击",
+      "group": "乌冬",
+      "method": 2,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/695/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "920583aa5ef0b1e69aeb9a918b9a8c772effef8f32c9de88471cc68866036ebd",
+          "bytes": 9220,
+          "sampleCount": 25344,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/695/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "0cf92c55e3d493fcbd4997392f7b661b82772660709caab9952ce74d4c28eaba",
+          "bytes": 8802,
+          "sampleCount": 24192,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/695/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "fc0e97e018b61c5585855c977b0aa19b8c8e447dd1c90a2dde7d51294c057c4d",
+          "bytes": 7966,
+          "sampleCount": 21888,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/695/4.mp3",
+          "symbolId": 4,
+          "itemId": "4",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "d275e08096e9ef6c59656e8f892ff43f68f479039936de63f43d8744f7aacc04",
+          "bytes": 10892,
+          "sampleCount": 29952,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "乌冬",
+        "voice"
+      ],
+      "voice": true
+    },
+    "698": {
+      "source": {
+        "path": "assets/sound/swf/s698.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 37710,
+        "sha256": "99d54b83e25df4b801832e7a395b486d775608940477224f869ddff111ea53aa",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "乌冬-死亡",
+      "group": "乌冬",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 2,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/698/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "a55eb7705b4a0b91de5a75bb41d1fa24cd22bb4749fed747d0d9a6b114855491",
+          "bytes": 28864,
+          "sampleCount": 79488,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/698/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "1c51fc84e830234e5daa947907647e16abe061fc851f3590bf66879a054a8c95",
+          "bytes": 16743,
+          "sampleCount": 46080,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "乌冬",
+        "voice"
+      ],
+      "voice": true
+    },
+    "758": {
+      "source": {
+        "path": "assets/sound/swf/s758.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 10475,
+        "sha256": "5ed73a9d492281092041438229c4eba44d46133413192649c5e26de1ed31e942",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "乌冬A_1hit1",
+      "group": "乌冬",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 2,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/758/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "bc76ff46e76af0ce9de772c1cff789f3236461c9790d18823301626c09650de6",
+          "bytes": 10474,
+          "sampleCount": 28800,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/758/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "3d208159e23e75c94869f9e5e42c34c78cf9e51f7dcefb77e24fb97e90cb10d4",
+          "bytes": 10056,
+          "sampleCount": 27648,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "乌冬",
+        "木叶丸 萌黄 乌冬  动作音效",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "763": {
+      "source": {
+        "path": "assets/sound/swf/s763.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 20821,
+        "sha256": "0ffa9725b2596fedba2e422a82eddec183beab70493795d24e88bfbecb447e76",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "乌冬C_dead",
+      "group": "乌冬",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 2,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/763/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "a8e211210f92a337663824e2abfba7bcb681b7a52bedb9076f2b33f966657f00",
+          "bytes": 11728,
+          "sampleCount": 32256,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/763/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "c55493aa77518ec5d02430ac751c31aba21cf252389af704cf77a50ef96edbeb",
+          "bytes": 11310,
+          "sampleCount": 31104,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "乌冬",
+        "木叶丸 萌黄 乌冬  动作音效",
+        "战斗技能"
+      ],
+      "voice": false
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

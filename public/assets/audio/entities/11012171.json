@@ -1,0 +1,172 @@
+{
+  "version": 1,
+  "id": "11012171",
+  "name": "Naruto",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11012171.swf",
+    "tag": "PT_NarutoAlpha7.55Build300",
+    "bytes": 848332,
+    "sha256": "2cb9fd29d16a66a22350512f9c9cc8d9726e0a3074bfdaea2d681e67e6d59760",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 3,
+        "time": 125.0,
+        "sound": "2597",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 8,
+        "time": 333.3333333333333,
+        "sound": "2593",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2592",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1833.3333333333333,
+    "C_dead": 583.3333333333334
+  },
+  "sounds": {
+    "2592": {
+      "source": {
+        "path": "assets/sound/swf/s2592.swf",
+        "tag": "PT_NarutoAlpha7.66Build302",
+        "bytes": 21733,
+        "sha256": "d5f1c08c50ee13df22b2d6cd2591f858cd0cd918bfe97e04457e3e705fe44062",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "鸣人[中秋]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2592/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "27d72c3df86e6186acca81aee270adcadb70cc0b9b1fd186b66555677b7bf712",
+          "bytes": 27584,
+          "sampleCount": 76032,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "鸣人[中秋]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2593": {
+      "source": {
+        "path": "assets/sound/swf/s2593.swf",
+        "tag": "PT_NarutoAlpha7.66Build302",
+        "bytes": 28077,
+        "sha256": "f5be7200c399a56cf734c937f30748a776e10add9857abe2113b475d06611308",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "通灵之术",
+      "group": "鸣人[中秋]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2593/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "7dc77c2417af238815f676140aa1d04fdb77c4c8cd1dac139572e0d763a202af",
+          "bytes": 29256,
+          "sampleCount": 80640,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "鸣人[中秋]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2597": {
+      "source": {
+        "path": "assets/sound/swf/s2597.swf",
+        "tag": "PT_NarutoAlpha7.66Build302",
+        "bytes": 21345,
+        "sha256": "3a828eaf07da1e4bcbcfececd5aa01e43b636a6db8a3c5ed68801c9855894b28",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "通灵之术yy",
+      "group": "鸣人[中秋]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2597/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "4ec97f3d974e1c8a1fc1b4083c5a76409719c2525e9ed6a2097d591f73ca4af9",
+          "bytes": 11701,
+          "sampleCount": 32256,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2597/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "d97a7b9b636bacd9c45b478df70e69417ebb18eb233f1dbf7f615c6623cbdf55",
+          "bytes": 13791,
+          "sampleCount": 38016,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "鸣人[中秋]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

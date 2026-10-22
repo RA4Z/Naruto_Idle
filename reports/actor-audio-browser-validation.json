@@ -1,0 +1,16 @@
+{
+  "stage": "native-actor-attack-death-audio",
+  "modelsWithMetadata": 743,
+  "browser": "Codex in-app browser, local dev-only QA page using actual EntityAudioPlayer",
+  "nativePlaybackEventsObserved": 8,
+  "samples": [
+    {"id":"11000701","actions":["A_1hit","C_dead"],"nativeStarts":4,"lastAttackUrl":"/assets/audio/sfx/182/1.mp3","deathUrl":"/assets/audio/sfx/316/1.mp3"},
+    {"id":"11001501","actions":["A_1hit"],"nativeStarts":3,"lastUrl":"/assets/audio/sfx/88/1.mp3"},
+    {"id":"11001401","actions":["A_1hit"],"nativeStarts":1,"lastUrl":"/assets/audio/sfx/92/2.mp3","missingPackage":"871","missingEventNotSubstituted":true}
+  ],
+  "originalPaddedClip": {"url":"/assets/audio/sfx/287/3.mp3","leadingZeroBytes":417,"sourceBytesUnmodified":true,"browserNativePlayingEventConfirmed":true,"ffmpegFullDecode":"passed","codec":"mp3","sampleRate":44100,"channels":1,"durationSeconds":0.679125},
+  "errorsObserved":[],
+  "tests":{"actorPlayerPassed":9,"serverAssetsDatabasePassed":26,"pythonPassed":13,"typecheck":"passed","lfsRealImagesAudioChecked":23841,"productionBuild":"passed, 38.56 seconds","bundleSecretsAndFixtureCheck":"passed"},
+  "noRealAccountOrJourneyOpened":true,
+  "limits":["Sample playback and source comparisons do not mean every clip was listened to or every model tested in a hunt.","Native playback events confirm decoder execution; no subjective audio-quality claim is made.","Missing package definitions remain explicit. Other actions/jutsus/world voices and UI are separate pending categories."]
+}

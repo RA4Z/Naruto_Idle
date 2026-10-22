@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "id": "11008121",
+  "name": "Recurso 11008121",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11008121.swf",
+    "tag": "PT_NarutoAlpha9.15Build300",
+    "bytes": 1062736,
+    "sha256": "f80f80f20014855bfcf534ff92b7d781409d83363d212011dc0a01836d9a6c01",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 8,
+        "time": 333.3333333333333,
+        "sound": "3951",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 18,
+        "time": 750.0,
+        "sound": "3958",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "3950",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 2416.6666666666665,
+    "C_dead": 833.3333333333334
+  },
+  "sounds": {
+    "3950": {
+      "source": {
+        "path": "assets/sound/swf/s3950.swf",
+        "tag": "PT_NarutoAlpha8.83Build300",
+        "bytes": 62062,
+        "sha256": "dafaef58da7a87c1683f2eb789769a8bb03d34765d1ffbd5d468b8b152694900",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "黑土[泳装]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3950/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "718335697fd7e941f366b1271ec704fc554cadfb78115e8ed65f89700c3f8d0a",
+          "bytes": 90368,
+          "sampleCount": 108288,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "黑土[泳装]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3951": {
+      "source": {
+        "path": "assets/sound/swf/s3951.swf",
+        "tag": "PT_NarutoAlpha8.83Build300",
+        "bytes": 101290,
+        "sha256": "657e528aafb3d01dbfde37582d97b7e9e35ab36dad12571ea4e629efaaa66b1c",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "黑土[泳装]---土遁·土石珊瑚",
+      "group": "黑土[泳装]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3951/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "5c244be456909ce4c8f7115af61e3d57f74813b773a514644a16e8d2d1bee2c1",
+          "bytes": 138368,
+          "sampleCount": 165888,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "黑土[泳装]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3958": {
+      "source": {
+        "path": "assets/sound/swf/s3958.swf",
+        "tag": "PT_NarutoAlpha8.83Build300",
+        "bytes": 22481,
+        "sha256": "f865e6f434106a9b31c903ebef1ff7ad16dcaea70b297856c836dadb711e672e",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "2krt004E",
+      "group": "黑土[泳装]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3958/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "9625b3424b2689c7801f4cbddc8e95a2aeddfb283daaf58da47232f8671a9c1b",
+          "bytes": 32768,
+          "sampleCount": 39168,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "黑土[泳装]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

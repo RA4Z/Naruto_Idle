@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "id": "13000511",
+  "name": "Clone de Katsuyu",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/13000511.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 292025,
+    "sha256": "91c9066c551ae15ee2cc37ce5dba0c2a6d5a04cefd41b74b6f164004bfe5e028",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [],
+    "C_dead": []
+  },
+  "durations": {
+    "A_1hit": 1000.0,
+    "C_dead": 1291.6666666666667
+  },
+  "sounds": {},
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

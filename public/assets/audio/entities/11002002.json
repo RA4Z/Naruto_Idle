@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "id": "11002002",
+  "name": "Kabuto Yakushi (Alma Morta)",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11002002.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 238330,
+    "sha256": "5adef5b6993d10515088e167d55f14a76a9b3dc3e57b49dad364bdde15c22f2a",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [],
+    "C_dead": []
+  },
+  "durations": {
+    "A_1hit": 875.0,
+    "C_dead": 41.666666666666664
+  },
+  "sounds": {},
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

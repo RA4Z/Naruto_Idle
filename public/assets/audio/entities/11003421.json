@@ -1,0 +1,312 @@
+{
+  "version": 1,
+  "id": "11003421",
+  "name": "Tobirama Senju",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11003421.swf",
+    "tag": "PT_NarutoAlpha7.66Build303",
+    "bytes": 598637,
+    "sha256": "ac4e38f1b39076994c922ffab340c5664e7fb387ccfbcb7ef608ff98b55f3b98",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 3,
+        "time": 125.0,
+        "sound": "1849",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 5,
+        "time": 208.33333333333334,
+        "sound": "1814",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "1829",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 7,
+        "time": 291.6666666666667,
+        "sound": "1024",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 7,
+        "time": 291.6666666666667,
+        "sound": "285",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 8,
+        "time": 333.3333333333333,
+        "sound": "1024",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 3708.3333333333335,
+    "C_dead": 1500.0
+  },
+  "sounds": {
+    "1024": {
+      "source": {
+        "path": "assets/sound/swf/s1024.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 6601,
+        "sha256": "7b4bacfe13aa7ffc39b59339d1cb07b7e32cfb08c73fd599e05e07f19892aab6",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "二代-受击",
+      "group": "二代火影",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/1024/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 23.5,
+          "enabled": true,
+          "sha256": "ca69bd31eda48a11d4519d49fd62bbc22215854d5eaf2f8fe89c1f246afb7dc7",
+          "bytes": 3753,
+          "sampleCount": 10368,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/1024/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 23.5,
+          "enabled": true,
+          "sha256": "3ca33ec7f2653fe54bb488057c42b75f0250df16edadc321f37fc103ffc46a19",
+          "bytes": 3753,
+          "sampleCount": 10368,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/1024/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 53.0,
+          "enabled": true,
+          "sha256": "77f07dfef3b3056828ff32b098eb12356370e82762811ea47c838f04ad1c57e5",
+          "bytes": 10009,
+          "sampleCount": 29952,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "二代火影",
+        "voice"
+      ],
+      "voice": true
+    },
+    "1814": {
+      "source": {
+        "path": "assets/sound/swf/s1814.swf",
+        "tag": "PT_NarutoAlpha6.93Build300",
+        "bytes": 71984,
+        "sha256": "e9895d5d6d69db0c5cf425985fb4f7cb3ee45466857d5c10fb741aa48bcbef52",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "水舞龙之术1",
+      "group": "春节扉间",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/1814/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "d958d93eedc6c2b59e892bed64d2f7c9aaadd55b4b45de0a3f6cdb80776fbe81",
+          "bytes": 72717,
+          "sampleCount": 153216,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "春节扉间",
+        "voice"
+      ],
+      "voice": true
+    },
+    "1829": {
+      "source": {
+        "path": "assets/sound/swf/s1829.swf",
+        "tag": "PT_NarutoAlpha6.93Build300",
+        "bytes": 30157,
+        "sha256": "d72a7bf9d795751057ca88ca46f9ed23aac37fa2dc44309cce2f96261b64aad0",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "春节扉间",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/1829/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "d88e4a9070d54a76ccd1c885e852c539e5d6de671e6cc8c1717ee704195012ac",
+          "bytes": 30816,
+          "sampleCount": 111744,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "春节扉间",
+        "voice"
+      ],
+      "voice": true
+    },
+    "1849": {
+      "source": {
+        "path": "assets/sound/swf/s1849.swf",
+        "tag": "PT_NarutoAlpha7.66Build302",
+        "bytes": 33659,
+        "sha256": "656f1f2976efaf4b5eeb7559839c91c225a778ecabaae0a6c541a4c8c5cdcec0",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "新春·水舞龙之术",
+      "group": "春节扉间",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/1849/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "65ae7711231bc05cd27958522edb0fd6d9336c2db78894be36ad88745242c2ee",
+          "bytes": 10866,
+          "sampleCount": 29952,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/1849/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "95e117618e38d9fb778e8b2d67e6a119cc338e0065173c521a98ded0bca9ce0a",
+          "bytes": 16299,
+          "sampleCount": 44928,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/1849/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "a02861ebcfcdd5af4da4f53a4740be0c286a953a5087c71c988fa023698188c9",
+          "bytes": 15463,
+          "sampleCount": 42624,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "春节扉间",
+        "voice"
+      ],
+      "voice": true
+    },
+    "285": {
+      "source": {
+        "path": "assets/sound/swf/s285.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 8314,
+        "sha256": "ee3d9ccdaf99340163254df95d0a7fe6fa0027e3fbe90be66c91e38af0f6e221",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "cloth2",
+      "group": "摩擦",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/285/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "d047194c49fd71454015cdac45018f3d1bc2e297ef3ebf0063c5ea1f7ec3111d",
+          "bytes": 2585,
+          "sampleCount": 8064,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/285/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "fd7c064cf63aca92bb6f5744df17318bc405ad1aa6db76129fd2ee59d6b76fc0",
+          "bytes": 2951,
+          "sampleCount": 9216,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/285/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "39178379f546e85efd0ddc2ac43243886f6fa34d64abfa208ed7d7a3a937e76a",
+          "bytes": 4048,
+          "sampleCount": 12672,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "摩擦",
+        "战斗技能"
+      ],
+      "voice": false
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

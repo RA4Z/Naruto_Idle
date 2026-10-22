@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "id": "11011511",
+  "name": "Ameyuri Ringo",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11011511.swf",
+    "tag": "PT_NarutoAlpha8.78Build300",
+    "bytes": 745241,
+    "sha256": "1c881de1f1495d208802978424a3f3fe804d80c8a7a9f075359de5555a8c066d",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 1,
+        "time": 41.666666666666664,
+        "sound": "3367",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 1,
+        "time": 41.666666666666664,
+        "sound": "3365",
+        "volume": 0.9,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "3361",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 2333.3333333333335,
+    "C_dead": 541.6666666666666
+  },
+  "sounds": {
+    "3361": {
+      "source": {
+        "path": "assets/sound/swf/s3361.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 35177,
+        "sha256": "2b769e2941790665c3e6600f9704bba1d733182d2cbf98372cd94fa035fe0d1c",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "林檎雨由利[泳装]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3361/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "dfabfe44465a15d96fff1d59af4d262823b109e82f63de3deb46cce7a60cdfa3",
+          "bytes": 54848,
+          "sampleCount": 65664,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "林檎雨由利[泳装]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3365": {
+      "source": {
+        "path": "assets/sound/swf/s3365.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 63847,
+        "sha256": "f7190576d8231089973405a9c024c5728c66c1ea879fea1c8709c7ce0a4306a9",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "林檎雨由利[泳装]---雷遁·雷牙",
+      "group": "林檎雨由利[泳装]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3365/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "8232b988bbf213c1d757dd238c24777b2d9d5d529c904d6ea882429deb8f815b",
+          "bytes": 92288,
+          "sampleCount": 110592,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "林檎雨由利[泳装]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3367": {
+      "source": {
+        "path": "assets/sound/swf/s3367.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 58741,
+        "sha256": "d068d620710d58ac432fc35c8ed0339c52bd0a8d61dcdec799ad971b8ccd2b89",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "林檎雨由利[泳装]---雷遁·雷牙YY_1",
+      "group": "林檎雨由利[泳装]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3367/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "55d30a2e65e934b4278f6551819ef84f636030da827ce68b8ebd9975b0ef4627",
+          "bytes": 87488,
+          "sampleCount": 104832,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "林檎雨由利[泳装]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

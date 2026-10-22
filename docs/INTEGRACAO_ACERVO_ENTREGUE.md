@@ -65,6 +65,8 @@ Resultados consolidados em `reports/delivery-integration-summary.json` e `delive
 
 ## Loading — concluído em 22/10
 
+Atualização posterior: áudio de ataque/morte ampliado para 743 modelos; comparação de todos os 3.029 eventos e 1.150 clipes com as fontes, mantendo silêncios nativos e 11 eventos ausentes explícitos. Ver [AUDIO_NATIVO_DO_ACERVO.md](AUDIO_NATIVO_DO_ACERVO.md). Isso não conclui efeitos/jutsus e vozes das demais ações.
+
 O prefixo original tem 198 arquivos: **197 imagens e cfg.xml**. Três imagens já estavam integradas; foram recuperadas 194 adicionais, totalizando 165.437.903 bytes. Não são 198 imagens. São 194 JPEG e três PNG (19, 140, 141), estes entregues com extensão JPG: os bytes foram preservados, mas a URL pública usa PNG para corresponder ao formato real.
 
 `run_loading_batches.py --source <acervo> --max-batches 6` retoma até seis lotes sequenciais de três. Cada ciclo verifica o catálogo inteiro: SHA256 contra a fonte, formato, dimensões, decodificação completa e hash da fonte após a leitura. Reexecutar com tudo pronto valida sem duplicar a recuperação. `loading-art-validation.json` tem prova individual de 197/197. `source-config-review.json` conserva as cinco entradas/pesos originais, sem impor a escolha promocional do outro jogo.

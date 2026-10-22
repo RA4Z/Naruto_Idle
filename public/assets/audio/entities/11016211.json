@@ -1,0 +1,200 @@
+{
+  "version": 1,
+  "id": "11016211",
+  "name": "Naruto",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11016211.swf",
+    "tag": "PT_NarutoAlpha9.05Build306",
+    "bytes": 7481706,
+    "sha256": "f19c0fe62bc074d15a05d0ed622bb1ea9221f837a8177967890df9d0d1ff88c0",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 2,
+        "time": 83.33333333333333,
+        "sound": "3782",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 6,
+        "time": 250.0,
+        "sound": "3775",
+        "volume": 0.73,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 33,
+        "time": 1375.0,
+        "sound": "3799",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "3774",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 5125.0,
+    "C_dead": 750.0
+  },
+  "sounds": {
+    "3774": {
+      "source": {
+        "path": "assets/sound/swf/s3774.swf",
+        "tag": "PT_NarutoAlpha8.73Build300",
+        "bytes": 77606,
+        "sha256": "458b23fabce3318d09055e050d3aae968f86773b4375b728cd6b325302b88ae2",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "鸣人[终焉之战]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3774/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "88f9154869a00c8e613a957beafd68779146e2443f57ae72553e707dd0a21e5d",
+          "bytes": 110528,
+          "sampleCount": 132480,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "鸣人[终焉之战]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3775": {
+      "source": {
+        "path": "assets/sound/swf/s3775.swf",
+        "tag": "PT_NarutoAlpha8.73Build300",
+        "bytes": 129135,
+        "sha256": "a8abfe4888f4fd2a2f55b0adbc7998da675e9d90044212f54d5fa5dc2147f023",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "鸣人[终焉之战]---九喇嘛之力（表现1）",
+      "group": "鸣人[终焉之战]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3775/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "6ef051b3295750e4cc825a40e954634b0f205d982eeffbb56556f4cbaea1d66b",
+          "bytes": 194048,
+          "sampleCount": 232704,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "鸣人[终焉之战]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3782": {
+      "source": {
+        "path": "assets/sound/swf/s3782.swf",
+        "tag": "PT_NarutoAlpha8.73Build300",
+        "bytes": 40344,
+        "sha256": "b7d35f1cc35677f006a35bda96c6c610357428987651a862323c15061f383fde",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "鸣人[终焉之战]---九喇嘛之力（表现1）_YY",
+      "group": "鸣人[终焉之战]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3782/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "0a525dacdd9ed6cfe746137ab5077ddc3ba999d2c28e705f554be7dd5b675e2e",
+          "bytes": 52928,
+          "sampleCount": 63360,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "鸣人[终焉之战]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3799": {
+      "source": {
+        "path": "assets/sound/swf/s3799.swf",
+        "tag": "PT_NarutoAlpha8.73Build300",
+        "bytes": 28964,
+        "sha256": "b8d040783b6c0097f757af183086cfc8e37de0019c41382778597ebec14dbce8",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "鸣人[终焉之战]---九喇嘛之力（表现1）_YY_2",
+      "group": "鸣人[终焉之战]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3799/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "c789bc7d3e1b1190f161ec441a11c09eb2cfdb926a031a7c011c7ea8412aa96b",
+          "bytes": 45248,
+          "sampleCount": 54144,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "鸣人[终焉之战]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

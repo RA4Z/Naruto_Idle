@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "id": "11005451",
+  "name": "Kakuzu",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11005451.swf",
+    "tag": "PT_NarutoAlpha9.00Build301",
+    "bytes": 1640255,
+    "sha256": "0d858ec9432ed5a2331ea291308c22488cee64c97ad01cfee396042ba5d59580",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 5,
+        "time": 208.33333333333334,
+        "sound": "3588",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 6,
+        "time": 250.0,
+        "sound": "3619",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "3617",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 2208.3333333333335,
+    "C_dead": 875.0
+  },
+  "sounds": {
+    "3588": {
+      "source": {
+        "path": "assets/sound/swf/s3588.swf",
+        "tag": "PT_NarutoAlpha8.73Build300",
+        "bytes": 41394,
+        "sha256": "a948df857d25ebda20ab0b7efad5f2fe41f42a1a2bf081f231d743b7581e9340",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "角都[秽土转生]---体术攻击_1",
+      "group": "角都[秽土转生]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3588/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "db1ae166240d995b9041538592cc187d0c9a130c97034812c4452eb63bb159f3",
+          "bytes": 59648,
+          "sampleCount": 71424,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "角都[秽土转生]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3617": {
+      "source": {
+        "path": "assets/sound/swf/s3617.swf",
+        "tag": "PT_NarutoAlpha8.73Build300",
+        "bytes": 86777,
+        "sha256": "2acc3b499c0616497c23eb7c9cc361ca9e53c148ebca3423314b0a7fcd910827",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "角都[秽土转生]",
+      "method": 1,
+      "volume": 0.43,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3617/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "ec9ee2da50f4d68309084380000ec9edf3338806fbd7651dbf743f80a67fc939",
+          "bytes": 90285,
+          "sampleCount": 108288,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "角都[秽土转生]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3619": {
+      "source": {
+        "path": "assets/sound/swf/s3619.swf",
+        "tag": "PT_NarutoAlpha8.73Build300",
+        "bytes": 23904,
+        "sha256": "5030e307f0c0185a3d63510155441297e14f9ce9d937d1367d11218a642af4b9",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "角都[秽土转生]---体术攻击YY_1",
+      "group": "角都[秽土转生]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3619/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "850dc23cf54f60c20a8226a615241bbc41e8a76a44c7ba78d21bfed889619298",
+          "bytes": 25965,
+          "sampleCount": 31104,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "角都[秽土转生]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

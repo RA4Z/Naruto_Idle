@@ -1,0 +1,355 @@
+{
+  "version": 1,
+  "id": "11005831",
+  "name": "Pain: Caminho Animal",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11005831.swf",
+    "tag": "PT_NarutoAlpha8.54Build301",
+    "bytes": 542698,
+    "sha256": "a88c9f7d4b9e79463b56d6449ac5be914ea7fe99b249c1d91d4c420e3d9e2147",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 7,
+        "time": 291.6666666666667,
+        "sound": "174",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 7,
+        "time": 291.6666666666667,
+        "sound": "146",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 20,
+        "time": 833.3333333333334,
+        "sound": "210",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 35,
+        "time": 1458.3333333333333,
+        "sound": "137",
+        "volume": 0.9,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 1,
+        "time": 41.666666666666664,
+        "sound": "114",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 1,
+        "time": 41.666666666666664,
+        "sound": "284",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 2416.6666666666665,
+    "C_dead": 625.0
+  },
+  "sounds": {
+    "114": {
+      "source": {
+        "path": "assets/sound/swf/s114.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 22838,
+        "sha256": "83657bec2b2d11d149579a51a3b739a484d0f4729bfb12d0f3bf711bbbefd6e7",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "jump_down3",
+      "group": "down",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/114/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "2882f3285fed57df3d4bf74b0cbd4cb9c6b18dec885fb844af5c33bf105067bc",
+          "bytes": 13818,
+          "sampleCount": 38016,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/114/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "5784b0b4acbbc7b9ef756a1a72526ba855776d279afc789f912d479f6f051f07",
+          "bytes": 11728,
+          "sampleCount": 32256,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "down",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "137": {
+      "source": {
+        "path": "assets/sound/swf/s137.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 39090,
+        "sha256": "3bd01c198f2f1e156daf09fdc43512647e64a117f025ea7bdb90fd7b53df5d6d",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "fire",
+      "group": "skill2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/137/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "199d166e1d947788bb82b40b23ead80a0edc4e426d3c6fa025a4fcd17cc0b2b7",
+          "bytes": 15907,
+          "sampleCount": 43776,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/137/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "159816bed9302981b37c093c0cf3faaa1a22904f9e9be05a16dadcef6d9b5297",
+          "bytes": 15489,
+          "sampleCount": 42624,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/137/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "2127466d8c013f7c5c91ecdcfaaed993aeb94bba6cc01c38701e205e1e3163b5",
+          "bytes": 17579,
+          "sampleCount": 48384,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "skill2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "146": {
+      "source": {
+        "path": "assets/sound/swf/s146.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 75293,
+        "sha256": "a567b9285ed8cc359379615a95875accc9335a539aaa3ee2ce3e8847a31bf6fb",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "ski",
+      "group": "skill2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/146/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "7555c03b430bc0d926280e8082c484bc358de3d37a60cd6ff1a11be01af1c838",
+          "bytes": 30118,
+          "sampleCount": 82944,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/146/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "d7d9e4bdb666eb3f508e180ae5eb615e6931ff8ad64b0b4173135c4c7085c1d2",
+          "bytes": 27610,
+          "sampleCount": 76032,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/146/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "674697120115c8a5b59455ead8938f0c0fc4a982c324d68f4ed3e9a8ad2b5234",
+          "bytes": 28864,
+          "sampleCount": 79488,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "skill2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "174": {
+      "source": {
+        "path": "assets/sound/swf/s174.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 19041,
+        "sha256": "377cc78f65dbfb35a715797b1fe5ff566cd416daed0ec7bbd046f96320174afd",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "结印",
+      "group": "大招",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/174/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "2dfd27b8bdb8e636a57d5a79985132bea3b7a977d8ec40d13e8c6b0335c93001",
+          "bytes": 19609,
+          "sampleCount": 58752,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "大招",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "210": {
+      "source": {
+        "path": "assets/sound/swf/s210.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 20469,
+        "sha256": "0c2303b9ca9afdcb228c9657845ddf4aff439a490019b4cdd49fd4e2324dd8f2",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "water水流弹、水鲛突破",
+      "group": "大招",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/210/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "ebf5e98b9e1ce71e95d1adb724a88f067a974b374d40c501214fd6765b83c09c",
+          "bytes": 21759,
+          "sampleCount": 59904,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "大招",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "284": {
+      "source": {
+        "path": "assets/sound/swf/s284.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 9720,
+        "sha256": "a2bac3e0ab86ebad0d79f972d7b8d0445273292d22b50105e6b6a6d2f984dee2",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "cloth1",
+      "group": "摩擦",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/284/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "dd4de7eb33f86822437ae428b75f7a578bfb3ff47fd112b90c52612c88aa313a",
+          "bytes": 3865,
+          "sampleCount": 12096,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/284/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "dee11fa10c9675ef226a42ce0a68ab2ce1a9bb312d8e2a11a37d2f534bab654f",
+          "bytes": 3316,
+          "sampleCount": 10368,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/284/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "ea5f18605ab203a2ae98d023f02d7d7844a90ef2dce5563794ad23daf9bec966",
+          "bytes": 3682,
+          "sampleCount": 11520,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "摩擦",
+        "战斗技能"
+      ],
+      "voice": false
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

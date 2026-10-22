@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "id": "11015421",
+  "name": "Terceiro Kazekage",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11015421.swf",
+    "tag": "PT_NarutoAlpha8.69Build300",
+    "bytes": 3526277,
+    "sha256": "73f95e6e8fe10fd1158baecfb9d340ded10cb87bf9c4d77371d2545903a5a964",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 5,
+        "time": 208.33333333333334,
+        "sound": "3217",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 8,
+        "time": 333.3333333333333,
+        "sound": "3209",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "3207",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1208.3333333333333,
+    "C_dead": 1000.0
+  },
+  "sounds": {
+    "3207": {
+      "source": {
+        "path": "assets/sound/swf/s3207.swf",
+        "tag": "PT_NarutoAlpha8.18Build300",
+        "bytes": 11098,
+        "sha256": "879bcb97a63d493fd25bb28914687ada27f9f8c3dbc754e791d6465e2b61dcd1",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "三代风影[秽土转生]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3207/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "4898328db2c08eeb5449aaab66cab64dd589f8acf2017a47f1bdb4981476b27a",
+          "bytes": 13373,
+          "sampleCount": 36864,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "三代风影[秽土转生]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3209": {
+      "source": {
+        "path": "assets/sound/swf/s3209.swf",
+        "tag": "PT_NarutoAlpha8.18Build300",
+        "bytes": 28281,
+        "sha256": "2efa6a28f6d5314608fea7fc0c827f2fd3498c37de970045001207ee6d86e37e",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "磁遁·砂铁针袭1",
+      "group": "三代风影[秽土转生]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3209/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "6e50882d3cf5cd5065f4c6f4038ca00014a710acdb0b9c362d6b24e6558ecfc1",
+          "bytes": 29256,
+          "sampleCount": 80640,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "三代风影[秽土转生]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3217": {
+      "source": {
+        "path": "assets/sound/swf/s3217.swf",
+        "tag": "PT_NarutoAlpha8.18Build300",
+        "bytes": 71680,
+        "sha256": "b52ea3c4963e93ec9a3a3bfc7601ba85c279411c4d511df2ee13be27866bb2a8",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "磁遁·砂铁针袭YY",
+      "group": "三代风影[秽土转生]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3217/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "827adecc6043f140be6974f844e6576ed2bcafb56b811587e0750c077d57538d",
+          "bytes": 113683,
+          "sampleCount": 313344,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "三代风影[秽土转生]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "id": "11014831",
+  "name": "Sasuke",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11014831.swf",
+    "tag": "PT_NarutoAlpha9.15Build300",
+    "bytes": 2245206,
+    "sha256": "87be4e773d7b814bb290ba14b498c370ad21ada72ede625855f7937f444ecb69",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 1,
+        "time": 41.666666666666664,
+        "sound": "4092",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 5,
+        "time": 208.33333333333334,
+        "sound": "4080",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 1,
+        "time": 41.666666666666664,
+        "sound": "4091",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 2083.3333333333335,
+    "C_dead": 458.3333333333333
+  },
+  "sounds": {
+    "4080": {
+      "source": {
+        "path": "assets/sound/swf/s4080.swf",
+        "tag": "PT_NarutoAlpha9.06Build300",
+        "bytes": 40146,
+        "sha256": "753e5b66f65377e06ab031bc0fa7fc08e49dff9861980eb0800732b48b8af970",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "佐助[终焉之战]---千鸟",
+      "group": "佐助[终焉之战]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/4080/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "2a80801e35b61190016bbd5c460b54ffa018e845f3db33325eaca7ea1005049f",
+          "bytes": 41088,
+          "sampleCount": 123264,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "佐助[终焉之战]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "4091": {
+      "source": {
+        "path": "assets/sound/swf/s4091.swf",
+        "tag": "PT_NarutoAlpha9.06Build300",
+        "bytes": 41679,
+        "sha256": "6db7a72a794a9c6d65bd819e3fd9178e994d425125632f7a090937f1f2a37d66",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡_佐助[终焉之战]",
+      "group": "佐助[终焉之战]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/4091/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "322d21846efae7cdacb4c595e7194eae8fff85a9a654bb1fcb8249bc5b7a3638",
+          "bytes": 43008,
+          "sampleCount": 129024,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "佐助[终焉之战]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "4092": {
+      "source": {
+        "path": "assets/sound/swf/s4092.swf",
+        "tag": "PT_NarutoAlpha9.06Build300",
+        "bytes": 9813,
+        "sha256": "ecd21bbae4ec03bc56fbddfb300a1dc67876307da6fd452dc1295b93317d3425",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "21014831",
+      "group": "佐助[终焉之战]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/4092/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "de4dd7cbbd665c9a5a47138dc2d71ffafbddd86c854881edba5259901c77c0b8",
+          "bytes": 10752,
+          "sampleCount": 32256,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "佐助[终焉之战]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

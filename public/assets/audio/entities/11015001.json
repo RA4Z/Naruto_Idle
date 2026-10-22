@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "id": "11015001",
+  "name": "Mecha-Naruto",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11015001.swf",
+    "tag": "PT_NarutoAlpha7.87Build300",
+    "bytes": 971829,
+    "sha256": "185eac2345f576266a65ca514ee0775de5cfba1ce6864f3e644fa6ceaa50c0fc",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 2,
+        "time": 83.33333333333333,
+        "sound": "2678",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 8,
+        "time": 333.3333333333333,
+        "sound": "2672",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2669",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1541.6666666666667,
+    "C_dead": 583.3333333333334
+  },
+  "sounds": {
+    "2669": {
+      "source": {
+        "path": "assets/sound/swf/s2669.swf",
+        "tag": "PT_NarutoAlpha7.66Build302",
+        "bytes": 31538,
+        "sha256": "dda350099ff947a01dbef63910afb70a9eadc1d1fbb5c416cb40d1610d3db63c",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "机甲鸣人",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2669/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "6220158554d578eb8b5516124596bece9b0575b177e59423faca0e1645207b0b",
+          "bytes": 36361,
+          "sampleCount": 100224,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "机甲鸣人",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2672": {
+      "source": {
+        "path": "assets/sound/swf/s2672.swf",
+        "tag": "PT_NarutoAlpha7.66Build302",
+        "bytes": 17458,
+        "sha256": "7cb58817512446b5cb2ab68732555392c7a26f2bacca990504395ddc0293af3f",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "机甲鸣人连弹1",
+      "group": "机甲鸣人",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2672/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "fed01ff341422782f7f8a0ed8bce9eb782b363c08180d0c9d2e24de5fbed1c0f",
+          "bytes": 20061,
+          "sampleCount": 55296,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "机甲鸣人",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2678": {
+      "source": {
+        "path": "assets/sound/swf/s2678.swf",
+        "tag": "PT_NarutoAlpha7.66Build302",
+        "bytes": 26379,
+        "sha256": "19d0010c031cd9b11495c18a7a37eed73842250c2914b1de4ad398c1900a4a64",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "机甲鸣人连弹语音",
+      "group": "机甲鸣人",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2678/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "a581eb29c5562f1a14f10f83106cd2cd05f26f88dbbab31b2c92d34eb44ae194",
+          "bytes": 9612,
+          "sampleCount": 26496,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2678/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "676044aaaa3a39b946e1b3947ad3233ae84040f3bc256a6a2234256488989b5c",
+          "bytes": 12537,
+          "sampleCount": 34560,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2678/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "7a36968143b07a6743a7fbca766c7ef93b0c7182e70e5d937013210d115c37eb",
+          "bytes": 9612,
+          "sampleCount": 26496,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "机甲鸣人",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

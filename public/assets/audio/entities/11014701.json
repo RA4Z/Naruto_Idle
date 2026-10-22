@@ -1,0 +1,244 @@
+{
+  "version": 1,
+  "id": "11014701",
+  "name": "Kitsuchi",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11014701.swf",
+    "tag": "PT_NarutoAlpha7.28Build300",
+    "bytes": 816396,
+    "sha256": "eae37a5d25c7e3698073674af6f732be601e8878fc8e1af942d11b986afee76c",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 2,
+        "time": 83.33333333333333,
+        "sound": "2319",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 2,
+        "time": 83.33333333333333,
+        "sound": "2314",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2307",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 7,
+        "time": 291.6666666666667,
+        "sound": "170",
+        "volume": 0.77,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1166.6666666666667,
+    "C_dead": 625.0
+  },
+  "sounds": {
+    "170": {
+      "source": {
+        "path": "assets/sound/swf/s170.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 17579,
+        "sha256": "9dfedc22265a78e932df148531723a1b9f9322b1d4b5d9526ca22a009c4997e3",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "fall_mini",
+      "group": "down2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/170/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "75e5103d093765e7907da173e4ffe46469c4a00f1ce1d88510111e693b5762d6",
+          "bytes": 7130,
+          "sampleCount": 19584,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/170/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "eea7136bc40b76e07908dcd674850f51b0cda5b1144b54c3e9c68d7e93d6dc03",
+          "bytes": 6294,
+          "sampleCount": 17280,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/170/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "bd478824f5ba20e72cacac12977129282f2cc1026b7e0358bad10ec6e42eaa57",
+          "bytes": 7548,
+          "sampleCount": 20736,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "down2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "2307": {
+      "source": {
+        "path": "assets/sound/swf/s2307.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 37885,
+        "sha256": "aec96a7c7cb7e8878f74bfca287477585ec7c34a4c33a65c54a2e46b3c6bc05a",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "黄土[忍界大战]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2307/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "f46d3d747a54394ac4022a8cf50164518df612dc0aa43df912ed156d38b37123",
+          "bytes": 38472,
+          "sampleCount": 147456,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "黄土[忍界大战]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2314": {
+      "source": {
+        "path": "assets/sound/swf/s2314.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 47117,
+        "sha256": "3d2f3fb3dbb8e5e7e16958d6f39dd21800eafab87bfeb0a00b65858cd66aca60",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "体术攻击21014701",
+      "group": "黄土[忍界大战]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2314/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "50bde4f93ce08c11c9df7a01f080aeed55e5bd9fef87e5cd0e94d11aefe815c7",
+          "bytes": 14616,
+          "sampleCount": 63360,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2314/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "ac53210b6e6f08825656a497fcd99bfb3a8ead7667d32fabab2b7bb55ab33953",
+          "bytes": 19440,
+          "sampleCount": 78336,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2314/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "4acf730d9a4a7141fa8cb653aa657eaf5edc47eb0e39aff81768f935759c8986",
+          "bytes": 15456,
+          "sampleCount": 61056,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "黄土[忍界大战]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2319": {
+      "source": {
+        "path": "assets/sound/swf/s2319.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 15546,
+        "sha256": "244717fefd4cac04e49966ff69167f5fb388b2b8c4ddbe22f085bc741a7cea1c",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "体术攻击1",
+      "group": "黄土[忍界大战]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2319/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "4e53be3ffd4b8e452d65c9d5e8a8b4b688e2422c23fcd3a2a3812efd5372bddb",
+          "bytes": 30092,
+          "sampleCount": 82944,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "黄土[忍界大战]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

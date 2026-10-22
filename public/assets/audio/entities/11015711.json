@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "id": "11015711",
+  "name": "Chen",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11015711.swf",
+    "tag": "PT_NarutoAlpha8.84Build300",
+    "bytes": 1021099,
+    "sha256": "660214f4f895a886ad5ada96a67fd10e52387777b66ce01ac36340afab1ce269",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 3,
+        "time": 125.0,
+        "sound": "3449",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": []
+  },
+  "durations": {
+    "A_1hit": 2458.3333333333335,
+    "C_dead": 458.3333333333333
+  },
+  "sounds": {
+    "3449": {
+      "source": {
+        "path": "assets/sound/swf/s3449.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 48253,
+        "sha256": "641ec1c119806798b92c7d8632408c9d630cbf73bb951101340e70dd14815586",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "陈老师[秽土转生]---体术攻击_1",
+      "group": "陈老师[秽土转生]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3449/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "c2d2bb0058878cb97e775b3dfe166a90a99719cbc2dd229097822f00d7fa3ac8",
+          "bytes": 72128,
+          "sampleCount": 86400,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "陈老师[秽土转生]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

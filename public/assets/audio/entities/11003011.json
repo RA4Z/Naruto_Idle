@@ -1,0 +1,244 @@
+{
+  "version": 1,
+  "id": "11003011",
+  "name": "Tayuya",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11003011.swf",
+    "tag": "PT_NarutoAlpha8.20Build301",
+    "bytes": 1360156,
+    "sha256": "d7e0289ed0e50cde2c6b321947841735b41c77808fdb0a6306320a6ec64badca",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "2811",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 14,
+        "time": 583.3333333333334,
+        "sound": "2815",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2810",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "284",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1625.0,
+    "C_dead": 750.0
+  },
+  "sounds": {
+    "2810": {
+      "source": {
+        "path": "assets/sound/swf/s2810.swf",
+        "tag": "PT_NarutoAlpha7.79Build300",
+        "bytes": 10641,
+        "sha256": "a6e9d3acce8a8883bf281c0e3f4d92d20ddf51c4543bcad7a4f6a9f6b0052eff",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "多由也[秽土转生]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2810/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "dc53a81cc6723b2b70cae14664036642cdbfd0df81c8dda5534d117e459e95c4",
+          "bytes": 12537,
+          "sampleCount": 34560,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "多由也[秽土转生]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2811": {
+      "source": {
+        "path": "assets/sound/swf/s2811.swf",
+        "tag": "PT_NarutoAlpha7.79Build300",
+        "bytes": 36982,
+        "sha256": "d5979d3c927656f944d7384a1fad9e21e19001f965611426d3e160f4c0320de7",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "通灵术·怒鬼yy",
+      "group": "多由也[秽土转生]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2811/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "f4965f19e205d808462913677d7912f7f0ac2833ee34139050a51860741d013f",
+          "bytes": 12955,
+          "sampleCount": 35712,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2811/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "d9aae309f41682deddd6a9f726bf20f1e6bff975d03bc647fda6f466c6e70d7a",
+          "bytes": 18389,
+          "sampleCount": 50688,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2811/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "d4233d5cd979cf2d3b2b3b3d1c37a049b8bbd12baae4346c1bc06e1e80a2be0b",
+          "bytes": 12955,
+          "sampleCount": 35712,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "多由也[秽土转生]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2815": {
+      "source": {
+        "path": "assets/sound/swf/s2815.swf",
+        "tag": "PT_NarutoAlpha7.79Build300",
+        "bytes": 22607,
+        "sha256": "48d8205d6496b5dd692fc0a374e66901e9813d8894b5cb08a098a60bfd720a42",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "通灵术·怒鬼1",
+      "group": "多由也[秽土转生]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2815/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "4545e208441ea97f53c85ae39e7fd603efef6e5ee8ffc4fba65fcd0c91df8d1e",
+          "bytes": 25494,
+          "sampleCount": 70272,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "多由也[秽土转生]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "284": {
+      "source": {
+        "path": "assets/sound/swf/s284.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 9720,
+        "sha256": "a2bac3e0ab86ebad0d79f972d7b8d0445273292d22b50105e6b6a6d2f984dee2",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "cloth1",
+      "group": "摩擦",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/284/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "dd4de7eb33f86822437ae428b75f7a578bfb3ff47fd112b90c52612c88aa313a",
+          "bytes": 3865,
+          "sampleCount": 12096,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/284/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "dee11fa10c9675ef226a42ce0a68ab2ce1a9bb312d8e2a11a37d2f534bab654f",
+          "bytes": 3316,
+          "sampleCount": 10368,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/284/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "ea5f18605ab203a2ae98d023f02d7d7844a90ef2dce5563794ad23daf9bec966",
+          "bytes": 3682,
+          "sampleCount": 11520,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "摩擦",
+        "战斗技能"
+      ],
+      "voice": false
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

@@ -1,0 +1,222 @@
+{
+  "version": 1,
+  "id": "11001301",
+  "name": "Gaara",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11001301.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 423366,
+    "sha256": "bca0f8cde1e528d485c66733c636ef77a4fa3baa9b404e3ae3551e89ace576b8",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "987",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "573",
+        "volume": 0.66,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "558",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 9,
+        "time": 375.0,
+        "sound": "170",
+        "volume": 0.64,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 541.6666666666666,
+    "C_dead": 1166.6666666666667
+  },
+  "sounds": {
+    "170": {
+      "source": {
+        "path": "assets/sound/swf/s170.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 17579,
+        "sha256": "9dfedc22265a78e932df148531723a1b9f9322b1d4b5d9526ca22a009c4997e3",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "fall_mini",
+      "group": "down2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/170/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "75e5103d093765e7907da173e4ffe46469c4a00f1ce1d88510111e693b5762d6",
+          "bytes": 7130,
+          "sampleCount": 19584,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/170/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "eea7136bc40b76e07908dcd674850f51b0cda5b1144b54c3e9c68d7e93d6dc03",
+          "bytes": 6294,
+          "sampleCount": 17280,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/170/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "bd478824f5ba20e72cacac12977129282f2cc1026b7e0358bad10ec6e42eaa57",
+          "bytes": 7548,
+          "sampleCount": 20736,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "down2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "558": {
+      "source": {
+        "path": "assets/sound/swf/s558.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 24851,
+        "sha256": "abe790085f25b44ac37b3522033cecd7327c3c9fd13da46541630334c0ce774d",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "我爱罗-少年-死亡",
+      "group": "我爱罗",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/558/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "b439edc18164b8291f930f80aa2146a350b2ac46c455e88feb8909ecd49af893",
+          "bytes": 26905,
+          "sampleCount": 80640,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "我爱罗",
+        "voice"
+      ],
+      "voice": true
+    },
+    "573": {
+      "source": {
+        "path": "assets/sound/swf/s573.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 27399,
+        "sha256": "e52a2b36242d88aa82dd44bb85e968eb08372c6ae7cdd270ea67b0fe43320cfa",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "gar_sand1我爱罗_沙子1",
+      "group": "大招",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/573/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "475a3a2abd7c19a8fe869e4a8b660409e88805b2225f0df13224e424ddfa075a",
+          "bytes": 29282,
+          "sampleCount": 80640,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "大招",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "987": {
+      "source": {
+        "path": "assets/sound/swf/s987.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 3365,
+        "sha256": "ba4facc5da0a7a58c44178ba568fc184805b836782b120ba55919724f0089d49",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "少年我爱罗-攻击",
+      "group": "我爱罗",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/987/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "464b4183c2665617e3b4b2c7d39de2f4bc3aafb850edcf2c8a421a78cf9ab7f9",
+          "bytes": 4170,
+          "sampleCount": 11520,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "我爱罗",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

@@ -1,0 +1,244 @@
+{
+  "version": 1,
+  "id": "11001511",
+  "name": "Kankuro",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11001511.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 381787,
+    "sha256": "c43d5a64a6fd4f7556dcb74d443101997ec5145105b0a8b8b87b13f3d42b0076",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 8,
+        "time": 333.3333333333333,
+        "sound": "566",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 9,
+        "time": 375.0,
+        "sound": "92",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 9,
+        "time": 375.0,
+        "sound": "88",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "570",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 625.0,
+    "C_dead": 625.0
+  },
+  "sounds": {
+    "566": {
+      "source": {
+        "path": "assets/sound/swf/s566.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 10237,
+        "sha256": "e0717910beafeb25ab39f33f3bf6ef1401bb67bd003d6d2c1e1743ad25329b5f",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "少年-出击！（攻击、技能）",
+      "group": "勘九郎",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/566/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "f3581f55e9807335d5796aa60e34377d09f8d76064b885e55365bff8972fe084",
+          "bytes": 11545,
+          "sampleCount": 34560,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "勘九郎",
+        "voice"
+      ],
+      "voice": true
+    },
+    "570": {
+      "source": {
+        "path": "assets/sound/swf/s570.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 28245,
+        "sha256": "7829411ab7bbbd79fc82a234b1311284b62d1b255b647325c1eb8d527e23f61c",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "勘九郎-少年-死亡",
+      "group": "勘九郎",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/570/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "a3e90371c7e837b9a40eb4de2b174ce5d494cbff5f0f09b2b375adfb6aaa7c9d",
+          "bytes": 31129,
+          "sampleCount": 93312,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "勘九郎",
+        "voice"
+      ],
+      "voice": true
+    },
+    "88": {
+      "source": {
+        "path": "assets/sound/swf/s88.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 13285,
+        "sha256": "98af1fbb09b0642098eabf67af65480821c1a95504dcde486897a4c33e417094",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "woosh",
+      "group": "weapon",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/88/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "86672811824d9f6ee9d8710d41be0b76552896a61e469943042e89c34a56bfda",
+          "bytes": 6437,
+          "sampleCount": 17280,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/88/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "25a6ebbc11768b4672e83ded758b7d378fe272c4cf008df29ec24864624ec2a6",
+          "bytes": 4766,
+          "sampleCount": 12672,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/88/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "32bbc211ec90b288cd73bf4efbe11d9dcaa89d5f862f8e328cf91fb14a96bb53",
+          "bytes": 5601,
+          "sampleCount": 14976,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "weapon",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "92": {
+      "source": {
+        "path": "assets/sound/swf/s92.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 13234,
+        "sha256": "0ce0c7001d982d1242f76b1a110ef48b86f8aefb0240e84fc2bc6a5aa9cf7e9b",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "woosh2",
+      "group": "weapon",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/92/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "d4e82aecaaf5447f3d0d6b7e9a2c79cfc5a5682d159b01232af62e00efe46f82",
+          "bytes": 5184,
+          "sampleCount": 13824,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/92/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "2c48faff70bd4323e314abaf3b0fcb3f64edd602a6def4f5bf87862c1bad06b0",
+          "bytes": 6437,
+          "sampleCount": 17280,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/92/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "db3427e704df19f7234fe0a51db0578c3f0bcca36afe777516bdaeacef4e21f9",
+          "bytes": 5184,
+          "sampleCount": 13824,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "weapon",
+        "战斗技能"
+      ],
+      "voice": false
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

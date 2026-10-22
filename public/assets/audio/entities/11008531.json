@@ -1,0 +1,222 @@
+{
+  "version": 1,
+  "id": "11008531",
+  "name": "Itachi Uchiha",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11008531.swf",
+    "tag": "PT_NarutoAlpha6.00Build306",
+    "bytes": 350914,
+    "sha256": "268b49117af6a97fe44e834396611a6fd3a177b11ddcf83703fc41e4dbc77160",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "166",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 5,
+        "time": 208.33333333333334,
+        "sound": "644",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "517",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 10,
+        "time": 416.6666666666667,
+        "sound": "284",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 2541.6666666666665,
+    "C_dead": 583.3333333333334
+  },
+  "sounds": {
+    "166": {
+      "source": {
+        "path": "assets/sound/swf/s166.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 27126,
+        "sha256": "72eb32cf30606ce278983d2b9ed5b4be0816dc0d1275257117f790b7fe914d11",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "鹰攻击",
+      "group": "skill2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/166/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "bafd82fa4174f03dbb557adc8f69c018e11dcd1254c64ddaeacdd1cb60035fc1",
+          "bytes": 27610,
+          "sampleCount": 76032,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "skill2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "284": {
+      "source": {
+        "path": "assets/sound/swf/s284.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 9720,
+        "sha256": "a2bac3e0ab86ebad0d79f972d7b8d0445273292d22b50105e6b6a6d2f984dee2",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "cloth1",
+      "group": "摩擦",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/284/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "dd4de7eb33f86822437ae428b75f7a578bfb3ff47fd112b90c52612c88aa313a",
+          "bytes": 3865,
+          "sampleCount": 12096,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/284/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "dee11fa10c9675ef226a42ce0a68ab2ce1a9bb312d8e2a11a37d2f534bab654f",
+          "bytes": 3316,
+          "sampleCount": 10368,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/284/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "ea5f18605ab203a2ae98d023f02d7d7844a90ef2dce5563794ad23daf9bec966",
+          "bytes": 3682,
+          "sampleCount": 11520,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "摩擦",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "517": {
+      "source": {
+        "path": "assets/sound/swf/s517.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 22096,
+        "sha256": "8b3ea9e3b7b38a13fa8c492b8509b717cbb3898796aec89a56d9dad1ca5b552c",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "宇智波鼬-死亡",
+      "group": "宇智波鼬",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/517/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "72c4be36ff6cece3c64dcf3561f9f56f3dda698c9a7adbc6fda0aa230a1756d3",
+          "bytes": 24601,
+          "sampleCount": 73728,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "宇智波鼬",
+        "voice"
+      ],
+      "voice": true
+    },
+    "644": {
+      "source": {
+        "path": "assets/sound/swf/s644.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 21087,
+        "sha256": "b7dac4947ef88cbb70300ab8ef9c8c0b46dee1d839b44b7fb2d558b4495f3a87",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "乌鸦",
+      "group": "大招",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/644/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "076cd75df471e0a83061fc59c16931b598d11879aaa6c8e987b1c6ba1839105e",
+          "bytes": 22101,
+          "sampleCount": 61056,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "大招",
+        "战斗技能"
+      ],
+      "voice": false
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

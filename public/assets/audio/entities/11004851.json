@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "id": "11004851",
+  "name": "Sasori",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11004851.swf",
+    "tag": "PT_NarutoAlpha8.58Build300",
+    "bytes": 1219076,
+    "sha256": "ce82edde1e85d364c82b091d5f239a5a960f0a85c52de099dbdb48b1921838c5",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 3,
+        "time": 125.0,
+        "sound": "3197",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": []
+  },
+  "durations": {
+    "A_1hit": 1500.0,
+    "C_dead": 458.3333333333333
+  },
+  "sounds": {
+    "3197": {
+      "source": {
+        "path": "assets/sound/swf/s3197.swf",
+        "tag": "PT_NarutoAlpha8.18Build300",
+        "bytes": 27177,
+        "sha256": "33d80c18a63a81594c0163c768f4b89311b6601a4c0e28478115bf098d595f9a",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "蝎[绯流琥]----蝎尾攻击1",
+      "group": "蝎[绯流琥]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3197/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "e2dba68bb6e455951d6e47ea0f4743ac403b5eb987769af5ff207f8db9a93933",
+          "bytes": 28420,
+          "sampleCount": 78336,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "蝎[绯流琥]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

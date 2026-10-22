@@ -1,0 +1,244 @@
+{
+  "version": 1,
+  "id": "11001941",
+  "name": "Guy",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11001941.swf",
+    "tag": "PT_NarutoAlpha7.73Build301",
+    "bytes": 945501,
+    "sha256": "1673e481854157ae3c5e04afed6536041221f3a41faed7835dcea1b8b8538ee7",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 6,
+        "time": 250.0,
+        "sound": "2636",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 8,
+        "time": 333.3333333333333,
+        "sound": "2642",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2635",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 8,
+        "time": 333.3333333333333,
+        "sound": "285",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 2541.6666666666665,
+    "C_dead": 625.0
+  },
+  "sounds": {
+    "2635": {
+      "source": {
+        "path": "assets/sound/swf/s2635.swf",
+        "tag": "PT_NarutoAlpha7.66Build302",
+        "bytes": 13136,
+        "sha256": "e0da33ce1b592d784f7c6e36ab5b12fec48b26d8ea3a970eb69ff10a38f17cd6",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "凯[死门]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2635/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "171c564141a58f1e6b58a6c9ee3f4740712e8653b642793a83d0e00868fc5942",
+          "bytes": 22568,
+          "sampleCount": 62208,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "凯[死门]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2636": {
+      "source": {
+        "path": "assets/sound/swf/s2636.swf",
+        "tag": "PT_NarutoAlpha7.91Build300",
+        "bytes": 107007,
+        "sha256": "25bb66987d048525149e0279e05f4b07544dd0576f9588304b8a8c9ae568766a",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "夕象语音",
+      "group": "凯[死门]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2636/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "8174bc4d13460f0dae2c1e1947efc769678ffdbe7e0648e5e94533f6a0538af6",
+          "bytes": 17553,
+          "sampleCount": 48384,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2636/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "e0e58965b5992a4d078f8a62562d8ee18a72c3cb984a58460fca8ed95d337945",
+          "bytes": 56841,
+          "sampleCount": 156672,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2636/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "15354c0e5f9deeeca712c2d2227830097dd8ee96afb166c3dfc4ed336ca8fc95",
+          "bytes": 38869,
+          "sampleCount": 107136,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "凯[死门]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2642": {
+      "source": {
+        "path": "assets/sound/swf/s2642.swf",
+        "tag": "PT_NarutoAlpha7.66Build302",
+        "bytes": 43474,
+        "sha256": "49a2b053e47bb3e457e26ac37f675da362a9ed8a8d875e228106027d1a83e5de",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "夕象",
+      "group": "凯[死门]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2642/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "f08d34b92f3c8f09b9adb877639035495e0b443f0b79983befb58d20ff41af89",
+          "bytes": 44302,
+          "sampleCount": 122112,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "凯[死门]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "285": {
+      "source": {
+        "path": "assets/sound/swf/s285.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 8314,
+        "sha256": "ee3d9ccdaf99340163254df95d0a7fe6fa0027e3fbe90be66c91e38af0f6e221",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "cloth2",
+      "group": "摩擦",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/285/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "d047194c49fd71454015cdac45018f3d1bc2e297ef3ebf0063c5ea1f7ec3111d",
+          "bytes": 2585,
+          "sampleCount": 8064,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/285/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "fd7c064cf63aca92bb6f5744df17318bc405ad1aa6db76129fd2ee59d6b76fc0",
+          "bytes": 2951,
+          "sampleCount": 9216,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/285/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "39178379f546e85efd0ddc2ac43243886f6fa34d64abfa208ed7d7a3a937e76a",
+          "bytes": 4048,
+          "sampleCount": 12672,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "摩擦",
+        "战斗技能"
+      ],
+      "voice": false
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

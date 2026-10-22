@@ -1,0 +1,172 @@
+{
+  "version": 1,
+  "id": "11002811",
+  "name": "Sakon e Ukon",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11002811.swf",
+    "tag": "PT_NarutoAlpha9.11Build300",
+    "bytes": 2258049,
+    "sha256": "88b200d7240a406cf1abb0fc694ce6d685d284159e03bf973bfdd8cafc6a4361",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 3,
+        "time": 125.0,
+        "sound": "3708",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 25,
+        "time": 1041.6666666666667,
+        "sound": "3717",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "3715",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 3083.3333333333335,
+    "C_dead": 750.0
+  },
+  "sounds": {
+    "3708": {
+      "source": {
+        "path": "assets/sound/swf/s3708.swf",
+        "tag": "PT_NarutoAlpha8.73Build300",
+        "bytes": 81621,
+        "sha256": "59ce530bef92033529bb9f92bb876604700880ec0a0da1b42103822e0c6b4aec",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "左近右近[秽土转生]---双旋多连击",
+      "group": "左近右近[秽土转生]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3708/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "a2811da486486ab1d77e39036eaf295f332f7d8f8916fadaa072f6b64313b068",
+          "bytes": 110528,
+          "sampleCount": 132480,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "左近右近[秽土转生]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3715": {
+      "source": {
+        "path": "assets/sound/swf/s3715.swf",
+        "tag": "PT_NarutoAlpha8.73Build300",
+        "bytes": 41000,
+        "sha256": "442c12df2bd61ef6e2593fa5463ddde10228fd08bf99bb1a22fdec759d1d7fbe",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "1skn002E",
+      "group": "左近右近[秽土转生]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3715/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "0774f84414dfd0cbc4ad6e32213c19f21431dbf533ec4dd4bd7346c2cf8b7518",
+          "bytes": 60608,
+          "sampleCount": 72576,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "左近右近[秽土转生]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3717": {
+      "source": {
+        "path": "assets/sound/swf/s3717.swf",
+        "tag": "PT_NarutoAlpha8.73Build300",
+        "bytes": 33585,
+        "sha256": "e066b4b07d078119da3ee0818ad78411e4e9b1879de3d49d0d2f19d71b0544a0",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "1skn004E",
+      "group": "左近右近[秽土转生]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3717/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "18b918ddcf879cc8f1df6e01372e213855243a78fa9e57b77f9ba9ffead051cd",
+          "bytes": 28928,
+          "sampleCount": 34560,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/3717/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "9e1746443abaae2b3fa689cce359c72731af319becff46fb5e57c8cdacf11543",
+          "bytes": 25088,
+          "sampleCount": 29952,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "左近右近[秽土转生]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

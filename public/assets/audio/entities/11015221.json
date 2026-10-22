@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "id": "11015221",
+  "name": "Juzo Biwa",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11015221.swf",
+    "tag": "PT_NarutoAlpha8.53Build302",
+    "bytes": 790427,
+    "sha256": "5c35629a8a3aa2db98f9f2beef822ee247520ab3667dc46220be488a84edb601",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 1,
+        "time": 41.666666666666664,
+        "sound": "3139",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": []
+  },
+  "durations": {
+    "A_1hit": 1500.0,
+    "C_dead": 458.3333333333333
+  },
+  "sounds": {
+    "3139": {
+      "source": {
+        "path": "assets/sound/swf/s3139.swf",
+        "tag": "PT_NarutoAlpha8.11Build300",
+        "bytes": 25033,
+        "sha256": "b45a818d8b42b22069b4410403b78ea87f2ba85a8e660930e619bf14ae7e0a28",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "枇杷十藏[晓]--断刀·斩_1",
+      "group": "枇杷十藏",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3139/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "7ea85a1ed3e3e286fe6519717ac95ba5fe3f2c6303fe88d64394297c91b11a08",
+          "bytes": 25912,
+          "sampleCount": 71424,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "枇杷十藏",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

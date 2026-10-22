@@ -1,0 +1,160 @@
+{
+  "version": 1,
+  "id": "11015611",
+  "name": "Houichi",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11015611.swf",
+    "tag": "PT_NarutoAlpha8.76Build300",
+    "bytes": 706936,
+    "sha256": "273024c7cc68e624a97a31b0b466e799324432f4028ce07d7477db0b9ef301b1",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 0,
+        "time": 0.0,
+        "sound": "3334",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 12,
+        "time": 500.0,
+        "sound": "3355",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 31,
+        "time": 1291.6666666666667,
+        "sound": "3330",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": []
+  },
+  "durations": {
+    "A_1hit": 2750.0,
+    "C_dead": 833.3333333333334
+  },
+  "sounds": {
+    "3330": {
+      "source": {
+        "path": "assets/sound/swf/s3330.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 37611,
+        "sha256": "30fdf1ef48d81cb0c1b90cf127d93b1b0d54d59ceab0315f0e15480a8fabb123",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "法一---仙除离吸·法力铁锁",
+      "group": "法一",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3330/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "5fb1d504942dfc785ea65156917936fcc325b589f61beb458ef7aab89a6e9b55",
+          "bytes": 58688,
+          "sampleCount": 70272,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "法一",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3334": {
+      "source": {
+        "path": "assets/sound/swf/s3334.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 79524,
+        "sha256": "49e6bd5c36cc051cb805754b501f95243196e8fb595fb36d1e116a4e2bd658ac",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "法一---法力结界·千矢柱·矢[打坐]",
+      "group": "法一",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3334/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "b287402eaa77252fe82ab8dd0d2854541a420e82f683256f460b75a0642c6a36",
+          "bytes": 125888,
+          "sampleCount": 150912,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "法一",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3355": {
+      "source": {
+        "path": "assets/sound/swf/s3355.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 164295,
+        "sha256": "c7a347922b84973d3d4b87e9b81dc32d71133f456c1fec2af134534073a2cc51",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "法一---法力封印术·仙除离吸_柳琴",
+      "group": "法一",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3355/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "6aad4aaba7ecf60ef2e9bf8870b05ee41a35257bb8d5365545222c96536a76e5",
+          "bytes": 166517,
+          "sampleCount": 199296,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "法一",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

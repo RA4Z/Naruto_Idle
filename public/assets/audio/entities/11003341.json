@@ -1,0 +1,244 @@
+{
+  "version": 1,
+  "id": "11003341",
+  "name": "Hashirama Senju",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11003341.swf",
+    "tag": "PT_NarutoAlpha8.78Build300",
+    "bytes": 2624041,
+    "sha256": "6a6caa3c52f350f42596c359b58ab6ba49fb80429a164d91d2a0ecc95f3ee3c4",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 2,
+        "time": 83.33333333333333,
+        "sound": "2220",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "2227",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2200",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "170",
+        "volume": 0.63,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1375.0,
+    "C_dead": 375.0
+  },
+  "sounds": {
+    "170": {
+      "source": {
+        "path": "assets/sound/swf/s170.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 17579,
+        "sha256": "9dfedc22265a78e932df148531723a1b9f9322b1d4b5d9526ca22a009c4997e3",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "fall_mini",
+      "group": "down2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/170/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "75e5103d093765e7907da173e4ffe46469c4a00f1ce1d88510111e693b5762d6",
+          "bytes": 7130,
+          "sampleCount": 19584,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/170/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "eea7136bc40b76e07908dcd674850f51b0cda5b1144b54c3e9c68d7e93d6dc03",
+          "bytes": 6294,
+          "sampleCount": 17280,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/170/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "bd478824f5ba20e72cacac12977129282f2cc1026b7e0358bad10ec6e42eaa57",
+          "bytes": 7548,
+          "sampleCount": 20736,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "down2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "2200": {
+      "source": {
+        "path": "assets/sound/swf/s2200.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 10620,
+        "sha256": "b019eb2a4776c9bcd794b70ec1cf3f8033298770d56751a2c33efd2badc088c3",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "千手柱间[终焉之战]11003341",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2200/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "43cb7d35077a9e6e31ef7eebb68c056c035aa939588c497eaa26f3a692d515c1",
+          "bytes": 11136,
+          "sampleCount": 39168,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "千手柱间[终焉之战]11003341",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2220": {
+      "source": {
+        "path": "assets/sound/swf/s2220.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 32566,
+        "sha256": "f599bf653f9648b9b1ea6f11146ea6067a765da163af48094014190c719d1576",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "体术攻击21003351",
+      "group": "千手柱间[终焉之战]11003351",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2220/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "2996f0624b95b95a399142211dc1ecbe59d3be44d611cd9831b7c5861eec4d29",
+          "bytes": 12816,
+          "sampleCount": 42624,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2220/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "fc3564c15d9a753edbf6b1dd03b736afb35ebb1dac399341371ad3801460f39a",
+          "bytes": 15792,
+          "sampleCount": 61056,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2220/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "e1f51805aa7d2b7fa86c3bcbebcf499eb1ffb0f56bcb12150b25f1145db10421",
+          "bytes": 6144,
+          "sampleCount": 19584,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "千手柱间[终焉之战]11003351",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2227": {
+      "source": {
+        "path": "assets/sound/swf/s2227.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 9471,
+        "sha256": "7dc3dbb2d37d310c1c9eeaedefe5f64d583972d37e10786caeb114b7a6d2a1b5",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "体术攻击1",
+      "group": "千手柱间[终焉之战]11003351",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2227/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "006c599baf83a97a428e68ea5c591f944761b1ac3774fef81f6bba79be4e2ba7",
+          "bytes": 38033,
+          "sampleCount": 104832,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "千手柱间[终焉之战]11003351",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

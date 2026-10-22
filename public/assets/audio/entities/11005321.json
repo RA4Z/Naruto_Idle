@@ -1,0 +1,244 @@
+{
+  "version": 1,
+  "id": "11005321",
+  "name": "Jugo",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11005321.swf",
+    "tag": "PT_NarutoAlpha7.59Build300",
+    "bytes": 682381,
+    "sha256": "a7c332594221f142806cef58869ffd94e1ff187800498a65dda460c7e31581bf",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 2,
+        "time": 83.33333333333333,
+        "sound": "2448",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "2443",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "127",
+        "volume": 0.69,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2442",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 958.3333333333334,
+    "C_dead": 583.3333333333334
+  },
+  "sounds": {
+    "127": {
+      "source": {
+        "path": "assets/sound/swf/s127.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 25551,
+        "sha256": "55e2adc1b6257db4b3c9ea83f58751509afee3ecd518d98f3398f76dc01a1a67",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "sword",
+      "group": "hit2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/127/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "7c1306432d965b997fffae1c75f1f3a6496a03a112c3f04e8a6d0f09640f4e7a",
+          "bytes": 11310,
+          "sampleCount": 31104,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/127/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "c20b3c3ffc2b723fe78258fd679e51aa59171594eb1f2b8984d9090ee2f2a379",
+          "bytes": 9781,
+          "sampleCount": 26496,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/127/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "b1dc70faf3266b4b2704a419fe9d27b0ff28a30324b6e73a64232aaab3628410",
+          "bytes": 8945,
+          "sampleCount": 24192,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "hit2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "2442": {
+      "source": {
+        "path": "assets/sound/swf/s2442.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 17248,
+        "sha256": "ecb16465fbf3ce9a778e7a6301430854c78e917a81e5101d0033fcd35bd00d4c",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "重吾[咒印状态二]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2442/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "9866481a57547041aefb8f728dec1314878c3f783f92fdf5307899554d43793e",
+          "bytes": 20479,
+          "sampleCount": 56448,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "重吾[咒印状态二]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2443": {
+      "source": {
+        "path": "assets/sound/swf/s2443.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 13422,
+        "sha256": "3a8fa98e34c7994b1b9efec7135d3c3d2d62d930df7f0bd99efab5fbf0b50888",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "斧斩爆碎击1",
+      "group": "重吾[咒印状态二]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2443/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "a571b650830e15731544432a564cf5d9e7e346e4d0d9d014f16dc6b4c8dec4fd",
+          "bytes": 14209,
+          "sampleCount": 39168,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "重吾[咒印状态二]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2448": {
+      "source": {
+        "path": "assets/sound/swf/s2448.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 36752,
+        "sha256": "bb34781531ed147316f3d598edc347009927169dceb1e021f9aa0ef01533c056",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "斧斩爆碎击21005321",
+      "group": "重吾[咒印状态二]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2448/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "c14426f5ffc64f0020c7698e9484ab128c0df311c75c4a7eafadf8c6910afb3e",
+          "bytes": 16717,
+          "sampleCount": 46080,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2448/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "3ecdaeff49b48e93f8581d1d0b7ddf086472127a0bb602960e7b7a14b6ed724d",
+          "bytes": 18807,
+          "sampleCount": 51840,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2448/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "595b92d7b2d6fdfc58f39a3f862bada613c759faaf9d00fec7c0c0082dc57f47",
+          "bytes": 9194,
+          "sampleCount": 25344,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "重吾[咒印状态二]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

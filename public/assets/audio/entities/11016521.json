@@ -1,0 +1,200 @@
+{
+  "version": 1,
+  "id": "11016521",
+  "name": "面麻",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11016521.swf",
+    "tag": "PT_NarutoAlpha9.17Build302",
+    "bytes": 1887521,
+    "sha256": "1ff530a978b39532dce8e49f74ca4c1772516c1eddec1ab977555eeec2587af3",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 0,
+        "time": 0.0,
+        "sound": "3986",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "3976",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 13,
+        "time": 541.6666666666666,
+        "sound": "3987",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "3975",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1375.0,
+    "C_dead": 708.3333333333334
+  },
+  "sounds": {
+    "3975": {
+      "source": {
+        "path": "assets/sound/swf/s3975.swf",
+        "tag": "PT_NarutoAlpha9.06Build300",
+        "bytes": 32466,
+        "sha256": "94dcd74113f29c4901c2e6062927ddc2421246285fcc49e11d9065d78a4a1d53",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "面麻[忍者之路]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3975/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "3889da8a123c9f9765c31c63230d985116b5d7615611bc50da355ab5ad2ec564",
+          "bytes": 55808,
+          "sampleCount": 66816,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "面麻[忍者之路]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3976": {
+      "source": {
+        "path": "assets/sound/swf/s3976.swf",
+        "tag": "PT_NarutoAlpha9.06Build300",
+        "bytes": 46578,
+        "sha256": "822dfcee845aa1a9f5c0d2c760500b5fb6d2d74f7fe824c7c5ca84d4a40ecb80",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "面麻[忍者之路]---体术攻击1",
+      "group": "面麻[忍者之路]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3976/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "e928da0e8c39e95e19f89b5dc98a8c05f768f5677e86777485ef6c9e8fbfdc2f",
+          "bytes": 48384,
+          "sampleCount": 145152,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "面麻[忍者之路]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3986": {
+      "source": {
+        "path": "assets/sound/swf/s3986.swf",
+        "tag": "PT_NarutoAlpha9.06Build300",
+        "bytes": 33873,
+        "sha256": "4e4fae13bae6634c8efdfe707bd6e7ae457490d41eeae029ce02f041340488cd",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "面麻[忍者之路]---体术攻击1YY_1",
+      "group": "面麻[忍者之路]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3986/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "854843bcc7d4ae7944e51a02eadc136db62cddceb1ad09028bb23997498e2416",
+          "bytes": 60608,
+          "sampleCount": 72576,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "面麻[忍者之路]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3987": {
+      "source": {
+        "path": "assets/sound/swf/s3987.swf",
+        "tag": "PT_NarutoAlpha9.06Build300",
+        "bytes": 15346,
+        "sha256": "637c1b6d02f1ed8ee906ecd36be2adc7250d70143c025659c3da74e21b363e49",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "面麻[忍者之路]---体术攻击1YY_2",
+      "group": "面麻[忍者之路]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3987/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "8042e18ec451571a9ecc976985786b296e697ad6b4f56a2b22a4a94394f117cd",
+          "bytes": 25088,
+          "sampleCount": 29952,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "面麻[忍者之路]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

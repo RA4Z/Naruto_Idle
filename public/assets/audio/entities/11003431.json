@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "id": "11003431",
+  "name": "Tobirama Senju",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11003431.swf",
+    "tag": "PT_NarutoAlpha8.21Build300",
+    "bytes": 1066425,
+    "sha256": "855b54eea7a0991adb469778fa3015443c65797e1694b5cd715c6d1280a79452",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "2948",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 6,
+        "time": 250.0,
+        "sound": "2943",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2942",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 2625.0,
+    "C_dead": 458.3333333333333
+  },
+  "sounds": {
+    "2942": {
+      "source": {
+        "path": "assets/sound/swf/s2942.swf",
+        "tag": "PT_NarutoAlpha7.91Build300",
+        "bytes": 32118,
+        "sha256": "3dadaff65a4586da90e00207916a2fbacb26f2d18726f304e50d40b168ccb2e7",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "千手扉间[泳装]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2942/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "9e809083a406ba53093a226d02b4f2827077703a98fac8f2887513fd30429dda",
+          "bytes": 37197,
+          "sampleCount": 102528,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "千手扉间[泳装]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2943": {
+      "source": {
+        "path": "assets/sound/swf/s2943.swf",
+        "tag": "PT_NarutoAlpha7.91Build300",
+        "bytes": 47109,
+        "sha256": "208e7382c0cdcc22a228f1357cb563193dcc1bdff188224b75893a4cc6333f40",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "水遁·水断波",
+      "group": "千手扉间[泳装]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2943/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "583e6af5266f3b7b42f157522a9e6a937b009b92718704231b5cdcd858c6cb23",
+          "bytes": 50572,
+          "sampleCount": 139392,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "千手扉间[泳装]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2948": {
+      "source": {
+        "path": "assets/sound/swf/s2948.swf",
+        "tag": "PT_NarutoAlpha7.91Build300",
+        "bytes": 55072,
+        "sha256": "d57439191c829cdb73b10fd5fe3286bf80aae59121407443c1983ee18af1eb48",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "水遁·水断波yy",
+      "group": "千手扉间[泳装]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2948/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "c82c0da3ae8edc2f8d6afcaa4c26e47d4ef21916012321740b3957e37d02509a",
+          "bytes": 40541,
+          "sampleCount": 111744,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2948/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "de94134cd4d1e8d0fa91c188af384b25e67bb511b405f270c645d4c68180a91c",
+          "bytes": 27584,
+          "sampleCount": 76032,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2948/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "d12772978b11cb22565577b063289d4b1a35706a4e5434a1473411d79e69905f",
+          "bytes": 12119,
+          "sampleCount": 33408,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "千手扉间[泳装]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

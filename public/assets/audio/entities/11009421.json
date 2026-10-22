@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "id": "11009421",
+  "name": "Utakata",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11009421.swf",
+    "tag": "PT_NarutoAlpha9.14Build301",
+    "bytes": 10411734,
+    "sha256": "2491071cdde17339fbe7034dd01bb4575c9279202ecc2d5a826d67e8a9b381d9",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 0,
+        "time": 0.0,
+        "sound": "3665",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 14,
+        "time": 583.3333333333334,
+        "sound": "209",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 5416.666666666667,
+    "C_dead": 1625.0
+  },
+  "sounds": {
+    "209": {
+      "source": {
+        "path": "assets/sound/swf/s209.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 17802,
+        "sha256": "b640e415fc011358c95bc4cfcd43c1b41a2564e9cb74721337321dd3386c4e66",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "disappear2影分身消失2",
+      "group": "大招",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/209/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "b39f3cde7e4c2726d07ab5eeffbad2686e555ffbeeca52784a5a4b565a302305",
+          "bytes": 18833,
+          "sampleCount": 51840,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "大招",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "3665": {
+      "source": {
+        "path": "assets/sound/swf/s3665.swf",
+        "tag": "PT_NarutoAlpha8.73Build300",
+        "bytes": 88533,
+        "sha256": "7b07207f6aab12bb01eb3e7ccbf2aee8de0b204b3c66aa7b17b20e35fcf3e7db",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "羽高[尾兽状态]---体术攻击",
+      "group": "羽高[尾兽状态]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3665/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "f2e8102ab4be5bda93943fab231a7eebaee56869f49d650f752dd44c50722b3f",
+          "bytes": 89472,
+          "sampleCount": 268416,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "羽高[尾兽状态]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

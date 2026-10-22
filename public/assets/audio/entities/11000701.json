@@ -1,0 +1,233 @@
+{
+  "version": 1,
+  "id": "11000701",
+  "name": "Ino",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11000701.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 293920,
+    "sha256": "ea57efc9ccfe8d5d7460ab57623fe5378e366badda0a1caf257a98c7a248677d",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 7,
+        "time": 291.6666666666667,
+        "sound": "315",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 8,
+        "time": 333.3333333333333,
+        "sound": "149",
+        "volume": 0.6,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 8,
+        "time": 333.3333333333333,
+        "sound": "182",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "316",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 875.0,
+    "C_dead": 1125.0
+  },
+  "sounds": {
+    "149": {
+      "source": {
+        "path": "assets/sound/swf/s149.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 68289,
+        "sha256": "2bd493ebb4f2e4a2a4e02fe1253a7ac4c47d7bce9561e6d4132537050e07051a",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "shan",
+      "group": "skill2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/149/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "184ea53645c72f65c7356ab4364fb3448aad0ad71069c6683ce9f9ab16088d81",
+          "bytes": 26356,
+          "sampleCount": 72576,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/149/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "fb1318b412a51aff930c0a9cc6d5b4e6349dfacc305611ebeb03ad1aa0a52fc5",
+          "bytes": 23849,
+          "sampleCount": 65664,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/149/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "80a7bdbdb271a48a51b372131dcfb9f87b1b8b3e448e68e544688cdb92e328c5",
+          "bytes": 25938,
+          "sampleCount": 71424,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "skill2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "182": {
+      "source": {
+        "path": "assets/sound/swf/s182.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 3258,
+        "sha256": "ecddbdb3e0fcb66b8712563fb440bf50817bd30995cfbb8aaeae3e3e1b44ac41",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "kick_swing攻击_踢腿",
+      "group": "素材",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/182/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "80e3f0f00840fbdbf47a6270b793d559c142cc15787066594a86efa1c3fa14d4",
+          "bytes": 3787,
+          "sampleCount": 10368,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "素材",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "315": {
+      "source": {
+        "path": "assets/sound/swf/s315.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 11111,
+        "sha256": "589c4e48c04d2c14256531cf8153492159fc57e7b18d33770f6d218b987e5742",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "少年-攻击",
+      "group": "井野",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/315/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "4027e800bc2fab02e45ced504f3fb00123c36d0add3348445b64ef9ebb9f0b6e",
+          "bytes": 6937,
+          "sampleCount": 20736,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/315/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "6c3b5789edcd12a5ce62723962dc39b126ca24c06a41b91d886684fb3c6246c4",
+          "bytes": 5838,
+          "sampleCount": 16128,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "井野",
+        "voice"
+      ],
+      "voice": true
+    },
+    "316": {
+      "source": {
+        "path": "assets/sound/swf/s316.swf",
+        "tag": "PT_NarutoAlpha7.66Build302",
+        "bytes": 28643,
+        "sha256": "6c09efcee5537e3e9ab8f1d5ab85f1c5be91fe7051a87448951ba997259483dc",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "井野-少年-死亡",
+      "group": "井野",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/316/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "c6fded8cefa497da62cdd9ca1e2a083540e4386943923756081feda7f12a59c9",
+          "bytes": 29209,
+          "sampleCount": 87552,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "井野",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

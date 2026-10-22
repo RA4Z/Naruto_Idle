@@ -1,0 +1,277 @@
+{
+  "version": 1,
+  "id": "19000401",
+  "name": "Tigre",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/19000401.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 648193,
+    "sha256": "792f75f0b9ce4041a5cb034941dff083445744e46e6358e5d71d674ba892ca42",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 9,
+        "time": 375.0,
+        "sound": "623",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 9,
+        "time": 375.0,
+        "sound": "625",
+        "volume": 0.43,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 9,
+        "time": 375.0,
+        "sound": "93",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "636",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 666.6666666666666,
+    "C_dead": 708.3333333333334
+  },
+  "sounds": {
+    "623": {
+      "source": {
+        "path": "assets/sound/swf/s623.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 11136,
+        "sha256": "00b7c124f95cdb79a62040d3eb5b3531a2b7e253c28b80531fb00b6a5df9cb23",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "tiger_whoosh",
+      "group": "tigher",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/623/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "a7d19f05cef1e044d1bab26721231b00890c26578dcc0434a619a75e84fbefef",
+          "bytes": 7130,
+          "sampleCount": 19584,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/623/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "b863004a14f77cb01127688902272dc09c46dbdc874ef563569e5af5cd06a10e",
+          "bytes": 6712,
+          "sampleCount": 18432,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "tigher",
+        "voice"
+      ],
+      "voice": true
+    },
+    "625": {
+      "source": {
+        "path": "assets/sound/swf/s625.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 71458,
+        "sha256": "b1bd1a71bc805fa73235bcf2705048aab99221865d921d769475e00af78919f3",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "tiger_attack_short",
+      "group": "tigher",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/625/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "46fed37484b5ef1109b386ff501e36041270b422ee6eb78d1c60a9ecb48ab529",
+          "bytes": 19251,
+          "sampleCount": 52992,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/625/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "51ea82141f0d65d9564eafdf98746b55c4dc48ff7d3a262ca518def24120ea95",
+          "bytes": 18415,
+          "sampleCount": 50688,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/625/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "a2363443409df4aef9ccbd23908079ed84a407c7b575a39796eca43f041a35f0",
+          "bytes": 20923,
+          "sampleCount": 57600,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/625/4.mp3",
+          "symbolId": 4,
+          "itemId": "4",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "ae95fa20ac54c6a11d406a2e0713199a260222b3298f1b0b5528999abac87f78",
+          "bytes": 23849,
+          "sampleCount": 65664,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "tigher",
+        "voice"
+      ],
+      "voice": true
+    },
+    "636": {
+      "source": {
+        "path": "assets/sound/swf/s636.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 26921,
+        "sha256": "42c6109c19d466b672bb665de8cd98f7826371f447c12d2e7c3aa2959522f25a",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "dead",
+      "group": "tigher",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 2,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/636/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "349e89e8049513fc0d4f24186d6cacb2c7d64627614b6de57c4d9ee9fc35f5ce",
+          "bytes": 15907,
+          "sampleCount": 43776,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/636/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "bed877a2b96ce6d0408072552dce7fd5206d18262fa6f5b4bfc71d90a13f2a81",
+          "bytes": 13818,
+          "sampleCount": 38016,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "tigher",
+        "voice"
+      ],
+      "voice": true
+    },
+    "93": {
+      "source": {
+        "path": "assets/sound/swf/s93.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 12685,
+        "sha256": "d10efea6ca0d3717c55d7cfab1b9a44f88d5502c58afdd294bc0a5946bb52004",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "woosh3",
+      "group": "weapon",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/93/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "dd6cb16efa479994997097b36c4aa59d92b954c3fc60acaade483527e9c58750",
+          "bytes": 5184,
+          "sampleCount": 13824,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/93/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "8d48d5bd9e58579841956511079c58b56815a3f772ed066b4e9be4c7b6e1cf59",
+          "bytes": 5601,
+          "sampleCount": 14976,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/93/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "f9b20cccaf5d9d310672222cdd364da9899766ccdf0b72939ef10a716794121f",
+          "bytes": 5601,
+          "sampleCount": 14976,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "weapon",
+        "战斗技能"
+      ],
+      "voice": false
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

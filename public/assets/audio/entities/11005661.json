@@ -1,0 +1,200 @@
+{
+  "version": 1,
+  "id": "11005661",
+  "name": "Sai",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11005661.swf",
+    "tag": "PT_NarutoAlpha8.96Build300",
+    "bytes": 1629188,
+    "sha256": "52caf3835ae99754fb8d1e080e153edfc15fce8269f4a4296f49d5bd95a8374a",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 3,
+        "time": 125.0,
+        "sound": "3434",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 8,
+        "time": 333.3333333333333,
+        "sound": "3442",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 27,
+        "time": 1125.0,
+        "sound": "209",
+        "volume": 0.45,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "3433",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 2250.0,
+    "C_dead": 541.6666666666666
+  },
+  "sounds": {
+    "209": {
+      "source": {
+        "path": "assets/sound/swf/s209.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 17802,
+        "sha256": "b640e415fc011358c95bc4cfcd43c1b41a2564e9cb74721337321dd3386c4e66",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "disappear2影分身消失2",
+      "group": "大招",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/209/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "b39f3cde7e4c2726d07ab5eeffbad2686e555ffbeeca52784a5a4b565a302305",
+          "bytes": 18833,
+          "sampleCount": 51840,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "大招",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "3433": {
+      "source": {
+        "path": "assets/sound/swf/s3433.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 21170,
+        "sha256": "70fccc402d67acb40ff47ccb1392acc393d57dd38269ff977783c4bb7659e805",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "佐井[中秋]",
+      "method": 1,
+      "volume": 0.54,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3433/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "b93cbb46f89ac7292cf414abb516930b5d702d172d19650bdce4182271ea81cc",
+          "bytes": 23148,
+          "sampleCount": 27648,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "佐井[中秋]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3434": {
+      "source": {
+        "path": "assets/sound/swf/s3434.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 50274,
+        "sha256": "f49146fa885305eddee6a76fc7a66907c36ed55410b4ef2928d9f2d398398ee6",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "佐井[中秋]---体术攻击_1",
+      "group": "佐井[中秋]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3434/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "a45366916e2dd67713d833526506711b2065e129c8a39c80c139c07524a062a0",
+          "bytes": 74048,
+          "sampleCount": 88704,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "佐井[中秋]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3442": {
+      "source": {
+        "path": "assets/sound/swf/s3442.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 11507,
+        "sha256": "23cf462b7dddb1f502ea957360cd7d27c9e58954ffdfead681c71b63911aa946",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "佐井[中秋]---体术攻击_1YY",
+      "group": "佐井[中秋]",
+      "method": 1,
+      "volume": 0.77,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3442/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "0f0c4839c0e21b15c86576f539e600c6796df174de0160fffb0014b816e5d5d5",
+          "bytes": 12588,
+          "sampleCount": 14976,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "佐井[中秋]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

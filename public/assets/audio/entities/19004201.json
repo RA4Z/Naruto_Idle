@@ -1,0 +1,310 @@
+{
+  "version": 1,
+  "id": "19004201",
+  "name": "Clã Yamanaka",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/19004201.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 294183,
+    "sha256": "9f4286b37ff98687ddf7fb16b5c0e078f4bce8616f0c7165f0353432363161c4",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 8,
+        "time": 333.3333333333333,
+        "sound": "582",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 8,
+        "time": 333.3333333333333,
+        "sound": "149",
+        "volume": 0.6,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 8,
+        "time": 333.3333333333333,
+        "sound": "182",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "585",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 875.0,
+    "C_dead": 1125.0
+  },
+  "sounds": {
+    "149": {
+      "source": {
+        "path": "assets/sound/swf/s149.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 68289,
+        "sha256": "2bd493ebb4f2e4a2a4e02fe1253a7ac4c47d7bce9561e6d4132537050e07051a",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "shan",
+      "group": "skill2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/149/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "184ea53645c72f65c7356ab4364fb3448aad0ad71069c6683ce9f9ab16088d81",
+          "bytes": 26356,
+          "sampleCount": 72576,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/149/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "fb1318b412a51aff930c0a9cc6d5b4e6349dfacc305611ebeb03ad1aa0a52fc5",
+          "bytes": 23849,
+          "sampleCount": 65664,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/149/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "80a7bdbdb271a48a51b372131dcfb9f87b1b8b3e448e68e544688cdb92e328c5",
+          "bytes": 25938,
+          "sampleCount": 71424,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "skill2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "182": {
+      "source": {
+        "path": "assets/sound/swf/s182.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 3258,
+        "sha256": "ecddbdb3e0fcb66b8712563fb440bf50817bd30995cfbb8aaeae3e3e1b44ac41",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "kick_swing攻击_踢腿",
+      "group": "素材",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/182/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "80e3f0f00840fbdbf47a6270b793d559c142cc15787066594a86efa1c3fa14d4",
+          "bytes": 3787,
+          "sampleCount": 10368,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "素材",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "582": {
+      "source": {
+        "path": "assets/sound/swf/s582.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 27184,
+        "sha256": "db69b6d61371062995137dada20e76f52e959ccd3c11685473174244e32b8edf",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "短攻击",
+      "group": "萝莉",
+      "method": 2,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/582/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 16.6667,
+          "enabled": true,
+          "sha256": "e4d70b9d92417b33c237fbc5b126a0a7d9f6c41200bb6e02d8cffa3b5e626de6",
+          "bytes": 4623,
+          "sampleCount": 12672,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/582/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 16.6667,
+          "enabled": true,
+          "sha256": "90cf2d45e72261ea2f7866d85bf22c9b1418437e0f1943898cd99dc33fb2a1c2",
+          "bytes": 7130,
+          "sampleCount": 19584,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/582/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 16.6667,
+          "enabled": true,
+          "sha256": "053a4baad98a3f7353025db1b69ecbbda5a436c944c3a033d38fc0e678100492",
+          "bytes": 5458,
+          "sampleCount": 14976,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/582/4.mp3",
+          "symbolId": 4,
+          "itemId": "4",
+          "weight": 16.6667,
+          "enabled": true,
+          "sha256": "dd8fad5c8e9c089982440843f9fa6497ced7b0b2c59f81dee65298cdab5d1608",
+          "bytes": 5876,
+          "sampleCount": 16128,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/582/5.mp3",
+          "symbolId": 5,
+          "itemId": "5",
+          "weight": 16.6667,
+          "enabled": true,
+          "sha256": "83ddc160574328abd7a1e4a76f4c4d33f426a83c6b7dec8801f353c40cff8409",
+          "bytes": 5458,
+          "sampleCount": 14976,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/582/6.mp3",
+          "symbolId": 6,
+          "itemId": "6",
+          "weight": 16.6667,
+          "enabled": true,
+          "sha256": "d706fbc385ec72eb7bf6c63ffc73ab9ef9ee8b5be05c5da01b85a7a77091b5e4",
+          "bytes": 6294,
+          "sampleCount": 17280,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "萝莉",
+        "voice"
+      ],
+      "voice": true
+    },
+    "585": {
+      "source": {
+        "path": "assets/sound/swf/s585.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 65498,
+        "sha256": "27f32babc8c1ff8dfba1e210fec8886c76776a712ada7ea1645c18c8fea076e1",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "萝莉-死亡",
+      "group": "萝莉",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/585/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "e923b42210494b8b88a5438c552768f670251e12104b24dc64748ebb1236b597",
+          "bytes": 19251,
+          "sampleCount": 52992,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/585/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "0cc71a045c88023e8d765938a768289b06ff2a847770a59ef53042d92f84a6ec",
+          "bytes": 19251,
+          "sampleCount": 52992,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/585/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "118fe6fa288cb4c309b852ca1b0e3832fb1d137d745c58993388e831701cae0c",
+          "bytes": 17161,
+          "sampleCount": 47232,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/585/4.mp3",
+          "symbolId": 4,
+          "itemId": "4",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "d540ce1f742e10b0f97f876f1a9fbbc59e08a794995e876093a03357353343cc",
+          "bytes": 18833,
+          "sampleCount": 51840,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "萝莉",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

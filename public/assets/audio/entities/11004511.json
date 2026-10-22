@@ -1,0 +1,240 @@
+{
+  "version": 1,
+  "id": "11004511",
+  "name": "Konohamaru",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11004511.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 334858,
+    "sha256": "1d481a8457e28d9aeb8de6acbc51612f680c016c1f970629347cb998f9510602",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0.0,
+        "sound": "751",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "A_1hit": [
+      {
+        "frame": 0,
+        "time": 0.0,
+        "sound": "692",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 0,
+        "time": 0.0,
+        "sound": "746",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "C_dead": 666.6666666666666,
+    "A_1hit": 2125.0
+  },
+  "sounds": {
+    "692": {
+      "source": {
+        "path": "assets/sound/swf/s692.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 50386,
+        "sha256": "d8d9c8699cbd393518ec6546f5afb7a1e148dd8eb688944eee828db7df02347f",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "滑倒",
+      "group": "木叶丸",
+      "method": 2,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/692/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 16.6667,
+          "enabled": true,
+          "sha256": "d39e6b4f69dd38097d3b74a7b298f175d81abe1dc5e1f9357b0a6da0363bb4b5",
+          "bytes": 9220,
+          "sampleCount": 25344,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/692/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 16.6667,
+          "enabled": true,
+          "sha256": "9fda655666a945f33601119bbdc81d17afb3f8abc55bdf524ce3cc41883f5f8e",
+          "bytes": 10892,
+          "sampleCount": 29952,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/692/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 16.6667,
+          "enabled": true,
+          "sha256": "08a2e99823b9706dcc8e56799edd8d7adff03b3313738691b9b08a93f9881005",
+          "bytes": 12146,
+          "sampleCount": 33408,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/692/4.mp3",
+          "symbolId": 4,
+          "itemId": "4",
+          "weight": 16.6667,
+          "enabled": true,
+          "sha256": "aefe6014f15cdf07da075e26d2c7e871568a4dd2e6b7902cae0ac4a834843a23",
+          "bytes": 11728,
+          "sampleCount": 32256,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/692/5.mp3",
+          "symbolId": 5,
+          "itemId": "5",
+          "weight": 16.6667,
+          "enabled": true,
+          "sha256": "61ac4dddffab4f9afe5bc2824f4f250d94110a714c4e957d3eb2b38332b2d71b",
+          "bytes": 6294,
+          "sampleCount": 17280,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/692/6.mp3",
+          "symbolId": 6,
+          "itemId": "6",
+          "weight": 16.6667,
+          "enabled": true,
+          "sha256": "1286d510b24895b3be1920df9d706a9bd7608c400bd2a9003d4506534e0fee1d",
+          "bytes": 5458,
+          "sampleCount": 14976,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "木叶丸",
+        "voice"
+      ],
+      "voice": true
+    },
+    "746": {
+      "source": {
+        "path": "assets/sound/swf/s746.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 31068,
+        "sha256": "10f6e702551868c67f473d2551a34435ec1aae31d31ae05e40fe5293aceda45f",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "木叶丸_A_1hit",
+      "group": "木叶丸",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 2,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/746/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "93a6633b0233a3bd6744fa2d8303e92cb57913c03dfc5c417f7692087061215e",
+          "bytes": 17161,
+          "sampleCount": 47232,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/746/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "3821d67b23c6f6fd788aa1d870167fe2fefd7012edfa01e0b0c8047fb6ee86a3",
+          "bytes": 19251,
+          "sampleCount": 52992,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "木叶丸",
+        "木叶丸 萌黄 乌冬  动作音效",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "751": {
+      "source": {
+        "path": "assets/sound/swf/s751.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 19471,
+        "sha256": "808feac2aae1df38307abf2d64218beff124233db7108fb5a378cb9330e9ec2d",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "木叶丸C_dead",
+      "group": "木叶丸",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 2,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/751/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "8de010544a1fc6bbd57d0c6d0733c6e89df094e926aaf2c242abba94ef0766c8",
+          "bytes": 9638,
+          "sampleCount": 26496,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/751/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "8178409ba7c12a6d57a5a2d0932d3ef8d9f631e488c34189e00fbb1864847b98",
+          "bytes": 14236,
+          "sampleCount": 39168,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "木叶丸",
+        "木叶丸 萌黄 乌冬  动作音效",
+        "战斗技能"
+      ],
+      "voice": false
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

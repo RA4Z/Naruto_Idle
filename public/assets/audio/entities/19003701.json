@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "id": "19003701",
+  "name": "Sanguessuga Vermelha",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/19003701.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 61189,
+    "sha256": "1dfb1fa9fc2b35d167dc2c13160c8313782fee30578b4ff102403b662546bbb5",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 22,
+        "time": 916.6666666666666,
+        "sound": "599",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "631",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1583.3333333333333,
+    "C_dead": 1291.6666666666667
+  },
+  "sounds": {
+    "599": {
+      "source": {
+        "path": "assets/sound/swf/s599.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 28426,
+        "sha256": "0c16bc71c9c8175e1de43dc3deba2556e2cfdddda5f689c0fdd61a5e97f99495",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "bloodbug_attack",
+      "group": "bloodbug",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/599/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "02da692fe90cfc83063a2acb2a2d539a059f40493fced550dac4a91216145090",
+          "bytes": 12982,
+          "sampleCount": 35712,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/599/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "8d8dc3d0a8bf9c9eff69b18e2e9275e4ece03e8d838c597d6c60375dead298e5",
+          "bytes": 22177,
+          "sampleCount": 61056,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "bloodbug",
+        "voice"
+      ],
+      "voice": true
+    },
+    "631": {
+      "source": {
+        "path": "assets/sound/swf/s631.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 16420,
+        "sha256": "03e0d272a2b0c2764ee39ac0a13cc6e1fa77c69aa0ad7c3a3042e7d1b2a42fee",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "dead",
+      "group": "bloodbug",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 2,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/631/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "bc20d8d9b5b8046a740020cbaa25326fe66b6675f226ea481bd329c30bac37d5",
+          "bytes": 8384,
+          "sampleCount": 23040,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/631/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "43c4ab06127962162cccb8a71bb6796c47e934c4b8e86cc2e26a489381bd404c",
+          "bytes": 10474,
+          "sampleCount": 28800,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "bloodbug",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

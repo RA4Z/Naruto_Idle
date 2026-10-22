@@ -1,0 +1,262 @@
+{
+  "version": 1,
+  "id": "11001851",
+  "name": "Haku",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11001851.swf",
+    "tag": "PT_NarutoAlpha7.40Build301",
+    "bytes": 524336,
+    "sha256": "cac76fde01f7b1eff41e8498dd6fec823e60599cb26f80f707c64a8c82d5f6d8",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 5,
+        "time": 208.33333333333334,
+        "sound": "2263",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 5,
+        "time": 208.33333333333334,
+        "sound": "2268",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2262",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 2,
+        "time": 83.33333333333333,
+        "sound": "2262",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 9,
+        "time": 375.0,
+        "sound": "170",
+        "volume": 0.71,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 875.0,
+    "C_dead": 1125.0
+  },
+  "sounds": {
+    "170": {
+      "source": {
+        "path": "assets/sound/swf/s170.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 17579,
+        "sha256": "9dfedc22265a78e932df148531723a1b9f9322b1d4b5d9526ca22a009c4997e3",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "fall_mini",
+      "group": "down2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/170/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "75e5103d093765e7907da173e4ffe46469c4a00f1ce1d88510111e693b5762d6",
+          "bytes": 7130,
+          "sampleCount": 19584,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/170/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "eea7136bc40b76e07908dcd674850f51b0cda5b1144b54c3e9c68d7e93d6dc03",
+          "bytes": 6294,
+          "sampleCount": 17280,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/170/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "bd478824f5ba20e72cacac12977129282f2cc1026b7e0358bad10ec6e42eaa57",
+          "bytes": 7548,
+          "sampleCount": 20736,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "down2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "2262": {
+      "source": {
+        "path": "assets/sound/swf/s2262.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 15760,
+        "sha256": "2889515ad1bb869ec252150b2d6f4640528b553ae92fdbdc2d029de09fb5b1c7",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "白-漂泊武士",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2262/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "5ad621243d4498ff339c09a6becc2d88123b840f8ec238f07c56c1d8341d1f78",
+          "bytes": 18389,
+          "sampleCount": 50688,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "白-漂泊武士",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2263": {
+      "source": {
+        "path": "assets/sound/swf/s2263.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 15550,
+        "sha256": "fada140387e68e10a21e4e39936f0eb36552072051efddbddfb3babdd89b92ec",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "体术攻击21001851",
+      "group": "白-漂泊武士",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2263/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "77f07dfef3b3056828ff32b098eb12356370e82762811ea47c838f04ad1c57e5",
+          "bytes": 10009,
+          "sampleCount": 29952,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2263/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "abce2ec0a2411a6fe73f4322d2abc75558fff2aed36552a721a98844a232df4f",
+          "bytes": 6686,
+          "sampleCount": 18432,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2263/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "f79743724b65dab7067546e7d90e5f3ee30340bc506937e944ace69ee6f8b25c",
+          "bytes": 6686,
+          "sampleCount": 18432,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2263/4.mp3",
+          "symbolId": 4,
+          "itemId": "4",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "8e20ce68a0f593405dec137edce1d73d91dcd3cd7ac394cfee9fdc6bfbfecc38",
+          "bytes": 7940,
+          "sampleCount": 21888,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "白-漂泊武士",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2268": {
+      "source": {
+        "path": "assets/sound/swf/s2268.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 8123,
+        "sha256": "52504e3e2e884311eee2dd3344a1e6d49dee746dfe4bb370877ef1f161668e32",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "体术攻击1",
+      "group": "白-漂泊武士",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2268/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "d5554b402c8cfd443cca09fac6d6066a844b510c27b56abd6239549f13a0a559",
+          "bytes": 8776,
+          "sampleCount": 24192,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "白-漂泊武士",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

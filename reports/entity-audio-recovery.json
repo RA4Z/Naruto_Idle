@@ -1,174 +1,129 @@
 {
-  "checkedAt": "2026-10-21T01:29:05.464972+00:00",
+  "checkedAt": "2026-10-22T10:57:51.103464+00:00",
   "workers": 1,
   "models": [
     {
-      "id": "19000101",
-      "actions": {
-        "A_1hit": 3,
-        "C_dead": 1
-      },
-      "url": "/assets/audio/entities/19000101.json"
-    },
-    {
-      "id": "19000201",
-      "actions": {
-        "A_1hit": 3,
-        "C_dead": 1
-      },
-      "url": "/assets/audio/entities/19000201.json"
-    },
-    {
-      "id": "19004301",
-      "actions": {
-        "A_1hit": 4,
-        "C_dead": 1
-      },
-      "url": "/assets/audio/entities/19004301.json"
-    },
-    {
-      "id": "19002301",
+      "id": "11013501",
       "actions": {
         "A_1hit": 2,
         "C_dead": 1
       },
-      "url": "/assets/audio/entities/19002301.json"
+      "unresolvedEvents": 0,
+      "url": "/assets/audio/entities/11013501.json"
+    },
+    {
+      "id": "11013801",
+      "actions": {
+        "A_1hit": 2,
+        "C_dead": 1
+      },
+      "unresolvedEvents": 0,
+      "url": "/assets/audio/entities/11013801.json"
+    },
+    {
+      "id": "19009301",
+      "actions": {
+        "A_1hit": 2,
+        "C_dead": 2
+      },
+      "unresolvedEvents": 0,
+      "url": "/assets/audio/entities/19009301.json"
     }
   ],
-  "packages": 13,
-  "clips": 42,
+  "packages": 7,
+  "clips": 20,
   "newClipsThisRun": 0,
-  "actorOnlyClips": 32,
+  "actorOnlyClips": 20,
   "sourceHashesPreserved": true,
   "sources": [
     {
       "path": "assets/sound/soundConfig.xml",
       "tag": "PT_NarutoAlpha9.06Build300",
       "bytes": 67819,
-      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318"
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
     },
     {
       "path": "assets/sound/deathSoundConfig.xml",
       "tag": "PT_NarutoAlpha9.06Build300",
       "bytes": 2908,
-      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3"
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
     },
     {
-      "path": "assets/battle/role/left/19000101.swf",
-      "tag": "PT_NarutoAlpha6.00Build300",
-      "bytes": 429072,
-      "sha256": "1ae659eece478094b641609991fdd4c2495462fac5233561b4f1835f312fe5b0"
+      "path": "assets/battle/role/left/11013501.swf",
+      "tag": "PT_NarutoAlpha6.26Build300",
+      "bytes": 469322,
+      "sha256": "504d7ec1048797bac312ab0b4538b88e2cbb0671ed792e186768496c02ab598e",
+      "sourceKind": "exported-inventory"
     },
     {
-      "path": "assets/sound/swf/s92.swf",
+      "path": "assets/sound/swf/s288.swf",
       "tag": "PT_NarutoAlpha6.00Build300",
-      "bytes": 13234,
-      "sha256": "0ce0c7001d982d1242f76b1a110ef48b86f8aefb0240e84fc2bc6a5aa9cf7e9b"
+      "bytes": 33119,
+      "sha256": "385de8c94ef24bd76ce1e02a8c4c6bd9e22940def41b9b33cdee8362410f4ac6",
+      "sourceKind": "exported-inventory"
     },
     {
-      "path": "assets/sound/swf/s88.swf",
+      "path": "assets/sound/swf/s21.swf",
       "tag": "PT_NarutoAlpha6.00Build300",
-      "bytes": 13285,
-      "sha256": "98af1fbb09b0642098eabf67af65480821c1a95504dcde486897a4c33e417094"
+      "bytes": 32833,
+      "sha256": "6799a154014bc0ae07fd100442c03f25934f2d5235f7d12ec719fa1bd1259cf6",
+      "sourceKind": "exported-inventory"
     },
     {
-      "path": "assets/sound/swf/s590.swf",
+      "path": "assets/sound/swf/s170.swf",
       "tag": "PT_NarutoAlpha6.00Build300",
-      "bytes": 22290,
-      "sha256": "92628c560c51fffbf40cc57695fc1e3a1760ee6acc398a4088dd8a50f76d1fec"
+      "bytes": 17579,
+      "sha256": "9dfedc22265a78e932df148531723a1b9f9322b1d4b5d9526ca22a009c4997e3",
+      "sourceKind": "exported-inventory"
     },
     {
-      "path": "assets/sound/swf/s587.swf",
-      "tag": "PT_NarutoAlpha6.00Build300",
-      "bytes": 49819,
-      "sha256": "09ed346a02ca7407963b1e88855b86544f2ecf1e874dc19b7895aa827e207d07"
+      "path": "assets/battle/role/left/11013801.swf",
+      "tag": "PT_NarutoAlpha6.26Build300",
+      "bytes": 662745,
+      "sha256": "1959667e5d9539da7ccf29dbb1ae2c1ebb2e850766552bf49dd4ed79d512078c",
+      "sourceKind": "exported-inventory"
     },
     {
-      "path": "assets/battle/role/left/19000201.swf",
+      "path": "assets/sound/swf/s82.swf",
       "tag": "PT_NarutoAlpha6.00Build300",
-      "bytes": 393337,
-      "sha256": "de0e3f32918dcc00b996b3eb10891b727fab6351eccfaab2b15a54f686e9f21c"
+      "bytes": 24683,
+      "sha256": "7059ede78001f12ac289e87f8d1cb7bed6d5300007257fdd5fcae80901eaad8e",
+      "sourceKind": "exported-inventory"
     },
     {
-      "path": "assets/sound/swf/s93.swf",
+      "path": "assets/sound/swf/s285.swf",
       "tag": "PT_NarutoAlpha6.00Build300",
-      "bytes": 12685,
-      "sha256": "d10efea6ca0d3717c55d7cfab1b9a44f88d5502c58afdd294bc0a5946bb52004"
+      "bytes": 8314,
+      "sha256": "ee3d9ccdaf99340163254df95d0a7fe6fa0027e3fbe90be66c91e38af0f6e221",
+      "sourceKind": "exported-inventory"
     },
     {
-      "path": "assets/sound/swf/s190.swf",
+      "path": "assets/battle/role/left/19009301.swf",
       "tag": "PT_NarutoAlpha6.00Build300",
-      "bytes": 3308,
-      "sha256": "ef8577ff2fcd18b769c435d4f9b693f1d66d563cc9427c00685c29bfadd78665"
+      "bytes": 349354,
+      "sha256": "71dc54cce4f3b7a1182d4c51dee22dcfa7be76996431b04df9058a42ce8fd23e",
+      "sourceKind": "exported-inventory"
     },
     {
-      "path": "assets/sound/swf/s589.swf",
+      "path": "assets/sound/swf/s791.swf",
       "tag": "PT_NarutoAlpha6.00Build300",
-      "bytes": 16738,
-      "sha256": "974798c3f9a0aa4830018beee230d10d06ceafd78b73af9960ea5082ff3e623b"
+      "bytes": 7283,
+      "sha256": "76db928350b6d2e81bae90bd4c9c81754b6693b1734f160b766d24feece13cb3",
+      "sourceKind": "exported-inventory"
     },
     {
-      "path": "assets/sound/swf/s586.swf",
+      "path": "assets/sound/swf/s793.swf",
       "tag": "PT_NarutoAlpha6.00Build300",
-      "bytes": 34599,
-      "sha256": "25bdd0d4ba1ad0fd466a22bd21c8c6924b4718c73d82e54efc407af01b30ab54"
-    },
-    {
-      "path": "assets/battle/role/left/19004301.swf",
-      "tag": "PT_NarutoAlpha6.00Build300",
-      "bytes": 245037,
-      "sha256": "0e61c0ea36f6431191bd3a827171d57d480e1b2f0bc651b1a4504afb05ef470e"
-    },
-    {
-      "path": "assets/sound/swf/s22.swf",
-      "tag": "PT_NarutoAlpha6.00Build300",
-      "bytes": 12958,
-      "sha256": "d8122102f024d9afdd0b6986a7df1c4df2dd1024f048a9740447b39292287b17"
-    },
-    {
-      "path": "assets/sound/swf/s149.swf",
-      "tag": "PT_NarutoAlpha6.00Build300",
-      "bytes": 68289,
-      "sha256": "2bd493ebb4f2e4a2a4e02fe1253a7ac4c47d7bce9561e6d4132537050e07051a"
-    },
-    {
-      "path": "assets/sound/swf/s134.swf",
-      "tag": "PT_NarutoAlpha6.00Build300",
-      "bytes": 96984,
-      "sha256": "9b05fe1ffcecb9a5a4d7e728ce9603adceee9553c276f9a2d61baa60086a7c5a"
-    },
-    {
-      "path": "assets/sound/swf/s585.swf",
-      "tag": "PT_NarutoAlpha6.00Build300",
-      "bytes": 65498,
-      "sha256": "27f32babc8c1ff8dfba1e210fec8886c76776a712ada7ea1645c18c8fea076e1"
-    },
-    {
-      "path": "assets/battle/role/left/19002301.swf",
-      "tag": "PT_NarutoAlpha6.00Build300",
-      "bytes": 292550,
-      "sha256": "b255b1235febcb5f8a4452d50974b6644fa2e8e8f78deb5e6ad347dbad0d794d"
-    },
-    {
-      "path": "assets/sound/swf/s10.swf",
-      "tag": "PT_NarutoAlpha6.00Build300",
-      "bytes": 14490,
-      "sha256": "a8d5077d06edb7f2d1780863d7277221f22055ef66422872ed40abc459ea221a"
+      "bytes": 22975,
+      "sha256": "412e24bd396b097e406ec0d8ce5e357505673e8adc40d8cf0ace7606b0cea946",
+      "sourceKind": "exported-inventory"
     }
   ],
-  "state": "integrated-tested",
+  "state": "integrated-awaiting-tests",
+  "unresolvedPackages": [],
   "pending": [
     "Other models and actions, jutsus, world voices, remaining sound packages; all other asset categories remain pending."
-  ],
-  "validation": {
-    "domainTests": 87,
-    "serverAssetTests": 21,
-    "typecheck": true,
-    "build": true,
-    "browser": "entity-audio-browser-validation.json",
-    "production": "entity-audio-production-validation.json",
-    "addedMp3Files": 32,
-    "addedMp3Bytes": 378094,
-    "runtimeMp3Files": 113
-  }
+  ]
 }

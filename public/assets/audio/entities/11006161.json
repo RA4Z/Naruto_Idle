@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "id": "11006161",
+  "name": "Konan",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11006161.swf",
+    "tag": "PT_NarutoAlpha7.64Build300",
+    "bytes": 1050192,
+    "sha256": "41ef3d0812a30d24c60ae0079be8475190bd6da3fe51e131c1b02876e00fc2a2",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 8,
+        "time": 333.3333333333333,
+        "sound": "2706",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 11,
+        "time": 458.3333333333333,
+        "sound": "2700",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2699",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1166.6666666666667,
+    "C_dead": 958.3333333333334
+  },
+  "sounds": {
+    "2699": {
+      "source": {
+        "path": "assets/sound/swf/s2699.swf",
+        "tag": "PT_NarutoAlpha7.66Build302",
+        "bytes": 16671,
+        "sha256": "716e3321fc4c1702f3cd0f0129bd26df0f1bc939262ae0b1c5fb327a05bf3cfc",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "小南[冬日]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2699/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "492406330ab39a57c1d061ec8d50aa7b6480d37e019489b5a8afe3cc078f7c78",
+          "bytes": 19225,
+          "sampleCount": 52992,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "小南[冬日]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2700": {
+      "source": {
+        "path": "assets/sound/swf/s2700.swf",
+        "tag": "PT_NarutoAlpha7.66Build302",
+        "bytes": 11266,
+        "sha256": "5cf28b9f7eb40397d21426c0e30a36975179aaf04ac292ecb56882a4af5f2844",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "纸吹雪1",
+      "group": "小南[冬日]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2700/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "55a8574ab052bfc327b6c9277f68e8600107a239fa36ba916ec1b59324e91a01",
+          "bytes": 12537,
+          "sampleCount": 34560,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "小南[冬日]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2706": {
+      "source": {
+        "path": "assets/sound/swf/s2706.swf",
+        "tag": "PT_NarutoAlpha7.66Build302",
+        "bytes": 14302,
+        "sha256": "60793d8db91ccf6fa9fda2107e34d29e169539ff9749c92975e76e44f53b5c40",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "纸吹雪语言1",
+      "group": "小南[冬日]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2706/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "8199d3834a17368ea21890688701e780c8011f1031924870d86dc792284ffe1a",
+          "bytes": 16717,
+          "sampleCount": 46080,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "小南[冬日]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

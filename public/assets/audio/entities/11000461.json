@@ -1,0 +1,294 @@
+{
+  "version": 1,
+  "id": "11000461",
+  "name": "Lee",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11000461.swf",
+    "tag": "PT_NarutoAlpha7.39Build301",
+    "bytes": 565318,
+    "sha256": "c2759ff1c137b6284684c2022f8558da6b82df67f87e88d32e444ec3dce8debf",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 0,
+        "time": 0.0,
+        "sound": "1818",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 0,
+        "time": 0.0,
+        "sound": "2020",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2019",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 9,
+        "time": 375.0,
+        "sound": "112",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 18,
+        "time": 750.0,
+        "sound": "121",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1666.6666666666667,
+    "C_dead": 1458.3333333333333
+  },
+  "sounds": {
+    "112": {
+      "source": {
+        "path": "assets/sound/swf/s112.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 20841,
+        "sha256": "b09432c8bf31284f613855c7f134b963c6d49c842a1ab9d1a713d1f40b2699a4",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "jump_down",
+      "group": "down",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/112/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "a3b08cc37c56dddd51c52d3e44683c30063238e72682f50855b407dd4e6fdcc8",
+          "bytes": 11728,
+          "sampleCount": 32256,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/112/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "45eda7ca2d317b565036e3261f92687947a77326e2c42d7935bc37d61dab9db5",
+          "bytes": 11728,
+          "sampleCount": 32256,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "down",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "121": {
+      "source": {
+        "path": "assets/sound/swf/s121.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 37075,
+        "sha256": "95ab2994f0c82976e1b87f5c4795497de8a0f6593327a13be34ecc70ac530c43",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "fall_big",
+      "group": "down2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/121/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "d2fa03a51bafe3627798d2c8c0bbb6bec23c0b04b610c3ec2a889cbb31c5f999",
+          "bytes": 10056,
+          "sampleCount": 27648,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/121/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "44ef6eb88ea92bc48c425cd4c6829e1b9482bcc11ca48e998a88ac4f281b7f4a",
+          "bytes": 18415,
+          "sampleCount": 50688,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/121/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "4f5a5d9cf4b21b10606f66e19d6274907e3d899f19b68b786be8e868cea81de9",
+          "bytes": 15489,
+          "sampleCount": 42624,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "down2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "1818": {
+      "source": {
+        "path": "assets/sound/swf/s1818.swf",
+        "tag": "PT_NarutoAlpha6.93Build300",
+        "bytes": 27439,
+        "sha256": "2f8e127808e9dd4c5ce98861a648581bc183fa1d06afcd663d8ef304bb734f21",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "A_1hit",
+      "group": "醉拳李",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/1818/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "8edb0bde1650e13bd0e81f0e0e8dad03edda5b377b6ffec787c646884d508677",
+          "bytes": 30092,
+          "sampleCount": 82944,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "醉拳李",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2019": {
+      "source": {
+        "path": "assets/sound/swf/s2019.swf",
+        "tag": "PT_NarutoAlpha6.93Build300",
+        "bytes": 11339,
+        "sha256": "a9f4842956bb79d88dfd16b74ea5a853988d55703700d5d4df6edc4d9193353f",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "醉拳李",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2019/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "447deea74cec21e6e59a5fa57a86d63f7382e5c9c3dd940ceca5becb18543bd0",
+          "bytes": 13373,
+          "sampleCount": 36864,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "醉拳李",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2020": {
+      "source": {
+        "path": "assets/sound/swf/s2020.swf",
+        "tag": "PT_NarutoAlpha6.93Build300",
+        "bytes": 55244,
+        "sha256": "9eb175147327ff33f958f9187bb06644ab41e8f40919c1bd4e78c7e35d80bb41",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "醉拳1",
+      "group": "醉拳李",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2020/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "986feec6ceddd2b7d8ff28a6c3acd3a71794655fa2c42edaddb686102a8f78f7",
+          "bytes": 11701,
+          "sampleCount": 32256,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2020/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "10845d90cffbe35acf84c167df682cdf85cce2a693dd98a8fdc3165fcc3b84f1",
+          "bytes": 34689,
+          "sampleCount": 95616,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2020/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "52c2143a3c7f26ed10c54215ed206966a63749d4a2dbce01b9e09bd802167c2c",
+          "bytes": 18807,
+          "sampleCount": 51840,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "醉拳李",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

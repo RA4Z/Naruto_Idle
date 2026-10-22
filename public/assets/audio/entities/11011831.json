@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "id": "11011831",
+  "name": "Shisui Uchiha",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11011831.swf",
+    "tag": "PT_NarutoAlpha8.35Build300",
+    "bytes": 2457625,
+    "sha256": "3cc22997b47d79c3000170a533ed9854cfbc091d5943a54580dbc0d24a844376",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 3,
+        "time": 125.0,
+        "sound": "3006",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 5,
+        "time": 208.33333333333334,
+        "sound": "3007",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2995",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 2166.6666666666665,
+    "C_dead": 458.3333333333333
+  },
+  "sounds": {
+    "2995": {
+      "source": {
+        "path": "assets/sound/swf/s2995.swf",
+        "tag": "PT_NarutoAlpha8.11Build300",
+        "bytes": 31103,
+        "sha256": "f33bd9bb5317284cfc4b602ed0b31fc0d058251e3fe7dec0f32577daad0e7786",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "宇智波止水[新中国风]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2995/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "ae64b0e47e3ab617b1a6f8dd688454352a12a00c54eb3da2cc7fa6cf5b3e839b",
+          "bytes": 37197,
+          "sampleCount": 102528,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "宇智波止水[新中国风]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3006": {
+      "source": {
+        "path": "assets/sound/swf/s3006.swf",
+        "tag": "PT_NarutoAlpha8.11Build300",
+        "bytes": 35359,
+        "sha256": "770439e46306ffae88275612ac9ecc06cdae4cbf82089d62d5e038d37fd54a73",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "宇智波流·日晕舞yy",
+      "group": "宇智波止水[新中国风]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3006/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "ce09b4b8dd6d152da2ffb51e2dd02224c96ac7af9e726574edb2d52b5bdc1ff9",
+          "bytes": 10448,
+          "sampleCount": 28800,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/3006/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "42e49f09d55d6d758d7d59c66fae944fe7e7c78655050df054579a5e915508e8",
+          "bytes": 22150,
+          "sampleCount": 61056,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/3006/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "391be2e39a0eb4d30b66bfb832ae280d3e81803a09892f7e19d2849ca7a12556",
+          "bytes": 8358,
+          "sampleCount": 23040,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "宇智波止水[新中国风]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3007": {
+      "source": {
+        "path": "assets/sound/swf/s3007.swf",
+        "tag": "PT_NarutoAlpha8.11Build300",
+        "bytes": 20933,
+        "sha256": "4f6575d4dfeb7c8f79ad298f3db30cd59f1b1b017fd8f64e52225262b16378b8",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "宇智波流·日晕舞1",
+      "group": "宇智波止水[新中国风]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3007/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "3871439b93705990a975080a2ddede036e3036e027029878ad4c081791cda3ee",
+          "bytes": 22986,
+          "sampleCount": 63360,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "宇智波止水[新中国风]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

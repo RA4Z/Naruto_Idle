@@ -1,0 +1,233 @@
+{
+  "version": 1,
+  "id": "11004951",
+  "name": "Deidara",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11004951.swf",
+    "tag": "PT_NarutoAlpha7.15Build301",
+    "bytes": 755069,
+    "sha256": "670df1e9d6c5daebdd8bb812df4d079fb06ee22df96cc0049c4479969e640041",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 2,
+        "time": 83.33333333333333,
+        "sound": "2281",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 6,
+        "time": 250.0,
+        "sound": "2285",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2280",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 5,
+        "time": 208.33333333333334,
+        "sound": "284",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1916.6666666666667,
+    "C_dead": 500.0
+  },
+  "sounds": {
+    "2280": {
+      "source": {
+        "path": "assets/sound/swf/s2280.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 27620,
+        "sha256": "92957f6cf0b908c6bfec8b185af70528aa1cff4598c5b1677798c3f1f11fd34c",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "迪达拉[轮回祭]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2280/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "230dffda09317d15be23e5c3bfb1f3d97c73b109ab700fb972568f8e7e382d91",
+          "bytes": 28176,
+          "sampleCount": 92160,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "迪达拉[轮回祭]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2281": {
+      "source": {
+        "path": "assets/sound/swf/s2281.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 36107,
+        "sha256": "d6e293fc6d694f90ee7b844284caae0c387019d9e877eae3ca29218ba6e38920",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "粘土人偶",
+      "group": "迪达拉[轮回祭]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2281/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "cd7551688ceb59f655a14900e79c04ae397966f41afe59c8636fc566f3287a42",
+          "bytes": 26304,
+          "sampleCount": 92160,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2281/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "0141ef0ec04469506773e230b55bbb630327f6e091d4bef1b8b463fb7e075922",
+          "bytes": 11328,
+          "sampleCount": 35712,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "迪达拉[轮回祭]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2285": {
+      "source": {
+        "path": "assets/sound/swf/s2285.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 42294,
+        "sha256": "0b6f358c2e7a5a4f166f5bfa94c907356b270d5229c89d5f2a652eaab63f736c",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "粘土人偶21004951",
+      "group": "迪达拉[轮回祭]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2285/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "bf31cd67209b7e02c48e76c2da3aa4c3fae6894610ae47f4f7e53b36980e222e",
+          "bytes": 43884,
+          "sampleCount": 120960,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "迪达拉[轮回祭]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "284": {
+      "source": {
+        "path": "assets/sound/swf/s284.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 9720,
+        "sha256": "a2bac3e0ab86ebad0d79f972d7b8d0445273292d22b50105e6b6a6d2f984dee2",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "cloth1",
+      "group": "摩擦",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/284/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "dd4de7eb33f86822437ae428b75f7a578bfb3ff47fd112b90c52612c88aa313a",
+          "bytes": 3865,
+          "sampleCount": 12096,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/284/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "dee11fa10c9675ef226a42ce0a68ab2ce1a9bb312d8e2a11a37d2f534bab654f",
+          "bytes": 3316,
+          "sampleCount": 10368,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/284/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "ea5f18605ab203a2ae98d023f02d7d7844a90ef2dce5563794ad23daf9bec966",
+          "bytes": 3682,
+          "sampleCount": 11520,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "摩擦",
+        "战斗技能"
+      ],
+      "voice": false
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

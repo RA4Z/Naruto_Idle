@@ -1,0 +1,357 @@
+{
+  "version": 1,
+  "id": "11006921",
+  "name": "Mei Terumi",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11006921.swf",
+    "tag": "PT_NarutoAlpha6.00Build306",
+    "bytes": 570909,
+    "sha256": "6574d36912cef46e17124008f1856fcf0c25546ddb56db841d0bb728d4b9a2e9",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 3,
+        "time": 125.0,
+        "sound": "1070",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 3,
+        "time": 125.0,
+        "sound": "150",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 9,
+        "time": 375.0,
+        "sound": "210",
+        "volume": 0.31,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 12,
+        "time": 500.0,
+        "sound": "210",
+        "volume": 0.31,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 14,
+        "time": 583.3333333333334,
+        "sound": "210",
+        "volume": 0.31,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 16,
+        "time": 666.6666666666666,
+        "sound": "246",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 19,
+        "time": 791.6666666666666,
+        "sound": "246",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 21,
+        "time": 875.0,
+        "sound": "246",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 23,
+        "time": 958.3333333333334,
+        "sound": "246",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "1083",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 14,
+        "time": 583.3333333333334,
+        "sound": "170",
+        "volume": 0.82,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1791.6666666666667,
+    "C_dead": 1375.0
+  },
+  "sounds": {
+    "1070": {
+      "source": {
+        "path": "assets/sound/swf/s1070.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 14583,
+        "sha256": "149eae7a2816d7c6f64ae6015b96bed5a246a0c77ee380d4f7d809aac07a3857",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "哼～",
+      "group": "照美冥水影",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/1070/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "a8372a2aec6de4636c9a396aaed3d1e3c207c3e3c6b53d32637d38d5a64aacbd",
+          "bytes": 15846,
+          "sampleCount": 43776,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "照美冥水影",
+        "voice"
+      ],
+      "voice": true
+    },
+    "1083": {
+      "source": {
+        "path": "assets/sound/swf/s1083.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 22241,
+        "sha256": "6873d74887d1e948d28510c1fa1e5ad0987867f3194ebe93469aa3501d2d6848",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "死亡",
+      "group": "照美冥水影",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/1083/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "6e2653d933fa72615764fc97b350d929aa99baffd662b79ac557bd0f46679e4a",
+          "bytes": 25854,
+          "sampleCount": 71424,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "照美冥水影",
+        "voice"
+      ],
+      "voice": true
+    },
+    "150": {
+      "source": {
+        "path": "assets/sound/swf/s150.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 36357,
+        "sha256": "951b38135cea96c2b59045ca5c3b7d5b7e1f1a69a367032a1afa50be3eba57de",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "shoot",
+      "group": "skill2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/150/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "cab52b5ec13f28eae5b2191f2e7328e19faa5fb13041960a8105c0d352cb2042",
+          "bytes": 12982,
+          "sampleCount": 35712,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/150/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "4d21a3c96305083844f8839734f98d651911d7e0f2715a0085e80deb6a616c1f",
+          "bytes": 10892,
+          "sampleCount": 29952,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/150/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "311cc56645573cce71a5b2250671a58eb7e6100d2c61fa56ba7d314cbcd8580d",
+          "bytes": 16325,
+          "sampleCount": 44928,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "skill2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "170": {
+      "source": {
+        "path": "assets/sound/swf/s170.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 17579,
+        "sha256": "9dfedc22265a78e932df148531723a1b9f9322b1d4b5d9526ca22a009c4997e3",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "fall_mini",
+      "group": "down2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/170/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "75e5103d093765e7907da173e4ffe46469c4a00f1ce1d88510111e693b5762d6",
+          "bytes": 7130,
+          "sampleCount": 19584,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/170/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "eea7136bc40b76e07908dcd674850f51b0cda5b1144b54c3e9c68d7e93d6dc03",
+          "bytes": 6294,
+          "sampleCount": 17280,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/170/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "bd478824f5ba20e72cacac12977129282f2cc1026b7e0358bad10ec6e42eaa57",
+          "bytes": 7548,
+          "sampleCount": 20736,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "down2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "210": {
+      "source": {
+        "path": "assets/sound/swf/s210.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 20469,
+        "sha256": "0c2303b9ca9afdcb228c9657845ddf4aff439a490019b4cdd49fd4e2324dd8f2",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "water水流弹、水鲛突破",
+      "group": "大招",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/210/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "ebf5e98b9e1ce71e95d1adb724a88f067a974b374d40c501214fd6765b83c09c",
+          "bytes": 21759,
+          "sampleCount": 59904,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "大招",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "246": {
+      "source": {
+        "path": "assets/sound/swf/s246.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 16105,
+        "sha256": "b5acbdf04c170eed2ad288a6101ec031bfa0411222a74059eddf6972756390cc",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "mg_waterHit被水击中",
+      "group": "素材",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/246/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "8bcb28bc097fe70ebfcbcf044467b22cdbcb1b7a899162069ed90ccd5908a027",
+          "bytes": 17325,
+          "sampleCount": 47232,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "素材",
+        "战斗技能"
+      ],
+      "voice": false
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

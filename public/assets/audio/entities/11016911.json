@@ -1,0 +1,222 @@
+{
+  "version": 1,
+  "id": "11016911",
+  "name": "Recurso 11016911",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11016911.swf",
+    "tag": "PT_NarutoAlpha9.17Build302",
+    "bytes": 887127,
+    "sha256": "89a966e16c2aa6fec89de4b26b60c646a95bba24df5b300253ac9194146ae51e",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 1,
+        "time": 41.666666666666664,
+        "sound": "4115",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 2,
+        "time": 83.33333333333333,
+        "sound": "4133",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "4126",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 9,
+        "time": 375.0,
+        "sound": "172",
+        "volume": 0.18,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1041.6666666666667,
+    "C_dead": 750.0
+  },
+  "sounds": {
+    "172": {
+      "source": {
+        "path": "assets/sound/swf/s172.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 28407,
+        "sha256": "db2ea5476361d1cbe015fa1d7712b950321049d3c6006d73a60a0c93cd44e350",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "jump_down",
+      "group": "down2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/172/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "ad7e3216aad9724547f980f04d0a95a0e00d1c1f59fab286521d34ee974fe541",
+          "bytes": 9220,
+          "sampleCount": 25344,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/172/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "3d7d3050415e3881b1a0cb6d59b83085d9427aee2a64b1f94082131ead43c962",
+          "bytes": 12146,
+          "sampleCount": 33408,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/172/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "6a9b20dcffec810c9b4e0540d3f11c24ce4d2c8f13fcfcc4fbd8954b3f477c59",
+          "bytes": 11310,
+          "sampleCount": 31104,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "down2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "4115": {
+      "source": {
+        "path": "assets/sound/swf/s4115.swf",
+        "tag": "PT_NarutoAlpha9.06Build300",
+        "bytes": 23878,
+        "sha256": "741da2044bf472a4a465ad58539b43b59de00f6b1d10cc71284f7341ef3223b1",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "vo_宇智波佐良娜[下忍]_atk1",
+      "group": "佐良娜[下忍]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/4115/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "56977c97aa2bca0780d4a6b50b510cbeb59eb3fbbd0b86310fab682584125357",
+          "bytes": 26112,
+          "sampleCount": 78336,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "佐良娜[下忍]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "4126": {
+      "source": {
+        "path": "assets/sound/swf/s4126.swf",
+        "tag": "PT_NarutoAlpha9.06Build300",
+        "bytes": 55333,
+        "sha256": "d17b7c69274cea152fcd5f4ef922fa8ea1cd0e1820705703ffcec763285d193b",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "vo_宇智波佐良娜[下忍]_阵亡",
+      "group": "佐良娜[下忍]",
+      "method": 1,
+      "volume": 0.9,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/4126/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "97362f7632ea158d2f16b66def5d4caa4dac9609e76f2807e7e5528e724ba3a2",
+          "bytes": 58368,
+          "sampleCount": 87552,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "佐良娜[下忍]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "4133": {
+      "source": {
+        "path": "assets/sound/swf/s4133.swf",
+        "tag": "PT_NarutoAlpha9.06Build300",
+        "bytes": 36890,
+        "sha256": "b86233026fceb904be0218ec477c5343b2e9ec8542e79724c944e72e2f0e5bda",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "宇智波佐良娜[下忍]_atk3",
+      "group": "佐良娜[下忍]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/4133/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "0ee603239dce14f7770728a64e34c955484bf601c5ddf5df501d039ec5d103e9",
+          "bytes": 38016,
+          "sampleCount": 114048,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "佐良娜[下忍]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

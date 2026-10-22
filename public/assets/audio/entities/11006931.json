@@ -1,0 +1,244 @@
+{
+  "version": 1,
+  "id": "11006931",
+  "name": "Mei Terumi",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11006931.swf",
+    "tag": "PT_NarutoAlpha7.75Build301",
+    "bytes": 1018922,
+    "sha256": "e40765ed4fd9b07a2a8365a1b422c21c3e9193779d63175dfdf40090516f00e8",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 2,
+        "time": 83.33333333333333,
+        "sound": "2621",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 3,
+        "time": 125.0,
+        "sound": "2608",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2607",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 14,
+        "time": 583.3333333333334,
+        "sound": "170",
+        "volume": 0.82,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1125.0,
+    "C_dead": 1458.3333333333333
+  },
+  "sounds": {
+    "170": {
+      "source": {
+        "path": "assets/sound/swf/s170.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 17579,
+        "sha256": "9dfedc22265a78e932df148531723a1b9f9322b1d4b5d9526ca22a009c4997e3",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "fall_mini",
+      "group": "down2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/170/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "75e5103d093765e7907da173e4ffe46469c4a00f1ce1d88510111e693b5762d6",
+          "bytes": 7130,
+          "sampleCount": 19584,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/170/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "eea7136bc40b76e07908dcd674850f51b0cda5b1144b54c3e9c68d7e93d6dc03",
+          "bytes": 6294,
+          "sampleCount": 17280,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/170/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "bd478824f5ba20e72cacac12977129282f2cc1026b7e0358bad10ec6e42eaa57",
+          "bytes": 7548,
+          "sampleCount": 20736,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "down2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "2607": {
+      "source": {
+        "path": "assets/sound/swf/s2607.swf",
+        "tag": "PT_NarutoAlpha7.66Build302",
+        "bytes": 55940,
+        "sha256": "69cd0256598e0f126bece8e197f7f83d60c9ba505ac9a83c21382949ec90f0da",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "照美冥[中秋]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2607/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "462b823919e0ad34d4e5f477f65414a0e4a7e5acfc7fc32504d53425f544afb6",
+          "bytes": 63946,
+          "sampleCount": 176256,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "照美冥[中秋]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2608": {
+      "source": {
+        "path": "assets/sound/swf/s2608.swf",
+        "tag": "PT_NarutoAlpha7.66Build302",
+        "bytes": 20851,
+        "sha256": "b339d81524ef8180b19b76662d3f16ec92f21bee011a9179cca08e9ce7e4f4bf",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "水遁·水流鞭1",
+      "group": "照美冥[中秋]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2608/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "738380d5d1bf8ce366295da811d2e598f3d270e00b0bae80ff808727c1b0ebd4",
+          "bytes": 21732,
+          "sampleCount": 59904,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "照美冥[中秋]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2621": {
+      "source": {
+        "path": "assets/sound/swf/s2621.swf",
+        "tag": "PT_NarutoAlpha7.66Build302",
+        "bytes": 31803,
+        "sha256": "7ee632d624cf047ee4e21e6edf69dcbd9ea3a5142baeb8da3d948b4e4e8f40ea",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "水遁·水流鞭语音",
+      "group": "照美冥[中秋]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2621/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "c34e3d7e0488cad0d4fb56b7492adb7a1c4d3db03f2ee2e5492b3937ddbc2253",
+          "bytes": 9612,
+          "sampleCount": 26496,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2621/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "5b016115558e52e228dd179a5faacd95c61fa2c9ae93fec7b946b9fdbe9f2c4c",
+          "bytes": 16299,
+          "sampleCount": 44928,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2621/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "88de91eb65a1b7a24f6af8dd50c7ed0f4a3c725a60d0b08ba5ac18b27898576d",
+          "bytes": 12537,
+          "sampleCount": 34560,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "照美冥[中秋]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

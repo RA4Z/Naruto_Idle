@@ -1,0 +1,244 @@
+{
+  "version": 1,
+  "id": "11010121",
+  "name": "Kinkaku",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11010121.swf",
+    "tag": "PT_NarutoAlpha8.08Build302",
+    "bytes": 30343002,
+    "sha256": "0d8519f2bc7640ab767e4d1e10f1f9087debdecd7c0202e7c374b363e44654a4",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 10,
+        "time": 416.6666666666667,
+        "sound": "2931",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 14,
+        "time": 583.3333333333334,
+        "sound": "2786",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2785",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 17,
+        "time": 708.3333333333334,
+        "sound": "170",
+        "volume": 0.68,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 2583.3333333333335,
+    "C_dead": 1041.6666666666667
+  },
+  "sounds": {
+    "170": {
+      "source": {
+        "path": "assets/sound/swf/s170.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 17579,
+        "sha256": "9dfedc22265a78e932df148531723a1b9f9322b1d4b5d9526ca22a009c4997e3",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "fall_mini",
+      "group": "down2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/170/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "75e5103d093765e7907da173e4ffe46469c4a00f1ce1d88510111e693b5762d6",
+          "bytes": 7130,
+          "sampleCount": 19584,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/170/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "eea7136bc40b76e07908dcd674850f51b0cda5b1144b54c3e9c68d7e93d6dc03",
+          "bytes": 6294,
+          "sampleCount": 17280,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/170/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "bd478824f5ba20e72cacac12977129282f2cc1026b7e0358bad10ec6e42eaa57",
+          "bytes": 7548,
+          "sampleCount": 20736,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "down2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "2785": {
+      "source": {
+        "path": "assets/sound/swf/s2785.swf",
+        "tag": "PT_NarutoAlpha7.79Build300",
+        "bytes": 10844,
+        "sha256": "383931aa94f28204c6bfebc63180b60edc7c9f77e010a666557f904163712243",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "金角[尾兽状态二]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2785/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "a16edbbb0fa3807b5d19998721195669e91f4779e41b9a2518603edcbf0cbb4f",
+          "bytes": 12537,
+          "sampleCount": 34560,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "金角[尾兽状态二]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2786": {
+      "source": {
+        "path": "assets/sound/swf/s2786.swf",
+        "tag": "PT_NarutoAlpha7.79Build300",
+        "bytes": 34605,
+        "sha256": "0539504ffa58e9592d15d15e3fcaaf973d84d37a5c453af6bc8b73a0d2cd93db",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "野蛮冲撞",
+      "group": "金角[尾兽状态二]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2786/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "f714ea8a8ee999ea2d2fad69d6f473489349643cf6e8f78bb997a3f8f2bc4f24",
+          "bytes": 36361,
+          "sampleCount": 100224,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "金角[尾兽状态二]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2931": {
+      "source": {
+        "path": "assets/sound/swf/s2931.swf",
+        "tag": "PT_NarutoAlpha7.91Build300",
+        "bytes": 47779,
+        "sha256": "6387973cc9ea4f4227ecb2a109044955d2ad5bb3cc17966c450f6f9900eb5ed3",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "野蛮冲撞yy",
+      "group": "金角[尾兽状态二]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2931/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "f8a4ba10c0b5948991f6d01fd98c5cc36a872af288eb56625c35ca8e264d456b",
+          "bytes": 17135,
+          "sampleCount": 47232,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2931/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "8f44c618d6203af9a115d2353146e272c34a21a73fa24014b47fc15483cc3600",
+          "bytes": 19225,
+          "sampleCount": 52992,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2931/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "a13b9cea4e3a1c6cb7a32c949f0a6e5b06eb21d9bdd328517cf881064fa655ed",
+          "bytes": 22150,
+          "sampleCount": 61056,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "金角[尾兽状态二]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

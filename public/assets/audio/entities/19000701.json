@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "id": "19000701",
+  "name": "Lobo Preto",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/19000701.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 244496,
+    "sha256": "3f54192071d239138033a51c9e425603aa8e8ddfffe18f69d5ff83c24e2baa16",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 6,
+        "time": 250.0,
+        "sound": "628",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "637",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 583.3333333333334,
+    "C_dead": 583.3333333333334
+  },
+  "sounds": {
+    "628": {
+      "source": {
+        "path": "assets/sound/swf/s628.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 36028,
+        "sha256": "4db47c615f1370010f4314f2c714a423e9362c67aa899da6a7b82550f87fbdaf",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "wolf_attack_short",
+      "group": "wolf",
+      "method": 2,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/628/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "758c1e02052f51bd6f37f7c6ce70b556e614278bef3ebde873433f89dd84d7b5",
+          "bytes": 8802,
+          "sampleCount": 24192,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/628/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "a050f369596aacb8f7b0ab4d9ab79ea6526835c71347735e682f78696fb3014c",
+          "bytes": 13818,
+          "sampleCount": 38016,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/628/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "43fca1f49e11a39a3756889c689d88894de52a381083a5e197b269413c26d805",
+          "bytes": 17579,
+          "sampleCount": 48384,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "wolf",
+        "voice"
+      ],
+      "voice": true
+    },
+    "637": {
+      "source": {
+        "path": "assets/sound/swf/s637.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 24219,
+        "sha256": "ade58a403d10155b62837b6be07aff36397f5078315914b268cc2d457fe629e4",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "dead",
+      "group": "wolf",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 2,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/637/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "264fa6b84dcbe584e6ae0bc296120440cc67b300ad93dcdbdb5ecef384110a52",
+          "bytes": 12982,
+          "sampleCount": 35712,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/637/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "df2139f8e62ca9599c1a4cc8796b403604860f8a48fcb4df026449233f52c9da",
+          "bytes": 14236,
+          "sampleCount": 39168,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "wolf",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

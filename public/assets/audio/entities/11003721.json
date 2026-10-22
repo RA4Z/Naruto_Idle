@@ -1,0 +1,290 @@
+{
+  "version": 1,
+  "id": "11003721",
+  "name": "Mizuki",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11003721.swf",
+    "tag": "PT_NarutoAlpha7.64Build300",
+    "bytes": 426119,
+    "sha256": "2343e1622f7e12a7dee364f2d65c5cbc9cae35c7df2e282c503640a2624b85ba",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 6,
+        "time": 250.0,
+        "sound": "2187",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 8,
+        "time": 333.3333333333333,
+        "sound": "2186",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2185",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "2185",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 7,
+        "time": 291.6666666666667,
+        "sound": "196",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 7,
+        "time": 291.6666666666667,
+        "sound": "236",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1541.6666666666667,
+    "C_dead": 541.6666666666666
+  },
+  "sounds": {
+    "196": {
+      "source": {
+        "path": "assets/sound/swf/s196.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 3816,
+        "sha256": "3aa9850c675d52ff015390abffae8eb07c59f7d914999a600a4354e71affac95",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "默认脚步声_走02",
+      "group": "脚步",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/196/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "0dcebca566f0751d18ef0b1c33ad1e8e0b8921a28afb83e1bf1534cdb36bfb53",
+          "bytes": 4587,
+          "sampleCount": 12672,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "脚步",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "2185": {
+      "source": {
+        "path": "assets/sound/swf/s2185.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 32228,
+        "sha256": "1b8b6109c542c51495f0446380a80597312ef7049dab778480cd459bb1c310ac",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "水木[咒印]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2185/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "b941c03d46bc4445c93717eb741ac1b5fc5eb46a708f5302f20d0322eeb01579",
+          "bytes": 36361,
+          "sampleCount": 100224,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "水木[咒印]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2186": {
+      "source": {
+        "path": "assets/sound/swf/s2186.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 23326,
+        "sha256": "5a3b95515b16ab27541ca1984fb01076bcd242d9c6ef3f6c4ecfa7482c39b789",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "凶爪强袭",
+      "group": "水木[咒印]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2186/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "0b165c66ddab05216c06450507bb3d03a3c738e764cdf7891eade2e7d9cd880f",
+          "bytes": 27166,
+          "sampleCount": 74880,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "水木[咒印]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2187": {
+      "source": {
+        "path": "assets/sound/swf/s2187.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 61215,
+        "sha256": "9c4790026f2dca8b9106f2789b0b5c4cadcc4982941d8fb769110f5c491e6697",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "凶爪强袭21003721",
+      "group": "水木[咒印]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2187/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "0dfb292f5f1a6f4ef863d4e2a63ba0d0faad35c62b3baf7c06a29d5de4187595",
+          "bytes": 24240,
+          "sampleCount": 66816,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2187/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "2e52fba43ac73f2e665d524e1733563659f51d2617dbf7a4b0dd649e140f210c",
+          "bytes": 25076,
+          "sampleCount": 69120,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2187/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "8955243001bc110666d52101d98714c87621cc5c201096620d8cceec8fdfb1a8",
+          "bytes": 14627,
+          "sampleCount": 40320,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "水木[咒印]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "236": {
+      "source": {
+        "path": "assets/sound/swf/s236.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 38841,
+        "sha256": "00095a48a10fb715ca5e277bf407d5d179039205ec49c843dbc489d4506dca9d",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "nidalee_pounce_land",
+      "group": "land",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/236/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "32b89eb3e093e19593353bc5baf7f20bb437b184e295331df9285a4431da59b9",
+          "bytes": 15630,
+          "sampleCount": 39168,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/236/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "d4b22a2de77fe4c001670d141f246bd8b094a86c942805f398c36404d08dae4b",
+          "bytes": 17166,
+          "sampleCount": 43776,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/236/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "97e1bdaf9d8ded02f488c513792051dc6a6c030e5727301d1f415964c7542006",
+          "bytes": 15630,
+          "sampleCount": 39168,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "land",
+        "战斗技能"
+      ],
+      "voice": false
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

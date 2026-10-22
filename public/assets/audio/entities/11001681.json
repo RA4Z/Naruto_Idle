@@ -1,0 +1,211 @@
+{
+  "version": 1,
+  "id": "11001681",
+  "name": "Kakashi",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11001681.swf",
+    "tag": "PT_NarutoAlpha7.21Build300",
+    "bytes": 562998,
+    "sha256": "429444593807c53fce609c24f7fd362a37139fad25d242b6301defb1a18d23c1",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 3,
+        "time": 125.0,
+        "sound": "2242",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 6,
+        "time": 250.0,
+        "sound": "2246",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2240",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "114",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1458.3333333333333,
+    "C_dead": 625.0
+  },
+  "sounds": {
+    "114": {
+      "source": {
+        "path": "assets/sound/swf/s114.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 22838,
+        "sha256": "83657bec2b2d11d149579a51a3b739a484d0f4729bfb12d0f3bf711bbbefd6e7",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "jump_down3",
+      "group": "down",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/114/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "2882f3285fed57df3d4bf74b0cbd4cb9c6b18dec885fb844af5c33bf105067bc",
+          "bytes": 13818,
+          "sampleCount": 38016,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/114/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 50.0,
+          "enabled": true,
+          "sha256": "5784b0b4acbbc7b9ef756a1a72526ba855776d279afc789f912d479f6f051f07",
+          "bytes": 11728,
+          "sampleCount": 32256,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "down",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "2240": {
+      "source": {
+        "path": "assets/sound/swf/s2240.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 11331,
+        "sha256": "19fc835fca293ac08f7b26e8302b7186871b555f9d7bec723160559028ef3f6e",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "卡卡西[和服]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2240/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "1e052c1e3a48ff6902b8df7d871219f993c70f89af55df7b9f577370c61ed9a4",
+          "bytes": 13791,
+          "sampleCount": 38016,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "卡卡西[和服]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2242": {
+      "source": {
+        "path": "assets/sound/swf/s2242.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 17574,
+        "sha256": "7604ca9e0fba787f5c6d8973434405db926e047ba74b183a90b4118ccaefa99a",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "影分身之术21001681",
+      "group": "卡卡西[和服]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2242/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "27b27eafd754442668100b7f24fced2532f476f590ff359f860f4c03c5cca72e",
+          "bytes": 20897,
+          "sampleCount": 57600,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "卡卡西[和服]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2246": {
+      "source": {
+        "path": "assets/sound/swf/s2246.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 20757,
+        "sha256": "6deda5d4bdddbea0db64e31bb70430cfc1bf2527aea821b7173ff00ca3f2b964",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "影分身之术",
+      "group": "卡卡西[和服]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2246/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "501bf072cc6fbcb64830e09ce359015be8070de2a7df30ec163c67a38171fa20",
+          "bytes": 21732,
+          "sampleCount": 59904,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "卡卡西[和服]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

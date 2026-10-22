@@ -1,0 +1,244 @@
+{
+  "version": 1,
+  "id": "11009021",
+  "name": "Yugito",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11009021.swf",
+    "tag": "PT_NarutoAlpha7.35Build300",
+    "bytes": 951426,
+    "sha256": "af7f0a8ea22e1a295774bf169e21f3106af4aea1c9bc1d8e5cb43f1a21418191",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 1,
+        "time": 41.666666666666664,
+        "sound": "2345",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 5,
+        "time": 208.33333333333334,
+        "sound": "2349",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2344",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "170",
+        "volume": 0.84,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 2500.0,
+    "C_dead": 291.6666666666667
+  },
+  "sounds": {
+    "170": {
+      "source": {
+        "path": "assets/sound/swf/s170.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 17579,
+        "sha256": "9dfedc22265a78e932df148531723a1b9f9322b1d4b5d9526ca22a009c4997e3",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "fall_mini",
+      "group": "down2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/170/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "75e5103d093765e7907da173e4ffe46469c4a00f1ce1d88510111e693b5762d6",
+          "bytes": 7130,
+          "sampleCount": 19584,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/170/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "eea7136bc40b76e07908dcd674850f51b0cda5b1144b54c3e9c68d7e93d6dc03",
+          "bytes": 6294,
+          "sampleCount": 17280,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/170/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "bd478824f5ba20e72cacac12977129282f2cc1026b7e0358bad10ec6e42eaa57",
+          "bytes": 7548,
+          "sampleCount": 20736,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "down2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "2344": {
+      "source": {
+        "path": "assets/sound/swf/s2344.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 21740,
+        "sha256": "1b56714c28bff08420b2a949719878d210edcb95f71b2801e4a2e78607cf5f60",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "由木人新春",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2344/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "7d002f00cd7024279aa508bad1a8adfa32780fdc52484698eebbbf13de624e09",
+          "bytes": 33853,
+          "sampleCount": 93312,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "由木人新春",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2345": {
+      "source": {
+        "path": "assets/sound/swf/s2345.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 142572,
+        "sha256": "005402fa00527cf8253945f0c54d79534362c154a509e98104a1006d77ac1360",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "又旅出击21009021",
+      "group": "由木人新春",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2345/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "5b11e31d8f73895e2cf93be5a6e615a8a13c66edd592a44ff6228b2317abe880",
+          "bytes": 99055,
+          "sampleCount": 273024,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2345/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "a2b92ac3b4aaaf13fef94c29825307e27fe8d3597207813e204c2d92ef2980de",
+          "bytes": 29674,
+          "sampleCount": 81792,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2345/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "bf37e8b50050277c7be1f325f21eb55f57e84f154c197a4f8728a1712057f206",
+          "bytes": 27584,
+          "sampleCount": 76032,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "由木人新春",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2349": {
+      "source": {
+        "path": "assets/sound/swf/s2349.swf",
+        "tag": "PT_NarutoAlpha7.38Build300",
+        "bytes": 39785,
+        "sha256": "c647b8c9cbe424d80ec419b6018f2309d360b655111b3d8b88fd4b7eea763248",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "又旅出击1",
+      "group": "由木人新春",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2349/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "c3371e3b7d5b26c3c345fa7a6812b08070faa386f449a4bd67f495c3eb3fd522",
+          "bytes": 42212,
+          "sampleCount": 116352,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "由木人新春",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

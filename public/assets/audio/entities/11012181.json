@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "id": "11012181",
+  "name": "Naruto",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11012181.swf",
+    "tag": "PT_NarutoAlpha8.73Build300",
+    "bytes": 895839,
+    "sha256": "d2a04983545d120b538e99b84e9e0cc12e225bfa4ffa79c7e3282f08865f5dfd",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 0,
+        "time": 0.0,
+        "sound": "3306",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 7,
+        "time": 291.6666666666667,
+        "sound": "3320",
+        "volume": 0.31,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "3305",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 1625.0,
+    "C_dead": 416.6666666666667
+  },
+  "sounds": {
+    "3305": {
+      "source": {
+        "path": "assets/sound/swf/s3305.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 73033,
+        "sha256": "4b0d96bd9e008b186bed40b2901b2ad26c0a999bdfef1c111776840557ba6158",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "鸣人[佐助真传]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3305/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "14bf3ae22f9029508d658473ce26958e7b7a9464757afb2fb8eea5c85844cc3e",
+          "bytes": 76845,
+          "sampleCount": 92160,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "鸣人[佐助真传]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3306": {
+      "source": {
+        "path": "assets/sound/swf/s3306.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 39496,
+        "sha256": "bcddb16c1c4d0fdcda5d4420f5f1db71cd58a9e30bae62ff150480028ced1f60",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "鸣人[佐助真传]----体术攻击_1",
+      "group": "鸣人[佐助真传]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3306/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "5067a0020af377b641434fbda39d170e15e3fd597e78e583b94dd66186a03202",
+          "bytes": 56768,
+          "sampleCount": 67968,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "鸣人[佐助真传]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3320": {
+      "source": {
+        "path": "assets/sound/swf/s3320.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 73137,
+        "sha256": "0c9a92ef8ec54a516c00d43106248c485fc0def181551b2f48adbbf967760ce3",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "鸣人[佐助真传]----体术攻击_1YY",
+      "group": "鸣人[佐助真传]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3320/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "2e2b6294bf32bf3786eca864213f50bcf44a1f8639e8c3545df707d16bea4b71",
+          "bytes": 75043,
+          "sampleCount": 89856,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "鸣人[佐助真传]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

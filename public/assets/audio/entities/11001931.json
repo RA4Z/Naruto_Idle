@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "id": "11001931",
+  "name": "Guy",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11001931.swf",
+    "tag": "PT_NarutoAlpha6.26Build300",
+    "bytes": 321352,
+    "sha256": "b996f71b3af65824180c7237cb1051c357a6d6310c1497738df380e78c4b9918",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 11,
+        "time": 458.3333333333333,
+        "sound": "979",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 12,
+        "time": 500.0,
+        "sound": "146",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "478",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 958.3333333333334,
+    "C_dead": 541.6666666666666
+  },
+  "sounds": {
+    "146": {
+      "source": {
+        "path": "assets/sound/swf/s146.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 75293,
+        "sha256": "a567b9285ed8cc359379615a95875accc9335a539aaa3ee2ce3e8847a31bf6fb",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "ski",
+      "group": "skill2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/146/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "7555c03b430bc0d926280e8082c484bc358de3d37a60cd6ff1a11be01af1c838",
+          "bytes": 30118,
+          "sampleCount": 82944,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/146/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "d7d9e4bdb666eb3f508e180ae5eb615e6931ff8ad64b0b4173135c4c7085c1d2",
+          "bytes": 27610,
+          "sampleCount": 76032,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/146/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "674697120115c8a5b59455ead8938f0c0fc4a982c324d68f4ed3e9a8ad2b5234",
+          "bytes": 28864,
+          "sampleCount": 79488,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "skill2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "478": {
+      "source": {
+        "path": "assets/sound/swf/s478.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 21466,
+        "sha256": "c63bebed79b0423b795a221ef98818e26bd82892ae5f48a922967813727b9001",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "迈特凯-死亡",
+      "group": "迈特凯",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/478/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "cbba098d2aa1704d38ab162db5d274a422677bd579f46bc35ab0673ab4f61255",
+          "bytes": 22681,
+          "sampleCount": 67968,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "迈特凯",
+        "voice"
+      ],
+      "voice": true
+    },
+    "979": {
+      "source": {
+        "path": "assets/sound/swf/s979.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 4058,
+        "sha256": "36396d2fae0d192c4a0ae5f7c98c5766f17f0e77b11b200f1b3dc984fc77dcd8",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "凯-攻击",
+      "group": "迈特凯",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/979/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "4939d5ac729a731762a204942cc8402c98e07467e53c5281b537c778a24667f2",
+          "bytes": 4587,
+          "sampleCount": 12672,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "迈特凯",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

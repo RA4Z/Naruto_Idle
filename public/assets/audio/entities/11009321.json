@@ -1,0 +1,222 @@
+{
+  "version": 1,
+  "id": "11009321",
+  "name": "Han",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11009321.swf",
+    "tag": "PT_NarutoAlpha8.32Build301",
+    "bytes": 3948186,
+    "sha256": "47b5283879b31da2034b703e1e503985dc027f7693be0d506a4a4c9c034edb16",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "2979",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 7,
+        "time": 291.6666666666667,
+        "sound": "2988",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "2978",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      },
+      {
+        "frame": 14,
+        "time": 583.3333333333334,
+        "sound": "209",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 2750.0,
+    "C_dead": 1625.0
+  },
+  "sounds": {
+    "209": {
+      "source": {
+        "path": "assets/sound/swf/s209.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 17802,
+        "sha256": "b640e415fc011358c95bc4cfcd43c1b41a2564e9cb74721337321dd3386c4e66",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "disappear2影分身消失2",
+      "group": "大招",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/209/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "b39f3cde7e4c2726d07ab5eeffbad2686e555ffbeeca52784a5a4b565a302305",
+          "bytes": 18833,
+          "sampleCount": 51840,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "大招",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "2978": {
+      "source": {
+        "path": "assets/sound/swf/s2978.swf",
+        "tag": "PT_NarutoAlpha8.11Build300",
+        "bytes": 35738,
+        "sha256": "37784cdd7ab31834749067dbe2a7dba31dfba63f19fd6e2d23a20cb463c37f7d",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "汉[尾兽状态]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2978/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "7e89cb3733f7efa5a1507d17000ff51e9068790052e7b1303586f8df74d2eaa0",
+          "bytes": 36779,
+          "sampleCount": 101376,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "汉[尾兽状态]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2979": {
+      "source": {
+        "path": "assets/sound/swf/s2979.swf",
+        "tag": "PT_NarutoAlpha8.11Build300",
+        "bytes": 75869,
+        "sha256": "91c363ac6adbeabcde57dd4bee00199d39f3f9a1502d28b6cde356d39bc97acf",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "怪力连击YY",
+      "group": "汉[尾兽状态]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2979/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "2e33b9dab29c2dea4559d55ebb8f5685d1a67213ee614fc1da9bb4ac9af9a62c",
+          "bytes": 28002,
+          "sampleCount": 77184,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2979/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "bd99a5a95123ff60da96d25cb0091d5223747df05b05c72221f21dc69783aaa6",
+          "bytes": 22150,
+          "sampleCount": 61056,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/2979/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "17b9fdc36b34eea2c4331eb1a6aaa2924a2da04b0c16b7785eeae80fd08c2cda",
+          "bytes": 29674,
+          "sampleCount": 81792,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "汉[尾兽状态]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "2988": {
+      "source": {
+        "path": "assets/sound/swf/s2988.swf",
+        "tag": "PT_NarutoAlpha8.11Build300",
+        "bytes": 25143,
+        "sha256": "459872d1686e08cdaa998b3ca183b1f3375d699bf7b38f320c00b1c1f9ef22e5",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "汉[尾兽状态]----怪力连击1",
+      "group": "汉[尾兽状态]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/2988/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "ac972bef195c063cc98f428fcfb41afa825f82a338226a044491e04c4d8bbb2a",
+          "bytes": 29256,
+          "sampleCount": 80640,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "汉[尾兽状态]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

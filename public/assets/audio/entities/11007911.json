@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "id": "11007911",
+  "name": "Chojuro",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11007911.swf",
+    "tag": "PT_NarutoAlpha8.88Build304",
+    "bytes": 1219371,
+    "sha256": "e0180ca1c1f63935ede433ffae4bb46be4efea030b6cec3d7415498c290ba41c",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 6,
+        "time": 250.0,
+        "sound": "3409",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 7,
+        "time": 291.6666666666667,
+        "sound": "3417",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "3408",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 2458.3333333333335,
+    "C_dead": 500.0
+  },
+  "sounds": {
+    "3408": {
+      "source": {
+        "path": "assets/sound/swf/s3408.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 60935,
+        "sha256": "1b5b4dbb88ccbb7dd9be85641e6d5da4a8296a2bc2376abaf636edd16502f386",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "长十郎[泳装]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3408/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "42d80b115003eb7afb07a4d2558866a250976e6bd4d7fea9e94efed38d431ff5",
+          "bytes": 91328,
+          "sampleCount": 109440,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "长十郎[泳装]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3409": {
+      "source": {
+        "path": "assets/sound/swf/s3409.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 49187,
+        "sha256": "ccdf65f677360112cca787c5eabc8da5d8cfb6fc3eeab7a21e752974e7c34cfb",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "长十郎[泳装]---平目鲽·连击_1",
+      "group": "长十郎[泳装]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3409/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "cc341ac131b5b430da6f51decdb965097e28beca1c1103e3ffc82ab3786eb5be",
+          "bytes": 75008,
+          "sampleCount": 89856,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "长十郎[泳装]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3417": {
+      "source": {
+        "path": "assets/sound/swf/s3417.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 11051,
+        "sha256": "a1fc9a442a5152fffba6757146e05c48a85fc89724a07bdbe79b7e3e0a196ca8",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "长十郎[泳装]---平目鲽·连击_1YY",
+      "group": "长十郎[泳装]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3417/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "303350cd5490f50a98b180ffb28bb3b2267e7fad15959eef31c16a4fa91e0e54",
+          "bytes": 26048,
+          "sampleCount": 31104,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "长十郎[泳装]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

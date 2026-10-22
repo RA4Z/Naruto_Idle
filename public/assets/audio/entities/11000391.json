@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "id": "11000391",
+  "name": "Sakura",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11000391.swf",
+    "tag": "PT_NarutoAlpha8.77Build301",
+    "bytes": 585644,
+    "sha256": "857fe25f60fcd960a9dbf3045bb2b8ee20ab834c0c08077976e69119357a8c2f",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 10,
+        "time": 416.6666666666667,
+        "sound": "3348",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 11,
+        "time": 458.3333333333333,
+        "sound": "3336",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "3345",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 2833.3333333333335,
+    "C_dead": 833.3333333333334
+  },
+  "sounds": {
+    "3336": {
+      "source": {
+        "path": "assets/sound/swf/s3336.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 71035,
+        "sha256": "6d880dd2d752215b4180e058e10e697ee5571e1809bf00dc3ac05781bf2d5ded",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "樱[佐助真传]----樱花裂冲_1",
+      "group": "樱[佐助真传]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3336/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "a01a54ff4b50ea807f2697b9d4461a6d2f454111edc1ba671293983dc1472d46",
+          "bytes": 101888,
+          "sampleCount": 122112,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "樱[佐助真传]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3345": {
+      "source": {
+        "path": "assets/sound/swf/s3345.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 31811,
+        "sha256": "482e4fb11bad39a2e1acab9a3f0a938265898a0327a6914dfe785c18b1556c2d",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "阵亡",
+      "group": "樱[佐助真传]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3345/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "3aa0d9a1eae95b263a45348d5ba46fac09747a2d63cd54727d82fb48c9960bed",
+          "bytes": 33645,
+          "sampleCount": 40320,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "樱[佐助真传]",
+        "voice"
+      ],
+      "voice": true
+    },
+    "3348": {
+      "source": {
+        "path": "assets/sound/swf/s3348.swf",
+        "tag": "PT_NarutoAlpha8.56Build300",
+        "bytes": 28080,
+        "sha256": "48e8b2927734093b7152b64e40ccba8130979e6549b9519e99125d3548f93119",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "樱[佐助真传]----樱花裂冲YY",
+      "group": "樱[佐助真传]",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/3348/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "2f3b170354b949480426c12ac74efd15bfb1850c8dfea4218764b650136058d0",
+          "bytes": 29805,
+          "sampleCount": 35712,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "樱[佐助真传]",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

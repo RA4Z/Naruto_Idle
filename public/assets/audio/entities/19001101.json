@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "id": "19001101",
+  "name": "Clã Nara",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/19001101.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 249351,
+    "sha256": "ba0d47474d8e62779fdddf2d14b1090ee27753290e07f1bd12ce056bbb4a5205",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 4,
+        "time": 166.66666666666666,
+        "sound": "591",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "588",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 541.6666666666666,
+    "C_dead": 1083.3333333333333
+  },
+  "sounds": {
+    "588": {
+      "source": {
+        "path": "assets/sound/swf/s588.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 54340,
+        "sha256": "6b2866a7203f881bb56a2e3fa8aab4668717f783583525d22466bf957a3c04bc",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "壮汉-死亡",
+      "group": "壮汉",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 3,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/588/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "a86382b6dc467c636de2d8ef8d50afd8d0b5131f2bd7869381f632ea21a080b8",
+          "bytes": 20923,
+          "sampleCount": 57600,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/588/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "92eae4690a5a93cd8e0dbd41b3873afc91ca4054528c157478dbd9ac5846c803",
+          "bytes": 19251,
+          "sampleCount": 52992,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/588/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "a5fa14ac1dcad317016ec92d2d8fa9c0954382f69695cae84dedcaebf31a85d7",
+          "bytes": 21341,
+          "sampleCount": 58752,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "壮汉",
+        "voice"
+      ],
+      "voice": true
+    },
+    "591": {
+      "source": {
+        "path": "assets/sound/swf/s591.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 22865,
+        "sha256": "1eb34d7734c4982c10b80bba2eb0378706a70275141d7c68ae220c64c1ed47db",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "短攻击",
+      "group": "壮汉",
+      "method": 2,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/591/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "c9eb5738c93d1561119f244f8becd654fc880349ac2e43547c5dda76a8b13d23",
+          "bytes": 7548,
+          "sampleCount": 20736,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/591/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "bf870ecb7db81301575b64bcb28a3a2cb1483e1e06a98e910213b9f37ccc34ea",
+          "bytes": 6712,
+          "sampleCount": 18432,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/591/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "d5c1ee5bac80286d97687b009e18680f610f64320094314ca834008ac4421c61",
+          "bytes": 6712,
+          "sampleCount": 18432,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/591/4.mp3",
+          "symbolId": 4,
+          "itemId": "4",
+          "weight": 25.0,
+          "enabled": true,
+          "sha256": "5c0090e3705b08978289a59e2a29ee3e1f669f91615ac132ff27baa373966746",
+          "bytes": 8384,
+          "sampleCount": 23040,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "壮汉",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}

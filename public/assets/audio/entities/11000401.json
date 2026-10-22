@@ -1,0 +1,222 @@
+{
+  "version": 1,
+  "id": "11000401",
+  "name": "Lee",
+  "fps": 24.0,
+  "source": {
+    "path": "assets/battle/role/left/11000401.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 298151,
+    "sha256": "ae9de36dd8b33ac55d1a59dda8d31921026767e2638e0756037c01d9ed2eb968",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfigs": [
+    {
+      "path": "assets/sound/soundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 67819,
+      "sha256": "9b1323365e3572da52b44ed42093855ffef7a25125c0ceed5388c7823e00f318",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/sound/deathSoundConfig.xml",
+      "tag": "PT_NarutoAlpha9.06Build300",
+      "bytes": 2908,
+      "sha256": "c0705407c4ea9b0fb38e5eef6375d834bcaefa5814438483f6d192c0d67274c3",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "actions": {
+    "A_1hit": [
+      {
+        "frame": 0,
+        "time": 0.0,
+        "sound": "204",
+        "volume": 0.49,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 2,
+        "time": 83.33333333333333,
+        "sound": "333",
+        "volume": 1.0,
+        "source": "embedded-action"
+      },
+      {
+        "frame": 7,
+        "time": 291.6666666666667,
+        "sound": "149",
+        "volume": 1.0,
+        "source": "embedded-action"
+      }
+    ],
+    "C_dead": [
+      {
+        "frame": 0,
+        "time": 0,
+        "sound": "334",
+        "volume": 1,
+        "source": "deathSoundConfig"
+      }
+    ]
+  },
+  "durations": {
+    "A_1hit": 500.0,
+    "C_dead": 1583.3333333333333
+  },
+  "sounds": {
+    "149": {
+      "source": {
+        "path": "assets/sound/swf/s149.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 68289,
+        "sha256": "2bd493ebb4f2e4a2a4e02fe1253a7ac4c47d7bce9561e6d4132537050e07051a",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "shan",
+      "group": "skill2",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/149/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "184ea53645c72f65c7356ab4364fb3448aad0ad71069c6683ce9f9ab16088d81",
+          "bytes": 26356,
+          "sampleCount": 72576,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/149/2.mp3",
+          "symbolId": 2,
+          "itemId": "2",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "fb1318b412a51aff930c0a9cc6d5b4e6349dfacc305611ebeb03ad1aa0a52fc5",
+          "bytes": 23849,
+          "sampleCount": 65664,
+          "seekSamples": 0
+        },
+        {
+          "url": "/assets/audio/sfx/149/3.mp3",
+          "symbolId": 3,
+          "itemId": "3",
+          "weight": 33.3333,
+          "enabled": true,
+          "sha256": "80a7bdbdb271a48a51b372131dcfb9f87b1b8b3e448e68e544688cdb92e328c5",
+          "bytes": 25938,
+          "sampleCount": 71424,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "skill2",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "204": {
+      "source": {
+        "path": "assets/sound/swf/s204.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 12224,
+        "sha256": "fca78c38bc5d118ba55ae5a01890edfffd06023137adca0b3dab24d39120fabd",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "S_EV_hidan3飞段_挥动棍子",
+      "group": "素材",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/204/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "9a8b309fa9db3ad9cd7bb5edb728967d8af45253fccf0dfbfde30ef72b802534",
+          "bytes": 13400,
+          "sampleCount": 36864,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "素材",
+        "战斗技能"
+      ],
+      "voice": false
+    },
+    "333": {
+      "source": {
+        "path": "assets/sound/swf/s333.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 6091,
+        "sha256": "95f6b07155dac58250303cb498eb499af5acfc2a48f62ce7ee1c92e22fd89cfd",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "少年-哦啦！（攻击）",
+      "group": "洛克李",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 4,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/333/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "eff199d507a5afeb1e7920ed7b9d1d396b21053ab1cbe8d3fff01c549af90897",
+          "bytes": 6937,
+          "sampleCount": 20736,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "洛克李",
+        "voice"
+      ],
+      "voice": true
+    },
+    "334": {
+      "source": {
+        "path": "assets/sound/swf/s334.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 15039,
+        "sha256": "c89415cb030ddfbb661414a5905b974abd0c4a232e45dfee14586139a155b6dc",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceName": "洛克李-少年-死亡",
+      "group": "洛克李",
+      "method": 1,
+      "volume": 1.0,
+      "maxPlayback": 1,
+      "clips": [
+        {
+          "url": "/assets/audio/sfx/334/1.mp3",
+          "symbolId": 1,
+          "itemId": "1",
+          "weight": 100.0,
+          "enabled": true,
+          "sha256": "9859c855eab8ef3eeccb6c56252f5914505a3868d35a17ba0cc6eaa897f2fae0",
+          "bytes": 16153,
+          "sampleCount": 48384,
+          "seekSamples": 0
+        }
+      ],
+      "sourceGroups": [
+        "洛克李",
+        "voice"
+      ],
+      "voice": true
+    }
+  },
+  "unresolvedEvents": [],
+  "status": "ready",
+  "adaptation": "Native attack/death frame timing scaled to idle action duration; death mapping starts at native death animation; at most four shared short voices. Unsupported or missing packages are recorded, never substituted. Other actions remain pending."
+}
