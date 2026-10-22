@@ -1,5 +1,5 @@
 import { t } from "../i18n/core";
-import { mapProjection } from "./map-projection";
+import { radarProjection } from "./map-projection";
 import type { Point } from "./navigation";
 import type { WorldMap } from "./maps";
 export type MinimapState = {
@@ -13,6 +13,7 @@ export type MinimapState = {
   view: { x: number; y: number; width: number; height: number };
 };
 const NS = "http://www.w3.org/2000/svg";
+let nextViewport = 0;
 const node = <K extends keyof SVGElementTagNameMap>(
   tag: K,
   attributes: Record<string, string | number> = {},
@@ -33,9 +34,10 @@ export class Minimap {
   });
   private base = node("g");
   private moving = node("g");
+  private markersOrigin = { x: 0, y: 0 };
   private caption = document.createElement("p");
   private status = document.createElement("p");
-  private projection = mapProjection(1, 1);
+  private projection = radarProjection(1, 1, { x: 0, y: 0 });
   private cursor?: Point;
   private map?: WorldMap;
   private state?: MinimapState;
@@ -56,9 +58,38 @@ export class Minimap {
       "font-size": 12,
       "font-weight": 700,
       "aria-hidden": "true",
+      stroke: "#10211a",
+      "stroke-width": 3,
+      "paint-order": "stroke",
     });
     north.textContent = "N";
-    this.svg.append(this.base, this.moving);
+    const clipId = `minimap-viewport-${++nextViewport}`;
+    const defs = node("defs");
+    const clip = node("clipPath", {
+      id: clipId,
+      clipPathUnits: "userSpaceOnUse",
+    });
+    clip.append(node("circle", { cx: 120, cy: 120, r: 116 }));
+    defs.append(clip);
+    const viewport = node("g", { "clip-path": `url(#${clipId})` });
+    viewport.append(this.base, this.moving);
+    const hero = node("circle", {
+      cx: 120,
+      cy: 120,
+      r: 4,
+      fill: "#ffffff",
+      stroke: "#10221a",
+      "stroke-width": 1,
+    });
+    const heroTitle = node("title");
+    heroTitle.textContent = t("expansion.you");
+    hero.append(heroTitle);
+    viewport.append(hero);
+    this.svg.append(
+      defs,
+      node("circle", { cx: 120, cy: 120, r: 117, fill: "#10211a" }),
+      viewport,
+    );
     this.svg.append(north);
     const help = document.createElement("p");
     help.className = "minimap-help";
@@ -119,7 +150,7 @@ export class Minimap {
         return;
       } else {
         const p = this.cursor || this.state.hero,
-          step = Math.max(this.map.width, this.map.height) / 30;
+          step = this.projection.range / 10;
         this.cursor = {
           x: Math.max(
             0,
@@ -166,25 +197,14 @@ export class Minimap {
     this.svg.dataset.mapId = map.id;
     this.base.replaceChildren();
     this.moving.replaceChildren();
-    // Fit the entire map inside the circle, including its corners.
-    this.projection = mapProjection(map.width, map.height, 240, 240, 38);
-    const p = this.projection;
+    this.projection = radarProjection(map.width, map.height, map.spawn);
     this.base.append(
-      node("circle", { cx: 120, cy: 120, r: 117, fill: "#10211a" }),
-      node("circle", {
-        cx: 120,
-        cy: 120,
-        r: 108,
-        fill: "none",
-        stroke: "#c6aa65",
-        opacity: 0.3,
-      }),
       node("image", {
         href: map.thumbnail,
-        x: p.x,
-        y: p.y,
-        width: p.width,
-        height: p.height,
+        x: 0,
+        y: 0,
+        width: map.width,
+        height: map.height,
         opacity: 0.9,
       }),
     );
@@ -192,13 +212,35 @@ export class Minimap {
     const sample = Math.max(1, Math.ceil(points.length / 1800));
     let d = "";
     for (let i = 0; i < points.length; i += sample) {
-      const q = p.project(points[i]);
+      const q = points[i];
       d += `M${q.x.toFixed(1)},${q.y.toFixed(1)}h1v1h-1z`;
     }
     this.base.append(node("path", { d, fill: "#b7e9a7", opacity: 0.35 }));
+    this.positionTerrain();
+  }
+  private positionTerrain() {
+    const p = this.projection;
+    this.base.setAttribute(
+      "transform",
+      `translate(${p.x} ${p.y}) scale(${p.scale})`,
+    );
+  }
+  /** Pan each frame without rebuilding the marker DOM on the HUD's 250ms tick. */
+  follow(hero: Point) {
+    if (!this.map) return;
+    this.projection = radarProjection(this.map.width, this.map.height, hero);
+    this.positionTerrain();
+    this.moving.setAttribute(
+      "transform",
+      `translate(${this.projection.x - this.markersOrigin.x} ${this.projection.y - this.markersOrigin.y})`,
+    );
   }
   update(state: MinimapState) {
     this.state = state;
+    if (!this.map) return;
+    this.follow(state.hero);
+    this.markersOrigin = { x: this.projection.x, y: this.projection.y };
+    this.moving.removeAttribute("transform");
     this.moving.replaceChildren();
     const project = this.projection.project;
     const dot = (p: Point, color: string, r: number, label: string) => {
@@ -216,26 +258,6 @@ export class Minimap {
       circle.append(title);
       this.moving.append(circle);
     };
-    const { view } = state,
-      a = project({ x: Math.max(0, view.x), y: Math.max(0, view.y) });
-    if (this.map) {
-      const b = project({
-        x: Math.min(this.map.width, view.x + view.width),
-        y: Math.min(this.map.height, view.y + view.height),
-      });
-      this.moving.append(
-        node("rect", {
-          x: a.x,
-          y: a.y,
-          width: Math.max(0, b.x - a.x),
-          height: Math.max(0, b.y - a.y),
-          fill: "none",
-          stroke: "#fff",
-          "stroke-width": 0.8,
-          opacity: 0.5,
-        }),
-      );
-    }
     if (state.path.length) {
       const q = project(state.path.at(-1)!);
       this.moving.append(
@@ -267,7 +289,6 @@ export class Minimap {
         }),
       );
     }
-    dot(state.hero, "#ffffff", 4, t("expansion.you"));
     if (this.cursor) {
       const q = project(this.cursor);
       this.moving.append(

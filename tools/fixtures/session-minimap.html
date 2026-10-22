@@ -11,6 +11,7 @@
 <button id="write">Try write</button>
 <button id="release">Close session</button>
 <button id="compact">Small window</button>
+<button id="move">Move hero</button>
 <p id="ownership" role="status">No session</p>
 <p id="result"></p>
 <div id="test-host"></div>
@@ -43,4 +44,8 @@
   };
   const minimap = new Minimap(host, p => {state.path = [p]; return true;});
   minimap.setMap(map, []); minimap.update(state);
+  document.querySelector('#move').onclick = () => {
+    state.hero = { x: map.width * .25, y: map.height * .65 };
+    minimap.update(state);
+  };
 </script>

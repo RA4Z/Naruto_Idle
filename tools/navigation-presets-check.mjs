@@ -48,7 +48,7 @@ try {
   assert.equal(await svg.getAttribute("data-map-id"), "10001");
   // Click a reachable destination projected from the actual world grid.
   const dest = await page.evaluate(async () => {
-    const { mapProjection } = await import("/src/world/map-projection.ts");
+    const { radarProjection } = await import("/src/world/map-projection.ts");
     const { listMaps } = await import("/src/world/maps.ts");
     const hero = window.__idle.snapshot().hero,
       nav = window.__idle.navigation();
@@ -60,7 +60,7 @@ try {
     );
     if (!p) throw Error("No destination");
     const map = (await listMaps()).find((m) => m.id === "10001");
-    return { ...mapProjection(map.width, map.height, 240, 240, 38).project(p), world: p };
+    return { ...radarProjection(map.width, map.height, hero).project(p), world: p };
   });
   const box = await svg.boundingBox();
   await page.mouse.click(

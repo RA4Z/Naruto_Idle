@@ -2312,6 +2312,7 @@ class HuntScene extends Phaser.Scene {
           .fillRect(actor.x - 12, actor.y + 4, (24 * foe.hp) / foe.maxHp, 3);
       }
     }
+    this.minimap?.follow(this.hero);
     this.lastUi += delta;
     this.lastSave += delta;
     if (this.lastUi > 250) {
