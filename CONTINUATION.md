@@ -1,3 +1,11 @@
+## Retomada e espaço de extração — 23/10/2026
+
+Lotes32..41 publicados no commit e0d46e308 (40 exportações/2.006 quadros). A fila original está revisada até137; a ação DSWABtlswsdz/tx está em retentativa explícita de600s, ainda sem aprovação nesta nota. Próximo lote novo138. Automação continua pausada por pedido do usuário; uma operação pesada por vez.
+
+Removidos somente PNGs temporários com SHA idêntico ao publicado e ao objeto LFS local; fontes, jogo, backups e Git preservados. reports/verified-staging-cleanup-20261023.json.gz guarda os registros. Novo prune_effect_staging.py aplica a mesma verificação tripla aos derivados de efeitos e nunca remove manifests, índices ou arquivos publicados. Com poucos GB livres, a extração deve parar abaixo da guarda de8GB; foi solicitada liberação de espaço ao usuário.
+
+Os sete arquivos primários sem Config foram inventariados estaticamente: possuem exports de sprites nomeados, incluindo ações e pontos _Data. reports/primary-no-config-static-audit.json.gz preserva fonte/SHA/símbolo/quadros. São metadados, ainda não novas animações extraídas; não usar root frame1 como substituto nem inferir identidade ou dano. Sem ActionScript executado.
+
 ## Efeitos por fonte — lotes 032-041 — 23/10/2026
 
 Publicadas 40 exportações aprovadas, com 2006 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-032-041-proof.json.gz. O grupo038 inclui somente os lotes38..41 concluídos antes da correção do login, sem contar o lote42 interrompido. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
