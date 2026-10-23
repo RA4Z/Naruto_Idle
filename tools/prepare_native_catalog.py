@@ -59,11 +59,12 @@ def main():
             relative=Path(anim['url'].removeprefix('/assets/effects/native/')).parent
             if relative.is_absolute() or '..' in relative.parts:raise ValueError('Invalid prepared effect URL')
             target_folder=out/'public/assets/effects/native'/relative;target_folder.mkdir(parents=True,exist_ok=True)
-            for name in ('effect.png','effect-atlas.json','manifest.json'):
+            names=tuple(Path(u).name for u in anim.get('atlasPageUrls',[anim['url']]))+('effect-atlas.json','manifest.json')
+            for name in names:
                 source=Path(args.effects)/relative/name;target=target_folder/name
                 if name.endswith('.json'):save(target,remap(json.loads(source.read_bytes())))
                 elif source.resolve()!=target.resolve():shutil.copy2(source,target)
-            layer['artifactsSha256']={name:hashlib.sha256((target_folder/name).read_bytes()).hexdigest() for name in ('effect.png','effect-atlas.json','manifest.json')}
+            layer['artifactsSha256']={name:hashlib.sha256((target_folder/name).read_bytes()).hexdigest() for name in names}
         effect['bindingReview']='Original display plane only; original movement stage and named attachment points must be validated before changing world combat.'
     save(out/'public/assets/effects/native/index.json',index)
     save(out/'reports/character-effects-summary.json',{'sourceAudit':audit['summary'],'formats':audit['effectFormats'],'modelsWithExactSkillBindings':len(bindings),'preparedNativeEffects':len(index['effects']),'deferredPreparedEffects':index['deferred'],'policy':'Extracted != integrated. No AS executed. Alpha/blend/tween/external dependencies remain explicit. Compressed inventory contains every audited source and original ninja/skill binding.','sources':evidence})

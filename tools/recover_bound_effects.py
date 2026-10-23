@@ -1,5 +1,6 @@
 """Bounded native effect extraction from exact Effect.xml resource/symbol bindings."""
 import argparse
+import copy
 import hashlib
 import json
 import os
@@ -17,15 +18,34 @@ def save(path,data):
     temporary.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');temporary.replace(path)
 
 
+def cached_layer(index,source,action,output):
+    """Reuse only exact source/action pairs whose persisted artifacts still match."""
+    for entry in index['effects'].values():
+        if entry.get('source')!=source:continue
+        for layer in entry['layers']:
+            if layer['action']!=action or not layer['validation'].get('allFramesPixelExact'):continue
+            relative=Path(layer['animation']['url'].removeprefix('/assets/effects/native/')).parent
+            if relative.is_absolute() or '..' in relative.parts:continue
+            folder=output/relative
+            artifacts=layer.get('artifactsSha256',{})
+            if not artifacts:continue
+            if all(Path(name).name==name and (folder/name).is_file() and hashlib.sha256((folder/name).read_bytes()).hexdigest()==digest for name,digest in artifacts.items()):
+                return copy.deepcopy(layer)
+    return None
+
+
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--source',required=True);parser.add_argument('--project',required=True)
     parser.add_argument('--output',required=True);parser.add_argument('--work',required=True);parser.add_argument('--java',required=True)
     parser.add_argument('--ffdec',required=True);parser.add_argument('--classes',required=True);parser.add_argument('--ids',required=True)
+    parser.add_argument('--atlas-format',choices=('png','webp'),default='png')
+    parser.add_argument('--allow-pages',action='store_true',help='Split large atlases into bounded lossless pages instead of reducing resolution')
+    parser.add_argument('--discard-native-frames',action='store_true',help='Remove only generated PNG intermediates after a verified atlas is persisted')
     args=parser.parse_args();ids=args.ids.split(',')
     if not 1<=len(ids)<=4 or len(set(ids))!=len(ids) or any(not re.fullmatch(r'\d+',i) for i in ids):raise ValueError('One to four explicit effect IDs required')
     sys.path.insert(0,str(Path(args.project).resolve()/'tools'))
     from original_archive import OriginalArchive
-    from entity_pipeline import tags,convert
+    from entity_pipeline import tags
     from swf_bytes import decode
     archive=OriginalArchive(args.source);output=Path(args.output).resolve();work=Path(args.work).resolve()
     if output.is_relative_to(archive.root) or work.is_relative_to(archive.root):raise ValueError('Originals are read-only')
@@ -55,35 +75,38 @@ def main():
                 action=row.get(field)
                 if not action:continue
                 token=hashlib.sha256(action.encode()).hexdigest()[:12];folder=output/source_key/token;url=f'/assets/effects/native/{source_key}/{token}'
+                reused=cached_layer(index,before,action,output)
+                if reused:
+                    reused['plane']=plane;entry['layers'].append(reused);continue
                 if xml:
                     root=ET.fromstring(xml);native=next((a for a in root.findall('action') if a.get('name')==action),None)
                     if native is None:raise ValueError('Native bitmap action not found: '+action)
                     features={k for e in native.iter('element') for k in e.attrib if k not in {'assetId','x','y','alpha','scaleX','scaleY','rotation'} and not (k=='blendMode' and e.get(k)=='normal')}
                     if features or any(f.get('tween')=='true' for f in native.iter('frame')):
                         raise ValueError('Bitmap action needs faithful feature adapter: '+str(sorted(features)))
-                    converted=convert(decoded,folder,url,'effect',only={action},compact=True,pixel_budget=16_000_000,source_pixel_budget=32_000_000)
-                    animation=converted['animations'][action]
-                    if animation['status']!='ready':raise ValueError('Bitmap reconstruction has unresolved features')
-                    proof={'nativeFrames':len(animation['timeline']),'sourcePixelScale':1,'renderer':'native-bitmap-affine','allFramesPixelExact':False,
-                           'note':'Source transforms preserved; separate independent source-frame verification required'}
-                    save(folder/'manifest.json',{'animations':{action:animation},'source':before,'validation':proof})
-                    points=[]
+                    # A bitmap affine render has a different reference pipeline.
+                    # Never publish it as JPEXS pixel-verified without independent proof.
+                    raise ValueError('Bitmap action requires independent native-frame verification before publication')
                 else:
                     symbol=symbols.get(action)
                     if symbol not in sprite_ids:raise ValueError('Exact exported sprite binding absent: '+action)
                     native_folder=source_work/str(symbol)
                     subprocess.run([args.java,'-Djava.awt.headless=true','-Duser.home='+str(profile),'-Xmx1024m','-cp',str(Path(args.classes).resolve())+os.pathsep+str(Path(args.ffdec).resolve()/'lib/*'),
                                     'StaticSwfRender',str(decoded),str(symbol),str(native_folder)],check=True,timeout=180,capture_output=True,env=environment)
-                    animation,proof=pack(native_folder,folder,url)
+                    animation,proof=pack(native_folder,folder,url,atlas_format=args.atlas_format,allow_pages=args.allow_pages)
                     points=json.loads((native_folder/'named-instances.json').read_text(encoding='utf-8'))
-                artifacts={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in folder.iterdir() if p.name in ('effect.png','effect-atlas.json','manifest.json')}
+                    if args.discard_native_frames:
+                        for intermediate in native_folder.glob('*.png'):intermediate.unlink()
+                names=tuple(Path(u).name for u in animation.get('atlasPageUrls',[animation['url']]))+('effect-atlas.json','manifest.json')
+                artifacts={name:hashlib.sha256((folder/name).read_bytes()).hexdigest() for name in names}
                 entry['layers'].append({'plane':plane,'action':action,'animation':animation,'validation':proof,'namedInstances':points,'artifactsSha256':artifacts})
             if not entry['layers']:raise ValueError('No bound front/back animation; needs label or procedural adapter')
             assert archive.record(logical)==before
             entry['state']='native-assets-prepared-binding-review';index['effects'][ident]=entry;index['deferred'].pop(ident,None)
             print(json.dumps({'effect':ident,'layers':[x['action'] for x in entry['layers']],'state':entry['state']}),flush=True)
         except (ValueError,KeyError,subprocess.SubprocessError) as error:
-            index['deferred'][ident]={'id':ident,'definition':dict(row.attrib),'reason':type(error).__name__+': '+str(error),'state':'not-substituted'}
+            detail=error.stderr.decode('utf-8',errors='replace')[-1600:] if isinstance(error,subprocess.CalledProcessError) and error.stderr else None
+            index['deferred'][ident]={'id':ident,'definition':dict(row.attrib),'reason':type(error).__name__+': '+str(error),'rendererDetail':detail,'state':'not-substituted'}
             print(json.dumps(index['deferred'][ident],ensure_ascii=False),flush=True)
         save(index_path,index)
     assert archive.record(config)==config_record

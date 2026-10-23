@@ -7,6 +7,17 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
 import entity_pipeline as pipeline
 
 class CompactFramesTests(unittest.TestCase):
+    def test_duplicate_source_bitmaps_fit_budget_without_merging_different_ground_positions(self):
+        xml=b'<actions frameRate="24"><asset id="0" className="one" x="0" y="0"/><asset id="1" className="two" x="0" y="0"/><action name="A_1hit"><layer><frame index="0" length="1"><element assetId="0"/></frame><frame index="1" length="1"><element assetId="1"/></frame><frame index="2" length="1"><element assetId="1" x="20"/></frame></layer></action></actions>'
+        def source(*args,**kwargs):
+            root=ET.fromstring(xml)
+            return root,{a.get('id'):a.attrib for a in root.findall('asset')},{7:Image.new('RGBA',(4,4),'red'),8:Image.new('RGBA',(4,4),'red')},{'one':7,'two':8},xml
+        with tempfile.TemporaryDirectory() as temp,patch.object(pipeline,'read_actions',side_effect=source):
+            result=pipeline.convert(Path(temp)/'source.swf',Path(temp)/'out','/out','battle',compact=True,pixel_budget=40)['animations']['A_1hit']
+            self.assertEqual(result['timeline'],[0,0,1])
+            self.assertEqual(result['frames'],2)
+            self.assertNotEqual(result['frameOrigins'][0],result['frameOrigins'][1])
+
     def test_translation_and_timeline_reconstruct_identical_pixels(self):
         xml=b'<actions frameRate="24"><asset id="0" className="body" x="0" y="0"/><action name="A_1hit"><layer><frame index="0" length="2"><element assetId="0" x="0" y="-12"/></frame><frame index="2" length="2"><element assetId="0" x="1500" y="-12"/></frame></layer></action></actions>'
         def source(*args,**kwargs):

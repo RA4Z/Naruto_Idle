@@ -3,6 +3,9 @@ export type ActorMode = "world" | "battle";
 export type AnimationDef = {
   url: string;
   packedAtlasUrl?: string;
+  multiAtlas?: boolean;
+  atlasPageUrls?: string[];
+  framePages?: number[];
   frameSizes?: [number, number][];
   sourceBounds?: [number, number, number, number];
   sourcePixelScale?: number;

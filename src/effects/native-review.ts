@@ -12,7 +12,7 @@ export type NativeEffectEntry = {
   layers: { plane: string; action: string; animation: AnimationDef }[];
   bindings: Binding[];
 };
-type Loaded = { animation: AnimationDef; image: HTMLImageElement; atlas?: PackedAtlas };
+type Loaded = { animation: AnimationDef; images: HTMLImageElement[]; atlas?: PackedAtlas };
 
 /** Read-only source review. Separate panels deliberately do not assert resolved attachments. */
 export function mountNativeEffectReview(host: HTMLElement, entry: NativeEffectEntry) {
@@ -43,17 +43,20 @@ export function mountNativeEffectReview(host: HTMLElement, entry: NativeEffectEn
     return response.json();
   };
   async function load(animation: AnimationDef): Promise<Loaded> {
-    const image = new Image(); image.src = animation.url;
-    await image.decode();
+    const images: HTMLImageElement[] = [];
+    for (const url of animation.atlasPageUrls || [animation.url]) {
+      const image = new Image(); image.src = url; await image.decode(); images.push(image);
+    }
     const atlas = animation.packedAtlasUrl ? await json(animation.packedAtlasUrl) : undefined;
-    return { animation, image, atlas };
+    return { animation, images, atlas };
   }
   const timeline = (a: AnimationDef) => a.timeline || Array.from({ length: a.frames }, (_, i) => i);
   function drawAt(ctx: CanvasRenderingContext2D, loaded: Loaded, time: number, x: number, y: number, scale: number) {
     const sequence = timeline(loaded.animation), unique = sequence[Math.min(sequence.length - 1, Math.floor(time))];
-    const rect = frameRectangle(loaded.animation, unique, loaded.image.width, loaded.atlas), origin = animationOrigin(loaded.animation, unique);
+    const image = loaded.images[loaded.animation.framePages?.[unique] ?? 0];
+    const rect = frameRectangle(loaded.animation, unique, image.width, loaded.atlas), origin = animationOrigin(loaded.animation, unique);
     ctx.save(); ctx.translate(x, y); ctx.scale(mirror.checked ? -scale : scale, scale);
-    ctx.drawImage(loaded.image, rect.x, rect.y, rect.w, rect.h, -origin[0] * rect.w, -origin[1] * rect.h, rect.w, rect.h);
+    ctx.drawImage(image, rect.x, rect.y, rect.w, rect.h, -origin[0] * rect.w, -origin[1] * rect.h, rect.w, rect.h);
     ctx.restore();
   }
   function draw() {

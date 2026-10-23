@@ -2,7 +2,9 @@ import type Phaser from "phaser";
 import type { AnimationDef } from "./types";
 
 export function queueAnimation(scene: Phaser.Scene, key: string, animation: AnimationDef) {
-  if (animation.packedAtlasUrl)
+  if (animation.multiAtlas && animation.packedAtlasUrl)
+    scene.load.multiatlas(key, animation.packedAtlasUrl, animation.url.slice(0, animation.url.lastIndexOf("/") + 1));
+  else if (animation.packedAtlasUrl)
     scene.load.atlas(key, animation.url, animation.packedAtlasUrl);
   else scene.load.spritesheet(key, animation.url, {
     frameWidth: animation.frameWidth,

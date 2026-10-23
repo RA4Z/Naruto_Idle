@@ -1,19 +1,72 @@
 {
-  "modelsWithAdditionalActions": 16,
-  "additionalActions": 861,
-  "additionalBodyFramesCompared": 9279,
-  "completedTruncatedSpecials": 2,
-  "completeSpecialFramesCompared": 198,
-  "reservedSasukePreserved": true,
-  "preparedNativeEffects": 16,
-  "nativeLayers": 18,
-  "nativeFramesCompared": 1071,
-  "effectOriginalsAudited": 2003,
-  "modelsAudited": 1466,
+  "sourceAudit": {
+    "effectSources": 2003,
+    "models": 1466,
+    "unintegratedActionNames": 81013,
+    "unintegratedWithLocalBitmapRefs": 78221,
+    "unintegratedWithoutLocalBitmapRefs": 2792,
+    "externalNames": {
+      "yingzi(1).png": 30337
+    },
+    "bodyBlendModes": {
+      "add": 23471,
+      "multiply": 392,
+      "overlay": 1,
+      "invert": 90,
+      "screen": 35,
+      "hardlight": 72,
+      "erase": 114
+    },
+    "effectBlendModes": {
+      "add": 1280,
+      "hardlight": 108,
+      "overlay": 22,
+      "normal": 30,
+      "lighten": 16
+    },
+    "bodyColorValues": {
+      "ff3399ff": 31,
+      "35ff9900": 1,
+      "ffffffff": 27,
+      "c9ffffff": 2,
+      "3fffffff": 2,
+      "ffff0000": 944,
+      "ffcc0000": 8,
+      "ffff3300": 4,
+      "ffff0033": 1,
+      "19000000": 16,
+      "ff000000": 677,
+      "5effffff": 2,
+      "a0ffffff": 1,
+      "5400ccff": 1,
+      "5400ffff": 1,
+      "75000000": 2,
+      "0": 2
+    },
+    "effectColorValues": {
+      "ff390708": 60,
+      "ff9966ff": 30,
+      "ffff66ff": 11,
+      "ffffff99": 11,
+      "7fff3300": 30,
+      "ffffffff": 36
+    },
+    "frameAttributes": {
+      "index": 1637955,
+      "length": 1637955,
+      "event": 150514,
+      "sound": 205958,
+      "volume": 205958,
+      "tween": 4398
+    }
+  },
+  "formats": {
+    "static-display-list": 1911,
+    "bitmap-actions": 92
+  },
   "modelsWithExactSkillBindings": 700,
-  "pendingPreparedTimelineLengthMismatches": 0,
-  "unpreparedActionOrMarkerNames": 81013,
-  "deferredEffects": {
+  "preparedNativeEffects": 86,
+  "deferredPreparedEffects": {
     "2005": {
       "id": "2005",
       "definition": {
@@ -64,31 +117,57 @@
       },
       "reason": "ValueError: Bitmap action needs faithful feature adapter: ['blendMode']",
       "state": "not-substituted"
+    },
+    "2213": {
+      "id": "2213",
+      "definition": {
+        "id": "2213",
+        "type": "0",
+        "target": "6",
+        "pos": "70,0",
+        "color": "",
+        "alpha": "",
+        "ninjaAlpha": "1",
+        "res": "assets/battle/effect/Wuyinshu.swf",
+        "action": "",
+        "name": "雾隐术",
+        "frontAction": "wy1",
+        "backAction": "wy2"
+      },
+      "reason": "ValueError: Multi-page atlas exceeds 16 pages or 64M total pixels; no automatic downscaling",
+      "rendererDetail": null,
+      "state": "not-substituted"
     }
   },
-  "bodyFeatureDependencies": {
-    "11001301": [
-      "C_entry: tween-interpolation",
-      "C_entry_1: tween-interpolation"
-    ],
-    "11001601": [
-      "C_callup_dead: blendMode"
-    ]
-  },
-  "runtimeIntegratedNativeEffects": [
-    "2015 for Naruto11000101 SP_skill1"
-  ],
-  "scope": "Other original bindings are source-reviewed in admin, not announced as completed world-combat integrations. No original files, real account, cloud database, save schema, recruitment gate or balance changed.",
-  "validation": {
-    "typescriptTests": 333,
-    "pythonTests": 16,
-    "i18nKeys": 1292,
-    "languages": 3,
-    "assetFilesChecked": 24720,
-    "nativeAtlasAllFrames": true,
-    "webglAndCanvasPreviews": true,
-    "productionBuild": true,
-    "bundleSecretsCheck": true,
-    "postBuildTargetedTests": 18
+  "policy": "Extracted != integrated. No AS executed. Alpha/blend/tween/external dependencies remain explicit. Compressed inventory contains every audited source and original ninja/skill binding.",
+  "sources": {
+    "config/skill/ninjaSkillConfig.xml": {
+      "path": "config/skill/ninjaSkillConfig.xml",
+      "tag": "PT_NarutoAlpha9.35Build301",
+      "bytes": 328216,
+      "sha256": "7e973baf8feb3683ea701ab92ad503ccd65d5b2d93b7c8c337d9416668aa133e",
+      "sourceKind": "exported-inventory"
+    },
+    "assets/battle/SkillAction.xml": {
+      "path": "assets/battle/SkillAction.xml",
+      "tag": "PT_NarutoAlpha9.31Build300",
+      "bytes": 87764,
+      "sha256": "8984128338e92f1f460843143887c2f4c8f780dd663092ec764664cdd862cb6b",
+      "sourceKind": "exported-inventory"
+    },
+    "assets/battle/Effect.xml": {
+      "path": "assets/battle/Effect.xml",
+      "tag": "PT_NarutoAlpha9.35Build301",
+      "bytes": 56342,
+      "sha256": "9a1bb50bfba15263ccf7e3de0a80cc45f041687c16fa081fe16359342cd5b9ca",
+      "sourceKind": "exported-inventory"
+    },
+    "config/battle/SkillInfos.xml": {
+      "path": "config/battle/SkillInfos.xml",
+      "tag": "PT_NarutoAlpha9.35Build301",
+      "bytes": 181995,
+      "sha256": "3a7c5239bfd96d64c67a3fb599c3928dbe36bc5ad7fb574546ac2bacc3bdd172",
+      "sourceKind": "exported-inventory"
+    }
   }
 }

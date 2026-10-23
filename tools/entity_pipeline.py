@@ -5,6 +5,7 @@ import argparse, concurrent.futures, collections, hashlib, io, json, math, re, s
 from pathlib import Path
 import xml.etree.ElementTree as ET
 from PIL import Image
+from bitmap_cache import BitmapCache
 from swf_bytes import decode
 from entity_layout import catalog_path,manifest_path,organize
 
@@ -56,7 +57,7 @@ def lossless(payload,alpha):
  if alpha:pixels=[(min(255,(r*255+a//2)//a),min(255,(g*255+a//2)//a),min(255,(blue*255+a//2)//a),a) if a else (0,0,0,0) for r,g,blue,a in pixels]
  im=Image.new('RGBA',(w,h));im.putdata(pixels);return ident,im
 
-def read_actions(path,max_image_pixels=None,only_actions=None,frame_limits=None):
+def read_actions(path,max_image_pixels=None,only_actions=None,frame_limits=None,image_cache=None):
  records=list(tags(path.read_bytes()));images={};symbols={};xml=None;pixel_total=0
  for kind,p in records:
   if kind==87 and p[6:].lstrip().startswith(b'<actions'):xml=p[6:]
@@ -85,6 +86,10 @@ def read_actions(path,max_image_pixels=None,only_actions=None,frame_limits=None)
   if kind not in (20,36,21,35,90):continue
   ident=struct.unpack_from('<H',p)[0]
   if needed is not None and ident not in needed:continue
+  cache_key=(kind,hashlib.sha256(p).digest()) if image_cache is not None else None
+  cached=image_cache.get(cache_key) if image_cache is not None else None
+  if cached is not None:
+   check_size(*cached.size);images[ident]=cached;continue
   if kind in (20,36):
    w,h=struct.unpack_from('<HH',p,3);check_size(w,h);ident,im=lossless(p,kind==36)
   else:
@@ -95,10 +100,14 @@ def read_actions(path,max_image_pixels=None,only_actions=None,frame_limits=None)
    else:
     im=Image.open(io.BytesIO(p[2:]));check_size(*im.size);im=im.convert('RGBA')
   images[ident]=im
+  if image_cache is not None:image_cache.put(cache_key,im)
  return root,assets,images,symbols,xml
 
-def convert(path,folder,url,mode,only=None,frame_limits=None,pixel_budget=None,source_pixel_budget=None,compact=False):
- root,assets,images,symbols,xml=read_actions(path,max_image_pixels=source_pixel_budget,only_actions=only,frame_limits=frame_limits);folder.mkdir(parents=True,exist_ok=True);(folder/'actions.xml').write_bytes(xml)
+def convert(path,folder,url,mode,only=None,frame_limits=None,pixel_budget=None,source_pixel_budget=None,compact=False,native_tween=False,image_cache=None):
+ root,assets,images,symbols,xml=read_actions(path,max_image_pixels=source_pixel_budget,only_actions=only,frame_limits=frame_limits,image_cache=image_cache);folder.mkdir(parents=True,exist_ok=True);(folder/'actions.xml').write_bytes(xml)
+ if native_tween:
+  from native_tween import expand_tweens
+  root=expand_tweens(root,only)
  if frame_limits:
   import copy
   root=copy.deepcopy(root)
@@ -150,7 +159,7 @@ def convert(path,folder,url,mode,only=None,frame_limits=None,pixel_budget=None,s
      if active:visible.extend(el for el in active[-1].findall('element') if id(el) in elements)
     signatures.add(tuple(tuple(sorted(el.attrib.items())) for el in visible))
    if w*h*len(signatures)>pixel_budget:issues.append({'action':name,'reason':'canvas-pixel-budget-exceeded','estimatedPixels':w*h*len(signatures)});continue
-  cache={};frames=[];timeline=[];frame_bounds=[];frame_positions=[];allocated=0;failed=None
+  cache={};content_frames={};frames=[];timeline=[];frame_bounds=[];frame_positions=[];allocated=0;failed=None
   if compact and (max(w,h)>8192 or w*h>16000000):issues.append({'action':name,'reason':'temporary-canvas-budget-exceeded','size':[w,h]});continue
   for time in range(end):
    visible=[]
@@ -173,8 +182,14 @@ def convert(path,folder,url,mode,only=None,frame_limits=None,pixel_budget=None,s
      bbox=frame.getbbox()
      if bbox:frame=frame.crop(bbox);fl+=bbox[0];ft+=bbox[1]
      else:frame=Image.new('RGBA',(1,1));fl=ft=0
+     # Different source bitmap IDs can contain identical pixels. Registration is
+     # part of the key, so a translated pose never inherits another origin.
+     content_key=(frame.size,hashlib.sha256(frame.tobytes()).digest(),fl,ft)
+     if content_key in content_frames:
+      cache[signature]=content_frames[content_key];timeline.append(cache[signature]);frame.close();continue
      allocated+=frame.width*frame.height
      if pixel_budget is not None and allocated>pixel_budget:failed={'action':name,'reason':'compact-pixel-budget-exceeded','estimatedPixels':allocated};break
+     content_frames[content_key]=len(frames)
     cache[signature]=len(frames);frames.append(frame);frame_bounds.append(frame.getbbox());frame_positions.append((fl,ft))
    timeline.append(cache[signature])
   if failed:issues.append(failed);continue
@@ -190,7 +205,7 @@ def convert(path,folder,url,mode,only=None,frame_limits=None,pixel_budget=None,s
   sheet=Image.new('RGBA',(cols*w,rows*h))
   for i,frame in enumerate(frames):sheet.alpha_composite(frame,((i%cols)*w,(i//cols)*h))
   safeName=name.strip() if re.fullmatch(r'[A-Za-z0-9_-]+',name.strip()) else 'action-'+hashlib.sha256(name.encode()).hexdigest()[:12]
-  filename=safeName+('-'+hashlib.sha256(name.encode()).hexdigest()[:8] if sum(a.get('name','').casefold()==name.casefold() for a in root.findall('action'))>1 else '')+'.png'
+  filename=safeName+('-'+hashlib.sha256(name.encode()).hexdigest()[:8] if name!=name.strip() or sum(a.get('name','').strip().casefold()==name.strip().casefold() for a in root.findall('action'))>1 else '')+'.png'
   sheet.save(folder/filename,compress_level=2)
   boxes=[b for b in frame_bounds if b]
   if not boxes:issues.append({'action':name,'reason':'all-frames-transparent'});continue

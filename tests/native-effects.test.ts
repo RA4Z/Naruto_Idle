@@ -45,3 +45,12 @@ test("front and back layers share one native plane even when each symbol has dif
   assert.deepEqual(nativeEffectBounds([front,back]),[-40,-45,30,25]);
   assert.deepEqual(nativeEffectBounds([{...animation,origin:[.5,1]}]),[-45,-80,45,0]);
 });
+
+test("large native effects load multiple bounded pages under the same frame names",()=>{
+  const calls:unknown[][]=[];
+  const scene={load:{multiatlas:(...args:unknown[])=>calls.push(args)}};
+  const paged={...animation,url:"/assets/effects/native/source/action/effect-0.webp",packedAtlasUrl:"/assets/effects/native/source/action/effect-atlas.json",multiAtlas:true,atlasPageUrls:["/page-0.webp","/page-1.webp"],framePages:[0,1]};
+  queueAnimation(scene as never,"native-paged",paged);
+  assert.deepEqual(calls,[["native-paged",paged.packedAtlasUrl,"/assets/effects/native/source/action/"]]);
+  assert.deepEqual(animationFrames("native-paged",paged),[{key:"native-paged",frame:"0"},{key:"native-paged",frame:"0"},{key:"native-paged",frame:"1"},{key:"native-paged",frame:"0"}]);
+});
