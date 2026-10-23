@@ -181,6 +181,21 @@ export function createGameApi(
         return json(res, 401, { error: "Entre como administrador." });
       if (url.pathname === "/api/admin/arena")
         return json(res, 200, arena.diagnostics());
+      // The sandbox reads compact data only; it never walks the full asset tree
+      // or writes a cloud save, roster, source manifest, or review decision.
+      if (url.pathname === "/api/admin/lab") {
+        if (req.method !== "GET") return json(res, 405, { error: "Read only" });
+        const runtime = await read("public/assets/catalog/runtime.json");
+        const entities = { ...runtime.entities };
+        try {
+          const sources = JSON.parse(await readFile(resolve(root, "asset-source/role-source-exports/index.json"), "utf8"));
+          for (const [id, record] of Object.entries(sources.models || {})) {
+            if (!/^role-source-[a-f0-9]{16}$/.test(id) || record.sourceOnly !== true || record.manifest !== `/assets/para-revisao/fontes-alternativas/${id}/manifest.json` || entities[id]) continue;
+            entities[id] = { name: record.source.path.split("/").at(-1).replace(/\.swf$/, ""), variant: record.sourceGroup, url: record.manifest, capabilities: {}, collection: "review", sourceOnly: true };
+          }
+        } catch (error) { if (error.code !== "ENOENT") throw error; }
+        return json(res, 200, { ...runtime, entities });
+      }
       if (url.pathname === "/api/admin/session")
         return json(res, 200, { authenticated: true });
       if (url.pathname === "/api/admin/characters")

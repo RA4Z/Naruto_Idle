@@ -64,12 +64,14 @@ function login() {
 let content: HTMLElement,
   section = "overview",
   generation = 0;
+let sectionCleanup: (() => void) | undefined;
 async function shell() {
   root.innerHTML = `<div class="admin-shell"><aside class="admin-nav"><p class="eyebrow">${th("admin.main.7984cfa6d0")}</p><h2>${th("admin.main.7d8098b4f7")}</h2><nav></nav><a href="/">Abrir o jogo \u2197</a><button data-logout class="secondary">${th("admin.main.2d023dea2a")}</button></aside><main class="admin-main"><header><div><p class="eyebrow">${th("admin.main.d0c40a35b6")}</p><h1 data-title></h1></div><span class="admin-badge">${th("admin.main.f6c44eaec8")}</span></header><section data-content></section></main></div>`;
   content = root.querySelector("[data-content]")!;
   for (const [id, name] of [
     ["overview", t("admin.main.36664e8242")],
     ["characters", t("admin.main.125523ff6a")],
+    ["lab", t("lab.title")],
     ["maps", t("admin.main.7ab84a7603")],
     ["effects", t("admin.main.020cdce113")],
     ["sounds", t("admin.main.0476208c29")],
@@ -85,12 +87,16 @@ async function shell() {
   root.querySelector<HTMLButtonElement>("[data-logout]")!.onclick =
     async () => {
       await api("logout", {});
+      sectionCleanup?.(); sectionCleanup = undefined;
       login();
     };
-  await show("overview", t("admin.main.36664e8242"));
+  const directLab = location.hash === "#lab";
+  await show(directLab ? "lab" : "overview", t(directLab ? "lab.title" : "admin.main.36664e8242"));
 }
-async function show(id: string, title: string) {
+async function show(id: string, title: string, initialModel?: string) {
+  sectionCleanup?.(); sectionCleanup = undefined;
   section = id;
+  history.replaceState(null, "", location.pathname + location.search + (id === "lab" ? "#lab" : ""));
   const request = ++generation;
   root.querySelector("[data-title]")!.textContent = title;
   root
@@ -103,7 +109,12 @@ async function show(id: string, title: string) {
   });
   content.replaceChildren(node("p", t("common.loading")));
   try {
-    if (id === "overview") {
+    if (id === "lab") {
+      const { mountCombatLab } = await import("./combat-lab");
+      if (request !== generation) return;
+      content.replaceChildren();
+      sectionCleanup = mountCombatLab(content, api, initialModel);
+    } else if (id === "overview") {
       const data = await api("overview");
       if (request !== generation) return;
       const grid = node("div", undefined, "admin-stats");
@@ -484,10 +495,12 @@ function characters(entries: Entry[]) {
           alert(errorText(e));
         }
       };
-      card.append(button);
+      const lab = node("button", t("lab.title"), "secondary");
+      lab.onclick = () => void show("lab", t("lab.title"), entry.id);
+      card.append(button, lab);
       card.style.cursor = "pointer";
       card.onclick = (event) => {
-        if (event.target !== button) button.click();
+        if (!(event.target as HTMLElement).closest("button")) button.click();
       };
       grid.append(card);
     }

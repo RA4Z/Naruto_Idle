@@ -2,8 +2,16 @@ import type { NativeNavigation, Point } from "./navigation";
 
 export const MELEE_RANGE = 28;
 
+/** Shared diagnostics and gameplay rule. Coordinates are ground/world units;
+ * visual texture bounds, crop origins and jutsu pixels never enter this test. */
+export function meleeProbe(a: Point, b: Point, nav: NativeNavigation) {
+  const distance = Math.hypot(a.x - b.x, a.y - b.y);
+  const inRange = Number.isFinite(distance) && distance < MELEE_RANGE;
+  const clear = inRange && nav.clear(a, b);
+  return { distance, reachable: clear, reason: !inRange ? "out-of-range" as const : clear ? "in-range" as const : "blocked" as const };
+}
 export function meleeReachable(a: Point, b: Point, nav: NativeNavigation) {
-  return Math.hypot(a.x - b.x, a.y - b.y) < MELEE_RANGE && nav.clear(a, b);
+  return meleeProbe(a, b, nav).reachable;
 }
 
 /** A surrounding slot is useful only if its route actually ends in melee.

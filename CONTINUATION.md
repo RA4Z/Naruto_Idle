@@ -1,3 +1,13 @@
+## Laboratório de combate no admin — 23/10/2026
+
+Novo /admin#lab e botões nas fichas de personagens. Cena Phaser real com mapa/navegação, movimento, seleção de ações world/battle/source, timeline/quadros, pausa, velocidade/zoom/espelhamento e diagnóstico de alcance/limites visuais. Ataques temporários usam Hunt de nível1+perfil de alvo padrão, sem conta/save. Fontes alternativas RPG/right são lidas do índice de revisão protegido e permanecem source-only sem identidade/capacidades/dano. Carregarfontesrenova índices e manifests; fila de assets e descarte de cenas/texturas controlados. Rasengan2015com relógio originalincluindoinspeçãodequadros;demaisefeitossemvínculovalidadonãoanexados.
+
+Regra atual compartilhadacommeleeProbe: distânciaestrita<28+nav.clear,independentedecrop/arte. DanoHunt lógico antesda animação; ainda nãoháhitboxesdearma/projétil/área/janelaporquadro. ArenaPvPatual épor turno no servidor,nãoespacial. docs/COMBAT_LAB_AND_HITBOX.md documentacontratoefuturosconflitos.
+
+Validação347testesTS+2APIadmin,tipagem,i18n3idiomas,build;CUAcomcontaadmindescartável:longe69.3miss,perto17.5jutsu33,bodytimeline35/98unique19+efeito35;pausa/espelhamento;SasukeazulRPGwalkoriginalsemidentity. reports/admin-combat-lab-validation.json. Imagensnoworkspaceadmin_lab_work/lab-naruto-{hitbox,mirrored,full}.jpg. SemoriginalSWF/creds/conta/savealterados.
+
+Extraçãoparadaantesdestaetapa:31330encerradaapós137,source-effect-group-132-review.json acusaDSWABtlswsdz/tx(nativeJava180s). Últimoresetconfirmado0%primária/58%semanal. Revisartimeout,publicarmarcos32..137comprovas,commit+push;retomar138..816. 22scene-exported/25símbolos(3posData)/7battleNoConfig/24roledeferred/adaptersreaiscontinuampendentes. HeartbeatPAUSEDporusuário,nãoreativar.
+
 ## Login e carregamento otimizados — 23/10/2026
 
 A tela de login deixou de esperar a restauração remota da sessão para ficar interativa. Consultas de perfil e existência de save são paralelas; a verificação autoritativa de conta continua em openCloudJourney, sem duplicação no menu. O código do motor pode aquecer após identificar a conta, sem baixar mapas/animações, tomar lease ou alterar progresso. O formulário anônimo não é reconstruído ao terminar uma consulta sem mudança de usuário.

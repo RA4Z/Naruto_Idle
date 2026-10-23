@@ -1,0 +1,66 @@
+{
+  "scope": "Admin sandbox, real source assets and real PvE range/Hunt rules; not completion of extraction or new live skills",
+  "sourceExecution": false,
+  "realAccountChanged": false,
+  "cloudSaveWritten": false,
+  "mechanicalUnlocksChanged": false,
+  "gameplayRangeChanged": false,
+  "rangeRule": {
+    "units": "ground/world",
+    "strictLessThan": 28,
+    "requiresUnobstructedNavigation": true,
+    "spriteBoundsCauseDamage": false,
+    "damageTiming": "logical-before-visual",
+    "arenaPvP": "server-authoritative turns, no spatial collision in current mode"
+  },
+  "browser": {
+    "method": "CUA local admin, throwaway admin password/session, no player account",
+    "renderer": "Phaser WebGL",
+    "farAttempt": {
+      "distance": 69.3,
+      "hit": false,
+      "damage": 0
+    },
+    "nearSkill": {
+      "entityId": "11000101",
+      "distance": 17.517739644627234,
+      "damage": 33,
+      "timelineFrameIndex": 35,
+      "uniqueBodyFrame": 19,
+      "sourceFps": 24,
+      "nativeEffectId": "2015",
+      "nativeEffectFrame": 35,
+      "pausedFrameAndMirrorVerified": true
+    },
+    "sourcePreview": {
+      "id": "role-source-35fb8dc3e2b349fb",
+      "source": "11000211_rpg",
+      "mode": "source",
+      "authoredClip": "walk_4",
+      "timelineFrames": 20,
+      "movementVerified": true,
+      "noPlayableIdentityAssigned": true,
+      "damage": 0
+    },
+    "consoleErrors": [],
+    "consoleWarnings": []
+  },
+  "tests": {
+    "typescript": 347,
+    "adminApi": 2,
+    "typecheck": "passed",
+    "i18n": "passed",
+    "productionBuild": "passed"
+  },
+  "screenshots": {
+    "lab-naruto-full.jpg": "f69f121277bec43de3dc19d15f280d1ebc9f0968d79c411a2d1ff571290ab537",
+    "lab-naruto-hitbox.jpg": "39afbb00bb1a9e5cd39d11e1c17acc4044a142f6e5499de99b5ff2145b5ff59c",
+    "lab-naruto-mirrored.jpg": "d636a63c2e8b01e717a054414b212ed8d917ae2bd82cc6d24c7e6a1dbe482ad0"
+  },
+  "remaining": [
+    "Source layers explicitly marked partial remain partial",
+    "Only existing validated effect bindings are attached",
+    "New area/projectile/per-frame damage hitboxes are not implemented by this inspection tool",
+    "Extraction next batch138; DSWABtlswsdz/tx render-timeout still needs review"
+  ]
+}
