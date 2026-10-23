@@ -3,7 +3,7 @@
 Existing actions and gameplay fields are never replaced. Filename collisions get
 a new content suffix rather than overwriting a previously delivered bitmap.
 """
-import argparse,copy,gzip,hashlib,json,shutil,sys
+import argparse,copy,gzip,hashlib,json,math,shutil,sys
 from pathlib import Path
 
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -42,6 +42,12 @@ def main():
         current_path=asset(project,row['manifest']);staged_path=asset(staging,row['manifest'])
         current=json.loads(current_path.read_bytes());original=copy.deepcopy(current);prepared=json.loads(staged_path.read_bytes());installed=[]
         before_sha=digest(current_path)
+        mode_created=mode not in current['modes']
+        if mode_created:
+            definition=prepared['modes'][mode];height=definition['referenceHeight']
+            if not isinstance(height,(int,float)) or isinstance(height,bool) or not math.isfinite(height) or height<=0:raise ValueError('Invalid source mode reference height')
+            if definition['status'] not in ('ready','partial'):raise ValueError('Invalid source mode status')
+            current['modes'][mode]={'referenceHeight':height,'status':definition['status'],'animations':{}}
         for addition in additions:
             name=addition['action']
             if name in current['modes'][mode]['animations']:
@@ -65,11 +71,14 @@ def main():
         if installed:
             # Verify that the merge changed exactly the recorded new action keys.
             stripped=copy.deepcopy(current)
-            for item in installed:del stripped['modes'][mode]['animations'][item['action']]
+            if mode_created:del stripped['modes'][mode]
+            else:
+                for item in installed:del stripped['modes'][mode]['animations'][item['action']]
             assert stripped==original,'A non-addition manifest field changed'
+            if digest(current_path)!=before_sha:raise ValueError('Manifest was edited during installation')
             temporary=current_path.with_suffix('.json.tmp');temporary.write_text(json.dumps(current,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');temporary.replace(current_path)
         result['models'][ident]={'mode':mode,'manifest':row['manifest'],'beforeManifestSha256':before_sha,'afterManifestSha256':digest(current_path),
-            'added':installed,'source':row['source'],'deferred':row['deferred'],'markers':row['markers']}
+            'added':installed,'modeCreated':bool(mode_created and installed),'source':row['source'],'deferred':row['deferred'],'markers':row['markers']}
         if index%25==0:print(json.dumps({'modelsVisited':index+1,'added':result['added']}),flush=True)
     target=project/'reports'/('full-character-extraction-'+args.label+'.json.gz');target.parent.mkdir(parents=True,exist_ok=True)
     with gzip.GzipFile(filename=str(target),mode='wb',mtime=0) as stream:stream.write((json.dumps(result,ensure_ascii=False,separators=(',',':'))+'\n').encode())

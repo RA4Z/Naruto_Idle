@@ -36,7 +36,13 @@ def main():
    for name,definition in data['animations'].items():
     if definition.get('rendererRevision') not in args.revision.split(','):continue
     evidence=definition['sourceEvidence'];assert archive.record(evidence['path'])==evidence
-    root,assets,images,symbols,_=read_actions(archive.path(evidence['path']),32000000,{name},image_cache=bitmap_cache)
+    preferred=bool(definition.get('sourceConfiguration'))
+    if preferred:
+     from mme_config import read_config
+     _,_,source_configuration=read_config(archive.raw(evidence['path']))
+     assert source_configuration==definition['sourceConfiguration']
+     core=definition['configurationPreferenceEvidence'];assert archive.record(core['path'])==core
+    root,assets,images,symbols,_=read_actions(archive.path(evidence['path']),32000000,{name},image_cache=bitmap_cache,preferred_config=preferred)
     action=next(a for a in root.findall('action') if a.get('name')==name);layers=action.findall('layer')
     def source_elements(time):
      visible=[]
@@ -91,7 +97,7 @@ def main():
       if time==duration//2 and not args.no_contact:
        preview=expected.crop(expected.getbbox()) if expected.getbbox() else expected;preview.thumbnail((210,170))
        tile=Image.new('RGBA',(250,220),'#1e2634');tile.alpha_composite(preview,((250-preview.width)//2,30+(170-preview.height)//2));ImageDraw.Draw(tile).text((6,4),entry['id']+' '+name,fill='white');previews.append(tile)
-    rows.append({'id':entry['id'],'mode':mode,'action':name,'timingAndTimelineMatch':True,'groundOffsetsAndPixelsMatch':True,'sampledTimelineFrames':probes,'uniqueNativePoseComparisons':unique_pose_comparisons,'repeatedFramesVerifiedBySourcePoseAndAtlasIndex':True,'sourceHashesPreserved':True,'atlasSha256':hashlib.sha256(path.read_bytes()).hexdigest(),'externalEffectsUnresolved':definition.get('externalEffects',[])})
+    rows.append({'id':entry['id'],'mode':mode,'action':name,'rendererRevision':definition.get('rendererRevision'),'sourceConfiguration':definition.get('sourceConfiguration'),'timingAndTimelineMatch':True,'groundOffsetsAndPixelsMatch':True,'sampledTimelineFrames':probes,'uniqueNativePoseComparisons':unique_pose_comparisons,'repeatedFramesVerifiedBySourcePoseAndAtlasIndex':True,'sourceHashesPreserved':True,'atlasSha256':hashlib.sha256(path.read_bytes()).hexdigest(),'externalEffectsUnresolved':definition.get('externalEffects',[])})
     print(entry['id']+' '+name+' source probes verified',flush=True)
  assert len(rows)==args.expected,len(rows)
  write_json(ROOT/('reports/'+args.report+'.json'),{'actions':rows,'count':len(rows),'sampledFrames':sum(len(r['sampledTimelineFrames']) for r in rows),'allTimelineFrames':args.all_frames,'scope':'RGBA probes in independent source coordinate canvas; no claim of complete external-effect reconstruction'})

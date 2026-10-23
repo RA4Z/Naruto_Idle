@@ -58,4 +58,18 @@ class CharacterInstallTests(unittest.TestCase):
             report=json.loads(gzip.decompress((project/'reports/full-character-extraction-fixture.json.gz').read_bytes()))
             self.assertEqual(report['added'],0);self.assertEqual(len(report['preservedExisting']),1)
 
+    def test_missing_source_mode_can_be_added_without_changing_capabilities_or_other_mode(self):
+        with tempfile.TemporaryDirectory() as temp:
+            source,project,stage,current,url,manifest_url=self.fixture(Path(temp))
+            current['modes']['world']=current['modes'].pop('battle')
+            current['capabilities']={'npc':True,'companion':False,'enemy':False}
+            current_path=project/'public'/manifest_url.lstrip('/');current_path.write_text(json.dumps(current))
+            staged_path=stage/'public'/manifest_url.lstrip('/');prepared=json.loads(staged_path.read_bytes())
+            prepared['modes']['battle']['status']='partial';staged_path.write_text(json.dumps(prepared))
+            self.run_install(source,project,stage);after=json.loads(current_path.read_bytes())
+            mode=after['modes'].pop('battle');self.assertEqual(after,current)
+            self.assertEqual(set(mode['animations']),{'SP_skill2'});self.assertEqual(mode['referenceHeight'],200)
+            report=json.loads(gzip.decompress((project/'reports/full-character-extraction-fixture.json.gz').read_bytes()))
+            self.assertTrue(report['models']['1']['modeCreated']);self.assertFalse(report['mechanicalUnlocksChanged'])
+
 if __name__=='__main__':unittest.main()

@@ -57,7 +57,7 @@ def lossless(payload,alpha):
  if alpha:pixels=[(min(255,(r*255+a//2)//a),min(255,(g*255+a//2)//a),min(255,(blue*255+a//2)//a),a) if a else (0,0,0,0) for r,g,blue,a in pixels]
  im=Image.new('RGBA',(w,h));im.putdata(pixels);return ident,im
 
-def read_actions(path,max_image_pixels=None,only_actions=None,frame_limits=None,image_cache=None):
+def read_actions(path,max_image_pixels=None,only_actions=None,frame_limits=None,image_cache=None,preferred_config=False):
  records=list(tags(path.read_bytes()));images={};symbols={};xml=None;pixel_total=0
  for kind,p in records:
   if kind==87 and p[6:].lstrip().startswith(b'<actions'):xml=p[6:]
@@ -65,8 +65,13 @@ def read_actions(path,max_image_pixels=None,only_actions=None,frame_limits=None,
    count=struct.unpack_from('<H',p)[0];pos=2
    for _ in range(count):
     ident=struct.unpack_from('<H',p,pos)[0];pos+=2;end=p.index(0,pos);symbols[p[pos:end].decode('utf-8')]=ident;pos=end+1
- if not xml:raise ValueError('No bitmap actions XML: timeline/vector reconstruction required')
- root=ET.fromstring(xml);assets={a.get('id'):a.attrib for a in root.findall('asset')};needed=None
+ if preferred_config:
+  from mme_config import read_config
+  root,_,_=read_config(path.read_bytes());xml=ET.tostring(root,encoding='utf-8')
+ else:
+  if not xml:raise ValueError('No bitmap actions XML: timeline/vector reconstruction required')
+  root=ET.fromstring(xml)
+ assets={a.get('id'):a.attrib for a in root.findall('asset')};needed=None
  if only_actions is not None:
   needed=set()
   for action in root.findall('action'):
@@ -103,8 +108,8 @@ def read_actions(path,max_image_pixels=None,only_actions=None,frame_limits=None,
   if image_cache is not None:image_cache.put(cache_key,im)
  return root,assets,images,symbols,xml
 
-def convert(path,folder,url,mode,only=None,frame_limits=None,pixel_budget=None,source_pixel_budget=None,compact=False,native_tween=False,image_cache=None):
- root,assets,images,symbols,xml=read_actions(path,max_image_pixels=source_pixel_budget,only_actions=only,frame_limits=frame_limits,image_cache=image_cache);folder.mkdir(parents=True,exist_ok=True);(folder/'actions.xml').write_bytes(xml)
+def convert(path,folder,url,mode,only=None,frame_limits=None,pixel_budget=None,source_pixel_budget=None,compact=False,native_tween=False,image_cache=None,preferred_config=False):
+ root,assets,images,symbols,xml=read_actions(path,max_image_pixels=source_pixel_budget,only_actions=only,frame_limits=frame_limits,image_cache=image_cache,preferred_config=preferred_config);folder.mkdir(parents=True,exist_ok=True);(folder/'actions.xml').write_bytes(xml)
  if native_tween:
   from native_tween import expand_tweens
   root=expand_tweens(root,only)

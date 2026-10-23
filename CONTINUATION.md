@@ -1,5 +1,13 @@
 # Ponto de continuidade — estado atual
 
+## Corridas recuperadas da configuração original — 23/10
+
+Corrigidas 24 animações de corrida (oito direções) de A/Terceiro Raikage11010331, Ameyuri Ringo11011511 e Anko11004021. O XML desses arquivos omitia classes e registros de algumas imagens; ConfigAMF, que o renderizador original prioriza, contém os dados completos. Antes havia cinco poses, incluindo quadros sem o personagem; agora são oito poses, mantendo os mesmos 20 quadros de timeline a24fps. Todos os480quadros foram comparados independentemente aos dados preferidos da fonte.
+
+Os PNGs anteriores permanecem preservados. A instalação usa arquivos novos por hash, compara a definição e o bitmap atuais contra o estado anterior e modifica apenas as24ações solicitadas. Mantidos os demais modos, dimensões de referência, capacidades e classificação de revisão; não houve liberação automática de personagens. Há proteção contra edições simultâneas e prova parcial ou arquivo alterado. Relatórios: reports/source-corrections-worldp1.json.gz e reports/preferred-world-validation.json.
+
+41testes Python e tipos aprovados. A fixture tools/qa/preferred-world.html usa queueActor/registerActor/EntityActor reais e confirmou seis atores em WebGL, reprodução, pausa e troca de direção0→4, sem conta/save. No quadro11, a coluna antiga não exibia os personagens e a corrigida exibia as poses completas. Auditoria das demais representações XML/AMF em andamento; ainda há fontes e efeitos pendentes.
+
 ## Acervo de efeitos por fonte — 23/10
 
 O acervo contém 100 IDs reais com atlas, 1 entrada em sequência de quadros e 4 animações exportadas sem vínculo de habilidade. São 91 SWFs únicos e 114 pares fonte/ação distintos. O relatório integral conferiu 121 camadas e 4920 quadros, incluindo as referências repetidas a uma mesma fonte. Essas contagens não equivalem a técnicas disponíveis no combate.
