@@ -1,5 +1,11 @@
 # Ponto de continuidade — estado atual
 
+## Corpos: marco battlec31 instalado (23/10)
+
+Adicionadas 64.017 ações em 724 entradas de modelo/modo, com 2.176.553 quadros de timeline cobertos por comparação independente de poses RGBA, origem e índice do atlas. O instalador conferiu fontes e SHAs antes de copiar, manteve ações e campos anteriores e não alterou recrutamento. Relatório completo: reports/full-character-extraction-battlec31.json.gz. A contagem inclui variantes e poses repetidas; não representa 64.017 jutsus distintos. Sombras externas e ações adiadas por limites continuam parciais. Próximo ciclo 32/lote 181; não repetir os lotes anteriores.
+
+Tipos, 338 testes TS, 26 Python, traduções, build, segredos e LFS aprovados; 88.824 arquivos gráficos/áudio conferidos. A gravação terminou antes da renovação; o commit foi adiado apenas porque a revisão automática ficou sem saldo para executar. Retomada após renovação normal, sem uso de reset manual ou créditos.
+
 ## Ficha do Naruto: ilustração central original (22/10)
 
 Somente a imagem central da ficha do Naruto clássico 11000101 agora usa uma ilustração original até a cintura, sem círculo nem máscara de retrato. Origem exata: assets/newplot/dialog/11000101/01.png; apenas margens transparentes removidas, com hashes e recorte em public/assets/character-sheet/index.json. Mantidos slots, arsenal, retratos pequenos, outros personagens e regras de equipamento. Falha de carregamento retorna ao retrato anterior. A arte não usa a variante com óculos da referência; preserva a identidade do Naruto clássico disponível no acervo.

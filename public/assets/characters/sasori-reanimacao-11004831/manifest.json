@@ -664,6 +664,3956 @@
           "referenceHeight": 150,
           "status": "ready",
           "externalEffects": []
+        },
+        "A_2hit": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/A_2hit.png",
+          "frameWidth": 96,
+          "frameHeight": 161,
+          "frames": 11,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            3,
+            4,
+            4,
+            4,
+            5,
+            6,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            10,
+            10
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3541666666666667,
+            0.968944099378882
+          ],
+          "referenceHeight": 160,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.3541666666666667,
+              0.968944099378882
+            ],
+            [
+              0.375,
+              0.9627329192546584
+            ],
+            [
+              0.40625,
+              0.9627329192546584
+            ],
+            [
+              0.4166666666666667,
+              0.9565217391304348
+            ],
+            [
+              0.4270833333333333,
+              0.9565217391304348
+            ],
+            [
+              0.4375,
+              0.9565217391304348
+            ],
+            [
+              0.4791666666666667,
+              0.9627329192546584
+            ],
+            [
+              0.4791666666666667,
+              0.9627329192546584
+            ],
+            [
+              0.4791666666666667,
+              0.968944099378882
+            ],
+            [
+              0.46875,
+              0.968944099378882
+            ],
+            [
+              0.4270833333333333,
+              0.968944099378882
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "A_2hit",
+          "events": [
+            {
+              "frame": 9,
+              "event": "playSkillEffect"
+            },
+            {
+              "frame": 14,
+              "event": "hit,playHitEffect,playShake:2"
+            },
+            {
+              "frame": 8,
+              "sound": "284",
+              "volume": "100"
+            },
+            {
+              "frame": 8,
+              "sound": "92",
+              "volume": "100"
+            },
+            {
+              "frame": 8,
+              "sound": "992",
+              "volume": "100"
+            }
+          ]
+        },
+        "C_entry": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/C_entry.png",
+          "frameWidth": 168,
+          "frameHeight": 221,
+          "frames": 9,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.0,
+            0.0
+          ],
+          "referenceHeight": 138,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.5952380952380953,
+              1.9230769230769231
+            ],
+            [
+              1.0535714285714286,
+              1.16289592760181
+            ],
+            [
+              0.47619047619047616,
+              0.47058823529411764
+            ],
+            [
+              0.39880952380952384,
+              0.38461538461538464
+            ],
+            [
+              0.36904761904761907,
+              0.3755656108597285
+            ],
+            [
+              0.30952380952380953,
+              0.3755656108597285
+            ],
+            [
+              0.21428571428571427,
+              0.5384615384615384
+            ],
+            [
+              0.16666666666666666,
+              0.6787330316742082
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "C_entry",
+          "events": [
+            {
+              "frame": 0,
+              "sound": "284",
+              "volume": "100"
+            },
+            {
+              "frame": 0,
+              "sound": "288",
+              "volume": "100"
+            },
+            {
+              "frame": 2,
+              "sound": "172",
+              "volume": "37"
+            },
+            {
+              "frame": 0,
+              "sound": "286",
+              "volume": "100"
+            }
+          ]
+        },
+        "C_exeunt": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/C_exeunt.png",
+          "frameWidth": 130,
+          "frameHeight": 161,
+          "frames": 8,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.24615384615384617,
+            0.968944099378882
+          ],
+          "referenceHeight": 121,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.24615384615384617,
+              0.968944099378882
+            ],
+            [
+              0.2923076923076923,
+              0.8881987577639752
+            ],
+            [
+              0.2923076923076923,
+              0.6459627329192547
+            ],
+            [
+              0.3384615384615385,
+              0.5341614906832298
+            ],
+            [
+              0.35384615384615387,
+              0.4782608695652174
+            ],
+            [
+              0.49230769230769234,
+              1.0124223602484472
+            ],
+            [
+              1.2846153846153847,
+              2.012422360248447
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "C_exeunt",
+          "events": [
+            {
+              "frame": 6,
+              "sound": "285",
+              "volume": "100"
+            },
+            {
+              "frame": 6,
+              "sound": "287",
+              "volume": "100"
+            },
+            {
+              "frame": 6,
+              "sound": "284",
+              "volume": "100"
+            }
+          ]
+        },
+        "C_run1_1": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/C_run1_1.png",
+          "frameWidth": 80,
+          "frameHeight": 135,
+          "frames": 1,
+          "timeline": [
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.375,
+            0.9629629629629629
+          ],
+          "referenceHeight": 135,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.375,
+              0.9629629629629629
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "C_run1_1",
+          "events": [
+            {
+              "frame": 0,
+              "sound": "285",
+              "volume": "83"
+            },
+            {
+              "frame": 0,
+              "sound": "287",
+              "volume": "100"
+            },
+            {
+              "frame": 0,
+              "sound": "286",
+              "volume": "100"
+            }
+          ]
+        },
+        "C_run1_2": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/C_run1_2.png",
+          "frameWidth": 194,
+          "frameHeight": 114,
+          "frames": 1,
+          "timeline": [
+            0,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.634020618556701,
+            1.1842105263157894
+          ],
+          "referenceHeight": 114,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.634020618556701,
+              1.1842105263157894
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "C_run1_2",
+          "events": []
+        },
+        "C_run1_3": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/C_run1_3.png",
+          "frameWidth": 80,
+          "frameHeight": 135,
+          "frames": 1,
+          "timeline": [
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.375,
+            0.9629629629629629
+          ],
+          "referenceHeight": 135,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.375,
+              0.9629629629629629
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "C_run1_3",
+          "events": [
+            {
+              "frame": 0,
+              "sound": "113",
+              "volume": "17"
+            }
+          ]
+        },
+        "C_run2_1": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/C_run2_1.png",
+          "frameWidth": 94,
+          "frameHeight": 139,
+          "frames": 2,
+          "timeline": [
+            0,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5638297872340425,
+            0.9712230215827338
+          ],
+          "referenceHeight": 136,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.5638297872340425,
+              0.9712230215827338
+            ],
+            [
+              0.5957446808510638,
+              0.9280575539568345
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "C_run2_1",
+          "events": [
+            {
+              "frame": 0,
+              "sound": "286",
+              "volume": "57"
+            },
+            {
+              "frame": 0,
+              "sound": "288",
+              "volume": "100"
+            },
+            {
+              "frame": 0,
+              "sound": "284",
+              "volume": "100"
+            }
+          ]
+        },
+        "C_run2_2": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/C_run2_2.png",
+          "frameWidth": 102,
+          "frameHeight": 146,
+          "frames": 1,
+          "timeline": [
+            0,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.39215686274509803,
+            1.082191780821918
+          ],
+          "referenceHeight": 146,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.39215686274509803,
+              1.082191780821918
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "C_run2_2",
+          "events": []
+        },
+        "C_run2_3": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/C_run2_3.png",
+          "frameWidth": 108,
+          "frameHeight": 154,
+          "frames": 2,
+          "timeline": [
+            0,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3333333333333333,
+            0.8376623376623377
+          ],
+          "referenceHeight": 144,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.3333333333333333,
+              0.8376623376623377
+            ],
+            [
+              0.3333333333333333,
+              0.9675324675324676
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "C_run2_3",
+          "events": [
+            {
+              "frame": 0,
+              "sound": "113",
+              "volume": "21"
+            }
+          ]
+        },
+        "C_skillIdle_1": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/C_skillIdle_1.png",
+          "frameWidth": 104,
+          "frameHeight": 162,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3076923076923077,
+            0.9629629629629629
+          ],
+          "referenceHeight": 162,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.3076923076923077,
+              0.9629629629629629
+            ],
+            [
+              0.3173076923076923,
+              0.9629629629629629
+            ],
+            [
+              0.3076923076923077,
+              0.9691358024691358
+            ],
+            [
+              0.3076923076923077,
+              0.9691358024691358
+            ],
+            [
+              0.2980769230769231,
+              0.9691358024691358
+            ],
+            [
+              0.3076923076923077,
+              0.9629629629629629
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "C_skillIdle_1",
+          "events": [
+            {
+              "frame": 5,
+              "sound": "174",
+              "volume": "100"
+            }
+          ]
+        },
+        "C_skillIdle_2": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/C_skillIdle_2.png",
+          "frameWidth": 75,
+          "frameHeight": 161,
+          "frames": 1,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4266666666666667,
+            0.968944099378882
+          ],
+          "referenceHeight": 161,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4266666666666667,
+              0.968944099378882
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "C_skillIdle_2",
+          "events": []
+        },
+        "D_air_air1": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_air_air1.png",
+          "frameWidth": 151,
+          "frameHeight": 164,
+          "frames": 29,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            27,
+            28
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.17218543046357615,
+            1.9024390243902438
+          ],
+          "referenceHeight": 112,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.17218543046357615,
+              1.9024390243902438
+            ],
+            [
+              0.17880794701986755,
+              2.341463414634146
+            ],
+            [
+              0.17218543046357615,
+              2.591463414634146
+            ],
+            [
+              0.152317880794702,
+              2.7804878048780486
+            ],
+            [
+              0.2119205298013245,
+              2.908536585365854
+            ],
+            [
+              0.19205298013245034,
+              3.0
+            ],
+            [
+              0.47019867549668876,
+              2.9451219512195124
+            ],
+            [
+              0.4768211920529801,
+              2.9878048780487805
+            ],
+            [
+              0.2847682119205298,
+              2.9390243902439024
+            ],
+            [
+              0.304635761589404,
+              2.9634146341463414
+            ],
+            [
+              0.304635761589404,
+              2.9939024390243905
+            ],
+            [
+              0.31788079470198677,
+              3.0060975609756095
+            ],
+            [
+              0.31788079470198677,
+              3.024390243902439
+            ],
+            [
+              0.33112582781456956,
+              3.0304878048780486
+            ],
+            [
+              0.33112582781456956,
+              3.0365853658536586
+            ],
+            [
+              0.304635761589404,
+              3.018292682926829
+            ],
+            [
+              0.304635761589404,
+              2.975609756097561
+            ],
+            [
+              0.33774834437086093,
+              2.908536585365854
+            ],
+            [
+              0.33774834437086093,
+              2.8841463414634148
+            ],
+            [
+              0.31125827814569534,
+              2.8780487804878048
+            ],
+            [
+              0.31125827814569534,
+              2.823170731707317
+            ],
+            [
+              0.31788079470198677,
+              2.75
+            ],
+            [
+              0.31788079470198677,
+              2.676829268292683
+            ],
+            [
+              0.32450331125827814,
+              2.567073170731707
+            ],
+            [
+              0.2913907284768212,
+              2.5365853658536586
+            ],
+            [
+              0.304635761589404,
+              2.3597560975609757
+            ],
+            [
+              0.304635761589404,
+              2.152439024390244
+            ],
+            [
+              0.31788079470198677,
+              2.0304878048780486
+            ],
+            [
+              0.31788079470198677,
+              1.7134146341463414
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_air_air1",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "284",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "287",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "285",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "994",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_air_air2": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_air_air2.png",
+          "frameWidth": 116,
+          "frameHeight": 164,
+          "frames": 26,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            16,
+            16,
+            17,
+            17,
+            18,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.23275862068965517,
+            1.9024390243902438
+          ],
+          "referenceHeight": 119,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.23275862068965517,
+              1.9024390243902438
+            ],
+            [
+              0.2413793103448276,
+              2.7621951219512195
+            ],
+            [
+              0.25862068965517243,
+              3.3963414634146343
+            ],
+            [
+              0.2413793103448276,
+              3.8292682926829267
+            ],
+            [
+              0.22413793103448276,
+              4.164634146341464
+            ],
+            [
+              0.22413793103448276,
+              4.432926829268292
+            ],
+            [
+              0.20689655172413793,
+              4.640243902439025
+            ],
+            [
+              0.3103448275862069,
+              4.75
+            ],
+            [
+              0.3103448275862069,
+              5.073170731707317
+            ],
+            [
+              0.39655172413793105,
+              5.073170731707317
+            ],
+            [
+              0.45689655172413796,
+              5.091463414634147
+            ],
+            [
+              0.5086206896551724,
+              5.0182926829268295
+            ],
+            [
+              0.5086206896551724,
+              5.036585365853658
+            ],
+            [
+              0.5172413793103449,
+              5.012195121951219
+            ],
+            [
+              0.5172413793103449,
+              4.884146341463414
+            ],
+            [
+              0.5258620689655172,
+              4.817073170731708
+            ],
+            [
+              0.5258620689655172,
+              4.737804878048781
+            ],
+            [
+              0.46551724137931033,
+              4.591463414634147
+            ],
+            [
+              0.46551724137931033,
+              4.402439024390244
+            ],
+            [
+              0.46551724137931033,
+              4.170731707317073
+            ],
+            [
+              0.46551724137931033,
+              3.8780487804878048
+            ],
+            [
+              0.46551724137931033,
+              3.548780487804878
+            ],
+            [
+              0.46551724137931033,
+              3.1402439024390243
+            ],
+            [
+              0.46551724137931033,
+              2.7134146341463414
+            ],
+            [
+              0.46551724137931033,
+              2.25
+            ],
+            [
+              0.46551724137931033,
+              1.7134146341463414
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_air_air2",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "284",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "288",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "284",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "994",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_air_behit1": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_air_behit1.png",
+          "frameWidth": 117,
+          "frameHeight": 153,
+          "frames": 5,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5213675213675214,
+            1.9150326797385622
+          ],
+          "referenceHeight": 125,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.5213675213675214,
+              1.9150326797385622
+            ],
+            [
+              0.3162393162393162,
+              1.8104575163398693
+            ],
+            [
+              0.26495726495726496,
+              1.7777777777777777
+            ],
+            [
+              0.2222222222222222,
+              1.7777777777777777
+            ],
+            [
+              0.39316239316239315,
+              1.8496732026143792
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_air_behit1",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "993",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_air_behit2": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_air_behit2.png",
+          "frameWidth": 151,
+          "frameHeight": 158,
+          "frames": 5,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.40397350993377484,
+            1.8354430379746836
+          ],
+          "referenceHeight": 138,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.40397350993377484,
+              1.8354430379746836
+            ],
+            [
+              0.5298013245033113,
+              1.8987341772151898
+            ],
+            [
+              0.4966887417218543,
+              1.8734177215189873
+            ],
+            [
+              0.5298013245033113,
+              1.8481012658227849
+            ],
+            [
+              0.4966887417218543,
+              1.7468354430379747
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_air_behit2",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "993",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_air_behit3": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_air_behit3.png",
+          "frameWidth": 151,
+          "frameHeight": 130,
+          "frames": 1,
+          "timeline": [
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4966887417218543,
+            2.123076923076923
+          ],
+          "referenceHeight": 130,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4966887417218543,
+              2.123076923076923
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_air_behit3",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_air_behit4": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_air_behit4.png",
+          "frameWidth": 100,
+          "frameHeight": 125,
+          "frames": 2,
+          "timeline": [
+            0,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.26,
+            2.176
+          ],
+          "referenceHeight": 120,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.26,
+              2.176
+            ],
+            [
+              0.46,
+              2.264
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_air_behit4",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "993",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_air_land": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_air_land.png",
+          "frameWidth": 155,
+          "frameHeight": 78,
+          "frames": 12,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            9,
+            11,
+            11,
+            11,
+            11
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4258064516129032,
+            1.1666666666666667
+          ],
+          "referenceHeight": 63,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4258064516129032,
+              1.1666666666666667
+            ],
+            [
+              0.4258064516129032,
+              1.3717948717948718
+            ],
+            [
+              0.4258064516129032,
+              1.4487179487179487
+            ],
+            [
+              0.4258064516129032,
+              1.3846153846153846
+            ],
+            [
+              0.4258064516129032,
+              1.2692307692307692
+            ],
+            [
+              0.45161290322580644,
+              0.5128205128205128
+            ],
+            [
+              0.45161290322580644,
+              0.7051282051282052
+            ],
+            [
+              0.45161290322580644,
+              0.6666666666666666
+            ],
+            [
+              0.45161290322580644,
+              0.5897435897435898
+            ],
+            [
+              0.45161290322580644,
+              0.5256410256410257
+            ],
+            [
+              0.45161290322580644,
+              0.6025641025641025
+            ],
+            [
+              0.45161290322580644,
+              0.5512820512820513
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_air_land",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 5,
+              "sound": "170",
+              "volume": "100"
+            },
+            {
+              "frame": 5,
+              "sound": "169",
+              "volume": "76"
+            }
+          ]
+        },
+        "D_air_land1": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_air_land1.png",
+          "frameWidth": 171,
+          "frameHeight": 101,
+          "frames": 14,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            11,
+            13,
+            13,
+            13,
+            13
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.29239766081871343,
+            2.4356435643564356
+          ],
+          "referenceHeight": 67,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.29239766081871343,
+              2.4356435643564356
+            ],
+            [
+              0.43859649122807015,
+              0.3069306930693069
+            ],
+            [
+              0.36257309941520466,
+              0.900990099009901
+            ],
+            [
+              0.38596491228070173,
+              1.0594059405940595
+            ],
+            [
+              0.38596491228070173,
+              1.118811881188119
+            ],
+            [
+              0.38596491228070173,
+              1.0693069306930694
+            ],
+            [
+              0.38596491228070173,
+              0.9801980198019802
+            ],
+            [
+              0.4093567251461988,
+              0.39603960396039606
+            ],
+            [
+              0.4093567251461988,
+              0.5445544554455446
+            ],
+            [
+              0.4093567251461988,
+              0.5148514851485149
+            ],
+            [
+              0.4093567251461988,
+              0.45544554455445546
+            ],
+            [
+              0.4093567251461988,
+              0.40594059405940597
+            ],
+            [
+              0.4093567251461988,
+              0.46534653465346537
+            ],
+            [
+              0.4093567251461988,
+              0.42574257425742573
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_air_land1",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 2,
+              "sound": "169",
+              "volume": "100"
+            },
+            {
+              "frame": 2,
+              "sound": "170",
+              "volume": "100"
+            },
+            {
+              "frame": 2,
+              "sound": "994",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_air_stand": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_air_stand.png",
+          "frameWidth": 148,
+          "frameHeight": 152,
+          "frames": 10,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            6,
+            7,
+            8,
+            7,
+            7,
+            7,
+            7,
+            7,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46621621621621623,
+            1.519736842105263
+          ],
+          "referenceHeight": 119,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.46621621621621623,
+              1.519736842105263
+            ],
+            [
+              0.3918918918918919,
+              1.1842105263157894
+            ],
+            [
+              0.36486486486486486,
+              1.4276315789473684
+            ],
+            [
+              0.3783783783783784,
+              1.5394736842105263
+            ],
+            [
+              0.4864864864864865,
+              1.0723684210526316
+            ],
+            [
+              0.5202702702702703,
+              1.0657894736842106
+            ],
+            [
+              0.42567567567567566,
+              0.9473684210526315
+            ],
+            [
+              0.5135135135135135,
+              0.631578947368421
+            ],
+            [
+              0.5135135135135135,
+              0.618421052631579
+            ],
+            [
+              0.38513513513513514,
+              0.7631578947368421
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_air_stand",
+          "events": [
+            {
+              "frame": 9,
+              "sound": "172",
+              "volume": "75"
+            }
+          ]
+        },
+        "D_air_upair": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_air_upair.png",
+          "frameWidth": 130,
+          "frameHeight": 137,
+          "frames": 11,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3923076923076923,
+            1.905109489051095
+          ],
+          "referenceHeight": 127,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.3923076923076923,
+              1.905109489051095
+            ],
+            [
+              0.4,
+              1.9562043795620438
+            ],
+            [
+              0.4230769230769231,
+              2.145985401459854
+            ],
+            [
+              0.2846153846153846,
+              2.167883211678832
+            ],
+            [
+              0.47692307692307695,
+              2.291970802919708
+            ],
+            [
+              0.46923076923076923,
+              2.3065693430656933
+            ],
+            [
+              0.3923076923076923,
+              2.2627737226277373
+            ],
+            [
+              0.4153846153846154,
+              2.372262773722628
+            ],
+            [
+              0.5153846153846153,
+              2.6204379562043796
+            ],
+            [
+              0.4076923076923077,
+              2.678832116788321
+            ],
+            [
+              0.38461538461538464,
+              2.897810218978102
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_air_upair",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "134",
+              "volume": "50"
+            },
+            {
+              "frame": 1,
+              "sound": "286",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "993",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_air_upair1": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_air_upair1.png",
+          "frameWidth": 59,
+          "frameHeight": 164,
+          "frames": 3,
+          "timeline": [
+            0,
+            1,
+            2
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4406779661016949,
+            1.9024390243902438
+          ],
+          "referenceHeight": 164,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4406779661016949,
+              1.9024390243902438
+            ],
+            [
+              0.4576271186440678,
+              2.2134146341463414
+            ],
+            [
+              0.4406779661016949,
+              2.4146341463414633
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_air_upair1",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_beatback1": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_beatback1.png",
+          "frameWidth": 117,
+          "frameHeight": 116,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6324786324786325,
+            2.336206896551724
+          ],
+          "referenceHeight": 116,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.6324786324786325,
+              2.336206896551724
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_beatback1",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_beatback2": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_beatback2.png",
+          "frameWidth": 103,
+          "frameHeight": 115,
+          "frames": 1,
+          "timeline": [
+            0,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5436893203883495,
+            2.243478260869565
+          ],
+          "referenceHeight": 115,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.5436893203883495,
+              2.243478260869565
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_beatback2",
+          "events": []
+        },
+        "D_beatback3": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_beatback3.png",
+          "frameWidth": 114,
+          "frameHeight": 171,
+          "frames": 8,
+          "timeline": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.18421052631578946,
+            1.654970760233918
+          ],
+          "referenceHeight": 138,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.18421052631578946,
+              1.654970760233918
+            ],
+            [
+              0.2719298245614035,
+              1.7719298245614035
+            ],
+            [
+              0.5526315789473685,
+              1.6842105263157894
+            ],
+            [
+              0.5877192982456141,
+              1.5146198830409356
+            ],
+            [
+              0.6228070175438597,
+              1.3099415204678362
+            ],
+            [
+              0.7105263157894737,
+              1.105263157894737
+            ],
+            [
+              0.543859649122807,
+              1.0467836257309941
+            ],
+            [
+              0.543859649122807,
+              0.847953216374269
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_beatback3",
+          "events": [
+            {
+              "frame": 1,
+              "event": "playShake:2"
+            },
+            {
+              "frame": 1,
+              "sound": "170",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "236",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "994",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_beatback4": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_beatback4.png",
+          "frameWidth": 128,
+          "frameHeight": 120,
+          "frames": 5,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6484375,
+            0.7083333333333334
+          ],
+          "referenceHeight": 99,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.6484375,
+              0.7083333333333334
+            ],
+            [
+              0.3125,
+              0.9916666666666667
+            ],
+            [
+              0.25,
+              0.8083333333333333
+            ],
+            [
+              0.234375,
+              0.7416666666666667
+            ],
+            [
+              0.2421875,
+              0.575
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_beatback4",
+          "events": []
+        },
+        "D_beatback5": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_beatback5.png",
+          "frameWidth": 159,
+          "frameHeight": 124,
+          "frames": 2,
+          "timeline": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6415094339622641,
+            0.6612903225806451
+          ],
+          "referenceHeight": 104,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.6415094339622641,
+              0.6612903225806451
+            ],
+            [
+              0.3333333333333333,
+              0.9919354838709677
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_beatback5",
+          "events": [
+            {
+              "frame": 2,
+              "sound": "114",
+              "volume": "30"
+            }
+          ]
+        },
+        "D_land": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_land.png",
+          "frameWidth": 155,
+          "frameHeight": 53,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4645161290322581,
+            0.7169811320754716
+          ],
+          "referenceHeight": 53,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4645161290322581,
+              0.7169811320754716
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_land",
+          "events": []
+        },
+        "D_land_land": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_land_land.png",
+          "frameWidth": 155,
+          "frameHeight": 78,
+          "frames": 12,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            9,
+            11,
+            11,
+            11,
+            11
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4258064516129032,
+            1.1666666666666667
+          ],
+          "referenceHeight": 63,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4258064516129032,
+              1.1666666666666667
+            ],
+            [
+              0.4258064516129032,
+              1.3717948717948718
+            ],
+            [
+              0.4258064516129032,
+              1.4487179487179487
+            ],
+            [
+              0.4258064516129032,
+              1.3846153846153846
+            ],
+            [
+              0.4258064516129032,
+              1.2692307692307692
+            ],
+            [
+              0.45161290322580644,
+              0.5128205128205128
+            ],
+            [
+              0.45161290322580644,
+              0.7051282051282052
+            ],
+            [
+              0.45161290322580644,
+              0.6666666666666666
+            ],
+            [
+              0.45161290322580644,
+              0.5897435897435898
+            ],
+            [
+              0.45161290322580644,
+              0.5256410256410257
+            ],
+            [
+              0.45161290322580644,
+              0.6025641025641025
+            ],
+            [
+              0.45161290322580644,
+              0.5512820512820513
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_land_land",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 5,
+              "sound": "236",
+              "volume": "64"
+            },
+            {
+              "frame": 5,
+              "sound": "170",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_land_stand": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_land_stand.png",
+          "frameWidth": 129,
+          "frameHeight": 114,
+          "frames": 3,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6356589147286822,
+            0.6052631578947368
+          ],
+          "referenceHeight": 97,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.6356589147286822,
+              0.6052631578947368
+            ],
+            [
+              0.5968992248062015,
+              0.8245614035087719
+            ],
+            [
+              0.5736434108527132,
+              0.9736842105263158
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_land_stand",
+          "events": []
+        },
+        "D_land_twitch": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_land_twitch.png",
+          "frameWidth": 145,
+          "frameHeight": 101,
+          "frames": 2,
+          "timeline": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.496551724137931,
+            0.9207920792079208
+          ],
+          "referenceHeight": 94,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.496551724137931,
+              0.9207920792079208
+            ],
+            [
+              0.42758620689655175,
+              0.9603960396039604
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_land_twitch",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_stand_air": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_stand_air.png",
+          "frameWidth": 118,
+          "frameHeight": 140,
+          "frames": 1,
+          "timeline": [
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4915254237288136,
+            1.55
+          ],
+          "referenceHeight": 140,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4915254237288136,
+              1.55
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_stand_air",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_stand_air1": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_stand_air1.png",
+          "frameWidth": 130,
+          "frameHeight": 137,
+          "frames": 11,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4307692307692308,
+            1.0072992700729928
+          ],
+          "referenceHeight": 127,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4307692307692308,
+              1.0072992700729928
+            ],
+            [
+              0.45384615384615384,
+              1.1167883211678833
+            ],
+            [
+              0.46923076923076923,
+              1.313868613138686
+            ],
+            [
+              0.3076923076923077,
+              1.313868613138686
+            ],
+            [
+              0.5230769230769231,
+              1.510948905109489
+            ],
+            [
+              0.4307692307692308,
+              1.6058394160583942
+            ],
+            [
+              0.4307692307692308,
+              1.635036496350365
+            ],
+            [
+              0.45384615384615384,
+              1.6934306569343065
+            ],
+            [
+              0.43846153846153846,
+              1.897810218978102
+            ],
+            [
+              0.4,
+              1.9635036496350364
+            ],
+            [
+              0.38461538461538464,
+              1.9854014598540146
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_stand_air1",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "134",
+              "volume": "50"
+            },
+            {
+              "frame": 1,
+              "sound": "286",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "993",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_stand_behit1": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_stand_behit1.png",
+          "frameWidth": 124,
+          "frameHeight": 135,
+          "frames": 3,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5725806451612904,
+            0.9925925925925926
+          ],
+          "referenceHeight": 133,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.5725806451612904,
+              0.9925925925925926
+            ],
+            [
+              0.5725806451612904,
+              0.9555555555555556
+            ],
+            [
+              0.6209677419354839,
+              0.9851851851851852
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_stand_behit1",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "993",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_stand_behit2": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_stand_behit2.png",
+          "frameWidth": 117,
+          "frameHeight": 120,
+          "frames": 3,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5641025641025641,
+            0.975
+          ],
+          "referenceHeight": 118,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.5641025641025641,
+              0.975
+            ],
+            [
+              0.5982905982905983,
+              0.9416666666666667
+            ],
+            [
+              0.5726495726495726,
+              0.9583333333333334
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_stand_behit2",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "993",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_stand_behit3": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_stand_behit3.png",
+          "frameWidth": 125,
+          "frameHeight": 109,
+          "frames": 3,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6,
+            1.0091743119266054
+          ],
+          "referenceHeight": 106,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.6,
+              1.0091743119266054
+            ],
+            [
+              0.696,
+              0.944954128440367
+            ],
+            [
+              0.648,
+              0.981651376146789
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_stand_behit3",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "993",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_stand_behit4": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_stand_behit4.png",
+          "frameWidth": 101,
+          "frameHeight": 125,
+          "frames": 2,
+          "timeline": [
+            0,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5544554455445545,
+            1.104
+          ],
+          "referenceHeight": 124,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.5544554455445545,
+              1.104
+            ],
+            [
+              0.5841584158415841,
+              1.104
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_stand_behit4",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "993",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_stand_behit5": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_stand_behit5.png",
+          "frameWidth": 132,
+          "frameHeight": 133,
+          "frames": 15,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            9,
+            10,
+            11,
+            12,
+            13,
+            13,
+            14,
+            14
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.44696969696969696,
+            1.037593984962406
+          ],
+          "referenceHeight": 120,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.44696969696969696,
+              1.037593984962406
+            ],
+            [
+              0.42424242424242425,
+              1.0601503759398496
+            ],
+            [
+              0.42424242424242425,
+              1.105263157894737
+            ],
+            [
+              0.44696969696969696,
+              1.1353383458646618
+            ],
+            [
+              0.42424242424242425,
+              1.1804511278195489
+            ],
+            [
+              0.42424242424242425,
+              1.2255639097744362
+            ],
+            [
+              0.2727272727272727,
+              1.3533834586466165
+            ],
+            [
+              0.3181818181818182,
+              1.3759398496240602
+            ],
+            [
+              0.36363636363636365,
+              1.3383458646616542
+            ],
+            [
+              0.5984848484848485,
+              1.413533834586466
+            ],
+            [
+              0.5984848484848485,
+              1.3233082706766917
+            ],
+            [
+              0.5984848484848485,
+              1.1353383458646618
+            ],
+            [
+              0.6060606060606061,
+              0.6541353383458647
+            ],
+            [
+              0.6060606060606061,
+              0.6691729323308271
+            ],
+            [
+              0.5606060606060606,
+              0.8345864661654135
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_stand_behit5",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 13,
+              "sound": "172",
+              "volume": "53"
+            }
+          ]
+        },
+        "D_stand_behit6": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_stand_behit6.png",
+          "frameWidth": 118,
+          "frameHeight": 148,
+          "frames": 3,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            1.0
+          ],
+          "referenceHeight": 143,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.5,
+              1.0
+            ],
+            [
+              0.4491525423728814,
+              0.9594594594594594
+            ],
+            [
+              0.4915254237288136,
+              0.9459459459459459
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_stand_behit6",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "993",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_stand_behit7": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_stand_behit7.png",
+          "frameWidth": 117,
+          "frameHeight": 153,
+          "frames": 5,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5470085470085471,
+            1.0326797385620916
+          ],
+          "referenceHeight": 125,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.5470085470085471,
+              1.0326797385620916
+            ],
+            [
+              0.3504273504273504,
+              0.8562091503267973
+            ],
+            [
+              0.36752136752136755,
+              0.869281045751634
+            ],
+            [
+              0.3247863247863248,
+              0.8562091503267973
+            ],
+            [
+              0.5042735042735043,
+              0.9019607843137255
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_stand_behit7",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "993",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_stand_behit8": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_stand_behit8.png",
+          "frameWidth": 151,
+          "frameHeight": 158,
+          "frames": 5,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4900662251655629,
+            0.9873417721518988
+          ],
+          "referenceHeight": 138,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4900662251655629,
+              0.9873417721518988
+            ],
+            [
+              0.5827814569536424,
+              1.0253164556962024
+            ],
+            [
+              0.6291390728476821,
+              1.0379746835443038
+            ],
+            [
+              0.6158940397350994,
+              1.0
+            ],
+            [
+              0.5827814569536424,
+              0.8987341772151899
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_stand_behit8",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "993",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_stand_behit9": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_stand_behit9.png",
+          "frameWidth": 114,
+          "frameHeight": 133,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6754385964912281,
+            1.0
+          ],
+          "referenceHeight": 133,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.6754385964912281,
+              1.0
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_stand_behit9",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_stand_land": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_stand_land.png",
+          "frameWidth": 155,
+          "frameHeight": 114,
+          "frames": 14,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            11,
+            13,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4258064516129032,
+            1.0
+          ],
+          "referenceHeight": 78,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4258064516129032,
+              1.0
+            ],
+            [
+              0.5032258064516129,
+              0.9473684210526315
+            ],
+            [
+              0.5741935483870968,
+              0.8508771929824561
+            ],
+            [
+              0.567741935483871,
+              0.8157894736842105
+            ],
+            [
+              0.5612903225806452,
+              0.7719298245614035
+            ],
+            [
+              0.5612903225806452,
+              0.8333333333333334
+            ],
+            [
+              0.5612903225806452,
+              0.868421052631579
+            ],
+            [
+              0.5483870967741935,
+              0.7982456140350878
+            ],
+            [
+              0.5483870967741935,
+              0.7456140350877193
+            ],
+            [
+              0.5612903225806452,
+              0.3333333333333333
+            ],
+            [
+              0.5612903225806452,
+              0.43859649122807015
+            ],
+            [
+              0.5612903225806452,
+              0.37719298245614036
+            ],
+            [
+              0.5612903225806452,
+              0.3684210526315789
+            ],
+            [
+              0.5612903225806452,
+              0.35964912280701755
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_stand_land",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 7,
+              "sound": "236",
+              "volume": "100"
+            },
+            {
+              "frame": 7,
+              "sound": "121",
+              "volume": "54"
+            }
+          ]
+        },
+        "D_upair_air": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_upair_air.png",
+          "frameWidth": 112,
+          "frameHeight": 110,
+          "frames": 5,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4107142857142857,
+            3.7818181818181817
+          ],
+          "referenceHeight": 96,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4107142857142857,
+              3.7818181818181817
+            ],
+            [
+              0.4017857142857143,
+              3.5454545454545454
+            ],
+            [
+              0.39285714285714285,
+              3.309090909090909
+            ],
+            [
+              0.39285714285714285,
+              2.909090909090909
+            ],
+            [
+              0.4642857142857143,
+              2.3
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_upair_air",
+          "events": []
+        },
+        "D_upair_air1": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_upair_air1.png",
+          "frameWidth": 151,
+          "frameHeight": 164,
+          "frames": 28,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            26,
+            27
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.23178807947019867,
+            2.6219512195121952
+          ],
+          "referenceHeight": 109,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.23178807947019867,
+              2.6219512195121952
+            ],
+            [
+              0.17218543046357615,
+              2.75
+            ],
+            [
+              0.152317880794702,
+              2.8719512195121952
+            ],
+            [
+              0.2119205298013245,
+              2.908536585365854
+            ],
+            [
+              0.19205298013245034,
+              3.0
+            ],
+            [
+              0.47019867549668876,
+              2.9451219512195124
+            ],
+            [
+              0.4768211920529801,
+              2.9878048780487805
+            ],
+            [
+              0.2847682119205298,
+              2.9390243902439024
+            ],
+            [
+              0.304635761589404,
+              2.9634146341463414
+            ],
+            [
+              0.304635761589404,
+              2.9939024390243905
+            ],
+            [
+              0.31788079470198677,
+              3.0060975609756095
+            ],
+            [
+              0.31788079470198677,
+              3.024390243902439
+            ],
+            [
+              0.33112582781456956,
+              3.0304878048780486
+            ],
+            [
+              0.33112582781456956,
+              3.0365853658536586
+            ],
+            [
+              0.304635761589404,
+              3.018292682926829
+            ],
+            [
+              0.304635761589404,
+              2.975609756097561
+            ],
+            [
+              0.33774834437086093,
+              2.908536585365854
+            ],
+            [
+              0.33774834437086093,
+              2.8841463414634148
+            ],
+            [
+              0.31125827814569534,
+              2.8780487804878048
+            ],
+            [
+              0.31125827814569534,
+              2.823170731707317
+            ],
+            [
+              0.31788079470198677,
+              2.75
+            ],
+            [
+              0.31788079470198677,
+              2.676829268292683
+            ],
+            [
+              0.32450331125827814,
+              2.567073170731707
+            ],
+            [
+              0.2913907284768212,
+              2.5365853658536586
+            ],
+            [
+              0.304635761589404,
+              2.3597560975609757
+            ],
+            [
+              0.304635761589404,
+              2.152439024390244
+            ],
+            [
+              0.31788079470198677,
+              2.0304878048780486
+            ],
+            [
+              0.31788079470198677,
+              1.7134146341463414
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_upair_air1",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "284",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "285",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "288",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "994",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_upair_air2": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_upair_air2.png",
+          "frameWidth": 116,
+          "frameHeight": 164,
+          "frames": 26,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            16,
+            16,
+            17,
+            17,
+            18,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.27586206896551724,
+            2.658536585365854
+          ],
+          "referenceHeight": 119,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.27586206896551724,
+              2.658536585365854
+            ],
+            [
+              0.2413793103448276,
+              3.3353658536585367
+            ],
+            [
+              0.23275862068965517,
+              3.7195121951219514
+            ],
+            [
+              0.23275862068965517,
+              4.0
+            ],
+            [
+              0.23275862068965517,
+              4.335365853658536
+            ],
+            [
+              0.22413793103448276,
+              4.573170731707317
+            ],
+            [
+              0.21551724137931033,
+              4.75
+            ],
+            [
+              0.3103448275862069,
+              4.75
+            ],
+            [
+              0.3103448275862069,
+              5.073170731707317
+            ],
+            [
+              0.39655172413793105,
+              5.073170731707317
+            ],
+            [
+              0.45689655172413796,
+              5.091463414634147
+            ],
+            [
+              0.5086206896551724,
+              5.0182926829268295
+            ],
+            [
+              0.5086206896551724,
+              5.036585365853658
+            ],
+            [
+              0.5172413793103449,
+              5.012195121951219
+            ],
+            [
+              0.5172413793103449,
+              4.884146341463414
+            ],
+            [
+              0.5258620689655172,
+              4.817073170731708
+            ],
+            [
+              0.5258620689655172,
+              4.737804878048781
+            ],
+            [
+              0.46551724137931033,
+              4.591463414634147
+            ],
+            [
+              0.46551724137931033,
+              4.402439024390244
+            ],
+            [
+              0.46551724137931033,
+              4.170731707317073
+            ],
+            [
+              0.46551724137931033,
+              3.8780487804878048
+            ],
+            [
+              0.46551724137931033,
+              3.548780487804878
+            ],
+            [
+              0.46551724137931033,
+              3.1402439024390243
+            ],
+            [
+              0.46551724137931033,
+              2.7134146341463414
+            ],
+            [
+              0.46551724137931033,
+              2.25
+            ],
+            [
+              0.46551724137931033,
+              1.7134146341463414
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_upair_air2",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "284",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "286",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "288",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "994",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_upair_behit1": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_upair_behit1.png",
+          "frameWidth": 117,
+          "frameHeight": 153,
+          "frames": 5,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5555555555555556,
+            2.810457516339869
+          ],
+          "referenceHeight": 125,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.5555555555555556,
+              2.810457516339869
+            ],
+            [
+              0.3162393162393162,
+              2.7320261437908497
+            ],
+            [
+              0.27350427350427353,
+              2.6993464052287583
+            ],
+            [
+              0.24786324786324787,
+              2.6993464052287583
+            ],
+            [
+              0.42735042735042733,
+              2.7450980392156863
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_upair_behit1",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "993",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_upair_behit2": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_upair_behit2.png",
+          "frameWidth": 151,
+          "frameHeight": 158,
+          "frames": 5,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45695364238410596,
+            2.740506329113924
+          ],
+          "referenceHeight": 138,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.45695364238410596,
+              2.740506329113924
+            ],
+            [
+              0.5695364238410596,
+              2.7974683544303796
+            ],
+            [
+              0.5496688741721855,
+              2.778481012658228
+            ],
+            [
+              0.5827814569536424,
+              2.7531645569620253
+            ],
+            [
+              0.5496688741721855,
+              2.651898734177215
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_upair_behit2",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "993",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_upair_behit3": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_upair_behit3.png",
+          "frameWidth": 101,
+          "frameHeight": 125,
+          "frames": 2,
+          "timeline": [
+            0,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5247524752475248,
+            3.2
+          ],
+          "referenceHeight": 124,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.5247524752475248,
+              3.2
+            ],
+            [
+              0.5247524752475248,
+              3.192
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_upair_behit3",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "993",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_upair_behit4": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/D_upair_behit4.png",
+          "frameWidth": 100,
+          "frameHeight": 125,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            3.36
+          ],
+          "referenceHeight": 125,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.5,
+              3.36
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "D_upair_behit4",
+          "events": []
+        },
+        "SP_skill3": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/SP_skill3.png",
+          "frameWidth": 104,
+          "frameHeight": 162,
+          "frames": 6,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3076923076923077,
+            0.9629629629629629
+          ],
+          "referenceHeight": 162,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.3076923076923077,
+              0.9629629629629629
+            ],
+            [
+              0.3173076923076923,
+              0.9629629629629629
+            ],
+            [
+              0.3076923076923077,
+              0.9691358024691358
+            ],
+            [
+              0.3076923076923077,
+              0.9691358024691358
+            ],
+            [
+              0.2980769230769231,
+              0.9691358024691358
+            ],
+            [
+              0.3076923076923077,
+              0.9629629629629629
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "SP_skill3",
+          "events": [
+            {
+              "frame": 11,
+              "event": "hit"
+            },
+            {
+              "frame": 10,
+              "sound": "174",
+              "volume": "100"
+            }
+          ]
+        },
+        "SP_skill4": {
+          "url": "/assets/characters/sasori-reanimacao-11004831/battle/SP_skill4.png",
+          "frameWidth": 121,
+          "frameHeight": 154,
+          "frames": 3,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.628099173553719,
+            0.512987012987013
+          ],
+          "referenceHeight": 118,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.628099173553719,
+              0.512987012987013
+            ],
+            [
+              0.49586776859504134,
+              0.6558441558441559
+            ],
+            [
+              0.2644628099173554,
+              0.9675324675324676
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/11004831.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 282168,
+            "sha256": "e546ab134d44c426d259a481d8cd9e51f97e6ba0cfd422e10b4c51bc36737338",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c10",
+          "sourceAction": "SP_skill4",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playSkillEffect,hit"
+            },
+            {
+              "frame": 1,
+              "sound": "157",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "704",
+              "volume": "100"
+            }
+          ]
         }
       },
       "referenceHeight": 160,
