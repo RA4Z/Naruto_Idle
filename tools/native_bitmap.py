@@ -4,7 +4,7 @@ from mme_config import read_config
 from native_tween import expand_tweens
 
 def prepare_spec(raw,action_name,path):
-    root,symbols,evidence=read_config(raw)
+    root,symbols,evidence=read_config(raw,action_names={action_name})
     expanded=expand_tweens(root,{action_name});action=next((a for a in expanded.findall('action') if a.get('name')==action_name),None)
     if action is None:raise ValueError('Exact MME action missing: '+action_name)
     allowed={'assetId','x','y','scaleX','scaleY','rotation','alpha','color','blendMode','filename'}

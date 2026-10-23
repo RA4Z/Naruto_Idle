@@ -18,6 +18,18 @@ def save(path,data):
     path.parent.mkdir(parents=True,exist_ok=True);temporary=path.with_suffix(path.suffix+'.tmp')
     temporary.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');temporary.replace(path)
 
+def source_action_data(root,evidence,name):
+    """Keep original keyframes, events and points for future world attachments."""
+    action=next((a for a in root.findall('action') if a.get('name')==name),None)
+    if action is None:raise ValueError('Exact MME source action absent: '+name)
+    needed={e.get('assetId') for e in action.iter('element')}
+    return {'configurationEvidence':evidence,'fps':root.get('frameRate'),'action':name,
+            'coordinateModel':'original-MME-keyframes-not-world-attachments',
+            'actionXml':ET.tostring(action,encoding='unicode'),
+            'assetRegistrations':[dict(a.attrib) for a in root.findall('asset') if a.get('id') in needed],
+            'externalNames':sorted({e.get('extname') for e in action.iter('element') if e.get('extname')}),
+            'namedPoints':[{'layer':dict(layer.attrib),'frame':dict(frame.attrib),'point':dict(point.attrib)} for layer in action.findall('layer') for frame in layer.findall('frame') for point in frame.findall('pointElement')]}
+
 
 def cached_layer(index,source,action,output,renderer_fingerprint=None):
     """Reuse only exact source/action pairs whose persisted artifacts still match."""
@@ -88,6 +100,10 @@ def main():
                         symbols[payload[position:end].decode()]=symbol;position=end+1
             source_key=hashlib.sha256(logical.encode()).hexdigest()[:16];source_work=work/source_key
             source_work.mkdir(parents=True,exist_ok=True);decoded=source_work/'source.swf';decoded.write_bytes(decode(raw))
+            native_root=source_config=None
+            if xml:
+                from mme_config import read_config
+                native_root,_,source_config=read_config(raw,action_names={row.get(field) for field in ('backAction','frontAction') if row.get(field)})
             for field,plane in (('backAction','back'),('frontAction','front')):
                 action=row.get(field)
                 if not action:continue
@@ -99,6 +115,7 @@ def main():
                     renderer_fingerprint=hashlib.sha256(b'\0'.join(components)).hexdigest()
                 reused=cached_layer(index,before,action,output,renderer_fingerprint)
                 if reused:
+                    if native_root is not None:reused['sourceActionData']=source_action_data(native_root,source_config,action)
                     reused['plane']=plane;entry['layers'].append(reused);continue
                 configuration_evidence=None
                 if xml:
@@ -117,6 +134,7 @@ def main():
                 subprocess.run(command,check=True,timeout=180,capture_output=True,env=environment)
                 if not xml:points=json.loads((native_folder/'named-instances.json').read_text(encoding='utf-8'))
                 layer={'plane':plane,'action':action,'namedInstances':points}
+                if native_root is not None:layer['sourceActionData']=source_action_data(native_root,source_config,action)
                 try:
                     animation,proof=pack(native_folder,folder,url,atlas_format=args.atlas_format,allow_pages=args.allow_pages)
                     layer['animation']=animation;artifact_folder=folder
@@ -135,6 +153,7 @@ def main():
                 manifest=json.loads((artifact_folder/'manifest.json').read_bytes());manifest.update({'validation':proof,'source':before})
                 if 'animation' in layer:manifest['animations']={'effect':layer['animation']}
                 if configuration_evidence:manifest['configurationEvidence']=configuration_evidence
+                if 'sourceActionData' in layer:manifest['sourceActionData']=layer['sourceActionData']
                 save(artifact_folder/'manifest.json',manifest)
                 layer['artifactsSha256']={name:hashlib.sha256((artifact_folder/name).read_bytes()).hexdigest() for name in names}
                 if args.discard_native_frames:

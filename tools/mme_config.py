@@ -17,16 +17,26 @@ def number(value):
     if not isinstance(value,(int,float)) or isinstance(value,bool) or not math.isfinite(value):raise ValueError('Non-numeric MME graphics field')
     return repr(value)
 
-def amf_to_xml(data):
+def select_actions(actions,action_names):
+    if action_names is None:return actions
+    if isinstance(action_names,str):raise ValueError('Exact action selection must be a collection')
+    selected=set(action_names)
+    if not selected or any(not isinstance(name,str) or not name for name in selected):raise ValueError('Empty or invalid action selection')
+    missing=selected-{action['name'] for action in actions}
+    if missing:raise ValueError('Exact source actions absent: '+repr(sorted(missing)))
+    return [action for action in actions if action['name'] in selected]
+
+def amf_to_xml(data,action_names=None):
     if not data.get('__class__','').endswith('::MmeData'):raise ValueError('Unexpected MME root alias')
     if data.get('advanced'):raise ValueError('Advanced FLA renderer requires a separate adapter')
     root=ET.Element('actions',{'frameRate':number(data['frameRate'])})
     table=data['assetDatas']
     if '__dictionary__' not in table:raise ValueError('Unexpected MME asset table')
-    actions=sequence(data['actionDatas'])
-    referenced={element.get('assetName') for action in actions for layer in sequence(action['layerDatas']) for frame in sequence(layer['frameDatas'])
+    actions=select_actions(sequence(data['actionDatas']),action_names)
+    referenced={element.get('assetName','Asset_'+str(int(element['assetId']))) for action in actions for layer in sequence(action['layerDatas']) for frame in sequence(layer['frameDatas'])
                 if (element:=frame.get('element')) and element.get('__class__','').endswith('::ElementData') and not element.get('extname')}
     for key,asset in table['__dictionary__']:
+        if action_names is not None and key not in referenced:continue
         if not isinstance(key,str) or not re.fullmatch(r'Asset_\d+',key):
             if key not in referenced:continue
             raise ValueError('Unexpected referenced asset namespace')
@@ -57,7 +67,7 @@ def amf_to_xml(data):
                 ET.SubElement(keyframe,'element',fields)
     return root
 
-def read_config(raw):
+def read_config(raw,*,action_names=None):
     from entity_pipeline import tags
     records=list(tags(raw));symbols={};binaries={}
     for kind,payload in records:
@@ -70,8 +80,13 @@ def read_config(raw):
     if 'ConfigAMF' in symbols:
         raw_config=binaries[symbols['ConfigAMF']];reader=AMF3(raw_config);data=reader.read()
         if reader.position!=len(raw_config):raise ValueError('Trailing AMF graphics data requires inspection')
-        root=amf_to_xml(data);kind='ConfigAMF'
+        root=amf_to_xml(data,action_names);kind='ConfigAMF'
     else:
         raw_config=binaries[symbols['Config']];root=ET.fromstring(raw_config);kind='Config'
         if root.get('advanced')=='true':raise ValueError('Advanced FLA renderer requires a separate adapter')
+        if action_names is not None:
+            chosen=select_actions([{'name':action.get('name'),'element':action} for action in root.findall('action')],action_names)
+            keep={id(action['element']) for action in chosen}
+            for action in list(root.findall('action')):
+                if id(action) not in keep:root.remove(action)
     return root,symbols,{'configuration':kind,'configurationSha256':hashlib.sha256(raw_config).hexdigest()}

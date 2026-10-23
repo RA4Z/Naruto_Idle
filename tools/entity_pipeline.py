@@ -67,7 +67,7 @@ def read_actions(path,max_image_pixels=None,only_actions=None,frame_limits=None,
     ident=struct.unpack_from('<H',p,pos)[0];pos+=2;end=p.index(0,pos);symbols[p[pos:end].decode('utf-8')]=ident;pos=end+1
  if preferred_config:
   from mme_config import read_config
-  root,_,_=read_config(path.read_bytes());xml=ET.tostring(root,encoding='utf-8')
+  root,_,_=read_config(path.read_bytes(),action_names=only_actions);xml=ET.tostring(root,encoding='utf-8')
  else:
   if not xml:raise ValueError('No bitmap actions XML: timeline/vector reconstruction required')
   root=ET.fromstring(xml)

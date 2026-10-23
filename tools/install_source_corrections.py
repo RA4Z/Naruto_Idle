@@ -32,7 +32,7 @@ def main():
         changes=row.get('replacedExistingActions',[])
         if not changes:continue
         evidence=row['source'];assert archive.record(evidence['path'])==evidence,'Source changed'
-        _,_,configuration=read_config(archive.raw(evidence['path']))
+        _,_,configuration=read_config(archive.raw(evidence['path']),action_names={change['action'] for change in changes})
         path=asset(project,row['manifest']);before_bytes=path.read_bytes();current=json.loads(before_bytes);original=copy.deepcopy(current)
         candidate=json.loads(asset(stage,row['manifest']).read_bytes());mode=row['mode'];installed=[]
         for change in changes:

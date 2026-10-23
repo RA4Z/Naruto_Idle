@@ -1,3 +1,15 @@
+## Fontes parcialmente válidas e metadados de efeitos — 23/10
+
+Recuperadas 74 ações íntegras de quatro fontes antes bloqueadas pelo arquivo inteiro: 42 correções e 32 adições, 1.098 quadros comparados independentemente. A seleção exata action_names omite ações e registros não referenciados, mantém o SHA da configuração original e continua rejeitando qualquer valor inválido selecionado. Não há substituição de NaN nem autorização de fonte completa; 26900911 continua sem ação válida. Provas preferred-valid-subset-proof.json.gz e relatórios worldvalidsubset1.
+
+Preservados no índice os keyframes, eventos, registros e pontos nomeados originais de oito efeitos MME. Validação independente contra os dados preferidos e reconstrução dos 194 quadros públicos; imagens, timing, origem e todos os demais campos ficaram iguais. Não integra novos encaixes ao combate. Provas mme-source-metadata-proof.json.gz, mme-source-metadata-installation.json e mme-source-metadata-public-validation.json. 45 testes Python passaram.
+
+Fixture tools/qa/recovered-world.html conferiu Kakashi [Sexto Hokage], Jiraiya [Estilo Oriental] e Naruto [Sasuke Shinden], seis atores reais em WebGL, pausa/retomada e direções0/4. No quadro11, poses antigas invisíveis e corrigidas visíveis; cinco poses únicas anteriores versus oito originais, mantendo20quadros. Sem erros de console e sem conta/save. Relatório recovered-world-browser-validation.json; screenshots mantidos no workspace de pesquisa.
+
+O arquivo character-all-frame-proof-archive.json.gz preserva 94 relatórios independentes de todos os quadros, agrupados por estágio. Contagens históricas incluem revisões repetidas e não são ações únicas. Fontes originais, metadados e configurações de recrutamento preservados.
+
+Próximo: plano de efeitos source-effect-export-plan.json, lotes2..7; conferir e instalar somente resultados aprovados. Variantes right/RPG e formatos estáticos sem Config continuam pendentes. Spawn e retrato central preservados.
+
 ## Restante primário instalado com barreira de paridade — 23/10
 
 Instaladas 11.829 adições com provas de todos os quadros: 7.091 battle (73.460 quadros) e 4.738 world (10.098 quadros). O instalador usou --source-parity: só permite arquivos cujo relatório de auditoria confirma equivalência semântica e cuja evidência de origem coincide exatamente. As 42 ações ainda ausentes de fontes com diferenças permanecem excluídas; não foram substituídas por XML parcial. Ações já presentes, capacidades e demais campos preservados.

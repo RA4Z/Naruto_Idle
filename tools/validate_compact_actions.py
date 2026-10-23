@@ -39,7 +39,7 @@ def main():
     preferred=bool(definition.get('sourceConfiguration'))
     if preferred:
      from mme_config import read_config
-     _,_,source_configuration=read_config(archive.raw(evidence['path']))
+     _,_,source_configuration=read_config(archive.raw(evidence['path']),action_names={name})
      assert source_configuration==definition['sourceConfiguration']
      core=definition['configurationPreferenceEvidence'];assert archive.record(core['path'])==core
     root,assets,images,symbols,_=read_actions(archive.path(evidence['path']),32000000,{name},image_cache=bitmap_cache,preferred_config=preferred)

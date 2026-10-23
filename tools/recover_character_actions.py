@@ -41,7 +41,7 @@ def main():
             source_configuration=None
             if args.preferred_config:
                 from mme_config import read_config
-                root,_,source_configuration=read_config(ar.raw(logical))
+                root,_,source_configuration=read_config(ar.raw(logical),action_names=requested)
             else:
                 xml=next(p[6:] for k,p in tags(ar.raw(logical)) if k==87 and p[6:].lstrip().startswith(b'<actions'))
                 root=ET.fromstring(xml)
