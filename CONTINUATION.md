@@ -1,3 +1,9 @@
+## Primeiro ciclo de correções preferidas instalado — 23/10
+
+Instaladas 523 ações aprovadas em seis lotes: 228 correções de ações existentes (76 battle,152 world) e 295 adições (287 battle,8 world). Os 12.358 quadros de timeline foram cobertos por prova independente; todos os demais campos foram preservados. As 24 corridas do marco anterior já estavam atuais e permaneceram intactas. 28 ações adiadas com motivo explícito, sem substituição visual improvisada. Não muda recrutamento, login, saves ou habilidades do combate.
+
+Provas completas: reports/preferred-cycle-001-proof.json.gz; instalação: source-corrections-battlepreferredc1.json.gz, source-corrections-worldpreferredc1.json.gz e full-character-extraction-{battle,world}preferredc1.json.gz. A fila original ainda registra o estado anterior ao ciclo; retomar lotes7..12, sem repetir1..6. Ainda não instalar o restante primário XML antes de resolver correções afetadas.
+
 ## Auditoria integral das representações dos corpos — 23/10
 
 Concluídos os 367 lotes do catálogo: 2.168 fontes analisadas, 2.052 equivalentes, 104 com diferenças entre XML e a configuração preferida pelo runtime original e 12 exigindo adaptação de formato. Relatório: reports/config-parity-complete.json.gz. Não são provas de conclusão de todos os arquivos do acervo ou de integração ao combate.
