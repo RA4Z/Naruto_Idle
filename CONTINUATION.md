@@ -1,3 +1,7 @@
+## Efeitos por fonte — lotes 032-041 — 23/10/2026
+
+Publicadas 40 exportações aprovadas, com 2006 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-032-041-proof.json.gz. O grupo038 inclui somente os lotes38..41 concluídos antes da correção do login, sem contar o lote42 interrompido. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
 ## Laboratório de combate no admin — 23/10/2026
 
 Novo /admin#lab e botões nas fichas de personagens. Cena Phaser real com mapa/navegação, movimento, seleção de ações world/battle/source, timeline/quadros, pausa, velocidade/zoom/espelhamento e diagnóstico de alcance/limites visuais. Ataques temporários usam Hunt de nível1+perfil de alvo padrão, sem conta/save. Fontes alternativas RPG/right são lidas do índice de revisão protegido e permanecem source-only sem identidade/capacidades/dano. Carregarfontesrenova índices e manifests; fila de assets e descarte de cenas/texturas controlados. Rasengan2015com relógio originalincluindoinspeçãodequadros;demaisefeitossemvínculovalidadonãoanexados.

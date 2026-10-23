@@ -56,7 +56,9 @@ def main():
     parser.add_argument('--atlas-format',choices=('png','webp'),default='png')
     parser.add_argument('--allow-pages',action='store_true',help='Split large atlases into bounded lossless pages instead of reducing resolution')
     parser.add_argument('--discard-native-frames',action='store_true',help='Remove only generated PNG intermediates after a verified atlas is persisted')
+    parser.add_argument('--render-timeout',type=int,default=180,help='Explicit per-action renderer budget in seconds (30..900); does not alter pixels or source semantics')
     args=parser.parse_args();ids=args.ids.split(',') if args.ids else []
+    if not 30<=args.render_timeout<=900:raise ValueError('Renderer time budget must be between 30 and 900 seconds')
     if args.ids and (not 1<=len(ids)<=4 or len(set(ids))!=len(ids) or any(not re.fullmatch(r'\d+',i) for i in ids)):raise ValueError('One to four explicit effect IDs required')
     sys.path.insert(0,str(Path(args.project).resolve()/'tools'))
     from original_archive import OriginalArchive
@@ -131,7 +133,7 @@ def main():
                     native_folder=source_work/str(symbol)
                     command=[args.java,'-Djava.awt.headless=true','-Duser.home='+str(profile),'-Xmx1024m','-cp',str(Path(args.classes).resolve())+os.pathsep+str(Path(args.ffdec).resolve()/'lib/*'),
                              'StaticSwfRender',str(decoded),str(symbol),str(native_folder)]
-                subprocess.run(command,check=True,timeout=180,capture_output=True,env=environment)
+                subprocess.run(command,check=True,timeout=args.render_timeout,capture_output=True,env=environment)
                 if not xml:points=json.loads((native_folder/'named-instances.json').read_text(encoding='utf-8'))
                 layer={'plane':plane,'action':action,'namedInstances':points}
                 if native_root is not None:layer['sourceActionData']=source_action_data(native_root,source_config,action)
@@ -173,7 +175,10 @@ def main():
             print(json.dumps({'effect':ident,'layers':[x['action'] for x in entry['layers']],'state':entry['state']}),flush=True)
         except (ValueError,KeyError,subprocess.SubprocessError,OSError,ET.ParseError,struct.error) as error:
             detail=error.stderr.decode('utf-8',errors='replace')[-1600:] if isinstance(error,subprocess.CalledProcessError) and error.stderr else None
-            index['deferred'][ident]={'id':ident,'definition':dict(row.attrib),'reason':type(error).__name__+': '+str(error),'rendererDetail':detail,'state':'not-substituted'}
+            reason=type(error).__name__+': '+str(error)
+            if isinstance(error,subprocess.TimeoutExpired):reason='Source renderer time budget exceeded: '+str(args.render_timeout)+' seconds; source remains unextracted and requires resource review'
+            index['deferred'][ident]={'id':ident,'definition':dict(row.attrib),'reason':reason,'rendererDetail':detail,'state':'not-substituted'}
+            if isinstance(error,subprocess.TimeoutExpired):index['deferred'][ident]['rendererTimeBudgetSeconds']=args.render_timeout
             print(json.dumps(index['deferred'][ident],ensure_ascii=False),flush=True)
         save(index_path,index)
     assert archive.record(config)==config_record
