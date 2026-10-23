@@ -1,3 +1,11 @@
+## Correções preferidas: lotes 7..26 instalados — 23/10
+
+Instaladas mais 1.494 ações após renovação normal: 687 correções existentes (169 battle,518 world) e 807 adições (790 battle,17 world), com 40.327 quadros cobertos por comparação independente. Ciclos002..005 preservaram todos os demais campos; 27 ações ficaram adiadas com motivo registrado. Somando o primeiro ciclo, foram instaladas 2.017 ações desta fila, sem alterar recrutamento ou combate.
+
+Provas: reports/preferred-cycles-002-005-proof.json.gz e relatórios source-corrections/full-character-extraction com labels battlepreferredc5/worldpreferredc5. O snapshot preferred-c5-published-manifests.json registra os bytes finais depois da normalização das quebras de linha. Instaladores passam a gravar LF diretamente. Os 42 testes Python e tipos passaram. Dados não equivalem a integração de todas essas técnicas ao combate.
+
+Próximo: instalar apenas adições primárias de fontes semanticamente equivalentes, mantendo bloqueadas as fontes com diferenças/parsers pendentes; continuar efeitos, variantes right/RPG e adaptadores estáticos. Todos os lotes preferidos1..26 terminaram; não repetir workers antigos.
+
 ## Primeiro ciclo de correções preferidas instalado — 23/10
 
 Instaladas 523 ações aprovadas em seis lotes: 228 correções de ações existentes (76 battle,152 world) e 295 adições (287 battle,8 world). Os 12.358 quadros de timeline foram cobertos por prova independente; todos os demais campos foram preservados. As 24 corridas do marco anterior já estavam atuais e permaneceram intactas. 28 ações adiadas com motivo explícito, sem substituição visual improvisada. Não muda recrutamento, login, saves ou habilidades do combate.

@@ -64,7 +64,7 @@ def main():
             for item in installed:reverted['modes'][mode]['animations'][item['action']]=item['before']
             assert reverted==original,'A non-action field changed'
             if path.read_bytes()!=before_bytes:raise ValueError('Manifest was edited during installation')
-            temporary=path.with_suffix('.json.tmp');temporary.write_text(json.dumps(current,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');temporary.replace(path)
+            temporary=path.with_suffix('.json.tmp');temporary.write_text(json.dumps(current,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n');temporary.replace(path)
         report['models'][ident]={'mode':mode,'manifest':row['manifest'],'source':evidence,'sourceConfiguration':configuration,'changes':installed,'nonActionFieldsPreserved':True}
     target=project/'reports'/('source-corrections-'+args.label+'.json.gz');target.parent.mkdir(parents=True,exist_ok=True)
     with gzip.GzipFile(filename=str(target),mode='wb',mtime=0) as stream:stream.write((json.dumps(report,ensure_ascii=False,separators=(',',':'))+'\n').encode())

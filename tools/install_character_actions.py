@@ -76,7 +76,7 @@ def main():
                 for item in installed:del stripped['modes'][mode]['animations'][item['action']]
             assert stripped==original,'A non-addition manifest field changed'
             if digest(current_path)!=before_sha:raise ValueError('Manifest was edited during installation')
-            temporary=current_path.with_suffix('.json.tmp');temporary.write_text(json.dumps(current,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');temporary.replace(current_path)
+            temporary=current_path.with_suffix('.json.tmp');temporary.write_text(json.dumps(current,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n');temporary.replace(current_path)
         result['models'][ident]={'mode':mode,'manifest':row['manifest'],'beforeManifestSha256':before_sha,'afterManifestSha256':digest(current_path),
             'added':installed,'modeCreated':bool(mode_created and installed),'source':row['source'],'deferred':row['deferred'],'markers':row['markers']}
         if index%25==0:print(json.dumps({'modelsVisited':index+1,'added':result['added']}),flush=True)
