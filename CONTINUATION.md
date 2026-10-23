@@ -1,5 +1,11 @@
 # Ponto de continuidade — estado atual
 
+## Ficha do Naruto: ilustração central original (22/10)
+
+Somente a imagem central da ficha do Naruto clássico 11000101 agora usa uma ilustração original até a cintura, sem círculo nem máscara de retrato. Origem exata: assets/newplot/dialog/11000101/01.png; apenas margens transparentes removidas, com hashes e recorte em public/assets/character-sheet/index.json. Mantidos slots, arsenal, retratos pequenos, outros personagens e regras de equipamento. Falha de carregamento retorna ao retrato anterior. A arte não usa a variante com óculos da referência; preserva a identidade do Naruto clássico disponível no acervo.
+
+Tipos aprovados; componente real conferido em prévia isolada /tools/qa/equipment-sheet.html, 1280×720 e 390×844, sem conta/save real. Na tela estreita o documento permaneceu com largura390 e o painel352,4, sem transbordamento horizontal. Imagem decodificada214×255, sem máscara. Nenhuma mudança de banco ou progressão.
+
 ## Correção de 22/10: spawn independente da posição salva
 
 O relato do portão foi reproduzido: `EnemyField.reset` selecionava apenas pontos a até 320 unidades do jogador salvo. As seis origens agora são determinadas pelo mapa e pela entrada canônica, distribuídas no componente navegável alcançável, sem depender de onde o jogador saiu. Evita ilhas isoladas, repetições e entrada segura de 85 unidades; mapas pequenos usam somente os pontos disponíveis. Patrulha, perseguição, recompensas e respawn de 12 s preservados.

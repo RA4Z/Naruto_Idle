@@ -64,17 +64,28 @@ function icon(slot: Slot) {
   node.innerHTML = `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true">${shapes[slot]}</svg>`;
   return node;
 }
-function portrait(entry: RuntimeEntry) {
+function portrait(entry: RuntimeEntry, characterId?: string) {
   const wrap = el("div", "gear-portrait");
   const placeholder = el("span", "gear-silhouette", entry.name.charAt(0));
   placeholder.setAttribute("aria-hidden", "true");
   wrap.append(placeholder);
-  if (entry.portrait) {
+  const sheetArt =
+    characterId === "11000101"
+      ? "/assets/character-sheet/naruto-kid.png"
+      : undefined;
+  const artwork = sheetArt || entry.portrait;
+  if (artwork) {
+    wrap.classList.toggle("has-sheet-art", !!sheetArt);
     const image = el("img");
-    image.src = entry.portrait;
+    image.src = artwork;
     image.alt = entry.name;
     image.loading = "lazy";
-    image.onerror = () => image.remove();
+    image.onerror = () => {
+      if (wrap.classList.contains("has-sheet-art") && entry.portrait) {
+        wrap.classList.remove("has-sheet-art");
+        image.src = entry.portrait;
+      } else image.remove();
+    };
     wrap.append(image);
   }
   return wrap;
@@ -317,7 +328,7 @@ export function renderEquipmentMenu(
     const stage = el("div", "gear-stage"),
       left = el("div", "gear-slots"),
       right = el("div", "gear-slots");
-    const art = portrait(entry);
+    const art = portrait(entry, id);
     art.classList.add("gear-portrait-main");
     for (const [index, slot] of EQUIPMENT_SLOTS.entries()) {
       const current = ITEMS.find((i) => i.id === progress.equipment[slot]);

@@ -1491,3 +1491,24 @@
 .gear-layout:not(.is-shop) .gear-bag {
   grid-template-rows: auto auto minmax(0, 1fr);
 }
+
+/* The sheet illustration is independent of the small collection portraits. */
+.gear-portrait-main.has-sheet-art::before {
+  width: 140%;
+  height: 90%;
+  border: 0;
+  box-shadow: none;
+  background: radial-gradient(ellipse, #a3b98618, transparent 70%);
+}
+.gear-portrait-main.has-sheet-art::after {
+  display: none;
+}
+.gear-portrait-main.has-sheet-art img {
+  width: auto;
+  height: 100%;
+  max-width: 145%;
+  max-height: 100%;
+  object-fit: contain;
+  mask-image: none;
+  filter: drop-shadow(0 8px 12px #0006);
+}
