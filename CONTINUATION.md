@@ -1,3 +1,13 @@
+## Auditoria integral das representações dos corpos — 23/10
+
+Concluídos os 367 lotes do catálogo: 2.168 fontes analisadas, 2.052 equivalentes, 104 com diferenças entre XML e a configuração preferida pelo runtime original e 12 exigindo adaptação de formato. Relatório: reports/config-parity-complete.json.gz. Não são provas de conclusão de todos os arquivos do acervo ou de integração ao combate.
+
+A fila reports/preferred-corrections-plan.json contém 101 entradas modelo/modo e 2.088 ações a corrigir/recuperar em 26 lotes de até quatro fontes; exclui as 24 corridas já corrigidas. O driver run_preferred_cycle.py exige seleção explícita, verifica preservação dos demais campos e compara todos os quadros independentemente antes de aprovar cada lote. O smoke real de oito corridas/160 quadros passou; novas correções continuam em staging até instalação e revisão. Nomes com vírgula podem ser selecionados por arquivo JSON e rigScale existente é preservado. Não há mudanças de recrutamento.
+
+Limpeza concluída: 64.017 PNGs temporários duplicados, 6.433.805.665 bytes. Cada remoção foi validada pelo SHA do marco instalado, arquivo canônico e objeto LFS local. Fontes, arquivos do jogo/Git, metadados, backups e 7.110 caminhos ainda não instalados preservados. Ferramenta rejeita diferenças e caminhos fora do staging; regressão aprovada. 33 testes Python do staging passaram.
+
+Próximo: concluir/revisar os lotes preferidos antes de instalar o restante primário. Verificar ainda variantes right e scene/RPG não incluídas na fila primária, formatos sem Config e campos não finitos; não substituir NaN por valores inventados. Sasuke inicial azul e reserva preta preservados. Sem conta/save real.
+
 # Ponto de continuidade — estado atual
 
 ## Corridas recuperadas da configuração original — 23/10

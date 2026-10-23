@@ -1,4 +1,4 @@
-"""Additional native bitmap clips, explicit four-model batches; never overwrite known clips."""
+"""Native bitmap clips in explicit four-model batches; corrections require preferred data and exact actions."""
 import argparse, json, hashlib, sys
 from pathlib import Path
 import xml.etree.ElementTree as ET
@@ -11,14 +11,18 @@ def main():
     ap=argparse.ArgumentParser();ap.add_argument('--source',required=True);ap.add_argument('--project',required=True)
     ap.add_argument('--output',required=True);ap.add_argument('--ids',required=True);ap.add_argument('--pipeline')
     ap.add_argument('--complete-clipped',action='store_true',help='Also complete existing native clips whose timeline is shorter than the source')
-    ap.add_argument('--actions',help='Optional exact comma-separated action names')
+    selection=ap.add_mutually_exclusive_group()
+    selection.add_argument('--actions',help='Optional exact comma-separated action names')
+    selection.add_argument('--actions-file',type=Path,help='Explicit JSON list of exact source action names, including names with commas')
     ap.add_argument('--native-tween',action='store_true',help='Use source-proven linear MME keyframe interpolation')
     ap.add_argument('--preferred-config',action='store_true',help='Use original ConfigAMF preference, preserving explicit source evidence')
     ap.add_argument('--refresh-existing',action='store_true',help='Prepare corrections only for explicitly listed existing actions using preferred source data')
     ap.add_argument('--revision',help='Explicit renderer revision for an independently validated delivery batch')
     ap.add_argument('--mode',choices=('battle','world'),default='battle')
     args=ap.parse_args();ids=args.ids.split(',')
-    if args.refresh_existing and (not args.actions or not args.preferred_config):raise ValueError('Refreshing requires explicit action names and preferred source data')
+    requested=json.loads(args.actions_file.read_bytes()) if args.actions_file else args.actions.split(',') if args.actions is not None else None
+    if requested is not None and (not isinstance(requested,list) or not requested or any(not isinstance(name,str) or not 1<=len(name)<=512 for name in requested) or len(set(requested))!=len(requested)):raise ValueError('Invalid explicit source action list')
+    if args.refresh_existing and (not requested or not args.preferred_config):raise ValueError('Refreshing requires explicit action names and preferred source data')
     if not 1<=len(ids)<=4 or len(set(ids))!=len(ids) or any(not x.isdigit() for x in ids):raise ValueError('One to four explicit model IDs required')
     project=Path(args.project).resolve();out=Path(args.output).resolve()
     sys.path.insert(0,str(project/'tools'))
@@ -45,7 +49,7 @@ def main():
             selected=set();deferred=[];markers=[]
             for a in root.findall('action'):
                 name=a.get('name','');els=[e for e in a.iter('element') if not e.get('extname')]
-                if args.actions and name not in args.actions.split(','):continue
+                if requested is not None and name not in requested:continue
                 if name in existing:
                     source_count=max((int(f.get('index','0'))+int(f.get('length','1')) for f in a.iter('frame')),default=0)
                     prepared=existing[name];prepared_count=len(prepared.get('timeline',[])) or prepared['frames']
@@ -80,6 +84,7 @@ def main():
             for name,anim in converted['animations'].items():
                 anim['sourceEvidence']=before;anim['rendererRevision']='complete-native-skill-ground-origins-v1' if name in existing else 'additional-actions-ground-origins-v1'
                 anim['sourceAction']=name
+                if args.refresh_existing and name in existing and 'rigScale' in existing[name]:anim['rigScale']=existing[name]['rigScale']
                 if source_configuration:
                     anim['sourceConfiguration']=source_configuration
                     anim['configurationPreferenceEvidence']=ar.record('flash/core/naruto.core.swf')
