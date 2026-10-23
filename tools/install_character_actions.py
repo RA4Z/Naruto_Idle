@@ -17,6 +17,7 @@ def asset(root,url):
 def main():
     ap=argparse.ArgumentParser()
     for key in ('source','project','staging'):ap.add_argument('--'+key,type=Path,required=True)
+    ap.add_argument('--source-parity',type=Path,help='Optional completed source parity audit; permit only exactly equivalent, source-pinned files')
     ap.add_argument('--label',required=True);args=ap.parse_args();project=args.project.resolve();staging=args.staging.resolve()
     if not args.label.isalnum():raise ValueError('Simple report label required')
     sys.path.insert(0,str(project/'tools'))
@@ -28,17 +29,30 @@ def main():
         report=json.loads(path.read_bytes())
         if report.get('allTimelineFrames') is not True:continue
         for row in report.get('actions',[]):
-            if not row.get('groundOffsetsAndPixelsMatch') or not row.get('sourceHashesPreserved'):continue
+            if not all(row.get(k) is True for k in ('timingAndTimelineMatch','groundOffsetsAndPixelsMatch','sourceHashesPreserved')):continue
             key=(row['id'],row['mode'],row['action']);before=proofs.get(key)
             if before is not None and before['atlasSha256']!=row['atlasSha256']:raise ValueError('Conflicting validation proofs')
             proofs[key]=row
     result={'version':1,'label':args.label,'models':{},'added':0,'sourceFramesVerified':0,'preservedExisting':[],
             'sourceExecution':False,'mechanicalUnlocksChanged':False,'scope':'Every added timeline frame covered by independent source-pose/atlas-index RGBA verification. External layers are not composited; source XML is retained. No AVM/player capture.'}
+    parity=None
+    if args.source_parity:
+        audit=json.loads(gzip.decompress(args.source_parity.read_bytes()))
+        if audit.get('sourceExecution') is not False:raise ValueError('A static source parity audit is required')
+        parity={row['source']['path']:row for row in audit['rows']}
+        if len(parity)!=len(audit['rows']):raise ValueError('Duplicate source parity records')
+        result['sourceParityAuditSha256']=digest(args.source_parity);result['excludedSources']=[]
     for index,(ident,row) in enumerate(extraction['models'].items()):
         mode=row.get('mode','battle');additions=row['added']
         if not additions:
             result['models'][ident]={'mode':mode,'added':[],'source':row['source'],'deferred':row['deferred'],'markers':row['markers']};continue
         assert archive.record(row['source']['path'])==row['source'],'Original graphics source changed'
+        if parity is not None:
+            checked=parity.get(row['source']['path'])
+            if checked is None or checked['source']!=row['source']:raise ValueError('Source lacks matching audit evidence: '+ident)
+            if checked.get('semanticMatch') is not True:
+                result['excludedSources'].append({'id':ident,'mode':mode,'source':row['source'],'actions':len(additions),'reason':'Source data differ or require an adapter'})
+                continue
         current_path=asset(project,row['manifest']);staged_path=asset(staging,row['manifest'])
         current=json.loads(current_path.read_bytes());original=copy.deepcopy(current);prepared=json.loads(staged_path.read_bytes());installed=[]
         before_sha=digest(current_path)
@@ -54,6 +68,7 @@ def main():
                 result['preservedExisting'].append({'id':ident,'mode':mode,'action':name});continue
             animation=copy.deepcopy(prepared['modes'][mode]['animations'][name]);proof=proofs.get((ident,mode,name))
             if proof is None:raise ValueError('Missing all-frame validation: '+ident+'/'+name)
+            if proof.get('sampledTimelineFrames')!=list(range(len(animation['timeline']))):raise ValueError('Incomplete timeline coverage: '+ident+'/'+name)
             source=asset(staging,animation['url'])
             if digest(source)!=proof['atlasSha256']:raise ValueError('Staged bitmap differs from validated bytes: '+str(source))
             if animation.get('packedAtlasUrl') or animation.get('multiAtlas'):raise ValueError('Packed body clip needs a bundle installer')

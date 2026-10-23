@@ -631,6 +631,3777 @@
           "referenceHeight": 161,
           "status": "ready",
           "externalEffects": []
+        },
+        "A_2hit": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/A_2hit.png",
+          "frameWidth": 129,
+          "frameHeight": 165,
+          "frames": 7,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            3,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.40310077519379844,
+            0.8303030303030303
+          ],
+          "referenceHeight": 141,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.40310077519379844,
+              0.8303030303030303
+            ],
+            [
+              0.5038759689922481,
+              0.7575757575757576
+            ],
+            [
+              0.46511627906976744,
+              0.703030303030303
+            ],
+            [
+              0.3798449612403101,
+              0.8303030303030303
+            ],
+            [
+              0.3643410852713178,
+              0.9878787878787879
+            ],
+            [
+              0.37209302325581395,
+              0.9212121212121213
+            ],
+            [
+              0.3178294573643411,
+              0.8909090909090909
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "A_2hit",
+          "events": [
+            {
+              "frame": 7,
+              "event": "playHitEffect"
+            },
+            {
+              "frame": 8,
+              "event": "hit,playShake:1"
+            },
+            {
+              "frame": 8,
+              "sound": "93",
+              "volume": "100"
+            },
+            {
+              "frame": 8,
+              "sound": "190",
+              "volume": "100"
+            }
+          ]
+        },
+        "C_dead1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/C_dead1.png",
+          "frameWidth": 129,
+          "frameHeight": 60,
+          "frames": 1,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3953488372093023,
+            0.8333333333333334
+          ],
+          "referenceHeight": 60,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.3953488372093023,
+              0.8333333333333334
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "C_dead1",
+          "events": []
+        },
+        "C_entry": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/C_entry.png",
+          "frameWidth": 133,
+          "frameHeight": 236,
+          "frames": 7,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            2.8947368421052633,
+            2.847457627118644
+          ],
+          "referenceHeight": 168,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              2.8947368421052633,
+              2.847457627118644
+            ],
+            [
+              2.075187969924812,
+              2.135593220338983
+            ],
+            [
+              1.0451127819548873,
+              1.076271186440678
+            ],
+            [
+              0.3609022556390977,
+              0.4279661016949153
+            ],
+            [
+              0.3233082706766917,
+              0.4152542372881356
+            ],
+            [
+              0.3157894736842105,
+              0.4661016949152542
+            ],
+            [
+              0.3082706766917293,
+              0.6440677966101694
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "C_entry",
+          "events": [
+            {
+              "frame": 0,
+              "sound": "284",
+              "volume": "100"
+            },
+            {
+              "frame": 0,
+              "sound": "288",
+              "volume": "100"
+            },
+            {
+              "frame": 2,
+              "sound": "172",
+              "volume": "37"
+            },
+            {
+              "frame": 0,
+              "sound": "286",
+              "volume": "100"
+            }
+          ]
+        },
+        "C_entry_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/C_entry_1.png",
+          "frameWidth": 133,
+          "frameHeight": 236,
+          "frames": 7,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            6,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            2.8947368421052633,
+            2.847457627118644
+          ],
+          "referenceHeight": 168,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              2.8947368421052633,
+              2.847457627118644
+            ],
+            [
+              2.075187969924812,
+              2.135593220338983
+            ],
+            [
+              1.0451127819548873,
+              1.076271186440678
+            ],
+            [
+              0.3609022556390977,
+              0.4279661016949153
+            ],
+            [
+              0.3233082706766917,
+              0.4152542372881356
+            ],
+            [
+              0.3157894736842105,
+              0.4661016949152542
+            ],
+            [
+              0.3082706766917293,
+              0.6440677966101694
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "C_entry_1",
+          "events": [
+            {
+              "frame": 0,
+              "sound": "17",
+              "volume": "100"
+            }
+          ]
+        },
+        "C_exeunt": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/C_exeunt.png",
+          "frameWidth": 86,
+          "frameHeight": 160,
+          "frames": 7,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            5,
+            6
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5348837209302325,
+            0.63125
+          ],
+          "referenceHeight": 126,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.5348837209302325,
+              0.63125
+            ],
+            [
+              0.5465116279069767,
+              0.59375
+            ],
+            [
+              0.5116279069767442,
+              0.58125
+            ],
+            [
+              0.5,
+              0.575
+            ],
+            [
+              1.3837209302325582,
+              1.5
+            ],
+            [
+              2.6744186046511627,
+              2.3375
+            ],
+            [
+              4.011627906976744,
+              3.6625
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "C_exeunt",
+          "events": [
+            {
+              "frame": 6,
+              "sound": "285",
+              "volume": "100"
+            },
+            {
+              "frame": 6,
+              "sound": "287",
+              "volume": "100"
+            },
+            {
+              "frame": 6,
+              "sound": "284",
+              "volume": "100"
+            }
+          ]
+        },
+        "C_run1_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/C_run1_1.png",
+          "frameWidth": 83,
+          "frameHeight": 103,
+          "frames": 2,
+          "timeline": [
+            0,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5542168674698795,
+            0.9805825242718447
+          ],
+          "referenceHeight": 102,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.5542168674698795,
+              0.9805825242718447
+            ],
+            [
+              0.5662650602409639,
+              0.941747572815534
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "C_run1_1",
+          "events": [
+            {
+              "frame": 0,
+              "sound": "285",
+              "volume": "83"
+            },
+            {
+              "frame": 0,
+              "sound": "287",
+              "volume": "100"
+            },
+            {
+              "frame": 0,
+              "sound": "286",
+              "volume": "100"
+            }
+          ]
+        },
+        "C_run1_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/C_run1_2.png",
+          "frameWidth": 210,
+          "frameHeight": 119,
+          "frames": 2,
+          "timeline": [
+            0,
+            1,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6761904761904762,
+            0.957983193277311
+          ],
+          "referenceHeight": 119,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.6761904761904762,
+              0.957983193277311
+            ],
+            [
+              0.6761904761904762,
+              1.0336134453781514
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "C_run1_2",
+          "events": []
+        },
+        "C_run1_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/C_run1_3.png",
+          "frameWidth": 101,
+          "frameHeight": 103,
+          "frames": 2,
+          "timeline": [
+            0,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.37623762376237624,
+            0.9611650485436893
+          ],
+          "referenceHeight": 103,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.37623762376237624,
+              0.9611650485436893
+            ],
+            [
+              0.22772277227722773,
+              0.9611650485436893
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "C_run1_3",
+          "events": [
+            {
+              "frame": 0,
+              "sound": "113",
+              "volume": "14"
+            }
+          ]
+        },
+        "C_run2_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/C_run2_1.png",
+          "frameWidth": 83,
+          "frameHeight": 151,
+          "frames": 3,
+          "timeline": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.46987951807228917,
+            0.9735099337748344
+          ],
+          "referenceHeight": 117,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.46987951807228917,
+              0.9735099337748344
+            ],
+            [
+              0.5783132530120482,
+              0.6490066225165563
+            ],
+            [
+              0.6385542168674698,
+              0.6490066225165563
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "C_run2_1",
+          "events": [
+            {
+              "frame": 0,
+              "sound": "286",
+              "volume": "57"
+            },
+            {
+              "frame": 0,
+              "sound": "288",
+              "volume": "100"
+            },
+            {
+              "frame": 0,
+              "sound": "284",
+              "volume": "100"
+            }
+          ]
+        },
+        "C_run2_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/C_run2_2.png",
+          "frameWidth": 86,
+          "frameHeight": 160,
+          "frames": 3,
+          "timeline": [
+            0,
+            1,
+            2
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4883720930232558,
+            1.20625
+          ],
+          "referenceHeight": 160,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4883720930232558,
+              1.20625
+            ],
+            [
+              0.4883720930232558,
+              1.31875
+            ],
+            [
+              0.4883720930232558,
+              1.1
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "C_run2_2",
+          "events": []
+        },
+        "C_run2_3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/C_run2_3.png",
+          "frameWidth": 102,
+          "frameHeight": 117,
+          "frames": 2,
+          "timeline": [
+            0,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5196078431372549,
+            1.0256410256410255
+          ],
+          "referenceHeight": 110,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.5196078431372549,
+              1.0256410256410255
+            ],
+            [
+              0.45098039215686275,
+              0.8803418803418803
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "C_run2_3",
+          "events": [
+            {
+              "frame": 0,
+              "sound": "113",
+              "volume": "18"
+            }
+          ]
+        },
+        "C_skillIdle_1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/C_skillIdle_1.png",
+          "frameWidth": 72,
+          "frameHeight": 161,
+          "frames": 3,
+          "timeline": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4861111111111111,
+            0.9751552795031055
+          ],
+          "referenceHeight": 161,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4861111111111111,
+              0.9751552795031055
+            ],
+            [
+              0.4861111111111111,
+              0.9751552795031055
+            ],
+            [
+              0.4861111111111111,
+              0.9751552795031055
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "C_skillIdle_1",
+          "events": [
+            {
+              "frame": 5,
+              "sound": "174",
+              "volume": "100"
+            }
+          ]
+        },
+        "C_skillIdle_2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/C_skillIdle_2.png",
+          "frameWidth": 55,
+          "frameHeight": 161,
+          "frames": 1,
+          "timeline": [
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6363636363636364,
+            0.9751552795031055
+          ],
+          "referenceHeight": 161,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.6363636363636364,
+              0.9751552795031055
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "C_skillIdle_2",
+          "events": []
+        },
+        "D_air_air1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_air_air1.png",
+          "frameWidth": 113,
+          "frameHeight": 162,
+          "frames": 29,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            27,
+            28
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.2920353982300885,
+            1.8888888888888888
+          ],
+          "referenceHeight": 116,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.2920353982300885,
+              1.8888888888888888
+            ],
+            [
+              0.3008849557522124,
+              2.3333333333333335
+            ],
+            [
+              0.2920353982300885,
+              2.5864197530864197
+            ],
+            [
+              0.26548672566371684,
+              2.7777777777777777
+            ],
+            [
+              0.24778761061946902,
+              2.962962962962963
+            ],
+            [
+              0.22123893805309736,
+              3.0555555555555554
+            ],
+            [
+              0.25663716814159293,
+              3.04320987654321
+            ],
+            [
+              0.26548672566371684,
+              3.0864197530864197
+            ],
+            [
+              0.37168141592920356,
+              3.0123456790123457
+            ],
+            [
+              0.39823008849557523,
+              3.0555555555555554
+            ],
+            [
+              0.39823008849557523,
+              3.0864197530864197
+            ],
+            [
+              0.40707964601769914,
+              3.1296296296296298
+            ],
+            [
+              0.40707964601769914,
+              3.1481481481481484
+            ],
+            [
+              0.415929203539823,
+              3.1666666666666665
+            ],
+            [
+              0.415929203539823,
+              3.1728395061728394
+            ],
+            [
+              0.3805309734513274,
+              3.154320987654321
+            ],
+            [
+              0.3805309734513274,
+              3.111111111111111
+            ],
+            [
+              0.40707964601769914,
+              3.04320987654321
+            ],
+            [
+              0.40707964601769914,
+              3.0185185185185186
+            ],
+            [
+              0.36283185840707965,
+              2.950617283950617
+            ],
+            [
+              0.36283185840707965,
+              2.8950617283950617
+            ],
+            [
+              0.37168141592920356,
+              2.8209876543209877
+            ],
+            [
+              0.37168141592920356,
+              2.746913580246914
+            ],
+            [
+              0.3805309734513274,
+              2.6358024691358026
+            ],
+            [
+              0.45132743362831856,
+              2.4876543209876543
+            ],
+            [
+              0.4690265486725664,
+              2.308641975308642
+            ],
+            [
+              0.4690265486725664,
+              2.0987654320987654
+            ],
+            [
+              0.504424778761062,
+              1.9876543209876543
+            ],
+            [
+              0.504424778761062,
+              1.6666666666666667
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_air_air1",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "284",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "287",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "285",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_air_air2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_air_air2.png",
+          "frameWidth": 113,
+          "frameHeight": 162,
+          "frames": 26,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            16,
+            16,
+            17,
+            17,
+            18,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3008849557522124,
+            1.8888888888888888
+          ],
+          "referenceHeight": 122,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.3008849557522124,
+              1.8888888888888888
+            ],
+            [
+              0.30973451327433627,
+              2.759259259259259
+            ],
+            [
+              0.3274336283185841,
+              3.4012345679012346
+            ],
+            [
+              0.30973451327433627,
+              3.8395061728395063
+            ],
+            [
+              0.2920353982300885,
+              4.179012345679013
+            ],
+            [
+              0.2920353982300885,
+              4.450617283950617
+            ],
+            [
+              0.2743362831858407,
+              4.660493827160494
+            ],
+            [
+              0.2831858407079646,
+              4.827160493827161
+            ],
+            [
+              0.2831858407079646,
+              5.154320987654321
+            ],
+            [
+              0.3893805309734513,
+              5.1419753086419755
+            ],
+            [
+              0.45132743362831856,
+              5.197530864197531
+            ],
+            [
+              0.49557522123893805,
+              5.172839506172839
+            ],
+            [
+              0.49557522123893805,
+              5.197530864197531
+            ],
+            [
+              0.504424778761062,
+              5.179012345679013
+            ],
+            [
+              0.504424778761062,
+              5.049382716049383
+            ],
+            [
+              0.49557522123893805,
+              4.91358024691358
+            ],
+            [
+              0.49557522123893805,
+              4.833333333333333
+            ],
+            [
+              0.5575221238938053,
+              4.580246913580247
+            ],
+            [
+              0.5575221238938053,
+              4.388888888888889
+            ],
+            [
+              0.5575221238938053,
+              4.154320987654321
+            ],
+            [
+              0.5575221238938053,
+              3.8580246913580245
+            ],
+            [
+              0.5575221238938053,
+              3.5246913580246915
+            ],
+            [
+              0.5575221238938053,
+              3.111111111111111
+            ],
+            [
+              0.5575221238938053,
+              2.6790123456790123
+            ],
+            [
+              0.5575221238938053,
+              2.2098765432098766
+            ],
+            [
+              0.5575221238938053,
+              1.6666666666666667
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_air_air2",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "284",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "288",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "284",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_air_behit1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_air_behit1.png",
+          "frameWidth": 91,
+          "frameHeight": 168,
+          "frames": 5,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4065934065934066,
+            1.8214285714285714
+          ],
+          "referenceHeight": 128,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4065934065934066,
+              1.8214285714285714
+            ],
+            [
+              0.31868131868131866,
+              1.6071428571428572
+            ],
+            [
+              0.25274725274725274,
+              1.5773809523809523
+            ],
+            [
+              0.24175824175824176,
+              1.5833333333333333
+            ],
+            [
+              0.21978021978021978,
+              1.7321428571428572
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_air_behit1",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_air_behit2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_air_behit2.png",
+          "frameWidth": 95,
+          "frameHeight": 165,
+          "frames": 5,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3263157894736842,
+            1.7757575757575759
+          ],
+          "referenceHeight": 144,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.3263157894736842,
+              1.7757575757575759
+            ],
+            [
+              0.2736842105263158,
+              1.8424242424242425
+            ],
+            [
+              0.22105263157894736,
+              1.8181818181818181
+            ],
+            [
+              0.28421052631578947,
+              1.7212121212121212
+            ],
+            [
+              0.3473684210526316,
+              1.7333333333333334
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_air_behit2",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_air_behit3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_air_behit3.png",
+          "frameWidth": 80,
+          "frameHeight": 142,
+          "frames": 1,
+          "timeline": [
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4125,
+            2.0140845070422535
+          ],
+          "referenceHeight": 142,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4125,
+              2.0140845070422535
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_air_behit3",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_air_behit4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_air_behit4.png",
+          "frameWidth": 91,
+          "frameHeight": 136,
+          "frames": 2,
+          "timeline": [
+            0,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.24175824175824176,
+            1.9558823529411764
+          ],
+          "referenceHeight": 124,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.24175824175824176,
+              1.9558823529411764
+            ],
+            [
+              0.21978021978021978,
+              2.139705882352941
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_air_behit4",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_air_land": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_air_land.png",
+          "frameWidth": 171,
+          "frameHeight": 59,
+          "frames": 12,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            9,
+            11,
+            11,
+            11,
+            11
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4152046783625731,
+            1.152542372881356
+          ],
+          "referenceHeight": 53,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4152046783625731,
+              1.152542372881356
+            ],
+            [
+              0.4152046783625731,
+              1.423728813559322
+            ],
+            [
+              0.4152046783625731,
+              1.5254237288135593
+            ],
+            [
+              0.4152046783625731,
+              1.4406779661016949
+            ],
+            [
+              0.4152046783625731,
+              1.2881355932203389
+            ],
+            [
+              0.47368421052631576,
+              0.6271186440677966
+            ],
+            [
+              0.47368421052631576,
+              0.8813559322033898
+            ],
+            [
+              0.47368421052631576,
+              0.8305084745762712
+            ],
+            [
+              0.47368421052631576,
+              0.7288135593220338
+            ],
+            [
+              0.47368421052631576,
+              0.6440677966101694
+            ],
+            [
+              0.47368421052631576,
+              0.7457627118644068
+            ],
+            [
+              0.47368421052631576,
+              0.6779661016949152
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_air_land",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 5,
+              "sound": "170",
+              "volume": "100"
+            },
+            {
+              "frame": 5,
+              "sound": "169",
+              "volume": "76"
+            }
+          ]
+        },
+        "D_air_land1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_air_land1.png",
+          "frameWidth": 178,
+          "frameHeight": 92,
+          "frames": 14,
+          "timeline": [
+            0,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            11,
+            13,
+            13,
+            13,
+            13
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.24157303370786518,
+            2.782608695652174
+          ],
+          "referenceHeight": 58,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.24157303370786518,
+              2.782608695652174
+            ],
+            [
+              0.4438202247191011,
+              0.33695652173913043
+            ],
+            [
+              0.4101123595505618,
+              0.9021739130434783
+            ],
+            [
+              0.398876404494382,
+              0.9130434782608695
+            ],
+            [
+              0.398876404494382,
+              0.9782608695652174
+            ],
+            [
+              0.398876404494382,
+              0.9239130434782609
+            ],
+            [
+              0.398876404494382,
+              0.8260869565217391
+            ],
+            [
+              0.4550561797752809,
+              0.40217391304347827
+            ],
+            [
+              0.4550561797752809,
+              0.5652173913043478
+            ],
+            [
+              0.4550561797752809,
+              0.532608695652174
+            ],
+            [
+              0.4550561797752809,
+              0.4673913043478261
+            ],
+            [
+              0.4550561797752809,
+              0.41304347826086957
+            ],
+            [
+              0.4550561797752809,
+              0.4782608695652174
+            ],
+            [
+              0.4550561797752809,
+              0.43478260869565216
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_air_land1",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 2,
+              "sound": "169",
+              "volume": "100"
+            },
+            {
+              "frame": 2,
+              "sound": "170",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_air_stand": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_air_stand.png",
+          "frameWidth": 163,
+          "frameHeight": 152,
+          "frames": 10,
+          "timeline": [
+            0,
+            1,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            6,
+            7,
+            8,
+            7,
+            7,
+            7,
+            7,
+            7,
+            9,
+            9
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49693251533742333,
+            1.5263157894736843
+          ],
+          "referenceHeight": 117,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.49693251533742333,
+              1.5263157894736843
+            ],
+            [
+              0.3558282208588957,
+              1.1710526315789473
+            ],
+            [
+              0.2147239263803681,
+              1.4013157894736843
+            ],
+            [
+              0.2883435582822086,
+              1.3421052631578947
+            ],
+            [
+              0.3987730061349693,
+              1.0592105263157894
+            ],
+            [
+              0.22085889570552147,
+              1.125
+            ],
+            [
+              0.1165644171779141,
+              1.013157894736842
+            ],
+            [
+              0.2085889570552147,
+              0.7302631578947368
+            ],
+            [
+              0.2085889570552147,
+              0.7171052631578947
+            ],
+            [
+              0.22085889570552147,
+              0.8486842105263158
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_air_stand",
+          "events": [
+            {
+              "frame": 9,
+              "sound": "172",
+              "volume": "75"
+            }
+          ]
+        },
+        "D_air_upair": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_air_upair.png",
+          "frameWidth": 105,
+          "frameHeight": 153,
+          "frames": 11,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.2857142857142857,
+            1.7058823529411764
+          ],
+          "referenceHeight": 136,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.2857142857142857,
+              1.7058823529411764
+            ],
+            [
+              0.24761904761904763,
+              1.803921568627451
+            ],
+            [
+              0.3619047619047619,
+              2.0
+            ],
+            [
+              0.3142857142857143,
+              1.9019607843137254
+            ],
+            [
+              0.20952380952380953,
+              2.1372549019607843
+            ],
+            [
+              0.37142857142857144,
+              2.1372549019607843
+            ],
+            [
+              0.2857142857142857,
+              2.026143790849673
+            ],
+            [
+              0.26666666666666666,
+              2.176470588235294
+            ],
+            [
+              0.4095238095238095,
+              2.3986928104575163
+            ],
+            [
+              0.2571428571428571,
+              2.450980392156863
+            ],
+            [
+              0.2761904761904762,
+              2.5947712418300655
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_air_upair",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "134",
+              "volume": "50"
+            },
+            {
+              "frame": 1,
+              "sound": "286",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_air_upair1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_air_upair1.png",
+          "frameWidth": 62,
+          "frameHeight": 162,
+          "frames": 3,
+          "timeline": [
+            0,
+            1,
+            2
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.532258064516129,
+            1.8888888888888888
+          ],
+          "referenceHeight": 162,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.532258064516129,
+              1.8888888888888888
+            ],
+            [
+              0.5483870967741935,
+              2.2037037037037037
+            ],
+            [
+              0.532258064516129,
+              2.4074074074074074
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_air_upair1",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_beatback1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_beatback1.png",
+          "frameWidth": 88,
+          "frameHeight": 125,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3522727272727273,
+            2.216
+          ],
+          "referenceHeight": 125,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.3522727272727273,
+              2.216
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_beatback1",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_beatback2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_beatback2.png",
+          "frameWidth": 103,
+          "frameHeight": 119,
+          "frames": 1,
+          "timeline": [
+            0,
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4854368932038835,
+            2.2436974789915967
+          ],
+          "referenceHeight": 119,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4854368932038835,
+              2.2436974789915967
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_beatback2",
+          "events": []
+        },
+        "D_beatback3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_beatback3.png",
+          "frameWidth": 118,
+          "frameHeight": 178,
+          "frames": 8,
+          "timeline": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.1271186440677966,
+            1.646067415730337
+          ],
+          "referenceHeight": 136,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.1271186440677966,
+              1.646067415730337
+            ],
+            [
+              0.2711864406779661,
+              1.7247191011235956
+            ],
+            [
+              0.3559322033898305,
+              1.6067415730337078
+            ],
+            [
+              0.4491525423728814,
+              1.4438202247191012
+            ],
+            [
+              0.5932203389830508,
+              1.2584269662921348
+            ],
+            [
+              0.7203389830508474,
+              1.0786516853932584
+            ],
+            [
+              0.576271186440678,
+              0.9325842696629213
+            ],
+            [
+              0.5847457627118644,
+              0.7584269662921348
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_beatback3",
+          "events": [
+            {
+              "frame": 1,
+              "event": "playShake:2"
+            },
+            {
+              "frame": 1,
+              "sound": "170",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "236",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_beatback4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_beatback4.png",
+          "frameWidth": 106,
+          "frameHeight": 103,
+          "frames": 5,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6037735849056604,
+            0.6504854368932039
+          ],
+          "referenceHeight": 80,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.6037735849056604,
+              0.6504854368932039
+            ],
+            [
+              0.3490566037735849,
+              0.9029126213592233
+            ],
+            [
+              0.4716981132075472,
+              0.7378640776699029
+            ],
+            [
+              0.4339622641509434,
+              0.6796116504854369
+            ],
+            [
+              0.2641509433962264,
+              0.7572815533980582
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_beatback4",
+          "events": []
+        },
+        "D_beatback5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_beatback5.png",
+          "frameWidth": 92,
+          "frameHeight": 137,
+          "frames": 2,
+          "timeline": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.32608695652173914,
+            0.6934306569343066
+          ],
+          "referenceHeight": 118,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.32608695652173914,
+              0.6934306569343066
+            ],
+            [
+              0.43478260869565216,
+              0.9927007299270073
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_beatback5",
+          "events": [
+            {
+              "frame": 2,
+              "sound": "114",
+              "volume": "30"
+            }
+          ]
+        },
+        "D_land": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_land.png",
+          "frameWidth": 171,
+          "frameHeight": 48,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4853801169590643,
+            0.7291666666666666
+          ],
+          "referenceHeight": 48,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4853801169590643,
+              0.7291666666666666
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_land",
+          "events": []
+        },
+        "D_land_land": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_land_land.png",
+          "frameWidth": 171,
+          "frameHeight": 59,
+          "frames": 12,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            9,
+            11,
+            11,
+            11,
+            11
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4152046783625731,
+            1.152542372881356
+          ],
+          "referenceHeight": 53,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4152046783625731,
+              1.152542372881356
+            ],
+            [
+              0.4152046783625731,
+              1.423728813559322
+            ],
+            [
+              0.4152046783625731,
+              1.5254237288135593
+            ],
+            [
+              0.4152046783625731,
+              1.4406779661016949
+            ],
+            [
+              0.4152046783625731,
+              1.2881355932203389
+            ],
+            [
+              0.47368421052631576,
+              0.6271186440677966
+            ],
+            [
+              0.47368421052631576,
+              0.8813559322033898
+            ],
+            [
+              0.47368421052631576,
+              0.8305084745762712
+            ],
+            [
+              0.47368421052631576,
+              0.7288135593220338
+            ],
+            [
+              0.47368421052631576,
+              0.6440677966101694
+            ],
+            [
+              0.47368421052631576,
+              0.7457627118644068
+            ],
+            [
+              0.47368421052631576,
+              0.6779661016949152
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_land_land",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 5,
+              "sound": "236",
+              "volume": "64"
+            },
+            {
+              "frame": 5,
+              "sound": "170",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_land_stand": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_land_stand.png",
+          "frameWidth": 130,
+          "frameHeight": 130,
+          "frames": 3,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5923076923076923,
+            0.6461538461538462
+          ],
+          "referenceHeight": 111,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.5923076923076923,
+              0.6461538461538462
+            ],
+            [
+              0.46923076923076923,
+              0.823076923076923
+            ],
+            [
+              0.3,
+              0.9692307692307692
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_land_stand",
+          "events": []
+        },
+        "D_land_twitch": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_land_twitch.png",
+          "frameWidth": 154,
+          "frameHeight": 92,
+          "frames": 2,
+          "timeline": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.7717391304347826
+          ],
+          "referenceHeight": 82,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.5,
+              0.7717391304347826
+            ],
+            [
+              0.474025974025974,
+              0.967391304347826
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_land_twitch",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_stand_air": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_stand_air.png",
+          "frameWidth": 75,
+          "frameHeight": 136,
+          "frames": 1,
+          "timeline": [
+            0,
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.37333333333333335,
+            1.5588235294117647
+          ],
+          "referenceHeight": 136,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.37333333333333335,
+              1.5588235294117647
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_stand_air",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_stand_air1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_stand_air1.png",
+          "frameWidth": 105,
+          "frameHeight": 153,
+          "frames": 11,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            3,
+            4,
+            4,
+            5,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3333333333333333,
+            0.9019607843137255
+          ],
+          "referenceHeight": 136,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.3333333333333333,
+              0.9019607843137255
+            ],
+            [
+              0.3142857142857143,
+              1.0522875816993464
+            ],
+            [
+              0.41904761904761906,
+              1.2549019607843137
+            ],
+            [
+              0.34285714285714286,
+              1.1372549019607843
+            ],
+            [
+              0.26666666666666666,
+              1.4379084967320261
+            ],
+            [
+              0.3238095238095238,
+              1.5098039215686274
+            ],
+            [
+              0.3333333333333333,
+              1.4640522875816993
+            ],
+            [
+              0.3142857142857143,
+              1.5686274509803921
+            ],
+            [
+              0.3142857142857143,
+              1.7516339869281046
+            ],
+            [
+              0.24761904761904763,
+              1.8104575163398693
+            ],
+            [
+              0.2761904761904762,
+              1.7777777777777777
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_stand_air1",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 2,
+              "sound": "134",
+              "volume": "50"
+            },
+            {
+              "frame": 2,
+              "sound": "286",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_stand_behit1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_stand_behit1.png",
+          "frameWidth": 105,
+          "frameHeight": 147,
+          "frames": 3,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.44761904761904764,
+            0.9659863945578231
+          ],
+          "referenceHeight": 145,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.44761904761904764,
+              0.9659863945578231
+            ],
+            [
+              0.4666666666666667,
+              0.9523809523809523
+            ],
+            [
+              0.45714285714285713,
+              0.9863945578231292
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_stand_behit1",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_stand_behit2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_stand_behit2.png",
+          "frameWidth": 112,
+          "frameHeight": 137,
+          "frames": 3,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5178571428571429,
+            0.9635036496350365
+          ],
+          "referenceHeight": 134,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.5178571428571429,
+              0.9635036496350365
+            ],
+            [
+              0.5892857142857143,
+              0.9343065693430657
+            ],
+            [
+              0.5178571428571429,
+              0.9343065693430657
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_stand_behit2",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_stand_behit3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_stand_behit3.png",
+          "frameWidth": 106,
+          "frameHeight": 124,
+          "frames": 3,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.41509433962264153,
+            0.9919354838709677
+          ],
+          "referenceHeight": 110,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.41509433962264153,
+              0.9919354838709677
+            ],
+            [
+              0.5094339622641509,
+              0.782258064516129
+            ],
+            [
+              0.5566037735849056,
+              0.8467741935483871
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_stand_behit3",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_stand_behit4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_stand_behit4.png",
+          "frameWidth": 87,
+          "frameHeight": 136,
+          "frames": 2,
+          "timeline": [
+            0,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.40229885057471265,
+            1.0147058823529411
+          ],
+          "referenceHeight": 132,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.40229885057471265,
+              1.0147058823529411
+            ],
+            [
+              0.3793103448275862,
+              1.0735294117647058
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_stand_behit4",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_stand_behit5": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_stand_behit5.png",
+          "frameWidth": 110,
+          "frameHeight": 149,
+          "frames": 15,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            9,
+            10,
+            11,
+            12,
+            13,
+            13,
+            14,
+            14
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3,
+            0.9798657718120806
+          ],
+          "referenceHeight": 129,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.3,
+              0.9798657718120806
+            ],
+            [
+              0.3181818181818182,
+              0.9463087248322147
+            ],
+            [
+              0.3181818181818182,
+              0.9865771812080537
+            ],
+            [
+              0.3,
+              1.0671140939597314
+            ],
+            [
+              0.3181818181818182,
+              1.0536912751677852
+            ],
+            [
+              0.3181818181818182,
+              1.0939597315436242
+            ],
+            [
+              0.3090909090909091,
+              1.221476510067114
+            ],
+            [
+              0.37272727272727274,
+              1.25503355704698
+            ],
+            [
+              0.42727272727272725,
+              1.221476510067114
+            ],
+            [
+              0.39090909090909093,
+              1.348993288590604
+            ],
+            [
+              0.39090909090909093,
+              1.2684563758389262
+            ],
+            [
+              0.39090909090909093,
+              1.1006711409395973
+            ],
+            [
+              0.33636363636363636,
+              0.6778523489932886
+            ],
+            [
+              0.33636363636363636,
+              0.6912751677852349
+            ],
+            [
+              0.35454545454545455,
+              0.8456375838926175
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_stand_behit5",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 13,
+              "sound": "172",
+              "volume": "53"
+            }
+          ]
+        },
+        "D_stand_behit6": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_stand_behit6.png",
+          "frameWidth": 95,
+          "frameHeight": 149,
+          "frames": 3,
+          "timeline": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.49473684210526314,
+            0.9932885906040269
+          ],
+          "referenceHeight": 140,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.49473684210526314,
+              0.9932885906040269
+            ],
+            [
+              0.43157894736842106,
+              0.9060402684563759
+            ],
+            [
+              0.29473684210526313,
+              0.9060402684563759
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_stand_behit6",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_stand_behit7": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_stand_behit7.png",
+          "frameWidth": 91,
+          "frameHeight": 168,
+          "frames": 5,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.43956043956043955,
+            1.0178571428571428
+          ],
+          "referenceHeight": 128,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.43956043956043955,
+              1.0178571428571428
+            ],
+            [
+              0.3626373626373626,
+              0.7380952380952381
+            ],
+            [
+              0.38461538461538464,
+              0.75
+            ],
+            [
+              0.37362637362637363,
+              0.7440476190476191
+            ],
+            [
+              0.3626373626373626,
+              0.8690476190476191
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_stand_behit7",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_stand_behit8": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_stand_behit8.png",
+          "frameWidth": 95,
+          "frameHeight": 165,
+          "frames": 5,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4631578947368421,
+            0.9636363636363636
+          ],
+          "referenceHeight": 144,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4631578947368421,
+              0.9636363636363636
+            ],
+            [
+              0.35789473684210527,
+              1.006060606060606
+            ],
+            [
+              0.43157894736842106,
+              1.018181818181818
+            ],
+            [
+              0.42105263157894735,
+              0.9090909090909091
+            ],
+            [
+              0.4842105263157895,
+              0.9212121212121213
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_stand_behit8",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_stand_behit9": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_stand_behit9.png",
+          "frameWidth": 91,
+          "frameHeight": 147,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5274725274725275,
+            0.9863945578231292
+          ],
+          "referenceHeight": 147,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.5274725274725275,
+              0.9863945578231292
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_stand_behit9",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_stand_land": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_stand_land.png",
+          "frameWidth": 171,
+          "frameHeight": 118,
+          "frames": 12,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            3,
+            4,
+            5,
+            5,
+            6,
+            7,
+            8,
+            9,
+            8,
+            10,
+            8,
+            11,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3508771929824561,
+            1.0423728813559323
+          ],
+          "referenceHeight": 72,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.3508771929824561,
+              1.0423728813559323
+            ],
+            [
+              0.4444444444444444,
+              0.9915254237288136
+            ],
+            [
+              0.5672514619883041,
+              0.8305084745762712
+            ],
+            [
+              0.543859649122807,
+              0.6610169491525424
+            ],
+            [
+              0.5380116959064327,
+              0.559322033898305
+            ],
+            [
+              0.5380116959064327,
+              0.6186440677966102
+            ],
+            [
+              0.5146198830409356,
+              0.7288135593220338
+            ],
+            [
+              0.5146198830409356,
+              0.6779661016949152
+            ],
+            [
+              0.5730994152046783,
+              0.3389830508474576
+            ],
+            [
+              0.5730994152046783,
+              0.423728813559322
+            ],
+            [
+              0.5730994152046783,
+              0.3305084745762712
+            ],
+            [
+              0.5730994152046783,
+              0.3220338983050847
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_stand_land",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 7,
+              "sound": "236",
+              "volume": "100"
+            },
+            {
+              "frame": 7,
+              "sound": "121",
+              "volume": "54"
+            }
+          ]
+        },
+        "D_upair_air": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_upair_air.png",
+          "frameWidth": 112,
+          "frameHeight": 116,
+          "frames": 5,
+          "timeline": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.39285714285714285,
+            3.646551724137931
+          ],
+          "referenceHeight": 103,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.39285714285714285,
+              3.646551724137931
+            ],
+            [
+              0.375,
+              3.4913793103448274
+            ],
+            [
+              0.36607142857142855,
+              3.2758620689655173
+            ],
+            [
+              0.36607142857142855,
+              2.9051724137931036
+            ],
+            [
+              0.5446428571428571,
+              2.086206896551724
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_upair_air",
+          "events": []
+        },
+        "D_upair_air1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_upair_air1.png",
+          "frameWidth": 113,
+          "frameHeight": 162,
+          "frames": 28,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            26,
+            27
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.2743362831858407,
+            2.6728395061728394
+          ],
+          "referenceHeight": 115,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.2743362831858407,
+              2.6728395061728394
+            ],
+            [
+              0.2920353982300885,
+              2.746913580246914
+            ],
+            [
+              0.26548672566371684,
+              2.8703703703703702
+            ],
+            [
+              0.24778761061946902,
+              2.962962962962963
+            ],
+            [
+              0.22123893805309736,
+              3.0555555555555554
+            ],
+            [
+              0.25663716814159293,
+              3.04320987654321
+            ],
+            [
+              0.26548672566371684,
+              3.0864197530864197
+            ],
+            [
+              0.37168141592920356,
+              3.0123456790123457
+            ],
+            [
+              0.39823008849557523,
+              3.0555555555555554
+            ],
+            [
+              0.39823008849557523,
+              3.0864197530864197
+            ],
+            [
+              0.40707964601769914,
+              3.1296296296296298
+            ],
+            [
+              0.40707964601769914,
+              3.1481481481481484
+            ],
+            [
+              0.415929203539823,
+              3.1666666666666665
+            ],
+            [
+              0.415929203539823,
+              3.1728395061728394
+            ],
+            [
+              0.3805309734513274,
+              3.154320987654321
+            ],
+            [
+              0.3805309734513274,
+              3.111111111111111
+            ],
+            [
+              0.40707964601769914,
+              3.04320987654321
+            ],
+            [
+              0.40707964601769914,
+              3.0185185185185186
+            ],
+            [
+              0.36283185840707965,
+              2.950617283950617
+            ],
+            [
+              0.36283185840707965,
+              2.8950617283950617
+            ],
+            [
+              0.37168141592920356,
+              2.8209876543209877
+            ],
+            [
+              0.37168141592920356,
+              2.746913580246914
+            ],
+            [
+              0.3805309734513274,
+              2.6358024691358026
+            ],
+            [
+              0.45132743362831856,
+              2.4876543209876543
+            ],
+            [
+              0.4690265486725664,
+              2.308641975308642
+            ],
+            [
+              0.4690265486725664,
+              2.0987654320987654
+            ],
+            [
+              0.504424778761062,
+              1.9876543209876543
+            ],
+            [
+              0.504424778761062,
+              1.6666666666666667
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_upair_air1",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "284",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "285",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "288",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_upair_air2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_upair_air2.png",
+          "frameWidth": 113,
+          "frameHeight": 162,
+          "frames": 26,
+          "timeline": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            16,
+            16,
+            17,
+            17,
+            18,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.24778761061946902,
+            2.7098765432098766
+          ],
+          "referenceHeight": 122,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.24778761061946902,
+              2.7098765432098766
+            ],
+            [
+              0.30973451327433627,
+              3.3395061728395063
+            ],
+            [
+              0.3008849557522124,
+              3.728395061728395
+            ],
+            [
+              0.3008849557522124,
+              4.012345679012346
+            ],
+            [
+              0.3008849557522124,
+              4.351851851851852
+            ],
+            [
+              0.2920353982300885,
+              4.592592592592593
+            ],
+            [
+              0.2831858407079646,
+              4.771604938271605
+            ],
+            [
+              0.2831858407079646,
+              4.827160493827161
+            ],
+            [
+              0.2831858407079646,
+              5.154320987654321
+            ],
+            [
+              0.3893805309734513,
+              5.1419753086419755
+            ],
+            [
+              0.45132743362831856,
+              5.197530864197531
+            ],
+            [
+              0.49557522123893805,
+              5.172839506172839
+            ],
+            [
+              0.49557522123893805,
+              5.197530864197531
+            ],
+            [
+              0.504424778761062,
+              5.179012345679013
+            ],
+            [
+              0.504424778761062,
+              5.049382716049383
+            ],
+            [
+              0.49557522123893805,
+              4.91358024691358
+            ],
+            [
+              0.49557522123893805,
+              4.833333333333333
+            ],
+            [
+              0.5575221238938053,
+              4.580246913580247
+            ],
+            [
+              0.5575221238938053,
+              4.388888888888889
+            ],
+            [
+              0.5575221238938053,
+              4.154320987654321
+            ],
+            [
+              0.5575221238938053,
+              3.8580246913580245
+            ],
+            [
+              0.5575221238938053,
+              3.5246913580246915
+            ],
+            [
+              0.5575221238938053,
+              3.111111111111111
+            ],
+            [
+              0.5575221238938053,
+              2.6790123456790123
+            ],
+            [
+              0.5575221238938053,
+              2.2098765432098766
+            ],
+            [
+              0.5575221238938053,
+              1.6666666666666667
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_upair_air2",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            },
+            {
+              "frame": 1,
+              "sound": "284",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "286",
+              "volume": "100"
+            },
+            {
+              "frame": 1,
+              "sound": "288",
+              "volume": "100"
+            }
+          ]
+        },
+        "D_upair_behit1": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_upair_behit1.png",
+          "frameWidth": 91,
+          "frameHeight": 168,
+          "frames": 5,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.45054945054945056,
+            2.636904761904762
+          ],
+          "referenceHeight": 128,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.45054945054945056,
+              2.636904761904762
+            ],
+            [
+              0.31868131868131866,
+              2.4464285714285716
+            ],
+            [
+              0.26373626373626374,
+              2.4166666666666665
+            ],
+            [
+              0.27472527472527475,
+              2.4226190476190474
+            ],
+            [
+              0.26373626373626374,
+              2.5476190476190474
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_upair_behit1",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_upair_behit2": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_upair_behit2.png",
+          "frameWidth": 95,
+          "frameHeight": 165,
+          "frames": 5,
+          "timeline": [
+            0,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4105263157894737,
+            2.6424242424242426
+          ],
+          "referenceHeight": 144,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4105263157894737,
+              2.6424242424242426
+            ],
+            [
+              0.3368421052631579,
+              2.703030303030303
+            ],
+            [
+              0.30526315789473685,
+              2.684848484848485
+            ],
+            [
+              0.3684210526315789,
+              2.587878787878788
+            ],
+            [
+              0.43157894736842106,
+              2.6
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_upair_behit2",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_upair_behit3": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_upair_behit3.png",
+          "frameWidth": 87,
+          "frameHeight": 136,
+          "frames": 2,
+          "timeline": [
+            0,
+            1
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.367816091954023,
+            2.9411764705882355
+          ],
+          "referenceHeight": 132,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.367816091954023,
+              2.9411764705882355
+            ],
+            [
+              0.3103448275862069,
+              2.9926470588235294
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_upair_behit3",
+          "events": [
+            {
+              "frame": 0,
+              "event": "playEffect"
+            }
+          ]
+        },
+        "D_upair_behit4": {
+          "url": "/assets/para-revisao/npcs-inimigos-e-cenario/oboro-19003201/battle/D_upair_behit4.png",
+          "frameWidth": 80,
+          "frameHeight": 136,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.3,
+            3.1470588235294117
+          ],
+          "referenceHeight": 136,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.3,
+              3.1470588235294117
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/battle/role/left/19003201.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 261694,
+            "sha256": "b5c712bd337a584ee7e088aebb83075121f70df7df9ec9c47e0896224e1c1593",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "source-actions-2026-10-22-c33",
+          "sourceAction": "D_upair_behit4",
+          "events": []
         }
       },
       "referenceHeight": 148,

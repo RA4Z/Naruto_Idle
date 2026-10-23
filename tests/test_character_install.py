@@ -19,12 +19,12 @@ class CharacterInstallTests(unittest.TestCase):
         for base,value in [(project,current),(stage,prepared)]:
             (base/'public'/manifest_url.lstrip('/')).write_text(json.dumps(value))
         sha=hashlib.sha256((stage/'public'/url.lstrip('/')).read_bytes()).hexdigest();(stage/'reports').mkdir()
-        (stage/'reports/pixels.json').write_text(json.dumps({'allTimelineFrames':True,'actions':[{'id':'1','mode':'battle','action':'SP_skill2','groundOffsetsAndPixelsMatch':True,'sourceHashesPreserved':True,'atlasSha256':sha,'sampledTimelineFrames':[0,1]}]}))
+        (stage/'reports/pixels.json').write_text(json.dumps({'allTimelineFrames':True,'actions':[{'id':'1','mode':'battle','action':'SP_skill2','timingAndTimelineMatch':True,'groundOffsetsAndPixelsMatch':True,'sourceHashesPreserved':True,'atlasSha256':sha,'sampledTimelineFrames':[0,1]}]}))
         (stage/'report.json').write_text(json.dumps({'models':{'1':{'mode':'battle','manifest':manifest_url,'source':evidence,'added':[{'action':'SP_skill2'}],'deferred':[],'markers':[]}}}))
         return source,project,stage,current,url,manifest_url
 
-    def run_install(self,source,project,stage):
-        with patch.object(sys,'argv',['install','--source',str(source),'--project',str(project),'--staging',str(stage),'--label','fixture']),contextlib.redirect_stdout(io.StringIO()):main()
+    def run_install(self,source,project,stage,extra=()):
+        with patch.object(sys,'argv',['install','--source',str(source),'--project',str(project),'--staging',str(stage),'--label','fixture',*map(str,extra)]),contextlib.redirect_stdout(io.StringIO()):main()
 
     def test_verified_addition_preserves_reservation_existing_actions_and_collision_bytes(self):
         with tempfile.TemporaryDirectory() as temp:
@@ -36,12 +36,16 @@ class CharacterInstallTests(unittest.TestCase):
             self.assertEqual((project/'public'/added['url'].lstrip('/')).read_bytes(),(stage/'public'/url.lstrip('/')).read_bytes())
 
     def test_tampered_or_incompletely_checked_bitmap_cannot_change_manifest(self):
-        for tamper in ('bytes','coverage'):
+        for tamper in ('bytes','coverage','frame-coverage','timing'):
             with self.subTest(tamper=tamper),tempfile.TemporaryDirectory() as temp:
                 source,project,stage,before,url,manifest_url=self.fixture(Path(temp))
                 if tamper=='bytes':(stage/'public'/url.lstrip('/')).write_bytes(b'changed')
                 else:
-                    path=stage/'reports/pixels.json';data=json.loads(path.read_bytes());data['allTimelineFrames']=False;path.write_text(json.dumps(data))
+                    path=stage/'reports/pixels.json';data=json.loads(path.read_bytes())
+                    if tamper=='coverage':data['allTimelineFrames']=False
+                    elif tamper=='frame-coverage':data['actions'][0]['sampledTimelineFrames']=[0]
+                    else:data['actions'][0]['timingAndTimelineMatch']=False
+                    path.write_text(json.dumps(data))
                 with self.assertRaises(ValueError):self.run_install(source,project,stage)
                 self.assertEqual(json.loads((project/'public'/manifest_url.lstrip('/')).read_bytes()),before)
 
@@ -57,6 +61,23 @@ class CharacterInstallTests(unittest.TestCase):
             self.assertEqual(manifest.read_bytes(),expected)
             report=json.loads(gzip.decompress((project/'reports/full-character-extraction-fixture.json.gz').read_bytes()))
             self.assertEqual(report['added'],0);self.assertEqual(len(report['preservedExisting']),1)
+
+    def test_source_parity_gate_excludes_differences_and_rejects_stale_source_evidence(self):
+        for status in ('equivalent','different','stale','missing'):
+            with self.subTest(status=status),tempfile.TemporaryDirectory() as temp:
+                source,project,stage,current,url,manifest_url=self.fixture(Path(temp))
+                evidence=json.loads((stage/'report.json').read_bytes())['models']['1']['source']
+                row={'source':copy.deepcopy(evidence),'semanticMatch':status=='equivalent'}
+                if status=='stale':row['source']['sha256']='0'*64
+                audit=Path(temp)/'audit.json.gz';audit.write_bytes(gzip.compress(json.dumps({'sourceExecution':False,'rows':[] if status=='missing' else [row]}).encode()))
+                if status in ('stale','missing'):
+                    with self.assertRaisesRegex(ValueError,'matching audit evidence'):self.run_install(source,project,stage,('--source-parity',audit))
+                else:self.run_install(source,project,stage,('--source-parity',audit))
+                after=json.loads((project/'public'/manifest_url.lstrip('/')).read_bytes())
+                self.assertEqual('SP_skill2' in after['modes']['battle']['animations'],status=='equivalent')
+                if status=='different':
+                    report=json.loads(gzip.decompress((project/'reports/full-character-extraction-fixture.json.gz').read_bytes()))
+                    self.assertEqual(report['added'],0);self.assertEqual(len(report['excludedSources']),1)
 
     def test_missing_source_mode_can_be_added_without_changing_capabilities_or_other_mode(self):
         with tempfile.TemporaryDirectory() as temp:

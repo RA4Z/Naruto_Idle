@@ -1,3 +1,11 @@
+## Restante primário instalado com barreira de paridade — 23/10
+
+Instaladas 11.829 adições com provas de todos os quadros: 7.091 battle (73.460 quadros) e 4.738 world (10.098 quadros). O instalador usou --source-parity: só permite arquivos cujo relatório de auditoria confirma equivalência semântica e cuja evidência de origem coincide exatamente. As 42 ações ainda ausentes de fontes com diferenças permanecem excluídas; não foram substituídas por XML parcial. Ações já presentes, capacidades e demais campos preservados.
+
+Relatórios: reports/full-character-extraction-battlefinalsafe.json.gz e worldfinalsafe.json.gz, incluindo SHA da auditoria e fontes excluídas. Provas independentes originais por lote estão preservadas no staging; cada bitmap instalado conferiu SHA do relatório. O instalador também exige timing aprovado e cobertura exata de todos os índices da timeline. Novos testes cobrem diferença, fonte ausente/desatualizada, timing e cobertura incompleta; 43 testes Python passaram.
+
+O término da fila primária não conclui toda a extração: formatos não adaptados, efeitos, variantes right e recursos scene/RPG continuam pendentes. Contagem de ações inclui variantes/poses; não equivale a jutsus integrados ao combate. Não há alterações de recrutamento, conta ou save.
+
 ## Correções preferidas: lotes 7..26 instalados — 23/10
 
 Instaladas mais 1.494 ações após renovação normal: 687 correções existentes (169 battle,518 world) e 807 adições (790 battle,17 world), com 40.327 quadros cobertos por comparação independente. Ciclos002..005 preservaram todos os demais campos; 27 ações ficaram adiadas com motivo registrado. Somando o primeiro ciclo, foram instaladas 2.017 ações desta fila, sem alterar recrutamento ou combate.
