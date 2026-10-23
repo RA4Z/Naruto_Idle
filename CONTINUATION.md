@@ -1,3 +1,15 @@
+## Fontes alternativas de personagens e mais 95 efeitos — 23/10
+
+Adicionadas ao acervo 95 exportações de efeito aprovadas dos lotes8..31, com 5.661 quadros; cópia final validada em quatro grupos. As 100 ligações existentes permanecem intactas; 121 exportações por fonte estão catalogadas. A ação lian de 1nrv_luoxuanwan.swf excede o orçamento de canvas e continua pendente, sem redução ou substituição. Provas native-source-groups-008-031-proof.json.gz e relatórios sourcegroup8/14/20/26. Próximo lote32.
+
+A auditoria complementar encontrou 166 arquivos fora do catálogo primário: 144 MME legíveis e 22 de display list; 1.759 ações MME e 25 exports de sprites. O conjunto completo tem2.334arquivos de roles, dos quais2.168 já auditados na fila primária. Metadata não equivale a extração ou integração. Relatório additional-role-source-coverage.json.gz.
+
+Primeiro lote alternativo concluído: 177 ações e1.932quadros de Naruto right11000101/right11000102, Naruto11000101_rpg e Sasuke AZUL11000211_rpg. Caminhadas/sentar e poses orientadas são originais, sem espelhar artificialmente um arquivo para representar outro. Manifests source-only ficam em assets/para-revisao/fontes-alternativas, com índice separado em asset-source/role-source-exports/index.json. O catálogo de ninjas permaneceu byte a byte igual; não existem novas capacidades/recrutamentos implícitos.
+
+Os novos recover_role_sources.py/install_role_sources.py preservam dados de autoria, pontos, eventos, tempos, origem e escala e exigem prova vinculada ao hash da definição completa. Campos de cor/blend ainda não suportados, partes ausentes e camadas externas continuam explícitos. Não há nomes/IDs de personagem inferidos dos arquivos. Provas role-source-pilot-proof.json.gz e role-source-install-pilot4.json.gz. 55 testes Python passaram.
+
+Próximo: continuar as demais fontes MME alternativas em lotes de até quatro e os efeitos a partir de32. Formatos estáticos/limites e integração ao combate continuam pendentes. Nenhuma conta, save ou banco real foi alterado.
+
 ## Acervo por fonte: mais 22 animações de efeito — 23/10
 
 Instaladas 22 exportações gráficas adicionais, com todos os 1.324 quadros reconstruídos e comparados. O índice preserva as 100 ligações existentes e agora contém 26 exportações de revisão por fonte. IDs source:… representam arquivo/ação exatos e não novas habilidades. Duas ações de 0ITCyd.swf excedem o limite de canvas; não foram reduzidas nem substituídas. A sequência e demais formatos pendentes continuam explícitos.
