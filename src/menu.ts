@@ -3,18 +3,19 @@ import { CHARACTERS, type CharacterId } from "./data";
 import { loadingScreen } from "./loading-screen";
 import { acquireJourney, releaseJourney } from "./journey-lock";
 import { installCloudAccount } from "./cloud/ui";
-import { requireAccount } from "./cloud/profile";
 import { fresh } from "./model";
 let engine: Promise<typeof import("./main")> | undefined;
 let version = 0;
+function prepareEngine() {
+  return (engine ??= import("./main").catch((error) => {
+    engine = undefined;
+    throw error;
+  }));
+}
 export async function continueCloud(initial?: import("./model").Save) {
-  await requireAccount();
   await acquireJourney();
   try {
-    const game = await (engine ??= import("./main").catch((error) => {
-      engine = undefined;
-      throw error;
-    }));
+    const game = await prepareEngine();
     await game.startCloudJourney(initial);
   } catch (error) {
     releaseJourney();
@@ -37,15 +38,11 @@ export async function installMenu() {
     stage.update(t("menu.6d1ba3345a"));
     try {
       await acquireJourney();
-      await requireAccount();
       if (request !== version) {
         if (version === request + 1) releaseJourney();
         return;
       }
-      const game = await (engine ??= import("./main").catch((error) => {
-        engine = undefined;
-        throw error;
-      }));
+      const game = await prepareEngine();
       if (request !== version) return;
       await game.startCloudJourney(character ? fresh(character) : undefined);
     } catch (error) {
@@ -71,5 +68,9 @@ export async function installMenu() {
       });
   };
   element("continue").onclick = () => void launch();
-  await installCloudAccount(continueCloud);
+  await installCloudAccount(continueCloud, () => {
+    // Fetch code after authentication, while the player reads the menu. This
+    // does not claim a journey, create Phaser, load maps or change a save.
+    void prepareEngine().catch(() => {});
+  });
 }

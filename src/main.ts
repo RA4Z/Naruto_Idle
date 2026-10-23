@@ -474,7 +474,7 @@ async function start(s: Save) {
   const request = ++launchVersion;
   const stage = loadingScreen.begin(
     t("main.ddc49b1c5f"),
-    () => void start(s).catch((error) => stage.fail(error)),
+    () => void startCloudJourney().catch((error) => stage.fail(error)),
     () => $("back").click(),
   );
   stage.update(t("main.9a19a0e75a"), 0.05);
@@ -584,7 +584,9 @@ async function start(s: Save) {
         },
         scene: HuntScene,
         autoFocus: false,
-        loader: { maxParallelDownloads: 4, timeout: 20000 },
+        // Missing resources must fail once, not retry sequentially for minutes.
+        // The loading screen provides an explicit retry of the journey.
+        loader: { maxParallelDownloads: 6, timeout: 15000, maxRetries: 0 },
         render: { antialias: true, roundPixels: false },
         audio: { noAudio: false },
       });
@@ -855,9 +857,12 @@ class HuntScene extends Phaser.Scene {
         0.2 + value * 0.75,
       ),
     );
-    this.load.on("loaderror", (file: Phaser.Loader.File) =>
-      this.startup.failed.add(file.key),
-    );
+    this.load.on("loaderror", (file: Phaser.Loader.File) => {
+      this.startup.failed.add(file.key);
+      // Stop the blocked journey on its first failed required asset. The outer
+      // startup catch destroys this game and exposes retry/return controls.
+      this.startup.reject(new Error(t("main.6f5e01fe73")));
+    });
     this.load.image("map-" + initialMap.id, initialMap.background);
     this.load.image(
       "map-" + initialMap.id + "-foreground",
@@ -2032,15 +2037,14 @@ class HuntScene extends Phaser.Scene {
       stage.update(t("main.8be7deb387", { v0: Math.round(value * 100) }));
     this.load.on("progress", progress);
     try {
-      const grid = await mapNavigation(map);
-      if (!this.sys.isActive()) return;
-      if (map.kind === "adventure") await this.ensureCombat();
-      const pool =
+      const [grid, pool] = await Promise.all([
+        mapNavigation(map),
         map.kind === "adventure"
-          ? await Promise.all(map.enemies.map((id) => entityCatalog.get(id)))
-          : [];
-      if (!this.sys.isActive()) return;
-      await this.loadMapImages(map);
+          ? Promise.all(map.enemies.map((id) => entityCatalog.get(id)))
+          : Promise.resolve([] as EntityManifest[]),
+        map.kind === "adventure" ? this.ensureCombat() : Promise.resolve(),
+        this.loadMapImages(map),
+      ]);
       if (!this.sys.isActive()) return;
       for (const manifest of pool) {
         await this.actorCache.load(manifest, "enemy");

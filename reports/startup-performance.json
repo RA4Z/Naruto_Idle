@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-23T11:45:05.756Z",
+  "environment": "Local Vite and isolated Edge; fictitious Supabase, real map/character assets; timings exclude real production latency",
+  "measurements": [
+    {
+      "scenario": "previous-blocking-restoration",
+      "injectedTokenRefreshMs": 4000,
+      "interactiveMs": 4238,
+      "tokenRefreshCompletedWhenInteractive": true
+    },
+    {
+      "scenario": "nonblocking-restoration",
+      "injectedTokenRefreshMs": 4000,
+      "interactiveMs": 134,
+      "tokenRefreshCompletedWhenInteractive": false
+    },
+    {
+      "scenario": "real-game-assets-mocked-account",
+      "readyMs": 949,
+      "startupAssetRequests": 31,
+      "userValidations": 1,
+      "realAccountChanged": false,
+      "pageErrors": []
+    },
+    {
+      "scenario": "travel-to-forest",
+      "readyMs": 674,
+      "pageErrors": []
+    },
+    {
+      "scenario": "missing-required-asset",
+      "failureMs": 149,
+      "failedMapRequests": 1,
+      "retryVisible": true,
+      "realAccountChanged": false
+    },
+    {
+      "scenario": "retry-after-required-asset-failure",
+      "restored": true,
+      "realAccountChanged": false
+    }
+  ]
+}

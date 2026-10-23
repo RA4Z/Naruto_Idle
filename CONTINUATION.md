@@ -1,3 +1,13 @@
+## Login e carregamento otimizados — 23/10/2026
+
+A tela de login deixou de esperar a restauração remota da sessão para ficar interativa. Consultas de perfil e existência de save são paralelas; a verificação autoritativa de conta continua em openCloudJourney, sem duplicação no menu. O código do motor pode aquecer após identificar a conta, sem baixar mapas/animações, tomar lease ou alterar progresso. O formulário anônimo não é reconstruído ao terminar uma consulta sem mudança de usuário.
+
+O timeout de20s agora vale mesmo quando o SDK fornece AbortSignal, preservando também cancelamentos externos. Assets obrigatórios usam seis downloads paralelos,15s por tentativa e nenhuma repetição silenciosa; a primeira falha interrompe a entrada e expõe recuperação. Tentar novamente reabre a sessão de nuvem corretamente. Viagens iniciam navegação/modelos/imagens/recursos de combate em paralelo, preservando a fila única do loader. Servidores de desenvolvimento e produção usam ETag/304 para evitar retransmitir arquivos inalterados; URLs estáveis revalidam para receber correções futuras.
+
+Validação:340testes TypeScript,5testes de servidor/banco descartável,tipagem e build de produção aprovados. Browser isolado Edge com Supabase fictício(.invalid), assets reais e nenhum acesso a conta/save real: login134ms mesmo com refresh atrasado4s (fluxo bloqueante4238ms), entrada949ms, viagem para floresta674ms,asset404 com erro149ms/uma requisição e recuperação funcionando. São medições locais, não promessa de latência em produção. reports/startup-performance.json e tools/qa/check-startup.mts tornam a comparação reproduzível. Build validado sem copiar novamente todo o acervo público; não muda o processo normal de publicação.
+
+Extração foi pausada para esta prioridade:85898encerrada intencionalmente,32..41validados;038parcialaguarda42..43. Retomar somente depois do commit/push desta correção. Preservar provas/artefatos parciais; três diretórios não rastreados de sourceSequence em asset-source/native-effects NÃO fazem parte deste commit e exigem revisão própria. Não adicionar tudo indiscriminadamente.
+
 ## 140 fontes MME alternativas publicadas para revisão — 23/10
 
 Publicadas mais 1.524 ações gráficas, cobrindo 19.793 quadros, em 140 fontes. Preservadas também34ações não visuais e24pendentes(21sem raster suportado,3com cor/feature não suportada). Ações adiadas não foram substituídas. Somando o piloto, as144fontes MME adicionais estão contabilizadas:1.701ações gráficas,34não visuais,24pendentes;21.725quadros verificados. Os22arquivos de display list ainda exigem extração nativa.

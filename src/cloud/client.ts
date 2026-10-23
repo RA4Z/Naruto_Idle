@@ -1,4 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
+import { cloudFetch } from "./request";
 import type { CloudReply, CloudTransport } from "./sync";
 import type { Save } from "../model";
 
@@ -15,13 +16,7 @@ export const cloudClient =
           flowType: "pkce",
         },
         global: {
-          fetch: (input, init) =>
-            fetch(input, {
-              ...init,
-              // Best effort on tab close; large payloads use normal fetch.
-              keepalive: typeof init?.body === "string" && new TextEncoder().encode(init.body).length <= 60000,
-              signal: init?.signal ?? AbortSignal.timeout(20000),
-            }),
+          fetch: cloudFetch,
         },
       })
     : null;

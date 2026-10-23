@@ -47,7 +47,7 @@ const server = createServer(
           } else throw new Error();
         }
         if (!info.isFile()) throw new Error();
-        serveFile(req, res, path, info.size, mime[extname(path)] || "application/octet-stream");
+        serveFile(req, res, path, info.size, mime[extname(path)] || "application/octet-stream", info.mtimeMs);
       } catch {
         res.writeHead(404);
         res.end("Not found");

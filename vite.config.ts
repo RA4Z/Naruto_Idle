@@ -1,6 +1,6 @@
 import { createGameApi } from "./server/game-api.mjs";
 import { defineConfig, normalizePath } from "vite";
-import { createReadStream } from "node:fs";
+import { serveFile } from "./server/static-file.mjs";
 import { stat } from "node:fs/promises";
 import { resolve, sep, extname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -62,35 +62,7 @@ export default defineConfig({
           try {
             const file = await stat(path);
             if (!file.isFile()) return next();
-            response.setHeader("Content-Type", mime[extname(path)]);
-            response.setHeader("Cache-Control", "no-cache");
-            response.setHeader("Accept-Ranges", "bytes");
-            let start = 0,
-              end = file.size - 1;
-            const range = request.headers.range?.match(/^bytes=(\d+)-(\d*)$/);
-            if (range) {
-              start = Number(range[1]);
-              end = range[2] ? Math.min(Number(range[2]), end) : end;
-              if (start > end || start >= file.size) {
-                response.statusCode = 416;
-                response.end();
-                return;
-              }
-              response.statusCode = 206;
-              response.setHeader(
-                "Content-Range",
-                `bytes ${start}-${end}/${file.size}`,
-              );
-            }
-            response.setHeader("Content-Length", end - start + 1);
-            if (request.method === "HEAD") {
-              response.end();
-              return;
-            }
-            const stream = createReadStream(path, { start, end });
-            stream.on("error", () => response.destroy());
-            response.on("close", () => stream.destroy());
-            stream.pipe(response);
+            serveFile(request, response, path, file.size, mime[extname(path)], file.mtimeMs);
           } catch {
             response.statusCode = 404;
             response.end("Asset not found");

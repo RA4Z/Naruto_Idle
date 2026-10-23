@@ -25,7 +25,7 @@ export function cloudError(error: unknown) {
 }
 
 /** The landing page is the account gate; no guest journey is exposed. */
-export async function installCloudAccount(launch: (initial?: Save) => Promise<void>) {
+export async function installCloudAccount(launch: (initial?: Save) => Promise<void>, prepare: () => void = () => {}) {
   const root = document.createElement("section");
   root.id = "account-access";
   root.className = "account-card";
@@ -90,19 +90,27 @@ export async function installCloudAccount(launch: (initial?: Save) => Promise<vo
     let profileName = "", saveExists = false;
     if (data.session) {
       const id = data.session.user.id;
-      const profile = await cloudClient.from("player_profiles").select("username").eq("user_id", id).maybeSingle();
+      const [profile, save] = await Promise.all([
+        cloudClient.from("player_profiles").select("username").eq("user_id", id).maybeSingle(),
+        cloudClient.from("game_saves").select("revision").eq("user_id", id).maybeSingle(),
+      ]);
       if (profile.error) throw profile.error;
       profileName = profile.data?.username || "";
-      const save = await cloudClient.from("game_saves").select("revision").eq("user_id", id).maybeSingle();
       if (save.error) throw save.error;
       saveExists = !!save.data;
     }
     if (request !== revision || mode === "password") return;
-    user = data.session?.user || null;
+    const nextUser = data.session?.user || null;
+    const changed = user?.id !== nextUser?.id || user?.email !== nextUser?.email || username !== profileName || hasSave !== saveExists;
+    user = nextUser;
     username = profileName;
     hasSave = saveExists;
-    document.getElementById("choices")!.hidden = true;
-    render();
+    // Do not erase a typed login while the initial anonymous lookup finishes.
+    if (changed || user) {
+      document.getElementById("choices")!.hidden = true;
+      render();
+    }
+    if (user && username) prepare();
   }
   async function action(name: string) {
     if (busy || !cloudClient) return;
@@ -184,5 +192,8 @@ export async function installCloudAccount(launch: (initial?: Save) => Promise<vo
     }
   });
   render();
-  await refresh().catch((error) => feedback(cloudError(error)));
+  // Account restoration may involve an expired token or an unavailable server.
+  // Keep the login form interactive while it completes; gameplay still requires
+  // the authoritative account check and cloud lease in openCloudJourney().
+  void refresh().catch((error) => feedback(cloudError(error)));
 }
