@@ -1,0 +1,72 @@
+{
+  "id": "role-source-3d79329cb739b1db",
+  "name": "92200204_rpg",
+  "sourceOnly": true,
+  "sourceGroup": "scene",
+  "sourceEvidence": {
+    "path": "assets/role/npc/scene/npcres/92200204_rpg.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 51631,
+    "sha256": "4535d46a41765e93b5a524612375c005904ac63dbdc3dcd1b475c7ae30583780",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfiguration": {
+    "configuration": "ConfigAMF",
+    "configurationSha256": "d2b31d78b3afafb93e885235d14c0cbcfa056da4651f0c25991b36bb530a46ef"
+  },
+  "authoredActions": {
+    "idle_0": {
+      "configurationEvidence": {
+        "configuration": "ConfigAMF",
+        "configurationSha256": "d2b31d78b3afafb93e885235d14c0cbcfa056da4651f0c25991b36bb530a46ef"
+      },
+      "fps": "24",
+      "action": "idle_0",
+      "coordinateModel": "original-MME-keyframes-not-world-attachments",
+      "actionXml": "<action name=\"idle_0\"><layer><frame index=\"0\" length=\"3\"><element assetId=\"0\" x=\"26\" y=\"9\" alpha=\"1\" scaleX=\"0.8\" scaleY=\"0.8\" rotation=\"180\" blendMode=\"add\" /></frame></layer><layer><frame index=\"0\" length=\"3\"><element assetId=\"1\" x=\"0\" y=\"-3\" alpha=\"1\" scaleX=\"0.5\" scaleY=\"0.5\" rotation=\"0\" /></frame></layer><layer><frame index=\"0\" length=\"3\"><element assetId=\"2\" x=\"77\" y=\"41\" alpha=\"1\" scaleX=\"1\" scaleY=\"1\" rotation=\"180\" /></frame></layer><layer><frame index=\"0\" length=\"3\"><element assetId=\"3\" x=\"1\" y=\"-3\" alpha=\"1\" scaleX=\"0.4\" scaleY=\"0.4\" rotation=\"0\" /></frame></layer></action>",
+      "assetRegistrations": [
+        {
+          "id": "2",
+          "className": "Asset_2",
+          "assetName": "m20001.png",
+          "x": "-168",
+          "y": "-120"
+        },
+        {
+          "id": "3",
+          "className": "Asset_3",
+          "assetName": "yingzi.png",
+          "x": "-125",
+          "y": "-125"
+        },
+        {
+          "id": "0",
+          "className": "Asset_0",
+          "assetName": "d_zhongxin.png",
+          "x": "-98",
+          "y": "-76"
+        },
+        {
+          "id": "1",
+          "className": "Asset_1",
+          "assetName": "d_diquan.png",
+          "x": "-140",
+          "y": "-142"
+        }
+      ],
+      "externalNames": [],
+      "namedPoints": []
+    }
+  },
+  "dataOnlyActions": [],
+  "deferredActions": [
+    {
+      "action": "idle_0",
+      "reason": "native-color-or-feature-adapter-required",
+      "fields": [
+        "blendMode"
+      ]
+    }
+  ],
+  "modes": {}
+}

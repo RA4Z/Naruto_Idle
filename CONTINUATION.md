@@ -1,3 +1,13 @@
+## 140 fontes MME alternativas publicadas para revisão — 23/10
+
+Publicadas mais 1.524 ações gráficas, cobrindo 19.793 quadros, em 140 fontes. Preservadas também34ações não visuais e24pendentes(21sem raster suportado,3com cor/feature não suportada). Ações adiadas não foram substituídas. Somando o piloto, as144fontes MME adicionais estão contabilizadas:1.701ações gráficas,34não visuais,24pendentes;21.725quadros verificados. Os22arquivos de display list ainda exigem extração nativa.
+
+Cada lote de até quatro passou por comparação independente de todos os quadros e verificação dos dados de autoria. A publicação conferiu hashes e manteve byte a byte o catálogo jogável, com Sasuke inicial azul e a reserva preta. O índice continua separado em asset-source/role-source-exports/index.json; não há novas identidades, capacidades ou liberações de personagem inferidas.
+
+Prova completa: reports/role-source-additional-proof.json.gz. Relatórios de instalação: role-source-install-additional001..035.json.gz. As camadas externas permanecem explicitamente parciais. Não houve nova integração ao combate, alteração de conta/save ou escrita no banco real.
+
+Próximo: efeitos do lote32 em diante, arquivos de cenário estáticos e fontes primárias sem Config; preservar as pendências reais e os limites de memória/escala.
+
 ## Fontes alternativas de personagens e mais 95 efeitos — 23/10
 
 Adicionadas ao acervo 95 exportações de efeito aprovadas dos lotes8..31, com 5.661 quadros; cópia final validada em quatro grupos. As 100 ligações existentes permanecem intactas; 121 exportações por fonte estão catalogadas. A ação lian de 1nrv_luoxuanwan.swf excede o orçamento de canvas e continua pendente, sem redução ou substituição. Provas native-source-groups-008-031-proof.json.gz e relatórios sourcegroup8/14/20/26. Próximo lote32.

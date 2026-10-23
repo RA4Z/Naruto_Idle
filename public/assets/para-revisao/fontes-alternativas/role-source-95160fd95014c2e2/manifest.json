@@ -1,0 +1,97 @@
+{
+  "id": "role-source-95160fd95014c2e2",
+  "name": "91000102_rpg",
+  "sourceOnly": true,
+  "sourceGroup": "scene",
+  "sourceEvidence": {
+    "path": "assets/role/npc/scene/npcres/91000102_rpg.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 3978,
+    "sha256": "b5aa53d1eae887859ffbee69b9ab7a91106ca22da538d6486d2954693ca98393",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfiguration": {
+    "configuration": "Config",
+    "configurationSha256": "1e4d0825c9deba12870422385ec0afa166fdabe523684a3c8c2b0bb9055d17b5"
+  },
+  "authoredActions": {
+    "动作0": {
+      "configurationEvidence": {
+        "configuration": "Config",
+        "configurationSha256": "1e4d0825c9deba12870422385ec0afa166fdabe523684a3c8c2b0bb9055d17b5"
+      },
+      "fps": "24",
+      "action": "动作0",
+      "coordinateModel": "original-MME-keyframes-not-world-attachments",
+      "actionXml": "<action id=\"0\" name=\"动作0\">\n    <layer id=\"0\">\n      <frame index=\"0\" length=\"1\">\n        <element assetId=\"0\" />\n      </frame>\n    </layer>\n  </action>\n  ",
+      "assetRegistrations": [
+        {
+          "id": "0",
+          "assetName": "木桩下的饭盒.png",
+          "x": "-26",
+          "y": "-16.5",
+          "className": "Asset_0",
+          "width": "52",
+          "height": "33"
+        }
+      ],
+      "externalNames": [],
+      "namedPoints": []
+    }
+  },
+  "dataOnlyActions": [],
+  "deferredActions": [],
+  "modes": {
+    "source": {
+      "animations": {
+        "动作0": {
+          "url": "/assets/para-revisao/fontes-alternativas/role-source-95160fd95014c2e2/b25a2b726b83b51f/action-b25a2b726b83.png",
+          "frameWidth": 52,
+          "frameHeight": 33,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5,
+            0.5151515151515151
+          ],
+          "referenceHeight": 33,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.5,
+              0.5151515151515151
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/role/npc/scene/npcres/91000102_rpg.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 3978,
+            "sha256": "b5aa53d1eae887859ffbee69b9ab7a91106ca22da538d6486d2954693ca98393",
+            "sourceKind": "exported-inventory"
+          },
+          "sourceAction": "动作0",
+          "sourceConfiguration": {
+            "configuration": "Config",
+            "configurationSha256": "1e4d0825c9deba12870422385ec0afa166fdabe523684a3c8c2b0bb9055d17b5"
+          },
+          "configurationPreferenceEvidence": {
+            "path": "flash/core/naruto.core.swf",
+            "tag": "PT_NarutoAlpha9.17Build302",
+            "bytes": 161299,
+            "sha256": "201d920b5b223bdc3f0f84a6e87c05d28719f2620effec8e4655a722e18e7114",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "role-source-additional-b027",
+          "events": []
+        }
+      },
+      "referenceHeight": 33,
+      "status": "ready"
+    }
+  }
+}

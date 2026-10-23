@@ -1,0 +1,95 @@
+{
+  "id": "role-source-3f36c124afbd9b59",
+  "name": "91000122_rpg",
+  "sourceOnly": true,
+  "sourceGroup": "scene",
+  "sourceEvidence": {
+    "path": "assets/role/npc/scene/npcres/91000122_rpg.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 3781,
+    "sha256": "ddf19a80a0c2b67a99960e554497b42a3c592346fd22cbacdd013e6eed056cd4",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfiguration": {
+    "configuration": "ConfigAMF",
+    "configurationSha256": "6dd85724c644095a3732426998b272138cb48ff177dcfbbf0db559a0374dcf0e"
+  },
+  "authoredActions": {
+    "idle_0": {
+      "configurationEvidence": {
+        "configuration": "ConfigAMF",
+        "configurationSha256": "6dd85724c644095a3732426998b272138cb48ff177dcfbbf0db559a0374dcf0e"
+      },
+      "fps": "24",
+      "action": "idle_0",
+      "coordinateModel": "original-MME-keyframes-not-world-attachments",
+      "actionXml": "<action name=\"idle_0\"><layer><frame index=\"0\" length=\"1\"><element assetId=\"0\" x=\"0\" y=\"0\" alpha=\"1\" scaleX=\"1\" scaleY=\"1\" rotation=\"0\" /></frame></layer></action>",
+      "assetRegistrations": [
+        {
+          "id": "0",
+          "className": "Asset_0",
+          "assetName": "中1.png",
+          "x": "-146",
+          "y": "-80"
+        }
+      ],
+      "externalNames": [],
+      "namedPoints": []
+    }
+  },
+  "dataOnlyActions": [],
+  "deferredActions": [],
+  "modes": {
+    "source": {
+      "animations": {
+        "idle_0": {
+          "url": "/assets/para-revisao/fontes-alternativas/role-source-3f36c124afbd9b59/ae0e0cad527631a6/idle_0.png",
+          "frameWidth": 291,
+          "frameHeight": 160,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.5017182130584192,
+            0.5
+          ],
+          "referenceHeight": 160,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.5017182130584192,
+              0.5
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/role/npc/scene/npcres/91000122_rpg.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 3781,
+            "sha256": "ddf19a80a0c2b67a99960e554497b42a3c592346fd22cbacdd013e6eed056cd4",
+            "sourceKind": "exported-inventory"
+          },
+          "sourceAction": "idle_0",
+          "sourceConfiguration": {
+            "configuration": "ConfigAMF",
+            "configurationSha256": "6dd85724c644095a3732426998b272138cb48ff177dcfbbf0db559a0374dcf0e"
+          },
+          "configurationPreferenceEvidence": {
+            "path": "flash/core/naruto.core.swf",
+            "tag": "PT_NarutoAlpha9.17Build302",
+            "bytes": 161299,
+            "sha256": "201d920b5b223bdc3f0f84a6e87c05d28719f2620effec8e4655a722e18e7114",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "role-source-additional-b029",
+          "events": []
+        }
+      },
+      "referenceHeight": 160,
+      "status": "ready"
+    }
+  }
+}

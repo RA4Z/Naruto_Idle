@@ -1,0 +1,187 @@
+{
+  "id": "role-source-ba41fb1f5ee54723",
+  "name": "91100103_rpg",
+  "sourceOnly": true,
+  "sourceGroup": "scene",
+  "sourceEvidence": {
+    "path": "assets/role/npc/scene/npcres/91100103_rpg.swf",
+    "tag": "PT_NarutoAlpha6.00Build300",
+    "bytes": 125598,
+    "sha256": "58590a0571b1a4596cbc7a8003a669a127157c783d1dd1398052ec464cf5bc8a",
+    "sourceKind": "exported-inventory"
+  },
+  "sourceConfiguration": {
+    "configuration": "ConfigAMF",
+    "configurationSha256": "dcc81c5ccb5b3921e23491685825299137d8a12108b66ebd02872090b8e1e681"
+  },
+  "authoredActions": {
+    "destroy": {
+      "configurationEvidence": {
+        "configuration": "ConfigAMF",
+        "configurationSha256": "dcc81c5ccb5b3921e23491685825299137d8a12108b66ebd02872090b8e1e681"
+      },
+      "fps": "24",
+      "action": "destroy",
+      "coordinateModel": "original-MME-keyframes-not-world-attachments",
+      "actionXml": "<action name=\"destroy\"><layer><frame index=\"0\" length=\"1\"><pointElement name=\"levelpt\" x=\"-273\" y=\"-23\" /></frame></layer><layer><frame index=\"0\" length=\"1\"><element assetId=\"0\" x=\"0\" y=\"0\" alpha=\"1\" scaleX=\"1\" scaleY=\"1\" rotation=\"0\" /></frame></layer></action>",
+      "assetRegistrations": [
+        {
+          "id": "0",
+          "className": "Asset_0",
+          "assetName": "火影忍者基地_神像（毁坏.png",
+          "x": "-343",
+          "y": "-69"
+        }
+      ],
+      "externalNames": [],
+      "namedPoints": [
+        {
+          "layer": {},
+          "frame": {
+            "index": "0",
+            "length": "1"
+          },
+          "point": {
+            "name": "levelpt",
+            "x": "-273",
+            "y": "-23"
+          }
+        }
+      ]
+    },
+    "idle": {
+      "configurationEvidence": {
+        "configuration": "ConfigAMF",
+        "configurationSha256": "dcc81c5ccb5b3921e23491685825299137d8a12108b66ebd02872090b8e1e681"
+      },
+      "fps": "24",
+      "action": "idle",
+      "coordinateModel": "original-MME-keyframes-not-world-attachments",
+      "actionXml": "<action name=\"idle\"><layer><frame index=\"0\" length=\"1\"><pointElement name=\"levelpt\" x=\"-273\" y=\"-23\" /></frame></layer><layer><frame index=\"0\" length=\"1\"><element assetId=\"1\" x=\"0\" y=\"0\" alpha=\"1\" scaleX=\"1\" scaleY=\"1\" rotation=\"0\" /></frame></layer></action>",
+      "assetRegistrations": [
+        {
+          "id": "1",
+          "className": "Asset_1",
+          "assetName": "火影忍者基地_神像（完整.png",
+          "x": "-283",
+          "y": "-294"
+        }
+      ],
+      "externalNames": [],
+      "namedPoints": [
+        {
+          "layer": {},
+          "frame": {
+            "index": "0",
+            "length": "1"
+          },
+          "point": {
+            "name": "levelpt",
+            "x": "-273",
+            "y": "-23"
+          }
+        }
+      ]
+    }
+  },
+  "dataOnlyActions": [],
+  "deferredActions": [],
+  "modes": {
+    "source": {
+      "animations": {
+        "destroy": {
+          "url": "/assets/para-revisao/fontes-alternativas/role-source-ba41fb1f5ee54723/6f61ec5c7a0ab645/destroy.png",
+          "frameWidth": 563,
+          "frameHeight": 355,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.6092362344582594,
+            0.19436619718309858
+          ],
+          "referenceHeight": 355,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.6092362344582594,
+              0.19436619718309858
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/role/npc/scene/npcres/91100103_rpg.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 125598,
+            "sha256": "58590a0571b1a4596cbc7a8003a669a127157c783d1dd1398052ec464cf5bc8a",
+            "sourceKind": "exported-inventory"
+          },
+          "sourceAction": "destroy",
+          "sourceConfiguration": {
+            "configuration": "ConfigAMF",
+            "configurationSha256": "dcc81c5ccb5b3921e23491685825299137d8a12108b66ebd02872090b8e1e681"
+          },
+          "configurationPreferenceEvidence": {
+            "path": "flash/core/naruto.core.swf",
+            "tag": "PT_NarutoAlpha9.17Build302",
+            "bytes": 161299,
+            "sha256": "201d920b5b223bdc3f0f84a6e87c05d28719f2620effec8e4655a722e18e7114",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "role-source-additional-b034",
+          "events": []
+        },
+        "idle": {
+          "url": "/assets/para-revisao/fontes-alternativas/role-source-ba41fb1f5ee54723/4fb62348858c2f6f/idle.png",
+          "frameWidth": 621,
+          "frameHeight": 553,
+          "frames": 1,
+          "timeline": [
+            0
+          ],
+          "fps": 24.0,
+          "origin": [
+            0.4557165861513688,
+            0.5316455696202531
+          ],
+          "referenceHeight": 553,
+          "status": "ready",
+          "externalEffects": [],
+          "frameOrigins": [
+            [
+              0.4557165861513688,
+              0.5316455696202531
+            ]
+          ],
+          "frameLayout": "compact-ground-origins-v1",
+          "sourceEvidence": {
+            "path": "assets/role/npc/scene/npcres/91100103_rpg.swf",
+            "tag": "PT_NarutoAlpha6.00Build300",
+            "bytes": 125598,
+            "sha256": "58590a0571b1a4596cbc7a8003a669a127157c783d1dd1398052ec464cf5bc8a",
+            "sourceKind": "exported-inventory"
+          },
+          "sourceAction": "idle",
+          "sourceConfiguration": {
+            "configuration": "ConfigAMF",
+            "configurationSha256": "dcc81c5ccb5b3921e23491685825299137d8a12108b66ebd02872090b8e1e681"
+          },
+          "configurationPreferenceEvidence": {
+            "path": "flash/core/naruto.core.swf",
+            "tag": "PT_NarutoAlpha9.17Build302",
+            "bytes": 161299,
+            "sha256": "201d920b5b223bdc3f0f84a6e87c05d28719f2620effec8e4655a722e18e7114",
+            "sourceKind": "exported-inventory"
+          },
+          "rendererRevision": "role-source-additional-b034",
+          "events": []
+        }
+      },
+      "referenceHeight": 355,
+      "status": "ready"
+    }
+  }
+}
