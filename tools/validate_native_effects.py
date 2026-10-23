@@ -73,6 +73,7 @@ def main():
     if args.ids:assert 1<=len(selected)<=24, 'One cycle contains at most 24 effect IDs'
     for ident,entry in entries.items():
         if ident not in selected:continue
+        entry_digest=hashlib.sha256(json.dumps(entry,sort_keys=True,ensure_ascii=False,separators=(',',':')).encode()).hexdigest()
         if archive:
             for evidence in (entry['source'],entry['sourceConfig']):assert archive.record(evidence['path'])==evidence,'Original bytes changed'
         for layer in entry['layers']:
@@ -89,7 +90,7 @@ def main():
                 folder=root/relative.parent
                 if not folder.is_dir():folder=p/'asset-source/native-effects'/relative.parent
                 frames=validate_sequence(folder,layer)
-                rows.append({'id':ident,'action':layer['action'],'plane':layer['plane'],'frames':frames,'allSourceRenderedFramesReconstructed':True,'artifactsSha256Match':True,'originalArchiveVerified':bool(archive),'sourceActionMetadataMatch':metadata_verified,'sourcePixelScale':1,'state':'source-frames-complete-runtime-adapter-pending'})
+                rows.append({'id':ident,'action':layer['action'],'plane':layer['plane'],'frames':frames,'sourceEntrySha256':entry_digest,'allSourceRenderedFramesReconstructed':True,'artifactsSha256Match':True,'originalArchiveVerified':bool(archive),'sourceActionMetadataMatch':metadata_verified,'sourcePixelScale':1,'state':'source-frames-complete-runtime-adapter-pending'})
                 continue
             a=layer['animation'];proof=layer['validation'];folder=asset(a['url']).parent
             for name,digest in layer['artifactsSha256'].items():assert hashlib.sha256((folder/name).read_bytes()).hexdigest()==digest,'Prepared artifact hash changed: '+str(folder/name)
@@ -117,7 +118,7 @@ def main():
                     assert hashlib.sha256(frame.tobytes()).hexdigest()==proof['frameRgbaSha256'][time],f'Frame pixels or source registration changed: {ident}/{layer["action"]}/{time}'
             finally:
                 if image is not None:image.close()
-            rows.append({'id':ident,'action':layer['action'],'plane':layer['plane'],'frames':len(a['timeline']),'allSourceRenderedFramesReconstructed':True,'artifactsSha256Match':True,'originalArchiveVerified':bool(archive),'sourceActionMetadataMatch':metadata_verified,'sourcePixelScale':1})
+            rows.append({'id':ident,'action':layer['action'],'plane':layer['plane'],'frames':len(a['timeline']),'sourceEntrySha256':entry_digest,'allSourceRenderedFramesReconstructed':True,'artifactsSha256Match':True,'originalArchiveVerified':bool(archive),'sourceActionMetadataMatch':metadata_verified,'sourcePixelScale':1})
     report={'effects':len(selected),'catalogEffects':len(index['effects']),'catalogSourceBundles':len(index.get('sourceBundles',{})),'catalogSourceExports':len(index.get('sourceExports',{})),'layers':len(rows),'frames':sum(r['frames'] for r in rows),'rows':rows,'scope':'All persisted atlas/sequence timelines reconstructed on the original static-render canvas and compared against per-frame RGBA hashes. No Flash player or ActionScript execution; not proof of runtime scripts or unresolved world attachments.'}
     target=args.report or p/'reports/native-effects-validation.json';target.parent.mkdir(parents=True,exist_ok=True);target.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({k:v for k,v in report.items() if k!='rows'}))

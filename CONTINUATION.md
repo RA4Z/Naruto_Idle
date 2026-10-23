@@ -1,3 +1,11 @@
+## Acervo por fonte: mais 22 animações de efeito — 23/10
+
+Instaladas 22 exportações gráficas adicionais, com todos os 1.324 quadros reconstruídos e comparados. O índice preserva as 100 ligações existentes e agora contém 26 exportações de revisão por fonte. IDs source:… representam arquivo/ação exatos e não novas habilidades. Duas ações de 0ITCyd.swf excedem o limite de canvas; não foram reduzidas nem substituídas. A sequência e demais formatos pendentes continuam explícitos.
+
+O novo install_source_exports.py exige prova recente vinculada ao hash integral da entrada, origem inalterada, SHA de cada artefato, escala1 e timeline. Não sobrescreve entradas/arquivos já alterados, não muda os bindings existentes e mantém sequências grandes fora de public até existir adaptador de execução. Regressões cobrem adulteração de pixels/metadata/fonte/prova, colisão, saída de pasta, edição manual, idempotência e armazenamento de sequência. O driver também confere o SHA da fonte previsto no plano antes de extrair.
+
+Provas: native-source-exports-cycle2-proof.json.gz, native-source-exports-install-sourcecycle2.json.gz e native-source-exports-cycle2-public-validation.json. Próximo lote8, sem repetir1..7. Não houve nova integração ao combate.
+
 ## Fontes parcialmente válidas e metadados de efeitos — 23/10
 
 Recuperadas 74 ações íntegras de quatro fontes antes bloqueadas pelo arquivo inteiro: 42 correções e 32 adições, 1.098 quadros comparados independentemente. A seleção exata action_names omite ações e registros não referenciados, mantém o SHA da configuração original e continua rejeitando qualquer valor inválido selecionado. Não há substituição de NaN nem autorização de fonte completa; 26900911 continua sem ação válida. Provas preferred-valid-subset-proof.json.gz e relatórios worldvalidsubset1.

@@ -9,6 +9,9 @@ def main():
     args=ap.parse_args();numbers=[int(n) for n in args.batches.split(',')]
     if not 1<=len(numbers)<=6 or len(set(numbers))!=len(numbers):raise ValueError('Choose one to six explicit batch numbers')
     plan=json.loads(args.plan.read_bytes());batches={b['batch']:b for b in plan['batches']};root=Path(args.output).resolve()
+    sys.path.insert(0,str(Path(args.project).resolve()/'tools'))
+    from original_archive import OriginalArchive
+    archive=OriginalArchive(args.source)
     tool=Path(__file__).resolve().parent;report={'batches':[],'state':'running','originalsReadOnly':True,'workerCount':1}
     args.report.parent.mkdir(parents=True,exist_ok=True)
     def checkpoint():
@@ -17,6 +20,9 @@ def main():
         batch=batches[number];jobs=batch.get('jobs');ids=[j['key'] for j in jobs] if jobs else batch['ids']
         if not 1<=len(ids)<=4 or len(set(ids))!=len(ids):raise ValueError('Invalid explicit batch size')
         if not jobs and any(not i.isdigit() for i in ids):raise ValueError('Invalid explicit batch IDs')
+        if jobs:
+            for job in jobs:
+                if job.get('source')!=archive.record(job['resource']):raise ValueError('Planned original source changed; review before extracting')
         if shutil.disk_usage(root).free<8_000_000_000:raise RuntimeError('Under 8 GB free; checkpoint preserved, no source deletion')
         command=[sys.executable,'-X','utf8',str(tool/'recover_bound_effects.py')]
         for key in ('source','project','output','work','java','ffdec','classes'):command.extend(['--'+key,getattr(args,key)])
