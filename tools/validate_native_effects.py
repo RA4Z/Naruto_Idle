@@ -1,7 +1,39 @@
 """Rebuild every source-rendered frame from public atlases, independent of pack()."""
 import argparse,hashlib,json,math,sys
-from pathlib import Path
+from pathlib import Path,PurePosixPath
 from PIL import Image
+
+def validate_sequence(folder,layer):
+    """Independently inspect full-frame bundles without creating live atlases."""
+    data=json.loads((folder/'manifest.json').read_bytes());proof=layer['validation']
+    assert data['state']=='source-frames-complete-runtime-adapter-pending'
+    assert data['sourcePixelScale']==proof['sourcePixelScale']==1
+    assert data['validation']==proof,'Sequence proof changed'
+    assert data['sourceBounds']==data['rendererSource']['rectTwips']
+    assert math.isfinite(data['fps']) and data['fps']>0 and data['fps']==data['rendererSource']['fps']
+    width,height=data['frameSize'];assert 0<width<=8192 and 0<height<=8192 and width*height<=16_000_000
+    assert list(proof['nativeCanvasSize'])==[width,height]
+    timeline=data['timeline'];files=data['frameFiles']
+    assert 1<=len(timeline)<=480 and len(timeline)==proof['nativeFrames']==data['rendererSource']['frameCount']
+    assert len(files)==proof['uniqueFrames'] and len(set(files))==len(files)
+    assert len(proof['frameRgbaSha256'])==len(timeline)
+    assert set(layer['artifactsSha256'])==set(files)|{'manifest.json'}
+    for name,digest in layer['artifactsSha256'].items():
+        assert Path(name).name==name and name not in ('.','..'),'Sequence artifact escapes folder'
+        assert hashlib.sha256((folder/name).read_bytes()).hexdigest()==digest,'Sequence artifact changed'
+    left,top=[v/20 for v in data['sourceBounds'][:2]]
+    assert len(data['origin'])==2 and math.isclose(data['origin'][0],-left/width,abs_tol=1e-12) and math.isclose(data['origin'][1],-top/height,abs_tol=1e-12)
+    hashes={}
+    for time,unique in enumerate(timeline):
+        assert isinstance(unique,int) and not isinstance(unique,bool) and 0<=unique<len(files)
+        if unique not in hashes:
+            with Image.open(folder/files[unique]) as raw:
+                assert raw.size==(width,height),'Sequence coordinate plane changed'
+                image=raw.convert('RGBA')
+            hashes[unique]=hashlib.sha256(image.tobytes()).hexdigest();image.close()
+        assert hashes[unique]==proof['frameRgbaSha256'][time],'Sequence frame pixels changed'
+    assert set(hashes)==set(range(len(files))),'Unused frame not represented by source timeline'
+    return len(timeline)
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--project',type=Path,default=Path(__file__).resolve().parents[1]);ap.add_argument('--source');ap.add_argument('--effects-root',type=Path);ap.add_argument('--ids');ap.add_argument('--report',type=Path);args=ap.parse_args();p=args.project.resolve()
@@ -13,18 +45,31 @@ def main():
     root=args.effects_root.resolve() if args.effects_root else p/'public/assets/effects/native'
     def asset(url):
         assert url.startswith('/assets/effects/native/'), 'Unexpected effect URL'
-        relative=Path(url.removeprefix('/assets/effects/native/'))
-        assert not relative.is_absolute() and '..' not in relative.parts, 'Effect path escapes root'
+        relative=PurePosixPath(url.removeprefix('/assets/effects/native/'))
+        assert not relative.is_absolute() and '..' not in relative.parts and not any(c in str(relative) for c in ('\\',':')), 'Effect path escapes root'
         return root/relative
-    index=json.loads((root/'index.json').read_bytes());rows=[]
-    selected=set(args.ids.split(',')) if args.ids else set(index['effects'])
-    assert selected<=set(index['effects']), 'Requested unprepared effect IDs'
+    index=json.loads((root/'index.json').read_bytes());rows=[];entries={}
+    for table in ('effects','sourceBundles','sourceExports'):
+        for ident,entry in index.get(table,{}).items():
+            assert ident not in entries,'Effect/source key belongs to two tables'
+            entries[ident]=entry
+    selected=set(args.ids.split(',')) if args.ids else set(entries)
+    assert selected<=set(entries), 'Requested unprepared effect/source IDs'
     if args.ids:assert 1<=len(selected)<=24, 'One cycle contains at most 24 effect IDs'
-    for ident,entry in index['effects'].items():
+    for ident,entry in entries.items():
         if ident not in selected:continue
         if archive:
             for evidence in (entry['source'],entry['sourceConfig']):assert archive.record(evidence['path'])==evidence,'Original bytes changed'
         for layer in entry['layers']:
+            if archive and layer.get('rendererSemanticEvidence'):assert archive.record(layer['rendererSemanticEvidence']['path'])==layer['rendererSemanticEvidence'],'Original MME core changed'
+            if layer.get('sourceSequence'):
+                relative=PurePosixPath(layer['sourceSequence']['manifestPath'])
+                assert not relative.is_absolute() and '..' not in relative.parts and relative.name=='manifest.json' and not any(c in str(relative) for c in ('\\',':'))
+                folder=root/relative.parent
+                if not folder.is_dir():folder=p/'asset-source/native-effects'/relative.parent
+                frames=validate_sequence(folder,layer)
+                rows.append({'id':ident,'action':layer['action'],'plane':layer['plane'],'frames':frames,'allSourceRenderedFramesReconstructed':True,'artifactsSha256Match':True,'originalArchiveVerified':bool(archive),'sourcePixelScale':1,'state':'source-frames-complete-runtime-adapter-pending'})
+                continue
             a=layer['animation'];proof=layer['validation'];folder=asset(a['url']).parent
             for name,digest in layer['artifactsSha256'].items():assert hashlib.sha256((folder/name).read_bytes()).hexdigest()==digest,'Prepared artifact hash changed: '+str(folder/name)
             assert a['sourcePixelScale']==1 and len(a['timeline'])==proof['nativeFrames']
@@ -52,7 +97,7 @@ def main():
             finally:
                 if image is not None:image.close()
             rows.append({'id':ident,'action':layer['action'],'plane':layer['plane'],'frames':len(a['timeline']),'allSourceRenderedFramesReconstructed':True,'artifactsSha256Match':True,'originalArchiveVerified':bool(archive),'sourcePixelScale':1})
-    report={'effects':len(selected),'catalogEffects':len(index['effects']),'layers':len(rows),'frames':sum(r['frames'] for r in rows),'rows':rows,'scope':'All public atlases reconstructed on the original JPEXS static-render canvas and compared against per-frame RGBA hashes. No Flash player or ActionScript execution; not proof of runtime scripts or unresolved world attachments.'}
+    report={'effects':len(selected),'catalogEffects':len(index['effects']),'catalogSourceBundles':len(index.get('sourceBundles',{})),'catalogSourceExports':len(index.get('sourceExports',{})),'layers':len(rows),'frames':sum(r['frames'] for r in rows),'rows':rows,'scope':'All persisted atlas/sequence timelines reconstructed on the original static-render canvas and compared against per-frame RGBA hashes. No Flash player or ActionScript execution; not proof of runtime scripts or unresolved world attachments.'}
     target=args.report or p/'reports/native-effects-validation.json';target.parent.mkdir(parents=True,exist_ok=True);target.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({k:v for k,v in report.items() if k!='rows'}))
 

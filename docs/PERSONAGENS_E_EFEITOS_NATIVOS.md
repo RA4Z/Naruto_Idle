@@ -1,5 +1,17 @@
 # Personagens e efeitos nativos — 22/10/2026
 
+## Acervo de efeitos por fonte — 23/10
+
+O acervo contém 100 IDs reais com atlas, 1 entrada em sequência de quadros e 4 animações exportadas sem vínculo de habilidade. São 91 SWFs únicos e 114 pares fonte/ação distintos. O relatório integral conferiu 121 camadas e 4920 quadros, incluindo as referências repetidas a uma mesma fonte. Essas contagens não equivalem a técnicas disponíveis no combate.
+
+A névoa original Wuyinshu (2213, ações wy1/wy2) excedia o teto de memória do atlas. Agora seus 220 quadros estão preservados em WebP sem perda, com ordem, tempo, origem e canvas completos. A sequência fica em asset-source/native-effects, fora de public; um carregador com memória limitada ainda é necessário antes do uso no combate. O validador independente verifica também origem, duração, hashes dos arquivos e RGBA de cada posição da timeline. Não houve redução de resolução nem substituição por imagem estática.
+
+O planejador inventariou as 2.003 fontes de efeito e 3.371 ações visuais exportadas. No momento do plano, 108 pares fonte/ação estavam preparados e 3.263 pendentes; o primeiro lote novo de quatro fontes foi extraído e validado (277 quadros). IDs sintéticos source:… são referências de acervo, não IDs de habilidade. O resolvedor usa apenas recurso e nome de ação exatamente iguais aos do Effect.xml; não remove espaços nem deduz nomes ou personagens por prefixo.
+
+A imagem externa yingzi(1).png foi recuperada por nome exato de bitmapShare.swf: 212×73, registro (-106,-36), dados XML/AMF concordantes. O material e a prova estão em public/assets/effects/shared, com integração marcada como não aplicada. A composição dessa sombra nos corpos permanece pendente.
+
+37 testes Python passaram. Casos de regressão cobrem alteração de pixels, origem e ordem da sequência, caminhos fora da pasta, preservação de edições atuais ao instalar novos lotes e associação exata entre arquivo/ação/habilidade. A extração estática não executa ActionScript e não comprova scripts em execução, composição com o fundo do mundo ou encaixes ainda não adaptados. Apenas o Rasengan anteriormente integrado usa o caminho nativo no combate; as demais entradas continuam em revisão.
+
 Esta etapa recupera ações e efeitos dos arquivos entregues de Naruto Online. O vínculo é feito por ID e configuração original, sem deduzir habilidades trocando prefixos numéricos. Extração, prévia e integração ao combate são estados distintos.
 
 ## Entregas

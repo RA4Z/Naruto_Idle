@@ -65,59 +65,12 @@
     "bitmap-actions": 92
   },
   "modelsWithExactSkillBindings": 700,
-  "preparedNativeEffects": 86,
+  "preparedNativeEffects": 100,
+  "sourceBundleEntries": 1,
+  "sourceExportEntries": 4,
+  "preparedUniqueSources": 91,
+  "preparedUniqueSourceActions": 114,
   "deferredPreparedEffects": {
-    "2005": {
-      "id": "2005",
-      "definition": {
-        "id": "2005",
-        "type": "0",
-        "target": "1",
-        "color": "",
-        "maxAlpha": "",
-        "ninjaAlpha": "",
-        "res": "assets/battle/effect/DaJiTeXiao.swf",
-        "frontAction": "d1",
-        "backAction": ""
-      },
-      "reason": "ValueError: Bitmap action needs faithful feature adapter: ['blendMode']",
-      "state": "not-substituted"
-    },
-    "2030": {
-      "id": "2030",
-      "definition": {
-        "id": "2030",
-        "name": "治活再生",
-        "type": "0",
-        "target": "0",
-        "color": "",
-        "maxAlpha": "",
-        "ninjaAlpha": "",
-        "res": "assets/battle/effect/zhihuozaishen.swf",
-        "frontAction": "effect",
-        "backAction": "",
-        "refPointName": "skillEffectPoint"
-      },
-      "reason": "ValueError: Bitmap action needs faithful feature adapter: ['blendMode', 'filename']",
-      "state": "not-substituted"
-    },
-    "2016": {
-      "id": "2016",
-      "definition": {
-        "id": "2016",
-        "name": "治活再生术",
-        "type": "0",
-        "target": "1",
-        "color": "",
-        "maxAlpha": "",
-        "ninjaAlpha": "",
-        "res": "assets/battle/effect/hphuifu.swf",
-        "frontAction": "effect_battle_addhp",
-        "backAction": ""
-      },
-      "reason": "ValueError: Bitmap action needs faithful feature adapter: ['blendMode']",
-      "state": "not-substituted"
-    },
     "2213": {
       "id": "2213",
       "definition": {
@@ -134,12 +87,11 @@
         "frontAction": "wy1",
         "backAction": "wy2"
       },
-      "reason": "ValueError: Multi-page atlas exceeds 16 pages or 64M total pixels; no automatic downscaling",
-      "rendererDetail": null,
-      "state": "not-substituted"
+      "state": "source-frames-complete-runtime-adapter-pending",
+      "reason": "Full source frames extracted; bounded streaming/tiled runtime adapter required"
     }
   },
-  "policy": "Extracted != integrated. No AS executed. Alpha/blend/tween/external dependencies remain explicit. Compressed inventory contains every audited source and original ninja/skill binding.",
+  "policy": "Extracted != integrated. Source keys are not skill IDs. Oversized source sequences live outside public and require a runtime adapter. No AS executed. Alpha/blend/tween/external dependencies remain explicit. Compressed inventory contains every audited source and original ninja/skill binding.",
   "sources": {
     "config/skill/ninjaSkillConfig.xml": {
       "path": "config/skill/ninjaSkillConfig.xml",

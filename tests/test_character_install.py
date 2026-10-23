@@ -1,4 +1,4 @@
-import contextlib,copy,hashlib,io,json,sys,tempfile,unittest
+import contextlib,copy,gzip,hashlib,io,json,sys,tempfile,unittest
 from pathlib import Path
 from unittest.mock import patch
 from PIL import Image
@@ -44,5 +44,18 @@ class CharacterInstallTests(unittest.TestCase):
                     path=stage/'reports/pixels.json';data=json.loads(path.read_bytes());data['allTimelineFrames']=False;path.write_text(json.dumps(data))
                 with self.assertRaises(ValueError):self.run_install(source,project,stage)
                 self.assertEqual(json.loads((project/'public'/manifest_url.lstrip('/')).read_bytes()),before)
+
+    def test_reinstall_preserves_current_edits_without_rereading_obsolete_staged_pixels(self):
+        with tempfile.TemporaryDirectory() as temp:
+            source,project,stage,before,url,manifest_url=self.fixture(Path(temp))
+            self.run_install(source,project,stage)
+            manifest=project/'public'/manifest_url.lstrip('/');current=json.loads(manifest.read_bytes())
+            current['modes']['battle']['animations']['SP_skill2']['currentReview']='preserve user edit'
+            manifest.write_text(json.dumps(current));expected=manifest.read_bytes()
+            (stage/'public'/url.lstrip('/')).unlink()
+            self.run_install(source,project,stage)
+            self.assertEqual(manifest.read_bytes(),expected)
+            report=json.loads(gzip.decompress((project/'reports/full-character-extraction-fixture.json.gz').read_bytes()))
+            self.assertEqual(report['added'],0);self.assertEqual(len(report['preservedExisting']),1)
 
 if __name__=='__main__':unittest.main()

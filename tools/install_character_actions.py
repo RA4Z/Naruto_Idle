@@ -43,12 +43,13 @@ def main():
         current=json.loads(current_path.read_bytes());original=copy.deepcopy(current);prepared=json.loads(staged_path.read_bytes());installed=[]
         before_sha=digest(current_path)
         for addition in additions:
-            name=addition['action'];animation=copy.deepcopy(prepared['modes'][mode]['animations'][name]);proof=proofs.get((ident,mode,name))
+            name=addition['action']
+            if name in current['modes'][mode]['animations']:
+                result['preservedExisting'].append({'id':ident,'mode':mode,'action':name});continue
+            animation=copy.deepcopy(prepared['modes'][mode]['animations'][name]);proof=proofs.get((ident,mode,name))
             if proof is None:raise ValueError('Missing all-frame validation: '+ident+'/'+name)
             source=asset(staging,animation['url'])
             if digest(source)!=proof['atlasSha256']:raise ValueError('Staged bitmap differs from validated bytes: '+str(source))
-            if name in current['modes'][mode]['animations']:
-                result['preservedExisting'].append({'id':ident,'mode':mode,'action':name});continue
             if animation.get('packedAtlasUrl') or animation.get('multiAtlas'):raise ValueError('Packed body clip needs a bundle installer')
             if animation.get('interpolationEvidence'):assert archive.record(animation['interpolationEvidence']['path'])==animation['interpolationEvidence']
             target=asset(project,animation['url']);sha=proof['atlasSha256']
