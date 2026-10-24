@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 13000401.swf / C_skillIdle_2
+
+Publicada1exportação source-only com60quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-0cebf56689e7486f-463b33056c3b-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Fonte de personagem ou cenário — 13000401.swf / C_skillIdle_1
 
 Publicada1exportação source-only com60quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-0cebf56689e7486f-38331596d840-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
