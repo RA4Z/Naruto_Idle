@@ -1,3 +1,7 @@
+## Seis efeitos de cenário preservados — 23/10/2026
+
+Publicadas6exportações e757quadros reconstruídos e conferidos na cópia final:4atlases e2sequências completas fora depublic que aguardam visualizador. Nenhum encaixe automático em personagens/mapas/jutsus. Provas em reports/scene-six-original-and-installed-proof.json.gz. Da fila de22visuais,1fonte permanece em timeout de90s e15ainda não foram tentadas nesta etapa. Os3posData de cenário já estão preservados separadamente.
+
 ## Efeitos por fonte — lotes 205-210 — 23/10/2026
 
 Publicadas 24 exportações aprovadas, com 1225 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-205-210-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
