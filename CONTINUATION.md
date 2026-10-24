@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 13000201.swf / d2
+
+Publicada1exportação source-only com1quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-fa8d1cbbe74209ab-e788103ee153-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Fontes primárias sem Config — dados e adaptador visual
 
 59trilhas de dados/2344quadros preservados e comparados com segunda leitura independente, incluindo labels, ratios e matrizes. Índice em asset-source/role-exported-data/index.json; sete provas gzip em reports. Plano visual separado:93ações/6368quadros primários e23açõesMME/1975quadros de pendências antigas, ainda não confundir com animações extraídas. Adaptador explícito role-left-exported-sprite e categoria de personagens no admin; nenhum vínculo de identidade, jutsu, dano ou hitbox inventado. docs/ROLE_EXPORTED_TIMELINES.md.

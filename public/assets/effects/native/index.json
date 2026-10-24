@@ -577987,6 +577987,123 @@
       "sourceOnly": true,
       "bindingOrigin": "exported-source-action-not-a-skill-id",
       "state": "native-assets-prepared-source-review"
+    },
+    "source:fa8d1cbbe74209ab:e788103ee153": {
+      "id": "source:fa8d1cbbe74209ab:e788103ee153",
+      "sourceOnly": true,
+      "sourceKind": "role-left-exported-sprite",
+      "bindingOrigin": "exported-source-action-not-a-skill-id",
+      "source": {
+        "path": "assets/battle/role/left/13000201.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 503419,
+        "sha256": "fd951a8376b2a577004727000a859d63573fb98fd2bf15c200d3c753247d9c91",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceConfig": {
+        "path": "assets/battle/role/left/13000201.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 503419,
+        "sha256": "fd951a8376b2a577004727000a859d63573fb98fd2bf15c200d3c753247d9c91",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceExport": {
+        "sourceKind": "role-left-exported-sprite",
+        "exportName": "d2",
+        "symbolId": 287,
+        "authoredFrames": 1,
+        "fps": 24.0,
+        "sourceSpriteSha256": "2ccf27b194a26f12b9250b60c856d1f37a490daac9350f11cf0e076d52f89e06",
+        "sourceTagCounts": {
+          "26": 116,
+          "1": 1,
+          "0": 1
+        },
+        "frameLabels": [],
+        "namedInstances": [],
+        "dataCompanionHint": null,
+        "sourceExecution": false,
+        "scope": "Exact original exported visual timeline; no gameplay identity or runtime script behavior inferred."
+      },
+      "definition": {
+        "id": "source:fa8d1cbbe74209ab:e788103ee153",
+        "type": "0",
+        "res": "assets/battle/role/left/13000201.swf",
+        "frontAction": "d2",
+        "sourceOnly": "true",
+        "sourceKind": "role-left-exported-sprite",
+        "name": "13000201 / d2"
+      },
+      "layers": [
+        {
+          "plane": "front",
+          "action": "d2",
+          "namedInstances": [],
+          "animation": {
+            "url": "/assets/effects/native/fa8d1cbbe74209ab/e788103ee153/effect.webp",
+            "packedAtlasUrl": "/assets/effects/native/fa8d1cbbe74209ab/e788103ee153/effect-atlas.json",
+            "frameWidth": 849,
+            "frameHeight": 442,
+            "frames": 1,
+            "timeline": [
+              0
+            ],
+            "fps": 24.0,
+            "origin": [
+              0.6294464075382803,
+              0.5160633484162896
+            ],
+            "frameOrigins": [
+              [
+                0.6294464075382803,
+                0.5160633484162896
+              ]
+            ],
+            "frameSizes": [
+              [
+                849,
+                442
+              ]
+            ],
+            "frameLayout": "native-packed-ground-origins-v1",
+            "sourcePixelScale": 1,
+            "status": "ready",
+            "nativeFrameCount": 1,
+            "sourceBounds": [
+              -10688,
+              -5662,
+              6287,
+              4274
+            ],
+            "rendering": "JPEXS-26.4.0-static-display-list",
+            "staticOnly": true
+          },
+          "validation": {
+            "nativeFrames": 1,
+            "uniqueFrames": 1,
+            "nativeCanvasSize": [
+              849,
+              497
+            ],
+            "allFramesPixelExact": true,
+            "originalCoordinatesPreserved": true,
+            "atlasPages": 1,
+            "atlasPixels": 454656,
+            "estimatedDecodedBytes": 1818624,
+            "sourcePixelScale": 1,
+            "frameRgbaSha256": [
+              "40512aac27f22f39c0c03ce8c63ced2656836a331a7d435aa4116a3650516484"
+            ],
+            "atlasEncoding": "lossless-webp"
+          },
+          "artifactsSha256": {
+            "effect.webp": "b3379c6c940e467c3b2c0aa88ea4478a1d2fe3c6dfe279aa9ee046db0d115ba5",
+            "effect-atlas.json": "d2dfe6f5ef07a0f3539b96ead7cc67edd76bb9ede2a53a94d2eb92f03b192e15",
+            "manifest.json": "f3ab6a79c5d4a9a27e996c8f76b5e90b887a61b68835bb6f434de39881cfad7d"
+          }
+        }
+      ],
+      "state": "native-assets-prepared-source-review"
     }
   }
 }
