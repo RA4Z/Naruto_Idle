@@ -12,11 +12,11 @@ import sys
 import xml.etree.ElementTree as ET
 from pack_native_frames import pack
 from pack_native_sequence import pack_sequence
+from atomic_json import write_json_atomic
 
 
 def save(path,data):
-    path.parent.mkdir(parents=True,exist_ok=True);temporary=path.with_suffix(path.suffix+'.tmp')
-    temporary.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');temporary.replace(path)
+    write_json_atomic(path,data)
 
 def source_action_data(root,evidence,name):
     """Keep original keyframes, events and points for future world attachments."""

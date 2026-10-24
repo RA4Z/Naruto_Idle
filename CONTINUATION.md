@@ -1,3 +1,7 @@
+## Gravação de extrações sob bloqueio temporário — 23/10/2026
+
+A fila validou181..186 e parou ao substituir manifest.json em uma ação de FengxinZZZZ_Tishugongji3/shang: WinError5 temporário. Os grupos145..180 já estão publicados. A gravação agora usa um temporário exclusivo, escrita completa e substituição atômica com até12 tentativas curtas, somente para erros de permissão/compartilhamento. Falhas persistentes e disco cheio continuam sendo erros; o arquivo anterior fica preservado. Não muda renderização, escala, origem, ordem dos quadros ou vínculo de habilidade.62testes Python passaram, incluindo recuperação de lock, falha persistente e disco cheio. A ação afetada exige retentativa e prova de pixels antes da publicação; próximo lote novo187 após essa revisão. Automação permanece pausada; espaço disponível~138GB.
+
 ## Efeitos por fonte — lotes 175-180 — 23/10/2026
 
 Publicadas 24 exportações aprovadas, com 1550 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-175-180-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
