@@ -1,3 +1,7 @@
+## Efeitos por fonte — lotes 535-540 — 23/10/2026
+
+Publicadas 24 exportações aprovadas, com 1434 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-535-540-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
 ## Fonte recuperada por intervalos — 11014511_outdooreffect.swf / shang
 
 178quadros originais completos,sem redução de escala ou mudança deFPS. Provas de todos os quadros no staging e na cópia instalada emreports/static-range-source-66b231f99595670e-082c71c3ac0f-proof.json.gz. Sequência source-only;exige visualizador/carregador para combate,não altera hitbox ou jutsu.
