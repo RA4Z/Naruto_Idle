@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 13000601.swf / SP_skill4
+
+Publicada1exportação source-only com19quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-d9c1b741a722cb24-be446738b92a-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Fonte de personagem ou cenário — 13000601.swf / C_skillIdle_2
 
 Publicada1exportação source-only com19quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-d9c1b741a722cb24-463b33056c3b-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
