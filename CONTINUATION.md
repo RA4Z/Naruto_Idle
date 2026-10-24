@@ -1,3 +1,7 @@
+## Dimensões efetivas do canvas original
+
+Nota em docs/SOURCE_CANVAS_ALLOCATION.md distingue a guarda conservadora ceil(span/20)+1 da imagem efetiva floor(span/20)+1. Relatório de5fontes em reports/source-canvas-allocation-20261024.json. Piloto de87quadros já passou integralmente na comparação RGBA;2fontes parciais permanecem sem alegação de conclusão. Relatórios históricos preservados e nenhum quadro redimensionado.
+
 ## Efeitos por fonte — lotes 451-456 — 23/10/2026
 
 Publicadas 24 exportações aprovadas, com 1352 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-451-456-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.

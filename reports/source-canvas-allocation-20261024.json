@@ -1,0 +1,136 @@
+{
+  "scope": "Distinguish conservative renderer guard from actual JPEXS image allocation. Historical reports remain immutable; no image resized and no source bounds changed.",
+  "wholeRenderEquivalenceProofSha256": "81a6315d152cabf86ec25ded21cd183db6d65ccb4da019fbc4694928f862285e",
+  "rows": [
+    {
+      "key": "source:fa8d1cbbe74209ab:f451a61749c6",
+      "source": {
+        "path": "assets/battle/role/left/13000201.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 503419,
+        "sha256": "fd951a8376b2a577004727000a859d63573fb98fd2bf15c200d3c753247d9c91",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "d3",
+      "rectTwips": [
+        -11528,
+        -8264,
+        8304,
+        4274
+      ],
+      "conservativeBudgetSize": [
+        993,
+        628
+      ],
+      "actualNativeCanvasSize": [
+        992,
+        627
+      ],
+      "evidence": "All frames of this source passed range-versus-whole RGBA comparison"
+    },
+    {
+      "key": "source:d9c1b741a722cb24:38331596d840",
+      "source": {
+        "path": "assets/battle/role/left/13000601.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 961342,
+        "sha256": "a2c5e86a6b9fb541993a55bac8a06a7e4a892f5d82662bc4d1bf84cd26ee623e",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "C_skillIdle_1",
+      "rectTwips": [
+        -17331,
+        -12233,
+        4753,
+        5434
+      ],
+      "conservativeBudgetSize": [
+        1106,
+        885
+      ],
+      "actualNativeCanvasSize": [
+        1105,
+        884
+      ],
+      "evidence": "All frames of this source passed range-versus-whole RGBA comparison"
+    },
+    {
+      "key": "source:8bb831b0c8ca4a15:082c71c3ac0f",
+      "source": {
+        "path": "assets/role/npc/scene/npcres/11011511_outdooreffect.swf",
+        "tag": "PT_NarutoAlpha8.78Build300",
+        "bytes": 1835562,
+        "sha256": "938dea00378dcb854a9226037030f431f8bada6fdc28055bc6a418899053d20d",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "rectTwips": [
+        -52499,
+        -29832,
+        53943,
+        27577
+      ],
+      "conservativeBudgetSize": [
+        5324,
+        2872
+      ],
+      "actualNativeCanvasSize": [
+        5323,
+        2871
+      ],
+      "evidence": "All frames of this source passed range-versus-whole RGBA comparison"
+    },
+    {
+      "key": "source:66b231f99595670e:082c71c3ac0f",
+      "source": {
+        "path": "assets/role/npc/scene/npcres/11014511_outdooreffect.swf",
+        "tag": "PT_NarutoAlpha9.18Build300",
+        "bytes": 1182932,
+        "sha256": "287b17edee1e2a797dd47af3e9758527884315321e42fe78a077d9edd3ce9f0d",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "rectTwips": [
+        -35282,
+        -36169,
+        34918,
+        34751
+      ],
+      "conservativeBudgetSize": [
+        3511,
+        3547
+      ],
+      "actualNativeCanvasSize": [
+        3510,
+        3546
+      ],
+      "evidence": "Dimensions of decodable partial PNGs, not a complete animation publication"
+    },
+    {
+      "key": "source:246f9c05a165f8c0:082c71c3ac0f",
+      "source": {
+        "path": "assets/role/npc/scene/npcres/11011741_outdooreffect.swf",
+        "tag": "PT_NarutoAlpha9.22Build301",
+        "bytes": 3728324,
+        "sha256": "471decec728aadbae42d4e5afeaccbd5e2803b594f2fce96f47e0e3efe845f7b",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "rectTwips": [
+        -19264,
+        -25557,
+        20222,
+        10830
+      ],
+      "conservativeBudgetSize": [
+        1976,
+        1821
+      ],
+      "actualNativeCanvasSize": [
+        1975,
+        1820
+      ],
+      "evidence": "Dimensions of decodable partial PNGs, not a complete animation publication"
+    }
+  ]
+}
