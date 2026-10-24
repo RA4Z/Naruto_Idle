@@ -15,12 +15,13 @@ export type NativeEffectEntry = {
 type Loaded = { animation: AnimationDef; images: HTMLImageElement[]; atlas?: PackedAtlas };
 
 /** Read-only source review. Separate panels deliberately do not assert resolved attachments. */
-export function mountNativeEffectReview(host: HTMLElement, entry: NativeEffectEntry) {
+export function mountNativeEffectReview(host: HTMLElement, entry: NativeEffectEntry, options: { effectOnly?: boolean } = {}) {
   const controls = document.createElement("div"), select = document.createElement("select"),
     play = document.createElement("button"), slider = document.createElement("input"),
     status = document.createElement("p"), note = document.createElement("p"), canvas = document.createElement("canvas"),
     mirror = document.createElement("input"), mirrorLabel = document.createElement("label");
   canvas.width = 1000; canvas.height = 500; canvas.style.width = "100%";
+  select.hidden = options.effectOnly === true;
   select.style.maxWidth = "100%"; controls.style.display = "flex"; controls.style.flexWrap = "wrap";
   slider.style.boxSizing = "border-box"; slider.style.margin = "8px 0"; status.style.overflowWrap = "anywhere";
   canvas.style.background = "#14252d"; canvas.setAttribute("aria-label", t("native.review.canvas"));
@@ -63,12 +64,16 @@ export function mountNativeEffectReview(host: HTMLElement, entry: NativeEffectEn
     const ctx = canvas.getContext("2d")!;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "#dccd99"; ctx.font = "15px sans-serif";
-    ctx.fillText(t("native.review.bodyPanel"), 24, 32); ctx.fillText(t("native.review.effectPanel"), 385, 32);
-    ctx.strokeStyle = "#53665d"; ctx.beginPath(); ctx.moveTo(350, 0); ctx.lineTo(350, 500); ctx.stroke();
+    if (!options.effectOnly) {
+      ctx.fillText(t("native.review.bodyPanel"), 24, 32);
+      ctx.strokeStyle = "#53665d"; ctx.beginPath(); ctx.moveTo(350, 0); ctx.lineTo(350, 500); ctx.stroke();
+    }
+    const panelLeft = options.effectOnly ? 24 : 385, panelWidth = options.effectOnly ? 952 : 570;
+    ctx.fillText(t("native.review.effectPanel"), panelLeft, 32);
     if (body) drawAt(ctx, body, frame, 160, 350, 0.9);
     const [left, top, right, bottom] = nativeEffectBounds(layers.map(loaded => loaded.animation));
-    const scale = Math.min(1, 570 / Math.max(1, right - left), 400 / Math.max(1, bottom - top));
-    const x = 385 + (mirror.checked ? right : -left) * scale, y = 70 - top * scale;
+    const scale = Math.min(1, panelWidth / Math.max(1, right - left), 400 / Math.max(1, bottom - top));
+    const x = panelLeft + (mirror.checked ? right : -left) * scale, y = 70 - top * scale;
     for (const loaded of layers) {
       const total = timeline(loaded.animation).length;
       // Use full-timeline bounds, never the current pose's dimensions, to keep scale stable.

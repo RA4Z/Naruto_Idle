@@ -321,7 +321,7 @@ async function show(id: string, title: string, initialModel?: string) {
           }
           mountSourceExportBrowser(grid, native.sourceExports, entry => {
             const dialog = modal(t("source.review.title") + " · " + (entry.definition.name || entry.id));
-            const dispose = mountNativeEffectReview(dialog, entry);
+            const dispose = mountNativeEffectReview(dialog, entry, { effectOnly: true });
             dialog.addEventListener("close", dispose, { once: true });
           });
         }

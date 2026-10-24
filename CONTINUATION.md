@@ -1,3 +1,7 @@
+## Prévia de fonte sem painel vazio — 23/10/2026
+
+A prévia source-only usa o canvas inteiro e oculta a escolha de corpo; efeitos com vínculos mantêm o modo anterior. Tipagem aprovada; Chrome confirmou o quadro37 real com10985pixels visíveis, espelhamento e nenhum vínculo de corpo. reports/admin-source-export-visible-frame.json.
+
 ## Animações extraídas consultáveis no admin — 23/10/2026
 
 O catálogo de efeitos agora mostra também sourceExports, com busca, filtros de batalha/cenário/estado e páginas de24cards. Nenhum atlas é carregado até abrir a prévia. Source-only sempre usa bindings vazios: não inventa personagem, jutsu ou encaixe de combate. Sequências grandes ficam explicitamente sem botão de prévia até existir o adaptador; nenhum fallback é usado. Efeitos numéricos já vinculados permanecem separados.
