@@ -1,3 +1,7 @@
+## Checkpoints de extração fora da sincronização — 23/10/2026
+
+A troca de checkpoints sob OneDrive voltou a falhar com WinError5, após a publicação dos lotes066..089; os arquivos aprovados estão preservados. O executor de ciclos agora usa a mesma gravação atômica com retentativas limitadas já testada nos manifestos. A área de trabalho mutável foi copiada para armazenamento local fora do OneDrive:4026arquivos/651651131bytes comparados integralmente por SHA256, sem mover originais ou remover o histórico. Não altera pixels, escala, origem, quadros ou vínculos de combate. Retomar publicações pendentes90..131 antes do próximo lote novo187. Automação continua pausada por solicitação do usuário.
+
 ## Efeitos por fonte — lotes 066-089 — 23/10/2026
 
 Publicadas 89 exportações aprovadas, com 5032 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-066-089-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.

@@ -1,6 +1,7 @@
 """Execute at most six explicit batches, then validate and checkpoint; never publish."""
 import argparse,json,shutil,subprocess,sys,time
 from pathlib import Path
+from atomic_json import write_json_atomic
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--plan',type=Path,required=True);ap.add_argument('--batches',required=True)
@@ -15,7 +16,7 @@ def main():
     tool=Path(__file__).resolve().parent;report={'batches':[],'state':'running','originalsReadOnly':True,'workerCount':1}
     args.report.parent.mkdir(parents=True,exist_ok=True)
     def checkpoint():
-        temporary=args.report.with_suffix('.tmp');temporary.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');temporary.replace(args.report)
+        write_json_atomic(args.report,report)
     for number in numbers:
         batch=batches[number];jobs=batch.get('jobs');ids=[j['key'] for j in jobs] if jobs else batch['ids']
         if not 1<=len(ids)<=4 or len(set(ids))!=len(ids):raise ValueError('Invalid explicit batch size')
