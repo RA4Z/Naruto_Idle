@@ -1,3 +1,7 @@
+## Símbolos sem desenho verificados nos originais — 23/10/2026
+
+No ciclo187..192, GAR_shabaodazang/z4 e GAR_shazhidun/bt_Data têm122+1quadros sem desenho: os sprites originais contêm apenas End/ShowFrame/FrameLabel, sem posicionamentos, definições visuais ou scripts internos. Conferidos fonte/SHA, export exato, contagem e todos os123quadros RGBA transparentes. A revisão estrita rejeita objetos, scripts, tags desconhecidas, fonte alterada ou pixels visíveis; não ignora transparência genérica. reports/empty-source-exports-187-review.json.gz conserva as provas. Não cria animações, vínculos ou habilidades; comportamento externo de runtime não é inferido. Os22efeitos visuais aprovados do ciclo seguem para publicação própria.
+
 ## Efeitos por fonte — lotes 114-131 — 23/10/2026
 
 Publicadas 71 exportações aprovadas, com 3900 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-114-131-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
