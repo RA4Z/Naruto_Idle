@@ -1,3 +1,7 @@
+## Efeitos por fonte — lotes 277-282 — 23/10/2026
+
+Publicadas 23 exportações aprovadas, com 993 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-277-282-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
 ## Fonte de personagem ou cenário — 13000601.swf / C_skillIdle_1
 
 Publicada1exportação source-only com7quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-d9c1b741a722cb24-38331596d840-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
