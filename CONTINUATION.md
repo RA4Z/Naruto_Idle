@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 13000101.swf / lianqidanqian
+
+Publicada1exportação source-only com2quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-b8de32bc400da062-efb966b9be52-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Revisão local das sequências grandes
 
 Visualizador somente leitura em tools/source_sequence_review.py, com hashes/whitelist de quadros, busca, reprodução, scrub, espelho e origem.3testes passaram. Chrome conferiu sequência real66quadros/24FPS, quadro intermediário visível,390pxsemoverflow,GETinválido404,POST501,zero conta/save. Relatório em reports/source-sequence-browser-proof.json. Não é adaptador de produção. Auditoria de duração em reports/primary-role-timing-audit.json:14pares visuais/dados têm durações distintas; preservar ambas. docs/SOURCE_SEQUENCE_LOCAL_REVIEW.md.
