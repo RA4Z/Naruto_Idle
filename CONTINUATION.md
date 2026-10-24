@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 13000601.swf / C_skillIdle_1
+
+Publicada1exportação source-only com7quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-d9c1b741a722cb24-38331596d840-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Fonte de personagem ou cenário — 92200204_rpg.swf / idle_0
 
 Publicada1exportação source-only com3quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-3d79329cb739b1db-ae0e0cad5276-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
