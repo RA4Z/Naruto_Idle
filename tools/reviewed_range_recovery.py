@@ -18,6 +18,7 @@ def sha(path):
 def renderer_fingerprint(classes, reference_classes, ffdec):
     return {'reviewedRangeClassSha256':sha(Path(classes)/'StaticSwfRenderReviewedRange.class'),
         'referenceClassSha256':sha(Path(reference_classes)/'StaticSwfRender.class'),
+        'geometrySha256':sha(Path(__file__).with_name('source_canvas_geometry.py')),
         'jarsSha256':{path.name:sha(path) for path in sorted((Path(ffdec)/'lib').glob('*.jar'))}}
 
 
@@ -32,14 +33,11 @@ def contained(root, relative):
 
 
 def canvas_size(metadata):
-    x0,y0,x1,y1 = metadata['rectTwips']
-    guarded_width,guarded_height = math.ceil((x1-x0)/20)+1,math.ceil((y1-y0)/20)+1
-    if (min(guarded_width,guarded_height)<1 or max(guarded_width,guarded_height)>8192
-            or guarded_width*guarded_height>32_000_000):
+    from source_canvas_geometry import native_canvas_size,conservative_canvas_size
+    guarded_width,guarded_height=conservative_canvas_size(metadata['rectTwips'])
+    if max(guarded_width,guarded_height)>8192 or guarded_width*guarded_height>32_000_000:
         raise ValueError('Original canvas exceeds unchanged decoder budget')
-    # JPEXS allocates floor(span/20)+1 pixels. The reference renderer uses
-    # ceil(span/20)+1 only for its conservative budget guard, not allocation.
-    return [math.floor((x1-x0)/20)+1,math.floor((y1-y0)/20)+1]
+    return native_canvas_size(metadata['rectTwips'])
 
 
 def validate_metadata(metadata, facts):

@@ -18,7 +18,7 @@ class ReviewedNativeBudgetTests(unittest.TestCase):
             'offlineRenderBudget':{'maximumNativePixels':32_000_000,'maximumRuntimePagePixels':16_000_000,
                 'maximumRuntimeAtlasPixels':64_000_000,'scope':'offline-native-render-and-proof-only','independentBounds':bounds},
             'layers':[{'action':'shang','namedInstances':[],'animation':{'sourceBounds':bounds['rectTwips'],'fps':24.0,'url':'/fixture.webp'},
-                'validation':{'nativeFrames':2,'nativeCanvasSize':[5001,4001],'atlasPixels':64,'atlasPages':1}}]}
+                'validation':{'nativeFrames':2,'nativeCanvasSize':[5000,4000],'atlasPixels':64,'atlasPages':1}}]}
         return archive,entry,bounds
 
     def test_offline_limit_requires_original_source_and_fresh_independent_bounds(self):
@@ -50,7 +50,7 @@ class ReviewedNativeBudgetTests(unittest.TestCase):
         for key,value in [('fps',23),('sourceBounds',[0,0,1,1])]:
             bad=copy.deepcopy(entry);bad['layers'][0]['animation'][key]=value
             with self.assertRaises(ValueError):reviewed_limit(archive,bad,lambda _:bounds)
-        bad=copy.deepcopy(entry);bad['layers'][0]['validation']['nativeCanvasSize']=[5002,4001]
+        bad=copy.deepcopy(entry);bad['layers'][0]['validation']['nativeCanvasSize']=[5001,4000]
         with self.assertRaisesRegex(ValueError,'allocation'):
             reviewed_limit(archive,bad,lambda _:bounds)
 
@@ -62,7 +62,7 @@ class ReviewedNativeBudgetTests(unittest.TestCase):
                 path=root/f'{frame:04d}.png';image.save(path)
                 frames.append({'path':path.name,'rgbaSha256':hashlib.sha256(image.tobytes()).hexdigest()})
             identity={'facts':{'authoredFrames':3}}
-            verified=lambda *_:(frames,{'rectTwips':[-20,0,20,20]})
+            verified=lambda *_:(frames,{'rectTwips':[-20,0,40,40]})
             result=preflight_atlas(root,{},identity,verified)
             self.assertEqual(result['uniqueCrops'],2)
             self.assertEqual(result['uniqueCropPixels'],2)

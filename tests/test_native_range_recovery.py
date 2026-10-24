@@ -25,7 +25,7 @@ class NativeRangeRecoveryTest(unittest.TestCase):
                 (folder/name).write_text(json.dumps(value),encoding='utf-8')
             for frame in range(start,end):
                 # Include repeated pixels at different authored frames.
-                image=Image.new('RGBA',(3,2),[(255,0,0,255),(0,0,0,0),(0,255,0,128),(255,0,0,255)][frame])
+                image=Image.new('RGBA',(2,1),[(255,0,0,255),(0,0,0,0),(0,255,0,128),(255,0,0,255)][frame])
                 image.save(folder/f'{frame:04d}.png')
             self.ledger['ranges'].append(inspect_range(self.root,folder,start,end,self.facts))
 
@@ -36,8 +36,8 @@ class NativeRangeRecoveryTest(unittest.TestCase):
         output=self.root/'packed'
         data,proof=pack_intervals(self.root,output,self.ledger,self.identity,time.monotonic()+100)
         self.assertEqual(data['timeline'],[0,1,2,0])
-        self.assertEqual(data['frameSize'],[3,2])
-        self.assertEqual(data['origin'],[1/3,0])
+        self.assertEqual(data['frameSize'],[2,1])
+        self.assertEqual(data['origin'],[0.5,0])
         self.assertEqual(data['fps'],24)
         self.assertEqual(proof['frameRgbaSha256'],[f['rgbaSha256'] for f in frames])
         self.assertEqual(metadata,self.metadata)

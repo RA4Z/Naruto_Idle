@@ -9,6 +9,7 @@ import tempfile
 from PIL import Image
 from static_effect_export_contract import static_effect_export_facts
 from swf_bytes import decode
+from source_canvas_geometry import native_canvas_size
 
 
 def probe_original_bounds(archive, job, *, java, ffdec, classes, work, project):
@@ -62,7 +63,7 @@ def reviewed_limit(archive,entry,probe):
             or proof.get('nativeFrames')!=fact['authoredFrames']):
         raise ValueError('Reviewed atlas changed original timing, points or coordinate plane')
     x0,y0,x1,y1=bounds['rectTwips']
-    if list(proof['nativeCanvasSize'])!=[math.floor((x1-x0)/20)+1,math.floor((y1-y0)/20)+1]:
+    if list(proof['nativeCanvasSize'])!=native_canvas_size(bounds['rectTwips']):
         raise ValueError('Reviewed native raster allocation differs from original')
     pixels,pages=proof.get('atlasPixels'),proof.get('atlasPages')
     if (type(pixels) is not int or not 0<pixels<=64_000_000 or type(pages) is not int

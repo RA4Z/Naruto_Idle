@@ -1,14 +1,16 @@
-# Dimensão de guarda e dimensão da imagem
+# Canvas original: alocação e guarda de memória
 
-O renderizador integral existente limita a memória com `ceil(span / 20) + 1`. A imagem que o JPEXS realmente aloca usa `floor(span / 20) + 1`. Nos limites fracionários em twips, a guarda é um pixel maior que a imagem. Isso não exige alterar, cortar ou ampliar nenhum quadro.
+Para timelines não vazias, na escala 1 usada na extração, o JPEXS 26.4.0 aloca cada dimensão com `ceil(span / 20)`. Se qualquer extensão for zero, retorna uma imagem transparente de 1 × 1. A guarda conservadora do nosso renderizador usa `ceil(span / 20) + 1`. São cálculos distintos. [Implementação oficial](https://github.com/jindrapetrik/jpexs-decompiler/blob/version26.4.0/libsrc/ffdec_lib/src/com/jpexs/decompiler/flash/SWF.java#L4865).
 
-A conferência do novo renderizador por intervalos revelou essa distinção e foi corrigida antes da publicação. Os 87 quadros dos três pilotos passaram na comparação completa de RGBA com os renders integrais. A guarda de memória continua conservadora e mantém os limites anteriores.
+`tools/source_canvas_geometry.py` centraliza essa regra. Um caso com altura inteira revelou que a aproximação anterior `floor(span / 20) + 1` coincidia nos pilotos fracionários, mas rejeitava alguns limites inteiros. A regra do conferidor foi corrigida; nenhum quadro original foi redimensionado ou corrigido para caber nela.
 
-`reports/source-canvas-allocation-20261024.json` registra as dimensões e a origem das evidências para três fontes completas e duas saídas parciais. Nas fontes completas, as dimensões vêm dos comprovantes de todos os quadros. Nas parciais, vêm dos PNGs legíveis; isso não transforma uma fonte incompleta em publicação.
-
-| Fonte interrompida | Guarda estimada | Imagem efetivamente gerada |
+| Fonte | Guarda | Imagem nativa |
 | --- | --- | --- |
+| Gamabunta / d3 | 993 × 628 | 992 × 627 |
+| BJhjs3tx / hjs3 | 5837 × 2753 | 5836 × 2752 |
 | 11014511_outdooreffect | 3511 × 3547 | 3510 × 3546 |
 | 11011741_outdooreffect | 1976 × 1821 | 1975 × 1820 |
 
-As dimensões do relatório histórico `aux-timeout-metadata-20261024.json`, no campo `independentBounds`, representam a guarda. O campo `existingPartialRender.frames[].size` já registra as dimensões efetivas dos PNGs. A tabela antiga em `SCENE_TIMEOUT_RECOVERY.md`, apresentada como canvas original, deve ser interpretada como estimativa para a guarda de memória; esta nota fornece a distinção correta. Os relatórios datados permanecem preservados.
+As provas revisadas com sufixo `-r2` releem todos os 87 quadros de cada conjunto de pilotos e os comparam aos mesmos hashes RGBA e à referência integral já salva. As classes Java e bibliotecas permanecem idênticas. Os relatórios originais continuam preservados; as revisões registram seus hashes e datas. O caso inteiro tem um comprovante separado de dimensões de 16 quadros parciais, sem alegação de animação concluída.
+
+Nos relatórios históricos, `independentBounds` representa a guarda estimada. `existingPartialRender.frames[].size` e `validation.nativeCanvasSize` registram as dimensões dos PNGs efetivamente gerados. A tabela antiga de `SCENE_TIMEOUT_RECOVERY.md` deve ser interpretada como guarda de memória.
