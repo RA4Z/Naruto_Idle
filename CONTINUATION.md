@@ -1,3 +1,7 @@
+## Revisão local das sequências grandes
+
+Visualizador somente leitura em tools/source_sequence_review.py, com hashes/whitelist de quadros, busca, reprodução, scrub, espelho e origem.3testes passaram. Chrome conferiu sequência real66quadros/24FPS, quadro intermediário visível,390pxsemoverflow,GETinválido404,POST501,zero conta/save. Relatório em reports/source-sequence-browser-proof.json. Não é adaptador de produção. Auditoria de duração em reports/primary-role-timing-audit.json:14pares visuais/dados têm durações distintas; preservar ambas. docs/SOURCE_SEQUENCE_LOCAL_REVIEW.md.
+
 ## Efeitos por fonte — lotes 271-276 — 23/10/2026
 
 Publicadas 23 exportações aprovadas, com 1319 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-271-276-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.

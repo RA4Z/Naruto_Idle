@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Revisão local de sequências originais</title>
+<style>
+:root{color-scheme:dark;font:16px system-ui;background:#0c1715;color:#e8e3ce}*{box-sizing:border-box}body{margin:0}main{max-width:1200px;margin:24px auto;padding:16px}h1{font:600 28px Georgia;margin:0 0 12px}p{line-height:1.5;color:#b9c5ba}section{background:#13261f;border:1px solid #405348;border-radius:12px;padding:18px}.controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center}input,select,button{font:inherit;padding:10px;border:1px solid #53675b;background:#10221c;color:inherit;border-radius:6px}input[type=search]{flex:1;min-width:160px}select{max-width:100%;width:100%;margin:12px 0}button{cursor:pointer}button:disabled{opacity:.5;cursor:default}input[type=range]{width:100%;padding:0;margin:16px 0}canvas{display:block;width:100%;background:repeating-conic-gradient(#182e28 0 25%,#142720 0 50%) 0/24px 24px;border-radius:6px;aspect-ratio:2/1}.status{overflow-wrap:anywhere;font-variant-numeric:tabular-nums}label{display:flex;gap:6px;align-items:center}.badge{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#c1af78}
+</style>
+<main><p class="badge">Acervo extraído · revisão local</p><h1>Sequências originais</h1>
+<p>Veja os quadros completos que ainda não têm visualizador dentro do jogo. Esta revisão não altera personagens, ataques, conta ou save.</p>
+<section><div class="controls"><input id="search" type="search" placeholder="Buscar por fonte ou ação" aria-label="Buscar fonte"><span id="count" role="status"></span></div>
+<select id="source" aria-label="Sequência original"></select>
+<div class="controls"><button id="play" disabled>Reproduzir</button><button id="start" disabled>Voltar ao início</button><label><input id="mirror" type="checkbox"> Espelhar prévia</label><label><input id="origin" type="checkbox"> Mostrar origem</label></div>
+<input id="frame" type="range" min="0" max="0" value="0" disabled aria-label="Quadro da sequência">
+<canvas id="canvas" width="1100" height="550" aria-label="Prévia da sequência original"></canvas>
+<p class="status" id="status">Escolha uma fonte para abrir a prévia.</p>
+<p>A imagem se ajusta à janela; os arquivos, a ordem dos quadros e o FPS da fonte permanecem preservados. Reprodução local; nenhum marcador executa dano ou efeito de jogo.</p></section></main>
+<script type="module">
+const $=id=>document.getElementById(id), select=$('source'), slider=$('frame'), status=$('status'), canvas=$('canvas'), ctx=canvas.getContext('2d');
+const cache=new Map();let rows=[],active=null,metadata=null,generation=0,playing=false,startTime=0,position=0,pending=false,drawn=-1,deferredFrame=null;
+function clearCache(){for(const image of cache.values())image.close();cache.clear();}
+function stop(){playing=false;$('play').textContent='Reproduzir';}
+function updateStatus(){if(metadata)status.textContent=`Quadro ${position+1}/${metadata.timeline.length} · ${metadata.fps} FPS · fonte ${metadata.frameSize[0]}×${metadata.frameSize[1]} · somente leitura`;}
+async function draw(frame){
+ if(!metadata)return;
+ if(pending){deferredFrame=frame;return;}
+ const requestGeneration=generation,source=active,meta=metadata,index=meta.timeline[frame];pending=true;
+ try{
+  let bitmap=cache.get(index);
+  if(!bitmap){
+   const response=await fetch(`/api/frame?id=${encodeURIComponent(source)}&index=${index}&sha=${meta.frameHashes[index]}`,{cache:'force-cache'});
+   if(!response.ok)throw Error('Quadro indisponível ou alterado; confira a prova da fonte.');
+   while(cache.size>=2){const key=cache.keys().next().value;cache.get(key).close();cache.delete(key);}
+   bitmap=await createImageBitmap(await response.blob());
+   if(requestGeneration!==generation){bitmap.close();return;}
+   cache.set(index,bitmap);
+   while(cache.size>2){const key=cache.keys().next().value;cache.get(key).close();cache.delete(key);}
+  }
+  ctx.clearRect(0,0,canvas.width,canvas.height);ctx.save();
+  const scale=Math.min(canvas.width/bitmap.width,canvas.height/bitmap.height),x=(canvas.width-bitmap.width*scale)/2,y=(canvas.height-bitmap.height*scale)/2;
+  ctx.translate(canvas.width/2,0);if($('mirror').checked)ctx.scale(-1,1);ctx.translate(-canvas.width/2,0);
+  ctx.drawImage(bitmap,x,y,bitmap.width*scale,bitmap.height*scale);
+  if($('origin').checked){const ox=x-meta.sourceBounds[0]/20*scale,oy=y-meta.sourceBounds[1]/20*scale;ctx.strokeStyle='#e6cc73';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(ox-8,oy);ctx.lineTo(ox+8,oy);ctx.moveTo(ox,oy-8);ctx.lineTo(ox,oy+8);ctx.stroke();}
+  ctx.restore();position=frame;drawn=frame;slider.value=String(frame);updateStatus();
+ }catch(error){if(requestGeneration===generation){stop();status.textContent=String(error.message);}}
+ finally{if(requestGeneration===generation){pending=false;if(deferredFrame!==null){const next=deferredFrame;deferredFrame=null;draw(next);}}}
+}
+async function open(){
+ stop();generation++;pending=false;deferredFrame=null;clearCache();metadata=null;drawn=-1;position=0;active=select.value;
+ slider.disabled=$('play').disabled=$('start').disabled=true;ctx.clearRect(0,0,canvas.width,canvas.height);
+ if(!active){status.textContent='Nenhuma fonte encontrada.';return;}
+ const requestGeneration=generation;status.textContent='Lendo sequência validada…';
+ try{const response=await fetch('/api/manifest?id='+encodeURIComponent(active));if(!response.ok)throw Error('Sequência indisponível ou alterada.');const value=await response.json();if(requestGeneration!==generation)return;metadata=value;slider.max=String(value.timeline.length-1);slider.value='0';slider.disabled=$('play').disabled=$('start').disabled=false;await draw(0);}catch(error){if(requestGeneration===generation)status.textContent=error.message;}
+}
+function filter(){const query=$('search').value.trim().toLocaleLowerCase();const matches=rows.filter(row=>(row.source+' '+row.action+' '+row.id).toLocaleLowerCase().includes(query));select.replaceChildren(...matches.map(row=>new Option(row.source.split('/').at(-1)+' · '+row.action+' · '+row.frames+' quadros',row.key)));$('count').textContent=matches.length+' sequências';open();}
+$('search').oninput=filter;select.onchange=open;
+$('play').onclick=()=>{if(!metadata)return;if(playing)stop();else{playing=true;startTime=performance.now()-position/metadata.fps*1000;$('play').textContent='Pausar';}};
+$('start').onclick=()=>{stop();draw(0);};slider.oninput=()=>{stop();draw(Number(slider.value));};
+$('mirror').onchange=$('origin').onchange=()=>{drawn=-1;draw(position);};
+function tick(now){if(playing&&metadata&&!pending){const frame=Math.floor((now-startTime)*metadata.fps/1000)%metadata.timeline.length;if(frame!==drawn)draw(frame);}requestAnimationFrame(tick);}requestAnimationFrame(tick);
+addEventListener('pagehide',()=>{generation++;stop();clearCache();});
+try{const response=await fetch('/api/sources');if(!response.ok)throw Error('Não foi possível ler o catálogo.');rows=await response.json();filter();}catch(error){status.textContent=error.message;}
+</script></html>

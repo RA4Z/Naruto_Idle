@@ -1,0 +1,4694 @@
+{
+  "policy": "Exact original id/path/field correspondence only. Original source metadata, not a playable unlock or manga canon claim. Preserve hideHpBar=flase and other authored spellings; do not interpret area as a pixel hitbox.",
+  "sources": [
+    {
+      "source": {
+        "path": "config/throughTheBeast/SummonMonsterCFG.xml",
+        "tag": "PT_NarutoAlpha9.31Build300",
+        "bytes": 5818,
+        "sha256": "55e0477ec14fc62f5fc3b00b0b76a1ba608bca049c7c29eb80e40149f86e7b57",
+        "sourceKind": "exported-inventory"
+      },
+      "matches": []
+    },
+    {
+      "source": {
+        "path": "config/throughTheBeast/BeastDevelopCFG.xml",
+        "tag": "PT_NarutoAlpha9.31Build300",
+        "bytes": 889,
+        "sha256": "864112ff721173b71fa250e9c06c707447d896c984647f8a28c2a1b7ca70ccb7",
+        "sourceKind": "exported-inventory"
+      },
+      "matches": []
+    },
+    {
+      "source": {
+        "path": "config/guildBeast/GuildBeastCFG.xml",
+        "tag": "PT_NarutoAlpha7.36Build301",
+        "bytes": 294,
+        "sha256": "6cd1f9582b4c15b31324b2c7bc6f3366fddd7bf5f4acb0499346ffc541f96a24",
+        "sourceKind": "exported-inventory"
+      },
+      "matches": []
+    },
+    {
+      "source": {
+        "path": "assets/battle/NinjaBaseInfos.xml",
+        "tag": "PT_NarutoAlpha9.17Build302",
+        "bytes": 5652,
+        "sha256": "cdb8ea8db879a2b5bbc4427b652f5793bd062a418bccd3f7b34d47cef49d721f",
+        "sourceKind": "exported-inventory"
+      },
+      "matches": [
+        {
+          "tag": "BaseNinjaInfo",
+          "attributes": {
+            "id": "13000101",
+            "leftRes": "assets/battle/role/left/13000101.swf",
+            "mirrorRes": "false",
+            "area": "2,8",
+            "type": "",
+            "noticeUI": "true",
+            "skillActionEffect": "",
+            "ignoreDepth": "true",
+            "hpType": "0",
+            "hideShadow": "true",
+            "hideHpBar": "flase",
+            "ignoreSkillAction": "true",
+            "hpSize": "1"
+          },
+          "selectedFields": [],
+          "matchedAttributes": {
+            "id": "13000101",
+            "leftRes": "assets/battle/role/left/13000101.swf"
+          },
+          "matchedFields": []
+        },
+        {
+          "tag": "BaseNinjaInfo",
+          "attributes": {
+            "id": "19001201",
+            "leftRes": "assets/battle/role/left/19001201.swf",
+            "noticeUI": "true",
+            "area": "2,8"
+          },
+          "selectedFields": [],
+          "matchedAttributes": {
+            "id": "19001201",
+            "leftRes": "assets/battle/role/left/19001201.swf"
+          },
+          "matchedFields": []
+        },
+        {
+          "tag": "BaseNinjaInfo",
+          "attributes": {
+            "id": "13000301",
+            "leftRes": "assets/battle/role/left/13000301.swf",
+            "mirrorRes": "0",
+            "area": "2,8",
+            "skillActionEffect": "2050"
+          },
+          "selectedFields": [],
+          "matchedAttributes": {
+            "id": "13000301",
+            "leftRes": "assets/battle/role/left/13000301.swf"
+          },
+          "matchedFields": []
+        },
+        {
+          "tag": "BaseNinjaInfo",
+          "attributes": {
+            "id": "13000401",
+            "leftRes": "assets/battle/role/left/13000401.swf",
+            "mirrorRes": "0",
+            "area": "2,8",
+            "skillActionEffect": "2050",
+            "scene": "19994"
+          },
+          "selectedFields": [],
+          "matchedAttributes": {
+            "id": "13000401",
+            "leftRes": "assets/battle/role/left/13000401.swf"
+          },
+          "matchedFields": []
+        },
+        {
+          "tag": "BaseNinjaInfo",
+          "attributes": {
+            "id": "13000501",
+            "leftRes": "assets/battle/role/left/13000501.swf",
+            "mirrorRes": "0",
+            "area": "2,8",
+            "skillActionEffect": "2050"
+          },
+          "selectedFields": [],
+          "matchedAttributes": {
+            "id": "13000501",
+            "leftRes": "assets/battle/role/left/13000501.swf"
+          },
+          "matchedFields": []
+        },
+        {
+          "tag": "BaseNinjaInfo",
+          "attributes": {
+            "id": "13000601",
+            "leftRes": "assets/battle/role/left/13000601.swf",
+            "mirrorRes": "0",
+            "area": "2,8",
+            "skillActionEffect": "2050"
+          },
+          "selectedFields": [],
+          "matchedAttributes": {
+            "id": "13000601",
+            "leftRes": "assets/battle/role/left/13000601.swf"
+          },
+          "matchedFields": []
+        },
+        {
+          "tag": "BaseNinjaInfo",
+          "attributes": {
+            "id": "13000201",
+            "leftRes": "assets/battle/role/left/13000201.swf",
+            "mirrorRes": "0",
+            "area": "2,8",
+            "skillActionEffect": "2050"
+          },
+          "selectedFields": [],
+          "matchedAttributes": {
+            "id": "13000201",
+            "leftRes": "assets/battle/role/left/13000201.swf"
+          },
+          "matchedFields": []
+        }
+      ]
+    },
+    {
+      "source": {
+        "path": "config/battle/NinjaBattleInfoCFG.xml",
+        "tag": "PT_NarutoAlpha9.35Build301",
+        "bytes": 194560,
+        "sha256": "39561ba062cfc298b7a0c3d85ca686a016ad32ef9c85fe987a4028c4b7abcae8",
+        "sourceKind": "exported-inventory"
+      },
+      "matches": [
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000101"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "id",
+              "value": "13000101"
+            },
+            {
+              "field": "refId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000201"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "id",
+              "value": "13000201"
+            },
+            {
+              "field": "refId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000301"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "id",
+              "value": "13000301"
+            },
+            {
+              "field": "refId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000401"
+            },
+            {
+              "field": "name",
+              "value": "Corpo de Manda"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "id",
+              "value": "13000401"
+            },
+            {
+              "field": "refId",
+              "value": "13000401"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000501"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "id",
+              "value": "13000501"
+            },
+            {
+              "field": "refId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "19001201"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "id",
+              "value": "19001201"
+            },
+            {
+              "field": "refId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14033012"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14030010"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14037005"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14033011"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14040810"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14040811"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14040812"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14040813"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14040815"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14040705"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14041703"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14041704"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14040006"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14050504"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14050607"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14050908"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14052005"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14052006"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14052009"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14052010"
+            },
+            {
+              "field": "name",
+              "value": "Corpo de Manda"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000401"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14052011"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14052012"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14051807"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14050025"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14050061"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14050062"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14059999"
+            },
+            {
+              "field": "name",
+              "value": "专治各种不服"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14060111"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14010191"
+            },
+            {
+              "field": "name",
+              "value": "Nove Caudas"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000601"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14010193"
+            },
+            {
+              "field": "name",
+              "value": "Nove Caudas"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000601"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14061704"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14070010"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14080109"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14080214"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14081208"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14081605"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14081606"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14081607"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14090904"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "18110351"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "18110621"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "18110641"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "12010105"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "12010106"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "12010109"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "12010111"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000801"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000802"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000803"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000804"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "30000001"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "30000002"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "30000003"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "30000004"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000811"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000812"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000813"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000814"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000815"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000816"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000817"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000818"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "19900018"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "19900021"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "15110100"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17321008"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17322009"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17323009"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17362009"
+            },
+            {
+              "field": "name",
+              "value": "Nove Caudas"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000601"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17330008"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17030016"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17040012"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17090015"
+            },
+            {
+              "field": "name",
+              "value": "Nove Caudas"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000601"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17130019"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17150015"
+            },
+            {
+              "field": "name",
+              "value": "Nove Caudas"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000601"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17160014"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17160015"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17160016"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14110116"
+            },
+            {
+              "field": "name",
+              "value": "Nove Caudas"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000601"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "16510201"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "16023001"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000601"
+            },
+            {
+              "field": "name",
+              "value": "Nove Caudas"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "id",
+              "value": "13000601"
+            },
+            {
+              "field": "refId",
+              "value": "13000601"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "77740175"
+            },
+            {
+              "field": "name",
+              "value": ""
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "refId",
+              "value": "13000201"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "path": "config/user/NinjaInfoCFG.xml",
+        "tag": "PT_NarutoAlpha9.36Build301",
+        "bytes": 853211,
+        "sha256": "a735ed6900299b9ac4c606f8d18e7f9960ed7c2cdd095e70475224d50b07b759",
+        "sourceKind": "exported-inventory"
+      },
+      "matches": [
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000101"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "id",
+              "value": "13000101"
+            },
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000201"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "id",
+              "value": "13000201"
+            },
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000301"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "id",
+              "value": "13000301"
+            },
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000401"
+            },
+            {
+              "field": "name",
+              "value": "Corpo de Manda"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000401"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "id",
+              "value": "13000401"
+            },
+            {
+              "field": "artisticId",
+              "value": "13000401"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000501"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "id",
+              "value": "13000501"
+            },
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "19001201"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "id",
+              "value": "19001201"
+            },
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14033012"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14030010"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14037005"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14033011"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14040810"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14040811"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14040812"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14040813"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14040815"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14040705"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14041703"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14041704"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14040006"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14050504"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14050607"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14050908"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14052005"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14052006"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14052009"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14052010"
+            },
+            {
+              "field": "name",
+              "value": "Corpo de Manda"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000401"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000401"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14052011"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14052012"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14051807"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14050025"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14050061"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14050062"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14059999"
+            },
+            {
+              "field": "name",
+              "value": "专治各种不服"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14060111"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14010191"
+            },
+            {
+              "field": "name",
+              "value": "Nove Caudas"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000601"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000601"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14010193"
+            },
+            {
+              "field": "name",
+              "value": "Nove Caudas"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000601"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000601"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14061704"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14070010"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14080109"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14080214"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14081208"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14081605"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14081606"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14081607"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14090904"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "18110351"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "18110621"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "18110641"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "12010105"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "12010106"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "12010109"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "12010111"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000801"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000802"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000803"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000804"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "30000001"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "30000002"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "30000003"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "30000004"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000811"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000812"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000813"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000814"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000815"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000816"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000817"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000818"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "19900018"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "19900021"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "15110100"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17321008"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17322009"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17323009"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17362009"
+            },
+            {
+              "field": "name",
+              "value": "Nove Caudas"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000601"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000601"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17330008"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17030016"
+            },
+            {
+              "field": "name",
+              "value": "Cobra Gigante"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "19001201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17040012"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17090015"
+            },
+            {
+              "field": "name",
+              "value": "Nove Caudas"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000601"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000601"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17130019"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17150015"
+            },
+            {
+              "field": "name",
+              "value": "Nove Caudas"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000601"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000601"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17160014"
+            },
+            {
+              "field": "name",
+              "value": "Katsuyu"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000501"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17160015"
+            },
+            {
+              "field": "name",
+              "value": "Gamabunta"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "17160016"
+            },
+            {
+              "field": "name",
+              "value": "Manda"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000301"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "14110116"
+            },
+            {
+              "field": "name",
+              "value": "Nove Caudas"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000601"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000601"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "16510201"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "16023001"
+            },
+            {
+              "field": "name",
+              "value": "Shukaku"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000101"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "13000601"
+            },
+            {
+              "field": "name",
+              "value": "Nove Caudas"
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000601"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "id",
+              "value": "13000601"
+            },
+            {
+              "field": "artisticId",
+              "value": "13000601"
+            }
+          ]
+        },
+        {
+          "tag": "row",
+          "attributes": {},
+          "selectedFields": [
+            {
+              "field": "id",
+              "value": "77740175"
+            },
+            {
+              "field": "name",
+              "value": ""
+            },
+            {
+              "field": "title",
+              "value": ""
+            },
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ],
+          "matchedAttributes": {},
+          "matchedFields": [
+            {
+              "field": "artisticId",
+              "value": "13000201"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
