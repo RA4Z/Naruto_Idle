@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 91100112_rpg.swf / idle2
+
+Publicada1exportação source-only com44quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-fb6da70317011812-7ef99dc34cb7-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Fonte de personagem ou cenário — 91100112_rpg.swf / idle1
 
 Publicada1exportação source-only com44quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-fb6da70317011812-454481d235b6-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
