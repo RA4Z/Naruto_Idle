@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 13000501.swf / C_dead1
+
+Publicada1exportação source-only com1quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-0e611abddddf9593-eb8cc579f967-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Efeitos por fonte — lotes 265-270 — 23/10/2026
 
 Publicadas 22 exportações aprovadas, com 1148 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-265-270-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
