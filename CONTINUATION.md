@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 13000401.swf / C_idle
+
+Publicada1exportação source-only com60quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-0cebf56689e7486f-537d9fe5f9d5-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Sequências recuperadas conferidas no navegador
 
 Shukaku skillAttack:50quadros/24FPS; cenário11016211/shang:153quadros/24FPS. Início, meio e fim visíveis noChrome; reprodução, pausa, origem e espelho conferidos. Largura390pxsemoverflow; nenhuma requisição de conta/save. Provas datadas emreports/recovered-*-browser-proof-20261024.json. Fonte gráfica validada não significa integração de combate.
