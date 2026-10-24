@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 13000201.swf / d3
+
+Publicada1exportação source-only com17quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-fa8d1cbbe74209ab-f451a61749c6-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Fonte de personagem ou cenário — 92200212_rpg.swf / disappear
 
 Publicada1exportação source-only com15quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-9a8b8ddaab6f0dae-ed142ddaa38e-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
