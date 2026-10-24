@@ -76,7 +76,7 @@ export function installProgression(context: () => Context) {
         ? "gear.shop"
         : selected === "equipment"
           ? "gear.characters"
-          : "common.bagProgress",
+          : selected === "quests" ? "hud.quests" : "common.bagProgress",
     );
     dialog
       .querySelectorAll<HTMLButtonElement>("[data-tab]")
@@ -680,6 +680,7 @@ export function installProgression(context: () => Context) {
   for (const [id, name] of [
     ["equipment", t("gear.characters")],
     ["shop", t("progression.ui.70feed55e9")],
+    ["quests", t("hud.quests")],
   ]) {
     const b = document.createElement("button");
     b.className = "secondary";

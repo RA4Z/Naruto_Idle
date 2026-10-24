@@ -1,7 +1,7 @@
 export interface VillageState {
   x: number; y: number; characterId: string; direction: number; moving: boolean; updatedAt?: number;
 }
-export interface VillagePlayer { id: string; username: string; state?: VillageState }
+export interface VillagePlayer { id: string; username: string; displayName?: string; state?: VillageState }
 export type VillageStatus = "disabled" | "connecting" | "online" | "reconnecting" | "unavailable";
 interface Options {
   url: string;
@@ -26,6 +26,7 @@ function player(value: any): value is VillagePlayer {
   const s = value?.state;
   return typeof value?.id === "string" && value.id.length <= 64 &&
     typeof value.username === "string" && /^[a-z][a-z0-9_]{2,19}$/.test(value.username) &&
+    (value.displayName === undefined || (typeof value.displayName === "string" && /^[A-Za-z][A-Za-z0-9_]{2,19}$/.test(value.displayName) && value.displayName.toLowerCase() === value.username)) &&
     (!s || (typeof s.characterId === "string" && /^[0-9]{8}$/.test(s.characterId) &&
       Number.isFinite(s.x) && Number.isFinite(s.y) && s.x>=0 && s.x<=1000 && s.y>=0 && s.y<=1000 &&
       Number.isInteger(s.direction) && s.direction>=0 && s.direction<=7 && typeof s.moving === "boolean"));

@@ -1,6 +1,6 @@
 import { t, th } from "../i18n/core";
 import { cloudClient } from "./client";
-import { normalizeUsername } from "./profile";
+import { normalizeUsername,displayUsername } from "./profile";
 import { cloudJourneyActive, cloudSync } from "./journey";
 import type { Save } from "../model";
 
@@ -40,7 +40,7 @@ export async function installCloudAccount(launch: (initial?: Save) => Promise<vo
   const indicator = document.createElement("span");
   indicator.id = "cloud-status";
   indicator.setAttribute("role", "status");
-  document.querySelector("#play aside")?.prepend(indicator);
+  document.querySelector("#hud-settings-content, #hud-legacy")?.prepend(indicator);
   window.addEventListener("cloud-state", () => {
     indicator.textContent = cloudJourneyActive() || cloudSync.active ? t(`cloud.state.${cloudSync.state}`) : "";
   });
@@ -54,7 +54,7 @@ export async function installCloudAccount(launch: (initial?: Save) => Promise<vo
       ${!cloudClient ? `<p role="alert">${th("cloud.unavailable")}</p>` :
         user && username && mode !== "password" ? `<p class="account-identity"><strong data-username></strong><span data-email></span></p>
           <div class="account-actions">${hasSave ? `<button data-action="play">${th("cloud.continue")}</button>` : `<button data-action="choose">${th("auth.choose")}</button>`}
-          <button class="text-button" data-action="logout">${th("cloud.logout")}</button></div>` :
+          <button class="secondary" data-action="social">${th("social.title")}</button><button class="text-button" data-action="logout">${th("cloud.logout")}</button></div>` :
         `<form id="account-${completing ? "profile" : mode}" autocomplete="on">
           ${completing || mode === "password" ? "" : field("email", th("cloud.email"), "email", `autocomplete="${mode === "reset" ? "email" : "username"}" inputmode="email" autocapitalize="none" spellcheck="false" maxlength="254"`)}
           ${completing || mode === "signup" ? field("nickname", th("auth.username"), "text", 'autocomplete="off" data-lpignore="true" data-1p-ignore="true" minlength="3" maxlength="20" pattern="[A-Za-z][A-Za-z0-9_]{2,19}" aria-describedby="username-help"') + `<small id="username-help">${th("auth.usernameHelp")}</small>` : ""}
@@ -91,11 +91,11 @@ export async function installCloudAccount(launch: (initial?: Save) => Promise<vo
     if (data.session) {
       const id = data.session.user.id;
       const [profile, save] = await Promise.all([
-        cloudClient.from("player_profiles").select("username").eq("user_id", id).maybeSingle(),
+        cloudClient.from("player_profiles").select("username,display_name").eq("user_id", id).maybeSingle(),
         cloudClient.from("game_saves").select("revision").eq("user_id", id).maybeSingle(),
       ]);
       if (profile.error) throw profile.error;
-      profileName = profile.data?.username || "";
+      profileName = profile.data?.display_name || profile.data?.username || "";
       if (save.error) throw save.error;
       saveExists = !!save.data;
     }
@@ -129,9 +129,10 @@ export async function installCloudAccount(launch: (initial?: Save) => Promise<vo
         if (reply.error) throw reply.error;
         await refresh();
       } else if (name === "signup" || name === "profile") {
-        const candidate = normalizeUsername(value("nickname"));
+        const displayName = displayUsername(value("nickname"));
+        const candidate = normalizeUsername(displayName);
         if (name === "profile") {
-          const result = await cloudClient.rpc("game_set_username", { p_username: candidate });
+          const result = await cloudClient.rpc("game_set_username", { p_username: displayName });
           if (result.error) throw result.error;
           await refresh();
         } else {
@@ -139,7 +140,7 @@ export async function installCloudAccount(launch: (initial?: Save) => Promise<vo
           if (available.error) throw available.error;
           if (!available.data) throw new Error("USERNAME_TAKEN");
           const result = await cloudClient.auth.signUp({ email, password,
-            options: { emailRedirectTo: location.origin, data: { username: candidate } } });
+            options: { emailRedirectTo: location.origin, data: { username: displayName, display_name: displayName } } });
           if (result.error) {
             const check = await cloudClient.rpc("game_username_available", { p_username: candidate });
             if (check.data === false) throw new Error("USERNAME_TAKEN");
@@ -158,6 +159,9 @@ export async function installCloudAccount(launch: (initial?: Save) => Promise<vo
         mode = "login";
         await refresh();
         feedback(t("auth.passwordUpdated"));
+      } else if (name === "social") {
+        const {openSocial} = await import("../social/ui");
+        await openSocial();
       } else if (name === "logout") {
         if (cloudJourneyActive()) throw new Error("SESSION_BUSY");
         const result = await cloudClient.auth.signOut({ scope: "local" });
@@ -182,6 +186,7 @@ export async function installCloudAccount(launch: (initial?: Save) => Promise<vo
     root.scrollIntoView({ block: "nearest" });
     void refresh().catch((error) => feedback(cloudError(error)));
   });
+  window.addEventListener("social-profile-updated", () => { void refresh().catch(() => {}); });
   window.addEventListener("account-menu", () => {
     void refresh().catch((error) => feedback(cloudError(error)));
   });

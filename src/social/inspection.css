@@ -1,0 +1,268 @@
+.player-inspection {
+  width: min(880px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  box-sizing: border-box;
+  overflow: auto;
+  padding: 28px;
+  color: #f0ebda;
+  background: #142b21;
+  border: 1px solid #506b52;
+  border-radius: 18px;
+  box-shadow: 0 24px 90px #0009;
+}
+.player-inspection::backdrop {
+  background: #06100cbb;
+  backdrop-filter: blur(3px);
+}
+.player-inspection .library-heading {
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #526b493d;
+}
+.player-inspection h2 {
+  margin: 6px 0;
+  font-size: 26px;
+}
+.player-inspection h3 {
+  margin: 0 0 12px;
+}
+.player-inspection [role="status"]:empty {
+  display: none;
+}
+.player-inspection [role="status"] {
+  color: #efb65f;
+}
+.inspection-identity {
+  margin: 20px 0;
+}
+.inspection-identity h3 {
+  display: inline-block;
+  margin: 0 12px 0 0;
+  color: #f0bb6b;
+  font-size: 24px;
+  overflow-wrap: anywhere;
+}
+.inspection-identity .social-bio {
+  margin-bottom: 0;
+}
+.inspection-layout {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  gap: 24px;
+}
+.inspection-character {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px 0;
+  border: 1px solid #67845b66;
+  border-radius: 12px;
+  background:
+    radial-gradient(ellipse at 50% 75%, #74864d4d, transparent 70%), #0c2118;
+}
+.inspection-character .eyebrow {
+  font-size: 10px;
+}
+.inspection-character h3 {
+  text-align: center;
+  font-size: 24px;
+}
+.inspection-level {
+  padding: 5px 14px;
+  color: #f2bb6b;
+  border: 1px solid #a8814866;
+  border-radius: 20px;
+  font-size: 13px;
+}
+.inspection-art {
+  width: 100%;
+  min-height: 220px;
+  flex: 1;
+  display: grid;
+  place-items: center;
+}
+.inspection-art img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 16px #0006);
+}
+.inspection-loadout h3 {
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+.inspection-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 0 0 24px;
+}
+.inspection-stats div {
+  background: #0c2018;
+  border: 1px solid #55704c66;
+  border-radius: 8px;
+  padding: 12px;
+}
+.inspection-stats dt {
+  font-size: 11px;
+  color: #a9b89d;
+}
+.inspection-stats dd {
+  margin: 5px 0 0;
+  font-size: 20px;
+  color: #f2c17d;
+  font-weight: 700;
+}
+.inspection-equipment {
+  display: grid;
+  gap: 7px;
+}
+.inspection-slot {
+  border: 1px solid #526c4b88;
+  border-radius: 8px;
+  background: #1e3628;
+}
+.inspection-slot summary {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+}
+.inspection-slot summary::after {
+  content: "＋";
+  color: #dfad66;
+}
+.inspection-slot[open] summary::after {
+  content: "−";
+}
+.inspection-slot strong {
+  margin-left: auto;
+  text-align: right;
+  font-size: 12px;
+  color: #e9c58c;
+}
+.inspection-slot:not([data-item]) strong {
+  color: #a6b19e;
+  font-weight: 400;
+}
+.inspection-slot p,
+.inspection-slot > small {
+  display: block;
+  margin: 0 14px 12px;
+  font-size: 12px;
+  color: #c5cdbb;
+}
+.inspection-bonuses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 14px 12px;
+  font-size: 11px;
+  color: #e9bd78;
+}
+.inspection-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid #526b494d;
+}
+.inspection-actions button:last-child {
+  margin-left: auto;
+}
+.inspection-friends {
+  color: #bcce9b;
+  font-weight: 700;
+}
+.inspection-saved {
+  margin-bottom: 0;
+  line-height: 1.6;
+  font-size: 11px;
+}
+@media (max-width: 650px) {
+  .player-inspection {
+    padding: 18px;
+    width: calc(100vw - 20px);
+    max-height: calc(100dvh - 20px);
+  }
+  .player-inspection h2 {
+    font-size: 21px;
+  }
+  .player-inspection .library-heading {
+    gap: 12px;
+  }
+  .inspection-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .inspection-character {
+    padding-top: 18px;
+  }
+  .inspection-art {
+    min-height: 140px;
+  }
+  .inspection-art img {
+    height: 160px;
+  }
+  .inspection-stats div {
+    padding: 10px;
+  }
+  .inspection-actions {
+    gap: 8px;
+  }
+  .inspection-actions button {
+    flex: 1;
+  }
+}
+
+/* Isolate the sheet from the game HUD's generic header, section and footer rules. */
+.player-inspection .library-heading {
+  height: auto;
+  min-height: 64px;
+  padding: 0 0 18px;
+}
+.player-inspection section {
+  margin-top: 0;
+}
+.player-inspection .inspection-loadout {
+  border: 0;
+  padding-top: 0;
+}
+.player-inspection .inspection-slot summary {
+  margin: 0;
+}
+.player-inspection .inspection-actions {
+  height: auto;
+  min-height: 0;
+  justify-content: flex-start;
+  letter-spacing: normal;
+  padding: 0 0 18px;
+  margin: 0 0 20px;
+  border-top: 0;
+  border-bottom: 1px solid #526b494d;
+}
+.player-inspection .inspection-character {
+  align-self: stretch;
+}
+.player-inspection .inspection-art img {
+  max-height: 280px;
+}
+
+.player-inspection .inspection-slot .caption,
+.player-inspection .inspection-identity > span {
+  margin: 0;
+}
+.player-inspection .inspection-stats {
+  padding: 0;
+  border: 0;
+}
+.player-inspection .inspection-actions {
+  font-size: 14px;
+}

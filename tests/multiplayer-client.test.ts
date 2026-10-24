@@ -66,3 +66,11 @@ test("terminal auth errors close the socket without an automatic retry loop",asy
   await new Promise(r=>setTimeout(r,1200));
   assert.equal(f.sockets.length,1);
 });
+test("display names preserve capitalization while canonical usernames remain stable",async t=>{
+  const f=await fixture();t.after(()=>f.client.dispose());
+  f.ws.receive({type:"authenticated",player:{...alice,displayName:"AlIcE"}});
+  f.ws.receive({type:"map_state",mapId:"10001",players:[{...bob,displayName:"BoB"}]});
+  assert.equal(f.members()[0].displayName,"BoB");
+  f.ws.receive({type:"player_state",mapId:"10001",player:{...bob,displayName:"OtherPlayer"}});
+  assert.equal(f.members()[0].displayName,"BoB","Reject mismatched display identity");
+});

@@ -1,0 +1,107 @@
+/* Shared in-game windows remain readable while letting the world show through. */
+body.is-playing
+  :is(
+    .progression-panel,
+    .map-library,
+    .social-panel,
+    .entity-library,
+    .arena-panel,
+    .preferences-panel,
+    .player-inspection
+  ) {
+  border: 1px solid #becea465;
+  border-radius: 18px;
+  background: linear-gradient(140deg, #18362be8, #0b1c17ed);
+  color: #f0eedf;
+  box-shadow:
+    0 24px 80px #0006,
+    inset 0 1px 0 #e9efce0a;
+  backdrop-filter: blur(20px);
+}
+body.is-playing
+  :is(
+    .progression-panel,
+    .map-library,
+    .social-panel,
+    .entity-library,
+    .arena-panel,
+    .preferences-panel,
+    .player-inspection
+  )::backdrop {
+  background: #04120b73;
+  backdrop-filter: blur(3px);
+}
+body.is-playing
+  :is(
+    .progression-panel,
+    .map-library,
+    .social-panel,
+    .entity-library,
+    .arena-panel
+  )
+  > .library-heading {
+  height: auto;
+  min-height: 64px;
+  padding: 0 0 16px;
+  border-bottom: 1px solid #c4d9b126;
+  margin-bottom: 18px;
+}
+body.is-playing
+  :is(
+    .progression-panel,
+    .map-library,
+    .social-panel,
+    .entity-library,
+    .arena-panel
+  )
+  > .library-heading
+  h2 {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: -0.3px;
+  margin: 6px 0;
+}
+body.is-playing
+  :is(
+    .progression-panel,
+    .map-library,
+    .social-panel,
+    .entity-library,
+    .arena-panel
+  )
+  > .library-heading
+  button {
+  padding: 10px 16px;
+  font-size: 12px;
+}
+body.is-playing
+  :is(.social-player, .social-profile-card, .progress-card, .map-card) {
+  background: #112a1e96;
+  border-color: #a1ba8d33;
+  border-radius: 12px;
+}
+body.is-playing .progression-panel [data-balance] {
+  background: #0c201985;
+  border: 1px solid #c9d09c26;
+}
+body.is-playing .progression-panel [data-tab] {
+  font-family: "Segoe UI", sans-serif;
+}
+body.is-playing .progression-panel .gear-workshop {
+  min-height: 0;
+}
+@media (max-width: 600px) {
+  body.is-playing
+    :is(
+      .progression-panel,
+      .map-library,
+      .social-panel,
+      .entity-library,
+      .arena-panel
+    )
+    > .library-heading
+    h2 {
+    font-size: 21px;
+  }
+}

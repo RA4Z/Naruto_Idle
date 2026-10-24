@@ -1,10 +1,11 @@
 import type Phaser from "phaser";
+import { PlayerHover } from "./player-hover";
 import { cloudClient } from "../cloud/client";
 import { EntityActor, type ActorAssetCache } from "../entities/actor";
 import { entityCatalog } from "../entities/catalog";
 import { t } from "../i18n/core.ts";
 import { VillageClient, multiplayerUrl, type VillagePlayer, type VillageStatus, type VillageState } from "./client";
-interface Remote { player: VillagePlayer; actor?: EntityActor; loading?: boolean; receivedAt: number }
+interface Remote { player: VillagePlayer; actor?: EntityActor; hover?: PlayerHover; loading?: boolean; receivedAt: number }
 export class VillagePlayers {
   private client?: VillageClient;
   private remotes = new Map<string, Remote>();
@@ -15,13 +16,15 @@ export class VillagePlayers {
   private mapId = "";
   private sentAt = 0;
   private last?: VillageState;
+  private presenceKey = "";
+  private profileUpdated = () => this.client?.refresh();
   constructor(private scene: Phaser.Scene, private cache: ActorAssetCache, host: HTMLElement) {
     this.badge = document.createElement("span");
     this.badge.className = "multiplayer-status";
     this.badge.dataset.multiplayerStatus = "";
     this.badge.setAttribute("role","status");
     this.badge.setAttribute("aria-live","polite");
-    host.append(this.badge);
+    (host.querySelector(".minimap-online")??host).append(this.badge);
     const url = multiplayerUrl(import.meta.env.VITE_MULTIPLAYER_URL);
     if (url && cloudClient && (location.protocol !== "https:" || url.startsWith("wss:"))) {
       this.client = new VillageClient({
@@ -35,13 +38,14 @@ export class VillagePlayers {
         else if (event === "TOKEN_REFRESHED") this.client?.refresh();
       }).data.subscription;
     }
+    window.addEventListener("social-profile-updated",this.profileUpdated);
     this.renderStatus();
   }
   activeIds() { return [...this.remotes.values()].map(r => r.player.state?.characterId).filter((id): id is string => !!id); }
   snapshot() {
     return { status:this.status, players:[...this.remotes.values()].map(r => ({
-      id:r.player.id,username:r.player.username,characterId:r.player.state?.characterId,
-      x:r.actor?.x,y:r.actor?.y,visible:!!r.actor?.visible,animation:r.actor?.visual.anims.currentAnim?.key,
+      id:r.player.id,username:r.player.username,displayName:r.player.displayName,characterId:r.player.state?.characterId,
+      x:r.actor?.x,y:r.actor?.y,visible:!!r.actor?.visible,hovered:r.hover?.visible??false,animation:r.actor?.visual.anims.currentAnim?.key,
     })) };
   }
   setMap(mapId: string) {
@@ -50,12 +54,9 @@ export class VillagePlayers {
     this.sync([]); this.client?.setMap(mapId); this.renderStatus();
   }
   private renderStatus() {
-    this.badge.hidden = this.mapId !== "10001";
-    const key = !this.client ? "multiplayer.disabled"
-      : this.status === "online" ? "multiplayer.online"
-      : this.status === "connecting" ? "multiplayer.connecting"
-      : this.status === "reconnecting" ? "multiplayer.reconnecting" : "multiplayer.unavailable";
-    this.badge.textContent = t(key,{count:this.remotes.size+1});
+    this.badge.hidden = false;
+    const key = !this.client ? "hud.offline" : this.status==="connecting" ? "hud.connecting" : this.status==="reconnecting" ? "hud.reconnecting" : "hud.unavailable";
+    this.badge.textContent = this.mapId!=="10001"?t("hud.solo"):this.status==="online"?t("hud.online",{count:this.remotes.size+1}):t(key);
     this.badge.dataset.state = this.status;
   }
   private sync(players: VillagePlayer[]) {
@@ -72,6 +73,10 @@ export class VillagePlayers {
         if (!r.loading) void this.load(r);
       }
     }
+    const presence=[...this.remotes.values()].map(r=>({id:r.player.id,username:r.player.username,displayName:r.player.displayName}));
+    const key=JSON.stringify(presence);
+    if(key!==this.presenceKey){this.presenceKey=key;window.dispatchEvent(new CustomEvent("village-presence",{detail:presence}));}
+    for(const r of this.remotes.values())r.actor?.setCombatLabel(r.player.displayName??r.player.username,false);
     this.renderStatus();
   }
   private async load(remote: Remote) {
@@ -85,7 +90,13 @@ export class VillagePlayers {
       if (this.disposed || this.mapId !== "10001" || this.remotes.get(remote.player.id) !== remote || remote.player.state?.characterId !== id) return;
       const s = remote.player.state;
       remote.actor = new EntityActor(this.scene,s.x,s.y,manifest,"companion");
-      remote.actor.setCombatLabel(remote.player.username,false);
+      remote.actor.setCombatLabel(remote.player.displayName??remote.player.username,false);
+      remote.hover = new PlayerHover(remote.actor);
+      remote.actor.visual.on("pointerdown",(_pointer:unknown,_x:number,_y:number,event:{stopPropagation():void})=>{
+        event.stopPropagation();
+        remote.hover?.set(false);
+        if(!document.querySelector("dialog[open]"))window.dispatchEvent(new CustomEvent("open-player-profile",{detail:remote.player.id}));
+      });
       remote.actor.visual.setAlpha(0.95);
     } catch { /* Retried by a later presence update after transient asset failure. */ }
     finally { remote.loading = false; }
@@ -109,11 +120,13 @@ export class VillagePlayers {
       }
       a.play("world",(s.moving && now-r.receivedAt<500 ? "run_" : "idle_")+s.direction);
       a.tick(false);
+      r.hover?.update();
     }
   }
   destroy() {
     if (this.disposed) return;
     this.client?.dispose(); this.subscription?.unsubscribe();
+    window.removeEventListener("social-profile-updated",this.profileUpdated);
     this.sync([]); this.disposed = true; this.badge.remove();
   }
 }

@@ -25,7 +25,7 @@ const node = <K extends keyof SVGElementTagNameMap>(
 };
 /** DOM/SVG overlay moves with the existing canvas into PiP; never adds a second renderer. */
 export class Minimap {
-  private panel = document.createElement("details");
+  private panel = document.createElement("div");
   private svg = node("svg", {
     viewBox: "0 0 240 240",
     tabindex: 0,
@@ -41,18 +41,19 @@ export class Minimap {
   private cursor?: Point;
   private map?: WorldMap;
   private state?: MinimapState;
-  private observer: ResizeObserver;
   constructor(
     host: HTMLElement,
     private choose: (point: Point) => boolean,
   ) {
     this.panel.className = "world-minimap";
-    this.panel.open = true;
-    const summary = document.createElement("summary");
-    summary.textContent = t("expansion.minimap");
+    this.panel.setAttribute("role", "region");
+    this.panel.setAttribute("aria-label", t("expansion.minimap"));
+    this.caption.className = "minimap-location";
+    const online = document.createElement("div");
+    online.className = "minimap-online";
     const north = node("text", {
       x: 120,
-      y: 19,
+      y: 83,
       "text-anchor": "middle",
       fill: "#ffdc8b",
       "font-size": 12,
@@ -95,26 +96,12 @@ export class Minimap {
     help.className = "minimap-help";
     help.textContent = t("expansion.minimapHelp");
     this.svg.setAttribute("title", help.textContent);
-    const legend = document.createElement("p");
-    legend.className = "minimap-legend";
-    legend.textContent = t("expansion.legend");
     this.status.setAttribute("role", "status");
-    this.panel.append(
-      summary,
-      this.svg,
-      this.caption,
-      legend,
-      help,
-      this.status,
-    );
+    this.status.className = "sr-only";
+    this.panel.append(this.svg, this.caption, online, this.status);
+    this.caption.addEventListener("click", (event) => event.stopPropagation());
+    online.addEventListener("click", (event) => event.stopPropagation());
     host.append(this.panel);
-    this.observer = new ResizeObserver(() => {
-      const rect = host.getBoundingClientRect();
-      this.panel.dataset.compact = String(
-        rect.width < 380 || rect.height < 240,
-      );
-    });
-    this.observer.observe(host);
     this.svg.addEventListener("click", (event) => {
       event.stopPropagation();
       this.svg.focus();
@@ -299,13 +286,11 @@ export class Minimap {
         }),
       );
     }
-    this.caption.textContent = state.target
-      ? t("expansion.target", { name: state.target.name })
-      : this.map?.name || "";
+    this.caption.textContent = this.map.name;
+    this.caption.title = this.map.name;
     this.svg.dataset.target = state.target?.name || "";
   }
   destroy() {
-    this.observer.disconnect();
     this.panel.remove();
   }
 }

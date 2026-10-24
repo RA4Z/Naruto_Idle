@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-24T15:22:48.073Z",
+  "environment": "Local Auth fixture + real PGlite social SQL + real WebSocket server + two Chrome contexts",
+  "results": {
+    "removedKakashiAndHinata": true,
+    "originalCapitalizationInVillage": true,
+    "editCaseBioAvatarAndEscapeMarkup": true,
+    "searchAndSendFriendRequest": true,
+    "acceptAndMutualFriendLists": true,
+    "mobileDialogFitsViewport": true,
+    "friendshipSurvivesReload": true,
+    "profileSurvivesReload": true,
+    "removeFriendUpdatesBothAccounts": true,
+    "openNearbyPlayerProfile": true,
+    "noBrowserErrors": true
+  },
+  "limits": [
+    "No live Supabase accounts modified",
+    "No Render/Vercel deploy",
+    "Cosmetic presence; combat and economy are not authoritative"
+  ],
+  "unitTests": {
+    "cloud": 24,
+    "multiplayerClient": 6,
+    "backend": 14
+  },
+  "builds": {
+    "frontend": true,
+    "backend": true
+  },
+  "schemaPermissionsVerified": true,
+  "migrationHistoryAligned": true,
+  "bundleSecretsCheck": true
+}

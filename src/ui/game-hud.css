@@ -1,0 +1,918 @@
+/* Gameplay is one full viewport; navigation floats above the world. */
+body.is-playing {
+  overflow: hidden;
+  background: #13221b;
+}
+body.is-playing #app > header,
+body.is-playing #app > footer,
+body.is-playing > .language-control,
+body.is-playing > .accessibility-control {
+  display: none;
+}
+body.is-playing #play {
+  display: block;
+  min-height: 0;
+}
+#play > #canvas {
+  width: 100%;
+  height: 100dvh;
+  min-height: 0;
+  aspect-ratio: auto;
+}
+#canvas {
+  container-type: size;
+}
+.game-hud {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  pointer-events: none;
+  color: #f5f0df;
+  font-family: "Segoe UI", sans-serif;
+}
+.game-hud button,
+.game-hud nav,
+.game-hud [role="progressbar"] {
+  pointer-events: auto;
+}
+.game-hud [hidden] {
+  display: none !important;
+}
+.hud-hero {
+  position: absolute;
+  top: 22px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 272px;
+  padding: 9px 15px 11px 0;
+  background: linear-gradient(90deg, #0b1915bb, #0b19158c 65%, #0b191500);
+  border-radius: 48px 12px 12px 48px;
+}
+.hud-portrait {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  padding: 5px;
+  border: 1px solid #dbbd789e;
+  border-radius: 50%;
+  background: radial-gradient(circle, #56725d66, #0e211ce6);
+  box-shadow:
+    0 3px 18px #0005,
+    inset 0 0 0 3px #10241b;
+  overflow: hidden;
+}
+.hud-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.hud-portrait:hover {
+  border-color: #ffe2a1;
+  box-shadow: 0 0 18px #dfb96b55;
+  transform: none;
+}
+.hud-identity {
+  min-width: 0;
+  flex: 1;
+  text-shadow: 0 1px 3px #000;
+}
+.hud-hero-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 9px;
+}
+.hud-name {
+  font-size: 17px;
+  font-weight: 650;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.hud-level {
+  font-size: 11px;
+  color: #efd29b;
+  white-space: nowrap;
+}
+.hud-vitals {
+  display: grid;
+  gap: 6px;
+}
+.hud-vital {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hud-track {
+  flex: 1;
+  min-width: 0;
+  height: 5px;
+  border-radius: 5px;
+  background: #06100eb0;
+  box-shadow: 0 0 0 1px #0003;
+  overflow: hidden;
+}
+.hud-track i,
+.hud-experience i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.22s linear;
+  background: linear-gradient(90deg, #5a9a72, #b5d4a0);
+}
+.hud-chakra .hud-track i {
+  background: linear-gradient(90deg, #458dba, #a0dae4);
+}
+.hud-vital > span {
+  min-width: 57px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-size: 10px;
+  color: #e4e8d9;
+  line-height: 1;
+}
+.hud-experience {
+  height: 2px;
+  background: #07140b9c;
+  margin-top: 8px;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.hud-experience i {
+  background: linear-gradient(90deg, #be914c, #f8dc9a);
+}
+.hud-wallet {
+  position: absolute;
+  top: 110px;
+  left: 101px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+  font-weight: 650;
+  color: #ffe3a1;
+  text-shadow:
+    0 1px 3px #000,
+    0 0 8px #000;
+}
+.hud-wallet img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.hud-fragments {
+  color: #e8cab0;
+  margin-left: 12px;
+}
+.hud-shortcuts {
+  position: absolute;
+  top: 21px;
+  left: 316px;
+  right: 228px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  isolation: isolate;
+}
+.hud-shortcuts .hud-shortcut {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 0 1 60px;
+  min-width: 44px;
+  min-height: 68px;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  background: none;
+  color: #eee9d8;
+  text-shadow:
+    0 2px 5px #000,
+    0 1px 2px #0009;
+  box-shadow: none;
+  transition:
+    transform 0.15s ease,
+    filter 0.15s ease;
+}
+.hud-shortcut::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  z-index: -1;
+  background: radial-gradient(
+    circle,
+    #1a2d26a6,
+    #0b17115c 68%,
+    transparent 70%
+  );
+  border: 1px solid #eddda927;
+  box-shadow: 0 3px 10px #0003;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+.hud-shortcut img {
+  width: 42px;
+  height: 44px;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 2px #0008);
+  transition: transform 0.15s;
+  pointer-events: none;
+}
+.hud-shortcut-label {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+  margin-top: 6px;
+  pointer-events: none;
+}
+.hud-shortcuts .hud-shortcut:hover {
+  transform: translateY(-2px);
+  filter: none;
+}
+.hud-shortcut:hover::before,
+.hud-shortcut:focus-visible::before {
+  border-color: #eccc8ebf;
+  background: radial-gradient(circle, #78633899, #11231d77 70%);
+}
+.hud-shortcut:hover img {
+  transform: scale(1.08);
+}
+.hud-shortcut:focus-visible {
+  outline: 2px solid #ffe2a1;
+  outline-offset: 4px;
+}
+.hud-shortcut:disabled {
+  opacity: 0.55;
+}
+.hud-shortcut:disabled:hover {
+  transform: none;
+}
+.hud-combat {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  max-width: calc(100% - 24px);
+}
+.hud-combat button {
+  padding: 12px 18px;
+  border: 1px solid #bec9a24d;
+  background: #14271ed4;
+  color: #eeecdc;
+  backdrop-filter: blur(12px);
+  font-size: 12px;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px #0003;
+}
+.hud-combat #auto-hunt {
+  border-color: #dbb77499;
+  color: #f3d798;
+}
+.hud-combat #auto-hunt[aria-pressed="true"] {
+  background: #496948c9;
+  color: #f2f6df;
+}
+.hud-combat #cast-skill {
+  background: #1a4b66cc;
+  border-color: #85d2df99;
+  color: #d5f3ff;
+}
+.hud-phase {
+  position: absolute;
+  bottom: 28px;
+  left: 24px;
+  margin: 0;
+  color: #e3ecd8;
+  font-size: 12px;
+  text-shadow:
+    0 1px 4px #000,
+    0 0 9px #000;
+  background: #0d211b8c;
+  padding: 8px 13px;
+  border: 1px solid #b4c5a636;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+}
+.hud-phase::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin-right: 7px;
+  background: #b4d79a;
+}
+.hud-phase[data-paused="true"]::before {
+  background: #eac17c;
+}
+.hud-feedback {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100% - 40px);
+  text-align: center;
+  color: #f4e4c2;
+  text-shadow:
+    0 1px 4px #000,
+    0 0 8px #000;
+}
+.hud-feedback p {
+  margin: 3px 0;
+  font-size: 11px;
+  min-height: 0;
+}
+.hud-feedback p:empty {
+  display: none;
+}
+.hud-dialog {
+  width: min(560px, calc(100vw - 28px));
+  max-height: calc(100dvh - 40px);
+  overflow: auto;
+  padding: 26px;
+  border: 1px solid #b8c5a259;
+  border-radius: 18px;
+  color: #edeada;
+  background: linear-gradient(140deg, #183229f5, #0b1b16f5);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 80px #0008;
+}
+.hud-dialog::backdrop {
+  background: #06110cad;
+  backdrop-filter: blur(4px);
+}
+.hud-dialog-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.hud-dialog-heading h2 {
+  font-size: 23px;
+  margin: 0;
+}
+.hud-dialog-heading button {
+  padding: 10px 15px;
+  font-size: 12px;
+}
+.hud-dialog label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+  margin: 18px 0;
+  font-size: 14px;
+}
+.hud-dialog input[type="range"] {
+  min-width: 0;
+  accent-color: #d5b67a;
+}
+.hud-dialog .language-control {
+  position: static;
+  display: flex;
+  padding: 0;
+  background: none;
+  font-size: 14px;
+}
+.hud-dialog select {
+  padding: 9px;
+  background: #19392b;
+  color: #efeddc;
+  border: 1px solid #71856b;
+  border-radius: 7px;
+}
+.hud-utilities,
+.hud-detail-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 24px;
+}
+.hud-utilities button,
+.hud-detail-actions button {
+  font-size: 12px;
+  padding: 12px;
+}
+.hud-utilities #back {
+  grid-column: 1/-1;
+  color: #e8c28b;
+}
+.hud-details-content #hero-name {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+.hud-details-content #world-name {
+  font-size: 14px;
+  color: #e2c58d;
+}
+.hud-details-content #party:empty {
+  display: none;
+}
+.hud-details-content #status .caption {
+  font-size: 12px;
+}
+.hud-details-content .account-progress {
+  background: #29443770;
+}
+#hud-settings-content > #cloud-status {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #b8ceaa;
+}
+#canvas > .world-minimap {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  left: auto;
+  z-index: 9;
+  width: 184px;
+  height: 184px;
+  max-width: none;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px solid #e0c58db3;
+  background: #0b2019;
+  box-shadow:
+    0 4px 22px #0005,
+    inset 0 0 0 3px #07190e;
+  isolation: isolate;
+}
+.world-minimap svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  cursor: crosshair;
+}
+.world-minimap svg:focus-visible {
+  outline: 2px solid #ffe2a1;
+  outline-offset: -5px;
+}
+.world-minimap .minimap-location {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 13px 24px 11px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #fff0d2;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.3;
+  background: linear-gradient(#071a13ed, #0a1b16d4);
+  border-bottom: 1px solid #ddc48933;
+  pointer-events: none;
+}
+.world-minimap .minimap-online {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  padding: 8px 18px 12px;
+  background: linear-gradient(#071a13c9, #071a13fa);
+  border-top: 1px solid #e0cf9d26;
+  text-align: center;
+  pointer-events: none;
+}
+.world-minimap .multiplayer-status {
+  position: static;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  color: #d6e9c7;
+  max-width: none;
+  font-size: 10px;
+  line-height: 1.25;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.world-minimap .multiplayer-status[data-state="online"]::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #a7d899;
+  box-shadow: 0 0 6px #8dd58d66;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+@container (max-width:1000px) {
+  .hud-hero {
+    left: 16px;
+    top: 16px;
+    width: 236px;
+  }
+  .hud-name {
+    font-size: 15px;
+  }
+  .hud-portrait {
+    width: 56px;
+    height: 56px;
+  }
+  .hud-wallet {
+    left: 85px;
+    top: 98px;
+  }
+  .hud-shortcuts {
+    left: 258px;
+    right: 176px;
+    top: 19px;
+    gap: 4px;
+  }
+  .hud-shortcut img {
+    width: 36px;
+    height: 40px;
+  }
+  .hud-shortcut::before {
+    width: 42px;
+    height: 42px;
+  }
+  .hud-shortcuts .hud-shortcut {
+    flex-basis: 48px;
+  }
+  #canvas > .world-minimap {
+    width: 148px;
+    height: 148px;
+    right: 16px;
+    top: 16px;
+  }
+  .world-minimap .minimap-location {
+    padding: 11px 15px 8px;
+    font-size: 10px;
+  }
+  .world-minimap .minimap-online {
+    height: 30px;
+    padding: 7px 12px 9px;
+  }
+  .world-minimap .multiplayer-status {
+    font-size: 9px;
+  }
+}
+@container (max-width:800px) {
+  .hud-shortcuts {
+    left: 14px;
+    right: 14px;
+    top: 138px;
+    justify-content: center;
+    gap: 8px;
+  }
+  .hud-shortcuts .hud-shortcut {
+    flex-basis: 54px;
+    min-width: 42px;
+    min-height: 64px;
+  }
+  .hud-hero {
+    width: 228px;
+  }
+  #canvas > .world-minimap {
+    width: 122px;
+    height: 122px;
+    top: 12px;
+    right: 12px;
+  }
+  .world-minimap .minimap-location {
+    padding: 9px 16px 6px;
+    font-size: 9px;
+  }
+  .world-minimap .minimap-online {
+    height: 26px;
+    padding: 6px 12px 8px;
+  }
+  .world-minimap .multiplayer-status {
+    font-size: 8px;
+  }
+  .hud-phase {
+    bottom: 94px;
+    left: 14px;
+    font-size: 11px;
+  }
+  .hud-combat {
+    bottom: 20px;
+    gap: 6px;
+    flex-wrap: wrap;
+    width: calc(100% - 28px);
+    max-width: 600px;
+  }
+  .hud-combat button {
+    padding: 11px 12px;
+    font-size: 11px;
+  }
+  .hud-feedback {
+    bottom: 150px;
+  }
+}
+@container (max-width:450px) {
+  .hud-hero {
+    left: 12px;
+    top: 12px;
+    width: 218px;
+    gap: 8px;
+  }
+  .hud-portrait {
+    width: 50px;
+    height: 50px;
+  }
+  .hud-name {
+    font-size: 14px;
+  }
+  .hud-hero-heading {
+    margin-bottom: 7px;
+  }
+  .hud-level {
+    font-size: 10px;
+  }
+  .hud-wallet {
+    left: 72px;
+    top: 91px;
+    font-size: 11px;
+  }
+  .hud-vital > span {
+    font-size: 9px;
+    min-width: 50px;
+  }
+  .hud-shortcuts {
+    left: 8px;
+    right: 8px;
+    top: 134px;
+    gap: 4px;
+  }
+  .hud-shortcuts .hud-shortcut {
+    min-width: 41px;
+    flex-basis: 46px;
+  }
+  .hud-shortcut-label {
+    font-size: 9px;
+  }
+  .hud-shortcut img {
+    width: 34px;
+    height: 38px;
+  }
+  .hud-shortcut::before {
+    width: 40px;
+    height: 40px;
+  }
+  #canvas > .world-minimap {
+    width: 116px;
+    height: 116px;
+    right: 10px;
+  }
+}
+@container (max-height:340px) {
+  .hud-hero {
+    transform: scale(0.8);
+    transform-origin: top left;
+  }
+  .hud-wallet {
+    display: none;
+  }
+  .hud-shortcuts {
+    left: 208px;
+    right: 124px;
+    top: 10px;
+    gap: 3px;
+  }
+  .hud-shortcuts .hud-shortcut {
+    min-width: 32px;
+    min-height: 42px;
+  }
+  .hud-shortcut img {
+    width: 28px;
+    height: 30px;
+  }
+  .hud-shortcut::before {
+    width: 32px;
+    height: 32px;
+  }
+  .hud-shortcut-label {
+    display: none;
+  }
+  #canvas > .world-minimap {
+    width: 100px;
+    height: 100px;
+    top: 10px;
+    right: 10px;
+  }
+  .hud-combat {
+    bottom: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .game-hud * {
+    transition: none !important;
+  }
+}
+
+.world-minimap .minimap-location,
+.world-minimap .minimap-online {
+  pointer-events: auto;
+}
+@container (max-width:370px) {
+  .hud-hero {
+    width: 180px;
+    gap: 6px;
+  }
+  .hud-portrait {
+    width: 42px;
+    height: 42px;
+  }
+  .hud-name {
+    font-size: 12px;
+  }
+  .hud-vital > span {
+    min-width: 45px;
+    font-size: 8px;
+  }
+  .hud-wallet {
+    left: 62px;
+    top: 86px;
+  }
+  #canvas > .world-minimap {
+    width: 104px;
+    height: 104px;
+  }
+  .hud-shortcuts {
+    gap: 2px;
+  }
+  .hud-shortcuts .hud-shortcut {
+    min-width: 38px;
+    flex-basis: 40px;
+  }
+  .hud-shortcut-label {
+    font-size: 8px;
+  }
+  .hud-shortcut img {
+    width: 32px;
+    height: 36px;
+  }
+  .hud-shortcut::before {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.hud-cloud-warning {
+  position: absolute;
+  bottom: 18px;
+  right: 22px;
+  max-width: 230px;
+  font-size: 11px;
+  margin: 0;
+  padding: 8px 12px;
+  border: 1px solid #e9bc6959;
+  border-radius: 12px;
+  background: #18271bd9;
+  color: #f5cb83;
+  text-shadow: 0 1px 3px #000;
+  backdrop-filter: blur(10px);
+}
+@container (max-width:800px) {
+  .hud-cloud-warning {
+    bottom: 14px;
+    right: 14px;
+    left: 14px;
+    max-width: none;
+    text-align: center;
+  }
+  .game-hud:has(.hud-cloud-warning:not([hidden])) .hud-combat {
+    bottom: 58px;
+  }
+}
+
+/* Keep captions inside the curved caps, including long location names. */
+#canvas > .world-minimap .minimap-location {
+  padding: 20px 36px 9px;
+}
+@container (max-width:1000px) {
+  #canvas > .world-minimap .minimap-location {
+    padding: 18px 28px 8px;
+  }
+}
+@container (max-width:800px) {
+  #canvas > .world-minimap .minimap-location {
+    padding: 15px 22px 6px;
+  }
+}
+.hud-targets {
+  position: absolute;
+  bottom: 110px;
+  right: 22px;
+  width: min(260px, calc(100% - 44px));
+  max-height: 25cqh;
+  overflow: auto;
+  pointer-events: auto;
+  scrollbar-width: thin;
+}
+.hud-targets #combat-targets {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.hud-targets #combat-targets[hidden] {
+  display: none;
+}
+.hud-targets #combat-targets > p {
+  font-size: 10px;
+  color: #e6e9db;
+  text-shadow: 0 1px 3px #000;
+  margin: 0 0 3px;
+  text-align: right;
+}
+.hud-targets #combat-targets button {
+  margin: 0;
+  padding: 10px 12px;
+  background: #12291fd6;
+  border-color: #c7d5a636;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  font-size: 11px;
+  text-align: left;
+  color: #f2e9d8;
+}
+.hud-targets #combat-targets button[aria-pressed="true"] {
+  border-color: #e6c483;
+  box-shadow: inset 2px 0 #e6c483;
+}
+@container (max-width:800px) {
+  .hud-targets {
+    bottom: 180px;
+    right: 14px;
+    width: min(220px, calc(100% - 28px));
+    max-height: 22cqh;
+  }
+}
+
+@container (max-height:340px) and (max-width:650px) {
+  .hud-shortcuts {
+    left: 8px;
+    right: 8px;
+    top: 118px;
+    justify-content: center;
+    gap: 4px;
+  }
+  .hud-shortcuts .hud-shortcut {
+    min-width: 36px;
+    flex-basis: 40px;
+    min-height: 36px;
+  }
+  .hud-shortcut img {
+    width: 28px;
+    height: 30px;
+  }
+  .hud-shortcut::before {
+    width: 32px;
+    height: 32px;
+  }
+  #canvas > .world-minimap .minimap-location {
+    padding: 11px 20px 6px;
+    font-size: 8px;
+  }
+  .hud-targets {
+    max-height: 70px;
+    bottom: 66px;
+  }
+}

@@ -1,3 +1,4 @@
+import { installGameHud } from "./ui/game-hud";
 import { queueAnimation, animationFrames } from "./entities/animation-texture";
 import { Minimap } from "./world/minimap";
 import { canMoveInPhase } from "./world/combat-movement";
@@ -62,6 +63,7 @@ import {
 } from "./progression/character-progress";
 import Phaser from "phaser";
 import { VillagePlayers } from "./multiplayer/village";
+import { openSocial } from "./social/ui";
 import "./style.css";
 import {
   PresentationPlayer,
@@ -109,8 +111,8 @@ type AnimSet = Record<
   }
 >;
 const canvasHost = document.getElementById("canvas")!;
-const $ = (id: string) =>
-  id === "canvas" ? canvasHost : document.getElementById(id)!;
+const findElement = (id:string) => document.getElementById(id) || canvasHost.querySelector<HTMLElement>("#"+CSS.escape(id));
+const $ = (id: string) => id==="canvas"?canvasHost:findElement(id)!;
 const store = {
   read: () => runtimeProgress.read(),
   write: (value: string) => {
@@ -274,6 +276,7 @@ for (const id of ["maps", "return-lobby", "progression", "arena", "library"])
   $(id).addEventListener("click", () => miniWindow.restore(), {
     capture: true,
   });
+window.addEventListener("open-player-profile",()=>miniWindow.restore(),{capture:true});
 const openLibrary = installLibrary(
   async (id, role) => {
     if (!scene || !game) throw new Error(t("main.67ed697360"));
@@ -300,7 +303,7 @@ const openProgression = installProgression(() => ({
     scene.renderUI();
   },
 }));
-$("progression").onclick = () => openProgression();
+$("progression").onclick = () => openProgression("quests");
 const equipmentMenuButton = document.createElement("button");
 equipmentMenuButton.id = "equipment-menu";
 equipmentMenuButton.className = "secondary";
@@ -392,6 +395,13 @@ const openTravel = installTravel(
   },
 );
 $("maps").onclick = () => void openTravel();
+const socialButton = document.createElement("button");
+socialButton.id = "social";
+socialButton.className = "secondary";
+socialButton.textContent = t("social.title");
+socialButton.onclick = () => { miniWindow.restore(); void openSocial(); };
+$("maps").before(socialButton);
+const gameHud=installGameHud({host:canvasHost,restore:()=>miniWindow.restore(),shop:()=>openProgression("shop")});
 $("auto-hunt").onclick = () => scene?.toggleHunt();
 $("return-lobby").onclick = () =>
   void scene
@@ -515,7 +525,7 @@ async function start(s: Save) {
           ).map((id) => load(id, "enemy")),
         ),
         Promise.all(
-          (s.npcIds || ["11001601", "11001201"])
+          (s.npcIds || []).filter(id => !["11001601","11001201"].includes(id))
             .slice(0, 3)
             .map((id) => load(id, "npc")),
         ),
@@ -563,6 +573,7 @@ async function start(s: Save) {
       ]),
     ) as AnimSet;
     $("menu").hidden = true;
+    document.body.classList.add("is-playing");
     $("play").hidden = false;
     if (!recovering && !switchingHero) {
       session.activeMs = 0;
@@ -602,7 +613,8 @@ async function start(s: Save) {
       worldReady = false;
       game?.destroy(true);
       game = undefined;
-      $("play").hidden = true;
+      document.body.classList.remove("is-playing");
+  $("play").hidden = true;
       $("menu").hidden = false;
       stage.fail(error);
     }
@@ -643,6 +655,7 @@ $("back").onclick = async () => {
   game = undefined;
   worldReady = false;
   releaseJourney();
+  document.body.classList.remove("is-playing");
   $("play").hidden = true;
   $("menu").hidden = false;
   window.dispatchEvent(new Event("account-menu"));
@@ -752,6 +765,7 @@ window.addEventListener("journey-lock-lost", (event) => {
   miniWindow.restore();
   game?.destroy(true);
   game = undefined;
+  document.body.classList.remove("is-playing");
   $("play").hidden = true;
   $("menu").hidden = false;
   loadingScreen.hide();
@@ -1687,11 +1701,11 @@ class HuntScene extends Phaser.Scene {
     actor.visual.on("pointerdown", () => this.chooseTarget(actor));
   }
   private renderCombatTargets() {
-    let panel = document.getElementById("combat-targets");
+    let panel = findElement("combat-targets");
     if (!panel) {
       panel = document.createElement("section");
       panel.id = "combat-targets";
-      $("status").after(panel);
+      $("hud-targets").append(panel);
     }
     const foes = this.hunt.livingOpponents;
     panel.hidden =
@@ -1938,7 +1952,7 @@ class HuntScene extends Phaser.Scene {
     );
     if (this.map.id === "10001")
       this.npcs = cast.npcs
-        .filter((m) => m.id !== cast.hero.id && !partyIds.has(m.id))
+        .filter((m) => m.id !== cast.hero.id && !partyIds.has(m.id) && !["11001601","11001201"].includes(m.id))
         .map((manifest, i) => {
           const point = this.navigation.nearest(
             [
@@ -2161,7 +2175,7 @@ class HuntScene extends Phaser.Scene {
     this.party.remove(id);
     if (this.isLobby) {
       const manifest = cast.npcs.find((m) => m.id === id);
-      if (manifest && !this.npcs.some((n) => n.manifest.id === id)) {
+      if (manifest && !["11001601","11001201"].includes(id) && !this.npcs.some((n) => n.manifest.id === id)) {
         const point = this.navigation.nearest({ x: 465, y: 294 })!;
         const npc = new EntityActor(this, point.x, point.y, manifest, "npc");
         this.bindNpc(npc);
@@ -2480,12 +2494,12 @@ class HuntScene extends Phaser.Scene {
       button.title = travelReason;
       button.setAttribute("aria-description", travelReason);
     }
-    let travelFeedback = document.getElementById("travel-reason");
+    let travelFeedback = findElement("travel-reason");
     if (!travelFeedback) {
       travelFeedback = document.createElement("p");
       travelFeedback.id = "travel-reason";
       travelFeedback.className = "caption";
-      $("maps").after(travelFeedback);
+      $("hud-feedback").append(travelFeedback);
     }
     travelFeedback.hidden = !travelReason;
     travelFeedback.textContent = travelReason;
@@ -2515,6 +2529,7 @@ class HuntScene extends Phaser.Scene {
           ? t("main.7ca4480827")
           : t("common.explore")
         : this.hunt.retreating ? t("combat.fleeing") : phaseText(this.hunt.phase);
+    gameHud.update({name:cast.hero.name,portrait:cast.hero.portrait||cast.hero.preview,level:save.level,accountLevel:save.accountLevel!,hp:this.hunt.hp,maxHp:st.maxHp,chakra:this.hunt.chakra,maxChakra:st.maxChakra,xp:save.xp,needed:needed(save.level),coins:save.coins,fragments:save.inventory.fragmento||0,phase,lobby:this.isLobby,paused:save.paused,auto:!!save.autoHunt});
     const skillReason = save.paused
       ? t("common.paused")
       : this.hunt.retreating ? t("combat.resumeToAttack")
@@ -2529,21 +2544,21 @@ class HuntScene extends Phaser.Scene {
               : "";
     $("cast-skill").title = skillReason;
     $("cast-skill").setAttribute("aria-description", skillReason);
-    let skillFeedback = document.getElementById("skill-reason");
+    let skillFeedback = findElement("skill-reason");
     if (!skillFeedback) {
       skillFeedback = document.createElement("p");
       skillFeedback.id = "skill-reason";
       skillFeedback.className = "caption";
-      $("cast-skill").after(skillFeedback);
+      $("hud-feedback").append(skillFeedback);
     }
     skillFeedback.hidden = this.isLobby || !skillReason;
     skillFeedback.textContent = skillReason;
-    let huntStatus = document.getElementById("hunt-status");
+    let huntStatus = findElement("hunt-status");
     if (!huntStatus) {
       huntStatus = document.createElement("p");
       huntStatus.id = "hunt-status";
       huntStatus.className = "caption";
-      $("auto-hunt").after(huntStatus);
+      $("hud-feedback").append(huntStatus);
     }
     huntStatus.hidden = this.isLobby || !save.autoHunt;
     huntStatus.textContent =
