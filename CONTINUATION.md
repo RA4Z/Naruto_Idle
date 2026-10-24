@@ -1,3 +1,9 @@
+## Animações extraídas consultáveis no admin — 23/10/2026
+
+O catálogo de efeitos agora mostra também sourceExports, com busca, filtros de batalha/cenário/estado e páginas de24cards. Nenhum atlas é carregado até abrir a prévia. Source-only sempre usa bindings vazios: não inventa personagem, jutsu ou encaixe de combate. Sequências grandes ficam explicitamente sem botão de prévia até existir o adaptador; nenhum fallback é usado. Efeitos numéricos já vinculados permanecem separados.
+
+Tipagem e i18n3idiomas aprovados;5testes de normalização/proveniência passaram. Chrome:24cards iniciais,0atlases iniciais,prévia com scrub/espelhamento,apenas efeito sem personagem,sequências bloqueadas,390px sem overflow,0erros e0requisições de conta/save. reports/admin-source-export-review.json e tools/qa/source-exports.html. As imagens de prova ficam no workspace, sem dados de conta.
+
 ## Pontos de cenário e adaptador explícito — 23/10/2026
 
 Três exports posData/head preservados em asset-source/scene-source-points/index.json: posições locais e matrizes originais conferidas por parser próprio e segunda leitura estática JPEXS, sem scripts ou rasterização. Não viram hitbox, identidade, animação ou encaixe automático no mundo. docs/SCENE_SOURCE_POINT_CONTRACT.md e reports/scene-posdata-original-source-proof.json.gz registram o contrato.

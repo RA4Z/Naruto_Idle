@@ -1,5 +1,6 @@
 import { frameRectangle, type PackedAtlas } from "../entities/animation-texture";
 import { mountNativeEffectReview, type NativeEffectEntry } from "../effects/native-review";
+import { mountSourceExportBrowser } from "./source-review";
 import { animationOrigin } from "../entities/animation-origin";
 import {
   t,
@@ -318,6 +319,11 @@ async function show(id: string, title: string, initialModel?: string) {
             };
             card.append(button); grid.prepend(card);
           }
+          mountSourceExportBrowser(grid, native.sourceExports, entry => {
+            const dialog = modal(t("source.review.title") + " · " + (entry.definition.name || entry.id));
+            const dispose = mountNativeEffectReview(dialog, entry);
+            dialog.addEventListener("close", dispose, { once: true });
+          });
         }
       }
       content.append(grid);
