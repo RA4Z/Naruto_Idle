@@ -11,7 +11,7 @@ export function mountSourceExportBrowser(host: HTMLElement, catalog: unknown, op
   controls.style.display = "flex"; controls.style.gap = "8px"; controls.style.flexWrap = "wrap";
   search.type = "search"; search.placeholder = t("source.review.search"); search.setAttribute("aria-label", t("source.review.search")); search.style.flex = "1"; search.style.minWidth = "180px";
   filter.setAttribute("aria-label", t("source.review.filter"));
-  for (const key of ["all", "battle", "scene", "ready", "sequence"] as const) filter.append(new Option(t(`source.review.${key}`), key));
+  for (const key of ["all", "battle", "scene", "role", "ready", "sequence"] as const) filter.append(new Option(t(`source.review.${key}`), key));
   list.className = "admin-grid"; status.setAttribute("role", "status");
   more.type = "button"; more.className = "secondary"; more.textContent = t("source.review.more");
   let limit = 24;

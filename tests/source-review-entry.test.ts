@@ -29,3 +29,22 @@ test("invalid timeline, pixel scale and asset paths disable preview", () => {
     assert.equal(sourceReviewItem(entry)?.status, "invalid");
   }
 });
+
+
+test("role visuals have their own source category with no skill or body binding", () => {
+  const entry: any = fixture(); entry.definition.res = "assets/battle/role/left/13000101.swf";
+  assert.equal(sourceReviewItem(entry)?.status, "invalid"); entry.sourceKind = "role-left-exported-sprite";
+  const row = sourceReviewItem(entry)!;
+  assert.equal(row.kind, "role"); assert.equal(row.status, "ready"); assert.deepEqual(row.preview?.bindings, []);
+  entry.definition.res = "assets/battle/effect/demo.swf";
+  assert.equal(sourceReviewItem(entry)?.status, "invalid");
+});
+
+
+test("preferred MME sources keep their category and cannot borrow effect paths", () => {
+  const entry: any = fixture(); entry.sourceKind = "role-mme-action";
+  assert.equal(sourceReviewItem(entry)?.status, "invalid");
+  entry.definition.res = "assets/battle/role/right/11001601.swf";
+  const row = sourceReviewItem(entry)!;
+  assert.equal(row.kind, "role"); assert.equal(row.status, "ready"); assert.deepEqual(row.preview?.bindings, []);
+});

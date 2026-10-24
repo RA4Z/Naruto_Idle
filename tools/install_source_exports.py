@@ -13,7 +13,7 @@ def contained(root,relative):
     return target
 
 def publish(project,stage,archive,ids,proof_paths,*,source_kind='battle-effect-exported-sprite'):
-    if source_kind not in ('battle-effect-exported-sprite','scene-exported-sprite'):raise ValueError('Explicit supported source kind required')
+    if source_kind not in ('battle-effect-exported-sprite','scene-exported-sprite','role-left-exported-sprite','role-mme-action'):raise ValueError('Explicit supported source kind required')
     if not 1<=len(ids)<=24 or len(ids)!=len(set(ids)) or any(not re.fullmatch(r'source:[0-9a-f]{16}:[0-9a-f]{12}',i) for i in ids):raise ValueError('Choose up to 24 exact source-only IDs')
     project=project.resolve();stage=stage.resolve()
     if project.is_relative_to(archive.root) or stage.is_relative_to(archive.root):raise ValueError('Originals are read-only')
@@ -35,9 +35,15 @@ def publish(project,stage,archive,ids,proof_paths,*,source_kind='battle-effect-e
         if ident!=expected or entry['id']!=ident:raise ValueError('Exact source/action identity differs')
         if source_kind=='battle-effect-exported-sprite':
             if not logical.startswith('assets/battle/effect/') or entry.get('sourceKind','battle-effect-exported-sprite')!=source_kind:raise ValueError('Battle source kind/path differs; scenes require explicit publication')
-        else:
+        elif source_kind=='scene-exported-sprite':
             from scene_export_contract import validate_scene_entry
             validate_scene_entry(archive,entry)
+        elif source_kind=='role-mme-action':
+            from role_mme_contract import validate_role_mme_entry
+            validate_role_mme_entry(archive,entry)
+        else:
+            from role_export_contract import validate_role_entry
+            validate_role_entry(archive,entry)
         for evidence in (entry['source'],entry['sourceConfig']):
             if archive.record(evidence['path'])!=evidence:raise ValueError('Original source changed')
         if len(entry['layers'])!=1:raise ValueError('Source exports must preserve one exact exported action')
@@ -46,6 +52,7 @@ def publish(project,stage,archive,ids,proof_paths,*,source_kind='battle-effect-e
             proof=proofs.get((ident,action,layer['plane']))
             if proof is None or proof.get('sourceEntrySha256')!=entry_digest(entry):raise ValueError('Missing or stale exact-entry source proof')
             if source_kind=='scene-exported-sprite' and proof.get('sourceSceneExportMatch') is not True:raise ValueError('Independent original scene export proof required')
+            if source_kind in ('role-left-exported-sprite','role-mme-action') and proof.get('sourceRoleExportMatch') is not True:raise ValueError('Independent original role export proof required')
             if proof.get('sourcePixelScale')!=1:raise ValueError('Original pixel scale is required')
             if layer.get('sourceSequence'):
                 relative=PurePosixPath(layer['sourceSequence']['manifestPath'])
@@ -99,7 +106,7 @@ def publish(project,stage,archive,ids,proof_paths,*,source_kind='battle-effect-e
 def main():
     ap=argparse.ArgumentParser()
     for name in ('project','staging','source'):ap.add_argument('--'+name,type=Path,required=True)
-    ap.add_argument('--source-kind',choices=('battle-effect-exported-sprite','scene-exported-sprite'),default='battle-effect-exported-sprite');ap.add_argument('--proofs',type=Path,nargs='+',required=True);ap.add_argument('--ids',required=True);ap.add_argument('--label',required=True);args=ap.parse_args()
+    ap.add_argument('--source-kind',choices=('battle-effect-exported-sprite','scene-exported-sprite','role-left-exported-sprite','role-mme-action'),default='battle-effect-exported-sprite');ap.add_argument('--proofs',type=Path,nargs='+',required=True);ap.add_argument('--ids',required=True);ap.add_argument('--label',required=True);args=ap.parse_args()
     if not args.label.isalnum():raise ValueError('Simple report label required')
     sys.path.insert(0,str(args.project/'tools'))
     from original_archive import OriginalArchive

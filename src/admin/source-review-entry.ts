@@ -2,7 +2,7 @@ import type { AnimationDef } from "../entities/types";
 import type { NativeEffectEntry } from "../effects/native-review";
 
 export type SourceReviewItem = {
-  id: string; source: string; action: string; kind: "battle" | "scene";
+  id: string; source: string; action: string; kind: "battle" | "scene" | "role";
   status: "ready" | "sequence" | "invalid"; preview?: NativeEffectEntry;
 };
 const object = (value: unknown): value is Record<string, any> => value !== null && typeof value === "object" && !Array.isArray(value);
@@ -12,10 +12,11 @@ const safeUrl = (value: unknown) => typeof value === "string" && value.startsWit
 export function sourceReviewItem(value: unknown): SourceReviewItem | undefined {
   if (!object(value) || value.sourceOnly !== true || typeof value.id !== "string" || !/^source:[a-f0-9]{16}:[a-f0-9]{12}$/.test(value.id)) return;
   if (!object(value.definition) || typeof value.definition.res !== "string" || typeof value.definition.frontAction !== "string") return;
-  const kind = value.sourceKind === "scene-exported-sprite" ? "scene" : "battle";
+  const kind = value.sourceKind === "scene-exported-sprite" ? "scene" : ["role-left-exported-sprite", "role-mme-action"].includes(value.sourceKind) ? "role" : "battle";
   const row: SourceReviewItem = { id: value.id, source: value.definition.res, action: value.definition.frontAction, kind, status: "invalid" };
-  if (value.sourceKind !== undefined && !["scene-exported-sprite", "battle-effect-exported-sprite"].includes(value.sourceKind)) return row;
-  if (!row.source.startsWith(kind === "scene" ? "assets/role/npc/scene/npcres/" : "assets/battle/effect/")) return row;
+  if (value.sourceKind !== undefined && !["scene-exported-sprite", "battle-effect-exported-sprite", "role-left-exported-sprite", "role-mme-action"].includes(value.sourceKind)) return row;
+  const prefixes = kind === "scene" ? ["assets/role/npc/scene/npcres/"] : kind === "role" ? (value.sourceKind === "role-mme-action" ? ["assets/battle/role/left/", "assets/battle/role/right/", "assets/role/npc/scene/npcres/"] : ["assets/battle/role/left/"]) : ["assets/battle/effect/"];
+  if (!prefixes.some(prefix => row.source.startsWith(prefix))) return row;
   if (!Array.isArray(value.layers) || value.layers.length !== 1 || !object(value.layers[0]) || value.layers[0].action !== row.action) return row;
   const layer = value.layers[0];
   if (layer.sourceSequence) return { ...row, status: "sequence" };

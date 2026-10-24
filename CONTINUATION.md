@@ -1,3 +1,7 @@
+## Fontes primárias sem Config — dados e adaptador visual
+
+59trilhas de dados/2344quadros preservados e comparados com segunda leitura independente, incluindo labels, ratios e matrizes. Índice em asset-source/role-exported-data/index.json; sete provas gzip em reports. Plano visual separado:93ações/6368quadros primários e23açõesMME/1975quadros de pendências antigas, ainda não confundir com animações extraídas. Adaptador explícito role-left-exported-sprite e categoria de personagens no admin; nenhum vínculo de identidade, jutsu, dano ou hitbox inventado. docs/ROLE_EXPORTED_TIMELINES.md.
+
 ## Efeitos por fonte — lotes 259-264 — 23/10/2026
 
 Publicadas 20 exportações aprovadas, com 1315 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-259-264-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
