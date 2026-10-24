@@ -950,3 +950,7 @@ button:disabled {
   #menu > h1 { font-size: clamp(2rem, 7vw, 3.2rem); }
   .account-card { max-width: 480px; margin: 28px auto 0; padding: 24px; }
 }
+
+.multiplayer-status { position:absolute; top:12px; left:12px; z-index:5; pointer-events:none; max-width:calc(100% - 24px); padding:7px 10px; border:1px solid #536b59; border-radius:7px; background:#102019e8; color:#e7eee7; font-size:12px; box-shadow:0 2px 8px #0003; }
+.multiplayer-status[data-state=online] { border-color:#6a996a; color:#c4efc4; }
+.multiplayer-status[hidden] { display:none; }

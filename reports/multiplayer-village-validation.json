@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-24T14:07:07.523Z",
+  "environment": "Local simulated Supabase + real WebSocket server + two Chrome contexts",
+  "results": {
+    "twoAccountsSeeCorrectCharactersAndNames": true,
+    "directionalRunAnimation": true,
+    "remoteMovementAndIdle": true,
+    "returnToMenuRemovesPlayer": true,
+    "reenterVillageRestoresPlayer": true,
+    "serverRestartReconnectsBothPlayers": true,
+    "travelOutRemovesPlayer": true,
+    "returnToVillageRejoins": true,
+    "noBrowserErrors": true
+  },
+  "limits": [
+    "No live Supabase accounts modified",
+    "No Render/Vercel deploy",
+    "Cosmetic presence; combat and economy are not authoritative"
+  ],
+  "builds": {
+    "frontend": true,
+    "backend": true
+  },
+  "unitTests": {
+    "backend": 14,
+    "client": 5
+  },
+  "localBackendHealth": 200,
+  "bundleSecretsCheck": true
+}

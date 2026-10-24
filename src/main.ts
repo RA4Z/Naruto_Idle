@@ -61,6 +61,7 @@ import {
   trainCharacter,
 } from "./progression/character-progress";
 import Phaser from "phaser";
+import { VillagePlayers } from "./multiplayer/village";
 import "./style.css";
 import {
   PresentationPlayer,
@@ -635,7 +636,10 @@ $("back").onclick = async () => {
       }
     ).__idle;
   if (!wasCloud) commit();
-  game?.destroy(true);
+  scene?.disconnectMultiplayer();
+  const previous = game;
+  previous?.destroy(true);
+  previous?.loop.wake();
   game = undefined;
   worldReady = false;
   releaseJourney();
@@ -829,6 +833,8 @@ class HuntScene extends Phaser.Scene {
   enemy!: EntityActor;
   npcs: EntityActor[] = [];
   actorCache!: ActorAssetCache;
+  private multiplayer?: VillagePlayers;
+  disconnectMultiplayer() { this.multiplayer?.destroy(); this.multiplayer = undefined; }
   loadingActor = false;
   encounterSequence = 0;
   private autoNavigator = new AutoHuntNavigator<EntityActor>();
@@ -989,6 +995,7 @@ class HuntScene extends Phaser.Scene {
       () =>
         new Set([
           ...cast.enemies.map((e) => e.id),
+          ...(this.multiplayer?.activeIds() || []),
           ...this.npcs.map((e) => e.manifest.id),
           this.enemy.manifest.id,
           ...cast.npcs.map((e) => e.id),
@@ -1021,6 +1028,11 @@ class HuntScene extends Phaser.Scene {
       return this.walkTo(point);
     });
     this.minimap.setMap(this.map, this.navigation.points);
+    this.multiplayer = new VillagePlayers(this, this.actorCache, canvasHost);
+    this.multiplayer.setMap(this.map.id);
+    const destroyMultiplayer = () => this.multiplayer?.destroy();
+    this.events.once("shutdown", destroyMultiplayer);
+    this.events.once("destroy", destroyMultiplayer);
     const destroyMinimap = () => this.minimap?.destroy();
     this.events.once("shutdown", destroyMinimap);
     this.events.once("destroy", destroyMinimap);
@@ -1056,6 +1068,7 @@ class HuntScene extends Phaser.Scene {
           activeEntityId: activeCharacterId(save),
           phase: this.isLobby ? "lobby" : this.hunt.phase,
           mapId: this.map.id,
+          multiplayer: this.multiplayer?.snapshot(),
           mode: this.map.kind,
           autoHunt: !!save.autoHunt,
           speed: stats(save).moveSpeed,
@@ -2089,6 +2102,7 @@ class HuntScene extends Phaser.Scene {
       save.autoHunt = false;
       delete save.enemyId;
       this.play("world-idle_0");
+      this.multiplayer?.setMap(map.id);
       this.renderParty();
       this.renderUI();
       commit();
@@ -2171,6 +2185,7 @@ class HuntScene extends Phaser.Scene {
         ...animationOrigin(this.activeHeroAnimation, this.hero.frame.name, this.hero.flipX),
       );
     if (!ownsJourney()) {
+      this.multiplayer?.destroy();
       window.dispatchEvent(new Event("journey-lock-lost"));
       return;
     }
@@ -2323,6 +2338,11 @@ class HuntScene extends Phaser.Scene {
       walkSpeed,
       (id) => stats(save, id).moveSpeed,
     );
+    this.multiplayer?.update(delta, {
+      x: this.hero.x, y: this.hero.y, characterId: activeCharacterId(save),
+      direction: this.lastFacing,
+      moving: !blocked && !!this.hero.anims.currentAnim?.key.startsWith("world-run_"),
+    });
     this.groundShadow
       .setPosition(this.hero.x, this.hero.y)
       .setDepth(this.hero.y - 0.5);
