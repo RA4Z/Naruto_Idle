@@ -1,3 +1,7 @@
+## Workers limitados e cenários intercalados — 23/10/2026
+
+O limite de um worker agora pode abranger renderização e compactação. Timeout encerra somente a árvore criada pela chamada, sem remover fontes; filhos remanescentes não podem ser ignorados. Testes cobrem processo filho real e preservação de fonte. Cenários são processados em fronteiras confirmadas entre ciclos, sem duas operações pesadas simultâneas. Não altera pixels, FPS, origem, escala ou vínculos de combate. docs/SOURCE_WORKER_BUDGETS.md.
+
 ## Efeitos por fonte — lotes 229-234 — 23/10/2026
 
 Publicadas 21 exportações aprovadas, com 1680 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-229-234-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
