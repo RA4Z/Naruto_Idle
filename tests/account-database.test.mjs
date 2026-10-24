@@ -11,7 +11,7 @@ test("account profiles enforce unique canonical usernames, own-account access an
       create function auth.uid() returns uuid language sql as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
       grant usage on schema auth,public to authenticated,anon;
       grant execute on function auth.uid() to authenticated,anon;`);
-    for (const migration of ["202610210001_cloud_progress", "202610210002_player_accounts", "202610210003_cloud_only_progress"])
+    for (const migration of ["20261021205949_cloud_progress", "20261021211745_player_accounts", "20261021215614_cloud_only_progress"])
       await db.exec(await readFile(`supabase/migrations/${migration}.sql`, "utf8"));
     const a = "11111111-1111-4111-8111-111111111111", b = "22222222-2222-4222-8222-222222222222";
     const lease = "33333333-3333-4333-8333-333333333333";

@@ -10,10 +10,10 @@ await db.exec(`create role anon; create role authenticated;
   create function auth.uid() returns uuid language sql as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
   grant usage on schema auth,public to authenticated,anon; grant execute on function auth.uid() to authenticated,anon;`);
 await db.exec(
-  await readFile("supabase/migrations/202610210001_cloud_progress.sql", "utf8"),
+  await readFile("supabase/migrations/20261021205949_cloud_progress.sql", "utf8"),
 );
-await db.exec(await readFile("supabase/migrations/202610210002_player_accounts.sql", "utf8"));
-await db.exec(await readFile("supabase/migrations/202610210003_cloud_only_progress.sql", "utf8"));
+await db.exec(await readFile("supabase/migrations/20261021211745_player_accounts.sql", "utf8"));
+await db.exec(await readFile("supabase/migrations/20261021215614_cloud_only_progress.sql", "utf8"));
 const id = "11111111-1111-4111-8111-111111111111";
 await db.query("insert into auth.users(id,raw_user_meta_data) values ($1,$2)", [id, {username:"fixture_ninja"}]);
 const initial = fresh("sasuke");

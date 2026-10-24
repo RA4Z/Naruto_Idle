@@ -13,11 +13,11 @@ test("cloud SQL enforces RLS, create-only import, exclusive lease, receipt retri
       grant execute on function auth.uid() to authenticated,anon;`);
     await db.exec(
       await readFile(
-        "supabase/migrations/202610210001_cloud_progress.sql",
+        "supabase/migrations/20261021205949_cloud_progress.sql",
         "utf8",
       ),
     );
-    await db.exec(await readFile("supabase/migrations/202610210002_player_accounts.sql", "utf8"));
+    await db.exec(await readFile("supabase/migrations/20261021211745_player_accounts.sql", "utf8"));
     const a = "11111111-1111-4111-8111-111111111111",
       b = "22222222-2222-4222-8222-222222222222";
     const lease = "33333333-3333-4333-8333-333333333333",

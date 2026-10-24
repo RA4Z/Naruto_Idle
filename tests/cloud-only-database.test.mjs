@@ -11,7 +11,7 @@ test("cloud-only creation uses server defaults and disables all legacy JSON impo
       create function auth.uid() returns uuid language sql as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
       grant usage on schema auth,public to authenticated,anon;
       grant execute on function auth.uid() to authenticated,anon;`);
-    for (const name of ["202610210001_cloud_progress", "202610210002_player_accounts", "202610210003_cloud_only_progress"])
+    for (const name of ["20261021205949_cloud_progress", "20261021211745_player_accounts", "20261021215614_cloud_only_progress"])
       await db.exec(await readFile(`supabase/migrations/${name}.sql`, "utf8"));
     const uid = "11111111-1111-4111-8111-111111111111", lease = "33333333-3333-4333-8333-333333333333";
     await db.query("insert into auth.users(id,raw_user_meta_data) values ($1,$2)", [uid,{username:"new_player"}]);

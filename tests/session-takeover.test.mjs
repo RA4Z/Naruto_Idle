@@ -12,10 +12,10 @@ test("takeover preserves committed progress, immediately fences former owner and
       grant usage on schema auth,public to authenticated,anon;
       grant execute on function auth.uid() to authenticated,anon;`);
     for (const name of [
-      "202610210001_cloud_progress",
-      "202610210002_player_accounts",
-      "202610210003_cloud_only_progress",
-      "202610220001_session_takeover",
+      "20261021205949_cloud_progress",
+      "20261021211745_player_accounts",
+      "20261021215614_cloud_only_progress",
+      "20261022151351_session_takeover",
     ])
       await db.exec(await readFile(`supabase/migrations/${name}.sql`, "utf8"));
     const a = "11111111-1111-4111-8111-111111111111",

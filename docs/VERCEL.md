@@ -16,4 +16,4 @@ A confirmação diz respeito ao jogo no navegador. A hospedagem estática não e
 
 Esta aplicação é Vite. Em Settings → Environment Variables do projeto, configurar VITE_SUPABASE_URL e VITE_SUPABASE_PUBLISHABLE_KEY (valores do .env local), pelo menos em Production. Variáveis NEXT_PUBLIC_SUPABASE_* ou SUPABASE_* sem VITE_ não configuram este cliente. Não prefixar service_role, secret, JWT secret ou senha do banco com VITE_. Não copiar o .env inteiro. Deploy precisa incluir a nova tela e ser recompilado após definir as variáveis.
 
-O banco já possui as migrações 202610210001_cloud_progress e 202610210002_player_accounts, com login/saves/perfis reais validados. SMTP e recebimento de confirmação/recuperação permanecem pendentes. Esta etapa não publicou alterações na Vercel.
+O banco já possui as migrações 20261021205949_cloud_progress e 20261021211745_player_accounts, com login/saves/perfis reais validados. SMTP e recebimento de confirmação/recuperação permanecem pendentes. Esta etapa não publicou alterações na Vercel.

@@ -6,7 +6,7 @@ Ativar e validar a integração já implementada no projeto **Naruto Idle**, org
 
 Esta tarefa foi autorizada pelo usuário. Aproveitar o projeto existente; não criar uma segunda organização/projeto para contornar erros ou limites. Não contratar SMTP, hospedagem ou recursos pagos. A publicação do frontend deve seguir a autorização vigente na sessão do agente; configurar Supabase não publica automaticamente na Vercel.
 
-**Atualização de 21/10/2026:** o bloqueio da máquina anterior foi superado. Plano Free confirmado, migração `202610210001_cloud_progress` aplicada, RLS/permissões verificadas e URL/chave pública gravadas no `.env` da cópia `D:\Naruto Idle\Naruto Idle RPG`. Testes SDK no Supabase real passaram com duas contas temporárias, removidas com seus saves; evidência `reports/supabase-live-validation.json`. SMTP e recebimento de e-mails, validação renderizada com contas reais e variáveis/deploy Vercel continuam pendentes. O restante do roteiro descreve a reprodução; consultar o estado antes de reaplicar qualquer etapa. Os relatórios antigos com Auth fictício não comprovam essas pendências.
+**Atualização de 21/10/2026:** o bloqueio da máquina anterior foi superado. Plano Free confirmado, migração `20261021205949_cloud_progress` aplicada, RLS/permissões verificadas e URL/chave pública gravadas no `.env` da cópia `D:\Naruto Idle\Naruto Idle RPG`. Testes SDK no Supabase real passaram com duas contas temporárias, removidas com seus saves; evidência `reports/supabase-live-validation.json`. SMTP e recebimento de e-mails, validação renderizada com contas reais e variáveis/deploy Vercel continuam pendentes. O restante do roteiro descreve a reprodução; consultar o estado antes de reaplicar qualquer etapa. Os relatórios antigos com Auth fictício não comprovam essas pendências.
 
 ## 1. Contextualização obrigatória
 
@@ -16,7 +16,7 @@ Ler nesta ordem:
 2. [BACKEND_E_SUPABASE.md](BACKEND_E_SUPABASE.md): arquitetura, concorrência, confiança e limites.
 3. [`.env.example`](../.env.example) e scripts `db:*` em [`package.json`](../package.json).
 4. [`tools/supabase-management.mjs`](../tools/supabase-management.mjs), [`supabase-setup.mjs`](../tools/supabase-setup.mjs), [`supabase-status.mjs`](../tools/supabase-status.mjs) e [`supabase-verify.mjs`](../tools/supabase-verify.mjs).
-5. [`202610210001_cloud_progress.sql`](../supabase/migrations/202610210001_cloud_progress.sql) e [`src/cloud/`](../src/cloud/).
+5. [`20261021205949_cloud_progress.sql`](../supabase/migrations/20261021205949_cloud_progress.sql) e [`src/cloud/`](../src/cloud/).
 
 Para esta ativação, não é necessário extrair assets, alterar mapas ou refazer o balanceamento. A implementação atual sincroniza snapshots `client_unverified`; economia PvE autoritativa, rankings, comércio e persistência da arena são uma etapa posterior.
 

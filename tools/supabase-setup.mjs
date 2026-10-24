@@ -1,4 +1,5 @@
-import { readFile, readdir } from "node:fs/promises";
+import { readFile, readdir, rename, access } from "node:fs/promises";
+import { migrationIdentity, assertMigrationHistory, appliedMigration, newlyAppliedFile } from "./migration-history.mjs";
 import {
   freeProject,
   management,
@@ -6,23 +7,28 @@ import {
 } from "./supabase-management.mjs";
 try {
   const ref = await freeProject();
-  const history = await management(`projects/${ref}/database/migrations`);
-  for (const file of (await readdir("supabase/migrations"))
-    .filter((f) => /^\d+_[a-z_]+\.sql$/.test(f))
-    .sort()) {
-    const name = file.replace(/\.sql$/, "");
-    if (
-      history.some((m) => m.name === name || `${m.version}_${m.name}` === name)
-    ) {
-      console.log("Already applied:", name);
+  let history = await management(`projects/${ref}/database/migrations`);
+  const files = (await readdir("supabase/migrations")).filter(f => f.endsWith(".sql")).sort();
+  assertMigrationHistory(files, history);
+  for (const file of files) {
+    const {name} = migrationIdentity(file);
+    if (appliedMigration(file, history)) {
+      console.log("Already applied:", file);
       continue;
     }
     const query = await readFile(`supabase/migrations/${file}`, "utf8");
-    await management(`projects/${ref}/database/migrations`, "POST", {
-      name,
-      query,
-    });
-    console.log("Applied migration:", name);
+    await management(`projects/${ref}/database/migrations`, "POST", {name, query});
+    const current = await management(`projects/${ref}/database/migrations`);
+    const canonical = newlyAppliedFile(history, current, name);
+    if (canonical !== file) {
+      const target = `supabase/migrations/${canonical}`;
+      const exists = await access(target).then(() => true, () => false);
+      if (exists) throw new Error("Applied migration filename already exists: " + canonical);
+      await rename(`supabase/migrations/${file}`, target);
+      console.log("Local file aligned to API version:", canonical, "(commit this filename)");
+    }
+    history = current;
+    console.log("Applied migration:", canonical);
   }
   const keys = await management(`projects/${ref}/api-keys`);
   // Prefer modern publishable key; legacy anon is safe for a public browser too.
