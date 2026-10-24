@@ -1,0 +1,65 @@
+{
+  "scope": "ABBA pilot: identical12sourceframes per run, static Java raster only; excludes packing, validation, Git and end-to-end production throughput",
+  "runs": [
+    {
+      "mode": "sequential",
+      "seconds": 4.812000000034459,
+      "minimumAvailableRAM": 4145090560,
+      "systemCPUPercent": 34.496753246753244,
+      "sourceFrames": 12,
+      "allOriginalRgbaHashesMatch": true
+    },
+    {
+      "mode": "parallel",
+      "seconds": 3.0160000000614673,
+      "minimumAvailableRAM": 3843018752,
+      "systemCPUPercent": 43.14402936730728,
+      "sourceFrames": 12,
+      "allOriginalRgbaHashesMatch": true
+    },
+    {
+      "mode": "parallel",
+      "seconds": 3.01500000001397,
+      "minimumAvailableRAM": 3865174016,
+      "systemCPUPercent": 43.83236120112335,
+      "sourceFrames": 12,
+      "allOriginalRgbaHashesMatch": true
+    },
+    {
+      "mode": "sequential",
+      "seconds": 4.827999999979511,
+      "minimumAvailableRAM": 4291985408,
+      "systemCPUPercent": 35.38772757923129,
+      "sourceFrames": 12,
+      "allOriginalRgbaHashesMatch": true
+    }
+  ],
+  "sequentialMeanSeconds": 4.820000000006985,
+  "parallelMeanSeconds": 3.0155000000377186,
+  "speedup": 1.5984082241574185,
+  "wallTimeReductionPercent": 37.437759335407705,
+  "renderers": 2,
+  "maximumJavaHeapsMB": [
+    384,
+    512
+  ],
+  "originalPixelsPreserved": true,
+  "sources": [
+    {
+      "path": "assets/battle/role/left/13000201.swf",
+      "tag": "PT_NarutoAlpha6.00Build300",
+      "bytes": 503419,
+      "sha256": "fd951a8376b2a577004727000a859d63573fb98fd2bf15c200d3c753247d9c91",
+      "sourceKind": "exported-inventory"
+    },
+    {
+      "path": "assets/role/npc/scene/npcres/11011511_outdooreffect.swf",
+      "tag": "PT_NarutoAlpha8.78Build300",
+      "bytes": 1835562,
+      "sha256": "938dea00378dcb854a9226037030f431f8bada6fdc28055bc6a418899053d20d",
+      "sourceKind": "exported-inventory"
+    }
+  ],
+  "automaticProductionConcurrencyChanged": false,
+  "noGameAccountOrSaveAccess": true
+}
