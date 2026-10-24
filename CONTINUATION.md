@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 13000301.swf / A_3hit
+
+Publicada1exportação source-only com60quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-08dd2d069e56b122-178fa07216e4-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Fonte de personagem ou cenário — 13000401.swf / SP_skill2
 
 Publicada1exportação source-only com60quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-0cebf56689e7486f-e57c6aedff0a-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
