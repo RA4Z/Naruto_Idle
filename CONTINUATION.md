@@ -1,3 +1,7 @@
+## Cenário por fonte — 11002191_outdooreffect7.swf / shang
+
+Publicada1exportação source-only com175quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/scene-export-6266bee310f8b822-082c71c3ac0f-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Workers limitados e cenários intercalados — 23/10/2026
 
 O limite de um worker agora pode abranger renderização e compactação. Timeout encerra somente a árvore criada pela chamada, sem remover fontes; filhos remanescentes não podem ser ignorados. Testes cobrem processo filho real e preservação de fonte. Cenários são processados em fronteiras confirmadas entre ciclos, sem duas operações pesadas simultâneas. Não altera pixels, FPS, origem, escala ou vínculos de combate. docs/SOURCE_WORKER_BUDGETS.md.
