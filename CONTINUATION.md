@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 11001601.swf / C_callup_dead
+
+Publicada1exportação source-only com19quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-ba32133ee64acaf6-c01e030b6421-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Fonte de personagem ou cenário — 13000201.swf / d3
 
 Publicada1exportação source-only com17quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-fa8d1cbbe74209ab-f451a61749c6-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
