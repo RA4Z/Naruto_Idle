@@ -1,3 +1,7 @@
+## Renderização estática por intervalos — equivalência comprovada
+
+87quadros de3fontes originais comparados integralmente aoRGBA dos renders anteriores;uma fonte também comparada com render integral novo. Canvas/origem/FPS preservados,semAVM. Seis testes de retomada/integridade passaram. Ferramentas aditivas emtools/StaticSwfRenderRange.java,native_range_recovery.py,recover_static_ranges.py;prova emreports/static-range-equivalence-proof-20261024.json. Fontes adiadas ainda não estão recuperadas por esta etapa;publicação delas exige validação no staging/instalado. docs/STATIC_RANGE_RECOVERY.md.
+
 ## Efeitos por fonte — lotes 433-438 — 23/10/2026
 
 Publicadas 23 exportações aprovadas, com 1408 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-433-438-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
