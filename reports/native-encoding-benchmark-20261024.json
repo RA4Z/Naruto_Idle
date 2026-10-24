@@ -1,0 +1,107 @@
+{
+  "scope": "Three native source frames, two encodes per method, all decoded RGBA compared. This benchmark does not change extraction or game defaults; full corpus sizes and throughput may differ.",
+  "cases": [
+    {
+      "pilotCase": 0,
+      "frame": 8,
+      "frameSize": [
+        992,
+        627
+      ],
+      "sourceRgbaSha256": "80723d892cf5631ad944a4a41c0be9cabeb60c06a93d3a2555843e5a3bef9df6",
+      "methods": [
+        {
+          "method": 2,
+          "medianEncodeSeconds": 0.11218910006573424,
+          "encodedBytes": 91904.0,
+          "allRgbaPixelExact": true
+        },
+        {
+          "method": 4,
+          "medianEncodeSeconds": 0.1750595000339672,
+          "encodedBytes": 90532.0,
+          "allRgbaPixelExact": true
+        },
+        {
+          "method": 0,
+          "medianEncodeSeconds": 0.018090049969032407,
+          "encodedBytes": 191662.0,
+          "allRgbaPixelExact": true
+        }
+      ]
+    },
+    {
+      "pilotCase": 1,
+      "frame": 3,
+      "frameSize": [
+        1105,
+        884
+      ],
+      "sourceRgbaSha256": "e7ee2e1e5359f9e5d26f03f2ce7643a0c348e7bb1c59d887bb044e738ecb3bda",
+      "methods": [
+        {
+          "method": 2,
+          "medianEncodeSeconds": 0.20017494994681329,
+          "encodedBytes": 152820.0,
+          "allRgbaPixelExact": true
+        },
+        {
+          "method": 4,
+          "medianEncodeSeconds": 0.2072155499481596,
+          "encodedBytes": 152820.0,
+          "allRgbaPixelExact": true
+        },
+        {
+          "method": 0,
+          "medianEncodeSeconds": 0.03234599996358156,
+          "encodedBytes": 256022.0,
+          "allRgbaPixelExact": true
+        }
+      ]
+    },
+    {
+      "pilotCase": 2,
+      "frame": 31,
+      "frameSize": [
+        5323,
+        2871
+      ],
+      "sourceRgbaSha256": "50dc0e54529e70503015d3f504c4fb833edef74cca552b18caae4285814a60e7",
+      "methods": [
+        {
+          "method": 2,
+          "medianEncodeSeconds": 1.6106578499893658,
+          "encodedBytes": 209310.0,
+          "allRgbaPixelExact": true
+        },
+        {
+          "method": 4,
+          "medianEncodeSeconds": 1.9271053500124253,
+          "encodedBytes": 206232.0,
+          "allRgbaPixelExact": true
+        },
+        {
+          "method": 0,
+          "medianEncodeSeconds": 0.2872823000070639,
+          "encodedBytes": 5547516.0,
+          "allRgbaPixelExact": true
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "0": {
+      "totalMedianEncodeSeconds": 0.33771834993967786,
+      "totalEncodedBytes": 5995200.0
+    },
+    "2": {
+      "totalMedianEncodeSeconds": 1.9230219000019133,
+      "totalEncodedBytes": 454034.0
+    },
+    "4": {
+      "totalMedianEncodeSeconds": 2.309380399994552,
+      "totalEncodedBytes": 449584.0
+    }
+  },
+  "defaultsChanged": false
+}
