@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 11003341_outdooreffect.swf / shang
+
+Publicada1exportação source-only com185quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-20049db28c5afd97-082c71c3ac0f-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Provas de prévia e conciliação dos catálogos
 
 Chrome conferiu fontes MME reais de3e19quadros,zero atlas antes de abrir,390pxsemoverflow,zero conta/save. Conciliação em reports/role-source-recovery-bridge-20261024.json:3das24pendências antigas já possuem nova fonte nativa com prova final,20continuam na fila e1tem dependência de sombra preservada. Catálogo antigo permanece intacto; nenhuma capacidade ou identidade jogável alterada. Auditoria de2506novos caminhos conferiu1837imagens emGitLFS e nenhum SWF/binário de ferramenta adicionado;é conferência de caminhos/atributos, não varredura de conteúdo secreto.
