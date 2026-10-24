@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 13000101.swf / chixuxiqi
+
+Publicada1exportação source-only com30quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-b8de32bc400da062-2dcb33786d76-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Efeitos por fonte — lotes 313-318 — 23/10/2026
 
 Publicadas 24 exportações aprovadas, com 1343 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-313-318-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
