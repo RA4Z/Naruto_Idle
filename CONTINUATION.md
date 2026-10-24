@@ -1,3 +1,7 @@
+## Efeitos por fonte — lotes 403-408 — 23/10/2026
+
+Publicadas 24 exportações aprovadas, com 838 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-403-408-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
 ## Fonte de personagem ou cenário — 13000501.swf / SP_skill_3
 
 Publicada1exportação source-only com50quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-0e611abddddf9593-90868a85777e-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
