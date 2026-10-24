@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 13000201.swf / C_dead
+
+Publicada1exportação source-only com53quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-fa8d1cbbe74209ab-495568e95bc6-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Fonte de personagem ou cenário — 13000201.swf / C_action_idle_1
 
 Publicada1exportação source-only com51quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-fa8d1cbbe74209ab-e8b16375b8c2-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
