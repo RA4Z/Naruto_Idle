@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 13000201.swf / SP_skill2
+
+Publicada1exportação source-only com50quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-fa8d1cbbe74209ab-e57c6aedff0a-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Efeitos por fonte — lotes 397-402 — 23/10/2026
 
 Publicadas 24 exportações aprovadas, com 1101 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-397-402-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
