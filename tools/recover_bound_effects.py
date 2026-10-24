@@ -12,6 +12,7 @@ import sys
 import xml.etree.ElementTree as ET
 from pack_native_frames import pack
 from pack_native_sequence import pack_sequence
+import parallel_sequence_encode
 from atomic_json import write_json_atomic
 
 
@@ -52,6 +53,7 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--source',required=True);parser.add_argument('--project',required=True)
     parser.add_argument('--output',required=True);parser.add_argument('--work',required=True);parser.add_argument('--java',required=True)
     parser.add_argument('--ffdec',required=True);parser.add_argument('--classes',required=True)
+    parser.add_argument('--profile-dir',type=Path,help='Optional isolated profile under the generated work root')
     selection=parser.add_mutually_exclusive_group(required=True);selection.add_argument('--ids');selection.add_argument('--jobs',type=Path,help='One to four explicit exported source action jobs; never a skill ID')
     parser.add_argument('--atlas-format',choices=('png','webp'),default='png')
     parser.add_argument('--allow-pages',action='store_true',help='Split large atlases into bounded lossless pages instead of reducing resolution')
@@ -82,7 +84,9 @@ def main():
 
     index_path=output/'index.json';index=json.loads(index_path.read_text(encoding='utf-8')) if index_path.exists() else {'version':1,'effects':{},'deferred':{}}
     index.setdefault('sourceBundles',{});index.setdefault('sourceExports',{})
-    profile=work/'jpexs-profile';profile.mkdir(parents=True,exist_ok=True)
+    profile=args.profile_dir.resolve() if args.profile_dir else work/'jpexs-profile'
+    if not profile.resolve().is_relative_to(work):raise ValueError('Generated renderer profile escapes owned work root')
+    profile.mkdir(parents=True,exist_ok=True)
     environment=os.environ.copy();environment['APPDATA']=str(profile);environment['LOCALAPPDATA']=str(profile)
     for ident in ids:
         row=definitions[ident];logical=row.get('res','');entry={'id':ident,'definition':dict(row.attrib),'sourceConfig':config_record,'layers':[]}

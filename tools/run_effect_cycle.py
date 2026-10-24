@@ -17,6 +17,23 @@ def main():
     args.report.parent.mkdir(parents=True,exist_ok=True)
     def checkpoint():
         write_json_atomic(args.report,report)
+    policy_path=Path(args.work).resolve().parent/'cycles/sequence-parallel-policy.json'
+    policy=json.loads(policy_path.read_bytes()) if policy_path.exists() else {}
+    selected_batches=[batches[number] for number in numbers]
+    if (policy.get('overlapExtractionValidation') is True
+        and min(numbers)>=policy.get('activationBatchMinimum',0)
+        and all(batch.get('jobs') for batch in selected_batches)):
+        all_keys=[]
+        for batch in selected_batches:
+            jobs=batch['jobs'];keys=[job['key'] for job in jobs]
+            if not 1<=len(keys)<=4 or len(set(keys))!=len(keys):raise ValueError('Invalid explicit pipeline batch')
+            for job in jobs:
+                if job.get('source')!=archive.record(job['resource']):raise ValueError('Pipeline original source changed')
+            all_keys.extend(keys)
+        if len(all_keys)!=len(set(all_keys)):raise ValueError('Duplicate actions across pipeline batches')
+        from overlap_effect_batches import run_pipeline
+        run_pipeline(args,selected_batches,tool,checkpoint,report)
+        report['state']='cycle-complete-review-before-next';checkpoint();return
     for number in numbers:
         batch=batches[number];jobs=batch.get('jobs');ids=[j['key'] for j in jobs] if jobs else batch['ids']
         if not 1<=len(ids)<=4 or len(set(ids))!=len(ids):raise ValueError('Invalid explicit batch size')

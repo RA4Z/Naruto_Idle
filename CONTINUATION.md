@@ -1,3 +1,121 @@
+## Efeitos por fonte — lotes 667-672 — 23/10/2026
+
+Publicadas 22 exportações aprovadas, com 896 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-667-672-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
+## Fonte de personagem ou cenário — 19001201.swf / C_entry
+
+Publicada1exportação source-only com60quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-8e0890638727a57d-818a65f78c4b-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
+## Efeitos por fonte — lotes 661-666 — 23/10/2026
+
+Publicadas 22 exportações aprovadas, com 1418 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-661-666-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
+## Efeitos por fonte — lotes 655-660 — 23/10/2026
+
+Publicadas 20 exportações aprovadas, com 1340 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-655-660-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
+## Fonte de personagem ou cenário — 19001201.swf / A_1hit
+
+Publicada1exportação source-only com60quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-8e0890638727a57d-6f079ec9f3df-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
+## Fonte de personagem ou cenário — 19001201.swf / A_2hit
+
+Publicada1exportação source-only com60quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-8e0890638727a57d-33d85e7fd1f6-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
+## Fonte de personagem ou cenário — 19001201.swf / SP_skill_1
+
+Publicada1exportação source-only com60quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-8e0890638727a57d-2f652b1598e0-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
+## Fonte de personagem ou cenário — 19001201.swf / A_3hit
+
+Publicada1exportação source-only com60quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-8e0890638727a57d-178fa07216e4-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
+## Efeitos por fonte — lotes 649-654 — 23/10/2026
+
+Publicadas 22 exportações aprovadas, com 1343 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-649-654-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
+## Efeitos por fonte — lotes 643-648 — 23/10/2026
+
+Publicadas 24 exportações aprovadas, com 1247 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-643-648-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
+## Efeitos por fonte — lotes 637-642 — 23/10/2026
+
+Publicadas 22 exportações aprovadas, com 1548 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-637-642-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
+## Fonte de personagem ou cenário — 13000501.swf / SP_skill_1
+
+Publicada1exportação source-only com60quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-0e611abddddf9593-2f652b1598e0-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
+## Efeitos por fonte — lotes 631-636 — 23/10/2026
+
+Publicadas 20 exportações aprovadas, com 1881 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-631-636-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
+## Efeito recuperado com canvas offline revisado — 1nrv_luoxuanwan.swf / lian
+
+29 quadros a 24.0 FPS originais, com prova de todos os pixels no staging e instalado. Canvas offline maior aceito apenas com releitura dos bounds originais; páginas e atlas mantêm os limites de runtime. Provas em reports/reviewed-native-source-6331fe4e55bdd4da-77d8f405f694-proof.json.gz. Fonte sintética separada, sem integração automática de jutsu, hitbox ou personagem.
+
+## Efeitos por fonte — lotes 625-630 — 23/10/2026
+
+Publicadas 23 exportações aprovadas, com 1712 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-625-630-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
+## Efeitos por fonte — lotes 619-624 — 23/10/2026
+
+Publicadas 24 exportações aprovadas, com 953 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-619-624-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
+## Equilíbrio de CPU e RAM comprovado — 24/10/2026
+
+Comparação completa de quatro animações originais com1/2/4processos, conferindo todas as entradas/arquivos contra a execução serial e todos os hashesRGBA originais. Limite escolhido:2ações simultâneas, admissão adaptativa porRAM eCPU;2GiBreservados poração,4GiBde folga planejada e2GiBcríticos. Arquivos do mesmoSWF permanecem serializados. Cotas poração impedem cada extrator de iniciar sozinho24codificadores; o último trabalho pode aproveitar memória liberada. Um escritor de catálogo/Git. Método WebP sem perdas para sequências:2, escolhido por teste de pixels/tempo/tamanho; atlases públicos permanecem no método4. Provas em reports/balanced-action-benchmark-20261024.json e reports/lossless-codec-benchmark-20261024.json. Não altera quadros, escala, FPS, limites ou jutsus.
+
+## Efeitos por fonte — lotes 613-618 — 23/10/2026
+
+Publicadas 21 exportações aprovadas, com 1202 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-613-618-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
+## Fonte de personagem ou cenário — 13000501.swf / SP_skill_2
+
+Publicada1exportação source-only com60quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-0e611abddddf9593-19b9bd13b2a0-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
+## Efeitos por fonte — lotes 607-612 — 23/10/2026
+
+Publicadas 23 exportações aprovadas, com 1097 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-607-612-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
+## Efeito recuperado com canvas offline revisado — CHANGMENsltz.swf / tips
+
+30 quadros a 24.0 FPS originais, com prova de todos os pixels no staging e instalado. Canvas offline maior aceito apenas com releitura dos bounds originais; páginas e atlas mantêm os limites de runtime. Provas em reports/reviewed-native-source-2226289771e8bce0-035211a30290-proof.json.gz. Fonte sintética separada, sem integração automática de jutsu, hitbox ou personagem.
+
+## Efeitos por fonte — lotes 601-606 — 23/10/2026
+
+Publicadas 23 exportações aprovadas, com 1253 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-601-606-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
+## Efeitos por fonte — lotes 595-600 — 23/10/2026
+
+Publicadas 23 exportações aprovadas, com 1015 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-595-600-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
+## Recuperação dos caminhos temporários — 24/10/2026
+
+    Primeiro pipeline595..600 completou os lotes e sobrepôs10,125s de validação/extração, mas a revisão bloqueou2saídas por caminho temporário longo no Windows. Corrigidos nomes temporários e diretórios isolados. Dois conjuntos originais recuperados dos PNGs preservados, sem renderizar novamente e com validação completa.162testes passaram, incluindo regressão perto do limite de caminho. reports/parallel-path-repair-20261024.json. Mantidas21ações já aprovadas; todas serão conferidas na cópia instalada antes de retomar601. Tempos do primeiro lote não incluem a recuperação, portanto não representam ganho completo.
+
+    ## Fonte recuperada por intervalos — 13000301.swf / SP_skill1
+
+60quadros originais completos,sem redução de escala ou mudança deFPS. Provas de todos os quadros no staging e na cópia instalada emreports/static-range-source-08dd2d069e56b122-9fbfd6d8fb01-proof.json.gz. Sequência source-only;exige visualizador/carregador para combate,não altera hitbox ou jutsu.
+
+## Efeitos por fonte — lotes 589-594 — 23/10/2026
+
+Publicadas 24 exportações aprovadas, com 1329 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-589-594-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
+## Extração paralela comprovada — 24/10/2026
+
+Ativados lotes isolados com extração do próximo durante a validação integral do anterior e codificação lossless de quadros independentes com até24processos, ajustados por RAM/canvas. Um escritor de catálogo/publicação. Provas de pixels e bytes,3efeitos completos reextraídos,28quadros de referência no codec e testes de falha em docs/EXTRACTION_PIPELINE_PERFORMANCE.md e reports/*golden-20261024.json. Limites de atlas/runtime e regras Supabase preservados. Extração não significa integração de jutsu/hitbox. A nova política substitui a serialização integral somente no pipeline principal; auxiliar permanece em gate exclusivo. Sem GPU, redução de resolução ou quadros omitidos.
+
+Resultados/checkpoints ficam salvos por etapa; commit/push agrupados no fim da janela ou da fila longa. Instalação local validada não implica novo commit imediato.
+
+## Efeitos por fonte — lotes 583-588 — 23/10/2026
+
+Publicadas 21 exportações aprovadas, com 1098 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-583-588-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
+## Efeitos por fonte — lotes 577-582 — 23/10/2026
+
+Publicadas 18 exportações aprovadas, com 1552 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-577-582-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
 ## Efeitos por fonte — lotes 571-576 — 23/10/2026
 
 Publicadas 23 exportações aprovadas, com 2231 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-571-576-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.

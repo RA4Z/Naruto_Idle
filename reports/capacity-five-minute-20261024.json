@@ -1,0 +1,187 @@
+{
+  "state": "completed-original-pixel-proofs-passed",
+  "pid": 60632,
+  "maximumSeconds": 300,
+  "productionQueuesRemainActive": true,
+  "sharedWrites": false,
+  "runs": [
+    {
+      "requestedConcurrency": 1,
+      "concurrencyLimit": 1,
+      "peakActiveRenderers": 1,
+      "jobs": 12,
+      "frames": 76,
+      "seconds": 61.625,
+      "framesPerSecond": 1.2332657200811359,
+      "minimumFreeRAM": 10775470080,
+      "maximumObservedWorkerRSS": 489938944,
+      "systemCPUPercent": 25.577168940122352,
+      "allOriginalPixelsMatch": true,
+      "fpsAndBoundsMatch": true
+    },
+    {
+      "requestedConcurrency": 2,
+      "concurrencyLimit": 2,
+      "peakActiveRenderers": 2,
+      "jobs": 12,
+      "frames": 76,
+      "seconds": 34.51600000006147,
+      "framesPerSecond": 2.20187739019193,
+      "minimumFreeRAM": 10411126784,
+      "maximumObservedWorkerRSS": 489938944,
+      "systemCPUPercent": 21.454737716681137,
+      "allOriginalPixelsMatch": true,
+      "fpsAndBoundsMatch": true
+    },
+    {
+      "requestedConcurrency": 4,
+      "concurrencyLimit": 4,
+      "peakActiveRenderers": 4,
+      "jobs": 12,
+      "frames": 76,
+      "seconds": 20.04700000002049,
+      "framesPerSecond": 3.791090936295821,
+      "minimumFreeRAM": 13486317568,
+      "maximumObservedWorkerRSS": 493793280,
+      "systemCPUPercent": 27.726564528693842,
+      "allOriginalPixelsMatch": true,
+      "fpsAndBoundsMatch": true
+    },
+    {
+      "requestedConcurrency": 8,
+      "concurrencyLimit": 8,
+      "peakActiveRenderers": 8,
+      "jobs": 12,
+      "frames": 76,
+      "seconds": 13.327999999979511,
+      "framesPerSecond": 5.702280912373712,
+      "minimumFreeRAM": 12253790208,
+      "maximumObservedWorkerRSS": 493793280,
+      "systemCPUPercent": 40.306097501344674,
+      "allOriginalPixelsMatch": true,
+      "fpsAndBoundsMatch": true
+    },
+    {
+      "requestedConcurrency": 12,
+      "concurrencyLimit": 12,
+      "peakActiveRenderers": 12,
+      "jobs": 12,
+      "frames": 76,
+      "seconds": 11.765999999945052,
+      "framesPerSecond": 6.459289478187568,
+      "minimumFreeRAM": 11150127104,
+      "maximumObservedWorkerRSS": 493793280,
+      "systemCPUPercent": 46.862875512692604,
+      "allOriginalPixelsMatch": true,
+      "fpsAndBoundsMatch": true
+    },
+    {
+      "requestedConcurrency": 12,
+      "concurrencyLimit": 12,
+      "peakActiveRenderers": 12,
+      "jobs": 12,
+      "frames": 76,
+      "seconds": 11.968999999924563,
+      "framesPerSecond": 6.34973682015866,
+      "minimumFreeRAM": 11067052032,
+      "maximumObservedWorkerRSS": 493793280,
+      "systemCPUPercent": 47.6990861618799,
+      "allOriginalPixelsMatch": true,
+      "fpsAndBoundsMatch": true
+    },
+    {
+      "requestedConcurrency": 8,
+      "concurrencyLimit": 8,
+      "peakActiveRenderers": 8,
+      "jobs": 12,
+      "frames": 76,
+      "seconds": 13.233999999938533,
+      "framesPerSecond": 5.742783738881139,
+      "minimumFreeRAM": 12243992576,
+      "maximumObservedWorkerRSS": 498241536,
+      "systemCPUPercent": 41.181106240457076,
+      "allOriginalPixelsMatch": true,
+      "fpsAndBoundsMatch": true
+    },
+    {
+      "requestedConcurrency": 4,
+      "concurrencyLimit": 4,
+      "peakActiveRenderers": 4,
+      "jobs": 12,
+      "frames": 76,
+      "seconds": 20.15700000000652,
+      "framesPerSecond": 3.770402341617077,
+      "minimumFreeRAM": 13885460480,
+      "maximumObservedWorkerRSS": 498241536,
+      "systemCPUPercent": 28.201564419160906,
+      "allOriginalPixelsMatch": true,
+      "fpsAndBoundsMatch": true
+    },
+    {
+      "requestedConcurrency": 2,
+      "concurrencyLimit": 2,
+      "peakActiveRenderers": 2,
+      "jobs": 12,
+      "frames": 76,
+      "seconds": 31.281000000075437,
+      "framesPerSecond": 2.429589846866044,
+      "minimumFreeRAM": 14309130240,
+      "maximumObservedWorkerRSS": 498241536,
+      "systemCPUPercent": 19.670357113127444,
+      "allOriginalPixelsMatch": true,
+      "fpsAndBoundsMatch": true
+    },
+    {
+      "requestedConcurrency": 1,
+      "concurrencyLimit": 1,
+      "peakActiveRenderers": 1,
+      "jobs": 12,
+      "frames": 76,
+      "seconds": 56.78099999995902,
+      "framesPerSecond": 1.3384758986290282,
+      "minimumFreeRAM": 14703816704,
+      "maximumObservedWorkerRSS": 498241536,
+      "systemCPUPercent": 14.26703672271028,
+      "allOriginalPixelsMatch": true,
+      "fpsAndBoundsMatch": true
+    }
+  ],
+  "wallSeconds": 293.7970000000205,
+  "means": [
+    {
+      "concurrency": 1,
+      "samples": 2,
+      "meanSeconds": 59.20299999997951
+    },
+    {
+      "concurrency": 2,
+      "samples": 2,
+      "meanSeconds": 32.89850000006845
+    },
+    {
+      "concurrency": 4,
+      "samples": 2,
+      "meanSeconds": 20.102000000013504
+    },
+    {
+      "concurrency": 8,
+      "samples": 2,
+      "meanSeconds": 13.280999999959022
+    },
+    {
+      "concurrency": 12,
+      "samples": 2,
+      "meanSeconds": 11.867499999934807
+    }
+  ],
+  "best": {
+    "concurrency": 12,
+    "samples": 2,
+    "meanSeconds": 11.867499999934807
+  },
+  "speedup": 4.988666526252769,
+  "referenceProofSha256": "1b99e95154c23333f0ff15a20ed2af83bc87e8950d8c606e1faaf3574fb4b275",
+  "scope": "Live-system static Java rendering pilot; same76frames per round. Production continued in background. Excludes production packing, validation and Git; not end-to-end extraction throughput.",
+  "productionConcurrencyChanged": false,
+  "totalVerifiedFrameRenders": 760
+}

@@ -1,0 +1,25 @@
+{
+  "state": "local-milestones-decoupled-from-remote-ref-updates",
+  "privateControlChanges": {
+    "publish_source_groups.py": {
+      "beforeSha256": "b322d5ea3b489e072e015ca21c322c33abdde28cd91d6c9a2425df44dc835f9c",
+      "afterSha256": "882d9ceba6157093bb2307d78957dcaf08956c97334318b629caddd334fbf877"
+    },
+    "interleave_with_reviewed_sources.py": {
+      "beforeSha256": "78a6f36bbc078d0f0b1d1dc03edad3a7ca221535da87174d6bf80bb8025cd443",
+      "afterSha256": "c745b054e24532c20294cae6a9f356fa90a5c50ca15681052d6fbb02b5fc204d"
+    },
+    "reviewed_source_at_boundary.py": {
+      "beforeSha256": "6a336cfa6c258161dc20a566ee4d24afcff283dd69cbb73a2d340784aed938be",
+      "afterSha256": "f17677bacd15687d2b7f0e4c74e36c7251e10111f492ac9ece8773d4d3c87044"
+    }
+  },
+  "registeredLocalHeadAndTreeGuardsPreserved": true,
+  "remoteDivergenceGuardBeforeCommitPushPreserved": true,
+  "explicitPullsPreservedAllLocalWork": true,
+  "remoteCommits": [
+    "35d863163",
+    "453924ddb"
+  ],
+  "scope": "Remote-only commits no longer abort independent local extraction milestones. Explicit pulls and final commit/push still require safe integration; no forced push or source-proof checks removed."
+}

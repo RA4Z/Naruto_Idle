@@ -1,0 +1,93 @@
+{
+  "state": "completed-original-pixel-proofs-passed",
+  "pid": 36048,
+  "maximumSeconds": 180,
+  "productionQueuesRemainActive": true,
+  "sharedWrites": false,
+  "runs": [
+    {
+      "requestedConcurrency": 12,
+      "concurrencyLimit": 12,
+      "peakActiveRenderers": 12,
+      "jobs": 24,
+      "frames": 152,
+      "seconds": 19.54599999997299,
+      "framesPerSecond": 7.776527166694466,
+      "minimumFreeRAM": 10647887872,
+      "maximumObservedWorkerRSS": 492900352,
+      "systemCPUPercent": 63.68910673201961,
+      "allOriginalPixelsMatch": true,
+      "fpsAndBoundsMatch": true
+    },
+    {
+      "requestedConcurrency": 24,
+      "concurrencyLimit": 21,
+      "peakActiveRenderers": 21,
+      "jobs": 24,
+      "frames": 152,
+      "seconds": 18.233999999938533,
+      "framesPerSecond": 8.336075463448086,
+      "minimumFreeRAM": 7457861632,
+      "maximumObservedWorkerRSS": 494796800,
+      "systemCPUPercent": 68.67026408891113,
+      "allOriginalPixelsMatch": true,
+      "fpsAndBoundsMatch": true
+    },
+    {
+      "requestedConcurrency": 24,
+      "concurrencyLimit": 20,
+      "peakActiveRenderers": 20,
+      "jobs": 24,
+      "frames": 152,
+      "seconds": 18.15700000000652,
+      "framesPerSecond": 8.371426997849062,
+      "minimumFreeRAM": 7846719488,
+      "maximumObservedWorkerRSS": 495976448,
+      "systemCPUPercent": 69.10140562248996,
+      "allOriginalPixelsMatch": true,
+      "fpsAndBoundsMatch": true
+    },
+    {
+      "requestedConcurrency": 12,
+      "concurrencyLimit": 12,
+      "peakActiveRenderers": 12,
+      "jobs": 24,
+      "frames": 152,
+      "seconds": 19.109000000054948,
+      "framesPerSecond": 7.954367052151495,
+      "minimumFreeRAM": 10541649920,
+      "maximumObservedWorkerRSS": 495976448,
+      "systemCPUPercent": 62.46418338108882,
+      "allOriginalPixelsMatch": true,
+      "fpsAndBoundsMatch": true
+    }
+  ],
+  "wallSeconds": 90.39000000001397,
+  "means": [
+    {
+      "concurrency": 12,
+      "samples": 2,
+      "meanSeconds": 19.32750000001397
+    },
+    {
+      "concurrency": 21,
+      "samples": 1,
+      "meanSeconds": 18.233999999938533
+    },
+    {
+      "concurrency": 20,
+      "samples": 1,
+      "meanSeconds": 18.15700000000652
+    }
+  ],
+  "best": {
+    "concurrency": 20,
+    "samples": 1,
+    "meanSeconds": 18.15700000000652
+  },
+  "speedup": 1.06446549540161,
+  "referenceProofSha256": "1b99e95154c23333f0ff15a20ed2af83bc87e8950d8c606e1faaf3574fb4b275",
+  "scope": "Live-system static Java rendering pilot; same152frames per round. Production continued in background. Excludes production packing, validation and Git; not end-to-end extraction throughput.",
+  "productionConcurrencyChanged": false,
+  "totalVerifiedFrameRenders": 608
+}

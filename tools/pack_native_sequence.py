@@ -7,7 +7,7 @@ import hashlib,json,struct
 from pathlib import Path
 from PIL import Image
 
-def pack_sequence(native,output):
+def _pack_sequence_serial(native,output,*,reuse_verified=False,encoding_method=4):
     metadata=json.loads((native/'render.json').read_bytes());files=sorted(native.glob('*.png'))
     if not metadata.get('staticOnly') or len(files)!=metadata['frameCount'] or not 1<=len(files)<=480:raise ValueError('Incomplete static source timeline')
     output.mkdir(parents=True,exist_ok=True);keys={};frame_files=[];timeline=[];hashes=[];canvas=None;visible=False
@@ -19,7 +19,7 @@ def pack_sequence(native,output):
         visible|=image.getbbox() is not None;pixels=image.tobytes();rgba=hashlib.sha256(pixels).hexdigest();hashes.append(rgba)
         if rgba not in keys:
             filename='frame-'+hashlib.sha256(struct.pack('<II',width,height)+pixels).hexdigest()[:24]+'.webp';target=output/filename
-            image.save(target,lossless=True,exact=True,method=4)
+            if not reuse_verified or not target.is_file():image.save(target,lossless=True,exact=True,method=encoding_method)
             with Image.open(target) as stored:
                 if hashlib.sha256(stored.convert('RGBA').tobytes()).hexdigest()!=rgba:raise ValueError('Source sequence pixels changed')
             keys[rgba]=len(frame_files);frame_files.append(filename)
@@ -34,3 +34,9 @@ def pack_sequence(native,output):
           'origin':[-left/width,-top/height],'sourcePixelScale':1,'validation':proof}
     (output/'manifest.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     return data,proof
+
+
+def pack_sequence(native,output,*,workers=None):
+    from parallel_sequence_encode import encode_sequence,sequence_method
+    from functools import partial
+    return encode_sequence(Path(native),Path(output),partial(_pack_sequence_serial,encoding_method=sequence_method()),workers=workers)

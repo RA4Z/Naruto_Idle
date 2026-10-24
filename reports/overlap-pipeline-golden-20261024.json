@@ -1,0 +1,59 @@
+{
+  "state": "fresh-extraction-and-merged-original-pixels-verified",
+  "ids": [
+    "source:5ab27df7faa859da:a7a90293b215",
+    "source:448e41f026c76646:4e07408562be",
+    "source:f0131aceb64a8e2d:9dd1a89c80c2"
+  ],
+  "serialSeconds": 4.687000000034459,
+  "pipelineSeconds": 3.984000000054948,
+  "actualOverlapSeconds": 0.5,
+  "events": [
+    {
+      "role": "extract",
+      "batch": 1,
+      "pid": 37444,
+      "start": 871185.859,
+      "end": 871187.203
+    },
+    {
+      "role": "extract",
+      "batch": 2,
+      "pid": 56832,
+      "start": 871187.203,
+      "end": 871188.406
+    },
+    {
+      "role": "validate",
+      "batch": 1,
+      "pid": 11212,
+      "start": 871187.218,
+      "end": 871187.468
+    },
+    {
+      "role": "extract",
+      "batch": 3,
+      "pid": 48400,
+      "start": 871188.421,
+      "end": 871189.515
+    },
+    {
+      "role": "validate",
+      "batch": 2,
+      "pid": 16240,
+      "start": 871188.421,
+      "end": 871188.671
+    },
+    {
+      "role": "validate",
+      "batch": 3,
+      "pid": 37416,
+      "start": 871189.531,
+      "end": 871189.765
+    }
+  ],
+  "sourceFrames": 27,
+  "serialAndParallelEntriesIdentical": true,
+  "allOriginalRgbaHashesMatch": true,
+  "scope": "Three complete original clips freshly rerendered, full pixel validation before merge and after aggregate; production active in background. Not a universal throughput claim."
+}

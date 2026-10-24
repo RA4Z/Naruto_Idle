@@ -1,0 +1,24 @@
+{
+  "state": "known-bitmap-limit-preserved-not-substituted",
+  "failure": {
+    "id": "source:10bb57681524ff59:082c71c3ac0f",
+    "failure": {
+      "id": "source:10bb57681524ff59:082c71c3ac0f",
+      "definition": {
+        "id": "source:10bb57681524ff59:082c71c3ac0f",
+        "type": "0",
+        "res": "assets/battle/effect/ZQ_Zhaomeiming_beidong.swf",
+        "frontAction": "shang",
+        "sourceOnly": "true",
+        "name": "ZQ_Zhaomeiming_beidong / shang"
+      },
+      "reason": "CalledProcessError: Command '['C:\\\\Users\\\\fegug\\\\OneDrive\\\\Documentos\\\\Shinobi_Idle\\\\effects_work\\\\vendor\\\\jdk\\\\jdk-17.0.20.1+1\\\\bin\\\\java.exe', '-Djava.awt.headless=true', '-Duser.home=C:\\\\Users\\\\fegug\\\\AppData\\\\Local\\\\Packages\\\\OpenAI.Codex_2p2nqsd0c76g0\\\\LocalCache\\\\Local\\\\ShinobiIdleExtraction\\\\pb\\\\a0e8e160\\\\b614\\\\n\\\\jpexs-profile', '-Xmx1024m', '-cp', 'C:\\\\Users\\\\fegug\\\\OneDrive\\\\Documentos\\\\Shinobi_Idle\\\\extraction_work\\\\classes;C:\\\\Users\\\\fegug\\\\OneDrive\\\\Documentos\\\\Shinobi_Idle\\\\effects_work\\\\vendor\\\\ffdec\\\\lib\\\\*', 'BitmapTimelineRender', 'C:\\\\Users\\\\fegug\\\\AppData\\\\Local\\\\Packages\\\\OpenAI.Codex_2p2nqsd0c76g0\\\\LocalCache\\\\Local\\\\ShinobiIdleExtraction\\\\pb\\\\a0e8e160\\\\b614\\\\n\\\\10bb57681524ff59\\\\source.swf', 'C:\\\\Users\\\\fegug\\\\AppData\\\\Local\\\\Packages\\\\OpenAI.Codex_2p2nqsd0c76g0\\\\LocalCache\\\\Local\\\\ShinobiIdleExtraction\\\\pb\\\\a0e8e160\\\\b614\\\\n\\\\10bb57681524ff59\\\\082c71c3ac0f-expanded.xml', 'C:\\\\Users\\\\fegug\\\\AppData\\\\Local\\\\Packages\\\\OpenAI.Codex_2p2nqsd0c76g0\\\\LocalCache\\\\Local\\\\ShinobiIdleExtraction\\\\pb\\\\a0e8e160\\\\b614\\\\n\\\\10bb57681524ff59\\\\mme-082c71c3ac0f']' returned non-zero exit status 1.",
+      "rendererDetail": "Exception in thread \"main\" java.lang.IllegalArgumentException: Source bitmap pixel budget exceeded\r\n\tat BitmapTimelineRender.main(BitmapTimelineRender.java:52)\r\n",
+      "state": "not-substituted"
+    }
+  },
+  "rendererSourceSha256": "f22bea1963bae7770263dda72a83c5596390ecf9e55421f8096d6b7c08ae27a8",
+  "noBudgetIncrease": true,
+  "requiresAdapter": true,
+  "scope": "This action remains unextracted. Other21original actions retain full proofs."
+}

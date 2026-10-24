@@ -1,0 +1,21 @@
+{
+  "state": "two-original-native-sequences-recovered-and-fully-validated",
+  "recovered": [
+    {
+      "id": "source:d4a9e6ff97ff929c:4814d92093ac",
+      "frames": 125,
+      "rerenderedFrames": 0,
+      "originalNativePreserved": true
+    },
+    {
+      "id": "source:c74e6486f42be24b:082c71c3ac0f",
+      "frames": 56,
+      "rerenderedFrames": 0,
+      "originalNativePreserved": true
+    }
+  ],
+  "allOriginalPixelsVerified": true,
+  "testsPassed": 162,
+  "cause": "Temporary codec filename plus redirected Windows AppData exceeded legacy path length",
+  "fix": "Short opaque temporary filename and short isolated run/batch/output paths; quality and source limits unchanged"
+}

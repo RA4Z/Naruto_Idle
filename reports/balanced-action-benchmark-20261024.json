@@ -1,0 +1,135 @@
+{
+  "state": "full-original-clips-and-serial-equivalence-proven",
+  "root": "C:\\Users\\fegug\\AppData\\Local\\ShinobiIdleExtraction\\ab\\11e1df9d",
+  "cases": [
+    {
+      "id": "source:6509e328d6d88883:d4735e3a265e",
+      "source": {
+        "path": "assets/battle/effect/0JTD123hit.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 115429,
+        "sha256": "c02dd1b6866410ddf796a9ff73a0b791e1d97502e54b67b479624f801536d7e3",
+        "sourceKind": "exported-inventory"
+      },
+      "frames": 23,
+      "canvas": [
+        344,
+        242
+      ]
+    },
+    {
+      "id": "source:e80a2017c361eac7:6b86b273ff34",
+      "source": {
+        "path": "assets/battle/effect/0FDVylfb.swf",
+        "tag": "PT_NarutoAlpha6.00Build306",
+        "bytes": 176243,
+        "sha256": "264d9d3c09e5e337c6c446aff8b5327ae77b4d972c9ceb811b762b70cae30ce5",
+        "sourceKind": "exported-inventory"
+      },
+      "frames": 50,
+      "canvas": [
+        749,
+        511
+      ]
+    },
+    {
+      "id": "source:b84f552347f17bf2:6b86b273ff34",
+      "source": {
+        "path": "assets/battle/effect/0NRThmddz.swf",
+        "tag": "PT_NarutoAlpha6.00Build306",
+        "bytes": 306826,
+        "sha256": "faaf5627db955d4be9cdab57d00249f18b038a1bb1f2b8bda7786d3e47c3ea87",
+        "sourceKind": "exported-inventory"
+      },
+      "frames": 106,
+      "canvas": [
+        2011,
+        1261
+      ]
+    },
+    {
+      "id": "source:dfbafe7a5163ea68:6b86b273ff34",
+      "source": {
+        "path": "assets/battle/effect/0FDVxfyd.swf",
+        "tag": "PT_NarutoAlpha6.00Build306",
+        "bytes": 980013,
+        "sha256": "45949034fad962459ac630617a92926950579204d5bc851f0c28dc6a708a7e30",
+        "sourceKind": "exported-inventory"
+      },
+      "frames": 70,
+      "canvas": [
+        1019,
+        517
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "requestedWorkers": 1,
+      "actualPeakWorkers": 1,
+      "seconds": 50.84399999992456,
+      "meanSystemCPU": 24.626058006217683,
+      "minimumAvailableRAM": 10390540288,
+      "allOriginalFramesMatch": true,
+      "allSerialEntriesAndArtifactHashesMatch": true,
+      "frames": 249
+    },
+    {
+      "requestedWorkers": 2,
+      "actualPeakWorkers": 2,
+      "seconds": 38.31200000003446,
+      "meanSystemCPU": 29.57095286277284,
+      "minimumAvailableRAM": 10292060160,
+      "allOriginalFramesMatch": true,
+      "allSerialEntriesAndArtifactHashesMatch": true,
+      "frames": 249
+    },
+    {
+      "requestedWorkers": 4,
+      "actualPeakWorkers": 3,
+      "seconds": 36.92200000002049,
+      "meanSystemCPU": 29.23374699592778,
+      "minimumAvailableRAM": 10183245824,
+      "allOriginalFramesMatch": true,
+      "allSerialEntriesAndArtifactHashesMatch": true,
+      "frames": 249
+    },
+    {
+      "requestedWorkers": 4,
+      "actualPeakWorkers": 3,
+      "seconds": 37.46799999999348,
+      "meanSystemCPU": 30.421948685451834,
+      "minimumAvailableRAM": 10240495616,
+      "allOriginalFramesMatch": true,
+      "allSerialEntriesAndArtifactHashesMatch": true,
+      "frames": 249
+    },
+    {
+      "requestedWorkers": 2,
+      "actualPeakWorkers": 2,
+      "seconds": 38.313000000081956,
+      "meanSystemCPU": 28.76781850107975,
+      "minimumAvailableRAM": 10389757952,
+      "allOriginalFramesMatch": true,
+      "allSerialEntriesAndArtifactHashesMatch": true,
+      "frames": 249
+    },
+    {
+      "requestedWorkers": 1,
+      "actualPeakWorkers": 1,
+      "seconds": 50.03099999995902,
+      "meanSystemCPU": 24.50451929959001,
+      "minimumAvailableRAM": 10287235072,
+      "allOriginalFramesMatch": true,
+      "allSerialEntriesAndArtifactHashesMatch": true,
+      "frames": 249
+    }
+  ],
+  "meanSeconds": {
+    "1": 50.43749999994179,
+    "2": 38.31250000005821,
+    "4": 37.195000000006985
+  },
+  "selectedMaximumActionWorkers": 2,
+  "scope": "Same four complete original clips per round, including rendering, packing, full source-pixel validation and serialized consolidation. Excludes Git/publication. Actual worker admission remains adaptive to RAM/CPU."
+}

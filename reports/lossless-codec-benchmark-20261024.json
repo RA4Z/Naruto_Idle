@@ -1,0 +1,54 @@
+{
+  "state": "all-original-rgba-proven",
+  "runs": [
+    {
+      "method": 4,
+      "seconds": 6.704000000027008,
+      "bytes": 1171482,
+      "allOriginalRgbaMatches": true
+    },
+    {
+      "method": 2,
+      "seconds": 5.577999999979511,
+      "bytes": 1181588,
+      "allOriginalRgbaMatches": true
+    },
+    {
+      "method": 0,
+      "seconds": 2.7179999999934807,
+      "bytes": 13976062,
+      "allOriginalRgbaMatches": true
+    },
+    {
+      "method": 0,
+      "seconds": 2.73499999998603,
+      "bytes": 13976062,
+      "allOriginalRgbaMatches": true
+    },
+    {
+      "method": 2,
+      "seconds": 5.562000000034459,
+      "bytes": 1181588,
+      "allOriginalRgbaMatches": true
+    },
+    {
+      "method": 4,
+      "seconds": 6.48499999998603,
+      "bytes": 1171482,
+      "allOriginalRgbaMatches": true
+    }
+  ],
+  "meanSeconds": {
+    "0": 2.7264999999897555,
+    "2": 5.570000000006985,
+    "4": 6.594500000006519
+  },
+  "bytes": {
+    "0": 13976062,
+    "2": 1181588,
+    "4": 1171482
+  },
+  "selectedSourceSequenceWebPMethod": 2,
+  "scope": "Ten original source frames sampled across three sources; all pixels including hidden RGB preserved. Method controls compression effort and bytes, never lossy quality. Public runtime atlases retain method4.",
+  "selectionRule": "At least15percent faster with no more than10percent byte increase on this sample; otherwise retain method4."
+}
