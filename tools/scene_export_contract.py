@@ -1,0 +1,105 @@
+"""Explicit original-source contract for the remaining scene visual exports."""
+import collections
+import hashlib
+import math
+import re
+import struct
+from entity_pipeline import tags
+from scene_point_data import nested_tags
+from swf_bytes import decode
+
+
+def scene_export_facts(archive, job):
+    logical, action = job['resource'], job['action']
+    if (job.get('sourceKind') != 'scene-exported-sprite'
+            or not re.fullmatch(r'assets/role/npc/scene/npcres/[A-Za-z0-9_]+\.swf', logical)
+            or not isinstance(action, str) or not 1 <= len(action) <= 512 or action == 'posData'):
+        raise ValueError('An explicit scene visual export is required; posData uses its metadata adapter')
+    source = archive.record(logical)
+    key = 'source:' + hashlib.sha256(logical.encode()).hexdigest()[:16] + ':' + hashlib.sha256(action.encode()).hexdigest()[:12]
+    if source != job['source'] or key != job['key']:
+        raise ValueError('Planned scene source or action identity changed')
+    raw = archive.raw(logical)
+    records = list(tags(raw))
+    symbols, sprites = {}, {}
+    for kind, payload in records:
+        if kind == 39:
+            ident = struct.unpack_from('<H', payload)[0]
+            if ident in sprites:
+                raise ValueError('Duplicate scene sprite')
+            sprites[ident] = payload
+        elif kind == 76:
+            count = struct.unpack_from('<H', payload)[0]
+            offset = 2
+            for _ in range(count):
+                ident = struct.unpack_from('<H', payload, offset)[0]
+                offset += 2
+                end = payload.index(b'\0', offset)
+                name = payload[offset:end].decode('utf-8')
+                if name in symbols:
+                    raise ValueError('Ambiguous scene export')
+                symbols[name] = ident
+                offset = end + 1
+        elif kind == 87 and payload[6:].lstrip().startswith(b'<actions'):
+            raise ValueError('Scene MME data requires a separate explicit adapter')
+    symbol = symbols.get(action)
+    if symbol is None or symbol != job['symbolId'] or symbol not in sprites:
+        raise ValueError('Exact scene sprite export differs from plan')
+    sprite = sprites[symbol]
+    frames = struct.unpack_from('<H', sprite, 2)[0]
+    rows = list(nested_tags(sprite))
+    counts = collections.Counter(kind for kind, _ in rows)
+    if not 1 <= frames <= 480 or frames != job['authoredFrames'] or counts[1] != frames:
+        raise ValueError('Scene source frame count differs from plan or timeline')
+    if counts[0] != 1 or rows[-1] != (0, b'') or any(kind in (0, 1) and payload for kind, payload in rows):
+        raise ValueError('Malformed scene source timeline')
+    if set(counts) - {0, 1, 26, 28, 43, 70}:
+        raise ValueError('Scene timeline feature requires an explicit adapter')
+    labels, frame = [], 0
+    for kind, payload in rows:
+        if kind == 1:
+            frame += 1
+        elif kind == 43:
+            end = payload.index(b'\0')
+            suffix = payload[end + 1:]
+            if suffix not in (b'', b'\0', b'\1') or frame >= frames:
+                raise ValueError('Malformed scene source frame label')
+            labels.append({'frame': frame, 'name': payload[:end].decode('utf-8'),
+                           'namedAnchor': bool(suffix and suffix[0])})
+        if kind in (26, 70):
+            if not payload or payload[0] & 0x20:
+                raise ValueError('Named scene visual placements require independent point validation')
+    decoded = decode(raw)
+    fps_at = 8 + (5 + 4 * (decoded[8] >> 3) + 7) // 8
+    fps = struct.unpack_from('<H', decoded, fps_at)[0] / 256
+    if not math.isfinite(fps) or fps <= 0 or fps != job['rootFps'] or archive.record(logical) != source:
+        raise ValueError('Scene source fps or original bytes changed')
+    return {'sourceKind': 'scene-exported-sprite', 'exportName': action, 'symbolId': symbol,
+            'authoredFrames': frames, 'fps': fps, 'sourceSpriteSha256': hashlib.sha256(sprite).hexdigest(),
+            'sourceTagCounts': {str(kind): count for kind, count in counts.items()},
+            'frameLabels': labels, 'namedInstances': [], 'sourceExecution': False,
+            'scope': 'Exact original exported visual timeline; no gameplay identity or runtime script behavior inferred.'}
+
+
+def validate_scene_entry(archive, entry):
+    if entry.get('sourceKind') != 'scene-exported-sprite' or entry.get('sourceOnly') is not True:
+        raise ValueError('Not a scene source-only entry')
+    fact = entry['sourceExport']
+    job = {'sourceKind': entry['sourceKind'], 'resource': entry['source']['path'],
+           'action': entry['definition']['frontAction'], 'key': entry['id'], 'source': entry['source'],
+           'symbolId': fact['symbolId'], 'authoredFrames': fact['authoredFrames'], 'rootFps': fact['fps']}
+    if scene_export_facts(archive, job) != fact or entry['sourceConfig'] != entry['source']:
+        raise ValueError('Scene source facts or provenance changed')
+    if len(entry['layers']) != 1:
+        raise ValueError('One exact scene export per entry required')
+    layer = entry['layers'][0]
+    if layer['action'] != fact['exportName'] or layer.get('namedInstances') != []:
+        raise ValueError('Scene action or independently verified point metadata changed')
+    proof = layer['validation']
+    if proof['nativeFrames'] != fact['authoredFrames']:
+        raise ValueError('Scene rendered frame count differs from original export')
+    if layer.get('animation'):
+        animation = layer['animation']
+        if len(animation['timeline']) != fact['authoredFrames'] or animation['fps'] != fact['fps']:
+            raise ValueError('Scene atlas fps or timeline differs from original')
+    return True

@@ -12,7 +12,8 @@ def contained(root,relative):
     if not target.is_relative_to(root.resolve()):raise ValueError('Source artifact follows an external link')
     return target
 
-def publish(project,stage,archive,ids,proof_paths):
+def publish(project,stage,archive,ids,proof_paths,*,source_kind='battle-effect-exported-sprite'):
+    if source_kind not in ('battle-effect-exported-sprite','scene-exported-sprite'):raise ValueError('Explicit supported source kind required')
     if not 1<=len(ids)<=24 or len(ids)!=len(set(ids)) or any(not re.fullmatch(r'source:[0-9a-f]{16}:[0-9a-f]{12}',i) for i in ids):raise ValueError('Choose up to 24 exact source-only IDs')
     project=project.resolve();stage=stage.resolve()
     if project.is_relative_to(archive.root) or stage.is_relative_to(archive.root):raise ValueError('Originals are read-only')
@@ -31,7 +32,12 @@ def publish(project,stage,archive,ids,proof_paths):
         if entry.get('sourceOnly') is not True or entry.get('bindingOrigin')!='exported-source-action-not-a-skill-id':raise ValueError('Not a source-only review entry')
         logical=entry['source']['path'];action=entry['definition']['frontAction']
         expected='source:'+hashlib.sha256(logical.encode()).hexdigest()[:16]+':'+hashlib.sha256(action.encode()).hexdigest()[:12]
-        if ident!=expected or entry['id']!=ident or not logical.startswith('assets/battle/effect/'):raise ValueError('Exact source/action identity differs')
+        if ident!=expected or entry['id']!=ident:raise ValueError('Exact source/action identity differs')
+        if source_kind=='battle-effect-exported-sprite':
+            if not logical.startswith('assets/battle/effect/') or entry.get('sourceKind','battle-effect-exported-sprite')!=source_kind:raise ValueError('Battle source kind/path differs; scenes require explicit publication')
+        else:
+            from scene_export_contract import validate_scene_entry
+            validate_scene_entry(archive,entry)
         for evidence in (entry['source'],entry['sourceConfig']):
             if archive.record(evidence['path'])!=evidence:raise ValueError('Original source changed')
         if len(entry['layers'])!=1:raise ValueError('Source exports must preserve one exact exported action')
@@ -39,6 +45,7 @@ def publish(project,stage,archive,ids,proof_paths):
             if layer['action']!=action:raise ValueError('Source action binding changed')
             proof=proofs.get((ident,action,layer['plane']))
             if proof is None or proof.get('sourceEntrySha256')!=entry_digest(entry):raise ValueError('Missing or stale exact-entry source proof')
+            if source_kind=='scene-exported-sprite' and proof.get('sourceSceneExportMatch') is not True:raise ValueError('Independent original scene export proof required')
             if proof.get('sourcePixelScale')!=1:raise ValueError('Original pixel scale is required')
             if layer.get('sourceSequence'):
                 relative=PurePosixPath(layer['sourceSequence']['manifestPath'])
@@ -92,11 +99,11 @@ def publish(project,stage,archive,ids,proof_paths):
 def main():
     ap=argparse.ArgumentParser()
     for name in ('project','staging','source'):ap.add_argument('--'+name,type=Path,required=True)
-    ap.add_argument('--proofs',type=Path,nargs='+',required=True);ap.add_argument('--ids',required=True);ap.add_argument('--label',required=True);args=ap.parse_args()
+    ap.add_argument('--source-kind',choices=('battle-effect-exported-sprite','scene-exported-sprite'),default='battle-effect-exported-sprite');ap.add_argument('--proofs',type=Path,nargs='+',required=True);ap.add_argument('--ids',required=True);ap.add_argument('--label',required=True);args=ap.parse_args()
     if not args.label.isalnum():raise ValueError('Simple report label required')
     sys.path.insert(0,str(args.project/'tools'))
     from original_archive import OriginalArchive
-    result=publish(args.project,args.staging,OriginalArchive(args.source),args.ids.split(','),args.proofs)
+    result=publish(args.project,args.staging,OriginalArchive(args.source),args.ids.split(','),args.proofs,source_kind=args.source_kind)
     path=args.project/'reports'/('native-source-exports-install-'+args.label+'.json.gz');path.parent.mkdir(parents=True,exist_ok=True)
     with gzip.GzipFile(filename=str(path),mode='wb',mtime=0) as stream:stream.write((json.dumps(result,ensure_ascii=False,indent=2)+'\n').encode())
     print(json.dumps({'report':str(path),'added':len(result['added']),'alreadyCurrent':len(result['alreadyCurrent']),'sourceFramesVerified':result['sourceFramesVerified'],'copiedFiles':result['copiedFiles'],'existingBindingsPreserved':True}))

@@ -1,3 +1,9 @@
+## Pontos de cenário e adaptador explícito — 23/10/2026
+
+Três exports posData/head preservados em asset-source/scene-source-points/index.json: posições locais e matrizes originais conferidas por parser próprio e segunda leitura estática JPEXS, sem scripts ou rasterização. Não viram hitbox, identidade, animação ou encaixe automático no mundo. docs/SCENE_SOURCE_POINT_CONTRACT.md e reports/scene-posdata-original-source-proof.json.gz registram o contrato.
+
+Preparado recover_scene_effects.py separado da fila de batalha, limitado a quatro jobs e com sourceKind/path/símbolo/fps/quadros explícitos. Instalador exige optar por scene-exported-sprite e prova independente dos originais; publicação padrão de batalha continua rejeitando cenas. Validator reconstrói todos os quadros e confere também o contrato original de cenas. Os22exports visuais/3252quadros foram conferidos como metadados, ainda não renderizados nesta nota. Nenhum sourceKind novo implica jutsu ou alteração de combate.
+
 ## Efeitos por fonte — lotes 199-204 — 23/10/2026
 
 Publicadas 24 exportações aprovadas, com 1628 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-199-204-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
