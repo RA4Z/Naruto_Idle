@@ -1,3 +1,7 @@
+## Provas de prévia e conciliação dos catálogos
+
+Chrome conferiu fontes MME reais de3e19quadros,zero atlas antes de abrir,390pxsemoverflow,zero conta/save. Conciliação em reports/role-source-recovery-bridge-20261024.json:3das24pendências antigas já possuem nova fonte nativa com prova final,20continuam na fila e1tem dependência de sombra preservada. Catálogo antigo permanece intacto; nenhuma capacidade ou identidade jogável alterada. Auditoria de2506novos caminhos conferiu1837imagens emGitLFS e nenhum SWF/binário de ferramenta adicionado;é conferência de caminhos/atributos, não varredura de conteúdo secreto.
+
 ## Efeitos por fonte — lotes 289-294 — 23/10/2026
 
 Publicadas 21 exportações aprovadas, com 1761 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-289-294-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
