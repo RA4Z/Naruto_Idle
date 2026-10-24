@@ -1,3 +1,7 @@
+## Efeitos por fonte — lotes 205-210 — 23/10/2026
+
+Publicadas 24 exportações aprovadas, com 1225 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-205-210-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
 ## Prévia de fonte sem painel vazio — 23/10/2026
 
 A prévia source-only usa o canvas inteiro e oculta a escolha de corpo; efeitos com vínculos mantêm o modo anterior. Tipagem aprovada; Chrome confirmou o quadro37 real com10985pixels visíveis, espelhamento e nenhum vínculo de corpo. reports/admin-source-export-visible-frame.json.
