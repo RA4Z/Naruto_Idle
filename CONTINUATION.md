@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 11011761_outdoor_effect.swf / shang
+
+Publicada1exportação source-only com171quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-ec5eae5eaad31305-082c71c3ac0f-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Conferência reproduzível do progresso por plano
 
 Ferramenta somente leitura em tools/extraction_plan_status.py separa publicado, preparado, não visual revisado, adiado e ainda não tentado; compara fonte/ação exatas e impede dupla contagem. Sete testes passaram. Retrato datado:1463/3263ações do plano de efeitos publicadas (44,84%),7preparadas,3não visuais,71adiadas (69canvas+2bytes),1719ainda não tentadas. Catálogo total1505fontes,42fora desse plano. Não é percentual geral do jogo, nova renderização ou integração de combate. docs/EXTRACTION_PLAN_STATUS.md. Auditoria somente de metadados dos2timeouts de cenário:178quadros cada,canvases12,45MPe3,60MP,90e142PNGs parciais legíveis;umPNGinterrompido nunca foi publicado. Recuperação por intervalos ainda exige implementação e comparação integral,sem reduzir escala. docs/SCENE_TIMEOUT_RECOVERY.md. Chrome também confirmouGamabunta13000201/C_idle:44quadros,24FPS,quadro22visível(152204pixels),390pxsemoverflow,zero atlas antes de abrir,zero conta/save;prévia de fonte,sem integração de combate.
