@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 11014011_outdooreffect.swf / shang
+
+Publicada1exportação source-only com109quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-bd03590efd4c6e86-082c71c3ac0f-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Efeitos por fonte — lotes 421-426 — 23/10/2026
 
 Publicadas 23 exportações aprovadas, com 1264 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-421-426-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
