@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 91100112_rpg.swf / idle1
+
+Publicada1exportação source-only com44quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-fb6da70317011812-454481d235b6-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Efeitos por fonte — lotes 379-384 — 23/10/2026
 
 Publicadas 24 exportações aprovadas, com 1723 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-379-384-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
