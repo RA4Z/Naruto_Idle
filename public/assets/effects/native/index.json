@@ -910879,6 +910879,233 @@
       "sourceOnly": true,
       "bindingOrigin": "exported-source-action-not-a-skill-id",
       "state": "native-assets-prepared-source-review"
+    },
+    "source:b8de32bc400da062:6720cbe6cf18": {
+      "id": "source:b8de32bc400da062:6720cbe6cf18",
+      "sourceOnly": true,
+      "sourceKind": "role-left-exported-sprite",
+      "source": {
+        "path": "assets/battle/role/left/13000101.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 853552,
+        "sha256": "70896ce0742477d4ab661c07e0933b35df3e530b948022c40ef7faf48a040256",
+        "sourceKind": "exported-inventory"
+      },
+      "sourceConfig": {
+        "path": "assets/battle/role/left/13000101.swf",
+        "tag": "PT_NarutoAlpha6.00Build300",
+        "bytes": 853552,
+        "sha256": "70896ce0742477d4ab661c07e0933b35df3e530b948022c40ef7faf48a040256",
+        "sourceKind": "exported-inventory"
+      },
+      "bindingOrigin": "exported-source-action-not-a-skill-id",
+      "sourceExport": {
+        "sourceKind": "role-left-exported-sprite",
+        "exportName": "skillAttack",
+        "symbolId": 346,
+        "authoredFrames": 50,
+        "fps": 24.0,
+        "sourceSpriteSha256": "4a9338fc9480eefd74f8675c9daad4bcc14d32a4c76ce6ad2f88724474de09a7",
+        "sourceTagCounts": {
+          "26": 2216,
+          "1": 50,
+          "0": 1
+        },
+        "frameLabels": [],
+        "namedInstances": [],
+        "dataCompanionHint": {
+          "exportName": "skillAttack_Data",
+          "symbolId": 374,
+          "authoredFrames": 43,
+          "sourceSpriteSha256": "510feecc3dadc397cc5a9c241deee62d50119986d6d2e567596c73c29f04e73a",
+          "basis": "exact-export-name-only-no-runtime-binding"
+        },
+        "sourceExecution": false,
+        "scope": "Exact original exported visual timeline; no gameplay identity or runtime script behavior inferred."
+      },
+      "definition": {
+        "id": "source:b8de32bc400da062:6720cbe6cf18",
+        "type": "0",
+        "res": "assets/battle/role/left/13000101.swf",
+        "frontAction": "skillAttack",
+        "sourceOnly": "true",
+        "sourceKind": "role-left-exported-sprite",
+        "name": "13000101 / skillAttack"
+      },
+      "state": "source-frames-complete-runtime-adapter-pending",
+      "layers": [
+        {
+          "plane": "front",
+          "action": "skillAttack",
+          "namedInstances": [],
+          "sourceSequence": {
+            "manifestPath": "b8de32bc400da062/6720cbe6cf18/source-sequence/manifest.json",
+            "runtimeAdapterRequired": true,
+            "atlasLimitReason": "Explicit full-source sequence for bounded range recovery; no atlas allocation"
+          },
+          "validation": {
+            "nativeFrames": 50,
+            "uniqueFrames": 25,
+            "nativeCanvasSize": [
+              1103,
+              840
+            ],
+            "allFramesPixelExact": true,
+            "originalCoordinatesPreserved": true,
+            "sourcePixelScale": 1,
+            "frameRgbaSha256": [
+              "49bc01b4873cad628b74f281ae378fdebe68c8c1752fe9ae6f3e80b12e1d5903",
+              "49bc01b4873cad628b74f281ae378fdebe68c8c1752fe9ae6f3e80b12e1d5903",
+              "66dfb30489e45693c92098572b5f9acc1cf33a960f7b3bdd0d93499caf4816b1",
+              "66dfb30489e45693c92098572b5f9acc1cf33a960f7b3bdd0d93499caf4816b1",
+              "ef02354a06ace974c824e7975a0353670f2b74973228dc859109aa80bd66ad7c",
+              "ef02354a06ace974c824e7975a0353670f2b74973228dc859109aa80bd66ad7c",
+              "af77ada7c2458aee0bdcbc4150772bfe7e21edb5d3eb7b8ddc5110df4e92e639",
+              "af77ada7c2458aee0bdcbc4150772bfe7e21edb5d3eb7b8ddc5110df4e92e639",
+              "17f3181e85b36b7d4c9c64e8b3f89266d92628d5d044aa3227c0009b9ee65aef",
+              "17f3181e85b36b7d4c9c64e8b3f89266d92628d5d044aa3227c0009b9ee65aef",
+              "463a59b6d471764bf7ea060b16fa7a099af1065bb13639738bb9688892f400d8",
+              "463a59b6d471764bf7ea060b16fa7a099af1065bb13639738bb9688892f400d8",
+              "c9b77be7a82567eee0cd77d1c177a68d44847a3c7c06ac57043d08d0bfc86832",
+              "c9b77be7a82567eee0cd77d1c177a68d44847a3c7c06ac57043d08d0bfc86832",
+              "d6c127aeb5d8a437d2337447e69e77b2a0ad944a1146f0c3f2913fc4a229722b",
+              "d6c127aeb5d8a437d2337447e69e77b2a0ad944a1146f0c3f2913fc4a229722b",
+              "258c169fce2f0f375621f85e1cc05f9fc3b3b78398b7178b7a7722f7a5ba3c18",
+              "258c169fce2f0f375621f85e1cc05f9fc3b3b78398b7178b7a7722f7a5ba3c18",
+              "c5910939ceddb386a733f2bff0c54e04792dc23320b570ea4334886eae4f3ae9",
+              "c5910939ceddb386a733f2bff0c54e04792dc23320b570ea4334886eae4f3ae9",
+              "40f35e95dacf15f5916f11a5fda5c5dc17a1dda708e8c3f3403ec2106e3579a2",
+              "40f35e95dacf15f5916f11a5fda5c5dc17a1dda708e8c3f3403ec2106e3579a2",
+              "bab2c0c76c61601c3c332a60b94ee088b52bb040b2b6e156a7d0c9204e239100",
+              "bab2c0c76c61601c3c332a60b94ee088b52bb040b2b6e156a7d0c9204e239100",
+              "0b419ccde5fb55d7600d8ddb1809ff09fe41c631a584588b77b422e49a309e1d",
+              "0b419ccde5fb55d7600d8ddb1809ff09fe41c631a584588b77b422e49a309e1d",
+              "700891c66fac7896049d692e8eec51a0165863c5ce9599f67dcd9fd46a5368e4",
+              "700891c66fac7896049d692e8eec51a0165863c5ce9599f67dcd9fd46a5368e4",
+              "c60ee40a1771771b2448b56a3f7591d04b399efb64f956f3027927e57e24d69c",
+              "c60ee40a1771771b2448b56a3f7591d04b399efb64f956f3027927e57e24d69c",
+              "7559b247badded346af73901af881de60de43e7f960162dad98ca986f0338db9",
+              "7559b247badded346af73901af881de60de43e7f960162dad98ca986f0338db9",
+              "9b00ce84767f3f43d5b732c159cafbf213abfdf17b70f15784e13a63da6eb900",
+              "9b00ce84767f3f43d5b732c159cafbf213abfdf17b70f15784e13a63da6eb900",
+              "804ca991b909be45f0be8ae2167c0a7e7fef2ca5cd089c54026d4a627a7c9592",
+              "804ca991b909be45f0be8ae2167c0a7e7fef2ca5cd089c54026d4a627a7c9592",
+              "15a36392f89a3f59fbd4ddcf9bb593fa7f0c87dbdeec14da5a9d850f7dc78fce",
+              "15a36392f89a3f59fbd4ddcf9bb593fa7f0c87dbdeec14da5a9d850f7dc78fce",
+              "825d71a216ca34ec6569c785aefff777ca280ddd37430881be09f85890c9d629",
+              "825d71a216ca34ec6569c785aefff777ca280ddd37430881be09f85890c9d629",
+              "127df465e8a81416d1f85c7bd6506c25bae374da826ff1fec0cd6306d6b174f4",
+              "127df465e8a81416d1f85c7bd6506c25bae374da826ff1fec0cd6306d6b174f4",
+              "555346d38541ab11883bd3c8f7b95617b4e15cd56e22e5de87715b7b0d57877a",
+              "555346d38541ab11883bd3c8f7b95617b4e15cd56e22e5de87715b7b0d57877a",
+              "f1bb91df3e44aad3230811b0fd43896cf4d94fdf28abab871dc6f407adecbd5c",
+              "f1bb91df3e44aad3230811b0fd43896cf4d94fdf28abab871dc6f407adecbd5c",
+              "972de837845086be234d528c568926f9c255ed78a82be96987168c05551cabae",
+              "972de837845086be234d528c568926f9c255ed78a82be96987168c05551cabae",
+              "e34e88c3f28a1649e5182307cba1c1cf05749588a4a2e57e57f2538c734aa77c",
+              "e34e88c3f28a1649e5182307cba1c1cf05749588a4a2e57e57f2538c734aa77c"
+            ],
+            "encoding": "lossless-webp",
+            "scope": "Every complete source frame from bounded static-render intervals serialized without trimming, resizing or timeline changes. Source extraction only; production runtime adapter required."
+          },
+          "artifactsSha256": {
+            "frame-db7da4dc9707135dcfc1ab15.webp": "26c2559c0954803bec87f1dd33e922f4371cab22fe97a3947009a0795d38cc08",
+            "frame-ff52404148ac7912716d5ac7.webp": "07d38aa71f76327febd27b80b130090056b55b2b67aa07bcac6632f8c023741f",
+            "frame-1e81dc913077dfd76d6f5a05.webp": "9cab3317002eb5a46c689a055bcc1c1d8b569e596b79d5f90e4ee0c848a098ff",
+            "frame-a5ee09e63a363838703e0582.webp": "801e064f3dc6af9eaf14ff7a64d972c9ff3ae1d95862db606ab5ae03f9412f8a",
+            "frame-b91d9d376a37f8a2c5f9cdc4.webp": "efcd830cc7105b3ee3935a8051de266a1507723f9b11e558c75979bb923eff3a",
+            "frame-0fb05bb3251ce1744dd56598.webp": "ec484a90e8635c5d328fb9b9ec3d115d1497366444d351821517d6ca1cf2b012",
+            "frame-6b9a69e6689c005d8b3b4415.webp": "17e86b4c6ae00a6ffc9b73badf5d37f790f33ba6ac29c9bc09537793bd81743e",
+            "frame-2f736c8c9a7464b563bbb0e5.webp": "53dbcb1246f45730900b9c692935386b1da4cdbf8242d54de03c804980f396e0",
+            "frame-7c81dc8b43ff08934be7ac73.webp": "9c3adf01ea13f4adafb034801da7a8576d1422fc4e0995b29e75fc3d71d4cc8b",
+            "frame-71fbff85ab1473104d22e3cd.webp": "a5930fa18d4b1d809f006949ea0089d45701f0971061524a240f771b58f204ab",
+            "frame-1f6f60878ffc97816ded4979.webp": "80f8990cc58c7cf443d91f08844195dd8923f531183a47244434dfda12b54b8e",
+            "frame-2048cb222324b0edec87c42d.webp": "fb2fc7d9f02a81753dc9082f9710973c8c07c2aad135daf8e0a773d26a7ef4c1",
+            "frame-45572e1d089a9130b7510044.webp": "1b8e5b93d70b099f541f51c1581cd7261dbcea2edf11ddc187c8716c9af89e39",
+            "frame-42ff41484a0b9656aaf5c898.webp": "ae71da8ca861067e97104d366939c65f7caf53d760898c9514045a71039d419b",
+            "frame-8d2915743169b8e9b82104ce.webp": "7c8580c20ed80d83d2fc099aeae278fbdee95ef98b1a32584833b691e60c5a05",
+            "frame-7bf70d280a4c24e5a4374a75.webp": "3461debc9e03a8d051b3c462d007b8ca7c39beaca662df6a17bf0eec2e3425c7",
+            "frame-71ca6d7055e75c32c2561360.webp": "fa4ac97a030b49a8d40eb26ae501a5eba3fba658e699b12684b4f8a21299a46e",
+            "frame-de39b151fafe1028a6fd5329.webp": "05a4baa2f6e7b87a9bd7356f54f92e3262eb3df9eb77af5e3d00a596733a61f8",
+            "frame-a84b5a8b9ec68581b46195e1.webp": "0db28ffda21b47b5853ff58031b82b3df8fced35aa9a111331e823aaf9235201",
+            "frame-a035886e3b1ff653a585fbf7.webp": "834049cbd6c889c4fc54afd6b49f99479039ce19fb846a1eca1a3ba37d7bd1e2",
+            "frame-c130aef35357eb4f462b180e.webp": "1a8466cb161678b07f3dd0c420a8173e54b47870455e397127e6384f1a9bbea1",
+            "frame-baf3cb273393244c3faccb0a.webp": "e4124828762d1279d322fe85fbf290311719bd2b584e944e1967591e99d252bd",
+            "frame-c33ae59c20edec785cbf52c3.webp": "fcba6550e494a0234d3641acb41f4f74b98954415326a463f3f8d40120f661d7",
+            "frame-d9f308d7929b8337017bb6b1.webp": "de225f6cbb4a76a0a4f1b51d20207b7cf7a530fc18f0758129ddab4c5e0e7ad9",
+            "frame-eb0a7ba089c8a761507fde0c.webp": "826edd24d7e9eda433b9199e7d8fe4e22494e443f468203463f43f30593ecf8f",
+            "manifest.json": "144f17b69369e787bd18f611d134f37aa23b255c0d04996225ca117afaf8d623"
+          }
+        }
+      ],
+      "rangeRecovery": {
+        "rendererFingerprint": {
+          "rangeClassSha256": "203022e16db1bdb379dde1dfc8fa0399ff7f8aad864f903d699b153519a28727",
+          "referenceClassSha256": "87f569e279b73ed1cd449535d30f6c5786b2deddc89dc9181b799e3edf74c9a1",
+          "jarsSha256": {
+            "antlr-runtime-4.11.1.jar": "e06c6553c1ccc14d36052ec4b0fc6f13b808cf957b5b1dc3f61bf401996ada59",
+            "avi.jar": "7b8da48be20447ca3a840ae1136541841e1a44915a6edf924d83529362bd40ff",
+            "cmykjpeg.jar": "0ae56cee0cca3f2c54593b08dd2f450f6f8fea5dd9054b9949b9f08f34e98b5a",
+            "ddsreader.jar": "398f194e6de07a85e09ba70fb55f01ec30de26ff38c0487e6989d4b5a924f83d",
+            "decimal.jar": "feeb9f89f44cd6a921a9a4701358c8c63e3e677424fb2953ddba6e15872c0e91",
+            "ffdec_lib.jar": "ed9314b24190f497a9e02236dae7caaf69062cbbe9d98157c005c3f1c25481d4",
+            "flacomdoc.jar": "fc0d7e4be9591c6e187258f1b2be6f798ce78831d22cb990ffbf95e99c8f85cf",
+            "flamingo-6.2.jar": "5baee0ef62342a53952116548aa3434db5b629af76c9a267d8c23b34db3a479c",
+            "flashdebugger.jar": "86bb7f0fba4aa7b217f9a276dfa94d1c38dc07e4a69b5cd5f389e29a2e8cf1ba",
+            "gif.jar": "e81c505f104689d4e8d4da2cba09db0a7a8c02c7f8d19de6ed194d8d2cff09bd",
+            "gifreader.jar": "2afdcb18d174476ef1e8550acb902ad0e998d6d6bbfb493bba4e7e6c5817f45b",
+            "gnujpdf.jar": "2f06fde287d8d5c5f0f903d13bca91e78ae1c69409a73e4b3f7374366b31bf31",
+            "jansi-2.4.0.jar": "6cd91991323dd7b2fb28ca93d7ac12af5a86a2f53279e2b35827b30313fd0b9f",
+            "jargs.jar": "d488f6c10690597b93767af3b1c35018f02770790e5e3822871ac09f332386c7",
+            "jlayer-1.0.2.jar": "bf6286c69dabeadab49ba2b5e9322243c23722585faf52452c15593a14d20e36",
+            "jna-3.5.1.jar": "3f8889f51d570a26f3ac2c1323e6be828bb73eb5e66cf25e979eb5b109d92021",
+            "jna-platform-3.5.1.jar": "b0b30404f6a9e29d4d9a7b53fd47322e7137cab3846fd5f149d5589fc68c2126",
+            "jpacker.jar": "4eaba3e39d3e8d0eb242534d56bda72b1bbca6599aa949a7876ff6fc2cbfce52",
+            "jpexs-apng.jar": "4062e281730f841ff936f7c4f6587dee8024afadde7fe1e849960a2c039c6d50",
+            "jpexs-jxr-1.0.0.jar": "f4f881633c68c2821eb01ce72e43e2006524f3a45ded0d909316db9dd6aa73f6",
+            "jsyntaxpane-0.9.5.jar": "8698a7951bbd7b2fb00a2dd6dc25bd6eefb37cba8907dbda894b91d2a80a8cae",
+            "LZMA.jar": "2604dab00935023b183d82d9a5c5198ae34d40112c7524e75be20e4528798e95",
+            "minimal-json-0.9.5.jar": "69ff84463d1d7cc5cfdb8baf2b6e5f7af153d351bf0dbee3bbc8916247afac74",
+            "miterstroke.jar": "becca6da411463f872f69f48de2dc50d53974b888da09bae0b27096b9d4d1663",
+            "nellymoser.jar": "bf12eb3a4c793e66b4e0c917aaa4091a6bd2b9da446c357f600f2da36f3c36e0",
+            "sfntly.jar": "40c9a46afc02479096e68275eb9f40f72ca3e9944d687856b600684dc9acbef7",
+            "substance-6.2.jar": "376b6ccb53860a78934c92fc732d5c7dc7964aa5dbd8616dba1dead3493cb362",
+            "substance-fix.jar": "31ee9108267435b0ec806679694616bafcb954065af139874f251a4166a245e5",
+            "substance-flamingo-6.2.jar": "1c4b4427bef2943ac81ed35fd475736287bce53120274f6ac353f5c0e48c7549",
+            "tablelayout.jar": "133759470163a1abc3e0b6bbba6c5e6037eac785d313dd229c6adac3a5f013fe",
+            "tga.jar": "43d6c7b688953ddc8a7c513b31c63b1597154e917d4e8222581fb7952c5af463",
+            "tomlj-1.1.1.jar": "383b7c66966c42ee4913ec977a7b6573631866bddc5318ec4a6215b688dd0d6c",
+            "treetable.jar": "bfdcb1e2c0947f947fa750780fbd8c137b0a2cdc1439632200f815bf44ea2d5a",
+            "trident-6.2.jar": "b4726f518ccdb40b8da1fac4d78a741b736afd433d903c76f62b7a01090a63f9",
+            "ttf.jar": "25cb6f0bf447edd29c70bb061bf2d7d72e376cda5050252aac949546d3bbd0f4",
+            "vlcj-4.7.3.jar": "3f8e3233809932e9a02e0f0de79a34e0544f8a3c4b779bdcca1e3ce13eee3cea",
+            "vlcj-natives-4.7.0.jar": "47c300792c248f8708095430136a3aeb7def4695e8d7527d21651973049ea36f",
+            "webp4j-core-2.1.1.jar": "46d2c3561fce9838cf56881580c954db5ff07df0ca1543b40cf8fb4b93accfcd"
+          }
+        },
+        "helperSha256": "9aee2ba93d51f9539bb21eff95a764f58d5d6f49851b61304ae0e6a30863668f",
+        "equivalenceProofSha256": "81a6315d152cabf86ec25ded21cd183db6d65ccb4da019fbc4694928f862285e",
+        "sourceExecution": false,
+        "completeRanges": [
+          {
+            "start": 0,
+            "endExclusive": 16
+          },
+          {
+            "start": 16,
+            "endExclusive": 32
+          },
+          {
+            "start": 32,
+            "endExclusive": 48
+          },
+          {
+            "start": 48,
+            "endExclusive": 50
+          }
+        ],
+        "ledgerSha256": "698a33c3627a491eaaac9c2a502948c68de9faf85e022db397cbe5aabda5d0d1"
+      }
     }
   }
 }
