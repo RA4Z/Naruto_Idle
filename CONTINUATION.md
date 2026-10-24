@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 11008561_outdooreffect.swf / shang
+
+Publicada1exportação source-only com115quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-2d66479a84d17020-082c71c3ac0f-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Dimensões efetivas do canvas original
 
 Nota em docs/SOURCE_CANVAS_ALLOCATION.md distingue a guarda conservadora ceil(span/20)+1 da imagem efetiva floor(span/20)+1. Relatório de5fontes em reports/source-canvas-allocation-20261024.json. Piloto de87quadros já passou integralmente na comparação RGBA;2fontes parciais permanecem sem alegação de conclusão. Relatórios históricos preservados e nenhum quadro redimensionado. Medição de compactação em3quadros nativos,2repetições por método,todosRGBAidênticos:modo0gera13,3vezes mais bytes neste conjunto;modo2tem ganho modesto. Configuração de produção/extrator permaneceu igual. reports/native-encoding-benchmark-20261024.json.
