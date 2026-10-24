@@ -1,3 +1,7 @@
+## Efeitos por fonte — lotes 289-294 — 23/10/2026
+
+Publicadas 21 exportações aprovadas, com 1761 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-289-294-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
 ## Fonte de personagem ou cenário — 11001601.swf / C_callup_dead
 
 Publicada1exportação source-only com19quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-ba32133ee64acaf6-c01e030b6421-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
