@@ -1,3 +1,7 @@
+## Canvas offline revisado — limites de runtime preservados
+
+87 quadros de3 fontes originais idênticos aos renders integrais, incluindo1 render integral novo. Novo adaptador offline permite até32MP somente com fonte e bounds relidos, preflight de memória e validação integral; páginas de runtime continuam16MP/64MPtotal/16páginas e sequências completas16MP. Corpus de35candidatos é somente metadados, não recuperação concluída. TestesPython completos passaram. docs/REVIEWED_NATIVE_BUDGET.md e reports/reviewed-native-equivalence-20261024.json.
+
 ## Efeitos por fonte — lotes 475-480 — 23/10/2026
 
 Publicadas 23 exportações aprovadas, com 1241 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-475-480-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.

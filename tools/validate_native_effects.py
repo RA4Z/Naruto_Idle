@@ -51,7 +51,7 @@ def validate_sequence(folder,layer):
     return len(timeline)
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--project',type=Path,default=Path(__file__).resolve().parents[1]);ap.add_argument('--source');ap.add_argument('--effects-root',type=Path);ap.add_argument('--ids');ap.add_argument('--report',type=Path);args=ap.parse_args();p=args.project.resolve()
+    ap=argparse.ArgumentParser();ap.add_argument('--project',type=Path,default=Path(__file__).resolve().parents[1]);ap.add_argument('--source');ap.add_argument('--effects-root',type=Path);ap.add_argument('--ids');ap.add_argument('--report',type=Path);ap.add_argument('--java');ap.add_argument('--ffdec');ap.add_argument('--bounds-classes');ap.add_argument('--budget-work');args=ap.parse_args();p=args.project.resolve()
     sys.path.insert(0,str(p/'tools'))
     archive=None
     if args.source:
@@ -89,6 +89,10 @@ def main():
             assert archive is not None,'Original source required for role MME provenance'
             from role_mme_contract import validate_role_mme_entry
             role_verified=validate_role_mme_entry(archive,entry)
+        native_pixel_limit=16_000_000
+        if entry.get('offlineRenderBudget'):
+            from reviewed_native_budget import reviewed_limit,probe_original_bounds
+            native_pixel_limit=reviewed_limit(archive,entry,lambda job:probe_original_bounds(archive,job,java=args.java,ffdec=args.ffdec,classes=args.bounds_classes,work=args.budget_work,project=p))
         for layer in entry['layers']:
             if archive and layer.get('rendererSemanticEvidence'):assert archive.record(layer['rendererSemanticEvidence']['path'])==layer['rendererSemanticEvidence'],'Original MME core changed'
             metadata_verified=False
@@ -104,13 +108,13 @@ def main():
                 if not folder.is_dir():folder=p/'asset-source/native-effects'/relative.parent
                 frames=validate_sequence(folder,layer)
                 if scene_verified or role_verified:assert json.loads((folder/'manifest.json').read_bytes())['fps']==entry['sourceExport']['fps'],'Scene sequence fps differs from original'
-                rows.append({'id':ident,'action':layer['action'],'plane':layer['plane'],'frames':frames,'sourceEntrySha256':entry_digest,'allSourceRenderedFramesReconstructed':True,'artifactsSha256Match':True,'originalArchiveVerified':bool(archive),'sourceActionMetadataMatch':metadata_verified,'sourceSceneExportMatch':scene_verified,'sourceRoleExportMatch':role_verified,'sourcePixelScale':1,'state':'source-frames-complete-runtime-adapter-pending'})
+                rows.append({'id':ident,'action':layer['action'],'plane':layer['plane'],'frames':frames,'sourceEntrySha256':entry_digest,'allSourceRenderedFramesReconstructed':True,'artifactsSha256Match':True,'originalArchiveVerified':bool(archive),'sourceActionMetadataMatch':metadata_verified,'sourceSceneExportMatch':scene_verified,'sourceRoleExportMatch':role_verified,'sourcePixelScale':1,'offlineRenderBudgetVerified':bool(entry.get('offlineRenderBudget')),'state':'source-frames-complete-runtime-adapter-pending'})
                 continue
             a=layer['animation'];proof=layer['validation'];folder=asset(a['url']).parent
             for name,digest in layer['artifactsSha256'].items():assert hashlib.sha256((folder/name).read_bytes()).hexdigest()==digest,'Prepared artifact hash changed: '+str(folder/name)
             assert a['sourcePixelScale']==1 and len(a['timeline'])==proof['nativeFrames']
             assert len(a['frameOrigins'])==a['frames'] and len(proof['frameRgbaSha256'])==len(a['timeline'])
-            width,height=proof['nativeCanvasSize'];assert 0<width<=8192 and 0<height<=8192 and width*height<=16_000_000
+            width,height=proof['nativeCanvasSize'];assert 0<width<=8192 and 0<height<=8192 and width*height<=native_pixel_limit
             left,top=[v/20 for v in a['sourceBounds'][:2]]
             atlas=json.loads(asset(a['packedAtlasUrl']).read_bytes())['frames']
             page_urls=a.get('atlasPageUrls',[a['url']]);frame_pages=a.get('framePages',[0]*a['frames'])
@@ -132,7 +136,7 @@ def main():
                     assert hashlib.sha256(frame.tobytes()).hexdigest()==proof['frameRgbaSha256'][time],f'Frame pixels or source registration changed: {ident}/{layer["action"]}/{time}'
             finally:
                 if image is not None:image.close()
-            rows.append({'id':ident,'action':layer['action'],'plane':layer['plane'],'frames':len(a['timeline']),'sourceEntrySha256':entry_digest,'allSourceRenderedFramesReconstructed':True,'artifactsSha256Match':True,'originalArchiveVerified':bool(archive),'sourceActionMetadataMatch':metadata_verified,'sourceSceneExportMatch':scene_verified,'sourceRoleExportMatch':role_verified,'sourcePixelScale':1})
+            rows.append({'id':ident,'action':layer['action'],'plane':layer['plane'],'frames':len(a['timeline']),'sourceEntrySha256':entry_digest,'allSourceRenderedFramesReconstructed':True,'artifactsSha256Match':True,'originalArchiveVerified':bool(archive),'sourceActionMetadataMatch':metadata_verified,'sourceSceneExportMatch':scene_verified,'sourceRoleExportMatch':role_verified,'sourcePixelScale':1,'offlineRenderBudgetVerified':bool(entry.get('offlineRenderBudget'))})
     report={'effects':len(selected),'catalogEffects':len(index['effects']),'catalogSourceBundles':len(index.get('sourceBundles',{})),'catalogSourceExports':len(index.get('sourceExports',{})),'layers':len(rows),'frames':sum(r['frames'] for r in rows),'rows':rows,'scope':'All persisted atlas/sequence timelines reconstructed on the original static-render canvas and compared against per-frame RGBA hashes. No Flash player or ActionScript execution; not proof of runtime scripts or unresolved world attachments.'}
     target=args.report or p/'reports/native-effects-validation.json';target.parent.mkdir(parents=True,exist_ok=True);target.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({k:v for k,v in report.items() if k!='rows'}))
