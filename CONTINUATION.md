@@ -1,3 +1,7 @@
+## Efeitos por fonte — lotes 193-198 — 23/10/2026
+
+Publicadas 22 exportações aprovadas, com 1582 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-193-198-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
 ## Efeitos por fonte — lotes 187-192 — 23/10/2026
 
 Publicadas 22 exportações aprovadas, com 1338 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-187-192-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
