@@ -1,3 +1,7 @@
+## Efeitos por fonte — lotes 451-456 — 23/10/2026
+
+Publicadas 24 exportações aprovadas, com 1352 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-451-456-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
 ## Fonte recuperada por intervalos — 13000101.swf / skillAttack
 
 50quadros originais completos,sem redução de escala ou mudança deFPS. Provas de todos os quadros no staging e na cópia instalada emreports/static-range-source-b8de32bc400da062-6720cbe6cf18-proof.json.gz. Sequência source-only;exige visualizador/carregador para combate,não altera hitbox ou jutsu.
