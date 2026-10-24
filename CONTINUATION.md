@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 13000401.swf / C_entry
+
+Publicada1exportação source-only com60quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-0cebf56689e7486f-818a65f78c4b-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Fonte de personagem ou cenário — 13000401.swf / C_idle
 
 Publicada1exportação source-only com60quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-0cebf56689e7486f-537d9fe5f9d5-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
