@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 92200212_rpg.swf / disappear
+
+Publicada1exportação source-only com15quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-9a8b8ddaab6f0dae-ed142ddaa38e-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Limites medidos nas fontes de efeitos
 
 Auditoria independente, somente de metadados, de51ações/47fontes:16,07–483,59milhões de pixels;nenhuma resolução reduzida. Duas ações excedem32MBdecodificados. Provas,plano de adaptador por blocos e progresso datado em reports e docs/DEFERRED_EFFECT_BOUNDS_20261024.md. Não representa nova extração raster.
