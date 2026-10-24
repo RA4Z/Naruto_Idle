@@ -1,3 +1,7 @@
+## Efeitos por fonte — lotes 517-522 — 23/10/2026
+
+Publicadas 23 exportações aprovadas, com 1722 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-517-522-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
 ## Fonte de personagem ou cenário — 13000301.swf / A_3hit
 
 Publicada1exportação source-only com60quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-08dd2d069e56b122-178fa07216e4-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
