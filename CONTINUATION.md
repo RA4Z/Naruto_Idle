@@ -1,3 +1,7 @@
+## Efeitos por fonte — lotes 487-492 — 23/10/2026
+
+Publicadas 20 exportações aprovadas, com 1044 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-487-492-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
 ## Alocação nativa centralizada e limites inteiros corrigidos
 
 Regra exata JPEXS26.4.0:ceil(span/20),ou1×1quandoqualquerextensãoézero. Guardas de memória continuam conservadoras; nenhum pixel ou classeJavaalterado. Foram relidos e comparados os87quadros completos dos dois conjuntos de pilotos; provasr2novas preservam relatórios anteriores. Caso real de altura inteira23FPSconferido em16quadros parciais,sem alegação de conclusão. TestesPython completos passaram. docs/SOURCE_CANVAS_ALLOCATION.md.
