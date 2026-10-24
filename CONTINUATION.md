@@ -1,3 +1,7 @@
+## Efeitos por fonte — lotes 355-360 — 23/10/2026
+
+Publicadas 24 exportações aprovadas, com 610 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-355-360-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
+
 ## Fonte de personagem ou cenário — 11001941_outdooreffect.swf / shang
 
 Publicada1exportação source-only com178quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-eb038a3040cc04ab-082c71c3ac0f-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
