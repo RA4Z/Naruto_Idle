@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 13000401.swf / SP_skill3
+
+Publicada1exportação source-only com60quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-0cebf56689e7486f-3273ff8eaac7-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Dimensões efetivas do canvas original
 
 Nota em docs/SOURCE_CANVAS_ALLOCATION.md distingue a guarda conservadora ceil(span/20)+1 da imagem efetiva floor(span/20)+1. Relatório de5fontes em reports/source-canvas-allocation-20261024.json. Piloto de87quadros já passou integralmente na comparação RGBA;2fontes parciais permanecem sem alegação de conclusão. Relatórios históricos preservados e nenhum quadro redimensionado.
