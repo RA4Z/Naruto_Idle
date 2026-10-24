@@ -1,3 +1,7 @@
+## Limites medidos nas fontes de efeitos
+
+Auditoria independente, somente de metadados, de51ações/47fontes:16,07–483,59milhões de pixels;nenhuma resolução reduzida. Duas ações excedem32MBdecodificados. Provas,plano de adaptador por blocos e progresso datado em reports e docs/DEFERRED_EFFECT_BOUNDS_20261024.md. Não representa nova extração raster.
+
 ## Efeitos por fonte — lotes 283-288 — 23/10/2026
 
 Publicadas 24 exportações aprovadas, com 1277 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-283-288-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.

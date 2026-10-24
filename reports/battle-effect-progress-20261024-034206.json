@@ -1,0 +1,1460 @@
+{
+  "snapshotUtc": "2026-10-24T03:42:06.886221+00:00",
+  "scope": "Exact intersection with the battle-effect source plan only. This is not overall project/character extraction completion. Prepared rows are not publication proofs. Blank sources need independent nonvisual review. Independently rechecked empty display timelines are classified separately, not as missing animations.",
+  "planSha256": "d64e6747866c5aa32c44f119736f7b5e67648e1908a88063e537318405e89b28",
+  "publishedIndexSha256": "0a0a705b51ce3dafd39fca2143d7fe864e022d1129edc2a66b52b327ce65f765",
+  "summary": {
+    "plannedEffectActions": 3263,
+    "publishedPlannedEffectActions": 1048,
+    "publishedEffectPlanPercent": 32.12,
+    "preparedUnpublishedNotClaimedValidated": 2,
+    "deferredNotSubstituted": 53,
+    "notAttemptedInThisStaging": 2157,
+    "publishedOtherSourceKinds": 16,
+    "publishedAllSourceExports": 1064,
+    "liveNumericEffectBindings": 100,
+    "sourceBundles": 1,
+    "reasonCodes": {
+      "canvas-budget": 51,
+      "source-byte-budget": 2
+    },
+    "reviewedNonvisualSourceActions": 3
+  },
+  "deferrals": [
+    {
+      "key": "source:036245c85104c55c:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Hanweishouaoyi_weishouyu.swf",
+        "tag": "PT_NarutoAlpha8.32Build301",
+        "bytes": 7851355,
+        "sha256": "a8aca66b8b3fea740f8bf26f537efa2f8f41aff3ebe7ac1e254f9e3550a77b8a",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 221,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:044214f538116911:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Guijiaoshuidunqianshijiao_aoyi.swf",
+        "tag": "PT_NarutoAlpha8.28Build303",
+        "bytes": 4932627,
+        "sha256": "4628e7288d0beb3ff4de0cdd310b97f7ae11d4effb3fdf9167b16fcd8c15e27b",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 198,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:07e820193ddabec3:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Jijiamingren_luoxuanwan_zhuida.swf",
+        "tag": "PT_NarutoAlpha7.87Build300",
+        "bytes": 2235850,
+        "sha256": "67f2e0e397b3366602d2f99ac8e71e24ca44499d93016c7fb258ac8da2eaeaa5",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 265,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:0c2879933cce3f99:035211a30290",
+      "source": {
+        "path": "assets/battle/effect/CHUDAIHUITUzsqs.swf",
+        "tag": "PT_NarutoAlpha6.19Build300",
+        "bytes": 619014,
+        "sha256": "709fd4af35420811a9275a4a27e24ac701ed3e68d6983d8a0e2d4c563fa4eabb",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "tips",
+      "batch": 91,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:0c2879933cce3f99:709b55bd3da0",
+      "source": {
+        "path": "assets/battle/effect/CHUDAIHUITUzsqs.swf",
+        "tag": "PT_NarutoAlpha6.19Build300",
+        "bytes": 619014,
+        "sha256": "709fd4af35420811a9275a4a27e24ac701ed3e68d6983d8a0e2d4c563fa4eabb",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "tx1",
+      "batch": 90,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:0da488f5641c2f9e:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Changshilang_aoyi.swf",
+        "tag": "PT_NarutoAlpha8.88Build304",
+        "bytes": 2775839,
+        "sha256": "4b068c89555866269a0c0632b890d06ce49fd787de07d07b85815f3756617d55",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 97,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:141632db899e3256:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Cilangfang_aoyi.swf",
+        "tag": "PT_NarutoAlpha7.86Build300",
+        "bytes": 1567048,
+        "sha256": "23b2d9a241353166204255fa7997b6bd8902f6d7b13a1c02b438952855584fff",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 103,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:2226289771e8bce0:035211a30290",
+      "source": {
+        "path": "assets/battle/effect/CHANGMENsltz.swf",
+        "tag": "PT_NarutoAlpha6.19Build300",
+        "bytes": 555555,
+        "sha256": "afe0f0507cc0c3f2198e27ca597c60c8213dc5dbff121c3b3c0cebd3b8c26fc8",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "tips",
+      "batch": 86,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:23cbd82b6c2f1d3a:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Dashewanxinchun_baqizhishu.swf",
+        "tag": "PT_NarutoAlpha9.06Build300",
+        "bytes": 4569054,
+        "sha256": "2e17f55f3694b6d87051b5eb87ff8751eed8a2da2dd3739ad6a4f975a53dbe19",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 144,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:25fdf1ac20a5a6ef:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/HetuYz_RongdunShihuishabao.swf",
+        "tag": "PT_NarutoAlpha9.15Build300",
+        "bytes": 1079757,
+        "sha256": "16a5d5a6e755b2b91c6f0891fd6745f2130149d5fcd74a529406c97557f58fb8",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 225,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:291d26fec444ebf2:3ac8e1b91a79",
+      "source": {
+        "path": "assets/battle/effect/BeiliuhuHzyzjcz_LandunaoyiLanguilong_texie.swf",
+        "tag": "PT_NarutoAlpha9.27Build301",
+        "bytes": 4595264,
+        "sha256": "7756c29b16561a734d21bf143c22fa0b4ba11b4dadd3f8b3e7a95784f005a63f",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "texie",
+      "batch": 83,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:2c3bc9688c65489e:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Guidneghuanyue_yonghzuang_chufa.swf",
+        "tag": "PT_NarutoAlpha8.84Build300",
+        "bytes": 1345004,
+        "sha256": "05fe20b5c91f67c21bb723a3c905a88e7f92841b42ca5e8c5665620bcf048a18",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 197,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:3652c0fb47c4cf0d:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Datongmuyintuoluo_xuzuoaoyi3.swf",
+        "tag": "PT_NarutoAlpha8.06Build304",
+        "bytes": 3702320,
+        "sha256": "cc558e5c886aa74247a7c410facf9bc1ad2d4c4ec5175cdeee78c0578f6bcf4f",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 152,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:3652c0fb47c4cf0d:3ac8e1b91a79",
+      "source": {
+        "path": "assets/battle/effect/Datongmuyintuoluo_xuzuoaoyi3.swf",
+        "tag": "PT_NarutoAlpha8.06Build304",
+        "bytes": 3702320,
+        "sha256": "cc558e5c886aa74247a7c410facf9bc1ad2d4c4ec5175cdeee78c0578f6bcf4f",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "texie",
+      "batch": 152,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:3bf1d9a96f988050:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Jijiamingren_jiuweilama_hengsao.swf",
+        "tag": "PT_NarutoAlpha7.87Build300",
+        "bytes": 1614506,
+        "sha256": "a837e54ba912894d6d57f63761f8d0c9b63548cc66bccba60f1de5254cb24375",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 262,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:46f4c16dd6d16c5d:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Hongdouxinchun_lingshexianrui..swf",
+        "tag": "PT_NarutoAlpha9.06Build300",
+        "bytes": 1757712,
+        "sha256": "b0763d115cb49ef11932719c6ba8e707b3171a7790e8c60cd48dc137da06badc",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 229,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:4840437e077db068:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Jinjiaoweishou_kuangbaoweixi_aoyi.swf",
+        "tag": "PT_NarutoAlpha8.08Build302",
+        "bytes": 2834354,
+        "sha256": "36967c0da0ad6e4ab14ee05f31ba1b4663ec2269ae81668d70e5928350ef570c",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 274,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:4c454e9450b92080:ec10288621ed",
+      "source": {
+        "path": "assets/battle/effect/Axiuluoaoyi.swf",
+        "tag": "PT_NarutoAlpha6.49Build300",
+        "bytes": 1173989,
+        "sha256": "e603965ae09793c95f8762b3b4e7a82f5e3e08d16d1053332fcc2c518e36391e",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "TIPS",
+      "batch": 62,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:5287d9f5c5df9478:47b3f41dc594",
+      "source": {
+        "path": "assets/battle/effect/Heituaoyi.swf",
+        "tag": "PT_NarutoAlpha7.45Build300",
+        "bytes": 1209944,
+        "sha256": "2b0844b950dcbb6d440649cc3af51f05debde69bb636fd54d2e1bb6fede6c852",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang1",
+      "batch": 222,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:5908aae6d528cf53:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/DR_Changmen_dibaotianxing_aoyi1.swf",
+        "tag": "PT_NarutoAlpha7.64Build300",
+        "bytes": 3299726,
+        "sha256": "18f6ed6dfe06d9bff67c5f2a633686917f9e7c5e71354ae0a56782eea44faf2d",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 128,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:5f8c81be9b434cae:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Jiaoduaoyi.swf",
+        "tag": "PT_NarutoAlpha6.75Build301",
+        "bytes": 41217201,
+        "sha256": "e72d32a6b8ba5d0d8dc21a1e1c6458644d162050b3da13cb95b6f5a1296a7878",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 258,
+      "reasonCode": "source-byte-budget"
+    },
+    {
+      "key": "source:5f8c81be9b434cae:d587914e2e16",
+      "source": {
+        "path": "assets/battle/effect/Jiaoduaoyi.swf",
+        "tag": "PT_NarutoAlpha6.75Build301",
+        "bytes": 41217201,
+        "sha256": "e72d32a6b8ba5d0d8dc21a1e1c6458644d162050b3da13cb95b6f5a1296a7878",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "xia",
+      "batch": 259,
+      "reasonCode": "source-byte-budget"
+    },
+    {
+      "key": "source:6331fe4e55bdd4da:77d8f405f694",
+      "source": {
+        "path": "assets/battle/effect/1nrv_luoxuanwan.swf",
+        "tag": "PT_NarutoAlpha6.19Build300",
+        "bytes": 547597,
+        "sha256": "3d76a1581521eef9e9aa35bfc30460516985c415f59591469595304c5f236147",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "lian",
+      "batch": 27,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:66a7fa6efabe4604:3591032ee84f",
+      "source": {
+        "path": "assets/battle/effect/BJhjs1tx.swf",
+        "tag": "PT_NarutoAlpha6.19Build300",
+        "bytes": 305966,
+        "sha256": "4e55c7e44d6fe2d6075b6490c5b93dfd3555e5b6f3ef80bd5f13c098c6c4bc77",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "hjs1",
+      "batch": 69,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:6982968fd72b039a:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Hongdouxinchun_lingshexianrui.swf",
+        "tag": "PT_NarutoAlpha9.06Build300",
+        "bytes": 1757710,
+        "sha256": "51e18274bcd4e0f53160d59d621f188bd96560ccdb2327d8ddb9119775a0c70e",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 230,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:756f23cffeaed3c4:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Dourenjiedazhan_zhuida.swf",
+        "tag": "PT_NarutoAlpha8.18Build300",
+        "bytes": 1253635,
+        "sha256": "48d5edccbe9d78e09b67587c6a0d3013af3ef30986edddc3ea13f898017b6f43",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 163,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:81f43d8e832fe3b9:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Dashewanxinchun_fengdundatupo.swf",
+        "tag": "PT_NarutoAlpha9.06Build300",
+        "bytes": 1882921,
+        "sha256": "30b3e4b4f94692d4085bc1dfd963bb547c3efac9af41ffeb99560035252ed8f3",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 145,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:82966dc0b912b551:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Jijiamingren_jiuweilama_zhuaji.swf",
+        "tag": "PT_NarutoAlpha7.87Build300",
+        "bytes": 2754631,
+        "sha256": "a579d913ef9082cc468776a0f7d144632dd4ea5280acc98b5d56dd71165e47c9",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 263,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:83288dd52da31e85:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/HetuYz_RongdunShihuiningzhishu.swf",
+        "tag": "PT_NarutoAlpha9.15Build300",
+        "bytes": 1058202,
+        "sha256": "c24fdfe103d7547dfa8ca66e00eeb0408f147ec7536c01d06a21cd262ca87e27",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 225,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:86645b222a278945:3ac8e1b91a79",
+      "source": {
+        "path": "assets/battle/effect/Axiuluo_jiuwei_liudaowuyuaoyi1texie.swf",
+        "tag": "PT_NarutoAlpha8.30Build301",
+        "bytes": 992754,
+        "sha256": "8f595982f81bed2b95b2f7cc4293e9aa4280efa675d2009a84ae74d0332302c1",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "texie",
+      "batch": 57,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:888d5ea50cbb799f:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Jijiamingren_aoyi.swf",
+        "tag": "PT_NarutoAlpha7.87Build300",
+        "bytes": 5707498,
+        "sha256": "2f777833c3e367b5dc40de677c75aa31464fefafe450014e206a863ec845e0ff",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 261,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:8bfffe3a5e5a77d0:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Dayemu_aoyi.swf",
+        "tag": "PT_NarutoAlpha7.21Build300",
+        "bytes": 3804081,
+        "sha256": "273b9f51af4494236cc17ad0791a8812a0d787f285a8fa804714e19aa258fe17",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 157,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:8d0dfd98d2248e3e:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/HuituJiaodu_fengdunyahai.swf",
+        "tag": "PT_NarutoAlpha9.00Build301",
+        "bytes": 3965378,
+        "sha256": "79d69ac76bae053c5ac92957db228ec0e6ddb29867b51c347c6cba89c47eeaaf",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 236,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:aebb241ec9715aa4:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Dashewanxinchun_tonglingzhishujushe.swf",
+        "tag": "PT_NarutoAlpha9.06Build300",
+        "bytes": 3191896,
+        "sha256": "769e7c53e88ea543221c4acc599b7668140542934cfe584857c0dc14fe369a65",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 147,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:b090141d33ea29ba:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/BeiliuhuHzyzjcz_Tishugongji3.swf",
+        "tag": "PT_NarutoAlpha9.14Build301",
+        "bytes": 3437010,
+        "sha256": "9085e79790ac9ab67d22b0a12f60050db98548ba81ec3e54eb6b86d0dfb27aa8",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 85,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:b27b214b595b442f:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Changshilang_chufa.swf",
+        "tag": "PT_NarutoAlpha8.88Build304",
+        "bytes": 3323517,
+        "sha256": "58e673c43e27208f18f45cd003422c0a608b1a52dac086b0052d9916ae3cf634",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 98,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:b433c11b2d83043f:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Dourenjiedazhan_aoyi.swf",
+        "tag": "PT_NarutoAlpha8.18Build300",
+        "bytes": 2871131,
+        "sha256": "175d1d41969796546fd0555d253ca6926b58664eab7eb0c54f6be0ffd7b79e5b",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 160,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:be63ac8a4d455e8b:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Datongmuyintuoluo_xuzuoaoyi2.swf",
+        "tag": "PT_NarutoAlpha8.06Build304",
+        "bytes": 3702316,
+        "sha256": "dd3d7fa0d93af54ca494271c729245fc721ff448fdbd452526a2b798b84e04ae",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 151,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:be63ac8a4d455e8b:3ac8e1b91a79",
+      "source": {
+        "path": "assets/battle/effect/Datongmuyintuoluo_xuzuoaoyi2.swf",
+        "tag": "PT_NarutoAlpha8.06Build304",
+        "bytes": 3702316,
+        "sha256": "dd3d7fa0d93af54ca494271c729245fc721ff448fdbd452526a2b798b84e04ae",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "texie",
+      "batch": 151,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:c0b23be0b527b3c6:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/FengxinZZZZ_Mengfengdaliepo.swf",
+        "tag": "PT_NarutoAlpha8.83Build300",
+        "bytes": 3756989,
+        "sha256": "4cb30fe328327f99dede655916ca4b0de7c4c09ca366be56b703876e420d52f4",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 181,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:c0eb30e96ec78aa2:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Banzhongyanzhizhan_aoyi2.swf",
+        "tag": "PT_NarutoAlpha7.54Build300",
+        "bytes": 3353488,
+        "sha256": "944ed25b24810b101592c4fb7740fb93e0344afb44b3682fdc04e210a410b764",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 78,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:cab7782c3fbabeb0:bf705016a610",
+      "source": {
+        "path": "assets/battle/effect/BJhjs3tx.swf",
+        "tag": "PT_NarutoAlpha6.19Build300",
+        "bytes": 380988,
+        "sha256": "2b8ea4789c7d4325153f41cd474268a173fd8939d76afb5367b4d74a02e2a3e9",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "hjs3",
+      "batch": 69,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:cf09d98be925ecf3:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Erhzyzjcz_Guiyaluozhishushiyan.swf",
+        "tag": "PT_NarutoAlpha9.17Build302",
+        "bytes": 11967595,
+        "sha256": "58bbd0e1af55fc70101483ec64169803c1d50c2b94c5d433ae5e39b3ca903612",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 169,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:da8a4983b13e74ac:6b86b273ff34",
+      "source": {
+        "path": "assets/battle/effect/0ITCyd.swf",
+        "tag": "PT_NarutoAlpha6.00Build306",
+        "bytes": 751021,
+        "sha256": "84967e359037d59fcc2121136788e11e3740b6e76349e7a4833762ac4f1eb131",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "1",
+      "batch": 5,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:da8a4983b13e74ac:d4735e3a265e",
+      "source": {
+        "path": "assets/battle/effect/0ITCyd.swf",
+        "tag": "PT_NarutoAlpha6.00Build306",
+        "bytes": 751021,
+        "sha256": "84967e359037d59fcc2121136788e11e3740b6e76349e7a4833762ac4f1eb131",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "2",
+      "batch": 5,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:dc26231ac150ef73:47b3f41dc594",
+      "source": {
+        "path": "assets/battle/effect/Heituaoyi2.swf",
+        "tag": "PT_NarutoAlpha7.14Build301",
+        "bytes": 1209945,
+        "sha256": "4b4239c6cf30f8c5934fb25cf56a9ffb2f7e8919cbd5ef8287e34043b73b768e",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang1",
+      "batch": 223,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:de75576d172fa190:3ac8e1b91a79",
+      "source": {
+        "path": "assets/battle/effect/Hongdouxinchun_lingshexianrui_texie.swf",
+        "tag": "PT_NarutoAlpha9.06Build300",
+        "bytes": 1861405,
+        "sha256": "9da55a382d517c9846cd55aaf90c1bf0746dd457b0161d96069f25232f36b015",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "texie",
+      "batch": 230,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:dec54f1646b4f41d:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Didala_qibaoniantu_zibao.swf",
+        "tag": "PT_NarutoAlpha8.01Build301",
+        "bytes": 4951984,
+        "sha256": "dc61a705babfedf3ebd1514f51090d05e2046e43255aaffe3e5f99b59372f487",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 159,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:ded7c74e8d41cd79:3ac8e1b91a79",
+      "source": {
+        "path": "assets/battle/effect/Dashewanxinchun_tonglingzhishujushe_texie.swf",
+        "tag": "PT_NarutoAlpha9.06Build300",
+        "bytes": 2541696,
+        "sha256": "44a8fbb1c7367530ddaaebc5cef23148d55c73535a8c38d8869732a64e769272",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "texie",
+      "batch": 147,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:e020bfb3e1fe3ea1:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Axiuluo_jiuwei_liudaowuyuaoyi1.swf",
+        "tag": "PT_NarutoAlpha8.30Build301",
+        "bytes": 6775929,
+        "sha256": "045f265cf06367082701e828a91023b8d3632727a0927969676373ef9dee0e02",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 57,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:f014420024ab6ad6:3ac8e1b91a79",
+      "source": {
+        "path": "assets/battle/effect/Axiuluo_jiuwei_shouhuaoyi2texie.swf",
+        "tag": "PT_NarutoAlpha8.30Build301",
+        "bytes": 1002251,
+        "sha256": "de1bba10665ea45bf0b634a5594d3cc2a06d84d9a3f31ade81d830692512ce63",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "texie",
+      "batch": 61,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:fc3460743147e90c:8567d31dc0f0",
+      "source": {
+        "path": "assets/battle/effect/BJqxj1tx.swf",
+        "tag": "PT_NarutoAlpha6.19Build300",
+        "bytes": 298983,
+        "sha256": "c31d7204de4dfc6031c246426f29ae87ab691009d9b3aa15fc6f9e673943e849",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "qxj1",
+      "batch": 69,
+      "reasonCode": "canvas-budget"
+    },
+    {
+      "key": "source:fc39b0e98aca56b1:082c71c3ac0f",
+      "source": {
+        "path": "assets/battle/effect/Datongmuyintuoluo_xuzuoaoyi1.swf",
+        "tag": "PT_NarutoAlpha8.06Build304",
+        "bytes": 2897686,
+        "sha256": "7fcb03a372f75a7e2df16071308915f741d9fa838088f6cc5205fc1d11325bbc",
+        "sourceKind": "exported-inventory"
+      },
+      "action": "shang",
+      "batch": 150,
+      "reasonCode": "canvas-budget"
+    }
+  ],
+  "reviewedNonvisualSourceActions": [
+    {
+      "proof": {
+        "key": "source:e5bc5f62db666242:09aa0e04c499",
+        "source": {
+          "path": "assets/battle/effect/GAR_shabaodazang.swf",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 117619,
+          "sha256": "825a8ca03aefcefd4e7ae68669d203d2e77df38d613b9950d89a9e081b98655e",
+          "sourceKind": "exported-inventory"
+        },
+        "action": "z4",
+        "symbolId": 1,
+        "state": "source-empty-display-timeline-reviewed-not-an-animation",
+        "sourceTagCounts": {
+          "1": 122,
+          "0": 1
+        },
+        "sourceSpriteSha256": "9063dbbacfb2d7c7a59129d7eb35f01a2336e5e4e29c895a0bad911901227d8c",
+        "frames": 122,
+        "allFramesTransparent": true,
+        "renderMetadata": {
+          "symbolId": 1,
+          "fps": 24.0,
+          "frameCount": 122,
+          "rectTwips": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "staticOnly": true,
+          "renderer": "JPEXS-26.4.0"
+        },
+        "renderMetadataSha256": "ccf7409c7645537c7dfaf5072fb7727218b4919ad38cf3ae631bb2cea26405ae",
+        "namedInstancesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "frameProofs": [
+          {
+            "file": "0000.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0001.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0002.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0003.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0004.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0005.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0006.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0007.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0008.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0009.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0010.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0011.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0012.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0013.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0014.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0015.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0016.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0017.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0018.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0019.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0020.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0021.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0022.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0023.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0024.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0025.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0026.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0027.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0028.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0029.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0030.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0031.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0032.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0033.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0034.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0035.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0036.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0037.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0038.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0039.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0040.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0041.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0042.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0043.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0044.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0045.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0046.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0047.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0048.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0049.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0050.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0051.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0052.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0053.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0054.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0055.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0056.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0057.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0058.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0059.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0060.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0061.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0062.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0063.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0064.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0065.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0066.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0067.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0068.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0069.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0070.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0071.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0072.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0073.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0074.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0075.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0076.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0077.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0078.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0079.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0080.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0081.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0082.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0083.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0084.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0085.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0086.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0087.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0088.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0089.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0090.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0091.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0092.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0093.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0094.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0095.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0096.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0097.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0098.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0099.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0100.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0101.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0102.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0103.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0104.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0105.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0106.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0107.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0108.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0109.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0110.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0111.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0112.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0113.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0114.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0115.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0116.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0117.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0118.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0119.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0120.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "file": "0121.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          }
+        ],
+        "scope": "Source sprite contains only End/ShowFrame/FrameLabel tags. No art installed, no scripts executed, no gameplay identity or external runtime behavior inferred."
+      },
+      "cycleReviewSha256": "12abbabd3c7104979d2983542a457080e97adfe4ca2251aa6b05c5bc0a6f5825"
+    },
+    {
+      "proof": {
+        "key": "source:c6654bbec0fff9ec:1626818fb672",
+        "source": {
+          "path": "assets/battle/effect/GAR_shazhidun.swf",
+          "tag": "PT_NarutoAlpha6.00Build300",
+          "bytes": 18421,
+          "sha256": "584ce76fa19080c11a98432c4d52fa6e462ed63c063840f1e65d1c5d0323523d",
+          "sourceKind": "exported-inventory"
+        },
+        "action": "bt_Data",
+        "symbolId": 37,
+        "state": "source-empty-display-timeline-reviewed-not-an-animation",
+        "sourceTagCounts": {
+          "43": 1,
+          "1": 1,
+          "0": 1
+        },
+        "sourceSpriteSha256": "dd280a527e7448beea387b9d45f041f3de92bae78e3c3688053f5ef7de3c89d8",
+        "frames": 1,
+        "allFramesTransparent": true,
+        "renderMetadata": {
+          "symbolId": 37,
+          "fps": 24.0,
+          "frameCount": 1,
+          "rectTwips": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "staticOnly": true,
+          "renderer": "JPEXS-26.4.0"
+        },
+        "renderMetadataSha256": "77699dc958b956cbf26ce8e2b09e0d9271a9c7581c8a1a83580485d0c9e1607e",
+        "namedInstancesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "frameProofs": [
+          {
+            "file": "0000.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          }
+        ],
+        "scope": "Source sprite contains only End/ShowFrame/FrameLabel tags. No art installed, no scripts executed, no gameplay identity or external runtime behavior inferred."
+      },
+      "cycleReviewSha256": "12abbabd3c7104979d2983542a457080e97adfe4ca2251aa6b05c5bc0a6f5825"
+    },
+    {
+      "proof": {
+        "key": "source:f21bee1ef6ea4fae:d587914e2e16",
+        "source": {
+          "path": "assets/battle/effect/Jingyinbeidong.swf",
+          "tag": "PT_NarutoAlpha7.08Build301",
+          "bytes": 103785,
+          "sha256": "f81c8934f5ca0485eb68bc0502b907537651f769805b257a6afaa994b0b81c67",
+          "sourceKind": "exported-inventory"
+        },
+        "action": "xia",
+        "symbolId": 1,
+        "state": "source-empty-display-timeline-reviewed-not-an-animation",
+        "sourceTagCounts": {
+          "1": 1,
+          "0": 1
+        },
+        "sourceSpriteSha256": "e72ae2ce5a2527aad0aa70686ab46aa3e298ef39185ed7c0aca76d384cf3d662",
+        "frames": 1,
+        "allFramesTransparent": true,
+        "renderMetadata": {
+          "symbolId": 1,
+          "fps": 24.0,
+          "frameCount": 1,
+          "rectTwips": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "staticOnly": true,
+          "renderer": "JPEXS-26.4.0"
+        },
+        "renderMetadataSha256": "b105bb517b90d4501cbbe774cffb90ac63380c223d4b1063392ba7736818908e",
+        "namedInstancesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "frameProofs": [
+          {
+            "file": "0000.png",
+            "pngSha256": "c3087446afe87c5da27035fd77db71f3d9911966b3cd33a452f80d731fbf8159",
+            "rgbaSha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          }
+        ],
+        "scope": "Source sprite contains only End/ShowFrame/FrameLabel tags. No art installed, no scripts executed, no gameplay identity or external runtime behavior inferred."
+      },
+      "cycleReviewSha256": "f85366460a04604f894e93cafe1758d479bf07409d76a2beda9ab7fc301ff2f9"
+    }
+  ]
+}
