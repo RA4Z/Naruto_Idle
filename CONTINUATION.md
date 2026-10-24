@@ -1,3 +1,7 @@
+## Fonte de personagem ou cenário — 13000101.swf / C_skillIdle_2
+
+Publicada1exportação source-only com30quadros conferidos na cópia final, sem redução de escala ou encaixe automático. Provas em reports/aux-source-b8de32bc400da062-463b33056c3b-proof.json.gz. Sequência completa, quando necessária, permanece fora depublic e exige visualizador.
+
 ## Efeitos por fonte — lotes 331-336 — 23/10/2026
 
 Publicadas 21 exportações aprovadas, com 1742 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-331-336-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
