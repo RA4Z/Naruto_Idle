@@ -1,3 +1,7 @@
+## Fonte recuperada por intervalos — 13000301.swf / SP_skill3
+
+60quadros originais completos,sem redução de escala ou mudança deFPS. Provas de todos os quadros no staging e na cópia instalada emreports/static-range-source-08dd2d069e56b122-3273ff8eaac7-proof.json.gz. Sequência source-only;exige visualizador/carregador para combate,não altera hitbox ou jutsu.
+
 ## Efeitos por fonte — lotes 553-558 — 23/10/2026
 
 Publicadas 22 exportações aprovadas, com 1081 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-553-558-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
