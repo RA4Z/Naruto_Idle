@@ -1,3 +1,7 @@
+## Sequências recuperadas conferidas no navegador
+
+Shukaku skillAttack:50quadros/24FPS; cenário11016211/shang:153quadros/24FPS. Início, meio e fim visíveis noChrome; reprodução, pausa, origem e espelho conferidos. Largura390pxsemoverflow; nenhuma requisição de conta/save. Provas datadas emreports/recovered-*-browser-proof-20261024.json. Fonte gráfica validada não significa integração de combate.
+
 ## Efeitos por fonte — lotes 499-504 — 23/10/2026
 
 Publicadas 24 exportações aprovadas, com 837 quadros conferidos novamente na cópia final. Provas completas em reports/native-source-groups-499-504-proof.json.gz. Ligações numéricas e dados de combate permanecem preservados. Sequências grandes continuam fora de public e exigem carregador próprio; fonte extraída não significa jutsu integrado. Pendências por recurso, formato ou canvas continuam explícitas e sem substituição.
